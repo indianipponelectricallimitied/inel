@@ -3,11 +3,14 @@
 @tailwind utilities;
 
 :root {
+  --primary: #160959;
+  --secondary: #ffffff;
+  --accent: #131313;
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: Light) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -17,5 +20,25 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-aeonik);
+}
+
+h1 {
+  font-size: 65px;
+  font-weight: 500;
+}
+h2{
+  font-size: 24px;
+  font-weight: 400;
+}
+p,a,span,li,ol,ul,div{
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.border-t-1{
+  border-top-width: 1px;
+}
+.border-b-1{
+  border-bottom-width: 1px;
 }
