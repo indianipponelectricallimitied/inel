@@ -1,0 +1,64 @@
+.hero-swiper .swiper-slide {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, visibility 3s 1s; /* 1s delay for opacity transition */
+}
+
+.hero-swiper .swiper-slide.swiper-slide-active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s ease-in-out, visibility 3s 0s; /* Instantly change visibility when active */
+}
+
+.hero-swiper .swiper-slide.forward .wheel {
+  animation-name: spin-fwd;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+.hero-swiper .swiper-slide.backward .wheel {
+  animation-name: spin-bwd;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes spin-fwd {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-960deg);
+  }
+}
+
+@keyframes spin-bwd {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* core function end  */
+
+
+/* stsrt styling   */
+.rover{
+  img{
+    width: 700px;
+  }
+}
+
+.rover-wheel{
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-54%, -50%);
+  width: 535px;
+  img{
+    width: 120px;
+  }
+}

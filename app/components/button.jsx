@@ -3,7 +3,7 @@ import { GoArrowUpRight } from "react-icons/go";
 export default function Button({ children, className, href, showIcon = true, variant = 'blue', ...props }) {
     const buttonStyles = {
         blue: 'flex items-end gap-1 bg-primary text-white ',
-        white: 'flex items-end gap-1 bg-white text-blue-500 border border-primary  text-[#160959]'
+        white: 'flex items-end gap-1 bg-white text-primary border border-primary  text-[#160959]'
     };
 
     const ButtonContent = () => (

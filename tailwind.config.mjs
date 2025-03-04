@@ -10,9 +10,9 @@ export default {
       colors: {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
-        accent: "var(--accent)",
         background: "var(--background)",
         foreground: "var(--foreground)",
+        textGray: "var(--text-gray)",
       },
     },
   },
