@@ -1,31 +1,28 @@
 import { GoArrowUpRight } from "react-icons/go";
+import Link from "next/link";
 
-export default function Button({ children, className, href, showIcon = true, variant = 'blue', ...props }) {
-    const buttonStyles = {
-        blue: 'flex items-end gap-1 bg-primary text-white ',
-        white: 'flex items-end gap-1 bg-white text-primary border border-primary  text-[#160959]'
-    };
+const buttonStyles = {
+    blue: 'flex items-end gap-1 rounded-[10px] bg-primary text-white border border-primary w-fit',
+    white: 'flex items-end gap-1 rounded-[10px] border-5 bg-white text-primary border border-primary text-[#160959] w-fit',
+    transparent: 'flex items-end gap-1 rounded-[10px] border-5 bg-transparent text-white border border-white text-[#160959] w-fit'
+};
 
-    const ButtonContent = () => (
-        <>
-            {children}
-            {showIcon && <GoArrowUpRight className="text-[20px]"/>}
-        </>
-    );
-
-    if (href) {
-        return (
-            <a href={href} className="inline-block">
-                <button className={`${buttonStyles[variant]} py-2 px-5 ${className}`} {...props}>
-                    <ButtonContent />
-                </button>
-            </a>
-        );
-    }
-
+export default function Button({ 
+    children, 
+    className = '', 
+    href = '#', 
+    hasArrow = true, 
+    variant = 'blue', 
+    ...props 
+}) {
     return (
-        <button className={`${buttonStyles[variant]} py-2 px-5 ${className}`} {...props}>
-            <ButtonContent />
-        </button>
+        <Link 
+            href={href} 
+            className={`${buttonStyles[variant]} py-2 px-5 ${className}`} 
+            {...props}
+        >
+            {children}
+            {hasArrow && <GoArrowUpRight className="text-[20px]" />}
+        </Link>
     );
 }

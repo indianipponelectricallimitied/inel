@@ -3,7 +3,9 @@ import Button from "./button";
 export default function AboutSection(){
     return(
         <>
-        <section className="clip-path clip-right bg-primary relative">
+        <section className="clip-path clip-right relative
+        diamond-gradient
+        ">
             <div className="flex flex-col md:gap-10 md:flex-row">
                 <div className="w-full  md:w-1/2">
                     <img src="/dummy.jpg" alt="about-section" className="w-full h-80 md:h-full object-cover" />

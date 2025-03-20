@@ -1,6 +1,10 @@
 .hero-swiper .swiper-slide {
   visibility: hidden;
   opacity: 0;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: opacity 1s ease-in-out, visibility 3s 1s; /* 1s delay for opacity transition */
 }
 
@@ -46,19 +50,93 @@
 
 
 /* stsrt styling   */
-.rover{
-  img{
-    width: 700px;
-  }
-}
+
 
 .rover-wheel{
   position: absolute;
-  top: 75%;
+  top: 50%;
   left: 50%;
-  transform: translate(-54%, -50%);
-  width: 535px;
+  transform: translate(-54%, 50%);
+  width: 382px;
   img{
-    width: 120px;
+    width: 90px;
   }
 }
+
+
+/* styling  */
+
+.active{
+  cursor:default;
+  .title-image{
+    box-shadow: 0px 1px 55px 0px #578fff6c;
+  }
+}
+.ATV  ,.car , .auto , .scooter{
+  padding-top: 10px;
+  width: 500px !important;
+}
+
+.absolute-backText {
+  transition: opacity 1.5s ease-in-out;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -40%);
+  text-align: center;
+  z-index: -1;
+  font-size: 340px;
+  color: #9EB2FF;
+  font-weight: bold;
+}
+
+.absolute-backText.fade-in {
+  opacity: 1;
+}
+
+.absolute-backText.fade-out {
+  animation: Fadeout .5s ease-in-out forwards;
+}
+
+/* Add animation for initial load */
+@keyframes Fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .4;
+  }
+}
+@keyframes Fadeout {
+  from {
+    opacity: .4;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Apply initial animation to first load */
+.absolute-backText.fade-in {
+  animation: Fadein 1.5s ease-in-out forwards;
+}
+
+@media (max-width: 768px) {
+  .absolute-backText {
+    font-size: 200px;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+
+  .rover-wheel{
+    transform: translate(-54%, 66%);
+    width: 289px;
+    img{
+      width: 68px;
+    }
+  }
+  
+}
+
+

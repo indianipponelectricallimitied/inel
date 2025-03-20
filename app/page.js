@@ -3,15 +3,21 @@ import AboutSection from "./components/about-section";
 import VideoCTA from "./components/videoCTA";
 import Newsletter from "./components/newsletter";
 import Tab from "./components/vehicle-slide/slider";
+import HeroVideoSection from "./components/home/hero-video-section";
+import Sustainable from "./components/home/Sustainable";
+import TechnologyInnovation from "./components/home/Technology-Innovation";
+
   export default function Home() {
 
     
   return (
     <div>
-      <h1 className="">Crafting</h1>
+      <HeroVideoSection />
       <Tab />
-      <AboutSection />
+      <Sustainable />
       <VideoCTA />
+      <TechnologyInnovation />
+      <AboutSection />
       <Newsletter />
     </div>
   );

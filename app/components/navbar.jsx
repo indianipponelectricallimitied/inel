@@ -31,7 +31,7 @@ const Navbar = () => {
   ];
   
   return (
-    <nav className="container mx-auto px-3 py-2 md:p-4">
+    <nav className="container mx-auto px-3 py-2 md:p-4 absolute top-0 left-0 right-0 z-50">
      
       <div className="hidden md:flex justify-between items-center gap-5">
         <a href='#'>
@@ -39,8 +39,8 @@ const Navbar = () => {
         </a>
         <div>
           <div className="pb-1 flex items-center justify-between">
-            <StockTicker  className="text-dark"/>
-            <a href='#' className='text-dark flex items-center gap-1'> <TbMailFilled /> inelcorp@inel.co.in
+            <StockTicker  className="text-white"/>
+            <a href='#' className='text-white flex items-center gap-1'> <TbMailFilled /> inelcorp@inel.co.in
             </a>
           </div>
           <div className="space-x-8 border-t-1 border-primary pt-2">
@@ -48,7 +48,7 @@ const Navbar = () => {
                 <div key={index} className="relative inline-block">
                   {item.submenu ? (
                     <div className="group">
-                      <button className="flex items-center gap-1 text-dark hover:text-primary">
+                      <button className="flex items-center gap-1 text-white hover:text-primary">
                         {item.label}
                         <IoChevronDownOutline className="text-sm transition-transform group-hover:rotate-180" />
                       </button>
@@ -57,7 +57,7 @@ const Navbar = () => {
                           <a
                             key={subIndex}
                             href={subItem.href}
-                            className="block px-4 py-2 text-dark hover:bg-gray-50 hover:text-primary"
+                            className="block px-4 py-2 text-white hover:bg-gray-50 hover:text-primary"
                           >
                             {subItem.label}
                           </a>
@@ -67,7 +67,7 @@ const Navbar = () => {
                   ) : (
                     <a 
                       href={item.href} 
-                      className="text-dark hover:text-primary"
+                      className="text-white hover:text-primary"
                     >
                       {item.label}
                     </a>
@@ -92,7 +92,7 @@ const Navbar = () => {
 
   
       <div
-        className={`fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform ${
+        className={`fixed top-0 right-0 w-64 h-full bg-black shadow-lg transform ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } transition-transform duration-300 ease-in-out z-50`}
       >
@@ -108,7 +108,7 @@ const Navbar = () => {
                 <div className="w-full">
                   <button 
                     onClick={() => toggleSubmenu(index)}
-                    className="flex items-center justify-between w-full py-2 text-dark hover:text-primary"
+                    className="flex items-center justify-between w-full py-2 text-white hover:text-primary"
                   >
                     {item.label}
                     <IoChevronDownOutline 
@@ -126,7 +126,7 @@ const Navbar = () => {
                       <a
                         key={subIndex}
                         href={subItem.href}
-                        className="block py-2 pl-4 text-dark hover:text-primary text-sm"
+                        className="block py-2 pl-4 text-white hover:text-primary text-sm"
                         onClick={toggleMenu}
                       >
                         {subItem.label}
@@ -137,7 +137,7 @@ const Navbar = () => {
               ) : (
                 <a
                   href={item.href}
-                  className="block py-2 text-dark hover:text-primary"
+                  className="block py-2 text-white hover:text-primary"
                   onClick={toggleMenu}
                 >
                   {item.label}
