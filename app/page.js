@@ -1,13 +1,17 @@
-import Image from "next/image";
-import AboutSection from "./components/about-section";
+import AboutSection from "./components/cta";
 import VideoCTA from "./components/videoCTA";
 import Newsletter from "./components/newsletter";
 import Tab from "./components/vehicle-slide/slider";
 import HeroVideoSection from "./components/home/hero-video-section";
 import Sustainable from "./components/home/Sustainable";
 import TechnologyInnovation from "./components/home/Technology-Innovation";
+import InvestorRelations from "./components/home/Investor-Relations";
+import MarqueeSection from "./components/home/marquee-setion";
+import Newsroom from "./components/Newsroom/newsroom";
 
-  export default function Home() {
+import newsletterBg from "@/public/Subtract-dummy.png";
+
+export default function Home() {
 
     
   return (
@@ -17,8 +21,11 @@ import TechnologyInnovation from "./components/home/Technology-Innovation";
       <Sustainable />
       <VideoCTA />
       <TechnologyInnovation />
+      <InvestorRelations />
+      <MarqueeSection />
       <AboutSection />
-      <Newsletter />
+      <Newsroom />
+      <Newsletter newsletterBg={newsletterBg} />
     </div>
   );
 }
