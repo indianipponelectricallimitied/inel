@@ -1,4 +1,4 @@
-import Button from "../button";
+import Button from "../Ui/button";
 
 export default function HeroVideoSection(){
     return(

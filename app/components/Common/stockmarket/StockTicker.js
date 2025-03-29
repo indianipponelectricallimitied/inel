@@ -37,14 +37,14 @@ export default function StockTicker() {
     return () => clearInterval(interval);
   }, []);
 
-  if (loading) return <div className='text-white'>Loading...</div>;
-  if (error) return <div className='text-white'>Error: {error}</div>;
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   const quote = stockData?.['Global Quote'];
 
   return (
-    <div className="flex items-center gap-2 text-sm text-white">
-      <span className="font-medium">INDNIPPON</span>
+    <div className="flex items-center gap-2 text-sm">
+      <span>INDNIPPON</span>
       {quote && (
         <>
           <span>₹{parseFloat(quote['05. price']).toFixed(2)}</span>

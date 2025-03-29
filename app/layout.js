@@ -1,6 +1,6 @@
 import "./globals.css";
-import Navbar from "./components/navbar";
-import Footer from "./components/footer";
+import Navbar from "./components/Common/navbar";
+import Footer from "./components/Common/footer";
 import localFont from "next/font/local";
 
 

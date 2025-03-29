@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '../button';
+import Button from '../../Ui/button';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -181,9 +181,10 @@ export default function Tab() {
             <Image
               src="/rrvr.webp"
               alt="Passenger Vehicle"
-              className='car'
+              className='car w-[380px] md:w-[480px]'
               width={500}
               height={300}
+              
             />
 
             <div className="rover-wheel flex justify-between">

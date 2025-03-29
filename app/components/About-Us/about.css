@@ -1,0 +1,176 @@
+.timeline{
+               
+            .mySwiper{
+                padding: 0 10px;
+            }
+            .swiper-wrapper {
+                height: 540px !important;
+            }
+
+            .swiper-slide {
+                height: 415px !important;
+                cursor: grab;
+            }
+            .swiper-slide.swiper-slide-active {
+                width: 500px !important;
+            }
+            .swiper-slide .content {
+                width: 0;
+                height: 400px;
+                position: relative;
+                overflow: hidden;
+                margin-left: 30px;
+            }
+            .swiper-slide-active .content {
+                width: 460px;
+                height: 400px;
+
+            }
+            .swiper-wrapper .swiper-slide::before {
+                content: "";
+                display: block;
+                width: 1.5px;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: #fff;
+            }
+            .dot{
+                display: block;
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                background-color: #6F6F6F;
+                left: -7px;
+                bottom: -3px;
+                transform: rotate(45deg);
+                margin-left: 11px;
+            }
+            .swiper-wrapper .swiper-slide::before {
+                content: "";
+                display: block;
+                width: 4px;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 10px;
+                background: #6F6F6F;
+                margin-left: 10px;
+            }
+            .swiper-wrapper .swiper-slide::after {
+                content: var(--slide-title);
+                position: absolute;
+                bottom: -37px;
+                left: -9px;
+                color: white;
+                z-index: 20;
+            }
+
+            .swiper-scrollbar-horizontal{
+                background: #fff;
+                height: 10px;
+                width: 80%;
+                padding: 1px;
+            }
+            .swiper-scrollbar-drag{
+                background: #a0a0a0;
+            }
+                .swiper-slide-active::before {
+                    background: #fff !important;
+                }
+                .swiper-slide-active .dot{
+                    background: #fff;
+                }
+
+
+            .swiper-slide-active .scroll-up{
+                animation: scroll-up 1s ease-in-out;
+            }
+
+        
+
+            @media (max-width: 768px) {
+                .swiper-wrapper{
+                    height: 385px !important;
+                }
+                .swiper-slide {
+                    height: 300px !important;
+                }
+                .swiper-slide-active .content {
+                    width: 260px;
+                    height: 300px;
+                
+                }
+                .swiper-slide::after {
+                    display: none;
+                }
+                .swiper-slide.swiper-slide-active::after {
+                    content: var(--slide-title);
+                    bottom: -40px;
+                    display: block;
+                    left: 0px;
+                }
+                .swiper-scrollbar-horizontal{
+                    width: 50%;
+                }
+                
+            }
+}
+@keyframes scroll-up{
+    0%{
+        transform: translateY(100%);
+        display: none;
+    }
+    100%{
+        transform: translateY(0);
+        display: block;
+    }
+}
+
+
+.Facilities{
+    
+    padding: 100px 10px;
+
+    .swiper-slide.swiper-slide-active .active-bg{
+        background: linear-gradient(0deg, rgba(22,9,89,1) 0%, rgba(0,0,0,0) 43%);
+    }
+    .swiper-slide.swiper-slide-active {
+        transform: translate(0, -10%);
+    }
+
+    &::before{
+        width: 200px;
+        height: 100%;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        background: linear-gradient(90deg, #E8E8E8 0%, rgba(255,255,255,0) 100%);
+    }
+    &::after{
+        width: 200px;
+        height: 100%;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        background: linear-gradient(270deg, #E8E8E8 0%, rgba(255,255,255,0) 100%);
+    }
+    .swiper-button-disabled {
+        opacity: .5;
+        cursor: not-allowed;
+    }
+}
+
+@media (max-width: 768px) {
+    .Facilities:after, .Facilities::before{
+        display: none;
+     }
+}

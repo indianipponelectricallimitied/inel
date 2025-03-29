@@ -1,7 +1,7 @@
-import AboutSection from "./components/cta";
-import VideoCTA from "./components/videoCTA";
-import Newsletter from "./components/newsletter";
-import Tab from "./components/vehicle-slide/slider";
+import CTA from "./components/Ui/cta";
+import VideoCTA from "./components/Ui/videoCTA";
+import Newsletter from "./components/Common/newsletter";
+import Tab from "./components/home/vehicle-slide/slider";
 import HeroVideoSection from "./components/home/hero-video-section";
 import Sustainable from "./components/home/Sustainable";
 import TechnologyInnovation from "./components/home/Technology-Innovation";
@@ -15,7 +15,7 @@ export default function Home() {
 
     
   return (
-    <div>
+    <>
       <HeroVideoSection />
       <Tab />
       <Sustainable />
@@ -23,9 +23,10 @@ export default function Home() {
       <TechnologyInnovation />
       <InvestorRelations />
       <MarqueeSection />
-      <AboutSection />
+      <CTA />
       <Newsroom />
       <Newsletter newsletterBg={newsletterBg} />
-    </div>
+      <div className="pb-20"></div>
+    </>
   );
 }

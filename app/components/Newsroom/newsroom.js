@@ -10,10 +10,10 @@ export default function Newsroom(){
                 <p className="py-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 
                 <div className="flex gap-12 flex-col md:flex-row">
-                    <div className="w-full md:w-3/5">
+                    <div className="w-full md:w-[55%]">
                     <BlogSlide />
                     </div>
-                    <div className="w-full md:w-2/5">
+                    <div className="w-full md:w-[45%]">
                         <FeaturedArticles />
                     </div>
                 </div>

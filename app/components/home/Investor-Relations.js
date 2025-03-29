@@ -1,7 +1,7 @@
-import Button from "../button";
+import Button from "../Ui/button";
 import { GoArrowUpRight } from "react-icons/go";
 import Image from "next/image";
-import StockDataCard from "../Ui/StockDataCard";
+import StockDataCard from "../Common/stockmarket/StockDataCard";
 
 const quickLinks = [
   {
@@ -21,7 +21,7 @@ const quickLinks = [
 
 export default function InvestorRelations() {
   return (
-    <section className="diamond-gradient ">
+    <section className="diamond-gradient clip-path btmright">
       <div className="container mx-auto px-5 md:px-0 py-20 text-white">
         <div className="flex flex-col md:flex-row  gap-12">
           <div className="w-full md:w-1/3 space-y-6">

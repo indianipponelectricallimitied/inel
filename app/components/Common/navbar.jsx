@@ -1,15 +1,22 @@
 "use client"
-import React, { useState } from 'react';
-import StockTicker from './StockTicker';
+import React, { useState, useEffect } from 'react';
+import StockTicker from './stockmarket/StockTicker';
 import { TbMailFilled } from "react-icons/tb";
 import { MdClose } from "react-icons/md";
 import { TbMenu3 } from "react-icons/tb";
-import Button from './button';
+import Button from '../Ui/button';
 import { IoChevronDownOutline } from 'react-icons/io5';
+import { usePathname } from 'next/navigation';
+
+const logo = "/logo-white.svg";
+const logoBlack = "/logo.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
+  const pathname = usePathname();
+  
+  const isHomePage = pathname === '/';
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -21,7 +28,6 @@ const Navbar = () => {
   };
 
   const menuItems = [
-
     { label: 'Company', href: '/' , submenu : [{label: 'About Us', href: '/about-us'}, {label: 'Leadership', href: '/leadership'}, {label: 'News', href: '/news'}, {label: 'Events', href: '/events'}, {label: 'Contact Us', href: '/contact-us'}] },
     { label: 'Products & Solutions', href: '/' },
     { label: 'Investors', href: '/' },
@@ -31,49 +37,53 @@ const Navbar = () => {
   ];
   
   return (
-    <nav className="container mx-auto px-3 py-2 md:p-4 absolute top-0 left-0 right-0 z-50">
+    <nav className={`container mx-auto px-3 py-2 md:p-4 ${
+      isHomePage ? 'navbar-home' : 'navbar-default'
+    }`}>
      
       <div className="hidden md:flex justify-between items-center gap-5">
         <a href='#'>
-          <img src="/logo-white.svg" alt="logo" />
+        { isHomePage ?
+          <img src={logo} alt="logo" />
+          :
+          <img src={logoBlack} alt="logo" />
+        }
         </a>
         <div>
           <div className="pb-1 flex items-center justify-between">
-            <StockTicker  className="text-white"/>
-            <a href='#' className='text-white flex items-center gap-1'> <TbMailFilled /> inelcorp@inel.co.in
+            <StockTicker className={`nav-link ${isHomePage ? 'text-white' : 'text-black'}`}/>
+            <a href='mailto:inelcorp@inel.co.in' className='nav-link flex items-center gap-1'>
+              <TbMailFilled /> inelcorp@inel.co.in
             </a>
           </div>
           <div className="space-x-8 border-t-1 border-primary pt-2">
-              {menuItems.map((item, index) => (
-                <div key={index} className="relative inline-block">
-                  {item.submenu ? (
-                    <div className="group">
-                      <button className="flex items-center gap-1 text-white hover:text-white/80">
-                        {item.label}
-                        <IoChevronDownOutline className="text-sm transition-transform group-hover:rotate-180" />
-                      </button>
-                      <div className="absolute left-0 z-10 hidden min-w-[200px]  bg-primary py-2 shadow-lg group-hover:block rounded-md">
-                        {item.submenu.map((subItem, subIndex) => (
-                          <a
-                            key={subIndex}
-                            href={subItem.href}
-                            className="block px-4 py-2 text-white hover:underline underline-offset-4 hover:text-white/80"
-                          >
-                            {subItem.label}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
-                    <a 
-                      href={item.href} 
-                      className="text-white hover:text-white/80"
-                    >
+            {menuItems.map((item, index) => (
+              <div key={index} className="relative inline-block">
+                {item.submenu ? (
+                  <div className="group">
+                    <button className="flex items-center gap-1 nav-link">
                       {item.label}
-                    </a>
-                  )}
-                </div>
-              ))}        
+                      <IoChevronDownOutline className="text-sm transition-transform group-hover:rotate-180" />
+                    </button>
+                    <div className="absolute left-0 z-10 hidden min-w-[200px]  bg-primary py-2 shadow-lg group-hover:block rounded-md">
+                      {item.submenu.map((subItem, subIndex) => (
+                        <a
+                          key={subIndex}
+                          href={subItem.href}
+                          className="block px-4 py-2 w-full text-white hover:underline underline-offset-4 hover:text-white/80"
+                        >
+                          {subItem.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <a href={item.href} className="nav-link">
+                    {item.label}
+                  </a>
+                )}
+              </div>
+            ))}        
           </div>
         </div>
         
@@ -83,10 +93,14 @@ const Navbar = () => {
      
       <div className="md:hidden flex justify-between items-center">
         <a href='#'>
-          <img src="/logo.svg" alt="logo" width={170} height={100} />
+        { isHomePage ?
+          <img src={logo} alt="logo" />
+          :
+          <img src={logoBlack} alt="logo" />
+        }
         </a>
         <button onClick={toggleMenu} className="text-2xl">
-          <TbMenu3 />
+          <TbMenu3 className={ isHomePage ? 'text-white' : 'text-primary'} />
         </button>
       </div>
 
@@ -98,7 +112,7 @@ const Navbar = () => {
       >
         <div className="flex justify-end p-4">
           <button onClick={toggleMenu} className="text-2xl">
-            <MdClose />
+            <MdClose className='text-white' />
           </button>
         </div>
         <div className="flex flex-col space-y-2 mt-6 px-4">
@@ -108,7 +122,7 @@ const Navbar = () => {
                 <div className="w-full">
                   <button 
                     onClick={() => toggleSubmenu(index)}
-                    className="flex items-center justify-between w-full py-2 text-white hover:text-white/80"
+                    className="flex items-center justify-between w-full py-2 hover:text-white/80"
                   >
                     {item.label}
                     <IoChevronDownOutline 
