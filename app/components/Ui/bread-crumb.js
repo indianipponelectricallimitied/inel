@@ -28,7 +28,7 @@ export default function BreadCrumb({breadCrumbBg ,pageTitle}) {
     });
 
     return (
-        <div className="rounded-[30px] h-[300px] md:h-[400px] md:p-20 flex items-center justify-center md:justify-normal mx-5 relative breadcrumb-cut"
+        <div className="rounded-[30px] h-[300px] md:h-[350px] md:p-20 flex items-center justify-center md:justify-normal mx-5 relative breadcrumb-cut"
         style={{
             background: `url(${breadCrumbBg}) no-repeat center center`,
             backgroundSize: 'cover',

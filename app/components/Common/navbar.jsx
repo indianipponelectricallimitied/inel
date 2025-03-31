@@ -29,7 +29,7 @@ const Navbar = () => {
 
   const menuItems = [
     { label: 'Company', href: '/' , submenu : [{label: 'About Us', href: '/about-us'}, {label: 'Leadership', href: '/leadership'}, {label: 'News', href: '/news'}, {label: 'Events', href: '/events'}, {label: 'Contact Us', href: '/contact-us'}] },
-    { label: 'Products & Solutions', href: '/' },
+    { label: 'Products & Solutions', href: '/Products&Solutions' },
     { label: 'Investors', href: '/' },
     { label: 'Careers', href: '/' },
     { label: 'Sustainability  ', href: '/' },
@@ -42,7 +42,7 @@ const Navbar = () => {
     }`}>
      
       <div className="hidden md:flex justify-between items-center gap-5">
-        <a href='#'>
+        <a href='/'>
         { isHomePage ?
           <img src={logo} alt="logo" />
           :
@@ -65,7 +65,7 @@ const Navbar = () => {
                       {item.label}
                       <IoChevronDownOutline className="text-sm transition-transform group-hover:rotate-180" />
                     </button>
-                    <div className="absolute left-0 z-10 hidden min-w-[200px]  bg-primary py-2 shadow-lg group-hover:block rounded-md">
+                    <div className="absolute left-0 z-50 hidden min-w-[200px]  bg-primary py-2 shadow-lg group-hover:block rounded-md">
                       {item.submenu.map((subItem, subIndex) => (
                         <a
                           key={subIndex}
@@ -92,7 +92,7 @@ const Navbar = () => {
 
      
       <div className="md:hidden flex justify-between items-center">
-        <a href='#'>
+        <a href='/'>
         { isHomePage ?
           <img src={logo} alt="logo" />
           :

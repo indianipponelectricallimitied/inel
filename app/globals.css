@@ -167,18 +167,19 @@ p,a,span,li,ol,ul,div{
 
 
 .corner-btn{
-  clip-path: polygon(15% 0, 100% 0, 100% 65%, 85% 100%, 0 100%, 0 35%);
+  clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
   background-color: var(--primary);
   color: white;
-  padding: 6px 30px;
-  font-size: 20px;
-  font-weight: 500;
+  padding: 5px 30px;
   cursor: pointer;
+  width: 130px;
 }
 
+.product-gradient{
+  background: radial-gradient(circle, rgba(29,0,176,1) 0%, rgba(22,9,89,1) 100%);
+}
 
-
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
 
   h1 {
     font-size: 36px;

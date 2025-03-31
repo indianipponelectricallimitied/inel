@@ -9,7 +9,7 @@ export default function Footer(){
         <footer>
             <div className="container mx-auto border-t-1 py-20 border-primary border-b-1 px-5 md:px-0">
                
-            <a href='#' className="pb-10  block">  <img src="/logo.svg" alt="logo" /> </a>
+            <a href='/' className="pb-10  block">  <img src="/logo.svg" alt="logo" /> </a>
 
             <div className="flex flex-col gap-5 text-dark">
                 <div className="flex flex-wrap gap-10 md:gap-0">
