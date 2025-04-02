@@ -7,7 +7,7 @@ import { FaXTwitter } from "react-icons/fa6";
 export default function Footer(){
     return(
         <footer>
-            <div className="container mx-auto border-t-1 py-20 border-primary border-b-1 px-5 md:px-0">
+            <div className="container mx-auto border-t py-20 border-primary border-b px-5 md:px-0">
                
             <a href='/' className="pb-10  block">  <img src="/logo.svg" alt="logo" /> </a>
 

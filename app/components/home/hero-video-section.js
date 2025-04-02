@@ -2,7 +2,7 @@ import Button from "../Ui/button";
 
 export default function HeroVideoSection(){
     return(
-        <section className="relative h-screen md:h-[130vh]">
+        <section className="relative h-screen md:h-[105vh]">
             <video src="./videos/hero-placeholder-vid.mp4" autoPlay muted loop className="w-full h-full object-cover" />
             <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-70 h-full w-full"></div>
             <div className="container mx-auto px-5 flex flex-col items-center justify-center absolute top-0 left-0 right-0 bottom-0">

@@ -1,7 +1,7 @@
 export default function CTA(){
     return(
         <>
-        <section className="clip-path btmleft  relative diamond-gradient">
+        <section className="diamond-gradient">
             <div className="flex flex-col justify-end md:gap-10 md:flex-row">
                 <div className="w-full md:w-3/5 text-white py-10 px-5 pb-20">
                     <h2 className="py-10">We craft customized automotive solutions to meet your unique requirements.</h2>

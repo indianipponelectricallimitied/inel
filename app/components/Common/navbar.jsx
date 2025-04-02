@@ -56,7 +56,7 @@ const Navbar = () => {
               <TbMailFilled /> inelcorp@inel.co.in
             </a>
           </div>
-          <div className="space-x-8 border-t-1 border-primary pt-2">
+          <div className={`${isHomePage ? 'border-white' : 'border-primary'} space-x-8 border-t  pt-2`}>
             {menuItems.map((item, index) => (
               <div key={index} className="relative inline-block">
                 {item.submenu ? (
@@ -87,7 +87,7 @@ const Navbar = () => {
           </div>
         </div>
         
-        <Button variant="blue" href="/contact">Contact Us</Button>
+        <Button variant={`${isHomePage ? 'white' : 'blue'}`} href="/contact">Contact Us</Button>
       </div>
 
      

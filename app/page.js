@@ -17,8 +17,12 @@ export default function Home() {
   return (
     <>
       <HeroVideoSection />
-      <Tab />
-      <Sustainable />
+
+        <Tab />
+
+      <div className="-mt-[40px]">
+        <Sustainable />
+      </div>
       <VideoCTA />
       <TechnologyInnovation />
       <InvestorRelations />

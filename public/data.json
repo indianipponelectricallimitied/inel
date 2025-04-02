@@ -38,7 +38,7 @@
         "name": "Advanced BLDC Controller",
         "type": "Controller",
         "vehicleCategories": ["ATV", "Snow Mobile"],
-        "image": "/images/products/controller2.png",
+        "image": "/images/products/bldc.png",
         "specifications": {
           "voltage": "48V-72V",
           "current": "50A",
@@ -56,7 +56,7 @@
         "name": "Smart BMS",
         "type": "Battery Management",
         "vehicleCategories": ["2 Wheeler", "3 Wheeler", "Portable Engine"],
-        "image": "/images/products/bms1.png",
+        "image": "/images/products/bldc.png",
         "specifications": {
           "cells": "13S-15S",
           "current": "100A",
@@ -74,7 +74,7 @@
         "name": "LCD Display Panel",
         "type": "Display",
         "vehicleCategories": ["2 Wheeler", "3 Wheeler", "ATV"],
-        "image": "/images/products/display1.png",
+        "image": "/images/products/bldc.png",
         "specifications": {
           "screen": "3.2 inch",
           "voltage": "12V-48V",
@@ -92,7 +92,7 @@
         "name": "DC-DC Converter",
         "type": "Converter",
         "vehicleCategories": ["All"],
-        "image": "/images/products/converter1.png",
+        "image": "/images/products/bldc.png",
         "specifications": {
           "input": "24V-72V",
           "output": "12V",

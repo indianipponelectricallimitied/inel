@@ -69,13 +69,13 @@ const CategoryNav = ({ onFilterChange }) => {
 
             {/* Sub Categories */}
             {activeTab !== 'all' && (
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 ">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
                     {activeTab === 'category' &&
                         data.vehicleCategories.map((category) => (
                             <button
                                 key={category.name}
                                 onClick={() => handleSubCategoryClick(category.name)}
-                                className={`flex items-center justify-between px-3 rounded-lg transition-all hover:product-gradient hover:text-white hover:newss relative group
+                                className={`flex items-center justify-between px-3 rounded-lg transition-all hover-product-gradient hover:text-white relative group
                                     ${
                                         activeSubCategory === category.name
                                             ? 'product-gradient text-white'

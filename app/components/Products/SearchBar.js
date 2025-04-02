@@ -73,7 +73,7 @@ export default function SearchBar({ onSearchResults }) {
     return(
         <form 
             onSubmit={handleSearch}
-            className="flex justify-between items-center my-10 bg-white py-1 p-[3px] md:w-2/4 mx-auto mb-8 rounded-[10px] border border-black"
+            className="flex justify-between items-center  bg-white py-1 p-[3px] md:w-2/4 mx-auto mb-8 rounded-[10px] border border-black"
         >
             <input 
                 type="text"

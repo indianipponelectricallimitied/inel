@@ -18,7 +18,7 @@ export default function Products() {
         <>
             <BreadCrumb 
                 pageTitle="Products & Solutions"
-                breadCrumbBg="/images/ProductsSolutions/breadcrumb.png"
+                breadCrumbBg="/images/Products/breadcrumb.png"
             />
             <div className="container mx-auto px-5 md:px-10">
                 <CategoryNav onFilterChange={handleFilterChange} />

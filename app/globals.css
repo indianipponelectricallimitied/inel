@@ -22,6 +22,7 @@ body {
   background: var(--background);
   font-family: var(--font-aeonik);
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -43,53 +44,11 @@ p,a,span,li,ol,ul,div{
   font-weight: 400;
 }
 
-.border-t-1{
-  border-top-width: 1px;
-}
-.border-b-1{
-  border-bottom-width: 1px;
-}
-
-.diamond-gradient{
-  position: relative;
-}
-.clip-path{
-  position: relative;
-}
-.clip-path:after{
-  position: absolute;
-  content: "";
-  width: 392px;
-  height: 29px;
-  z-index: 0;
-  background-size: contain;
-  background-repeat: no-repeat !important;
-}
-
-.clip-path.topleft:after {
-  background-image: url('/radius-cuts/topleft.svg');
-  top: 0px;
-  left: 0px;
-}
-
-.clip-path.btmright:after {
-  background-image: url('/radius-cuts/btmright.svg');
-  bottom: -1px;
-  right: -2px;
-}
-
-.clip-path.btmleft:after {
-  background-image: url('/radius-cuts/btmleft.svg');
-  bottom: 0;
-  left: 0;
-}
 
 .diamond-gradient{
   background: rgb(22,9,89);
   background: linear-gradient(40deg, rgba(22,9,89,1) 0%, rgba(46,32,120,1) 35%, rgba(100,82,190,1) 50%, rgba(49,34,124,1) 65%, rgba(22,9,89,1) 100%);
 }
-
-
 
 .breadcrumb-cut::after{
   content: "";
@@ -159,13 +118,11 @@ p,a,span,li,ol,ul,div{
 
 
 
-
+/* produds page  */
 .grid-background{
   background-image: url("/gril-background.png"), linear-gradient(196deg, rgba(236,249,255,1) 0%, rgba(255,255,255,1) 100%);
   background-size: contain;
 }
-
-
 .corner-btn{
   clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
   background-color: var(--primary);
@@ -177,6 +134,14 @@ p,a,span,li,ol,ul,div{
 
 .product-gradient{
   background: radial-gradient(circle, rgba(29,0,176,1) 0%, rgba(22,9,89,1) 100%);
+}
+
+
+.hover-product-gradient:hover{
+  background: radial-gradient(circle, rgba(29,0,176,1) 0%, rgba(22,9,89,1) 100%);
+}
+.product-grid-item:hover{
+  background: radial-gradient(circle, rgba(45,114,255,1) 0%, rgba(22,9,89,1) 100%);
 }
 
   @media (max-width: 768px) {

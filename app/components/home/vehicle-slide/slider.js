@@ -103,6 +103,7 @@ export default function Tab() {
 
 
   return (
+    <>
     <section className="hero-swiper-section py-20 relative">
       {/* Top Content / Hero */}
       <div className="container mx-auto flex  flex-col md:flex-row items-center justify-between  px-5 md:px-0">
@@ -233,10 +234,15 @@ export default function Tab() {
       </Swiper>
 
       <Button   href="/learn" 
-      variant="blue" 
-      className="w-fit mx-auto">
-  View All Solutions
-</Button>
+          variant="blue" 
+          className="w-fit mx-auto">
+          View All Solutions
+      </Button>
+      
     </section>
+
+        <img src="/radius-cuts/btmleft.svg" alt="btmleft" className='h-[40px]' />
+
+    </>
   );
 }
