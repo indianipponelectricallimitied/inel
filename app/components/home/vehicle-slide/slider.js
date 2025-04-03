@@ -182,7 +182,7 @@ export default function Tab() {
             <Image
               src="/rrvr.webp"
               alt="Passenger Vehicle"
-              className='car w-[380px] md:w-[480px]'
+              className='car !w-[380px] md:!w-[480px]'
               width={500}
               height={300}
               
@@ -240,9 +240,6 @@ export default function Tab() {
       </Button>
       
     </section>
-
-        <img src="/radius-cuts/btmleft.svg" alt="btmleft" className='h-[40px]' />
-
     </>
   );
 }

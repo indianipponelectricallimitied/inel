@@ -15,14 +15,14 @@ const videoCTA = () => {
         <section className="bg-[url('/Rectangle19.png')] bg-cover bg-center">
             <div className="container mx-auto flex flex-col md:flex-row text-white py-20 px-5 md:px-0">
                 <div className="w-full md:w-2/3">
-                    <h1 className="pb-5">Behind the Scenes
+                    <h1 className="pb-5">Behind the Scenes<br/>
                     Driving Innovation Forward</h1>
                     <p className="pb-5">Step inside INEL and discover how our technology, expertise, and passion drive the future of automotive excellence.</p>
                 </div>
                 <div className="w-full md:w-1/3 flex justify-center items-center">
-                <button onClick={openModal} >
+                {/* <button onClick={openModal} >
                     <IoPlayCircle className="text-6xl" />
-                </button>   
+                </button>    */}
                 </div>
             </div>
         </section>

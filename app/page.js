@@ -17,19 +17,15 @@ export default function Home() {
   return (
     <>
       <HeroVideoSection />
-
-        <Tab />
-
-      <div className="-mt-[40px]">
-        <Sustainable />
-      </div>
+      <Tab />
+      <Sustainable />
       <VideoCTA />
       <TechnologyInnovation />
       <InvestorRelations />
       <MarqueeSection />
       <CTA />
       <Newsroom />
-      <Newsletter newsletterBg={newsletterBg} />
+      <Newsletter/>
       <div className="pb-20"></div>
     </>
   );

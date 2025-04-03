@@ -1,9 +1,9 @@
 export default function CTA(){
     return(
         <>
-        <section className="diamond-gradient">
+        <section className="diamond-gradient relative clip-path btmleft">
             <div className="flex flex-col justify-end md:gap-10 md:flex-row">
-                <div className="w-full md:w-3/5 text-white py-10 px-5 pb-20">
+                <div className="w-full md:w-3/5 text-white py-10 px-5 pb-20 md:ms-20 lg:ms-30">
                     <h2 className="py-10">We craft customized automotive solutions to meet your unique requirements.</h2>
                     <h1 className="underline underline-offset-[13px] decoration-textGray decoration-2 pb-10">Let’s innovate together!</h1>
                 </div>

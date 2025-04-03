@@ -53,12 +53,12 @@ export default function BlogSlide(){
                 onSwiper={(swiper) => console.log(swiper)}
             >
                 {blogData.map((blog) => (
-                    <SwiperSlide key={blog.id} className="mb-16">
-                        <div className="flex flex-col gap-5 p-3 pb-10 rounded-[30px] border border-primary wrap transition-all duration-300">
+                    <SwiperSlide key={blog.id} className="mb-16 blog-cut">
+                        <div className="flex  flex-col gap-5 p-3  rounded-[30px] border border-primary wrap transition-all duration-300">
                             <Image src={blog.image} alt="Blog Slide" className="rounded-[20px] h-[200px] w-full object-cover" width={500} height={200} />
                             <h1 className="text-xl">{blog.title}</h1>
                             <p className="text-sm">{blog.description}</p>
-                            <Button variant="white" href="/#" className="ms-auto">Read More</Button>
+                            <Button variant="transparent" href="/#" className="ms-auto -mb-3 border-0 text-primary z-10">Read More</Button>
                         </div>
                     </SwiperSlide>
                 ))}
@@ -77,8 +77,18 @@ export default function BlogSlide(){
                     background-color: var(--primary);
                     color: white;
                 }
-                
-                /* Hide default Swiper navigation arrows */
+                .swiper-slide-active.blog-cut::after{
+                    content: "";
+                    position: absolute;
+                    right: -1px;
+                    bottom: -1px;
+                    width: 201px;
+                    height: 62px;
+                    background-image: url('/radius-cuts/breadcrumb-cut.svg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    }
+
                 .swiper-next::after,
                 .swiper-prev::after {
                     display: none;

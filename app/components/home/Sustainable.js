@@ -3,7 +3,7 @@ import Button from "../Ui/button";
 
 export default function Sustainable(){
     return(
-        <section className="py-20  diamond-gradient">
+        <section className="py-20 clip-path topleft diamond-gradient relative">
             <div className="container mx-auto px-5">
                <div className="flex flex-col md:flex-row gap-10 text-white items-end">
                 <div className="w-full md:w-1/2 space-y-5">
@@ -17,7 +17,7 @@ export default function Sustainable(){
                     <Image src="/images/home/sustainable.png" alt="sustainable" width={800} height={500} className="object-cover rounded-[20px]" />
                 </div>
                </div>
-               <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2  gap-5 mt-10">
+               <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2  gap-5 mt-5">
                     <div className="md:col-span-1 md:row-span-2 bg-gradient-to-t from-[#246AF9] to-[#578EFF] rounded-[20px] p-5 text-white">
                         <Image src="/images/home/Renewable.png" alt="sustainable" width={200} height={200} className="ms-auto" />
                         <h1>85.2%</h1>
