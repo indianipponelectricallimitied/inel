@@ -33,7 +33,7 @@ const Navbar = () => {
     { label: 'Investors', href: '/' },
     { label: 'Careers', href: '/' },
     { label: 'Sustainability  ', href: '/' },
-    { label: 'Technology', href: '/' },
+    { label: 'Technology', href: '/technology' },
   ];
   
   return (

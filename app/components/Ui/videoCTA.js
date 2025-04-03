@@ -1,32 +1,46 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { IoPlayCircle } from "react-icons/io5";
 
 const videoCTA = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openModal = () => setIsOpen(true);
-  const closeModal = () => setIsOpen(false);
+  const openModal = () => {
+    setIsOpen(true);
+    // Add overflow-hidden to body when modal opens
+    document.body.style.overflow = 'hidden';
+  };
 
+  const closeModal = () => {
+    setIsOpen(false);
+    // Restore scrolling when modal closes
+    document.body.style.overflow = 'unset';
+  };
 
+  // Cleanup effect to ensure scrolling is restored if component unmounts while modal is open
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
 
-    return (
-        <>
-        <section className="bg-[url('/Rectangle19.png')] bg-cover bg-center">
-            <div className="container mx-auto flex flex-col md:flex-row text-white py-20 px-5 md:px-0">
-                <div className="w-full md:w-2/3">
-                    <h1 className="pb-5">Behind the Scenes<br/>
-                    Driving Innovation Forward</h1>
-                    <p className="pb-5">Step inside INEL and discover how our technology, expertise, and passion drive the future of automotive excellence.</p>
-                </div>
-                <div className="w-full md:w-1/3 flex justify-center items-center">
-                {/* <button onClick={openModal} >
-                    <IoPlayCircle className="text-6xl" />
-                </button>    */}
-                </div>
-            </div>
-        </section>
-        {/* Video Modal */}
+  return (
+    <>
+      <section className="bg-[url('/Rectangle19.png')] bg-cover bg-center">
+        <div className="container mx-auto flex flex-col md:flex-row text-white py-20 px-5 md:px-0">
+          <div className="w-full md:w-2/3">
+            <h1 className="pb-5">Behind the Scenes<br/>
+            Driving Innovation Forward</h1>
+            <p className="pb-5">Step inside INEL and discover how our technology, expertise, and passion drive the future of automotive excellence.</p>
+          </div>
+          <div className="w-full md:w-1/3 flex justify-center items-center">
+            <button onClick={openModal} >
+              <IoPlayCircle className="text-6xl" />
+            </button>   
+          </div>
+        </div>
+      </section>
+      {/* Video Modal */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div
@@ -64,11 +78,8 @@ const videoCTA = () => {
           </div>
         </div>
       )}
-        </>
-    )
+    </>
+  )
 }
-
-
-
 
 export default videoCTA; 
