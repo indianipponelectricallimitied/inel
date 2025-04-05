@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useState, useEffect } from 'react';
 import StockTicker from './stockmarket/StockTicker';
 import { TbMailFilled } from "react-icons/tb";
@@ -7,6 +8,7 @@ import { TbMenu3 } from "react-icons/tb";
 import Button from '../Ui/button';
 import { IoChevronDownOutline } from 'react-icons/io5';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link'; // Import Link from next/link
 
 const logo = "/logo-white.svg";
 const logoBlack = "/logo.svg";
@@ -42,19 +44,19 @@ const Navbar = () => {
     }`}>
      
       <div className="hidden md:flex justify-between items-center gap-5">
-        <a href='/'>
+        <Link href='/'>
         { isHomePage ?
           <img src={logo} alt="logo" />
           :
           <img src={logoBlack} alt="logo" />
         }
-        </a>
+        </Link>
         <div>
           <div className="pb-1 flex items-center justify-between">
             <StockTicker className={`nav-link ${isHomePage ? 'text-white' : 'text-black'}`}/>
-            <a href='mailto:inelcorp@inel.co.in' className='nav-link flex items-center gap-1'>
+            <Link href='mailto:inelcorp@inel.co.in' className='nav-link flex items-center gap-1'> 
               <TbMailFilled /> inelcorp@inel.co.in
-            </a>
+            </Link>
           </div>
           <div className={`${isHomePage ? 'border-white' : 'border-primary'} space-x-8 border-t  pt-2`}>
             {menuItems.map((item, index) => (
@@ -67,20 +69,20 @@ const Navbar = () => {
                     </button>
                     <div className="absolute left-0 z-50 hidden min-w-[200px]  bg-primary py-2 shadow-lg group-hover:block rounded-md">
                       {item.submenu.map((subItem, subIndex) => (
-                        <a
+                        <Link
                           key={subIndex}
                           href={subItem.href}
                           className="block px-4 py-2 w-full text-white hover:underline underline-offset-4 hover:text-white/80"
                         >
                           {subItem.label}
-                        </a>
+                        </Link> // Changed a to Link
                       ))}
                     </div>
                   </div>
                 ) : (
-                  <a href={item.href} className="nav-link">
+                  <Link href={item.href} className="nav-link">
                     {item.label}
-                  </a>
+                  </Link>
                 )}
               </div>
             ))}        
@@ -92,13 +94,13 @@ const Navbar = () => {
 
      
       <div className="md:hidden flex justify-between items-center">
-        <a href='/'>
+        <Link href='/'>
         { isHomePage ?
           <img src={logo} alt="logo" />
           :
           <img src={logoBlack} alt="logo" />
         }
-        </a>
+        </Link>
         <button onClick={toggleMenu} className="text-2xl">
           <TbMenu3 className={ isHomePage ? 'text-white' : 'text-primary'} />
         </button>
@@ -137,25 +139,25 @@ const Navbar = () => {
                     }`}
                   >
                     {item.submenu.map((subItem, subIndex) => (
-                      <a
+                      <Link
                         key={subIndex}
                         href={subItem.href}
                         className="block py-2 pl-4 text-white hover:text-white/80 text-sm"
                         onClick={toggleMenu}
                       >
                         {subItem.label}
-                      </a>
+                      </Link> // Changed a to Link
                     ))}
                   </div>
                 </div>
               ) : (
-                <a
+                <Link
                   href={item.href}
                   className="block py-2 text-white hover:text-white/80"
                   onClick={toggleMenu}
                 >
                   {item.label}
-                </a>
+                </Link> // Changed a to Link
               )}
             </div>
           ))}
@@ -175,7 +177,5 @@ const Navbar = () => {
         />
       )}
     </nav>
-  );
-};
-
+)};
 export default Navbar;
