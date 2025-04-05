@@ -11,9 +11,10 @@ export default function About(){
                 </div>
                 <div className="w-full md:w-1/2 space-y-5">
                     <h5>About</h5>
-                    <h1>Crafting Precision Solutions</h1>
-                    <p>India Nippon Electricals Limited was incorporated in 1984 and converted into a joint venture in 1986 between Lucas Indian Service Limited, a wholly-owned subsidiary of Lucas-TVS Limited and MAHLE Electric Drives Japan Corporation, Japan – a company of MAHLE Group, Germany, to manufacture Electronic Ignition Systems for two-wheelers, three wheelers and portable engines. Over the years the company has enlarged its customer base and now supplies to most of the manufacturers of two-wheelers, three wheelers and gensets. Company’s net sales for the year ended March, 2015 was Rs.3274 Million (USD 50 Million). India Nippon Electricals Limited makes the entire range of 2/3 wheelers, digital and analog ignition products.
-                    Commencing its operation in Hosur (Tamil Nadu), over the years India Nippon Electricals Limited has set up two more units with excellent facilities, one at Pondicherry and the other at Rewari (Haryana) to be nearer to customers and offer service such as just-in-time supplies and to improve response time for introduction of new products.</p>
+                    <h1>Crafting Precision Solutions for a Smarter Future</h1>
+                    <p>India Nippon Electricals Limited (INEL) was established in 1984 and transitioned into a joint venture in 1986 between Lucas Indian Service Limited, a fully owned subsidiary of Lucas-TVS Limited, and MAHLE Electric Drives Japan Corporation, a member of the globally renowned MAHLE Group, Germany. Specializing in the manufacturing of Electronic Ignition Systems for two-wheelers, three-wheelers, and portable engines, INEL has consistently driven technological innovation. Over the years, INEL has expanded its footprint, significantly broadening its customer base, and is now a key supplier to leading manufacturers in the two-wheeler, three-wheeler, and genset industries. For the fiscal year ending March 2015, the company reported net sales of Rs. 3274 Million (USD 50 Million).
+                    With a focus on advancing product technology, INEL manufactures a wide array of ignition systems, including both digital and analog solutions. The company’s strategic expansion includes state-of-the-art facilities in Hosur (Tamil Nadu), Pondicherry, and Rewari (Haryana), positioning INEL to offer superior customer service, just-in-time supplies, and rapid product innovation.
+                    </p>
                 </div>
             </div>
         </div>

@@ -4,22 +4,22 @@ const innovation = [
     {
         image: "/images/about/Innovation.png",
         title: "Innovation",
-        description: "Forward thinking, planning and execution to expand our horizons.",
+        description: "Pioneering new solutions for growth and progress.",
     },
     {
         image: "/images/about/Passion.png",
         title: "Passion",
-        description: "Enthusiasm, desire, and commitment to succeed.",
+        description: "Fueling success with enthusiasm and commitment.",
     },
     {
         image: "/images/about/Quality.png",
         title: "Quality",
-        description: "Service and products we are proud to stand behind.",
+        description: "Delivering products and services we stand behind.",
     },
     {
         image: "/images/about/Thrive.png",
         title: "Thrive",
-        description: "Commitment to growth to affect our customer’s success.",
+        description: "Empowering growth to drive customer success.",
     }
 ]
 

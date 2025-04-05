@@ -1,7 +1,7 @@
 import BreadCrumb from "../components/Ui/bread-crumb";
 import TechnologyPage from "../components/Technology/technology";
 import HoverExpand from "../components/Technology/HoverExpand";
-import Video from "../components/Technology/Video";
+import Video from "../components/Technology/fullscreenVideo";
 import Image from "next/image";
 
 export default function Technology() {

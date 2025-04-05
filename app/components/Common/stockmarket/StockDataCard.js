@@ -96,7 +96,7 @@ export default function StockDataCard() {
         
         
         <div className="card-content flex flex-col space-y-2">
-            <span className="font-medium text-xl mt-20">IBM ({market})</span>
+            <span className="font-medium text-xl mt-20">INDNIPPON ({market})</span>
             {quote && (
             <>
                 <span className="text-4xl font-medium">{parseFloat(quote['05. price']).toFixed(2)} <span className='text-2xl'>INR</span></span>

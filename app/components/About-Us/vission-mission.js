@@ -3,12 +3,12 @@ import Image from "next/image";
 const visionMission = [
     {
         title: "Vission",
-        description: "To become a supplier of choice for our customers for supply of Electricals and Electronic Products for Automotive and non-automotive domain.",
+        description: "To be the trusted partner for customers in the supply of high-quality electrical and electronic solutions across the automotive and non-automotive industries, while fostering sustainable growth and technological leadership.",
         
     },
     {
         title: "Mission",
-        description: "To be a preferred supplier of Ignition Systems for Automotive and General Purpose engines. To Design, develop & Supply cost competitive, high Quality products to meet Customer requirements through involvement of Employees and Suppliers thru use of contemporary technology.",
+        description: "To become the top choice for ignition systems in the automotive and general-purpose engine markets. We are dedicated to designing and delivering high-performance, cost-efficient products by engaging our team and suppliers in the pursuit of excellence.",
     }
 ]
 

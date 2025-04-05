@@ -27,9 +27,9 @@ export default function InvestorRelations() {
           <div className="w-full md:w-1/3 space-y-6">
             <div>
                 <h5>Investor Relations</h5>
-                <h1>Creating Value,   Driving Growth</h1>
+                <h1>Catalyzing Growth, Delivering Lasting Value</h1>
             </div>
-            <p>A legacy of strong financial performance, sustainable growth, and innovation-driven expansion.</p>
+            <p>At INel, we drive sustainable growth through innovation and operational excellence, ensuring continued leadership and enhanced shareholder value in an evolving market.</p>
             <Button variant="white" href="/contact">Explore Our Innovations</Button>
           </div> 
           <div className="w-full md:w-1/3 space-y-6">

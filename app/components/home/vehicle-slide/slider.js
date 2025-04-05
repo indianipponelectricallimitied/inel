@@ -109,8 +109,8 @@ export default function Tab() {
       <div className="container mx-auto flex  flex-col md:flex-row items-center justify-between  px-5 md:px-0">
         <div className='w-full md:w-[30%] space-y-5'>
           <h5 >Our Solutions</h5 >
-          <h1>Driving Excellence Across Sectors</h1>
-          <p> Engineering reliable solutions for transportation, adventure, and utility applications.</p>
+          <h1>Driven by Precision, Built for Performance</h1>
+          <p> At the intersection of innovation and reliability, we engineer world-class solutions that redefine mobility across a diverse range of sectors. From urban transportation to off-road adventure, our products are meticulously crafted to deliver exceptional performance, unmatched durability, and superior user satisfaction.</p>
         </div>
 
         {/* Tab Navigation (slide selectors) */}

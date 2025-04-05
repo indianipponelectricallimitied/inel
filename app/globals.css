@@ -90,7 +90,7 @@ p,a,span,li,ol,ul,div{
     height: 40px;
     bottom: 0px;
     right: 0px;
-    z-index: 0;
+    z-index: 10;
     background-color: #fff;
     clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
     @media (max-width: 768px) {

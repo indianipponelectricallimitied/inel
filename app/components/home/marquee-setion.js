@@ -51,7 +51,7 @@ export default function MarqueeSection() {
   return (
     <section className="bg-white py-20 overflow-hidden">
         <h1 className='text-center '>Trusted by Leaders, <br/> Driven by Partnerships</h1>
-        <p className='text-center py-10'>Collaborating with top automotive brands to drive innovation, performance, and excellence in mobility solutions.</p>
+        <p className='text-center py-10 md:w-4/5 mx-auto'>At INEL, our trusted partnerships with leading automotive brands enable us to push the boundaries of innovation. Together, we create high-performance, sustainable mobility solutions that pave the way for the future of transportation.</p>
         <div className="logo-slider">
           <div className="logos-slide">
             {logos.map((logo, index) => (

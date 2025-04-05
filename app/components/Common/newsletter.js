@@ -3,9 +3,9 @@ import { GoArrowRight } from "react-icons/go";
 export default function Newsletter({newsletterBg}) {
     return (
         <>
-            <section className="clip-path btmleft btmright bg-primary diamond-gradient relative clippath-2">
-            
-                <div className="container mx-auto text-center text-white py-20 px-5 md:px-0">
+            <section className="clip-path btmleft btmright bg-[url('/images/home/soldring.png')] bg-cover bg-center relative clippath-2  ">
+            <div className="absolute top-0 left-0 w-full h-full bg-primary opacity-50 inset-0"></div>
+                <div className="container mx-auto text-center text-white py-20 px-5 md:px-0 relative">
                     <h1 className="pb-5">Subscribe to the Newsletter</h1>
                     <p>Sign up and stay up to date with the latest news and updates</p>
                     <form className="flex justify-between items-center bg-white py-1 p-[3px] md:w-[800px] mx-auto mt-10 rounded-[20px]">

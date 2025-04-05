@@ -12,8 +12,9 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 
 const milestones = [
   {
-    title: "2005",
-    description: "Started as a small team of 5 people",
+    title: "1984",
+    description: "Company incorporation and joint venture conversion.",
+    description2: "Manufacturing unit set up in Hosur; supply to 2-Wheeler OEMs.",
     image: "/images/about/vision-mission.webp"
   },
   {
@@ -71,46 +72,7 @@ const milestones = [
     description: "Achieved $5M in revenue",
     image: "/images/about/vision-mission.webp"
   },
-  {
-    title: "2017",
-    description: "Launched a new service",
-    image: "/images/about/vision-mission.webp"
-  },
-  {
-    title: "2018",
-    description: "Reached 1000 customers",
-    image: "/images/about/vision-mission.webp"
-  },
-  {
-    title: "2019",
-    description: "Opened a fourth office",
-    image: "/images/about/vision-mission.webp"
-  },
-  {
-    title: "2020",
-    description: "Adapted to remote work",
-    image: "/images/about/vision-mission.webp"
-  },
-  {
-    title: "2021",
-    description: "Achieved $10M in revenue",
-    image: "/images/about/vision-mission.webp"
-  },
-  {
-    title: "2022",
-    description: "Launched a sustainability initiative",
-    image: "/images/about/vision-mission.webp"
-  },
-  {
-    title: "2023",
-    description: "Reached 2000 customers",
-    image: "/images/about/vision-mission.webp"
-  },
-  {
-    title: "2024",
-    description: "Celebrated 20 years of innovation",
-    image: "/images/about/vision-mission.webp"
-  }
+
 ];
 
 export default function Journey() {
@@ -137,7 +99,7 @@ export default function Journey() {
                 }}
                 breakpoints={{
                     768: {
-                        slidesPerView: 12,
+                        slidesPerView: 7,
                         spaceBetween: 10,
                         scrollbar: {
                             draggable: false,
@@ -158,11 +120,12 @@ export default function Journey() {
                     <div className="content" >
                         <Image src={item.image} alt={item.title} width={500} height={400}  className='rounded-[25px] w-full h-full object-cover'/>
                         <div className='absolute z-10 bg-gradient-to-t from-black/90 from-10% to-transparent w-full h-full top-0 left-0 rounded-[25px] flex  flex-col gap-4 justify-end p-5 text-white'>
-                        <div className='scroll-up'>
-                            <h1>{item.title}</h1>
-                            <p>{item.description}</p>
-                        </div>
-                        </div>
+                          <div className='scroll-up space-y-1'>
+                              <h1 className='pb-3'>{item.title}</h1>
+                              <p>{item.description}</p>
+                              <p>{item.description2}</p>
+                          </div>
+                        </div>  
                         </div>
                     </SwiperSlide>
                 ))}

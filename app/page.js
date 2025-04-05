@@ -9,7 +9,6 @@ import InvestorRelations from "./components/home/Investor-Relations";
 import MarqueeSection from "./components/home/marquee-setion";
 import Newsroom from "./components/Newsroom/newsroom";
 
-import newsletterBg from "@/public/Subtract-dummy.png";
 
 export default function Home() {
 

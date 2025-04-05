@@ -9,7 +9,7 @@ export default function TechnologyInnovation() {
           <div className="w-full md:w-1/2">
           <h5>Technology & Innovation</h5>
             <h1 className="pb-10">Powering Innovation,  Shaping the Future</h1>
-            <Image src="/dummy.jpg" alt="technology-innovation"
+            <Image src="/images/home/Technology.webp" alt="technology-innovation"
             className="w-full h-[400px] object-cover rounded-[20px]"
             width={500} height={400} />
           </div>
@@ -17,7 +17,7 @@ export default function TechnologyInnovation() {
             <div className="flex gap-5 flex-1 w-full">
               <div className="w-1/2">
                 <Image 
-                  src="/dummy.jpg" 
+                  src="/images/home/Innovation.png" 
                   alt="technology-innovation"
                   className="h-[200px] w-full object-cover rounded-[20px]"
                   width={500} 
@@ -26,7 +26,7 @@ export default function TechnologyInnovation() {
               </div>
               <div className="w-1/2">
                 <Image 
-                  src="/dummy.jpg" 
+                  src="/images/home/transformative.png" 
                   alt="technology-innovation"
                   className="h-[200px] w-full object-cover rounded-[20px]"
                   width={500} 
@@ -34,8 +34,8 @@ export default function TechnologyInnovation() {
                 />
               </div>
             </div>
-           <div><p className="pb-5">At INEL, innovation drives everything we do. Our state-of-the-art R&D center develops next-gen power electronics, intelligent sensors, and EV solutions for a smarter, more efficient future. From high-efficiency motor controllers to ADAS-integrated safety systems, we create cutting-edge technologies that enhance performance, safety, and sustainability.</p>
-            <p>With a relentless focus on energy efficiency and smart mobility, we engineer solutions that power the vehicles of tomorrow.</p>
+           <div><p className="pb-5">At INEL, we are at the forefront of automotive technology, developing transformative solutions that redefine the future of mobility. Our state-of-the-art R&D center pioneers advancements in power electronics, intelligent sensors, and electric vehicle solutions, creating smarter, more efficient systems for the next generation of transportation.</p>
+            <p>From high-efficiency motor controllers to ADAS-integrated safety systems, every innovation we create is designed to enhance vehicle performance, optimize safety, and promote sustainability.</p>
             </div> 
             <Button variant="blue" href="/contact">Explore Our Innovations</Button>
           </div>
