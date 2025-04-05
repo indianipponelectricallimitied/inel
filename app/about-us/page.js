@@ -15,7 +15,7 @@ export default function AboutUs() {
         <>
             <BreadCrumb 
                 pageTitle= "About Us"
-                breadCrumbBg= "/images/about/breadcrumb.png"
+                breadCrumbBg= "/images/about/breadcrumb.jpeg"
             />
             <About />
             <VissionMission />
