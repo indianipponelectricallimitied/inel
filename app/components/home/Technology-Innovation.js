@@ -11,7 +11,7 @@ export default function TechnologyInnovation() {
             <h1 className="pb-10">Powering Innovation,  Shaping the Future</h1>
             <Image src="/images/home/Technology.webp" alt="technology-innovation"
             className="w-full h-[400px] object-cover rounded-[20px]"
-            width={500} height={400} />
+            width={1500} height={1400} />
           </div>
           <div className="w-full md:w-1/2 space-y-10 md:pt-10">
             <div className="flex gap-5 flex-1 w-full">
@@ -20,8 +20,8 @@ export default function TechnologyInnovation() {
                   src="/images/home/Innovation.png" 
                   alt="technology-innovation"
                   className="h-[200px] w-full object-cover rounded-[20px]"
-                  width={500} 
-                  height={500} 
+                  width={1000} 
+                  height={1000} 
                 />
               </div>
               <div className="w-1/2">
@@ -29,8 +29,8 @@ export default function TechnologyInnovation() {
                   src="/images/home/transformative.png" 
                   alt="technology-innovation"
                   className="h-[200px] w-full object-cover rounded-[20px]"
-                  width={500} 
-                  height={500}
+                  width={1000} 
+                  height={1000}
                 />
               </div>
             </div>
