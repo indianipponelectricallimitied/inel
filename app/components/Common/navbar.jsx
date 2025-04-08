@@ -30,11 +30,20 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { label: 'Company', href: '/' , submenu : [{label: 'About Us', href: '/about-us'}, {label: 'Leadership', href: '/leadership'}, {label: 'News', href: '/news'}, {label: 'Events', href: '/events'}, {label: 'Contact Us', href: '/contact-us'}] },
+    { label: 'Company', href: '/' , 
+        submenu : [
+          {label: 'About Us', href: '/about-us'},
+          {label: 'Leadership', href: '/leadership'},
+          {label: 'News', href: '/news'},
+          {label: 'Events', href: '/events'},
+          {label: 'Contact Us', href: '/contact-us'},
+          {label: 'policies', href: '/policies'},
+        ] 
+    },
     { label: 'Products & Solutions', href: '/Products&Solutions' },
     { label: 'Investors', href: '/' },
     { label: 'Careers', href: '/' },
-    { label: 'Sustainability  ', href: '/' },
+    { label: 'Sustainability  ', href: '/sustainability' },
     { label: 'Technology', href: '/technology' },
   ];
   

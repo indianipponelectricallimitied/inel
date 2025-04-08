@@ -77,9 +77,9 @@ export default function Sustainability(){
             </section>
 
             <section className="bg-gradient-to-b from-[#ffffff] to-[#ECF9FF]">
-                <div className="container mx-auto px-5 md:px-0 py-20 text-center space-y-5">
+                <div className="container mx-auto px-5 md:px-0 py-20 text-center space-y-10">
                     
-                    <h1 className="text-center text-3xl md:text-5xl leading-[150%]">With a global footprint, India Nippon Electricals is committed to <span className="text-3xl md:text-5xl  text-[#6452BE] font-medium">sustainability through eco-friendly processes and energy-efficient innovations,</span> driving a greener future.</h1>
+                    <h1 className="text-center text-3xl md:text-5xl !leading-[150%]">With a global footprint, India Nippon Electricals is committed to <span className="text-3xl md:text-5xl  text-[#6452BE] font-medium">sustainability through eco-friendly processes and energy-efficient innovations,</span> driving a greener future.</h1>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-5 justify-items-center py-10">
                        <Image src="/images/Sustainability/ugc.png" alt="sustainable" className="w-[100px] object-contain" width={500} height={500} />

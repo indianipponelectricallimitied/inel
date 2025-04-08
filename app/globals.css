@@ -49,6 +49,16 @@ p,a,span,li,ol,ul,div{
   max-width: 1280px;
 }} */
 
+input , textarea , select{
+  background-color: #ffff;
+  border: none;
+  border-radius: 10px;
+  padding: 18px 20px;
+  &:focus-visible{
+    outline: none;
+  } 
+}
+
 .diamond-gradient{
   background: rgb(22,9,89);
   background: linear-gradient(40deg, rgba(22,9,89,1) 0%, rgba(46,32,120,1) 35%, rgba(100,82,190,1) 50%, rgba(49,34,124,1) 65%, rgba(22,9,89,1) 100%);
@@ -208,6 +218,7 @@ p,a,span,li,ol,ul,div{
   }
 }
 
+
   @media (max-width: 768px) {
 
     h1 {
@@ -222,3 +233,68 @@ p,a,span,li,ol,ul,div{
       width: 201px;
       height: 62px;}
 }
+
+
+/* accordian  */
+.rc-accordion-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  background-color: #ebedf0;
+  transition: 0.3s;
+  border-radius: 20px;
+}
+.rc-accordion-card{
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.rc-accordion-title{
+  position: relative;
+  margin-bottom: 0;
+  transition: 0.3s;
+}
+.rc-accordion-toggle.active {
+  background-color: #738FFF;
+  .rc-accordion-title{
+    color: #fff;
+  }
+}
+.rc-accordion-icon{
+  position: relative;
+  top: 2px;
+  transition: 0.35s;
+  font-size: 12px;
+}
+.rc-accordion-body{
+  flex: 1 1 auto;
+  min-height: 1px;
+  border-radius: 20px;
+  background-color: #ebedf0;
+}
+.rc-collapse{
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+.rc-collapse.show{
+  height: auto;
+}
+/* accordian end  */
+
+
+/* map  */
+.gm-style-iw, .gm-style-iw-ch{
+  padding: 0px !important;
+}
+.gm-ui-hover-effect{
+margin-bottom: -50px !important ;
+  span{
+    background-color: #fff !important;
+  }
+}
+.gm-style-iw-d{
+  overflow: hidden !important;
+}
+/* map end  */
