@@ -1,7 +1,5 @@
 "use client"
 import { useState, useEffect, useRef } from "react";
-import Button from "../ui/button";
-import Script from "next/script";
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
