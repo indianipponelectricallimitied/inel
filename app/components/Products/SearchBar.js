@@ -7,7 +7,7 @@ export default function SearchBar({ onSearchResults }) {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('/data.json')
+        fetch('https://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/api/products')
             .then(response => response.json())
             .then(data => setProducts(data.products))
             .catch(error => console.error('Error loading products:', error));
@@ -62,8 +62,8 @@ export default function SearchBar({ onSearchResults }) {
 
         // Sort results by relevance
         const sortedResults = searchResults.sort((a, b) => {
-            const aRelevance = calculateSimilarity(searchTerm, a.name) ? 2 : 1;
-            const bRelevance = calculateSimilarity(searchTerm, b.name) ? 2 : 1;
+            const aRelevance = calculateSimilarity(searchTerm, a.name) ? 2 : 1;      
+            const bRelevance = calculateSimilarity(searchTerm, b.name) ? 2 : 1;      
             return bRelevance - aRelevance;
         });
 

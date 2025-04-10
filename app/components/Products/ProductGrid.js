@@ -10,7 +10,7 @@ const ProductGrid = ({ filter, searchResults }) => {
 
   useEffect(() => {
     // Fetch products when component mounts
-    fetch('/data.json')
+    fetch('https://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/api/products')
       .then(response => response.json())
       .then(data => {
         setProducts(data.products);

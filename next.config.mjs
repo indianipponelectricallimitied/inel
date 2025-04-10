@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['flagcdn.com'],
+    domains: [
+      'flagcdn.com',
+      'inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net'
+    ],
   },
 }
 
