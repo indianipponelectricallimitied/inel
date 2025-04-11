@@ -13,7 +13,7 @@ export default function ContactUs() {
                 <ContactForm />
             </div>
             <div className="container mx-auto px-5 md:px-0 pb-20">
-                {/* <Map /> */}
+                <Map />
             </div>
         </>
     )

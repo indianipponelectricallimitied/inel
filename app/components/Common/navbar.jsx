@@ -36,7 +36,7 @@ const Navbar = () => {
           {label: 'Leadership', href: '/leadership'},
           {label: 'News', href: '/news'},
           {label: 'Events', href: '/events'},
-          {label: 'Contact Us', href: '/contact-us'},
+          { label: 'Aftermarket', href: '/aftermarket' },
           {label: 'policies', href: '/policies'},
         ] 
     },
@@ -84,7 +84,7 @@ const Navbar = () => {
                           className="block px-4 py-2 w-full text-white hover:underline underline-offset-4 hover:text-white/80"
                         >
                           {subItem.label}
-                        </Link> // Changed a to Link
+                        </Link> 
                       ))}
                     </div>
                   </div>
@@ -98,7 +98,7 @@ const Navbar = () => {
           </div>
         </div>
         
-        <Button variant={`${isHomePage ? 'white' : 'blue'}`} href="/contact">Contact Us</Button>
+        <Button variant={`${isHomePage ? 'white' : 'blue'}`} href="/contact-us">Contact Us</Button>
       </div>
 
      
