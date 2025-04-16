@@ -24,7 +24,9 @@ export default function AboutUs() {
             <OurLeadership />
             <ManufacturingFacilities />
 
-            <div className="grid-background bg-cover bg-center bg-no-repeat">
+
+            <div className="grid-with-gradients">
+            <div className="gradient-sphere  w-[1000px] h-[1000px] bottom-[300px] -left-[300px]"></div>
                 <Achievements />
                 <Team />
             </div>

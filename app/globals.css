@@ -44,10 +44,17 @@ p,a,span,li,ol,ul,div{
   font-size: 16px;
   font-weight: 400;
 }
-/* @media (max-width: 1024px) {
-.container{
-  max-width: 1280px;
-}} */
+@media (width >= 1024px) {
+  .container {
+      max-width: 1160px !important;
+  }
+}
+@media (width >= 1536px) {
+  .container {
+      max-width: 1436px !important;
+  }
+}
+
 
 input , textarea , select{
   background-color: #ffff;
@@ -58,6 +65,8 @@ input , textarea , select{
     outline: none;
   } 
 }
+
+
 
 .diamond-gradient{
   background: rgb(22,9,89);
@@ -199,10 +208,6 @@ input , textarea , select{
 
 
 /* produds page  */
-.grid-background{
-  background-image: url("/gril-background.png"), linear-gradient(196deg, rgba(236,249,255,1) 0%, rgba(255,255,255,1) 100%);
-  background-size: contain;
-}
 .corner-btn{
   clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
   background-color: var(--primary);
@@ -328,7 +333,7 @@ margin-bottom: -50px !important ;
   background-image: 
       linear-gradient(to right, rgb(255, 255, 255) 1px, transparent 1px),
       linear-gradient(to bottom, rgb(255, 255, 255) 1px, transparent 1px);
-  background-size: 20px 20px;
+  background-size: 21px 21px;
   overflow: hidden;
 }
 
@@ -337,5 +342,5 @@ margin-bottom: -50px !important ;
   border-radius: 50%;
   opacity: 1;
   z-index: -1;
-  background: radial-gradient(circle, #e5eaff 0%, transparent 70%, transparent 100%);
+  background: radial-gradient(circle, #f1f2f8 0%, transparent 70%, transparent 100%);
 }

@@ -33,7 +33,7 @@ export default function Policies() {
             />
 
 
-            <div className="container mx-auto px-5 md:px-0 py-20">
+            <div className="container mx-auto  py-20">
             <h5 className="text-center pb-5">Policies</h5>
             <h1 className="text-center pb-10 md:pb-20">Check out our policies to understand how we work</h1>
                 <div className="w-full md:w-5/6 mx-auto">

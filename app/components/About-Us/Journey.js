@@ -12,72 +12,64 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 
 const milestones = [
   {
-    title: "1984",
+    title: "1984 - 1988",
     description: "Company incorporation and joint venture conversion.",
     description2: "Manufacturing unit set up in Hosur; supply to 2-Wheeler OEMs.",
-    image: "/images/about/vision-mission.webp"
+    image: "/placeholder.jpeg"
   },
   {
-    title: "2006",
-    description: "Expanded to a team of 10 and moved to a new office",
-    image: "/images/about/vision-mission.webp"
+    title: "1989 - 1993",
+    description: "Introduction of ignition systems for Moped and Generator applications.",
+    description2: "Supply of Integral Unit (CDI ignition coil).",
+    image: "/placeholder.jpeg"
   },
   {
-    title: "2007",
-    description: "Launched our first product",
-    image: "/images/about/vision-mission.webp"
+    title: "1994 - 1998",
+    description: "Export of ignition coils to Japan.",
+    description2: "ISO 9001 certification for Hosur unit.",
+    image: "/placeholder.jpeg"
   },
   {
-    title: "2008",
-    description: "Reached 100 customers",
-    image: "/images/about/vision-mission.webp"
+    title: "1999 - 2003",
+    description: "Supply to 3-Wheeler OEMs and Japanese 2W OEMs.",
+    description2: "ISO 14001 EMS certification for Hosur.",
+    image: "/placeholder.jpeg"
   },
   {
-    title: "2009",
-    description: "Opened a second office",
-    image: "/images/about/vision-mission.webp"
+    title: "2004 - 2008",
+    description: "Exports to Italy, Malaysia, Slovenia, Turkey.",
+    description2: "Contract manufacturing for ECUs and ISO/TS 16949:2002 certification.",
+    image: "/placeholder.jpeg"
   },
   {
-    title: "2010",
-    description: "Achieved $1M in revenue",
-    image: "/images/about/vision-mission.webp"
+    title: "2009 - 2013",
+    description: "Exports to the USA, Thailand, and Italy.",
+    description2: "Awarded 'Excellence in Technology' by ACMA.",
+    image: "/placeholder.jpeg"
   },
   {
-    title: "2011",
-    description: "Launched a new product line",
-    image: "/images/about/vision-mission.webp"
+    title: "2014 - 2018",
+    description: "EGR Controllers and TPS supplies for 3-Wheelers and General Purpose Engines.",
+    image: "/placeholder.jpeg"
   },
   {
-    title: "2012",
-    description: "Expanded internationally",
-    image: "/images/about/vision-mission.webp"
+    title: "2018 - 2023",
+    description: "Expanded into EV segment, acquired new customers, and opened new technical center.",
+    description2: "Awarded 'Great Place to Work' for the 3rd time.",
+    image: "/placeholder.jpeg"
   },
   {
-    title: "2013",
-    description: "Won industry award for innovation",
-    image: "/images/about/vision-mission.webp"
+    title: "2023 Onwards",
+    description: "LIS acquired MEDI & MIHPL's stake; introduced ISG Controller for 3W.",
+    image: "/placeholder.jpeg"
   },
-  {
-    title: "2014",
-    description: "Reached 500 customers",
-    image: "/images/about/vision-mission.webp"
-  },
-  {
-    title: "2015",
-    description: "Opened a third office",
-    image: "/images/about/vision-mission.webp"
-  },
-  {
-    title: "2016",
-    description: "Achieved $5M in revenue",
-    image: "/images/about/vision-mission.webp"
-  },
+
 
 ];
 
 export default function Journey() {
   return (
-    <section className='py-20 px-5 md:px-0 bg-primary timeline diamond-gradient'>
+    <section className='py-20 bg-primary timeline diamond-gradient'>
         <div className='container mx-auto'>
 
         <h5 className='text-white'>Our Journey</h5>

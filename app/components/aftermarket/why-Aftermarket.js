@@ -22,7 +22,7 @@ const reason= [
 export default function WhyAftermarket() {
     return (
         <section className="diamond-gradient py-20 relative clip-path btmleft">
-           <div className="container mx-auto flex flex-col md:flex-row gap-20 px-5 md:px-0">
+           <div className="container mx-auto flex flex-col md:flex-row gap-20 ">
            <div className="w-full md:w-1/2 text-white space-y-5">
                 <h5>Why Choose Our Aftermarket Products?</h5>
                 <h1>Built for Performance,  Trusted for Quality</h1>

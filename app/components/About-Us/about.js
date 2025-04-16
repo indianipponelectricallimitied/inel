@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function About(){
     return(
-        <div className="container mx-auto py-20 px-5 md:px-0">
+        <div className="container mx-auto py-20">
             <div className="flex flex-col-reverse md:flex-row gap-10">
                 <div className="w-full md:w-1/2">
-                    <Image src="/images/about/about-us.png" alt="about" width={500} height={500} 
+                    <Image src="/images/about/about-us.webp" alt="about" width={800} height={500} 
                     className="rounded-3xl h-full w-full object-cover"
                     />
                 </div>

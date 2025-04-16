@@ -9,7 +9,7 @@ export default function Technology() {
         <>
             <BreadCrumb 
                 pageTitle= "Technology"
-                breadCrumbBg= "/images/about/vision-mission.webp"
+                breadCrumbBg= "/images/technology/tech-breadcrumb.jpeg"
             />
 
             <TechnologyPage />
@@ -18,7 +18,7 @@ export default function Technology() {
 
 
             <section>
-                <div className="container mx-auto px-5 md:px-0 flex flex-col md:flex-row gap-10 py-20">
+                <div className="container mx-auto  flex flex-col md:flex-row gap-10 py-20">
                     <div className="md:w-1/2 w-full space-y-5">
                         <h5 >Research & Development</h5>
                         <h1 >State-of-the-Art<br/>   Research Center</h1>

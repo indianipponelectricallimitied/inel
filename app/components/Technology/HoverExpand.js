@@ -36,7 +36,7 @@ export default function HoverExpand() {
     return (
         
     <section className="py-20 diamond-gradient  clip-path relative btmleft">
-        <div className="container mx-auto px-5 md:px-0">
+        <div className="container mx-auto ">
             <h1 className="text-center pb-5 text-white">Step by Step to Innovation at INEL</h1>
             <div className=" flex flex-col md:flex-row gap-5 md:gap-0 text-white mt-10 ">
                 {programs.map((program, programIndex) => (

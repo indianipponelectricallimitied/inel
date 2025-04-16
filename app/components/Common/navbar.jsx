@@ -48,7 +48,7 @@ const Navbar = () => {
   ];
   
   return (
-    <nav className={`container mx-auto px-3 py-2 md:p-4 ${
+    <nav className={`container mx-auto py-2  ${
       isHomePage ? 'navbar-home' : 'navbar-default'
     }`}>
      

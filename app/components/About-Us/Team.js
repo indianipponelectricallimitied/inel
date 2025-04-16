@@ -8,34 +8,34 @@ import Button from "../Ui/button";
 
 const team = [
     {
-        image: "/images/about/Facilities-(5).png",
+        image: "/male.jpeg",
         name: "John Doe",
         position: "CEO",
     },
     {
-        image: "/dummy.png",
+        image: "/male.jpeg",
         name: "John Doe",
         position: "CEO",
     },
     {
-        image: "/images/about/Facilities-(5).png",
+        image: "/male.jpeg",
         name: "John Doe",
         position: "CEO",
     },
     {
-        image: "/images/about/Facilities-(5).png",
+        image: "/male.jpeg",
         name: "John Doe",
         position: "CEO",
     },
     {
-        image: "/images/about/Facilities-(5).png",
+        image: "/male.jpeg",
         name: "John Doe",
         position: "CEO",
     }
 ]
 export default function Team(){
     return(
-        <section className="py-20 px-5 md:px-0">
+        <section className="py-20 ">
             <div className="space-y-5 text-center">
                 <h5> Team</h5>
                 <h1>Meet Our Leadership Team</h1>
@@ -78,8 +78,9 @@ export default function Team(){
                             <Image src={item.image} alt={item.name} width={500} height={300} 
                             className="rounded-[30px] object-cover h-[450px]"
                             />
-                            <div className="absolute top-0 left-0 w-full h-full bg-black/20 rounded-[30px] p-10 flex items-end pb-10">
+                            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-70% to-primary rounded-[30px] p-10 flex flex-col justify-end gap-1 pb-10">
                                 <h2 className="text-white text-2xl">{item.name}</h2>
+                                <p className="text-white">{item.position}</p>
                             </div>
                         </SwiperSlide>
                     ))}

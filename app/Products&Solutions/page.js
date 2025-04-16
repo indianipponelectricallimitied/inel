@@ -20,7 +20,7 @@ export default function Products() {
                 pageTitle="Products & Solutions"
                 breadCrumbBg="/images/Products/breadcrumb.png"
             />
-            <div className="container mx-auto px-5 md:px-10">
+            <div className="container mx-auto ">
                 <CategoryNav onFilterChange={handleFilterChange} />
                 <SearchBar onSearchResults={setSearchResults} />
                 <ProductGrid filter={filter} searchResults={searchResults} />

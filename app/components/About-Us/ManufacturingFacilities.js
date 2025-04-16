@@ -9,31 +9,31 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 
 const facilities = [
   {
-    image: "/images/about/Facilities-(1).png",
+    image: "/placeholder.jpeg",
     description: "Lorem ipsum dolor sit amet",
   },
   {
-    image: "/images/about/Facilities-(2).png",
+    image: "/placeholder.jpeg",
     description: "Lorem ipsum dolor sit amet",
   },
   {
-    image: "/images/about/Facilities-(3).png",
+    image: "/placeholder.jpeg",
     description: "Lorem ipsum dolor sit amet",
   },
   {
-    image: "/images/about/Facilities-(4).png",
+    image: "/placeholder.jpeg",
     description: "Lorem ipsum dolor sit amet",
   },
   {
-    image: "/images/about/Facilities-(5).png",
+    image: "/placeholder.jpeg",
     description: "Lorem ipsum dolor sit amet",
   },
   {
-    image: "/images/about/Facilities-(1).png",
+    image: "/placeholder.jpeg",
     description: "Lorem ipsum dolor sit amet",
   },
   {
-    image: "/images/about/Facilities-(2).png",
+    image: "/placeholder.jpeg",
     description: "Lorem ipsum dolor sit amet",
   },
 ]

@@ -9,10 +9,10 @@ export default function ContactUs() {
                 pageTitle= "Contact Us"
                 breadCrumbBg= "/images/contact-us/breadcrunb.png"
             />
-            <div className="container mx-auto px-5 md:px-0 py-20">
+            <div className="container mx-auto  py-20">
                 <ContactForm />
             </div>
-            <div className="container mx-auto px-5 md:px-0 pb-20">
+            <div className="container mx-auto  pb-20">
                 <Map />
             </div>
         </>

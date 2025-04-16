@@ -4,12 +4,12 @@ import Button from "../Ui/button";
 export default function TechnologyInnovation() {
   return (
     <section className="bg-[#F1F1F1EE]">
-      <div className="container mx-auto px-5 md:px-0 py-20">
+      <div className="container mx-auto  py-20">
         <div className="flex flex-col md:flex-row md:gap-[7rem] gap-10">
           <div className="w-full md:w-1/2">
           <h5>Technology & Innovation</h5>
             <h1 className="pb-10">Powering Innovation,  Shaping the Future</h1>
-            <Image src="/images/home/Technology.webp" alt="technology-innovation"
+            <Image src="/images/home/Technology-2.webp" alt="technology-innovation"
             className="w-full h-[400px] object-cover rounded-[20px]"
             width={1500} height={1400} />
           </div>
@@ -26,7 +26,7 @@ export default function TechnologyInnovation() {
               </div>
               <div className="w-1/2">
                 <Image 
-                  src="/images/home/transformative.png" 
+                  src="/images/home/transformative.webp" 
                   alt="technology-innovation"
                   className="h-[200px] w-full object-cover rounded-[20px]"
                   width={1000} 

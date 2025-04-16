@@ -7,7 +7,7 @@ import { FaXTwitter } from "react-icons/fa6";
 export default function Footer(){
     return(
         <footer>
-            <div className="container mx-auto border-t py-20 border-primary border-b px-5 md:px-0">
+            <div className="container mx-auto  py-20 border-primary border-b ">
                
             <a href='/' className="pb-10  block">  <img src="/logo.svg" alt="logo" /> </a>
 
@@ -72,7 +72,7 @@ export default function Footer(){
                     </div>
             </div>
             </div>
-            <div className="container mx-auto flex flex-col md:flex-row justify-between py-5 px-5 md:px-0">
+            <div className="container mx-auto flex flex-col md:flex-row justify-between py-5">
                 <div className="flex justify-between md:gap-20">
                     <a href="#" className="text-sm md:text-base">Privacy Policy</a>
                     <a href="#" className="text-sm md:text-base">Terms & Condition</a>

@@ -142,36 +142,9 @@
         transform: translate(0, -10%);
     }
 
-    &::before{
-        width: 200px;
-        height: 100%;
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
-        background: linear-gradient(90deg, #E8E8E8 0%, rgba(255,255,255,0) 100%);
-    }
-    &::after{
-        width: 200px;
-        height: 100%;
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        z-index: 10;
-        background: linear-gradient(270deg, #E8E8E8 0%, rgba(255,255,255,0) 100%);
-    }
     .swiper-button-disabled {
         opacity: .5;
         cursor: not-allowed;
     }
 }
 
-@media (max-width: 768px) {
-    .Facilities:after, .Facilities::before{
-        display: none;
-     }
-}

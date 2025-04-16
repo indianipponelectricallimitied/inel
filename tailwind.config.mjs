@@ -6,6 +6,13 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      padding: {
+        DEFAULT: '1.25rem',
+        lg: '0rem',
+        xl: '0rem',
+      },
+    },
     extend: {
       colors: {
         primary: "var(--primary)",

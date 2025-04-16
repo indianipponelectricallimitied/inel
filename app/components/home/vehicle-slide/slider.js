@@ -106,7 +106,7 @@ export default function Tab() {
     <>
     <section className="hero-swiper-section py-20 relative">
       {/* Top Content / Hero */}
-      <div className="container mx-auto flex  flex-col md:flex-row items-center justify-between  px-5 md:px-0">
+      <div className="container mx-auto flex  flex-col md:flex-row items-center justify-between">
         <div className='w-full md:w-[30%] space-y-5'>
           <h5 >Our Solutions</h5 >
           <h1>Driven by Precision, Built for Performance</h1>
