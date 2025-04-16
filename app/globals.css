@@ -16,7 +16,7 @@
 @media (prefers-color-scheme: Light) {
   :root {
     --background: #ffffff;
-    --foreground: #ededed;
+    --foreground: #000000;
   }
 }
 
