@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Button from "../components/Ui/button";
+import Button from "../../components/Ui/button";
 
 export default function BlogPost({ params }) {
     const unwrappedParams = React.use(params);

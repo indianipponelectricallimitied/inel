@@ -145,7 +145,7 @@ export default function BlogSlide() {
                             <p className="text-sm line-clamp-3">{blog.intro}</p>
                             <Button 
                                 variant="transparent" 
-                                href={`/${blog.slug || blog.id}`} 
+                                href={`/blog/${blog.slug || blog.id}`} 
                                 className="ms-auto -mb-3 border-0 text-primary z-10"
                             >
                                 Read More
