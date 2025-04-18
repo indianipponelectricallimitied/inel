@@ -9,7 +9,7 @@ export default function Technology() {
         <>
             <BreadCrumb 
                 pageTitle= "Technology"
-                breadCrumbBg= "/images/technology/tech-breadcrumb.jpeg"
+                breadCrumbBg= "/images/Technology/tech-breadcrumb.jpeg"
             />
 
             <TechnologyPage />

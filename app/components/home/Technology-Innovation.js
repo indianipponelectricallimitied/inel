@@ -26,7 +26,7 @@ export default function TechnologyInnovation() {
               </div>
               <div className="w-1/2">
                 <Image 
-                  src="/images/home/transformative.webp" 
+                  src="/images/home/Transformative.webp" 
                   alt="technology-innovation"
                   className="h-[200px] w-full object-cover rounded-[20px]"
                   width={1000} 
