@@ -62,7 +62,7 @@ export default function aftermarket(){
 
         <BreadCrumb 
                 pageTitle= "Aftermarket"
-                breadCrumbBg= "/images/aftermarket/breadcrumb.jpeg"
+                breadCrumbBg= "/images/Aftermarket/breadcrumb.jpeg"
         />
 
 
