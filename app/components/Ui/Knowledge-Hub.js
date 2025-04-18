@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { GoArrowUpRight } from "react-icons/go";
+import QuickLinks from "./QuickLinks";
 
 export default function KnowledgeHub({imageSrc, imageAlt, tagline, title, description, quickLinks}){
   return (
@@ -16,16 +16,8 @@ export default function KnowledgeHub({imageSrc, imageAlt, tagline, title, descri
         <h5>{tagline}</h5>
         <h1>{title}</h1>
         <p>{description}</p>
-        <ul className="space-y-5 md:w-1/2 pt-10">
-          {quickLinks.map((link, index) => (
-            <li key={index}>
-              <a href={link.href} className="font-thin flex justify-between border-b border-black pb-2">
-                {link.title}
-                <GoArrowUpRight className="text-[20px]" />
-              </a>
-            </li>
-          ))}
-        </ul>
+        
+        <QuickLinks quickLinks={quickLinks} />
       </div>
     </div>
   );

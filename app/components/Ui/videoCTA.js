@@ -26,8 +26,8 @@ const videoCTA = () => {
 
   return (
     <>
-      <section className="bg-[url('/images/home/Innovation-Forward.webp')] bg-cover bg-center relative">
-        <div className="absolute top-0 left-0 right-0 bottom-0  inset-0 bg-black/70 h-full w-full"></div>
+      <section className="bg-[url('/images/home/Innovation-Forward.jpeg')] bg-cover bg-center relative">
+        <div className="absolute top-0 left-0 right-0 bottom-0  inset-0 bg-black/40 h-full w-full"></div>
         <div className="container mx-auto flex flex-col md:flex-row text-white py-20  z-10 relative">
           <div className="w-full md:w-2/3">
             <h1 className="pb-5">Behind the Scenes<br/>

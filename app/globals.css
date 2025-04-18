@@ -44,12 +44,12 @@ p,a,span,li,ol,ul,div{
   font-size: 16px;
   font-weight: 400;
 }
-@media (width >= 1024px) {
+@media (min-width: 1200px) and (max-width: 1300px) {
   .container {
       max-width: 1160px !important;
   }
 }
-@media (width >= 1536px) {
+@media (min-width: 1536px) {
   .container {
       max-width: 1436px !important;
   }
@@ -107,7 +107,7 @@ input , textarea , select{
     content: "";
     width: 300px;
     height: 40px;
-    bottom: 0px;
+    bottom: -1px;
     right: 0px;
     z-index: 10;
     background-color: #fff;
@@ -271,6 +271,7 @@ input , textarea , select{
   background-color: #ebedf0;
   transition: 0.3s;
   border-radius: 20px;
+  gap: 20px;
 }
 .rc-accordion-card{
   margin-bottom: 20px;

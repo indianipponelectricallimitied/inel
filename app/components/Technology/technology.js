@@ -32,22 +32,22 @@ const innovations = [
     {
         title: "Safe Mobility",
         description: "Safety is paramount at INEL. We design and develop critical components such as speed sensors, temperature sensors, and tire pressure monitoring systems (TPMS) to enhance vehicle safety. Our research focuses on creating systems that work together to monitor vehicle health in real-time, ensuring reliability and preventing accidents. With our continuous innovation, we are contributing to safer roads for everyone.",
-        image: "/images/technology/Rectangle.png"
+        image: "/images/technology/Rectangle-(4).png"
     },
     {
         title: "Smart Mobility",
         description: "INEL is advancing smart mobility by integrating intelligent systems into vehicles. While we're not yet focused on full-scale autonomous driving, our developments in sensor technologies, vehicle-to-vehicle communication, and energy optimization are laying the groundwork for the next generation of connected and autonomous vehicles. Our solutions help vehicles become more intelligent, responsive, and energy-efficient in real-world environments.",
-        image: "/images/technology/Rectangle.png"
+        image: "/images/technology/Rectangle-(3).png"
     },
     {
         title: "Autonomous Mobility",
         description: "Inspired by the growing need for autonomous vehicles, INEL is exploring sensor-based technologies and real-time data processing to support autonomous driving in the future. While our focus is currently on improving sensor technology and vehicle control systems, our long-term vision includes contributing to the development of autonomous vehicles.",
-        image: "/images/technology/Rectangle.png"
+        image: "/images/technology/Rectangle-(2).png"
     },
     {
         title: "Powertrain Innovations",
         description: "At INEL, we lead in developing powertrain systems that maximize vehicle efficiency, from ignition systems for ICE vehicles to electronic fuel injection (EFI) and integrated starter generators (ISG). Our technologies are designed to reduce emissions, improve fuel economy, and enhance the driving experience, while also integrating seamlessly into electric vehicle powertrains for higher performance and lower environmental impact.",
-        image: "/images/technology/Rectangle.png"
+        image: "/images/technology/Rectangle-(1).png"
     },
 ]
 

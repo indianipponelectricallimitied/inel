@@ -107,7 +107,7 @@ export default function Tab() {
     <section className="hero-swiper-section py-20 relative">
       {/* Top Content / Hero */}
       <div className="container mx-auto flex  flex-col md:flex-row items-center justify-between">
-        <div className='w-full md:w-[30%] space-y-5'>
+        <div className='w-full md:w-[35%] space-y-5'>
           <h5 >Our Solutions</h5 >
           <h1>Driven by Precision, Built for Performance</h1>
           <p> At the intersection of innovation and reliability, we engineer world-class solutions that redefine mobility across a diverse range of sectors. From urban transportation to off-road adventure, our products are meticulously crafted to deliver exceptional performance, unmatched durability, and superior user satisfaction.</p>
@@ -162,16 +162,16 @@ export default function Tab() {
           <div className="slide-content rover w-full flex justify-center items-center">
   
             <Image
-              src="/Scooter 1.png"
+              src="/images/home/Scooter.png"
               alt="Passenger Vehicle"
               className='scooter'
               width={1000}
               height={1000}
             />
-            {/* <div className="rover-wheel flex justify-between">
-              <img src="./rv-tyre.webp" className="front wheel" />
-              <img src="./rv-tyre.webp" className="back wheel" />
-            </div> */}
+            <div className="scooter-wheel flex justify-between">
+              <img src="/images/home/Scooter-tyre.png" className="front wheel" />
+              <img src="/images/home/Scooter-tyre.png" className="back wheel" />
+            </div>
 
           </div>
         </SwiperSlide>
@@ -220,9 +220,9 @@ export default function Tab() {
               width={1000}
               height={1000}
             />
-            {/* <div className="rover-wheel flex justify-between">
-              <img src="./rv-tyre.webp" className="front wheel" />
-              <img src="./rv-tyre.webp" className="back wheel" />
+            {/* <div className="atv-wheel flex justify-between">
+              <img src="/images/home/ATV-tyre.png" className="front wheel" />
+              <img src="/images/home/ATV-tyre.png" className="back wheel" />
             </div> */}
 
           </div>

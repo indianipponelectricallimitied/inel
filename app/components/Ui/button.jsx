@@ -11,7 +11,7 @@ export default function Button({
     children, 
     className = '', 
     href = '#', 
-    hasArrow = true, 
+    hasArrow = true || false, 
     variant = 'blue', 
     ...props 
 }) {

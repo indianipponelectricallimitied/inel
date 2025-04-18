@@ -16,7 +16,7 @@ const AccordionItem = ({ accordion, active, handleToggle }) => {
         >
           <h4 className="rc-accordion-title text-xl">{header}</h4>
           <HiArrowRight
-            className={`transition-all duration-300 text-lg ${active === id ? 'rotate-90 text-white' : 'rotate-[-30deg] text-black'}`}
+            className={`transition-all flex-shrink-0 duration-300 text-lg ${active === id ? 'rotate-90 text-white' : 'rotate-[-30deg] text-black'}`}
           />
         </div>
       </div>

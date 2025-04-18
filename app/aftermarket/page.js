@@ -1,6 +1,6 @@
 import BreadCrumb from "../components/Ui/bread-crumb"
 import SearchAftermarket from "../components/aftermarket/Search-aftermarket"
-import BackflipSlider from "../components/aftermarket/BackflipSlider"
+import BackflipSlider from "../components/Ui/BackflipSlider"
 import FeaturedProducts from "../components/Ui/Featured-Products"
 import Button from "../components/Ui/button"
 import WhyAftermarket from "../components/aftermarket/why-Aftermarket"
@@ -24,6 +24,36 @@ const quickLinks = [
     }
   ];
 
+  const testimonials = [
+    {
+        name: "John Doe",
+        image: "/testi.png",
+        identity: "Automobile Workshop Owner",
+        feedbaktitle:"Reliable Parts, Exceptional Performance!",
+        feedback:"I've been using this product for a few months now and it's been performing great. The quality is excellent and it's easy to install. I highly recommend it!"
+    },
+    {
+        name: "John Doe",
+        image: "/testi.png",
+        identity: "Automobile Workshop Owner",
+        feedbaktitle:"Reliable Parts, Exceptional Performance!",
+        feedback:"I've been using this product for a few months now and it's been performing great. The quality is excellent and it's easy to install. I highly recommend it!"
+    },
+    {
+        name: "John Doe",
+        image: "/testi.png",
+        identity: "Automobile Workshop Owner",
+        feedbaktitle:"Reliable Parts, Exceptional Performance!",
+        feedback:"I've been using this product for a few months now and it's been performing great. The quality is excellent and it's easy to install. I highly recommend it!"
+    },
+    {
+        name: "John Doe",
+        image: "/testi.png",
+        identity: "Automobile Workshop Owner",
+        feedbaktitle:"Reliable Parts, Exceptional Performance!",
+        feedback:"I've been using this product for a few months now and it's been performing great. The quality is excellent and it's easy to install. I highly recommend it!"
+    },
+]
 
 
 export default function aftermarket(){
@@ -32,13 +62,13 @@ export default function aftermarket(){
 
         <BreadCrumb 
                 pageTitle= "Aftermarket"
-                breadCrumbBg= "/images/Products/breadcrumb.png"
+                breadCrumbBg= "/images/aftermarket/breadcrumb.jpeg"
         />
 
 
         <div className="container mx-auto flex flex-col md:flex-row gap-12  py-20">
             <div className="md:w-2/5 space-y-8">
-                <h1 >Perfect parts tailored for your needs.</h1>
+                <h1 >Precision Parts, Perfectly Tailored for Your Vehicle</h1>
                 <p >Whether you need ignition systems, relays, or regulators, 
                     we offer a wide selection of high-quality aftermarket products. 
                     Browse our categories to find the right fit for your vehicle.</p>
@@ -87,7 +117,7 @@ export default function aftermarket(){
                     from professionals who rely on our products.</p>
             </div>
             <div className="mx-auto w-9/12 md:w-[45%] pb-20">
-                <BackflipSlider />
+                <BackflipSlider testimonials={testimonials} />
             </div>
         </section>
 
@@ -96,7 +126,7 @@ export default function aftermarket(){
         <section className="bg-[#F6F6F6]">
             <div className="container mx-auto  py-20">
                 <KnowledgeHub 
-                imageSrc="/dummy.jpg"
+                imageSrc="/images/aftermarket/Knowledge.jpeg"
                 imageAlt="sustainable"
                 tagline="Resources & Downloads"
                 title="Knowledge Hub"

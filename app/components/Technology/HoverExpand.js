@@ -3,32 +3,32 @@ const programs = [
     {
         title: "Ideation",
         text: "The journey begins with a clear understanding of market needs and customer demands. INEL conducts thorough market research to identify gaps in current technologies and opportunities for innovation in areas like electric mobility, powertrains, and vehicle safety systems. ",
-        image: "/tech-dummy.jpeg"
+        image: "/placeholder.jpeg"
     },
     {
         title: "Conceptualization",
         text: "The journey begins with a clear understanding of market needs and customer demands. INEL conducts thorough market research to identify gaps in current technologies and opportunities for innovation in areas like electric mobility, powertrains, and vehicle safety systems. ",
-        image: "/tech-dummy.jpeg"
+        image: "/placeholder.jpeg"
     },
     {
         title: "Elaboration",
         text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-        image: "/tech-dummy.jpeg"
+         image: "/placeholder.jpeg"
     },
     {
         title: "Incubation",
         text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-        image: "/tech-dummy.jpeg"
+         image: "/placeholder.jpeg"
     },
     {
         title: "Acceleration",
         text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-        image: "/tech-dummy.jpeg"
+         image: "/placeholder.jpeg"
     },
     {
         title: "Market Launch",
         text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
-        image: "/tech-dummy.jpeg"
+         image: "/placeholder.jpeg"
     },
 ]
 

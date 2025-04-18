@@ -1,17 +1,17 @@
 const support = [
     {
         title: "Technical Support",
-        image: "/images/aftermarket/service.png",
+        image: "/placeholder.jpeg",
         description: "Our team is ready to assist with any queries.",
     },
     {
         title: "Installation Guides",
-        image: "/images/aftermarket/Guides.png",
+        image: "/placeholder.jpeg",
         description: "Step-by-step manuals and video tutorials.",
     },
     {
         title: "Warranty Information",
-        image: "/images/aftermarket/service.png",
+        image: "/placeholder.jpeg",
         description: "Coverage details for our genuine spare parts.",
     },
     

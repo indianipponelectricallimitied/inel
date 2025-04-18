@@ -10,41 +10,11 @@ import 'swiper/css/effect-cards';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
-const testimonials = [
-    {
-        name: "John Doe",
-        image: "/testi.png",
-        identity: "Automobile Workshop Owner",
-        feedbaktitle:"Reliable Parts, Exceptional Performance!",
-        feedback:"I've been using this product for a few months now and it's been performing great. The quality is excellent and it's easy to install. I highly recommend it!"
-    },
-    {
-        name: "John Doe",
-        image: "/testi.png",
-        identity: "Automobile Workshop Owner",
-        feedbaktitle:"Reliable Parts, Exceptional Performance!",
-        feedback:"I've been using this product for a few months now and it's been performing great. The quality is excellent and it's easy to install. I highly recommend it!"
-    },
-    {
-        name: "John Doe",
-        image: "/testi.png",
-        identity: "Automobile Workshop Owner",
-        feedbaktitle:"Reliable Parts, Exceptional Performance!",
-        feedback:"I've been using this product for a few months now and it's been performing great. The quality is excellent and it's easy to install. I highly recommend it!"
-    },
-    {
-        name: "John Doe",
-        image: "/testi.png",
-        identity: "Automobile Workshop Owner",
-        feedbaktitle:"Reliable Parts, Exceptional Performance!",
-        feedback:"I've been using this product for a few months now and it's been performing great. The quality is excellent and it's easy to install. I highly recommend it!"
-    },
-]
 
 // import required modules
 import { EffectCards, Pagination, Autoplay } from 'swiper/modules';
 
-export default function BackflipSlider() {
+export default function BackflipSlider({testimonials}) {
   return (
     <>
       <Swiper
