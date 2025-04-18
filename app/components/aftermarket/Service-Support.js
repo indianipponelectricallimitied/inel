@@ -1,18 +1,18 @@
 const support = [
     {
-        title: "Technical Support",
+        title: "Dedicated Technical Expertise",
         image: "/placeholder.jpeg",
-        description: "Our team is ready to assist with any queries.",
+        description: "Our team of specialists is always available to provide the technical assistance you need, ensuring your systems perform at their best.",
     },
     {
-        title: "Installation Guides",
+        title: "Detailed Installation Assistance",
         image: "/placeholder.jpeg",
-        description: "Step-by-step manuals and video tutorials.",
+        description: "Access expert-designed installation guides and video tutorials to ensure every part is set up with accuracy and ease.",
     },
     {
-        title: "Warranty Information",
+        title: "Thorough Warranty Protection",
         image: "/placeholder.jpeg",
-        description: "Coverage details for our genuine spare parts.",
+        description: " Rest easy with full access to warranty information that ensures coverage for all genuine parts, safeguarding your investment.",
     },
     
 ]
@@ -20,7 +20,7 @@ const support = [
 export default function ServiceSupport() {
     return (
         <>
-            <div className="w-full md:w-8/12 mx-auto pt-10">
+            <div className="w-full md:w-3/4 mx-auto pt-10">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                     {support.map((item, index) => (
                         <div key={index} className="relative h-[350px] rounded-[10px]  shadow-[0px_0px_15.5px_0px_#16095970] ">

@@ -11,15 +11,15 @@ import Newsletter from "../components/Common/newsletter"
 
 const quickLinks = [
     {
-      title: "Installation Manuals",
+      title: "Installation Guides",
       href: "/Installation Manuals",
     },
     {
-      title: "Product Catalogs",
+      title: "Product Documentation",
       href: "/iProduct Catalogs",
     },
     {
-      title: "Troubleshooting FAQs",
+      title: "Troubleshooting Assistance",
       href: "/Troubleshooting FAQs",
     }
   ];
@@ -69,11 +69,7 @@ export default function aftermarket(){
         <div className="container mx-auto flex flex-col md:flex-row gap-12  py-20">
             <div className="md:w-2/5 space-y-8">
                 <h1 >Precision Parts, Perfectly Tailored for Your Vehicle</h1>
-                <p >Whether you need ignition systems, relays, or regulators, 
-                    we offer a wide selection of high-quality aftermarket products. 
-                    Browse our categories to find the right fit for your vehicle.</p>
-                <p>Use our smart filters to locate the perfect 
-                match for your vehicle.</p>
+                <p >At INEL, we provide a meticulously curated selection of premium aftermarket parts to meet the highest standards of performance and reliability. From ignition systems to relays and regulators, our global offering ensures that you find the ideal components for your vehicle, no matter the make or model</p>
             </div>
             <div className="md:w-3/5">
                 <SearchAftermarket />
@@ -102,8 +98,8 @@ export default function aftermarket(){
         <section className="container mx-auto  py-20">
             <div className="text-center space-y-5">
                 <h5>Service & Support</h5>
-                <h1>Expert Support at Every Step</h1>
-                <p>Get guidance, installation help, and warranty support.</p>
+                <h1>Tailored Support at Every Turn</h1>
+                <p className="md:w-3/4 mx-auto">At INEL, we offer dedicated support designed to guide you through every phase, from installation to after-sales care. With our expertise, we ensure your experience is smooth, precise, and fully supported by our comprehensive services.</p>
             </div>
             <ServiceSupport />
         </section>
@@ -129,8 +125,8 @@ export default function aftermarket(){
                 imageSrc="/images/aftermarket/Knowledge.jpeg"
                 imageAlt="sustainable"
                 tagline="Resources & Downloads"
-                title="Knowledge Hub"
-                description="Get access to installation guides, troubleshooting tips, and technical manuals."
+                title="Explore Our Knowledge Hub"
+                description="Empower yourself with the essential resources you need for seamless product installation, efficient troubleshooting, and more. Our comprehensive library ensures you have all the tools to optimize your experience with INEL."
                     quickLinks={quickLinks}
                 />
             </div>
@@ -139,11 +135,9 @@ export default function aftermarket(){
         <section className="container mx-auto  py-20 flex flex-col md:flex-row gap-20">
             <div className="w-full md:w-[38%] space-y-5">
                 <h5>Get in Touch</h5>
-                <h1>Need Help? Let's Talk</h1>
-                <p>Have questions about our aftermarket parts? Reach out, and 
-                we’ll get back to you soon.</p>
-                <p>Fill out the form, and our team will provide the right solutions 
-                for your needs.</p>
+                <h1>Got Questions? We’re Here to Help</h1>
+                <p>If you have any inquiries regarding our aftermarket products, don’t hesitate to get in touch. Our team is ready to assist and provide the solutions you need.</p>
+                <p>Complete the form, and we'll ensure the right support is provided to meet your requirements.</p>
             </div>
             <div className="w-full md:w-7/12">
                 <AftermarketForm />
