@@ -26,7 +26,7 @@ export default function Technology() {
                         <p>At INEL, we lead in developing powertrain systems that maximize vehicle efficiency, from ignition systems for ICE vehicles to electronic fuel injection (EFI) and integrated starter generators (ISG). Our technologies are designed to reduce emissions, improve fuel economy, and enhance the driving experience, while also integrating seamlessly into electric vehicle powertrains for higher performance and lower environmental impact.</p>
                     </div>
                     <div className="md:w-1/2 w-full">
-                        <Image src="/images/technology/Development.jpeg" alt="Research Development"
+                        <Image src="/images/Technology/Development.jpeg" alt="Research Development"
                         className="rounded-[20px] h-full object-cover w-full"
                         width={900}
                         height={900}

@@ -41,7 +41,7 @@ const Navbar = () => {
         ] 
     },
     { label: 'Products & Solutions', href: '/Products&Solutions' },
-    { label: 'Investors', href: '/' },
+    { label: 'Investors', href: '/investors' },
     { label: 'Careers', href: '/career' },
     { label: 'Sustainability  ', href: '/sustainability' },
     { label: 'Technology', href: '/technology' },

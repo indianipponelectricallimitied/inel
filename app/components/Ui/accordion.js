@@ -8,7 +8,7 @@ const AccordionItem = ({ accordion, active, handleToggle }) => {
   const { id, header, content } = accordion;
 
   return (
-    <div className="rc-accordion-card">
+    <div className="rc-accordion-card bg-[#ebedf0] rounded-[20px]"> 
       <div className="rc-accordion-header">
         <div
           className={`rc-accordion-toggle p-5 px-6 ${active === id ? 'active' : ''}`}
