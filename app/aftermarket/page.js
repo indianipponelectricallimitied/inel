@@ -122,7 +122,7 @@ export default function aftermarket(){
         <section className="bg-[#F6F6F6]">
             <div className="container mx-auto  py-20">
                 <KnowledgeHub 
-                imageSrc="/images/aftermarket/Knowledge.jpeg"
+                imageSrc="/images/Aftermarket/aerial-inel.jpeg"
                 imageAlt="sustainable"
                 tagline="Resources & Downloads"
                 title="Explore Our Knowledge Hub"

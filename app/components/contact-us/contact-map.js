@@ -163,7 +163,7 @@ const Map = () => {
 
   return (
     <div className="rounded-[20px] flex flex-col md:flex-row">
-      <div className="flex flex-col justify-center bg-[#F2F2F2] h-[630px] w-full md:w-2/6 rounded-t-[20px]  md:rounded-l-[20px]  p-4 space-y-4 overflow-y-auto">
+      <div className="flex flex-col justify-center bg-[#F2F2F2] h-[630px] w-full md:w-2/6 rounded-t-[20px]  md:rounded-l-[20px] md:rounded-tr-none p-4 space-y-4 overflow-y-auto">
         {places.map((place) => (
           <div 
             key={place.id} 
@@ -187,9 +187,9 @@ const Map = () => {
         ))}
       </div>
 
-      <div id="map" ref={mapRef} className="rounded-b-[20px] md:rounded-b-[20px] h-[630px] w-full md:w-4/6" />
+      <div id="map" ref={mapRef} className="rounded-b-[20px] md:rounded-r-[20px] md:rounded-bl-none h-[630px] w-full md:w-4/6" />
     </div>
-  );
+  );  
 };
 
 export default Map;

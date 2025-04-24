@@ -33,9 +33,9 @@ const Navbar = () => {
     { label: 'Company', href: '/' , 
         submenu : [
           {label: 'About Us', href: '/about-us'},
-          {label: 'Leadership', href: '/leadership'},
-          {label: 'News', href: '/news'},
-          {label: 'Events', href: '/events'},
+          // {label: 'Leadership', href: '/leadership'},
+          // {label: 'News', href: '/news'},
+          // {label: 'Events', href: '/events'},
           { label: 'Aftermarket', href: '/aftermarket' },
           {label: 'policies', href: '/policies'},
         ] 
@@ -43,7 +43,7 @@ const Navbar = () => {
     { label: 'Products & Solutions', href: '/Products&Solutions' },
     { label: 'Investors', href: '/investors' },
     { label: 'Careers', href: '/career' },
-    { label: 'Sustainability  ', href: '/sustainability' },
+    { label: 'Sustainability  ', href: '/Sustainability' },
     { label: 'Technology', href: '/technology' },
   ];
   
