@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Navigation } from 'swiper/modules';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
-import Button from "../Ui/button";
+
 
 const team = [
     {

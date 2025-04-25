@@ -20,7 +20,7 @@ const VEHICLE_TYPES = [
   },
   {
     id: 1,
-    title: "Snow Mobile",
+    title: "Commercial",
     image: "/images/home/vehicle-(2).png",
     alt: "Snow Mobile",
     background: "4W"
@@ -34,7 +34,7 @@ const VEHICLE_TYPES = [
   },
   {
     id: 3,
-    title: "ATV",
+    title: "Off Road",
     image: "/images/home/vehicle-(3).png",
     alt: "ATV",
     background: "ATV"
@@ -109,8 +109,8 @@ export default function Tab() {
       <div className="container mx-auto flex  flex-col md:flex-row items-center justify-between">
         <div className='w-full md:w-[35%] space-y-5'>
           <h5 >Our Solutions</h5 >
-          <h1>Driven by Precision, Built for Performance</h1>
-          <p> At the intersection of innovation and reliability, we engineer world-class solutions that redefine mobility across a diverse range of sectors. From urban transportation to off-road adventure, our products are meticulously crafted to deliver exceptional performance, unmatched durability, and superior user satisfaction.</p>
+          <h1>Complete Mobility Electronics. </h1>
+          <p> From ignition systems to advanced ECUs, from two-wheelers to EVs—INEL delivers future-ready electronics that power the world’s leading mobility brands. Explore our divisions built to meet tomorrow’s challenges.</p>
         </div>
 
         {/* Tab Navigation (slide selectors) */}

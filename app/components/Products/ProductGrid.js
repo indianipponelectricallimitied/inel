@@ -58,7 +58,7 @@ const ProductGrid = ({ filter, searchResults }) => {
             />
             <div className='flex items-end justify-between gap-1  w-full'>
               <h2 className="text-sm md:text-xl font-medium mt-2 md:w-1/2">{product.name}</h2>
-              <Link href={`/products/${product.id}`} className='bg-white rounded-[40px] px-2 py-1 md:px-6 md:py-2 border border-black   group-hover:border-transparent'>
+              <Link href={`/Product/${product.id}`} className='bg-white rounded-[40px] px-2 py-1 md:px-6 md:py-2 border border-black   group-hover:border-transparent'>
                 <GoArrowUpRight className='text-xs md:text-lg text-primary' />
               </Link>
             </div>

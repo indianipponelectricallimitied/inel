@@ -26,13 +26,13 @@ const videoCTA = () => {
 
   return (
     <>
-      <section className="bg-[url('/images/home/Innovation-Forward.jpeg')] bg-cover bg-center relative">
+      <section className="bg-[url('/images/home/inside-inel.jpg')] bg-cover bg-center relative">
         <div className="absolute top-0 left-0 right-0 bottom-0  inset-0 bg-black/40 h-full w-full"></div>
         <div className="container mx-auto flex flex-col md:flex-row text-white py-20  z-10 relative">
           <div className="w-full md:w-2/3">
-            <h1 className="pb-5">Behind the Scenes<br/>
-            Driving Innovation Forward</h1>
-            <p className="pb-5">Discover how INEL’s advanced technology, expertise, and passion are shaping the future of automotive excellence. From precision manufacturing to cutting-edge robotics, we are setting new standards in the next generation of automotive solutions</p>
+            <h1 className="pb-5">Inside INEL<br/>
+            Precision, People, Performance.</h1>
+            <p className="pb-5">Step into our world of advanced R&D labs, smart manufacturing lines, and the people who bring innovation to life. Every product reflects our culture of excellence, quality, and collaboration.</p>
           </div>
           <div className="w-full md:w-1/3 flex justify-center items-center">
             <button onClick={openModal} >
