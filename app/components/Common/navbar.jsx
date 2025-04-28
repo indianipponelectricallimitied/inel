@@ -43,7 +43,7 @@ const Navbar = () => {
     { label: 'Products & Solutions', href: '/Products&Solutions' },
     { label: 'Investors', href: '/investors' },
     { label: 'Careers', href: '/career' },
-    { label: 'Sustainability  ', href: '/Sustainability' },
+    { label: 'sustainable  ', href: '/sustainable' },
     { label: 'Technology', href: '/technology' },
   ];
   
@@ -52,7 +52,7 @@ const Navbar = () => {
       isHomePage ? 'navbar-home' : 'navbar-default'
     }`}>
      
-      <div className="hidden md:flex justify-between items-center gap-5">
+      <div className="hidden lg:flex justify-between items-center gap-5">
         <Link href='/'>
         { isHomePage ?
           <img src={logo} alt="logo" />
@@ -102,7 +102,7 @@ const Navbar = () => {
       </div>
 
      
-      <div className="md:hidden flex justify-between items-center">
+      <div className="lg:hidden flex justify-between items-center">
         <Link href='/'>
         { isHomePage ?
           <img src={logo} alt="logo" />
@@ -133,7 +133,7 @@ const Navbar = () => {
                 <div className="w-full">
                   <button 
                     onClick={() => toggleSubmenu(index)}
-                    className="flex items-center justify-between w-full py-2 hover:text-white/80"
+                    className="flex items-center justify-between w-full py-2 text-white"
                   >
                     {item.label}
                     <IoChevronDownOutline 

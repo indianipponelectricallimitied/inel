@@ -6,7 +6,7 @@ export default function HeroVideoSection(){
             <video src="./videos/hero-placeholder-vid.mp4" autoPlay muted loop className="w-full h-full object-cover" />
             <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-70 h-full w-full"></div>
             <div className="container mx-auto  flex flex-col items-center justify-center absolute top-0 left-0 right-0 bottom-0">
-                <h1 className="text-white text-center md:text-left text-[40px] md:text-[90px] font-normal">Driving The Future Mobility</h1>
+                <h1 className="text-white text-center  text-[40px] md:text-[90px] font-normal">Driving The Future Mobility</h1>
                 <div className="flex gap-4 pt-10">
                     <Button variant="blue" href="/contact">Explore Products</Button>
                     <Button variant="transparent" href="/about" className="text-white">Get in Touch</Button>

@@ -20,8 +20,8 @@ const support = [
 export default function ServiceSupport() {
     return (
         <>
-            <div className="w-full md:w-3/4 mx-auto pt-10">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="w-full lg:w-3/4 mx-auto pt-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {support.map((item, index) => (
                         <div key={index} className="relative h-[350px] rounded-[10px]  shadow-[0px_0px_15.5px_0px_#16095970] ">
                             <img src={item.image} alt={item.title} className="rounded-[10px] object-cover h-full w-full" />

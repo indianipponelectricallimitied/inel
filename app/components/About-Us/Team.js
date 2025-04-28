@@ -60,7 +60,7 @@ export default function Team(){
               spaceBetween: 10,
             },
             768: {
-              slidesPerView: 3,
+              slidesPerView: 2,
               spaceBetween: 20,
               centeredSlides: true,
             },
@@ -76,7 +76,7 @@ export default function Team(){
                     {team.map((item) => (
                         <SwiperSlide key={item.id} className="card-cut relative ">
                             <Image src={item.image} alt={item.name} width={500} height={300} 
-                            className="rounded-[30px] object-cover h-[450px]"
+                            className="rounded-[30px] object-cover w-full h-[450px]"
                             />
                             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-70% to-primary rounded-[30px] p-10 flex flex-col justify-end gap-1 pb-10">
                                 <h2 className="text-white text-2xl">{item.name}</h2>

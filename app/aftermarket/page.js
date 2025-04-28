@@ -66,12 +66,12 @@ export default function aftermarket(){
         />
 
 
-        <div className="container mx-auto flex flex-col md:flex-row gap-12  py-20">
-            <div className="md:w-2/5 space-y-8">
+        <div className="container mx-auto flex flex-col lg:flex-row gap-12  py-20">
+            <div className="lg:w-2/5 space-y-8">
                 <h1 >Precision Parts, Perfectly Tailored for Your Vehicle</h1>
                 <p >At INEL, we provide a meticulously curated selection of premium aftermarket parts to meet the highest standards of performance and reliability. From ignition systems to relays and regulators, our global offering ensures that you find the ideal components for your vehicle, no matter the make or model</p>
             </div>
-            <div className="md:w-3/5">
+            <div className="lg:w-3/5">
                 <SearchAftermarket />
             </div>
         </div>
@@ -104,15 +104,15 @@ export default function aftermarket(){
             <ServiceSupport />
         </section>
 
-        <section className="container mx-auto flex flex-col md:flex-row gap-20  py-20">
-            <div className="md:w-2/5">
+        <section className="container mx-auto flex flex-col lg:flex-row gap-20  py-20">
+            <div className="lg:w-2/5">
                 <h5>Customer Testimonials</h5>
                 <h1>What Our Customers Say</h1>
                 <p>See how our aftermarket parts have helped customers achieve 
                     long-lasting performance. Read real reviews and success stories 
                     from professionals who rely on our products.</p>
             </div>
-            <div className="mx-auto w-9/12 md:w-[45%] pb-20">
+            <div className="mx-auto w-9/12 lg:w-[45%] pb-20">
                 <BackflipSlider testimonials={testimonials} />
             </div>
         </section>
@@ -132,14 +132,14 @@ export default function aftermarket(){
             </div>
         </section>
 
-        <section className="container mx-auto  py-20 flex flex-col md:flex-row gap-20">
-            <div className="w-full md:w-[38%] space-y-5">
+        <section className="container mx-auto  py-20 flex flex-col lg:flex-row gap-20">
+            <div className="w-full lg:w-[38%] space-y-5">
                 <h5>Get in Touch</h5>
                 <h1>Got Questions? We’re Here to Help</h1>
                 <p>If you have any inquiries regarding our aftermarket products, don’t hesitate to get in touch. Our team is ready to assist and provide the solutions you need.</p>
                 <p>Complete the form, and we'll ensure the right support is provided to meet your requirements.</p>
             </div>
-            <div className="w-full md:w-7/12">
+            <div className="w-full lg:w-7/12">
                 <AftermarketForm />
             </div>
         </section>  

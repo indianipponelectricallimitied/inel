@@ -153,7 +153,7 @@ export default function Career() {
 
                     <PlayVideo videolink ="/videos/hero-placeholder-vid.mp4" />
 
-                    <div className='grid grid-cols-1 md:grid-cols-4 gap-10 pt-20'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pt-20'>
                         {perks.map((item, index)=>(
                             <div className='bg-[#fff] p-5 rounded-[10px] space-y-5' key={index}>
                                 <Image src={item.image} alt={item.title} width={200} height={200} 
@@ -178,7 +178,7 @@ export default function Career() {
                     <h1>Drive Your Career Forward with INEL</h1>
                     <p className="md:w-4/5 mx-auto">At India Nippon Electricals, we believe in empowering talent and fostering growth. Whether you’re an experienced professional, a recent graduate, or seeking internship opportunities, we offer a dynamic environment where innovation thrives, and careers take flight. Fill out the form below, and take the first step toward joining a team that’s driving progress and shaping the future of automotive technology.</p>
 
-                    <div className="md:w-4/6 mx-auto pt-10">
+                    <div className="lg:w-4/6 mx-auto pt-10">
                         <CareeerForm />
                     </div>
                 </div>
@@ -186,13 +186,13 @@ export default function Career() {
 
             <div className="grid-with-gradients">
             <div className="gradient-sphere  w-[600px] h-[600px] top-[100px] right-[350px]"></div>
-                <div className="container mx-auto py-20 md:pt-40 flex flex-col md:flex-row gap-20">
-                    <div className="md:w-2/5 space-y-5 ">
+                <div className="container mx-auto py-20 md:pt-40 flex flex-col lg:flex-row gap-20">
+                    <div className="lg:w-2/5 space-y-5 ">
                             <h5>Career Testimonials</h5>
                             <h1>Hear from Our Team</h1>
                             <p>At India Nippon Electricals, our people are at the heart of everything we do. Don’t just take our word for it — hear directly from our employees as they share their experiences, growth stories, and what makes INEL a great place to build a career. Their journeys reflect the spirit of innovation, collaboration, and excellence that drives us forward.</p>
                     </div>
-                    <div className="w-9/12 md:w-[45%] mx-auto">
+                    <div className="w-9/12 lg:w-[45%] mx-auto">
                             <BackflipSlider testimonials={testimonials} />
                     </div>
                 </div>

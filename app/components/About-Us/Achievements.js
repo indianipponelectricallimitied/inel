@@ -27,8 +27,8 @@ const achievements = [
 export default function Achievements() {
     return (
         <section>
-            <div className='container py-20 mx-auto relative  flex justify-between flex-col md:flex-row gap-20'>
-                <div className='w-full md:w-1/2 space-y-8'>
+            <div className='container py-20 mx-auto relative  flex justify-between flex-col lg:flex-row gap-20'>
+                <div className='w-full lg:w-1/2 space-y-8'>
                     <h5>Achievements & Awards</h5>
                     <h1>Driving Success Through Excellence</h1>
                     <p>A testament to our relentless pursuit of excellence, our journey is marked by milestones that celebrate innovation, quality, and customer trust. Each recognition reflects our unwavering commitment to delivering exceptional products and services while setting new benchmarks in the industry.</p>
@@ -38,7 +38,7 @@ export default function Achievements() {
                         View All Solutions
                     </Button>
                 </div>
-                <div className='w-full md:w-2/6'>
+                <div className='w-full lg:w-2/6'>
                     <Swiper 
                         pagination={{
                             clickable: true,
@@ -60,7 +60,7 @@ export default function Achievements() {
                                     alt={achievement.title} 
                                     width={500} 
                                     height={300} 
-                                    className="bg-[#F2F2F2] rounded-[20px] min-h-[280px] object-cover border-[10px] border-[#E0E0E0]"
+                                    className="bg-[#F2F2F2] rounded-[20px] mx-auto min-h-[280px] object-cover border-[10px] border-[#E0E0E0]"
                                 />
                                 <h3 className="text-xl w-3/4  mx-auto text-center  pt-5 pb-10">{achievement.title}</h3>
                             </SwiperSlide>

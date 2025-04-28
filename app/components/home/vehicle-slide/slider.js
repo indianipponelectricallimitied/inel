@@ -106,15 +106,15 @@ export default function Tab() {
     <>
     <section className="hero-swiper-section py-20 relative">
       {/* Top Content / Hero */}
-      <div className="container mx-auto flex  flex-col md:flex-row items-center justify-between">
-        <div className='w-full md:w-[35%] space-y-5'>
+      <div className="container mx-auto flex  flex-col lg:flex-row items-center justify-between">
+        <div className='w-full lg:w-[35%] space-y-5'>
           <h5 >Our Solutions</h5 >
           <h1>Complete Mobility Electronics. </h1>
           <p> From ignition systems to advanced ECUs, from two-wheelers to EVs—INEL delivers future-ready electronics that power the world’s leading mobility brands. Explore our divisions built to meet tomorrow’s challenges.</p>
         </div>
 
         {/* Tab Navigation (slide selectors) */}
-      <div className="hero-tabs flex gap-1 md:gap-5 w-full md:w-2/4 mt-10 md:mt-0">
+      <div className="hero-tabs flex gap-1 md:gap-5  w-full lg:w-2/4 mt-10 md:mt-0">
         {VEHICLE_TYPES.map((vehicle) => (
           <button 
             key={vehicle.id}

@@ -126,7 +126,7 @@ export default function TechnologyPage() {
                         ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`
                          } id={innovation.title}>
                             <Image src={innovation.image} alt={innovation.title} width={530} height={530}
-                                className="w-full md:w-1/2"
+                                className="w-full md:w-1/2 object-cover"
                             />
                             <div className="w-full md:w-1/2">
                                     <h1 className="pb-5">{innovation.title}</h1>

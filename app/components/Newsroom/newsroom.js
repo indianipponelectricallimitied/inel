@@ -9,11 +9,11 @@ export default function Newsroom(){
                 <h1>Innovation in Motion</h1>
                 <p className="py-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
 
-                <div className="flex gap-12 flex-col md:flex-row">
-                    <div className="w-full md:w-[55%]">
+                <div className="flex gap-12 flex-col lg:flex-row">
+                    <div className="w-full lg:w-[55%]">
                         <BlogSlide />
                     </div>
-                    <div className="w-full md:w-[45%]">
+                    <div className="w-full lg:w-[45%]">
                         <FeaturedArticles />
                     </div>
                 </div>

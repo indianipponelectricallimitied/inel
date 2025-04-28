@@ -1,15 +1,15 @@
 'use client';
 import { useState, useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
+import ApiService from '@/app/services/api';
 
 export default function SearchBar({ onSearchResults }) {
     const [searchTerm, setSearchTerm] = useState("");
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/api/products')
-            .then(response => response.json())
-            .then(data => setProducts(data.products))
+        ApiService.getProducts()
+            .then(products => setProducts(products))
             .catch(error => console.error('Error loading products:', error));
     }, []);
 
@@ -44,30 +44,8 @@ export default function SearchBar({ onSearchResults }) {
             return;
         }
 
-        const searchResults = products.filter(product => {
-            // Search in multiple fields
-            const searchFields = [
-                product.name,
-                product.type,
-                product.description,
-                ...(product.features || []),
-                ...(product.vehicleCategories || [])
-            ];
-
-            // Check each field for similarity
-            return searchFields.some(field => 
-                field && calculateSimilarity(searchTerm, field)
-            );
-        });
-
-        // Sort results by relevance
-        const sortedResults = searchResults.sort((a, b) => {
-            const aRelevance = calculateSimilarity(searchTerm, a.name) ? 2 : 1;      
-            const bRelevance = calculateSimilarity(searchTerm, b.name) ? 2 : 1;      
-            return bRelevance - aRelevance;
-        });
-
-        onSearchResults(sortedResults);
+        const searchResults = ApiService.searchProducts(products, searchTerm);
+        onSearchResults(searchResults);
     };
 
     return(

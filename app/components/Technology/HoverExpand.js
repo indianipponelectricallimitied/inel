@@ -38,20 +38,20 @@ export default function HoverExpand() {
     <section className="py-20 diamond-gradient  clip-path relative btmleft">
         <div className="container mx-auto ">
             <h1 className="text-center pb-5 text-white">Step by Step to Innovation at INEL</h1>
-            <div className=" flex flex-col md:flex-row gap-5 md:gap-0 text-white mt-10 ">
+            <div className=" flex flex-col lg:flex-row gap-5 lg:gap-0 text-white mt-10 ">
                 {programs.map((program, programIndex) => (
-                    <div key={programIndex} className="group md:hover:w-[400%] w-full h-[400px] relative transition-all flex items-end justify-center duration-500 bg-cover bg-center rounded-[20px]  md:m-3 overflow-hidden    " 
+                    <div key={programIndex} className="group lg:hover:w-[400%] w-full h-[400px] relative transition-all flex items-end justify-center duration-500 bg-cover bg-center rounded-[20px]  lg:m-3 overflow-hidden    " 
                         style={{ backgroundImage: `url(${program.image})` }}>
                         <div className="absolute top-0 left-0 w-full h-full  bg-gradient-to-b from-transparent to-black/90 rounded-[20px]">  </div>
                         <ul className=" w-full h-full  p-10 text-white
-                            md:hidden flex md:group-hover:flex transition-all duration-300  relative
+                            lg:hidden flex lg:group-hover:flex transition-all duration-300  relative
                             flex-col items-start justify-end gap-5">
                             
                             <p className="fade-up delay-1000">{program.text}</p>
                             <h2 className="fade-up ">{program.title}</h2>
                         </ul>
                         
-                        <p className="text-2xl font-medium hidden md:block group-hover:hidden w-full absolute top-[250px]
+                        <p className="text-2xl font-medium hidden lg:block group-hover:hidden w-full absolute top-[250px]
                         transition-all duration-100
                         "
                         style={{ transform: 'rotate(-90deg)' }}

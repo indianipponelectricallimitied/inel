@@ -1,109 +1,91 @@
 {
-    "vehicleCategories": [
-      {"name": "2 Wheeler", "img": "/images/Products/2-wheller.png", "shortName": "2W"},
-      {"name": "3 Wheeler", "img": "/images/Products/3wheeler.png", "shortName": "3W"},
-      {"name": "ATV", "img": "/images/Products/atv.png", "shortName": "ATV"},
-      {"name": "Snow Mobile", "img": "/images/Products/snow-mobile.png", "shortName": "SNM"},
-      {"name": "Portable Engine", "img": "/images/Products/portable-engine.png", "shortName": "PE"}
-    ],
-    "productTypes": [
-      {"name": "Sensor", "img": "/images/types/sensor.png"},
-      {"name": "Regulator", "img": "/images/types/regulator.png"},
-      {"name": "Controller", "img": "/images/types/controller.png"},
-      {"name": "Display", "img": "/images/types/display.png"},
-      {"name": "Converter", "img": "/images/types/converter.png"},
-      {"name": "Battery Management", "img": "/images/types/battery.png"}
-    ],
-    "products": [
+  "products": [
       {
-        "id": "MC001",
-        "name": "BLDC Motor Controller",
-        "type": "Controller",
-        "vehicleCategories": ["2 Wheeler", "3 Wheeler"],
-        "image": "/images/products/bldc.png",
-        "specifications": {
-          "voltage": "24V-48V",
-          "current": "35A",
-          "power": "1500W"
-        },
-        "features": [
-          "Over voltage protection",
-          "Short circuit protection",
-          "Temperature protection"
-        ],
-        "description": "High-performance BLDC motor controller suitable for light electric vehicles"
+          "id": "1",
+          "name": "BLDC Motor Controller",
+          "type": "Regulator",
+          "vehicleCategories": [
+              "2 Wheeler",
+              "3 Wheeler",
+              "ATV",
+              "Snow Mobile",
+              "Portable Engine"
+          ],
+          "image": "http://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/media/static/products/bldc.png",
+          "specifications": {
+              "voltage": "24V-48V",
+              "current": "35A",
+              "power": "1500W"
+          },
+          "features": [
+              "Over voltage protection",
+              "Short circuit protection",
+              "Temperature protection"
+          ],
+          "description": "High-performance BLDC motor controller suitable for light electric vehicles"
       },
       {
-        "id": "MC002",
-        "name": "Advanced BLDC Controller",
-        "type": "Controller",
-        "vehicleCategories": ["ATV", "Snow Mobile"],
-        "image": "/images/products/bldc.png",
-        "specifications": {
-          "voltage": "48V-72V",
-          "current": "50A",
-          "power": "3000W"
-        },
-        "features": [
-          "Regenerative braking",
-          "LCD display compatible",
-          "Programmable parameters"
-        ],
-        "description": "Advanced controller with programmable features for heavy-duty applications"
+          "id": "2",
+          "name": "Advanced BLDC Controller",
+          "type": "Controller",
+          "vehicleCategories": [
+              "3 Wheeler",
+              "ATV"
+          ],
+          "image": "http://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/media/static/products/bldc_ZXu6a5F.png",
+          "specifications": {
+              "voltage": "48V-72V",
+              "current": "50A",
+              "power": "3000W"
+          },
+          "features": [
+              "Regenerative braking",
+              "LCD display compatible",
+              "Programmable parameters"
+          ],
+          "description": "Advanced controller with programmable features for heavy-duty applications"
       },
       {
-        "id": "BMS001",
-        "name": "Smart BMS",
-        "type": "Battery Management",
-        "vehicleCategories": ["2 Wheeler", "3 Wheeler", "Portable Engine"],
-        "image": "/images/products/bldc.png",
-        "specifications": {
-          "cells": "13S-15S",
-          "current": "100A",
-          "communication": "CAN/UART"
-        },
-        "features": [
-          "Cell balancing",
-          "Temperature monitoring",
-          "SOC estimation"
-        ],
-        "description": "Intelligent battery management system for lithium battery packs"
+          "id": "BMS001",
+          "name": "Smart BMS",
+          "type": "Converter",
+          "vehicleCategories": [
+              "2 Wheeler",
+              "ATV"
+          ],
+          "image": "http://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/media/static/products/bldc_saSs81x.png",
+          "specifications": {
+              "cells": "13S-15S",
+              "current": "100A",
+              "communication": "CAN/UART"
+          },
+          "features": [
+              "Cell balancing",
+              "Temperature monitoring",
+              "SOC estimation"
+          ],
+          "description": "Intelligent battery management system for lithium battery packs"
       },
       {
-        "id": "DISP001",
-        "name": "LCD Display Panel",
-        "type": "Display",
-        "vehicleCategories": ["2 Wheeler", "3 Wheeler", "ATV"],
-        "image": "/images/products/bldc.png",
-        "specifications": {
-          "screen": "3.2 inch",
-          "voltage": "12V-48V",
-          "waterproof": "IP65"
-        },
-        "features": [
-          "Speed indication",
-          "Battery level display",
-          "Error code display"
-        ],
-        "description": "Waterproof LCD display panel with multiple parameter monitoring"
-      },
-      {
-        "id": "CONV001",
-        "name": "DC-DC Converter",
-        "type": "Converter",
-        "vehicleCategories": ["All"],
-        "image": "/images/products/bldc.png",
-        "specifications": {
-          "input": "24V-72V",
-          "output": "12V",
-          "power": "240W"
-        },
-        "features": [
-          "Short circuit protection",
-          "Over temperature protection",
-          "Wide input range"
-        ],
-        "description": "Efficient DC-DC converter for vehicle accessories"
+          "id": "DISP001",
+          "name": "LCD Display Panel",
+          "type": "Display",
+          "vehicleCategories": [
+              "ATV",
+              "Portable Engine"
+          ],
+          "image": "http://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/media/static/products/bldc_euv8bj3.png",
+          "specifications": {
+              "screen": "3.2 inch",
+              "voltage": "12V-48V",
+              "waterproof": "IP65"
+          },
+          "features": [
+              "Speed indication",
+              "Battery level display",
+              "Error code display"
+          ],
+          "description": "Waterproof LCD display panel with multiple parameter monitoring"
       }
-    ]
-  }
+  ]
+}

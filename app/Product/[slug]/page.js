@@ -2,11 +2,17 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
+import Button from '@/app/components/Ui/button';
+import { GoArrowDown } from "react-icons/go";
 
 
+import ApiService from '@/app/services/api';
 import FeaturesSlider from './features-slider';
 import GridGenerator from './grid-generator';
 import VehicleCategories from './vehicleCategories';
+import RelatedProducts from './related-products';
+import Newsletter from "../../components/Common/newsletter";
+
 
 export default function ProductPage() {
     const [product, setProduct] = useState(null);
@@ -16,9 +22,9 @@ export default function ProductPage() {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await fetch(`https://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/api/products/${params.slug}`);
-                const data = await response.json();
-                setProduct(data);
+                const products = await ApiService.getProducts();
+                const product = products.find(p => p.id === params.slug);
+                setProduct(product);
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching product:', error);
@@ -45,51 +51,66 @@ export default function ProductPage() {
         );
     }
 
-
-
-  
-
-
-
     return (
         <>
             <div className="grid-with-gradients">
-            <div className="gradient-sphere w-[800px] h-[800px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" ></div>
-            <div className="container mx-auto px-5 py-20 ">
-                    <h1 className='text-center text-[70px]'>{product.name}</h1>
+                <div className="gradient-sphere w-[800px] h-[800px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" ></div>
+                <div className="container mx-auto px-5 py-20 ">
+                    <h1 className='text-center lg:text-[70px]'>{product.name}</h1>
                     <Image src={product.image} alt={product.name} width={500} height={500}
-                    className='mx-auto py-20 max-h-[500px] object-contain'/>
+                        className='mx-auto py-20 max-h-[500px] object-contain'/>
                     <p className='text-center w-[75%] mx-auto'>{product.description}</p>
-            </div>
+                </div>
             </div>
 
-
-            <div className='diamond-gradient'>
+            <section className='diamond-gradient'>
                 <div className='container mx-auto px-5 py-20'>
                     <h1 className="text-white text-center">Features & Benefits</h1>
                     <FeaturesSlider features={product.features} />  
                 </div>
-            </div>
+            </section>
 
-            
             <div className="grid-with-gradients">
-            <div className="gradient-sphere w-[800px] h-[800px] -top-[400px] -right-[400px]" ></div>
+                <div className="gradient-sphere w-[800px] h-[800px] -top-[400px] -right-[400px]" ></div>
                 <div className='container mx-auto px-5 py-20'>
                     <h1 className="text-center pb-16">Specifications</h1>
                     <GridGenerator grid={product.specifications} image={product.image} />
                 </div>
             </div>
 
-            <div className='diamond-gradient'>  
+            <section className='diamond-gradient'>  
                 <div className='container mx-auto px-5 py-20'>
                     <h1 className='text-white text-center pb-16'>Performance Graph</h1>
                     <Image src={product.performance_graph || "/images/Products/graph.png"} alt={product.name} width={15000} height={15000}
-                    className='mx-auto max-h-[500px] object-contain'/>
+                        className='mx-auto max-h-[500px] object-contain'/>
                 </div>
-            </div>
+            </section>
 
             <VehicleCategories vehicleCategories={product.vehicleCategories} />
-          
+
+            <section className='diamond-gradient'>
+                <div className='container mx-auto px-5 py-20'>
+                    <h1 className='text-white w-full md:w-4/5'>Discover high-performance solutions designed 
+                    for efficiency and reliability.</h1>
+                    
+                    <div className='flex items-center gap-2 mt-10'>
+                        <Button href="/contact-us" 
+                            variant="blue" 
+                            className="w-fit !bg-[#FCFCFC47] border-0">
+                            Get Quote
+                        </Button>
+                        <a href={product.dataSheet|| "#"} target='_blank' className='flex items-center gap-1 rounded-[10px] border-0 text-white border-primary py-2 px-5 w-fit bg-[#FCFCFC47]'>
+                            Download DataSheet
+                            <GoArrowDown className='text-[20px]' />
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <RelatedProducts currentProductId={product.id} type={product.type} />
+
+
+            <Newsletter />
         </>
     );
 }

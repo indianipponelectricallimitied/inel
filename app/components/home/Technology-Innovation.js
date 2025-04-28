@@ -5,7 +5,7 @@ export default function TechnologyInnovation() {
   return (
     <section className="bg-[#F1F1F1EE]">
       <div className="container mx-auto  py-20">
-        <div className="flex flex-col md:flex-row md:gap-[7rem] gap-10">
+        <div className="flex flex-col md:flex-row lg:gap-[7rem] gap-10">
           <div className="w-full md:w-1/2">
           <h5>Technology & Innovation</h5>
             <h1 className="pb-10">Technology That Leads. Innovation That Scales.</h1>

@@ -55,7 +55,7 @@ export default function PlayVideo({videolink}) {
 
     return (
         <div 
-            className="relative  md:h-[450px] md:w-2/3 mx-auto" 
+            className="relative  md:h-[450px] lg:w-2/3 mx-auto" 
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setShowControls(true)}
         >

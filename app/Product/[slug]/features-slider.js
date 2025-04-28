@@ -38,9 +38,9 @@ export default function FeaturesSlider({features}){
             className="team md:!p-5"
         >
                     {features.map((feature, index) => (
-                        <SwiperSlide key={index} className="product-feature-slide active:translate-y-[-10px] my-10 mt-20">
+                        <SwiperSlide key={index} className="product-feature-slide active:translate-y-[-10px] my-10 mt-20 !h-[300px]">
                             <Image src={feature.image || "/placeholder.jpeg"} alt={feature.title || feature} width={500} height={300} 
-                            className="rounded-[10px] object-cover h-[300px] w-full"
+                            className="rounded-[10px] object-cover h-full w-full"
                             />
                             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-70% to-black rounded-[10px] p-5 flex flex-col justify-end gap-1 ">
                                 <p className="text-white">{feature}</p>
@@ -51,10 +51,10 @@ export default function FeaturesSlider({features}){
                     
                     
 
-                        <button className="team-swiper-prev absolute left-0 z-10 bottom-1/2 bg-primary rounded-[10px] p-3">
+                        <button className="team-swiper-prev absolute left-0 z-10 bottom-1/2 translate-y-1/2 bg-primary rounded-[10px] p-3">
                             <HiOutlineChevronLeft className="text-xl  text-white " />
                         </button>
-                        <button className="team-swiper-next absolute right-0 bottom-1/2 z-10 bg-primary rounded-[10px] p-3  active: ">
+                        <button className="team-swiper-next absolute right-0 bottom-1/2 translate-y-1/2  z-10 bg-primary rounded-[10px] p-3 ">
                             <HiOutlineChevronRight className="text-xl text-white" />
                         </button>
                 </Swiper>

@@ -44,56 +44,61 @@ export default function CareeerForm() {
             Object.keys(formData).forEach(key => {
                 if (key === 'resume' && formData[key]) {
                     formDataToSend.append(key, formData[key]);
+                } else if (key === 'agreed_to_terms') {
+                    formDataToSend.append(key, formData[key].toString());
                 } else if (formData[key] !== '') {
                     formDataToSend.append(key, formData[key]);
                 }
             });
 
+            // Validate required fields
+            const requiredFields = ['first_name', 'last_name', 'email', 'phone_number', 'application_type', 'role_applied_for'];
+            const missingFields = requiredFields.filter(field => !formData[field]);
+            
+            if (missingFields.length > 0) {
+                throw new Error(`Please fill in all required fields: ${missingFields.join(', ')}`);
+            }
+
+            if (!formData.agreed_to_terms) {
+                throw new Error('Please agree to the Terms and Conditions');
+            }
+
             const response = await fetch("https://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/api/career", {
                 method: "POST",
                 body: formDataToSend,
-                // Remove Content-Type header to let browser set it with boundary for FormData
             });
 
-            if (response.ok) {
-                setSubmitStatus({
-                    success: true,
-                    message: "Your career application has been submitted successfully!"
-                });
-                setFormData({
-                    first_name: "",
-                    last_name: "",
-                    email: "",
-                    phone_number: "",
-                    application_type: "",
-                    role_applied_for: "",
-                    current_location: "",
-                    resume: "",
-                    message: "",
-                    agreed_to_terms: false,
-                    company_name: "",
-                    country: "",
-                });
-            } else {
-                let errorMessage = "Failed to submit the form. Please try again.";
-                try {
-                    const errorData = await response.json();
-                    errorMessage = errorData.message || errorMessage;
-                } catch (e) {
-                    // If we can't parse the error response, use default message
-                    console.error("Error parsing error response:", e);
-                }
-                
-                setSubmitStatus({
-                    success: false,
-                    message: errorMessage
-                });
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Failed to submit the form');
             }
+
+            setSubmitStatus({
+                success: true,
+                message: "Your career application has been submitted successfully!"
+            });
+
+            // Reset form
+            setFormData({
+                first_name: "",
+                last_name: "",
+                email: "",
+                phone_number: "",
+                application_type: "",
+                role_applied_for: "",
+                current_location: "",
+                resume: "",
+                message: "",
+                agreed_to_terms: false,
+                company_name: "",
+                country: "",
+            });
+
         } catch (error) {
             console.error("Error submitting form:", error);
             setSubmitStatus({
                 success: false,
-                message: "An error occurred. Please try again later."
+                message: error.message || "An error occurred. Please try again later."
             });
         } finally {
             setIsSubmitting(false);
@@ -250,7 +255,7 @@ export default function CareeerForm() {
                             <span className="text-sm  bg-primary flex w-fit gap-2 items-center text-white p-2 px-4 rounded-md">Attach your Resume
                                 <FiUpload className="text-white text-lg"/>
                             </span>
-                            <p className="text-xs text-gray-500  absolute top-16 md:top-1/2 -translate-y-1/2 right-2">Upload(PDF/DOC, Max 5MB)</p>
+                            <p className="text-xs text-gray-500  absolute top-16 lg:top-1/2 -translate-y-1/2 right-2">Upload(PDF/DOC, Max 5MB)</p>
                         </label>
 
                         <input

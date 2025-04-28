@@ -17,12 +17,12 @@ export default function VissionMission(){
         <section className="bg-[url('/images/about/vision-mission.jpeg')] bg-cover bg-center bg-no-repeat clip-path btmright">
             <div className="container mx-auto py-20 text-white ">
                 <div className="flex flex-col gap-10">
-                    <div className="w-full md:w-2/5 bg-black/40 backdrop-blur-sm p-8 border-white border-2 rounded-[20px] ">
+                    <div className="w-full lg:w-2/5 bg-black/40 backdrop-blur-sm p-8 border-white border-2 rounded-[20px] ">
                         <Image src="/images/about/vision.png" alt="vision" width={500} height={500}  className="h-32 w-32 object-contain"/>
                         <h1 className="pb-4">{visionMission[0].title}</h1>
                         <p>{visionMission[0].description}</p>
                     </div>
-                    <div className="w-full md:w-2/5 bg-gradient-to-t from-[#246bf9ce] to-[#578fffa6] backdrop-blur-sm p-8 border-white border-2 rounded-[20px] ">
+                    <div className="w-full lg:w-2/5 bg-gradient-to-t from-[#246bf9ce] to-[#578fffa6] backdrop-blur-sm p-8 border-white border-2 rounded-[20px] ">
                         <Image src="/images/about/mission.png" alt="mission" width={500} height={500} className="h-32 w-32 object-contain" />
                         <h1 className="pb-4">{visionMission[1].title}</h1>
                         <p>{visionMission[1].description}</p>
