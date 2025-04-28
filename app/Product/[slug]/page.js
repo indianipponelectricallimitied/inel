@@ -13,6 +13,7 @@ import VehicleCategories from './vehicleCategories';
 import RelatedProducts from './related-products';
 import Newsletter from "../../components/Common/newsletter";
 
+const BASE_URL = "https://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net";
 
 export default function ProductPage() {
     const [product, setProduct] = useState(null);
@@ -51,12 +52,19 @@ export default function ProductPage() {
         );
     }
 
+    const graphUrl = product.graph
+        ? (product.graph.startsWith('http') ? product.graph : `${BASE_URL}${product.graph}`)
+        : "/images/Products/graph.png";
+    const pdfUrl = product.pdf
+        ? (product.pdf.startsWith('http') ? product.pdf : `${BASE_URL}${product.pdf}`)
+        : "#";
+
     return (
         <>
             <div className="grid-with-gradients">
                 <div className="gradient-sphere w-[800px] h-[800px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" ></div>
                 <div className="container mx-auto px-5 py-20 ">
-                    <h1 className='text-center lg:text-[70px]'>{product.name}</h1>
+                    <h1 className='text-center lg:text-[62px]'>{product.name}</h1>
                     <Image src={product.image} alt={product.name} width={500} height={500}
                         className='mx-auto py-20 max-h-[500px] object-contain'/>
                     <p className='text-center w-[75%] mx-auto'>{product.description}</p>
@@ -72,7 +80,8 @@ export default function ProductPage() {
 
             <div className="grid-with-gradients">
                 <div className="gradient-sphere w-[800px] h-[800px] -top-[400px] -right-[400px]" ></div>
-                <div className='container mx-auto px-5 py-20'>
+                <div className="gradient-sphere w-[800px] h-[800px] -bottom-[400px] -left-[400px]" ></div>
+                <div className='container mx-auto px-5 py-20 pb-32'>
                     <h1 className="text-center pb-16">Specifications</h1>
                     <GridGenerator grid={product.specifications} image={product.image} />
                 </div>
@@ -81,7 +90,7 @@ export default function ProductPage() {
             <section className='diamond-gradient'>  
                 <div className='container mx-auto px-5 py-20'>
                     <h1 className='text-white text-center pb-16'>Performance Graph</h1>
-                    <Image src={product.performance_graph || "/images/Products/graph.png"} alt={product.name} width={15000} height={15000}
+                    <Image src={graphUrl} alt={product.name} width={15000} height={15000}
                         className='mx-auto max-h-[500px] object-contain'/>
                 </div>
             </section>
@@ -99,7 +108,11 @@ export default function ProductPage() {
                             className="w-fit !bg-[#FCFCFC47] border-0">
                             Get Quote
                         </Button>
-                        <a href={product.dataSheet|| "#"} target='_blank' className='flex items-center gap-1 rounded-[10px] border-0 text-white border-primary py-2 px-5 w-fit bg-[#FCFCFC47]'>
+                        <a 
+                            href={pdfUrl} 
+                            target='_blank' 
+                            className='flex items-center gap-1 rounded-[10px] border-0 text-white border-primary py-2 px-5 w-fit bg-[#FCFCFC47]'
+                        >
                             Download DataSheet
                             <GoArrowDown className='text-[20px]' />
                         </a>

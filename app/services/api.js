@@ -1,5 +1,5 @@
 const API_BASE_URL = 'https://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/api';
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes in milliseconds
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes 
 
 const isClient = typeof window !== 'undefined';
 
