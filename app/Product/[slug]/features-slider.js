@@ -9,7 +9,7 @@ export default function FeaturesSlider({features}){
     // Convert features object to array of entries
     const featuresArray = Object.entries(features).map(([text, image]) => ({
         text,
-        image: `http://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net${image}`
+        image,
     }));
 
     return(
