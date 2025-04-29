@@ -171,7 +171,7 @@ const Navbar = () => {
             </div>
           ))}
           <div className="pt-4">
-            <Button variant="blue" href="/contact"  className="w-full">
+            <Button variant="blue" href="/contact-us"  className="w-full">
               Enquire Now
             </Button>
           </div>
