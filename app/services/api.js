@@ -76,6 +76,20 @@ class ApiService {
         }
     }
 
+    static async getPolicies() {
+        try {
+            const response = await fetch(`${API_BASE_URL}/policies`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch policies');
+            }
+            const data = await response.json();
+            return data.policies;
+        } catch (error) {
+            console.error('Error fetching policies:', error);
+            throw error;
+        }
+    }
+
     static getFromCache(key) {
         if (!isClient) return null;
         
