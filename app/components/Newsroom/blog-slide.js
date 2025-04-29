@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import Button from "../Ui/button";
 import { HiOutlineChevronRight, HiOutlineChevronLeft } from "react-icons/hi";
+import ApiService from "@/app/services/api";
 
 export default function BlogSlide() {
     const [blogData, setBlogData] = useState([]);
@@ -16,29 +17,8 @@ export default function BlogSlide() {
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                const response = await fetch('https://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/api/posts');
-                
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch blogs: ${response.status}`);
-                }
-                
-                const data = await response.json();
-                // Ensure we're working with an array
-                if (Array.isArray(data)) {
-                    setBlogData(data);
-                } else if (data && typeof data === 'object') {
-                    // If the API returns an object with results array (common pattern)
-                    if (Array.isArray(data.results)) {
-                        setBlogData(data.results);
-                    } else {
-                        // If data is a single object, wrap it in an array
-                        setBlogData([data]);
-                    }
-                } else {
-                    // Fallback to empty array if data format is unexpected
-                    setBlogData([]);
-                    console.error("Unexpected data format:", data);
-                }
+                const data = await ApiService.getPosts();
+                setBlogData(data);
             } catch (err) {
                 console.error("Error fetching blog data:", err);
                 setError(err.message);
@@ -145,7 +125,7 @@ export default function BlogSlide() {
                             <p className="text-sm line-clamp-3">{blog.intro}</p>
                             <Button 
                                 variant="transparent" 
-                                href={`/blog/${blog.slug || blog.id}`} 
+                                href={`/newsroom/${blog.slug || blog.id}`} 
                                 className="ms-auto -mb-3 border-0 text-primary z-10"
                             >
                                 Read More
@@ -162,7 +142,7 @@ export default function BlogSlide() {
             <button className="swiper-next absolute right-0 bottom-0 z-10 bg-primary rounded-[10px] p-3">
                 <HiOutlineChevronRight className="text-xl text-white" />
             </button>
-            <Button variant="blue" href="/blogs" className="">View All Posts</Button>
+            <Button variant="blue" href="/newsroom" className="">View All Posts</Button>
             <style jsx global>{`
                 .swiper-slide-active .wrap {
                     background-color: var(--primary);

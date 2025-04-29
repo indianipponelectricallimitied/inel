@@ -90,6 +90,89 @@ class ApiService {
         }
     }
 
+    static async getPosts() {
+        const cacheKey = 'posts_cache';
+        const cachedData = this.getFromCache(cacheKey);
+
+        if (cachedData) {
+            return cachedData;
+        }
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/posts`);
+            if (!response.ok) throw new Error(`Failed to fetch posts: ${response.status}`);
+            
+            const data = await response.json();
+            
+            // Process the response based on data structure
+            let posts = [];
+            if (Array.isArray(data)) {
+                posts = data;
+            } else if (data && typeof data === 'object') {
+                // If the API returns an object with results array (common pattern)
+                if (Array.isArray(data.results)) {
+                    posts = data.results;
+                } else {
+                    // If data is a single object, wrap it in an array
+                    posts = [data];
+                }
+            }
+            
+            if (isClient) {
+                this.setCache(cacheKey, posts);
+            }
+            
+            return posts;
+        } catch (error) {
+            console.error('Error fetching posts:', error);
+            throw error;
+        }
+    }
+
+    static async getPostBySlug(slug) {
+        try {
+            // First try to get from all posts (for faster response if already cached)
+            const allPosts = await this.getPosts();
+            const foundPost = allPosts.find(post => post.slug === slug);
+            if (foundPost) return foundPost;
+            
+            // If not found, make a direct API call
+            const response = await fetch(`${API_BASE_URL}/posts?slug=${encodeURIComponent(slug)}`);
+            
+            if (!response.ok) {
+                throw new Error(`Failed to fetch post: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            
+            // Handle different API response formats
+            if (Array.isArray(data) && data.length > 0) {
+                return data[0];
+            } else if (data && typeof data === 'object') {
+                if (Array.isArray(data.results) && data.results.length > 0) {
+                    // Filter for exact match if API returned paginated results
+                    const exactMatch = data.results.find(post => post.slug === slug);
+                    if (exactMatch) return exactMatch;
+                    return data.results[0];
+                } else if (data.slug === slug || data.id === slug) {
+                    // If API returned a single post object
+                    return data;
+                }
+            }
+            
+            // If no post found with the provided slug, try fetching by ID
+            const idResponse = await fetch(`${API_BASE_URL}/posts/${slug}`);
+            if (!idResponse.ok) {
+                throw new Error('Post not found');
+            }
+            
+            return await idResponse.json();
+        } catch (error) {
+            console.error(`Error fetching post with slug ${slug}:`, error);
+            throw error;
+        }
+    }
+
     static getFromCache(key) {
         if (!isClient) return null;
         

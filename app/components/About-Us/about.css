@@ -8,7 +8,7 @@
             }
 
             .swiper-slide {
-                height: 415px !important;
+                height: 380px !important;
                 cursor: grab;
             }
             .swiper-slide.swiper-slide-active {
@@ -17,14 +17,14 @@
             }
             .swiper-slide .content {
                 width: 0;
-                height: 400px;
+                height: 350px;
                 position: relative;
                 overflow: hidden;
                 margin-left: 30px;
             }
             .swiper-slide-active .content {
                 width: 460px;
-                height: 400px;
+                height: 350px;
 
             }
             .swiper-wrapper .swiper-slide::before {

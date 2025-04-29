@@ -110,7 +110,7 @@ export default function Journey() {
                     >
                         <span className="dot"></span>
                     <div className="content" >
-                        <Image src={item.image} alt={item.title} width={500} height={400}  className='rounded-[25px] w-full h-full object-cover'/>
+                        <Image src={item.image} alt={item.title} width={500} height={500}  className='rounded-[25px] w-full h-full object-cover'/>
                         <div className='absolute z-10 bg-gradient-to-t from-black/90 from-10% to-transparent w-full h-full top-0 left-0 rounded-[25px] flex  flex-col gap-4 justify-end p-5 text-white'>
                           <div className='scroll-up space-y-1'>
                               <h1 className='pb-3'>{item.title}</h1>

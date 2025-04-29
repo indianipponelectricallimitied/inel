@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Button from "../../components/Ui/button";
+import ApiService from "@/app/services/api";
 
 export default function BlogPost({ params }) {
     const unwrappedParams = React.use(params);
@@ -16,48 +17,8 @@ export default function BlogPost({ params }) {
     useEffect(() => {
         const fetchBlog = async () => {
             try {
-                // First try to fetch by exact slug
-                let response = await fetch(`https://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/api/posts?slug=${encodeURIComponent(slug)}`);
-                
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch blog post: ${response.status}`);
-                }
-                
-                let data = await response.json();
-                
-                // Handle different API response formats
-                if (Array.isArray(data) && data.length > 0) {
-                    // Filter for exact slug match to ensure we get the correct blog
-                    const exactMatch = data.find(post => post.slug === slug);
-                    if (exactMatch) {
-                        setBlogData(exactMatch);
-                    } else {
-                        // If no exact match, use the first one (fallback)
-                        setBlogData(data[0]);
-                    }
-                } else if (data.results && Array.isArray(data.results) && data.results.length > 0) {
-                    // If API returned paginated results, filter for exact match
-                    const exactMatch = data.results.find(post => post.slug === slug);
-                    if (exactMatch) {
-                        setBlogData(exactMatch);
-                    } else {
-                        // If no exact match, use the first one (fallback)
-                        setBlogData(data.results[0]);
-                    }
-                } else if (data && typeof data === 'object' && !Array.isArray(data)) {
-                    // If API returned a single post object
-                    setBlogData(data);
-                } else {
-                    // If no post found by slug, try by ID as fallback
-                    response = await fetch(`https://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/api/posts/${slug}`);
-                    
-                    if (!response.ok) {
-                        throw new Error(`Failed to fetch blog post: ${response.status}`);
-                    }
-                    
-                    data = await response.json();
-                    setBlogData(data);
-                }
+                const data = await ApiService.getPostBySlug(slug);
+                setBlogData(data);
             } catch (err) {
                 console.error("Error fetching blog data:", err);
                 setError(err.message);

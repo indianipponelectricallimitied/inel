@@ -17,6 +17,8 @@ export default function FeaturesSlider({features}){
             slidesPerView={1}
             spaceBetween={10}
             loop={true}
+            mousewheel={false}
+            grabCursor={false}
             navigation={{
                 nextEl: '.team-swiper-next',
                 prevEl: '.team-swiper-prev',
@@ -34,6 +36,7 @@ export default function FeaturesSlider({features}){
                 1024: {
                     slidesPerView: 5,
                     spaceBetween: 20,
+                    allowTouchMove: false,
                     centeredSlides: true,
                 },
             }}

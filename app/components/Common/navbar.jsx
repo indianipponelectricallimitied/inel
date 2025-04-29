@@ -35,7 +35,7 @@ const Navbar = () => {
           {label: 'About Us', href: '/about-us'},
           // {label: 'Leadership', href: '/leadership'},
           // {label: 'News', href: '/news'},
-          // {label: 'Events', href: '/events'},
+          {label: 'Newsroom', href: '/newsroom'},
           { label: 'Aftermarket', href: '/aftermarket' },
           {label: 'policies', href: '/policies'},
         ] 
@@ -98,7 +98,7 @@ const Navbar = () => {
           </div>
         </div>
         
-        <Button variant={`${isHomePage ? 'white' : 'blue'}`} href="/contact-us">Contact Us</Button>
+        <Button variant={`${isHomePage ? 'white' : 'blue'}`} hasArrow={false} href="/contact-us">Enquire Now</Button>
       </div>
 
      
@@ -171,8 +171,8 @@ const Navbar = () => {
             </div>
           ))}
           <div className="pt-4">
-            <Button variant="blue" href="/contact" className="w-full">
-              Contact Us
+            <Button variant="blue" href="/contact"  className="w-full">
+              Enquire Now
             </Button>
           </div>
         </div>
