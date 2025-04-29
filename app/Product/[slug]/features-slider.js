@@ -56,11 +56,11 @@ export default function FeaturesSlider({features}){
                 </SwiperSlide>
             ))}
 
-            <button className="team-swiper-prev absolute left-0 z-10 bottom-1/2 translate-y-1/2 bg-primary rounded-[10px] p-3">
-                <HiOutlineChevronLeft className="text-xl text-white" />
+            <button className="team-swiper-prev absolute left-0 z-10 bottom-1/2 translate-y-1/2 bg-white rounded-[10px] p-3">
+                <HiOutlineChevronLeft className="text-xl text-primary" />
             </button>
-            <button className="team-swiper-next absolute right-0 bottom-1/2 translate-y-1/2 z-10 bg-primary rounded-[10px] p-3">
-                <HiOutlineChevronRight className="text-xl text-white" />
+            <button className="team-swiper-next absolute right-0 bottom-1/2 translate-y-1/2 z-10 bg-white rounded-[10px] p-3">
+                <HiOutlineChevronRight className="text-xl text-primary" />
             </button>
         </Swiper>
     )
