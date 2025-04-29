@@ -156,12 +156,16 @@ class ApiService {
         };
 
         return products.filter(product => {
+            // Ensure features and vehicleCategories are arrays before spreading
+            const features = Array.isArray(product.features) ? product.features : [];
+            const vehicleCategories = Array.isArray(product.vehicleCategories) ? product.vehicleCategories : [];
+            
             const searchFields = [
                 product.name,
                 product.type,
                 product.description,
-                ...(product.features || []),
-                ...(product.vehicleCategories || [])
+                ...features,
+                ...vehicleCategories
             ];
 
             return searchFields.some(field => 
