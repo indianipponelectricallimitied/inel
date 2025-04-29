@@ -34,7 +34,7 @@ const videoCTA = () => {
             Precision, People, Performance.</h1>
             <p className="pb-5">Step into our world of advanced R&D labs, smart manufacturing lines, and the people who bring innovation to life. Every product reflects our culture of excellence, quality, and collaboration.</p>
           </div>
-          <div className="w-full md:w-1/3 flex justify-center items-center">
+          <div className="w-full md:w-1/3 pt-10 md:pt-0 flex justify-center items-center">
             <button onClick={openModal} >
               <IoPlayCircle className="text-6xl" />
             </button>   

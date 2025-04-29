@@ -7,9 +7,9 @@ export default function HeroVideoSection(){
             <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-70 h-full w-full"></div>
             <div className="container mx-auto  flex flex-col items-center justify-center absolute top-0 left-0 right-0 bottom-0">
                 <h1 className="text-white text-center  text-[40px] md:text-[90px] font-normal">Driving The Future Mobility</h1>
-                <div className="flex gap-4 pt-10">
-                    <Button variant="blue" href="/Products&Solutions">Explore Products</Button>
-                    <Button variant="transparent" href="/contact-us" className="text-white">Get in Touch</Button>
+                <div className="flex gap-4 pt-10 justify-center items-center">
+                    <Button variant="blue" href="/Products&Solutions" className="text-[12px] md:text-[16px]">Explore Products</Button>
+                    <Button variant="transparent" href="/contact-us" className="text-[12px] text-white md:text-[16px]">Get in Touch</Button>
                 </div>
                 <div className="mt-28 bottom-10   mb-[-150px] relative">
                     <svg className="w-[140px] h-[140px] animate-spin [animation-duration:8s]" viewBox="0 0 100 100">

@@ -36,7 +36,7 @@ export default function WhyAftermarket() {
                          <Image src={reason.image} alt={reason.title} width={130} height={130} 
                          className="ms-auto -mb-10"
                          />
-                        <h2 className="w-3/5 font-medium p-3">{reason.title}</h2>
+                        <h2 className="md:w-3/5 font-medium p-3 text-sm md:text-2xl">{reason.title}</h2>
                     </div>
                 ))}
               </div>

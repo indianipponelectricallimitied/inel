@@ -42,6 +42,7 @@ export default function ManufacturingFacilities() {
   return (
     <>
       <div className='bg-[#E8E8E8] py-20'>
+        <div className='container mx-auto'>
         <h1 className='text-center'>Manufacturing Facilities</h1>
         <Swiper
           slidesPerView={1.4}
@@ -93,6 +94,7 @@ export default function ManufacturingFacilities() {
                       </button>
                     </div>
         </Swiper>
+        </div>
       </div>
     </>
   );
