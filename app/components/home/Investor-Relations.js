@@ -36,7 +36,7 @@ export default function InvestorRelations() {
             <StockDataCard />
           </div>
           <div className="w-full md:w-1/3 space-y-6">
-            <h5>Quick Links</h5>
+            <p  className="text-white bg-[url('/images/home/Subtract.png')] bg-contain bg-center bg-no-repeat p-4 w-fit">Quick Links</p>
             <ul className="space-y-5">
               {quickLinks.map((link, index) => (
                 <li key={index}>

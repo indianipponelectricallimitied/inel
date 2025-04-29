@@ -69,8 +69,11 @@ input , textarea , select{
 
 
 .diamond-gradient{
-  background: rgb(22,9,89);
-  background: linear-gradient(40deg, rgba(22,9,89,1) 0%, rgba(46,32,120,1) 35%, rgba(100,82,190,1) 50%, rgba(49,34,124,1) 65%, rgba(22,9,89,1) 100%);
+  background: url('/main-gradient.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-repeat: no-repeat !important;
 }
 
 .clip-path:after{
