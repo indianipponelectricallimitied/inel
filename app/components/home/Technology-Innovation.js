@@ -37,7 +37,7 @@ export default function TechnologyInnovation() {
            <div><p className="pb-5">At INEL, we are at the forefront of automotive technology, developing transformative solutions that redefine the future of mobility. Our state-of-the-art R&D center pioneers advancements in power electronics, intelligent sensors, and electric vehicle solutions, creating smarter, more efficient systems for the next generation of transportation.</p>
             <p>From analog ignition systems to next-gen EV components, INEL stays ahead by investing in R&D, digitalization, and smart automation. Our solutions scale across platforms, geographies, and evolving market needs.</p>
             </div> 
-            <Button variant="blue" href="/contact">Explore Our Innovations</Button>
+            <Button variant="blue" href="/contact-us">Explore Our Innovations</Button>
           </div>
         </div>
       </div>

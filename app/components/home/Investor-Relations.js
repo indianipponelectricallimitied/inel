@@ -30,7 +30,7 @@ export default function InvestorRelations() {
                 <h1>Position INEL as an Industry Leader</h1>
             </div>
             <p>Our solutions accelerate progress, delivering exceptional performance while paving the way for a cleaner, more efficient transportation future.</p>
-            <Button variant="white" href="/contact">Explore Our Innovations</Button>
+            <Button variant="white" href="/contact-us">Explore Our Innovations</Button>
           </div> 
           <div className="w-full md:w-1/3 space-y-6">
             <StockDataCard />
