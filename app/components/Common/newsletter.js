@@ -73,7 +73,7 @@ export default function Newsletter({newsletterBg}) {
                     <div className="my-6  relative ">
                     {status && (
 
-                            <p className={`absolute bg-white rounded-[10px] px-4 py-2 top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${status.type === "success" ? "text-green-300" : "text-red-300"}`}>{status.message}</p>
+                            <p className={`absolute bg-white w-full md:w-fit rounded-[10px] px-4 py-2 top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${status.type === "success" ? "text-green-300" : "text-red-300"}`}>{status.message}</p>
                     )}
                     </div>
                 </div>

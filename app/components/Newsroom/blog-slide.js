@@ -151,8 +151,8 @@ export default function BlogSlide() {
                 .swiper-slide-active.blog-cut::after{
                     content: "";
                     position: absolute;
-                    right: -1px;
-                    bottom: -1px;
+                    right: 3px;
+                    bottom: 3px;
                     width: 201px;
                     height: 62px;
                     background-image: url('/radius-cuts/breadcrumb-cut.svg');
