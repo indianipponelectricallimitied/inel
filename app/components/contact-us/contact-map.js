@@ -162,8 +162,8 @@ const Map = () => {
   }, []);
 
   return (
-    <div className="rounded-[20px] flex flex-col md:flex-row">
-      <div className="flex flex-col justify-center bg-[#F2F2F2] h-[630px] w-full md:w-2/6 rounded-t-[20px]  md:rounded-l-[20px] md:rounded-tr-none p-4 space-y-4 overflow-y-auto">
+    <div className="rounded-[20px] flex flex-col lg:flex-row justify-between">
+      <div className="flex flex-col justify-center bg-[#F2F2F2] md:h-[640px]  w-full lg:w-2/6 rounded-t-[20px]  lg:rounded-l-[20px] lg:rounded-tr-none p-4 space-y-4 overflow-y-auto">
         {places.map((place) => (
           <div 
             key={place.id} 
@@ -181,13 +181,13 @@ const Map = () => {
               alt={place.name} 
               width={300} 
               height={200} 
-              className="w-[150px] h-[100px] object-cover rounded-lg"
+              className="w-[100px] h-[100px] lg:w-[150px] lg:h-[100px] object-cover rounded-lg"
             />
           </div>
         ))}
       </div>
 
-      <div id="map" ref={mapRef} className="rounded-b-[20px] md:rounded-r-[20px] md:rounded-bl-none h-[630px] w-full md:w-4/6" />
+      <div id="map" ref={mapRef} className="rounded-b-[20px] lg:rounded-r-[20px] lg:rounded-bl-none h-[640px] w-full lg:w-4/6" />
     </div>
   );  
 };

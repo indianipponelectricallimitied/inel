@@ -1,6 +1,6 @@
-
 import React, { useEffect, useState } from 'react';
 import { MdArrowUpward, MdArrowDownward } from "react-icons/md";
+import StockDataService from '../../../services/stockDataService';
 
 export default function StockTicker() {
   const [stockData, setStockData] = useState(null);
@@ -10,19 +10,11 @@ export default function StockTicker() {
   useEffect(() => {
     const fetchStockData = async () => {
       try {
-        const apiKey = process.env.NEXT_PUBLIC_ALPHA_VANTAGE_API_KEY || 'IG1G4QKESM03SXS1';
-        const response = await fetch(
-          `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=INDNIPPON.BSE&apikey=${apiKey}`
-        );
-
-        if (!response.ok) {
-          throw new Error('Failed to fetch stock data');
-        }
-
-        const data = await response.json();
+        const data = await StockDataService.getStockData('INDNIPPON.BSE', 'BSE');
         setStockData(data);
         setLoading(false);
       } catch (err) {
+        console.error('Error fetching stock data:', err);
         setError(err.message);
         setLoading(false);
       }
@@ -30,7 +22,10 @@ export default function StockTicker() {
 
     fetchStockData();
     
-    // Fetch every 5 minutes
+    // Setup the auto-refresh service
+    StockDataService.setupAutoRefresh();
+    
+    // Refresh component every 5 minutes to show updated data if available
     const interval = setInterval(fetchStockData, 300000);
 
     // Cleanup interval on component unmount
@@ -38,8 +33,7 @@ export default function StockTicker() {
   }, []);
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-
+  
   const quote = stockData?.['Global Quote'];
 
   return (
@@ -49,13 +43,14 @@ export default function StockTicker() {
         <>
           <span>₹{parseFloat(quote['05. price']).toFixed(2)}</span>
           <span className={`flex items-center ${parseFloat(quote['09. change']) >= 0 ? 'text-green-500' : 'text-red-500'}`}>
-            {parseFloat(quote['10. change percent']).toFixed(2)}%
+            {quote['10. change percent'].replace('%', '')}%
             {parseFloat(quote['09. change']) >= 0 ? (
               <MdArrowUpward />
             ) : (
               <MdArrowDownward />
             )}
           </span>
+          {error && <span className="text-xs text-gray-400">(est.)</span>}
         </>
       )}
     </div>

@@ -56,11 +56,11 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-52%, 32%);
+  transform: translate(-52%, 26%);
   width: 417px;
   z-index: -1;
   img{
-    width: 104px;
+    width: 106px;
   }
 }
 .rover-wheel{
@@ -68,9 +68,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-54%, 50%);
-  width: 382px;
+  width: 366px;
   img{
-    width: 90px;
+    width:84px;
   }
 }
 .atv-wheel{
@@ -93,7 +93,7 @@
     box-shadow: 0px 1px 55px 0px #578fff6c;
   }
 }
-.ATV  , .auto , .scooter{
+.ATV  , .auto {
   padding-top: 10px;
   width: 500px !important;
 }
@@ -142,7 +142,7 @@
   animation: Fadein 1.5s ease-in-out forwards;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .absolute-backText {
     font-size: 200px;
     bottom: 0%;
@@ -151,17 +151,17 @@
   }
 
   .rover-wheel{
-    transform: translate(-54%, 66%);
-    width: 289px;
+    transform: translate(-54%, 67%);
+    width: 290px;
     img{
-      width: 68px;
+      width: 66px;
     }
   }
   .scooter-wheel{
-    transform: translate(-52%, 30%);
-      width: 315px;
+    transform: translate(-52%, 25%);
+    width: 318px;
     img{
-      width: 80px;
+      width: 81px;
     }
   }
   

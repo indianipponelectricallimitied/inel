@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { MdArrowUpward, MdArrowDownward } from "react-icons/md";
 import Image from 'next/image';
 import './StockDataCard.css'; // Create this CSS file
+import StockDataService from '../../../services/stockDataService';
 
 export default function StockDataCard() {
   const [stockData, setStockData] = useState(null);
@@ -14,31 +15,29 @@ export default function StockDataCard() {
   useEffect(() => {
     const fetchStockData = async () => {
       try {
-        const response = await fetch(
-          `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo`
-        );
-
-        if (!response.ok) {
-          throw new Error('Failed to fetch stock data');
-        }
-
-        const data = await response.json();
+        // The symbol will change based on selected market
+        const symbol = market === 'NSE' ? 'INDNIPPON.NSE' : 'INDNIPPON.BSE';
+        const data = await StockDataService.getStockData(symbol, market);
         setStockData(data);
         setLoading(false);
       } catch (err) {
+        console.error('Error fetching stock data:', err);
         setError(err.message);
         setLoading(false);
       }
     };
 
     fetchStockData();
-
-    // Fetch every 5 minutes
+    
+    // Setup auto-refresh service
+    StockDataService.setupAutoRefresh();
+    
+    // Refresh the UI every 5 minutes to show updated data if available
     const interval = setInterval(fetchStockData, 300000);
 
     // Cleanup interval on component unmount
     return () => clearInterval(interval);
-  }, []);
+  }, [market]); // Re-fetch when market changes
 
   useEffect(() => {
     const card = cardRef.current;
@@ -63,9 +62,9 @@ export default function StockDataCard() {
   }, [cardRef.current]); // Add cardRef.current as dependency
 
   if (loading) return <div className='text-white'>Loading...</div>;
-  if (error) return <div className='text-white'>Error: {error}</div>;
-
+  
   const quote = stockData?.['Global Quote'];
+  const isUsingDummyData = stockData && stockData['Global Quote'] && !quote['01. symbol'].includes(market);
 
   return (
     <div className="card-wrapper" ref={cardRef}>
@@ -100,8 +99,8 @@ export default function StockDataCard() {
             {quote && (
             <>
                 <span className="text-4xl font-medium">{parseFloat(quote['05. price']).toFixed(2)} <span className='text-2xl'>INR</span></span>
-                <span className="flex items-center">
-                {parseFloat(quote['10. change percent']).toFixed(2)}%
+                <span className={`flex items-center ${parseFloat(quote['09. change']) >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+                {parseFloat(quote['09. change']).toFixed(2)} ({quote['10. change percent'].replace('%', '')}%)
                 {parseFloat(quote['09. change']) >= 0 ? (
                     <MdArrowUpward className="ml-1 text-green-500" />
                 ) : (
@@ -118,6 +117,7 @@ export default function StockDataCard() {
                     hour12: true
                 })}
                 </div>
+                {/* {(error || isUsingDummyData) && <div className="text-xs text-gray-400">(Showing estimated values)</div>} */}
             </>
             )}
       </div>

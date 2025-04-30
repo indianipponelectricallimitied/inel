@@ -164,7 +164,7 @@ export default function Tab() {
             <Image
               src="/images/home/Scooter.png"
               alt="Passenger Vehicle"
-              className='scooter'
+              className='scooter !w-[380px] md:!w-[500px]'
               width={1000}
               height={1000}
             />

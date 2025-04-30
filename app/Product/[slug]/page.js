@@ -67,7 +67,7 @@ export default function ProductPage() {
                     <h1 className='text-center lg:text-[62px]'>{product.name}</h1>
                     <Image src={product.image} alt={product.name} width={500} height={500}
                         className='mx-auto py-20 max-h-[500px] object-contain'/>
-                    <p className='text-center w-[75%] mx-auto'>{product.description}</p>
+                    <p className='text-justify md:text-center md:w-[75%] mx-auto'>{product.description}</p>
                 </div>
             </div>
 

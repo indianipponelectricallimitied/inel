@@ -187,12 +187,12 @@ export default function ContactForm() {
 
     return (
         <>
-        <div className="py-20 bg-gradient-to-tl from-primary to-[#1D00B0] rounded-[20px]">
+        <div className="py-20 px-5 bg-gradient-to-tl from-primary to-[#1D00B0] rounded-[20px]">
             <h1 className="text-center pb-5 text-white">Get in Touch</h1>
             <p className="text-center pb-10 px-1 text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum</p>
 
             <form onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-1 gap-4 w-4/6 mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-4 md:w-4/6 mx-auto">
                     <input 
                         type="text" 
                         id="name" 

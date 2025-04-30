@@ -103,7 +103,7 @@ const Navbar = () => {
 
      
       <div className="lg:hidden flex justify-between items-center">
-        <Link href='/'>
+        <Link href='/' className='w-1/2'>
         { isHomePage ?
           <img src={logo} alt="logo" />
           :

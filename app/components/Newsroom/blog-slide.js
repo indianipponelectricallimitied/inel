@@ -107,7 +107,7 @@ export default function BlogSlide() {
                 }}
             >
                 {blogData.map((blog, index) => (
-                    <SwiperSlide key={blog.id || index} className="mb-16 blog-cut">
+                    <SwiperSlide key={blog.id || index} className="mb-16 blog-cut p-1">
                         <div className="flex flex-col gap-5 p-3 rounded-[30px] border border-primary wrap transition-all duration-300">
                             <Image 
                                 src={blog.featured_image || "/images/placeholder.jpg"} 
