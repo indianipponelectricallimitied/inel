@@ -8,6 +8,9 @@ import TechnologyInnovation from "./components/home/Technology-Innovation";
 import InvestorRelations from "./components/home/Investor-Relations";
 import MarqueeSection from "./components/home/marquee-setion";
 import Newsroom from "./components/Newsroom/newsroom";
+import Awards from "./components/home/awaards";
+import HowManyMarquee from "./components/home/howmany-marquee";
+import Careers from "./components/home/careers";
 
 
 export default function Home() {
@@ -17,16 +20,21 @@ export default function Home() {
     <>
     
       <HeroVideoSection />
+      <CTA />
+      <Awards />
+      <MarqueeSection />
       <Tab />
-      <Sustainable />
-      <VideoCTA />
+      <HowManyMarquee />
       <TechnologyInnovation />
       <InvestorRelations />
-      <MarqueeSection />
-      <CTA />
+      <VideoCTA />
+      <Sustainable />
+   
+ 
+     
       <Newsroom />
-      <Newsletter/>
-      <div className="pb-20"></div>
+      <Careers />
+      <Newsletter/> 
     </>
   );
 }

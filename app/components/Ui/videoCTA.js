@@ -26,9 +26,9 @@ const videoCTA = () => {
 
   return (
     <>
-      <section className="bg-[url('/images/home/inside-inel.jpg')] bg-cover bg-center relative">
-        <div className="absolute top-0 left-0 right-0 bottom-0  inset-0 bg-black/40 h-full w-full"></div>
-        <div className="container mx-auto flex flex-col md:flex-row text-white py-20  z-10 relative">
+      <section className="bg-[url('/images/home/Videocta.png')] bg-cover bg-top  -mt-20 xl:-mt-40 -mb-20 z-10 relative">
+        {/* <div className="absolute top-0 left-0 right-0 bottom-0  inset-0 bg-black/40 h-full w-full"></div> */}
+        <div className="container mx-auto flex flex-col md:flex-row text-white items-center justify-center h-[600px] z-10 relative">
           <div className="w-full md:w-2/3">
             <h1 className="pb-5">Inside INEL<br/>
             Precision, People, Performance.</h1>

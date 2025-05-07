@@ -3,10 +3,10 @@ import Button from "../Ui/button";
 export default function HeroVideoSection(){
     return(
         <section className="relative h-screen md:h-[105vh]">
-            <video src="./videos/hero-placeholder-vid.mp4" autoPlay muted loop className="w-full h-full object-cover" />
+            <video src="./videos/home-main.mp4" autoPlay muted loop className="w-full h-full object-cover" />
             <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-70 h-full w-full"></div>
             <div className="container mx-auto  flex flex-col items-center justify-center absolute top-0 left-0 right-0 bottom-0">
-                <h1 className="text-white text-center  text-[40px] md:text-[90px] font-normal">Driving The Future Mobility</h1>
+                <h1 className="text-white text-center  text-[40px] md:text-[82px] font-normal">Next-Gen Mobility. Reimagined.</h1>
                 <div className="flex gap-4 pt-10 justify-center items-center">
                     <Button variant="blue" href="/Products&Solutions" className="text-[12px] md:text-[16px]">Explore Products</Button>
                     <Button variant="transparent" href="/contact-us" className="text-[12px] text-white md:text-[16px]">Get in Touch</Button>

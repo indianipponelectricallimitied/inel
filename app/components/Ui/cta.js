@@ -1,16 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../Ui/button";
+
 export default function CTA(){
     return(
         <>
-        <section className="diamond-gradient relative clip-path btmleft">
-            <div className="flex flex-col justify-end md:gap-10 md:flex-row">
-                <div className=" text-white py-10 px-5 pb-20 ms-auto w-fit">
-                    <h2 className="py-10">We craft customized automotive solutions to meet your unique requirements.</h2>
-                    <Link href="/contact-us" className="underline decoration-1 underline-offset-[13px] font-medium text-[36px] md:text-[45px] decoration-textGray decoration-2 pb-10">Let’s innovate together!</Link>
+        <section className="bg-primary relative clip-path btmright clip-grey">
+            <div className="flex flex-col justify-end items-center md:gap-6 md:flex-row">
+                <div className="w-full  lg:w-1/2">
+                    <Image src="/images/home/about.png" alt="about-section" className="w-full h-[revert-layer] object-cover" width={500} height={400} />
                 </div>
-                <div className="w-full  md:w-2/5">
-                    <Image src="/images/home/crafting.webp" alt="about-section" className="w-full h-80 md:h-full object-cover" width={500} height={500} />
+                <div className=" text-white py-6 px-5  lg:w-1/2  space-y-5">
+                    <h5>About Us</h5>
+                    <h1>Engineered With <br/>Precision </h1>
+                    <p>INEL stands as a global leader in custom ignition solutions for OEMs in the 2 & 3-wheeler and portable engine sectors, serving both ICE and EV markets. Expanding globally with cost-effective, world-class production.</p>
+                    <Button variant="white" className="rounded-none" href="/about-us">Learn More</Button>
                 </div>
             </div>
         </section>

@@ -89,6 +89,9 @@ input , textarea , select{
   background-repeat: no-repeat !important;
   overflow-x: hidden;
 }
+.clip-grey:after{
+  background-color: #F8F8F8;
+}
 
 .topleft:after{
   top: -1px;

@@ -49,10 +49,13 @@ const logos = [
 export default function MarqueeSection() {
 
   return (
-    <section className="bg-white py-20 overflow-hidden">
+    <section className="bg-[#F8F8F8] py-10 pb-20 overflow-hidden">
         <div className="container mx-auto">
-          <h1 className='text-center '>Trusted by Leaders, <br/> Driven by Partnerships</h1>
-          <p className='text-center py-10 md:w-4/5 mx-auto'>At INEL, our trusted partnerships with leading automotive brands enable us to push the boundaries of innovation. Together, we create high-performance, sustainable mobility solutions that pave the way for the future of transportation.</p>
+          <div className='relative'>
+            <h1 className='text-center bg-[#F8F8F8] relative z-10 w-fit mx-auto px-5'>Trusted by Leaders</h1>
+            <span className='border-b border-[#D9D9D9] w-full absolute bottom-[40%] -translate-y-1/2 left-0'></span>
+          </div>
+          <p className='text-center py-10 md:w-4/5 mx-auto'>Collaborating with top automotive brands to drive innovation, performance, and excellence in mobility solutions.</p>
         </div>
         <div className="logo-slider">
           <div className="logos-slide">

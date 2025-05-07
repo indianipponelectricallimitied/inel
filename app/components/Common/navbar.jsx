@@ -30,21 +30,25 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { label: 'Company', href: '/' , 
-        submenu : [
-          {label: 'About Us', href: '/about-us'},
-          // {label: 'Leadership', href: '/leadership'},
-          // {label: 'News', href: '/news'},
-          {label: 'Newsroom', href: '/newsroom'},
-          { label: 'Aftermarket', href: '/aftermarket' },
-          {label: 'policies', href: '/policies'},
-        ] 
-    },
-    { label: 'Products & Solutions', href: '/Products&Solutions' },
-    { label: 'Investors', href: '/investors' },
-    { label: 'Careers', href: '/career' },
-    { label: 'sustainable  ', href: '/sustainable' },
+    // { label: 'Company', href: '/' , 
+    //     submenu : [
+         
+    //       // {label: 'Leadership', href: '/leadership'},
+    //       // {label: 'News', href: '/news'},
+    //       {label: 'Newsroom', href: '/newsroom'},
+    //       { label: 'Aftermarket', href: '/aftermarket' },
+    //       {label: 'policies', href: '/policies'},
+    //     ] 
+    // },
+    {label: 'About', href: '/about-us'},
+    { label: 'Products', href: '/Products&Solutions' },
     { label: 'Technology', href: '/technology' },
+    { label: 'Investors', href: '/investors' },
+    { label: 'sustainable  ', href: '/sustainable' },
+    { label: 'Media  ', href: '/newsroom' },
+    { label: 'Careers', href: '/career' },
+
+
   ];
   
   return (
