@@ -2,55 +2,23 @@
 
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Image from 'next/image';
 import Link from 'next/link';
 import Button from '../../Ui/button';
+import VehicleTabs from './VehicleTabs';
+import VehicleSlide from './VehicleSlide';
+import { VEHICLE_TYPES } from './constants';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import './style.css';
 
-const VEHICLE_TYPES = [
-  {
-    id: 0,
-    title: "2 Wheeler",
-    image: "/images/home/vehicle-(4).png",
-    alt: "2 Wheeler",
-    background: "2W"
-  },
-  {
-    id: 1,
-    title: "Commercial",
-    image: "/images/home/vehicle-(2).png",
-    alt: "Snow Mobile",
-    background: "4W"
-  },
-  {
-    id: 2,
-    title: "3 Wheeler",
-    image: "/images/home/vehicle-(1).png",
-    alt: "3 Wheeler",
-    background: "3W"
-  },
-  {
-    id: 3,
-    title: "Off Road",
-    image: "/images/home/vehicle-(3).png",
-    alt: "ATV",
-    background: "ATV"
-  }
-];
-
 export default function Tab() {
-  // Use a ref to control the swiper so we can navigate to specific slides on tab click
   const swiperRef = useRef(null);
-  const [direction, setDirection] = useState(null); // Store direction of slide change
-  const [currentIndex, setCurrentIndex] = useState(0); // Store current index
+  const [direction, setDirection] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [showBackground, setShowBackground] = useState(true);
 
-  // Updated goToSlide function to prevent repeated clicks on active slide
   const goToSlide = (index) => {
-    // Don't do anything if clicking the currently active slide
     if (currentIndex === index) return;
     
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -63,89 +31,39 @@ export default function Tab() {
     const currentSlideIndex = swiper.realIndex;
     const previousSlideIndex = swiper.previousIndex;
 
-    // First hide the background
     setShowBackground(false);
 
-    // Set direction as before
     if (currentSlideIndex > previousSlideIndex) {
       setDirection('forward');
     } else {
       setDirection('backward');
     }
 
-    // Show background after 2s delay
     setTimeout(() => {
       setShowBackground(true);
       setCurrentIndex(currentSlideIndex);
     }, 500);
-
-    // Add animation class to the previous and next slides based on the direction
-    const activeSlide = swiper.slides[swiper.realIndex];
-    const prevSlide = swiper.slides[swiper.previousIndex];
-    const nextSlide = swiper.slides[swiper.realIndex + 1] || swiper.slides[0]; // Ensure nextSlide wraps around when looping
-  
-    // Clear previous animation classes
-    activeSlide.classList.remove('forward', 'backward');
-    prevSlide.classList.remove('forward', 'backward');
-    nextSlide.classList.remove('forward', 'backward');
-  
-    // Force reflow to trigger animation correctly
-    void activeSlide.offsetWidth;
-    void prevSlide.offsetWidth;
-    void nextSlide.offsetWidth;
-  
-    // Apply the forward/backward animation classes to the slides
-    activeSlide.classList.add(direction);
-    prevSlide.classList.add(direction === 'forward' ? 'backward' : 'forward');
-    nextSlide.classList.add(direction === 'forward' ? 'forward' : 'backward');
   };
-  
-
 
   return (
-    <>
     <section className="hero-swiper-section py-20 relative">
-      {/* Top Content / Hero */}
-      <div className="container mx-auto flex  flex-col lg:flex-row items-center justify-between">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
         <div className='w-full lg:w-[35%] space-y-5'>
-          <h5 >Our Solutions</h5 >
-          <h1>Complete Mobility Electronics. </h1>
-          <p> From ignition systems to advanced ECUs, from two-wheelers to EVs—INEL delivers future-ready electronics that power the world’s leading mobility brands. Explore our divisions built to meet tomorrow’s challenges.</p>
+          <h5>Our Solutions</h5>
+          <h1>Complete Mobility Electronics.</h1>
+          <p>From ignition systems to advanced ECUs, from two-wheelers to EVs—INEL delivers future-ready electronics that power the world's leading mobility brands. Explore our divisions built to meet tomorrow's challenges.</p>
         </div>
 
-        {/* Tab Navigation (slide selectors) */}
-      <div className="hero-tabs flex gap-1 md:gap-5  w-full lg:w-2/4 mt-10 md:mt-0">
-        {VEHICLE_TYPES.map((vehicle) => (
-          <button 
-            key={vehicle.id}
-            onClick={() => goToSlide(vehicle.id)}
-            className={`relative ${currentIndex === vehicle.id ? 'active' : ''}`}
-          >
-            <Image 
-              src={vehicle.image} 
-              alt={vehicle.alt} 
-              width={300} 
-              height={300} 
-              className='rounded-[10px] title-image'
-            />
-            <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-30% from-transparent to-black rounded-[10px]'></div>
-            <p className='absolute bottom-0 left-0 p-2 md:p-4 text-white text-[12px] md:text-[16px] text-left '>
-              {vehicle.title}
-            </p>
-          </button>
-        ))}
-      </div>
+        <VehicleTabs currentIndex={currentIndex} goToSlide={goToSlide} />
       </div>
 
-      {/* Updated background text */}
       <div 
         key={VEHICLE_TYPES[currentIndex].id} 
-        className={`absolute-backText  ${showBackground ? 'fade-in' : 'fade-out'}`}
+        className={`absolute-backText ${showBackground ? 'fade-in' : 'fade-out'}`}
       >
         {VEHICLE_TYPES[currentIndex].background}
       </div>
 
-      {/* Swiper */}
       <Swiper
         ref={swiperRef}
         className="hero-swiper flex justify-center items-center"
@@ -155,91 +73,24 @@ export default function Tab() {
         mousewheel={false}
         grabCursor={false}
         allowTouchMove={false}
-        onSlideChange={handleSlideChange} // Listen to slide change
+        onSlideChange={handleSlideChange}
       >
-        {/* Slide 1: Passenger Vehicles */}
-        <SwiperSlide className={`relative ${direction === 'forward' ? 'forward' : direction === 'backward' ? 'backward' : ''}`}>
-          <div className="slide-content rover w-full flex justify-center items-center">
-  
-            <Image
-              src="/images/home/Scooter.png"
-              alt="Passenger Vehicle"
-              className='scooter !w-[380px] md:!w-[500px]'
-              width={1000}
-              height={1000}
+        {VEHICLE_TYPES.map((vehicle) => (
+          <SwiperSlide 
+            key={vehicle.id}
+            className={`relative ${direction === 'forward' ? 'forward' : direction === 'backward' ? 'backward' : ''}`}
+          >
+            <VehicleSlide 
+              vehicleType={vehicle.background} 
+              direction={direction}
             />
-            <div className="scooter-wheel flex justify-between">
-              <img src="/images/home/Scooter-tyre.png" className="front wheel" />
-              <img src="/images/home/Scooter-tyre.png" className="back wheel" />
-            </div>
-
-          </div>
-        </SwiperSlide>
-
-
-        <SwiperSlide className={`relative ${direction === 'forward' ? 'forward' : direction === 'backward' ? 'backward' : ''}`}>
-          <div className="slide-content rover w-full flex justify-center items-center pt-20">
-            <Image
-              src="/rrvr.webp"
-              alt="Passenger Vehicle"
-              className='car !w-[380px] md:!w-[480px]'
-              width={500}
-              height={300}
-              
-            />
-
-            <div className="rover-wheel flex justify-between">
-              <img src="./rv-tyre.webp" className="front wheel" />
-              <img src="./rv-tyre.webp" className="back wheel" />
-            </div>
-
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className={`relative ${direction === 'forward' ? 'forward' : direction === 'backward' ? 'backward' : ''}`}>
-
-          <div className="slide-content rover w-full flex justify-center items-center">
-            <img
-              src="./3-whellar.png"
-              alt="Passenger Vehicle"
-              className='auto'
-            />
-            {/* <div className="rover-wheel flex justify-between">
-              <img src="./rv-tyre.webp" className="front wheel" />
-              <img src="./rv-tyre.webp" className="back wheel" />
-            </div> */}
-
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className={`relative ${direction === 'forward' ? 'forward' : direction === 'backward' ? 'backward' : ''}`}>
-
-          <div className="slide-content rover w-full flex justify-center items-center">
-            <Image
-              src="/atv.png"
-              alt="Passenger Vehicle"
-              className='ATV'
-              width={1000}
-              height={1000}
-            />
-            {/* <div className="atv-wheel flex justify-between">
-              <img src="/images/home/ATV-tyre.png" className="front wheel" />
-              <img src="/images/home/ATV-tyre.png" className="back wheel" />
-            </div> */}
-
-          </div>
-        </SwiperSlide>
-
-
-
-
+          </SwiperSlide>
+        ))}
       </Swiper>
 
-      <Button   href="/Products&Solutions" 
-          variant="blue" 
-          className="w-fit mx-auto">
-          View All Solutions
+      <Button href="/Products&Solutions" variant="blue" className="w-fit mx-auto">
+        View All Solutions
       </Button>
-      
     </section>
-    </>
   );
 }

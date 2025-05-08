@@ -52,7 +52,7 @@
 
 /* stsrt styling   */
 
-.scooter-wheel{
+.wheel-2w{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -62,8 +62,15 @@
   img{
     width: 106px;
   }
+  @media (max-width: 767px) {
+    transform: translate(-52%, 25%);
+    width: 318px;
+    img{
+      width: 81px;
+    }
+  }
 }
-.rover-wheel{
+.wheel-4w{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -71,6 +78,13 @@
   width: 366px;
   img{
     width:84px;
+  }
+  @media (max-width: 767px) {
+    transform: translate(-54%, 67%);
+    width: 290px;
+    img{
+      width: 66px;
+    }
   }
 }
 .atv-wheel{
@@ -148,21 +162,6 @@
     bottom: 0%;
     left: 50%;
     transform: translate(-50%, 0%);
-  }
-
-  .rover-wheel{
-    transform: translate(-54%, 67%);
-    width: 290px;
-    img{
-      width: 66px;
-    }
-  }
-  .scooter-wheel{
-    transform: translate(-52%, 25%);
-    width: 318px;
-    img{
-      width: 81px;
-    }
   }
   
 }
