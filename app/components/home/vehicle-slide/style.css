@@ -167,3 +167,36 @@
 }
 
 
+
+
+/* #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* line path draw  */
+.line-path svg{
+  width: 100%;
+}
+.line-path svg path {
+  fill: none;
+  stroke: rgb(0, 0, 0);
+  stroke-width: 1;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  -webkit-animation: dash 5s linear forwards;
+  animation: dash 5s linear forwards;
+}
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.roundedborder{
+  border-radius: 50%;
+  border: 1px dashed black;
+  border-style: dashed ;
+  border-width: 1px;
+}

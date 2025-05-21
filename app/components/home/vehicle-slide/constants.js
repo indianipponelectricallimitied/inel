@@ -31,20 +31,39 @@ export const VEHICLE_TYPES = [
 
 export const VEHICLE_HOTSPOTS = {
   "2W": [
-    { label: "BLDC Motor Controller", x: 15, y: 25, object: "/Electronic_ai.glb" },
-    { label: "BLDC Motor Controller", x: 45, y: 35, object: "/Electronic_ai.glb" },
-    { label: "BLDC Motor Controller", x: 75, y: 45, object: "/Electronic_ai.glb" },
+    { label: "BLDC Motor Controller", x: 412, y: 25, object: "/Electronic_ai.glb",
+      
+      canvas_position: {
+        x: 184,
+        y: 15,
+      },
+
+      line_position: {
+        x: 26,
+        y: 50,
+        width: 200,
+      },
+
+      linepath: `
+          <svg width="324" height="292" viewBox="0 0 324 292" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3.5 287.5L146.5 2.5H323.5" stroke="black"/>
+    <circle cx="146.5" cy="2.5" r="2" fill="black" stroke="black"/>
+    <circle cx="2.5" cy="289.5" r="2" fill="black" stroke="black"/>
+    </svg>
+      `,
+     },
+
   ],
   "4W": [
     { label: "BLDC Motor Controller", x: 20, y: 30, object: "/Electronic_ai.glb" },
-    { label: "BLDC Motor Controller", x: 80, y: 60, object: "/Electronic_ai.glb" },
+
   ],
   "3W": [
     { label: "BLDC Motor Controller", x: 20, y: 30, object: "/Electronic_ai.glb" },
-    { label: "BLDC Motor Controller", x: 80, y: 60, object: "/Electronic_ai.glb" },
+
   ],
   "ATV": [
     { label: "BLDC Motor Controller", x: 20, y: 30, object: "/Electronic_ai.glb" },
-    { label: "BLDC Motor Controller", x: 80, y: 60, object: "/Electronic_ai.glb" },
+  
   ],
 }; 

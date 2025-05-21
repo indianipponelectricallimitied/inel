@@ -19,10 +19,10 @@ export default function Home() {
   return (
     <>
     
-      <HeroVideoSection />
+      {/* <HeroVideoSection />
       <CTA />
       <Awards />
-      <MarqueeSection />
+      <MarqueeSection /> */}
       <Tab />
       <HowManyMarquee />
       <TechnologyInnovation />

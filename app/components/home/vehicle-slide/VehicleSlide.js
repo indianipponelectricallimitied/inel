@@ -56,6 +56,9 @@ export default function VehicleSlide({ vehicleType, direction }) {
             y={hotspot.y}
             label={hotspot.label}
             object={hotspot.object}
+            linepath={hotspot.linepath}
+            line_position={hotspot.line_position}
+            canvas_position={hotspot.canvas_position}
           />
         ))}
       </div>
