@@ -56,14 +56,11 @@ export const VEHICLE_HOTSPOTS = {
   ],
   "4W": [
     { label: "BLDC Motor Controller", x: 20, y: 30, object: "/Electronic_ai.glb" },
-
   ],
   "3W": [
     { label: "BLDC Motor Controller", x: 20, y: 30, object: "/Electronic_ai.glb" },
-
   ],
   "ATV": [
     { label: "BLDC Motor Controller", x: 20, y: 30, object: "/Electronic_ai.glb" },
-  
   ],
 }; 
