@@ -4,17 +4,18 @@ import Image from "next/image";
 import StockDataCard from "../Common/stockmarket/StockDataCard";
 
 const quickLinks = [
-  {
-    title: "Corporate Presentation",
-    href: "/investor-relations",
-  },
+ 
   {
     title: "Annual Report FY24",
-    href: "/investor-relations",
+    href: "/files/INEL Annual Report - 2023-24.pdf",
+  },
+  {
+    title: "Corporate Presentation",
+    href: "/#",
   },
   {
     title: "Investor Presentation",
-    href: "/investor-relations",
+    href: "/#",
   },
   
 ];
@@ -40,7 +41,7 @@ export default function InvestorRelations() {
             <ul className="space-y-5">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="font-thin flex justify-between border-b border-white pb-2">
+                  <a href={link.href} target="_blank" className="font-thin flex justify-between border-b border-white pb-2">
                     {link.title}
                     <GoArrowUpRight className="text-[20px]" />
                   </a>

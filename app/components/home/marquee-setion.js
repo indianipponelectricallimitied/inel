@@ -4,52 +4,63 @@ import Image from "next/image";
 
 const logos = [
   {
-    src: "/Vector.png",
-    alt: "Partner Logo",
+    src: "/images/home/companies/bajaj-auto-logo.png",
+    alt: "Bajaj Auto",
   },
   {
-    src: "/Vector.png",
-    alt: "Partner Logo",
+    src: "/images/home/companies/blueriverlogo.png",
+    alt: "Blue River ",
   },
   {
-    src: "/Vector.png",
-    alt: "Partner Logo",
+    src: "/images/home/companies/Generac_Power_Systems_logo.png",
+    alt: "Generac Power Systems ",
   },
   {
-    src: "/Vector.png",
-    alt: "Partner Logo",
+    src: "/images/home/companies/GreavesCotton.png",
+    alt: "Greaves Cotton ",
   },
   {
-    src: "/Vector.png",
-    alt: "Partner Logo",
+    src: "/images/home/companies/Hero_MotoCorp_Logo.png",
+    alt: "Hero MotoCorp ",
   },
   {
-    src: "/Vector.png",
-    alt: "Partner Logo",
+    src: "/images/home/companies/Lombardini.png",
+    alt: "Lombardini ",
   },
   {
-    src: "/Vector.png",
-    alt: "Partner Logo",
+    src: "/images/home/companies/piaggio.png",
+    alt: "Piaggio ",
   },
   {
-    src: "/Vector.png",
-    alt: "Partner Logo",
+    src: "/images/home/companies/Polaris.png",
+    alt: "Polaris ",
   },
   {
-    src: "/Vector.png",
-    alt: "Partner Logo",
+    src: "/images/home/companies/RE.png",
+    alt: "RE",
   },
   {
-    src: "/Vector.png",
-    alt: "Partner Logo",
+    src: "/images/home/companies/relhko.png",
+    alt: "Relhko ",
   },
-
+  {
+    src: "/images/home/companies/tvs-motors-seeklogo.png",
+    alt: "TVS Motors ",
+  },
+  {
+    src: "/images/home/companies/uv-full-white-logo.png",
+    alt: "UV ",
+  },
+  {
+    src: "/images/home/companies/ZF_logo.png",
+    alt: "ZF ",
+  },
 ];
 
 export default function MarqueeSection() {
 
   return (
-    <section className="bg-[#F8F8F8] py-10 pb-20 overflow-hidden">
+    <section className="bg-[#F8F8F8] py-10 pb-20 pt-20 overflow-hidden">
         <div className="container mx-auto">
           <div className='relative'>
             <h1 className='text-center bg-[#F8F8F8] relative z-10 w-fit mx-auto px-5'>Trusted by Leaders</h1>
@@ -99,13 +110,14 @@ export default function MarqueeSection() {
         .logos-slide img {
           display: inline-block;
           width: 150px !important;
-          height: auto !important;
+          height: 110px !important;
           margin: 0 40px;
+          object-fit: contain;
         }
 
-        // .logo-slider:hover .logos-slide {
-        //   animation-play-state: paused;
-        // }
+        .logo-slider:hover .logos-slide {
+          animation-play-state: paused;
+        }
         
 
         @keyframes scroll {
@@ -113,7 +125,7 @@ export default function MarqueeSection() {
             transform: translateX(0px);
           }
           100% {
-            transform: translateX(calc(-150px * 10));
+            transform: translateX(calc(-150px * 14));
           }
         }
 
@@ -127,7 +139,7 @@ export default function MarqueeSection() {
             transform: translateX(0px);
           }
           100% {
-            transform: translateX(calc(-100px * 10));
+            transform: translateX(calc(-100px * 14));
           }
         }
         }

@@ -4,13 +4,13 @@ import Image from "next/image";
 
 const miles = [
   {
-    text: "X million+ Coils +",
+    text: "3 Facilities",
   },
   {
-    text: "X million+ Coils +",
+    text: "40+ Years Trusted Legacy",
   },
   {
-    text: "X million+ Coils +",
+    text: "12+ Countries",
   },
 
 

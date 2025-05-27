@@ -21,7 +21,7 @@ export default function Home() {
     
       <HeroVideoSection />
       <CTA />
-      <Awards />
+      {/* <Awards /> */}
       <MarqueeSection />
       <Tab />
       <HowManyMarquee />

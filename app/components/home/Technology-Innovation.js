@@ -24,7 +24,7 @@ export default function TechnologyInnovation() {
           <div className="w-full md:w-1/2">
           <h5>Technology & Innovation</h5>
             <h1 className="pb-10">Technology That Leads. Innovation That Scales.</h1>
-            <Image src="/images/home/Technology-2.webp" alt="technology-innovation"
+            <Image src="/images/home/Technology-2.png" alt="technology-innovation"
             className="w-full h-[400px] lg:h-[510px] object-cover rounded-[20px]"
             width={2500} height={2400} />
           </div>
@@ -41,7 +41,7 @@ export default function TechnologyInnovation() {
               </div>
               <div className="w-1/2">
                 <Image 
-                  src="/images/home/Transformative-inel.jpg" 
+                  src="/images/home/Transformative-inel.png" 
                   alt="technology-innovation"
                   className="h-[200px] w-full object-cover rounded-[20px]"
                   width={300} 

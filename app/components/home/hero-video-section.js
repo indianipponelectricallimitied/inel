@@ -11,7 +11,7 @@ export default function HeroVideoSection(){
                     <Button variant="blue" href="/Products&Solutions" className="text-[12px] md:text-[16px]">Explore Products</Button>
                     <Button variant="transparent" href="/contact-us" className="text-[12px] text-white md:text-[16px]">Get in Touch</Button>
                 </div>
-                <div className="mt-28 bottom-10   mb-[-150px] relative">
+                {/* <div className="mt-28 bottom-10   mb-[-150px] relative">
                     <svg className="w-[140px] h-[140px] animate-spin [animation-duration:8s]" viewBox="0 0 100 100">
                         <defs>
                             <path id="circle" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
@@ -25,7 +25,7 @@ export default function HeroVideoSection(){
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center w-full">
                         <p className="text-[10px]">Scroll Down</p>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     )
