@@ -3,14 +3,14 @@ import Image from "next/image";
 
 const awards = [
     {
-        image: "/awards.png",
-        alt: "award",
-        title: "Awards & Recognition",
+        image: "/images/home/acma.png",
+        alt: "acma",
+        title: "Best Cluster Company Award by ACMA",
     },
     {
-        image: "/awards.png",
-        alt: "award",
-        title: "Awards & Recognition",
+        image: "/images/home/honda.webp",
+        alt: "honda",
+        title: "Quality & Delivery Achievement Awards from HONDA",
     },
     {
         image: "/awards.png",
@@ -24,8 +24,8 @@ export default function Awards(){
             <div className="container  mx-auto grid grid-cols-1 md:grid-cols-3  gap-20 py-20">
                 {awards.map((award, index) => (
                     <div key={index} className="w-full h-full flex gap-3 items-center justify-center">
-                        <Image src={award.image} alt={award.alt} width={500} height={500} className="w-40" />
-                        <h3 className="text-2xl ">{award.title}</h3>
+                        <Image src={award.image} alt={award.alt} width={500} height={500} className="max-w-40 h-28 bg-black/10 rounded-lg p-5" />
+                        <h3 className="text-xl ">{award.title}</h3>
                     </div>
                 ))}
             </div>

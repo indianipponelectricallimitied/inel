@@ -20,8 +20,8 @@ export default function HowManyMarquee() {
 
   return (
     <section className="pb-20 overflow-hidden">
-        <div className="logo-slider">
-          <div className="logos-slide flex">
+        <div className="text-slider">
+          <div className="texts-slide flex">
             {miles.map((mile, index) => (
               <div key={index} className="flex items-center">
                 <h1>{mile.text}</h1>
@@ -38,7 +38,7 @@ export default function HowManyMarquee() {
       </div>
 
       <style jsx global>{`
-        .logo-slider {
+        .text-slider {
           overflow: hidden;
           padding: 30px 0;
           position: relative;
@@ -46,24 +46,24 @@ export default function HowManyMarquee() {
           display: flex;
         }
 
-        .logos-slide {
-          animation: scroll 20s linear infinite;
+        .texts-slide {
+          animation: scrolling 15s linear infinite;
           white-space: nowrap;
         }
 
-        .logos-slide img {
+        .texts-slide img {
           display: inline-block;
           width: 150px !important;
           height: auto !important;
           margin: 0 40px;
         }
 
-        // .logo-slider:hover .logos-slide {
-        //   animation-play-state: paused;
-        // }
+        .text-slider:hover .texts-slide {
+          animation-play-state: paused;
+        }
         
 
-        @keyframes scroll {
+        @keyframes scrolling {
           0% {
             transform: translateX(0px);
           }

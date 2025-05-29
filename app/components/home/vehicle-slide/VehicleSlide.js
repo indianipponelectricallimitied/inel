@@ -24,10 +24,10 @@ export default function VehicleSlide({ vehicleType, direction }) {
           className: "auto",
           wheels: false
         };
-      case "ATV":
+      case "EV":
         return {
-          image: "/atv.png",
-          className: "ATV",
+          image: "/PTSG_1.png",
+          className: "EV",
           wheels: false
         };
       default:

@@ -90,6 +90,16 @@ export default function MarqueeSection() {
                 className="inline-block" 
               />
             ))}
+            {logos.map((logo, index) => (
+              <Image 
+                key={index} 
+                src={logo.src} 
+                alt={logo.alt} 
+                width={100} 
+                height={100}
+                className="inline-block" 
+              />
+            ))}
         </div>
       </div>
 
@@ -103,7 +113,7 @@ export default function MarqueeSection() {
         }
 
         .logos-slide {
-          animation: scroll 20s linear infinite;
+          animation: scroll 30s linear infinite;
           white-space: nowrap;
         }
 
@@ -115,9 +125,9 @@ export default function MarqueeSection() {
           object-fit: contain;
         }
 
-        .logo-slider:hover .logos-slide {
-          animation-play-state: paused;
-        }
+        // .logo-slider:hover .logos-slide {
+        //   animation-play-state: paused;
+        // }
         
 
         @keyframes scroll {
@@ -125,7 +135,7 @@ export default function MarqueeSection() {
             transform: translateX(0px);
           }
           100% {
-            transform: translateX(calc(-150px * 14));
+            transform: translateX(calc(-200px * 18));
           }
         }
 
@@ -139,7 +149,7 @@ export default function MarqueeSection() {
             transform: translateX(0px);
           }
           100% {
-            transform: translateX(calc(-100px * 14));
+            transform: translateX(calc(-200px * 14));
           }
         }
         }

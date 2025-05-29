@@ -56,7 +56,7 @@ export default function Hotspot({
         />
       )}
       <div
-        className="hotspot-canvas"
+        className="hotspot-canvas flex flex-col justify-center items-center "
         style={{
           position: "absolute",
           zIndex: 2,
@@ -86,7 +86,7 @@ export default function Hotspot({
             />
           </Canvas>
         </div>
-        <div className="hotspot-label text-center text-sm">{label}</div>
+        <div className="hotspot-label text-center pt-3">{label}</div>
       </div>
     </div>
   );
