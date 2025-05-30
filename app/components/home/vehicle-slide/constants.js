@@ -31,7 +31,7 @@ export const VEHICLE_TYPES = [
 
 export const VEHICLE_HOTSPOTS = {
   "2W": [
-    { label: " LCD Digital Instrument Cluster", x: 412, y: 25, object: "/Electronic_ai.glb",
+    { label: " LCD Digital Instrument Cluster", x: 410, y: 5, object: "/Electronic_ai.glb",
       
       canvas_position: {
         x: 173,
@@ -39,8 +39,8 @@ export const VEHICLE_HOTSPOTS = {
       },
 
       line_position: {
-        x: -55,
-        y: 10,
+        x: -66,
+        y: 30,
         width: 400,
       },
 
@@ -54,7 +54,7 @@ export const VEHICLE_HOTSPOTS = {
 
       `,
      },
-    { label: " Cluster Front Facia", x: 390, y: 35, object: "/Electronic_ai.glb",
+    { label: "  7.4 Inch TFT Instrument ", x: 390, y: 35, object: "/Electronic_ai.glb",
       
       canvas_position: {
         x: -483,
@@ -72,6 +72,27 @@ export const VEHICLE_HOTSPOTS = {
           <circle cx="163.5" cy="2.5" r="2" fill="black" stroke="black"/>
           <path d="M163 2.5H0" stroke="black"/>
           </svg>
+      `,
+     },
+     { label: "Cluster Front Facia", x: 430, y: 70, object: "/Electronic_ai.glb",
+      
+      canvas_position: {
+        x: 260,
+        y: 187,
+      },
+
+      line_position: {
+        x: 0,
+        y: 120,
+        width: 500,
+      },
+
+      linepath: `
+        <svg width="504" height="253" viewBox="0 0 504 253" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 2L165 250.5H503.5" stroke="black"/>
+        <circle cx="165.5" cy="250" r="2" fill="black" stroke="black"/>
+        <circle cx="2.5" cy="2.5" r="2" fill="black" stroke="black"/>
+        </svg>
       `,
      },
 
@@ -125,7 +146,7 @@ export const VEHICLE_HOTSPOTS = {
 // 3 whelaer 
 
   "3W": [
-    { label: "BLDC Motor", x: 422, y:115, object: "/Electronic_ai.glb",
+    { label: "Flywheels", x: 422, y:115, object: "/Electronic_ai.glb",
       
       canvas_position: {
         x: 233,
@@ -148,7 +169,7 @@ export const VEHICLE_HOTSPOTS = {
 
       `,
      },
-    { label: "DC Converter", x: 412, y: 65, object: "/Electronic_ai.glb",
+    { label: "Ddigital/analog CDI/TCI", x: 412, y: 65, object: "/Electronic_ai.glb",
       
       canvas_position: {
         x: -525,
@@ -168,7 +189,28 @@ export const VEHICLE_HOTSPOTS = {
         </svg>
       `,
      },
-    
+    { label: "regulators/rectifiers, and ignition coils", x: -302, y: 20, object: "/Electronic_ai.glb",
+      
+      canvas_position: {
+        x: 37,
+        y: 60,
+      },
+
+      line_position: {
+        x: 226,
+        y: 40,
+        width: 300,
+      },
+
+      linepath: `
+        <svg width="282" height="142" viewBox="0 0 282 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M279 139.5L247.5 3H0.5" stroke="black"/>
+        <circle cx="247.5" cy="2.5" r="2" fill="black" stroke="black"/>
+        <circle cx="279.5" cy="139.5" r="2" fill="black" stroke="black"/>
+        </svg>
+      `,
+     },
+   
   ],
 
 

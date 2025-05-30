@@ -86,7 +86,7 @@ export default function Hotspot({
             />
           </Canvas>
         </div>
-        <div className="hotspot-label text-center pt-3">{label}</div>
+        <div className="hotspot-label text-center pt-3 w-[150px]">{label}</div>
       </div>
     </div>
   );
