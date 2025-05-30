@@ -4,13 +4,16 @@ import Image from "next/image";
 
 const miles = [
   {
-    text: "3 Facilities",
+    text: "3 Manufacturing Facilities ",
   },
   {
-    text: "40+ Years Trusted Legacy",
+    text: "40+ Years of Legacy ",
   },
   {
-    text: "12+ Countries",
+    text: "2,000+ Employees ",
+  },
+  {
+    text: "Shipping to 12+ Countries ",
   },
 
 
@@ -26,6 +29,12 @@ export default function HowManyMarquee() {
               <div key={index} className="flex items-center">
                 <h1>{mile.text}</h1>
                   <span className="mx-16 text-primary text-3xl font-bold">•</span>
+              </div>
+            ))}
+            {miles.map((mile, index) => (
+              <div key={index} className="flex items-center">
+                <h1>{mile.text}</h1>
+                <span className="mx-16 text-primary text-3xl font-bold">•</span>
               </div>
             ))}
             {miles.map((mile, index) => (
@@ -68,7 +77,7 @@ export default function HowManyMarquee() {
             transform: translateX(0px);
           }
           100% {
-            transform: translateX(calc(-150px * 10));
+            transform: translateX(calc(-150px * 14));
           }
         }
 

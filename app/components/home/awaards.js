@@ -13,9 +13,9 @@ const awards = [
         title: "Quality & Delivery Achievement Awards from HONDA",
     },
     {
-        image: "/awards.png",
+        image: "/images/home/ficci.png",
         alt: "award",
-        title: "Awards & Recognition",
+        title: "HR Summit & Score Awards 2024",
     }
 ]
 export default function Awards(){
@@ -24,7 +24,7 @@ export default function Awards(){
             <div className="container  mx-auto grid grid-cols-1 md:grid-cols-3  gap-20 py-20">
                 {awards.map((award, index) => (
                     <div key={index} className="w-full h-full flex gap-3 items-center justify-center">
-                        <Image src={award.image} alt={award.alt} width={500} height={500} className="max-w-40 h-28 bg-black/10 rounded-lg p-5" />
+                        <Image src={award.image} alt={award.alt} width={500} height={500} className="max-w-40 h-28 bg-black/10 rounded-lg p-5 object-contain" />
                         <h3 className="text-xl ">{award.title}</h3>
                     </div>
                 ))}

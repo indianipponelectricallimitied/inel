@@ -168,6 +168,7 @@ export const VEHICLE_HOTSPOTS = {
         </svg>
       `,
      },
+    
   ],
 
 
