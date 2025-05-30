@@ -29,9 +29,7 @@ export default function Home() {
       <InvestorRelations />
       <VideoCTA />
       <Sustainable />
-   
- 
-     
+
       <Newsroom />
       <Careers />
       <Newsletter/> 
