@@ -121,7 +121,7 @@ export default function BlogSlide() {
                             />
                             
 
-                            <h1 className="text-xl font-medium line-clamp-2">{blog.title}</h1>
+                            <h1 className="text-xl font-medium line-clamp-2 h-[60px]">{blog.title}</h1>
                             <p className="text-sm line-clamp-3">{blog.intro}</p>
                             <Button 
                                 variant="transparent" 
