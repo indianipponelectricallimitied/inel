@@ -60,19 +60,19 @@ export const jobListings = [
 const quickLinks = [
     {
         title: "Recent Graduates",
-        href: "/#"
+        href: "#apply-now"
     },
     {
         title: "Experienced Professionals",
-        href: "/#"
+        href: "#apply-now"
     },
     {
         title: "Interns",
-        href: "/#"
+        href: "#apply-now"
     },
     {
         title: "Explore more",
-        href: "/#"
+        href: "#apply-now"
     },
     
 ]
@@ -151,7 +151,8 @@ export default function Career() {
                     <h1 className="text-center">Join Our Team – Power Your Future</h1>
                     <p className="md:w-4/5 mx-auto pb-10 text-center">At India Nippon Electricals, we believe our people are our greatest strength. We offer a dynamic work environment that fosters innovation, collaboration, and growth. Whether you’re an experienced professional or a passionate newcomer, you’ll find opportunities to build a rewarding career while contributing to cutting-edge solutions in the automotive industry. Join us and be part of a team that’s driving progress, every step of the way.</p>
 
-                    <PlayVideo videolink ="/videos/hero-placeholder-vid.mp4" />
+                    {/* <PlayVideo videolink ="/videos/hero-placeholder-vid.mp4" /> */}
+                    <Image src="/images/career/career-img.png" alt="career-banner" width={1000} height={1000} className="mx-auto"/>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pt-20'>
                         {perks.map((item, index)=>(
@@ -173,12 +174,12 @@ export default function Career() {
 
                 <CareerOpportunities quickLinks={quickLinks} />
 
-                <div className="container mx-auto space-y-5 md:py-20 md:pt-40 text-center ">
+                <div className="container mx-auto space-y-5 py-20 md:pt-40 text-center ">
                     <h5>Join Our Team</h5>
                     <h1>Drive Your Career Forward with INEL</h1>
                     <p className="md:w-4/5 mx-auto">At India Nippon Electricals, we believe in empowering talent and fostering growth. Whether you’re an experienced professional, a recent graduate, or seeking internship opportunities, we offer a dynamic environment where innovation thrives, and careers take flight. Fill out the form below, and take the first step toward joining a team that’s driving progress and shaping the future of automotive technology.</p>
 
-                    <div className="lg:w-4/6 mx-auto pt-10">
+                    <div className="lg:w-4/6 mx-auto pt-10" id="apply-now" itemID="apply-now">
                         <CareeerForm />
                     </div>
                 </div>

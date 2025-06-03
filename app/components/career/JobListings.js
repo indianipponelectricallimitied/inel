@@ -15,12 +15,12 @@ export default function JobListings({jobListings}) {
                             <p className="lg:w-3/12">{item.Place}</p>
                             <div className="flex items-center gap-3 lg:w-2/6 justify-end">
                             <p className="w-2/5 border border-[#D4D4D4] rounded-[10px] px-2 py-2 text-center">{item.level}</p>
-                            <Button variant="blue" href="/#" className="ms-auto lg:ms-0">Apply Now</Button>
+                            <Button variant="blue" href={`#apply-now`} className="ms-auto lg:ms-0">Apply Now</Button>
                             </div>
                         </div>
                     ))}
                 </div>
-                <Button variant="white" href="/#" className="mx-auto border-0" hasArrow={false} >View More</Button>
+                {/* <Button variant="white" href="/#" className="mx-auto border-0" hasArrow={false} >View More</Button> */}
             </div>
         </section>
     )

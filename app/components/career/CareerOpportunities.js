@@ -17,8 +17,8 @@ export default function CareerOpportunities({quickLinks}) {
                     <Image src="/images/career/career-opportunities.jpeg" alt="Career Opportunities" className="rounded-[20px] h-[400px] object-cover" width={800} height={800} />
                     <p >A window into the corporate world, where you can gain invaluable experience and guidance to build a strong foundation for your professional journey! Read more</p>
                     <div className="flex flex-col md:flex-row lg:items-center gap-5">
-                        <Button variant="white" href="/#" className="border-[#BBD3DF]"  >Check Your Eligibility</Button>
-                        <Button variant="blue" href="/#"  >Apply Now</Button>
+                        <Button variant="white"  href={`#apply-now`} className="border-[#BBD3DF]"  >Check Your Eligibility</Button>
+                        <Button variant="blue"  href={`#apply-now`}>Apply Now</Button>
                     </div>
                 </div>    
             </div>
