@@ -65,19 +65,19 @@ const locations = [
     id: 10,
     name: "TURKEY",
     flag: "https://flagcdn.com/w40/tr.png",
-    coordinates: { top: "35%", left: "52%" }
+    coordinates: { top: "34%", left: "66%" }
   },
   {
     id: 11,
     name: "VIETNAM",
     flag: "https://flagcdn.com/w40/vn.png",
-    coordinates: { top: "35%", left: "52%" }
+    coordinates: { top: "43%", left: "80%" }
   },
   {
     id: 12,
     name: "JAPAN",
     flag: "https://flagcdn.com/w40/jp.png",
-    coordinates: { top: "35%", left: "52%" }
+    coordinates: { top: "35%", left: "82%" }
   }
 ];
 
