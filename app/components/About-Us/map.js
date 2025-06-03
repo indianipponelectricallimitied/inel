@@ -5,7 +5,7 @@ import Image from "next/image";
 import map from "@/public/images/about/map.png";
 import { MdLocationOn } from "react-icons/md";
 
-const locations = [
+const locations = [ 
   {
     id: 1,
     name: "THAILAND",
@@ -60,6 +60,24 @@ const locations = [
     name: "AFRICA",
     flag: "https://flagcdn.com/w40/za.png",
     coordinates: { top: "55%", left: "52%" }
+  },
+  {
+    id: 10,
+    name: "TURKEY",
+    flag: "https://flagcdn.com/w40/tr.png",
+    coordinates: { top: "35%", left: "52%" }
+  },
+  {
+    id: 11,
+    name: "VIETNAM",
+    flag: "https://flagcdn.com/w40/vn.png",
+    coordinates: { top: "35%", left: "52%" }
+  },
+  {
+    id: 12,
+    name: "JAPAN",
+    flag: "https://flagcdn.com/w40/jp.png",
+    coordinates: { top: "35%", left: "52%" }
   }
 ];
 
