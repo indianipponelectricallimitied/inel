@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Button from "../Ui/button";
+
 
 export default function About(){
     return(
@@ -11,10 +13,12 @@ export default function About(){
                 </div>
                 <div className="w-full lg:w-1/2 space-y-5">
                     <h5>About</h5>
-                    <h1>Crafting Precision Solutions for a Smarter Future</h1>
-                    <p>India Nippon Electricals Limited (INEL) was established in 1984 and transitioned into a joint venture in 1986 between Lucas Indian Service Limited, a fully owned subsidiary of Lucas-TVS Limited, and MAHLE Electric Drives Japan Corporation, a member of the globally renowned MAHLE Group, Germany. Specializing in the manufacturing of Electronic Ignition Systems for two-wheelers, three-wheelers, and portable engines, INEL has consistently driven technological innovation. Over the years, INEL has expanded its footprint, significantly broadening its customer base, and is now a key supplier to leading manufacturers in the two-wheeler, three-wheeler, and genset industries. For the fiscal year ending March 2015, the company reported net sales of Rs. 3274 Million (USD 50 Million).
-                    With a focus on advancing product technology, INEL manufactures a wide array of ignition systems, including both digital and analog solutions. The company’s strategic expansion includes state-of-the-art facilities in Hosur (Tamil Nadu), Pondicherry, and Rewari (Haryana), positioning INEL to offer superior customer service, just-in-time supplies, and rapid product innovation.
-                    </p>
+                    <h1>Crafting Precision Solutions</h1>
+                    <p>India Nippon Electricals Limited (INEL) was established in 1984 and became a joint venture in 1986 between Lucas Indian Service (a Lucas-TVS subsidiary) and MAHLE Electric Drives Japan, part of the MAHLE Group, Germany. The company manufactures electronic ignition systems for two-wheelers, three-wheelers, and portable engines, supplying most major OEMs in these segments.</p>
+                    <p>
+                    With operations starting in Hosur, INEL expanded with advanced facilities in Pondicherry and Rewari to better serve customers,</p>
+
+                    <Button href="/contact-us" variant="blue">Contact Us</Button>
                 </div>
             </div>
         </div>

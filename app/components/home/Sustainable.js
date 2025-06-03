@@ -3,7 +3,7 @@ import Button from "../Ui/button";
 
 export default function Sustainable(){
     return(
-        <section className="py-20  diamond-gradient relative pt-40">
+        <section className="py-20  diamond-gradient relative pt-20 md:pt-40">
             <div className="container mx-auto">
                <div className="flex flex-col md:flex-row gap-10 text-white items-end">
                 <div className="w-full md:w-1/2 space-y-5">

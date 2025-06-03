@@ -9,6 +9,8 @@ import Button from '../Ui/button';
 import { IoChevronDownOutline } from 'react-icons/io5';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link'; // Import Link from next/link
+import Image from 'next/image';
+import { FiArrowRight } from "react-icons/fi";
 
 const logo = "/logo-white.svg";
 const logoBlack = "/logo.svg";
@@ -16,6 +18,7 @@ const logoBlack = "/logo.svg";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
   const pathname = usePathname();
   
   const isHomePage = pathname === '/';
@@ -30,66 +33,124 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    // { label: 'Company', href: '/' , 
-    //     submenu : [
-         
-    //       // {label: 'Leadership', href: '/leadership'},
-    //       // {label: 'News', href: '/news'},
-    //       {label: 'Newsroom', href: '/newsroom'},
-    //       { label: 'Aftermarket', href: '/aftermarket' },
-    //       {label: 'policies', href: '/policies'},
-    //     ] 
-    // },
+    { label: 'Company', href: '/' , 
+      submenu: [
+        {label: 'DC DC Convertors', href: '/products/dc-dc-convertors'},
+        {label: 'BLDC Motor Controller', href: '/products/bldc-controller'},
+        {label: 'TPMS Graphical LCD Unit', href: '/products/tpms-lcd'},
+        {label: 'Control Panel', href: '/products/control-panel'},
+        {label: 'Cluster Front Facia', href: '/products/cluster-facia'},
+        {label: 'LCD Digital Instrument Cluster', href: '/products/lcd-cluster'},
+        {label: 'LED Digital Instrument Cluster', href: '/products/led-cluster'},
+        {label: '7.4 Inch TFT Instrument Cluster', href: '/products/tft-cluster'},
+        {label: 'Reverse Parking Assist System', href: '/products/parking-assist'},
+        {label: 'Steering Angle Sensor', href: '/products/steering-sensor'},
+        {label: 'Speed Sensor', href: '/products/speed-sensor'},
+        {label: 'Temperature Sensor', href: '/products/temperature-sensor'},
+        {label: 'TPMS Sensor', href: '/products/tpms-sensor'},
+        {label: 'Oil Level Sensor', href: '/products/oil-sensor'},
+        {label: 'TMAP Sensor', href: '/products/tmap-sensor'},
+        {label: 'Fuel Vapor Purge (FVP)', href: '/products/fvp'},
+        {label: 'Dual Track TPS', href: '/products/dual-track-tps'},
+        {label: 'Gear Position Sensor', href: '/products/gear-sensor'},
+        {label: 'Solenoid', href: '/products/solenoid'},
+        {label: 'Throttle Body', href: '/products/throttle-body'}
+      ]
+    },
     {label: 'About', href: '/about-us'},
-    { label: 'Products', href: '/Products&Solutions' },
+    { label: 'Products', href: '/Products&Solutions',},
     { label: 'Technology', href: '/technology' },
     { label: 'Investors', href: '/investors' },
     { label: 'sustainable  ', href: '/sustainable' },
     { label: 'Media  ', href: '/newsroom' },
     { label: 'Careers', href: '/career' },
-
-
   ];
+
+  const submenuproducts = [
+    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png'},
+    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png'},
+    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png'},
+    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png'},
+    
+  ]
+  
   
   return (
-    <nav className={`container mx-auto py-2  ${
-      isHomePage ? 'navbar-home' : 'navbar-default'
+    <nav className={`container mx-auto py-2 transition-all duration-300 ease-in-out ${
+      isHomePage && !isHovered ? 'navbar-home' : 'navbar-default'
     }`}>
      
       <div className="hidden lg:flex justify-between items-center gap-5">
-        <Link href='/'>
-        { isHomePage ?
-          <img src={logo} alt="logo" />
+        <Link href='/' className="transition-all duration-300 ease-in-out">
+        { isHomePage && !isHovered ?
+          <img src={logo} alt="logo" className="transition-opacity duration-300 ease-in-out" />
           :
-          <img src={logoBlack} alt="logo" />
+          <img src={logoBlack} alt="logo" className="transition-opacity duration-300 ease-in-out" />
         }
         </Link>
         <div>
           <div className="pb-1 flex items-center justify-between">
-            <StockTicker className={`nav-link ${isHomePage ? 'text-white' : 'text-black'}`}/>
-            <Link href='mailto:inelcorp@inel.co.in' className='nav-link flex items-center gap-1'> 
+            <StockTicker className={`nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isHovered ? 'text-white' : 'text-black'}`}/>
+            <Link href='mailto:inelcorp@inel.co.in' className='nav-link flex items-center gap-1 transition-colors duration-300 ease-in-out'> 
               <TbMailFilled /> inelcorp@inel.co.in
             </Link>
           </div>
-          <div className={`${isHomePage ? 'border-white' : 'border-primary'} space-x-8 border-t  pt-2`}>
+          <div className={`${isHomePage && !isHovered ? 'border-white' : 'border-primary'} space-x-8 border-t pt-2 transition-colors duration-300 ease-in-out`}>
             {menuItems.map((item, index) => (
-              <div key={index} className="relative inline-block">
+              <div key={index} className="inline-block">
                 {item.submenu ? (
-                  <div className="group">
-                    <button className="flex items-center gap-1 nav-link">
+                  <div 
+                    className="group"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                  >
+                    <button className={`flex items-center gap-1 nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isHovered ? 'text-white' : 'text-black'}`}>
                       {item.label}
-                      <IoChevronDownOutline className="text-sm transition-transform group-hover:rotate-180" />
+                      <IoChevronDownOutline className="text-sm transition-transform duration-300 ease-in-out group-hover:rotate-180" />
                     </button>
-                    <div className="absolute left-0 z-50 hidden min-w-[200px]  bg-primary py-2 shadow-lg group-hover:block rounded-md">
-                      {item.submenu.map((subItem, subIndex) => (
-                        <Link
-                          key={subIndex}
-                          href={subItem.href}
-                          className="block px-4 py-2 w-full text-white hover:underline underline-offset-4 hover:text-white/80"
-                        >
-                          {subItem.label}
-                        </Link> 
-                      ))}
+                    <div className="absolute left-0 z-50 pt-4 hidden w-full bg-white group-hover:block">
+                      <div className="container mx-auto flex border-t border-gray-200 py-5">
+                        <div className='grid grid-cols-2 gap-2 w-2/4'>
+                          {submenuproducts.map((subItem, subIndex) => (
+                            <Link 
+                              key={`product-${subIndex}`}
+                              href={subItem.href} 
+                              className='rounded-lg p-4 relative h-52 flex flex-col justify-between bg-gradient-to-r from-primary to-[#5589f9]'
+                            >
+                              <div className='absolute inset-0 bg-[url("/images/products/bldc.png")] bg-cover bg-center bg-no-repeat rounded-lg opacity-20'></div>
+                              <p className='text-white z-10 relative'>{subItem.label}</p>
+                              <FiArrowRight />
+                              <Image 
+                                src={subItem.image} 
+                                alt={subItem.label} 
+                                width={200} 
+                                height={100}
+                                className='absolute top-1/2 right-0 -translate-y-1/2'
+                              />
+                            </Link>
+                          ))}
+                        </div>
+                        <div className='w-2/4 grid grid-cols-2 gap-2'>
+                          {item.submenu.slice(0, 10).map((subItem, subIndex) => (
+                            <Link
+                              key={`submenu-${subIndex}`}
+                              href={subItem.href}
+                              className="block px-4 py-2 w-full hover:underline underline-offset-4 text-black"
+                            >
+                              {subItem.label}
+                            </Link>
+                          ))}
+                          {item.submenu.slice(10, 20).map((subItem, subIndex) => (
+                            <Link
+                              key={`submenu-${subIndex}`}
+                              href={subItem.href}
+                              className="block px-4 py-2 w-full hover:underline underline-offset-4 text-black"
+                            >
+                              {subItem.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ) : (
@@ -153,7 +214,7 @@ const Navbar = () => {
                   >
                     {item.submenu.map((subItem, subIndex) => (
                       <Link
-                        key={subIndex}
+                        key={`submenu-${subIndex}`}
                         href={subItem.href}
                         className="block py-2 pl-4 text-white hover:text-white/80 text-sm"
                         onClick={toggleMenu}

@@ -8,28 +8,28 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 
 const team = [
     {
-        image: "/male.jpeg",
-        name: "John Doe",
-        position: "CEO",
+        image: "/images/about/person-1.png",
+        name: "Mr. T.K. Balaji",
+        position: "Chairman",
     },
     {
-        image: "/male.jpeg",
-        name: "John Doe",
-        position: "CEO",
+        image: "/images/about/person-2.png",
+        name: "Mr. Arvind Balaji",
+        position: "Managing Director",
     },
     {
-        image: "/male.jpeg",
-        name: "John Doe",
-        position: "CEO",
+        image: "/images/about/Subtract.png",
+        name: "Mr. Anant Jaivant Talaulicar",
+        position: "Independent Director",
     },
     {
-        image: "/male.jpeg",
-        name: "John Doe",
-        position: "CEO",
+        image: "/images/about/Subtract.png",
+        name: "Ms. Priyamvada Balaji",
+        position: "Non-Executive Director",
     },
     {
-        image: "/male.jpeg",
-        name: "John Doe",
+        image: "/images/about/Subtract.png",
+        name: "Name",
         position: "CEO",
     }
 ]
@@ -62,23 +62,21 @@ export default function Team(){
             768: {
               slidesPerView: 2,
               spaceBetween: 20,
-              centeredSlides: true,
             },
             1024: {
-              slidesPerView: 3,
+              slidesPerView: 4,
               spaceBetween: 70,
-              centeredSlides: true,
             },
             }}
             modules={[ Navigation]}
             className="team md:!p-5"
         >
                     {team.map((item) => (
-                        <SwiperSlide key={item.id} className="card-cut relative ">
+                        <SwiperSlide key={item.id} className="card-cut-not relative ">
                             <Image src={item.image} alt={item.name} width={500} height={300} 
-                            className="rounded-[30px] object-cover w-full h-[450px]"
+                            className="rounded-[30px] object-cover w-full h-[330px]"
                             />
-                            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-70% to-primary rounded-[30px] p-10 flex flex-col justify-end gap-1 pb-10">
+                            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-70% to-primary rounded-[30px] p-5 flex flex-col justify-end gap-1 ">
                                 <h2 className="text-white text-2xl">{item.name}</h2>
                                 <p className="text-white">{item.position}</p>
                             </div>

@@ -22,25 +22,25 @@ const miles = [
 export default function HowManyMarquee() {
 
   return (
-    <section className="pb-20 overflow-hidden">
-        <div className="text-slider">
+    <section className="py-10 overflow-hidden bg-primary">
+        <div className="text-slider text-white">
           <div className="texts-slide flex">
             {miles.map((mile, index) => (
               <div key={index} className="flex items-center">
                 <h1>{mile.text}</h1>
-                  <span className="mx-16 text-primary text-3xl font-bold">•</span>
+                  <span className="mx-16 text-white text-3xl font-bold">•</span>
               </div>
             ))}
             {miles.map((mile, index) => (
               <div key={index} className="flex items-center">
                 <h1>{mile.text}</h1>
-                <span className="mx-16 text-primary text-3xl font-bold">•</span>
+                <span className="mx-16 text-white text-3xl font-bold">•</span>
               </div>
             ))}
             {miles.map((mile, index) => (
               <div key={index} className="flex items-center">
                 <h1>{mile.text}</h1>
-                <span className="mx-16 text-primary text-3xl font-bold">•</span>
+                <span className="mx-16 text-white text-3xl font-bold">•</span>
               </div>
             ))}
         </div>
@@ -67,9 +67,9 @@ export default function HowManyMarquee() {
           margin: 0 40px;
         }
 
-        .text-slider:hover .texts-slide {
-          animation-play-state: paused;
-        }
+        // .text-slider:hover .texts-slide {
+        //   animation-play-state: paused;
+        // }
         
 
         @keyframes scrolling {

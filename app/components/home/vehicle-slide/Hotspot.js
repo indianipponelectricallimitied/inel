@@ -34,7 +34,7 @@ export default function Hotspot({
 }) {
   return (
     <div
-      className="hotspot-wrapper" 
+      className="hotspot-wrapper hidden lg:block" 
       style={{
         position: 'absolute',
         left: `${x}px`,

@@ -8,6 +8,7 @@ import Innovation from "../components/About-Us/Innovation";
 import Achievements from "../components/About-Us/Achievements";
 import Team from "../components/About-Us/Team";
 import Map from "../components/About-Us/map";
+import MarqueeSection from "../components/About-Us/marquee-setion";
 
 export default function AboutUs() {
 
@@ -22,7 +23,7 @@ export default function AboutUs() {
             <Innovation />
             <Journey />
             <OurLeadership />
-            <ManufacturingFacilities />
+            {/* <ManufacturingFacilities /> */}
 
 
             <div className="grid-with-gradients">
@@ -31,6 +32,7 @@ export default function AboutUs() {
                 <Team />
             </div>
             <Map />
+            <MarqueeSection />
         </>
     )
 }
