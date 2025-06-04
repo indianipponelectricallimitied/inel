@@ -187,7 +187,7 @@ export default function Career() {
 
             <div className="grid-with-gradients">
             <div className="gradient-sphere  w-[600px] h-[600px] top-[100px] right-[350px]"></div>
-                <div className="container mx-auto py-20 md:pt-40 flex flex-col lg:flex-row gap-20">
+                {/* <div className="container mx-auto py-20 md:pt-40 flex flex-col lg:flex-row gap-20">
                     <div className="lg:w-2/5 space-y-5 ">
                             <h5>Career Testimonials</h5>
                             <h1>Hear from Our Team</h1>
@@ -196,7 +196,7 @@ export default function Career() {
                     <div className="w-9/12 lg:w-[45%] mx-auto">
                             <BackflipSlider testimonials={testimonials} />
                     </div>
-                </div>
+                </div> */}
 
                 <div className="container mx-auto py-20 space-y-5">
                     <h5 className="text-center">FAQ</h5>
