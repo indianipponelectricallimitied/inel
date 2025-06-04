@@ -27,11 +27,7 @@ const team = [
         name: "Ms. Priyamvada Balaji",
         position: "Non-Executive Director",
     },
-    {
-        image: "/images/about/Subtract.png",
-        name: "Name",
-        position: "CEO",
-    }
+   
 ]
 export default function Team(){
     return(

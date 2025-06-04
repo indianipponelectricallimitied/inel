@@ -18,20 +18,6 @@ const LeadershipData = [
         text: "At India Nippon , each individual truly value partnership with Customers , Business Partners [Suppliers] and employees. Flexibility and challenging attitude to achieve excellence with passion is the strength of each member of India Nippon",
         image: "/images/about/Ravinder-Sharma.png",
     },
-    {
-        id: 2,
-        name: "John Doe",
-        position: "President",
-        text: "At India Nippon , each individual truly value partnership with Customers , Business Partners [Suppliers] and employees. Flexibility and challenging attitude to achieve excellence with passion is the strength of each member of India Nippon",
-        image: "/male.jpeg",
-    },
-    {
-        id: 3,
-        name: "John Doe",
-        position: "President",
-        text: "At India Nippon , each individual truly value partnership with Customers , Business Partners [Suppliers] and employees. Flexibility and challenging attitude to achieve excellence with passion is the strength of each member of India Nippon",
-        image: "/male.jpeg",
-    }
 ]
 
 export default function OurLeadership() {

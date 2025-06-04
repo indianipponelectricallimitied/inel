@@ -15,12 +15,12 @@ const achievements = [
         title: "Quality & Delivery Achievement Award from HONDA 2012 - 2013",
     },
     {
-        image: "/placeholder.jpeg",
-        title: "Quality & Delivery Achievement Award from HONDA 2014 - 2015",
+        image: "/images/about/ficci.jpeg",
+        title: "Hr Summit & Score Awards from FICCI 2024",
     },
     {
-        image: "/placeholder.jpeg",
-        title: "Quality & Delivery Achievement Award from HONDA 2016 - 2017",
+        image: "/images/about/cii.jpeg",
+        title: "INEL Wins Lean Practice Competition for Southern Region Award From CII",
     },
 ]
 

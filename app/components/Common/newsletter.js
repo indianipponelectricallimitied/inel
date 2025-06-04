@@ -71,8 +71,8 @@ export default function Newsletter({newsletterBg}) {
                         </button>
                     </form> */}
                     
-                    <Link href="/career" className="w-fit block mt-5 mx-auto text-primary font-medium bg-white py-4 px-6 rounded-[14px]">
-                        Get in Touch
+                    <Link href="/contact-us" className="w-fit block mt-5 mx-auto text-primary font-medium bg-white py-4 px-6 rounded-[14px]">
+                        Get in Touch
                     </Link>
                     
                     {/* <div className="my-6  relative ">
