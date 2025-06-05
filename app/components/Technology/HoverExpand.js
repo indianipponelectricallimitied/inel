@@ -2,32 +2,32 @@
 const programs = [
     {
         title: "Ideation",
-        text: "The journey begins with a clear understanding of market needs and customer demands. INEL conducts thorough market research to identify gaps in current technologies and opportunities for innovation in areas like electric mobility, powertrains, and vehicle safety systems. ",
+        text: "INEL drives innovation by addressing market shifts toward sustainable mobility and EV adoption, while also focusing on improving ICE vehicle efficiency and meeting the growing demand for advanced sensors and controllers for connected and autonomous vehicles. ",
         image: "/placeholder.jpeg"
     },
     {
         title: "Conceptualization",
-        text: "The journey begins with a clear understanding of market needs and customer demands. INEL conducts thorough market research to identify gaps in current technologies and opportunities for innovation in areas like electric mobility, powertrains, and vehicle safety systems. ",
+        text: "INEL establishes strategic partnerships, including with Athena for EFI technology, and enters the EV market with solutions like DC-DC Converters and ISG systems. A new R&D center in 2019 spearheads the development of innovative EV motor controllers and sensorless commutation.",
         image: "/placeholder.jpeg"
     },
     {
         title: "Elaboration",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+        text: "INEL’s R&D center leads the detailed design and testing of products like ISG systems, EFI ECUs, and EV motor controllers. Extensive field trials and compliance testing, such as for RPAS, support product readiness.",
          image: "/placeholder.jpeg"
     },
     {
         title: "Incubation",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+        text: "Innovations are refined through rigorous testing and customer engagement. INEL showcases prototypes like the EV motor and motor controller to customers, receiving positive feedback for scalability, while securing intellectual property for future products",
          image: "/placeholder.jpeg"
     },
     {
         title: "Acceleration",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+        text: "INEL scales up production with expanded manufacturing facilities and clean room capabilities. Investments in automation and efficient production processes support increased demand and mass production of critical EV components.",
          image: "/placeholder.jpeg"
     },
     {
         title: "Market Launch",
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+        text: "INEL successfully introduces new products, including sensors, EV components, and advanced displays. Key contracts, patents, and expanded product offerings strengthen INEL’s market position, with significant expansion into the E2W sector.",
          image: "/placeholder.jpeg"
     },
 ]

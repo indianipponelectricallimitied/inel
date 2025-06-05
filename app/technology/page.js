@@ -22,8 +22,10 @@ export default function Technology() {
                     <div className="lg:w-1/2 w-full space-y-5">
                         <h5 >Research & Development</h5>
                         <h1 >State-of-the-Art<br/>   Research Center</h1>
-                        <p>At INEL, Research and Development (R&D) is the cornerstone of our strategy for innovation, ensuring that we remain at the forefront of the automotive industry. Our dedicated R&D centers and advanced technology infrastructure allow us to continuously push boundaries, developing cutting-edge products and solutions for both internal combustion engine (ICE) and electric vehicle (EV) markets.</p>
-                        <p>At INEL, we lead in developing powertrain systems that maximize vehicle efficiency, from ignition systems for ICE vehicles to electronic fuel injection (EFI) and integrated starter generators (ISG). Our technologies are designed to reduce emissions, improve fuel economy, and enhance the driving experience, while also integrating seamlessly into electric vehicle powertrains for higher performance and lower environmental impact.</p>
+                        <p>The R&D Centre in Hosur, Tamil Nadu, drives advancements in automotive technologies, specializing in Embedded Hardware and Software Design, as well as Electro-Mechanical Design. Innovations include EFI controllers, ISG systems with sensorless commutation, and key EV components like DC-DC Converters and EV Motor Controllers with FOC. The center also develops advanced sensors such as Steering Angle Sensors (SAS) and TPMS, along with Instrument Clusters featuring CAN, Bluetooth, and Google Map Navigation.</p>
+                        <p>
+                        With a strong focus on R&D, the center has secured multiple patents and invested ₹2,045 lakhs for FY 2023-24. This commitment strengthens INEL's competitive edge by continuously developing cutting-edge technologies in the automotive sector.
+                        </p>
                     </div>
                     <div className="lg:w-1/2 w-full">
                         <Image src="/images/Technology/Development.jpeg" alt="Research Development"
@@ -35,7 +37,7 @@ export default function Technology() {
                 </div>
             </section>
 
-            <Video />
+            <Video videoUrl="/videos/home-main.mp4" />
 
         </>
     )

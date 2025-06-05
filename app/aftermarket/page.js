@@ -66,7 +66,7 @@ export default function aftermarket(){
         />
 
 
-        <div className="container mx-auto flex flex-col lg:flex-row gap-12  py-20">
+        {/* <div className="container mx-auto flex flex-col lg:flex-row gap-12  py-20">
             <div className="lg:w-2/5 space-y-8">
                 <h1 >Precision Parts, Perfectly Tailored for Your Vehicle</h1>
                 <p >At INEL, we provide a meticulously curated selection of premium aftermarket parts to meet the highest standards of performance and reliability. From ignition systems to relays and regulators, our global offering ensures that you find the ideal components for your vehicle, no matter the make or model</p>
@@ -74,9 +74,9 @@ export default function aftermarket(){
             <div className="lg:w-3/5">
                 <SearchAftermarket />
             </div>
-        </div>
+        </div> */}
 
-        <section className="container mx-auto space-y-10 md:space-y-20 pb-20  ">
+        {/* <section className="container mx-auto space-y-10 md:space-y-20 pb-20  ">
             <h1 className="text-center">Featured Products</h1>
                 <FeaturedProducts />
                 <Button href="/Products&Solutions" 
@@ -84,9 +84,9 @@ export default function aftermarket(){
                         className="w-fit mx-auto">
                         Explore all Products
                     </Button>
-        </section>
+        </section> */}
 
-        <WhyAftermarket />
+        <WhyAftermarket  />
 
 
     <div className="grid-with-gradients">

@@ -24,10 +24,49 @@ const team = [
     },
     {
         image: "/images/about/Subtract.png",
-        name: "Ms. Priyamvada Balaji",
+        name: "Mr. V Balaraman",
+        position: "Independent Director",
+    },
+    {
+        image: "/images/about/Subtract.png",
+        name: "Dr Jayshree Suresh",
+        position: "Independent Director",
+    },
+    {
+        image: "/images/about/Subtract.png",
+        name: "Mr T Momose",
         position: "Non-Executive Director",
     },
-   
+    {
+        image: "/images/about/Subtract.png",
+        name: "Mr Mukesh Kumar Somani",
+        position: "Non-Executive Director",
+    },
+    {
+        image: "/images/about/Subtract.png",
+        name: "Ms Priyamvada Balaji",
+        position: "Non-Executive Director",
+    },
+    {
+        image: "/images/about/Subtract.png",
+        name: "Mr K G Raghavan",
+        position: "Independent Director",
+    },
+    {
+        image: "/images/about/Subtract.png",
+        name: "Mr R Vijayaraghavan",
+        position: "Independent Director",
+    },
+    {
+        image: "/images/about/Subtract.png",
+        name: "Mr Elango Srinivasan",
+        position: "Chief Financial Officer",
+    },
+    {
+        image: "/images/about/Subtract.png",
+        name: "Mr G Venkatram",
+        position: "Company Secretary",
+    },
 ]
 export default function Team(){
     return(
@@ -72,7 +111,7 @@ export default function Team(){
                             <Image src={item.image} alt={item.name} width={500} height={300} 
                             className="rounded-[30px] object-cover w-full h-[330px]"
                             />
-                            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-70% to-primary rounded-[30px] p-5 flex flex-col justify-end gap-1 ">
+                            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-50% to-primary rounded-[30px] p-5 flex flex-col justify-end gap-1 ">
                                 <h2 className="text-white text-2xl">{item.name}</h2>
                                 <p className="text-white">{item.position}</p>
                             </div>

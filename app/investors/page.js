@@ -2,6 +2,17 @@ import BreadCrumb from "../components/Ui/bread-crumb"
 import Newsletter from "../components/Common/newsletter"
 import StockDataCard from "../components/Common/stockmarket/StockDataCard"
 export default function Investors() {
+
+const reports=[
+    {
+        title: "Annual Report",
+        link: "/investors/annual-report"
+    },
+    {
+        title: "Quarterly Report",
+        link: "/investors/quarterly-report"
+    }
+]
     return (
         <>
             <BreadCrumb 
@@ -21,6 +32,20 @@ export default function Investors() {
                     <StockDataCard />
                 </div>
             </div>
+
+            <div className="container mx-auto py-20 flex flex-col md:flex-row justify-between gap-20">
+                <div className="w-1/3"> 
+                    {reports.map((report, index) => (
+                        <div key={index}>
+                            <h1>{report.title}</h1>
+                            <p>{report.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+
+            
             <Newsletter />
         </>
     )

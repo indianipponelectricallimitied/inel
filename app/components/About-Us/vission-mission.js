@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const visionMission = [
     {
-        title: "Vission",
+        title: "Vision",
         description: "To be the trusted partner for customers in the supply of high-quality electrical and electronic solutions across the automotive and non-automotive industries, while fostering sustainable growth and technological leadership.",
         
     },

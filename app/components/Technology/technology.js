@@ -4,21 +4,21 @@ import { useState, useEffect } from "react";
 
 const milestones= [
     {
-        title: " Filed",
+        title: "Patents Filed",
         numbers: "10",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+        description: " Driving innovation with filed patents.",
         image: "/images/Technology/Patents.png"
     },
     {
         title: "Engineers",
         numbers: "330",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+        description: "A skilled team of engineers.",
         image: "/images/Technology/Engineers.png"
     },
     {
         title: "Design Allocations",
         numbers: "45",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+        description: " Precision in every design allocation",
         image: "/images/Technology/Allocations.png"
     }
 ]
@@ -26,27 +26,27 @@ const milestones= [
 const innovations = [
     {
         title: "Sustainable Mobility",
-        description: "India Nippon Electricals Limited (INEL) is committed to accelerating the transition to green mobility solutions. With a focus on electric vehicle (EV) components, energy-efficient ignition systems, and battery management systems, INEL is leading the way towards a cleaner future. Our efforts include the development of DC-DC converters, motor controllers, and advanced powertrains for electric vehicles, all designed to reduce environmental impact and increase energy efficiency.",
+        description: "India Nippon Electricals Limited (INEL) is committed to sustainable mobility with a dual focus on both internal combustion engine (ICE) and electric vehicle (EV) technologies. For ICE vehicles, INEL develops advanced solutions like Integrated Starter Generator (ISG) systems, improving power output, efficiency, and fuel economy. In the EV sector, the company offers cutting-edge products like DC-DC Converters, Traction Motors, and Motor Controllers. INEL also prioritizes environmental sustainability, reducing energy consumption, emissions, and promoting waste recycling, water conservation, and solar energy initiatives to lower Greenhouse Gas emissions.",
         image: "/images/Technology/Rectangle.png"
     },
     {
         title: "Safe Mobility",
-        description: "Safety is paramount at INEL. We design and develop critical components such as speed sensors, temperature sensors, and tire pressure monitoring systems (TPMS) to enhance vehicle safety. Our research focuses on creating systems that work together to monitor vehicle health in real-time, ensuring reliability and preventing accidents. With our continuous innovation, we are contributing to safer roads for everyone.",
+        description: "India Nippon Electricals Limited (INEL) is committed to safe mobility through innovative products and strong operational practices. The company develops advanced mechatronic solutions like Tire Pressure Monitoring Systems (TPMS), Steering Angle Sensors (SAS), and Reverse Parking Assist Systems (RPAS), contributing to driver safety and optimal vehicle performance. INEL also produces critical components such as Speed Sensors and Throttle Position Sensors (TPS) that enhance engine control and safety. The company upholds high Environment, Health, and Safety (EHS) standards, achieving ISO 45001:2018 certification and implementing stringent safety protocols, training, and emergency drills, resulting in significant reductions in workplace injuries.",
         image: "/images/Technology/Rectangle-(4).png"
     },
     {
         title: "Smart Mobility",
-        description: "INEL is advancing smart mobility by integrating intelligent systems into vehicles. While we're not yet focused on full-scale autonomous driving, our developments in sensor technologies, vehicle-to-vehicle communication, and energy optimization are laying the groundwork for the next generation of connected and autonomous vehicles. Our solutions help vehicles become more intelligent, responsive, and energy-efficient in real-world environments.",
+        description: "India Nippon Electricals Limited (INEL) is advancing smart mobility through innovative electronic and mechatronic solutions that enhance vehicle intelligence, efficiency, and safety. Their product portfolio includes Tire Pressure Monitoring Systems (TPMS), Steering Angle Sensors (SAS), and Engine Control Sensors, improving safety and performance. INEL also contributes to electric vehicle (EV) adoption with DC-DC Converters, Traction Motors, and Motor Controllers, while their Integrated Starter Generator (ISG) systems boost efficiency in internal combustion engine (ICE) vehicles. Additionally, INEL's Instrument Clusters with Bluetooth connectivity and navigation enhance driver awareness. Backed by strong R&D and strategic partnerships, INEL leads the way in intelligent, eco-friendly automotive solutions.",
         image: "/images/Technology/Rectangle-(3).png"
     },
     {
         title: "Autonomous Mobility",
-        description: "Inspired by the growing need for autonomous vehicles, INEL is exploring sensor-based technologies and real-time data processing to support autonomous driving in the future. While our focus is currently on improving sensor technology and vehicle control systems, our long-term vision includes contributing to the development of autonomous vehicles.",
+        description: "India Nippon Electricals Limited (INEL) is driving the evolution of autonomous mobility by developing advanced electronic and mechatronic solutions for intelligent vehicle operation. Their portfolio includes critical sensors like Steering Angle Sensors (SAS) for Electronic Stability Control (ESC) systems, essential for Advanced Driver Assistance Systems (ADAS) and self-driving functionalities. INEL also offers Reverse Parking Assist Systems (RPAS), Speed Sensors, and Engine Control Units (ECUs), all vital for autonomous decision-making. Additionally, their Motor Controllers for electric vehicles (EVs) support sophisticated autonomous functions, positioning INEL at the forefront of connected and autonomous vehicle technologies.",
         image: "/images/Technology/Rectangle-(2).png"
     },
     {
         title: "Powertrain Innovations",
-        description: "At INEL, we lead in developing powertrain systems that maximize vehicle efficiency, from ignition systems for ICE vehicles to electronic fuel injection (EFI) and integrated starter generators (ISG). Our technologies are designed to reduce emissions, improve fuel economy, and enhance the driving experience, while also integrating seamlessly into electric vehicle powertrains for higher performance and lower environmental impact.",
+        description: "India Nippon Electricals Limited (INEL) leads in powertrain innovation with advanced solutions for both Internal Combustion Engine (ICE) and Electric Vehicle (EV) systems. For ICE vehicles, INEL develops Electronic Fuel Injection (EFI) Engine Control Units (ECUs) and Integrated Starter Generator (ISG) systems, enhancing power output, fuel efficiency, and emissions control. In the EV sector, INEL offers crucial components like DC-DC Converters, Traction Motors, and Motor Controllers, with ongoing development in advanced control systems. Supported by a dedicated R&D center, INEL continues to drive innovation and secure patents in powertrain technology.",
         image: "/images/Technology/Rectangle-(1).png"
     },
 ]

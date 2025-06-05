@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import { BsPlayCircle } from "react-icons/bs";
 import { BsPauseCircle } from "react-icons/bs";
 
-export default function Video() {
+export default function Video({ videoUrl }) {
     const [isPlaying, setIsPlaying] = useState(true);
     const [showControls, setShowControls] = useState(false);
     const videoRef = useRef(null);
@@ -61,7 +61,7 @@ export default function Video() {
         >
             <video 
                 ref={videoRef}
-                src="/videos/hero-placeholder-vid.mp4" 
+                src={videoUrl} 
                 autoPlay 
                 muted 
                 loop 

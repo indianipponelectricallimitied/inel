@@ -31,11 +31,11 @@ export const VEHICLE_TYPES = [
 
 export const VEHICLE_HOTSPOTS = {
   "2W": [
-    { label: " LCD Digital Instrument Cluster", x: 410, y: 5, object: "/Electronic_ai.glb",
+    { label: " Ignition coils ", x: 410, y: 5, object: "/Electronic_ai.glb",
       
       canvas_position: {
-        x: 173,
-        y: 55,
+        x: 153,
+        y: 35,
       },
 
       line_position: {
@@ -54,10 +54,10 @@ export const VEHICLE_HOTSPOTS = {
 
       `,
      },
-    { label: "  7.4 Inch TFT Instrument ", x: 390, y: 35, object: "/Electronic_ai.glb",
+    { label: "  Flywheel Magneto", x: 390, y: 35, object: "/Electronic_ai.glb",
       
       canvas_position: {
-        x: -483,
+        x: -458,
         y: 60,
       },
 
@@ -74,11 +74,11 @@ export const VEHICLE_HOTSPOTS = {
           </svg>
       `,
      },
-     { label: "Cluster Front Facia", x: 430, y: 70, object: "/Electronic_ai.glb",
+     { label: "Censors ", x: 400, y: 40, object: "/Electronic_ai.glb",
       
       canvas_position: {
-        x: 260,
-        y: 187,
+        x: 299,
+        y: 227,
       },
 
       line_position: {
@@ -88,11 +88,31 @@ export const VEHICLE_HOTSPOTS = {
       },
 
       linepath: `
-        <svg width="504" height="253" viewBox="0 0 504 253" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 2L165 250.5H503.5" stroke="black"/>
-        <circle cx="165.5" cy="250" r="2" fill="black" stroke="black"/>
+        <svg width="497" height="195" viewBox="0 0 497 195" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 2L129.5 192.5H497" stroke="black"/>
+        <circle cx="129.5" cy="192.5" r="2" fill="black" stroke="black"/>
         <circle cx="2.5" cy="2.5" r="2" fill="black" stroke="black"/>
         </svg>
+      `,
+     },
+     { label: "  Clusters ", x: 320, y: 200, object: "/Electronic_ai.glb",
+      
+      canvas_position: {
+        x: -458,
+        y: 60,
+      },
+
+      line_position: {
+        x: -326,
+        y: 40,
+        width: 200,
+      },
+
+      linepath: `
+         <svg width="166" height="5" viewBox="0 0 166 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="163.5" cy="2.5" r="2" fill="black" stroke="black"/>
+          <path d="M163 2.5H0" stroke="black"/>
+          </svg>
       `,
      },
 
