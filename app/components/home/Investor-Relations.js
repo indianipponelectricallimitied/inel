@@ -34,7 +34,7 @@ export default function InvestorRelations() {
             <Button variant="white" href="/contact-us">Explore Our Innovations</Button>
           </div> 
           <div className="w-full md:w-1/3 space-y-6">
-            <StockDataCard />
+            <StockDataCard background="bg-[#483d81]" />
           </div>
           <div className="w-full md:w-1/3 space-y-6">
             <p  className="text-white bg-[url('/images/home/Subtract.png')] bg-contain bg-center bg-no-repeat p-4 w-fit">Quick Links</p>

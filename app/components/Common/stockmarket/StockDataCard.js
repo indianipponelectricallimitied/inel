@@ -4,8 +4,10 @@ import { MdArrowUpward, MdArrowDownward } from "react-icons/md";
 import Image from 'next/image';
 import './StockDataCard.css'; // Create this CSS file
 import StockDataService from '../../../services/stockDataService';
+import GlowingBox from '../../Ui/GlowingBox';
 
-export default function StockDataCard() {
+
+export default function StockDataCard({background}) {
   const [stockData, setStockData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -67,6 +69,9 @@ export default function StockDataCard() {
   const isUsingDummyData = stockData && stockData['Global Quote'] && !quote['01. symbol'].includes(market);
 
   return (
+    <GlowingBox borderColor="#9EB2FF" className={`w-full h-full ${background} rounded-[20px] z-10 bg-gradient-to-br  `} >
+
+    
     <div className="card-wrapper" ref={cardRef}>
       
         <div className="tabs z-[3]">
@@ -122,5 +127,6 @@ export default function StockDataCard() {
             )}
       </div>
     </div>
+    </GlowingBox>
   );
 }

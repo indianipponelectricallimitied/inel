@@ -59,8 +59,6 @@ input[id="radio-2"]:checked ~ .glider {
 
 
 .card-wrapper {
-
-    background-color: #483d81;
     border-radius: 12px;
     position: relative;
     z-index: 30;
@@ -70,42 +68,7 @@ input[id="radio-2"]:checked ~ .glider {
     flex-direction: column;
 }
 
-/* .card-wrapper:hover {
-    transform: scale(0.97);
-} */
 
-.card-wrapper::after{
-    content: "";
-    height: 99%;
-    width: 99%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% , -50%);
-    z-index: -1;
-    border-radius: 10px;
-    background-color: #483d81;
-}
-.card-wrapper::before {
-    content: "";
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: inherit;
-    background: radial-gradient(
-       20rem circle at var(--xPos) var(--yPos),
-       #8a85a3,
-        transparent 75%
-    );
-    opacity: 0;
-    transition: all 0.15s ease-in-out;
-    z-index: -1;
-}
-
-.card-wrapper:hover::before {
-    opacity: 1;
-}
-
+ 
+ 
 
