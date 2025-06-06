@@ -18,7 +18,7 @@ export default function Technology() {
 
 
             <section>
-                <div className="container mx-auto  flex flex-col lg:flex-row gap-10 py-20">
+                <div className="container mx-auto  flex flex-col lg:flex-row gap-10 py-20" id="research-development">
                     <div className="lg:w-1/2 w-full space-y-5">
                         <h5 >Research & Development</h5>
                         <h1 >State-of-the-Art<br/>   Research Center</h1>

@@ -69,7 +69,7 @@ const milestones = [
 
 export default function Journey() {
   return (
-    <section className='py-20 bg-primary timeline diamond-gradient'>
+    <section className='py-20 bg-primary timeline diamond-gradient' id="legacy">
         <div className='container mx-auto'>
 
         <h5 className='text-white'>Our Journey</h5>

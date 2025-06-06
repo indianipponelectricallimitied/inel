@@ -15,17 +15,17 @@ export default function Footer(){
                 <div className="flex flex-wrap gap-10 md:gap-0">
                     <div className="flex flex-col gap-2 w-full md:w-1/5">
                         <p className="pb-3 font-bold">Company</p>
-                        <a href="#">Company Overview</a>
-                        <a href="#">Our Legacy</a>
-                        <a href="#">Leadership Team</a>
-                        <a href="#">Manufacturing Facilities</a>
+                        <a href="/about-us#about">Company Overview</a>
+                        <a href="/about-us#legacy">Our Legacy</a>
+                        <a href="/about-us#team">Leadership Team</a>
+                        <a href="/about-us#achievements">Achievements & Awards</a>
                     </div>
                     <div className="flex flex-col gap-2 w-full md:w-1/5">
                         <p className="pb-3 font-bold">Products & Solutions</p>
-                        <a href="#">Power Electronics</a>
-                        <a href="#">Display & Cluster Systems</a>
-                        <a href="#">Sensor Technologies</a>
-                        <a href="#">Engine & Throttle Control</a>
+                        <a href="/Products&Solutions?type=category&value=2+Wheeler">2 Wheeler</a>
+                        <a href="/Products&Solutions?type=category&value=3+Wheeler">3 Wheeler</a>
+                        <a href="/Products&Solutions?type=type&value=Regulator">Regulator</a>
+                        <a href="/Products&Solutions?type=type&value=Controller">Controller</a>
                     </div>
                     <div className="flex flex-col gap-2 w-full md:w-1/5">
                         <p className="pb-3 font-bold">Investors</p>
@@ -44,21 +44,21 @@ export default function Footer(){
                     <div className="flex flex-col gap-10 md:gap-0 md:flex-row   pt-10 flex-wrap">
                         <div className="flex flex-col gap-2 w-full md:w-1/5">
                             <p className="pb-3 font-bold">Careers</p>
-                            <a href="#">Life at INEL</a>
-                            <a href="#">Open Positions</a>
-                            <a href="#">Internship Programs</a>
+                            <a href="/career#career">Life at INEL</a>
+                            <a href="/career#openings">Open Positions</a>
+                            <a href="/career#FAQ">FAQ</a>
                         </div>
                         <div className="flex flex-col gap-2 w-full md:w-1/5">
                             <p className="pb-3 font-bold">Innovation & R&D</p>
-                            <a href="#">Research & Development</a>
-                            <a href="#">Patents & Innovations</a>
-                            <a href="#">Technology Collaborations</a>
+                            <a href="/technology#research-development">Research & Development</a>
+                            <a href="/technology#patents">Patents & Innovations</a>
+                            <a href="/technology#innovation">Innovation </a>
                         </div>
                         <div className="flex flex-col gap-2 w-full md:w-1/4">
                             <p className="pb-3 font-bold">Sustainability</p>
-                            <a href="#">Environmental Initiatives</a>
-                            <a href="#">Energy Efficiency Programs</a>
-                            <a href="#">Corporate Social Responsibility (CSR)</a>
+                            <a href="/sustainable">Environmental Initiatives</a>
+                            <a href="/sustainable">Energy Efficiency Programs</a>
+                            <a href="/sustainable">Corporate Social Responsibility (CSR)</a>
                         </div>
                         <div className="flex flex-col gap-2 w-full md:w-1/5">
                             <p className="pb-3 font-bold">Follow us :</p>

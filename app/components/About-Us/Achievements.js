@@ -27,7 +27,7 @@ const achievements = [
 export default function Achievements() {
     return (
         <section>
-            <div className='container py-20 mx-auto relative  flex justify-between flex-col lg:flex-row gap-20'>
+            <div className='container py-20 mx-auto relative  flex justify-between flex-col lg:flex-row gap-20' id="achievements">
                 <div className='w-full lg:w-1/2 space-y-8'>
                     <h5>Achievements & Awards</h5>
                     <h1>Driving Success Through Excellence</h1>

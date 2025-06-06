@@ -35,7 +35,7 @@ const programs = [
 export default function HoverExpand() {
     return (
         
-    <section className="py-20 diamond-gradient  clip-path relative btmleft">
+    <section className="py-20 diamond-gradient  clip-path relative btmleft" id="innovation">
         <div className="container mx-auto ">
             <h1 className="text-center pb-5 text-white">Step by Step to Innovation at INEL</h1>
             <div className=" flex flex-col lg:flex-row gap-5 lg:gap-0 text-white mt-10 ">

@@ -71,10 +71,10 @@ const team = [
 export default function Team(){
     return(
         <section className="py-20 ">
-            <div className="space-y-5 text-center">
+            <div className="space-y-5 text-center" id="team">
                 <h5> Team</h5>
                 <h1>Meet Our Leadership Team</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                {/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> */}
             </div>
             <div className="container mx-auto pt-20">
             <Swiper

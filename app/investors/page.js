@@ -36,9 +36,9 @@ const reports=[
             <div className="container mx-auto pt-20 pb-5 flex flex-col md:flex-row justify-between gap-20">
                 <div className="w-full lg:w-2/6 space-y-5">
                     <h1>INEL at Glance</h1>
-                    <p>INEL is a leading global technology company providing cutting-edge solutions for electric mobility, automotive components, and industrial technology.</p>
+                    <p>INEL (India Nippon Electricals Limited) is a leader in automotive components, with expertise in electronic ignition systems and strong growth, including a 23% increase in aftermarket sales in FY 2023-24. The company is expanding into EV components and global markets.</p>
                     <p>
-                    INEL specializes in the manufacturing of advanced electric vehicle (EV) systems, focusing on power electronics, display & cluster systems, sensors, and engine & throttle control. The company’s product portfolio caters to OEMs (original equipment manufacturers) and other industry leaders, contributing to the advancement of sustainable, safe, and efficient transportation.
+                    INEL maintains robust governance, a 30%+ dividend payout, and is committed to long-term shareholder value through growth in ICE and EV sectors. Investors can access key resources, including AGM details and share transfer information.
                     </p>
                 </div>
                 <div className="w-full lg:w-4/6 mx-auto">

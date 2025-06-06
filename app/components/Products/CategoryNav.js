@@ -4,11 +4,11 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import ApiService from '@/app/services/api';
 
-const CategoryNav = ({ onFilterChange }) => {
+const CategoryNav = ({ onFilterChange, initialTab = 'all', initialValue = null }) => {
     const [vehicleCategories, setVehicleCategories] = useState([]);
     const [productTypes, setProductTypes] = useState([]);
-    const [activeTab, setActiveTab] = useState('all');
-    const [activeSubCategory, setActiveSubCategory] = useState(null);
+    const [activeTab, setActiveTab] = useState(initialTab);
+    const [activeSubCategory, setActiveSubCategory] = useState(initialValue);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -31,7 +31,23 @@ const CategoryNav = ({ onFilterChange }) => {
         };
 
         fetchData();
-    }, []);
+    }, []); // Only fetch data on mount
+
+    // Handle URL-based filtering only once on mount
+    useEffect(() => {
+        if (initialTab !== 'all' && initialValue && !loading) {
+            const filterType = initialTab === 'category' ? 'vehicle' : 'productType';
+            if (
+                (filterType === 'vehicle' && vehicleCategories.some(cat => cat.name === initialValue)) ||
+                (filterType === 'productType' && productTypes.some(type => type.name === initialValue))
+            ) {
+                onFilterChange({
+                    type: filterType,
+                    value: initialValue
+                });
+            }
+        }
+    }, [loading]); // Only run when loading state changes
 
     const handleTabClick = (tab) => {
         setActiveTab(tab);

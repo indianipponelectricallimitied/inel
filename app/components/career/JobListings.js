@@ -4,7 +4,7 @@ import Button from "../Ui/button";
 
 export default function JobListings({jobListings}) {
     return (
-        <section className="diamond-gradient clip-path btmright relative ">
+        <section className="diamond-gradient clip-path btmright relative" id="openings">
             <div className="container mx-auto space-y-5 py-20 ">
                 <h5 className="text-center">Job Listings</h5>
                 <h1 className="text-white text-center">Explore Exciting Career Opportunities</h1>

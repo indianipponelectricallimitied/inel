@@ -1,17 +1,45 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
 import BreadCrumb from "../components/Ui/bread-crumb";
 import CategoryNav from "../components/Products/CategoryNav";
 import SearchBar from "../components/Products/SearchBar";
 import ProductGrid from "../components/Products/ProductGrid";
 
 export default function Products() {
-    const [filter, setFilter] = useState({ type: 'all' });
+    const searchParams = useSearchParams();
+    const router = useRouter();
+    
+    // Initialize state from URL parameters
+    const initialType = searchParams.get('type') || 'all';
+    const initialValue = searchParams.get('value') || null;
+    
+    const [filter, setFilter] = useState({ 
+        type: initialType,
+        value: initialValue
+    });
     const [searchResults, setSearchResults] = useState(null);
 
     const handleFilterChange = (newFilter) => {
-        setFilter(newFilter);
-        setSearchResults(null); // Clear search results when changing filters
+        // Only update if the filter actually changed
+        if (filter.type !== newFilter.type || filter.value !== newFilter.value) {
+            setFilter(newFilter);
+            setSearchResults(null); // Clear search results when changing filters
+            
+            // Update URL parameters without scrolling
+            const params = new URLSearchParams(searchParams);
+            if (newFilter.type !== 'all') {
+                params.set('type', newFilter.type === 'vehicle' ? 'category' : 'type');
+                if (newFilter.value) {
+                    params.set('value', newFilter.value);
+                }
+            } else {
+                params.delete('type');
+                params.delete('value');
+            }
+            const newUrl = params.toString() ? `?${params.toString()}` : '';
+            router.replace(`/Products&Solutions${newUrl}`, { scroll: false });
+        }
     };
 
     return(
@@ -21,7 +49,11 @@ export default function Products() {
                 breadCrumbBg="/images/Products/breadcrumb.jpeg"
             />
             <div className="container mx-auto ">
-                <CategoryNav onFilterChange={handleFilterChange} />
+                <CategoryNav 
+                    onFilterChange={handleFilterChange}
+                    initialTab={initialType}
+                    initialValue={initialValue}
+                />
                 <SearchBar onSearchResults={setSearchResults} />
                 <ProductGrid filter={filter} searchResults={searchResults} />
             </div>

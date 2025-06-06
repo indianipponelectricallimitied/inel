@@ -4,7 +4,7 @@ import Button from "../Ui/button";
 
 export default function About(){
     return(
-        <div className="container mx-auto py-20">
+        <div className="container mx-auto py-20" id="about">
             <div className="flex flex-col-reverse lg:flex-row gap-10">
                 <div className="w-full lg:w-1/2">
                     <Image src="/images/about/about-us.webp" alt="about" width={800} height={500} 

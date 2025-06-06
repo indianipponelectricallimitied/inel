@@ -84,7 +84,7 @@ export default function TechnologyPage() {
 
     return (
         <>
-            <div className="container mx-auto py-20  scroll-smooth">
+            <div className="container mx-auto py-20  scroll-smooth" id="patents">
               <div className="flex flex-col md:flex-row gap-4 justify-center pb-20">
                 {milestones.map((milestone, index) => (
                     <div key={index} className="flex flex-col gap-1 p-4 rounded-[10px] text-white justify-center bg-gradient-to-t from-[#160959] to-[#578EFF] lg:w-1/4">

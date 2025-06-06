@@ -145,7 +145,7 @@ export default function Career() {
                 breadCrumbBg= "/images/career/breadcrumb.jpeg"
             />
 
-            <section className="bg-gradient-to-b from-[#fff] to-[#E9E9E9]">
+            <section className="bg-gradient-to-b from-[#fff] to-[#E9E9E9]" id="career">
                 <div className="container mx-auto space-y-5 py-20 ">
                     <h5 className="text-center">Career</h5>
                     <h1 className="text-center">Join Our Team – Power Your Future</h1>
@@ -198,7 +198,7 @@ export default function Career() {
                     </div>
                 </div> */}
 
-                <div className="container mx-auto py-20 space-y-5">
+                <div className="container mx-auto py-20 space-y-5" id="FAQ">
                     <h5 className="text-center">FAQ</h5>
                     <h1 className="text-center">Frequently Asked Questions</h1>
                     
