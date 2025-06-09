@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
 import ApiService from '@/app/services/api';
 
+
+
 export default function SearchBar({ onSearchResults }) {
     const [searchTerm, setSearchTerm] = useState("");
     const [products, setProducts] = useState([]);
