@@ -47,7 +47,7 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { label: 'Company', href: '/' , 
+    { label: 'Products', href: '/Products&Solutions', 
       submenu: [
         {label: 'DC DC Convertors', href: '/products/dc-dc-convertors'},
         {label: 'BLDC Motor Controller', href: '/products/bldc-controller'},
@@ -72,19 +72,20 @@ const Navbar = () => {
       ]
     },
     {label: 'About', href: '/about-us'},
-    { label: 'Products', href: '/Products&Solutions',},
+    // { label: 'Products', href: '/Products&Solutions',},
     { label: 'Technology', href: '/technology' },
     { label: 'Investors', href: '/investors' },
-    { label: 'sustainable  ', href: '/sustainable' },
+    { label: 'Sustainable  ', href: '/sustainable' },
+    { label: 'Aftermarket  ', href: '/aftermarket' },
     { label: 'Media  ', href: '/newsroom' },
     { label: 'Careers', href: '/career' },
   ];
 
   const submenuproducts = [
     {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png',  shade : 'bg-gradient-to-br from-primary to-[#5589f9]  '},
-    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png',  shade : 'bg-gradient-to-br from-[#420959] to-[#C040E0]'},
-    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png',  shade : 'bg-gradient-to-br from-[#09594C] to-[#40E0D0]'},
-    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png',  shade : 'bg-gradient-to-br from-[#59090A] to-[#E04043]'},
+    {label: 'Display & Cluster Systems', href: '#', image: '/images/products/bldc.png',  shade : 'bg-gradient-to-br from-[#420959] to-[#C040E0]'},
+    {label: 'Sensor Technologies', href: '#', image: '/images/products/bldc.png',  shade : 'bg-gradient-to-br from-[#09594C] to-[#40E0D0]'},
+    {label: 'Engine & Throttle Control', href: '#', image: '/images/products/bldc.png',  shade : 'bg-gradient-to-br from-[#59090A] to-[#E04043]'},
     
   ]
   
@@ -118,13 +119,13 @@ const Navbar = () => {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                   >
-                    <button className={`flex relative items-center gap-1 nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isHovered ? 'text-white' : 'text-black'}`}>
+                    <Link href={item.href} className={`flex relative items-center gap-1 nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isHovered ? 'text-white' : 'text-black'}`}>
                       {item.label}
                       <div className='flex items-center justify-center absolute right-1/2 translate-x-1/2 -bottom-3 z-50 '>
                         <GoDotFill className='text-white text-xs group-hover:text-primary' />
                       </div>
-                    </button>
-                    <div className="absolute left-0 z-40 pt-4 toptodown hidden w-full bg-white group-hover:block">
+                    </Link>
+                    <div className="absolute left-0 z-40 pt-4 toptodown hidden w-full bg-white group-hover:block rounded-b-[30px]">
                       <div className="container mx-auto flex border-t border-gray-200 py-5">
                         <div className='grid grid-cols-2 w-2/4 gap-[10px] pe-5 border-r border-gray-200'>
                           {submenuproducts.map((subItem, subIndex) => (
@@ -134,7 +135,7 @@ const Navbar = () => {
                               className={`rounded-lg p-4 relative h-52 flex flex-col justify-between ${subItem.shade}`}
                             >
                               <div className={`absolute inset-0 bg-cover bg-center bg-no-repeat rounded-lg opacity-20`} style={{backgroundImage: `url(${subItem.image})`}}></div>
-                              <p className='text-white z-10 relative'>{subItem.label}</p>
+                              <p className='text-white z-10 relative text-lg w-1/2'>{subItem.label}</p>
                               <FiArrowRight  className='text-white'/>
                               <Image 
                                 src={subItem.image} 

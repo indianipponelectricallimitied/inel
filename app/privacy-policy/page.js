@@ -4,8 +4,8 @@ export default function PrivacyPolicy() {
     return (
         <>
             <BreadCrumb 
-                pageTitle= "Terms and Conditions"
-                breadCrumbBg= "/images/home/policies-breadcrunb.png"
+                pageTitle= "Privacy Policy"
+                breadCrumbBg= "/images/terms&privacy/breadcrumb.jpg"
             />
 
             <div className="container mx-auto pt-20 pb-5 gap-20 space-y-5" >

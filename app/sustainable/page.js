@@ -96,12 +96,13 @@ export default function Sustainability(){
             />
 
             <section className="bg-white">
-                <div className="container mx-auto  py-20 text-center space-y-5">
+                <div className="container mx-auto  py-20 lg:pb-40 text-center space-y-5">
                     <h5>Sustainability</h5>
                     <h1 >Powering a Sustainable Future with Innovation and Responsibility</h1>
                     <p className="md:w-2/3 mx-auto pb-5">At INEL, sustainability is not merely a principle, but a fundamental core value deeply embedded in our operations and culture. We are dedicated to shaping a greener, more responsible future for India and the global community, driven by our relentless pursuit of engineering excellence, advanced technology, and human ingenuity. Our commitment extends beyond corporate responsibility, as we strive to minimize our ecological footprint and lead by example in the pursuit of sustainable practices.</p>
 
-                    <PlayVideo  videolink ="/videos/home-main.mp4"/>
+                    {/* <PlayVideo  videolink ="/videos/home-main.mp4"/> */}
+                    <Image src="/images/Sustainability/SustainableGroup.png" alt="sustainable" width={1000} height={1000} className="w-full h-full object-cover" />
 
 
                 </div>

@@ -9,7 +9,7 @@ export default function Technology() {
         <>
             <BreadCrumb 
                 pageTitle= "Technology"
-                breadCrumbBg= "/images/Technology/tech-breadcrumb.jpeg"
+                breadCrumbBg= "/images/Technology/tech-breadcrumb.jpg"
             />
 
             <TechnologyPage />
@@ -28,7 +28,7 @@ export default function Technology() {
                         </p>
                     </div>
                     <div className="lg:w-1/2 w-full">
-                        <Image src="/images/Technology/Development.jpeg" alt="Research Development"
+                        <Image src="/images/Technology/Group.png" alt="Research Development"
                         className="rounded-[20px] h-full object-cover w-full"
                         width={900}
                         height={900}

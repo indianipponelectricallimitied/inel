@@ -46,7 +46,7 @@ export default function FeaturesSlider({features}){
             {featuresArray.map((feature, index) => (
                 <SwiperSlide key={index} className="product-feature-slide active:translate-y-[-10px] my-10 mt-20 !h-[300px]">
                     <Image 
-                        src={feature.image} 
+                        src={feature.image || "/placeholder45.jpeg"} 
                         alt={feature.text} 
                         width={500} 
                         height={300} 
