@@ -6,6 +6,10 @@ import CategoryNav from "../components/Products/CategoryNav";
 import SearchBar from "../components/Products/SearchBar";
 import ProductGrid from "../components/Products/ProductGrid";
 
+
+import { Suspense } from 'react'
+
+
 export default function Products() {
     const searchParams = useSearchParams();
     const router = useRouter();
@@ -54,7 +58,9 @@ export default function Products() {
                     initialTab={initialType}
                     initialValue={initialValue}
                 />
-                <SearchBar onSearchResults={setSearchResults} />
+                <Suspense fallback={<div>Loading...</div>}>
+                    <SearchBar onSearchResults={setSearchResults} />
+                </Suspense>
                 <ProductGrid filter={filter} searchResults={searchResults} />
             </div>
         </>

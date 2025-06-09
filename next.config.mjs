@@ -1,10 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
-    experimental: {
-      missingSuspenseWithCSRBailout: false,
-    },
-  
   images: {
     domains: [
       'flagcdn.com',
@@ -12,7 +7,6 @@ const nextConfig = {
     ],
   },
 }
-
 
 
 export default nextConfig;
