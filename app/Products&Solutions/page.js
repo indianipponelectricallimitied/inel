@@ -58,9 +58,9 @@ export default function Products() {
                     initialTab={initialType}
                     initialValue={initialValue}
                 />
-                <Suspense fallback={<div>Loading...</div>}>
+                {/* <Suspense fallback={<div>Loading...</div>}>
                     <SearchBar onSearchResults={setSearchResults} />
-                </Suspense>
+                </Suspense> */}
                 <ProductGrid filter={filter} searchResults={searchResults} />
             </div>
         </>
