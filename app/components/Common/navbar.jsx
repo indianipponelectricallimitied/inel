@@ -11,6 +11,8 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link'; // Import Link from next/link
 import Image from 'next/image';
 import { FiArrowRight } from "react-icons/fi";
+import { GoDotFill } from "react-icons/go";
+
 
 const logo = "/logo-white.svg";
 const logoBlack = "/logo.svg";
@@ -22,6 +24,18 @@ const Navbar = () => {
   const pathname = usePathname();
   
   const isHomePage = pathname === '/';
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -67,16 +81,16 @@ const Navbar = () => {
   ];
 
   const submenuproducts = [
-    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png'},
-    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png'},
-    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png'},
-    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png'},
+    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png',  shade : 'bg-gradient-to-br from-primary to-[#5589f9]  '},
+    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png',  shade : 'bg-gradient-to-br from-[#420959] to-[#C040E0]'},
+    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png',  shade : 'bg-gradient-to-br from-[#09594C] to-[#40E0D0]'},
+    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png',  shade : 'bg-gradient-to-br from-[#59090A] to-[#E04043]'},
     
   ]
   
   
   return (
-    <nav className={`container mx-auto py-2 transition-all duration-300 ease-in-out ${
+    <nav className={`container mx-auto py-2 z-50 ${
       isHomePage && !isHovered ? 'navbar-home' : 'navbar-default'
     }`}>
      
@@ -104,22 +118,24 @@ const Navbar = () => {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                   >
-                    <button className={`flex items-center gap-1 nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isHovered ? 'text-white' : 'text-black'}`}>
+                    <button className={`flex relative items-center gap-1 nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isHovered ? 'text-white' : 'text-black'}`}>
                       {item.label}
-                      <IoChevronDownOutline className="text-sm transition-transform duration-300 ease-in-out group-hover:rotate-180" />
+                      <div className='flex items-center justify-center absolute right-1/2 translate-x-1/2 -bottom-3 z-50 '>
+                        <GoDotFill className='text-white text-xs group-hover:text-primary' />
+                      </div>
                     </button>
-                    <div className="absolute left-0 z-50 pt-4 hidden w-full bg-white group-hover:block">
+                    <div className="absolute left-0 z-40 pt-4 toptodown hidden w-full bg-white group-hover:block">
                       <div className="container mx-auto flex border-t border-gray-200 py-5">
-                        <div className='grid grid-cols-2 gap-2 w-2/4'>
+                        <div className='grid grid-cols-2 w-2/4 gap-[10px] pe-5 border-r border-gray-200'>
                           {submenuproducts.map((subItem, subIndex) => (
                             <Link 
                               key={`product-${subIndex}`}
                               href={subItem.href} 
-                              className='rounded-lg p-4 relative h-52 flex flex-col justify-between bg-gradient-to-r from-primary to-[#5589f9]'
+                              className={`rounded-lg p-4 relative h-52 flex flex-col justify-between ${subItem.shade}`}
                             >
-                              <div className='absolute inset-0 bg-[url("/images/products/bldc.png")] bg-cover bg-center bg-no-repeat rounded-lg opacity-20'></div>
+                              <div className={`absolute inset-0 bg-cover bg-center bg-no-repeat rounded-lg opacity-20`} style={{backgroundImage: `url(${subItem.image})`}}></div>
                               <p className='text-white z-10 relative'>{subItem.label}</p>
-                              <FiArrowRight />
+                              <FiArrowRight  className='text-white'/>
                               <Image 
                                 src={subItem.image} 
                                 alt={subItem.label} 
@@ -130,7 +146,8 @@ const Navbar = () => {
                             </Link>
                           ))}
                         </div>
-                        <div className='w-2/4 grid grid-cols-2 gap-2'>
+                        <div className='w-2/4 grid grid-cols-2'>
+                        <div>
                           {item.submenu.slice(0, 10).map((subItem, subIndex) => (
                             <Link
                               key={`submenu-${subIndex}`}
@@ -140,15 +157,18 @@ const Navbar = () => {
                               {subItem.label}
                             </Link>
                           ))}
-                          {item.submenu.slice(10, 20).map((subItem, subIndex) => (
-                            <Link
-                              key={`submenu-${subIndex}`}
-                              href={subItem.href}
-                              className="block px-4 py-2 w-full hover:underline underline-offset-4 text-black"
-                            >
-                              {subItem.label}
-                            </Link>
-                          ))}
+                        </div>
+                        <div>
+                        {item.submenu.slice(10, 20).map((subItem, subIndex) => (
+                          <Link
+                            key={`submenu-${subIndex}`}
+                            href={subItem.href}
+                            className="block px-4 py-2 w-full hover:underline underline-offset-4 text-black "
+                          >
+                            {subItem.label}
+                          </Link>
+                        ))}
+                        </div>
                         </div>
                       </div>
                     </div>
@@ -182,16 +202,16 @@ const Navbar = () => {
 
   
       <div
-        className={`fixed top-0 right-0 w-64 h-full bg-black shadow-lg transform ${
+        className={`fixed h-screen overflow-y-auto top-0 right-0 w-64 bg-black shadow-lg transform ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
-        } transition-transform duration-300 ease-in-out z-50`}
+        } transition-transform duration-300 ease-in-out z-50 overscroll-contain`}
       >
-        <div className="flex justify-end p-4">
+        <div className="flex justify-end p-4  z-50">
           <button onClick={toggleMenu} className="text-2xl">
             <MdClose className='text-white' />
           </button>
         </div>
-        <div className="flex flex-col space-y-2 mt-6 px-4">
+        <div className="flex   flex-col space-y-2 my-20 px-4 ">
           {menuItems.map((item, index) => (
             <div key={index} className="w-full">
               {item.submenu ? (

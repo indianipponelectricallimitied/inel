@@ -74,8 +74,9 @@ export default function Footer(){
             </div>
             <div className="container mx-auto flex flex-col md:flex-row justify-between py-5">
                 <div className="flex justify-between md:gap-20">
-                    <a href="/policies/privacy-policy" className="text-sm md:text-base">Privacy Policy</a>
-                    <a href="#" className="text-sm md:text-base">Terms & Condition</a>
+                    <a href="/privacy-policy" className="text-sm md:text-base">Privacy Policy</a>
+                    <a href="/terms-and-conditions" className="text-sm md:text-base">Terms & Condition</a>
+                    <a href="/policies" className="text-sm md:text-base">Policies</a>
                     <a href="#" className="text-sm md:text-base">Data Protection</a>
                 </div>
                 <p className="text-center md:text-left text-sm md:text-base pt-5 md:pt-0">© INEL. All Rights Reserved.</p>
