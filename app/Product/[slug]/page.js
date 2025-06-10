@@ -71,12 +71,14 @@ export default function ProductPage() {
                 </div>
             </div>
 
-            <section className='diamond-gradient'>
-                <div className='container mx-auto px-5 py-20'>
-                    <h1 className="text-white text-center">Features & Benefits</h1>
-                    <FeaturesSlider features={product.features} />  
-                </div>
-            </section>
+            
+                <section className='diamond-gradient'>
+                    <div className='container mx-auto px-5 py-20'>
+                        <h1 className="text-white text-center">Features & Benefits</h1>
+                        <FeaturesSlider features={product.features} />
+                    </div>
+                </section>
+            
 
             <div className="grid-with-gradients">
                 <div className="gradient-sphere w-[800px] h-[800px] -top-[400px] -right-[400px]" ></div>

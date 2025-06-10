@@ -1,17 +1,17 @@
 const support = [
     {
         title: "Dedicated Technical Expertise",
-        image: "/placeholder.jpeg",
+        image: "/images/Aftermarket/Guides.jpg",
         description: "Our team of specialists is always available to provide the technical assistance you need, ensuring your systems perform at their best.",
     },
     {
         title: "Detailed Installation Assistance",
-        image: "/placeholder.jpeg",
+        image: "/images/Aftermarket/service.png",
         description: "Access expert-designed installation guides and video tutorials to ensure every part is set up with accuracy and ease.",
     },
     {
         title: "Thorough Warranty Protection",
-        image: "/placeholder.jpeg",
+        image: "/images/Aftermarket/Warranty.jpg",
         description: " Rest easy with full access to warranty information that ensures coverage for all genuine parts, safeguarding your investment.",
     },
     

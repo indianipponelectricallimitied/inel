@@ -8,6 +8,7 @@ export default function VehicleCategories({vehicleCategories}){
         "4 Wheeler": "/images/Products/4wheeler.png",
         "Snow Mobile": "/images/Products/snow-mobile.png",
         "ATV": "/images/Products/atv.jpg",
+        "Commercial": "/images/Products/truck.png",
         "Golf Cart": "/images/Products/golfcart.png"
     };
 

@@ -12,6 +12,7 @@ import Link from 'next/link'; // Import Link from next/link
 import Image from 'next/image';
 import { FiArrowRight } from "react-icons/fi";
 import { GoDotFill } from "react-icons/go";
+import ApiService from '../../services/api';
 
 
 const logo = "/logo-white.svg";
@@ -21,9 +22,22 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [products, setProducts] = useState([]);
   const pathname = usePathname();
   
   const isHomePage = pathname === '/';
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const productsData = await ApiService.getProducts();
+        setProducts(productsData);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+    fetchProducts();
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -48,28 +62,10 @@ const Navbar = () => {
 
   const menuItems = [
     { label: 'Products', href: '/Products&Solutions', 
-      submenu: [
-        {label: 'DC DC Convertors', href: '/products/dc-dc-convertors'},
-        {label: 'BLDC Motor Controller', href: '/products/bldc-controller'},
-        {label: 'TPMS Graphical LCD Unit', href: '/products/tpms-lcd'},
-        {label: 'Control Panel', href: '/products/control-panel'},
-        {label: 'Cluster Front Facia', href: '/products/cluster-facia'},
-        {label: 'LCD Digital Instrument Cluster', href: '/products/lcd-cluster'},
-        {label: 'LED Digital Instrument Cluster', href: '/products/led-cluster'},
-        {label: '7.4 Inch TFT Instrument Cluster', href: '/products/tft-cluster'},
-        {label: 'Reverse Parking Assist System', href: '/products/parking-assist'},
-        {label: 'Steering Angle Sensor', href: '/products/steering-sensor'},
-        {label: 'Speed Sensor', href: '/products/speed-sensor'},
-        {label: 'Temperature Sensor', href: '/products/temperature-sensor'},
-        {label: 'TPMS Sensor', href: '/products/tpms-sensor'},
-        {label: 'Oil Level Sensor', href: '/products/oil-sensor'},
-        {label: 'TMAP Sensor', href: '/products/tmap-sensor'},
-        {label: 'Fuel Vapor Purge (FVP)', href: '/products/fvp'},
-        {label: 'Dual Track TPS', href: '/products/dual-track-tps'},
-        {label: 'Gear Position Sensor', href: '/products/gear-sensor'},
-        {label: 'Solenoid', href: '/products/solenoid'},
-        {label: 'Throttle Body', href: '/products/throttle-body'}
-      ]
+      submenu: products.map(product => ({
+        label: product.name,
+        href: `/products/${product.id}`
+      }))
     },
     {label: 'About', href: '/about-us'},
     // { label: 'Products', href: '/Products&Solutions',},
@@ -119,7 +115,11 @@ const Navbar = () => {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                   >
-                    <Link href={item.href} className={`flex relative items-center gap-1 nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isHovered ? 'text-white' : 'text-black'}`}>
+                    <Link 
+                      href={item.href} 
+                      onClick={() => setIsHovered(false)}
+                      className={`flex relative items-center gap-1 nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isHovered ? 'text-white' : 'text-black'}`}
+                    >
                       {item.label}
                       <div className='flex items-center justify-center absolute right-1/2 translate-x-1/2 -bottom-3 z-50 '>
                         <GoDotFill className='text-white text-xs group-hover:text-primary' />
@@ -175,7 +175,11 @@ const Navbar = () => {
                     </div>
                   </div>
                 ) : (
-                  <Link href={item.href} className="nav-link">
+                  <Link 
+                    href={item.href} 
+                    onClick={() => setIsHovered(false)}
+                    className="nav-link"
+                  >
                     {item.label}
                   </Link>
                 )}

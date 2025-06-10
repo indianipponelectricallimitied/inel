@@ -5,7 +5,7 @@ export default function TermsAndConditions() {
         <>
             <BreadCrumb 
                 pageTitle= "Terms and Conditions"
-                breadCrumbBg= "/images/home/policies-breadcrunb.png"
+                breadCrumbBg= "/images/terms&privacy/Terms.jpg"
             />
 
             <div className="container mx-auto pt-20 pb-5 flex flex-col md:flex-row justify-between gap-20">

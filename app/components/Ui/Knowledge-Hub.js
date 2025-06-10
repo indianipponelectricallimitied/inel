@@ -12,11 +12,10 @@ export default function KnowledgeHub({imageSrc, imageAlt, tagline, title, descri
         width={500} 
         height={500} 
       />
-      <div className="space-y-3">
+      <div className="space-y-3 lg:w-1/2">
         <h5>{tagline}</h5>
         <h1>{title}</h1>
         <p>{description}</p>
-        
         <QuickLinks quickLinks={quickLinks} />
       </div>
     </div>
