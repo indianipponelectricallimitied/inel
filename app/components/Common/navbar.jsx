@@ -82,10 +82,10 @@ const Navbar = () => {
   ];
 
   const submenuproducts = [
-    {label: 'Power Electronics', href: '#', image: '/images/products/bldc.png',  shade : 'bg-gradient-to-br from-primary to-[#5589f9]  '},
-    {label: 'Display & Cluster Systems', href: '#', image: '/images/products/bldc.png',  shade : 'bg-gradient-to-br from-[#420959] to-[#C040E0]'},
-    {label: 'Sensor Technologies', href: '#', image: '/images/products/bldc.png',  shade : 'bg-gradient-to-br from-[#09594C] to-[#40E0D0]'},
-    {label: 'Engine & Throttle Control', href: '#', image: '/images/products/bldc.png',  shade : 'bg-gradient-to-br from-[#59090A] to-[#E04043]'},
+    {label: 'Power Electronics', href: '#', image: '/images/Products/bldc.png',  shade : 'bg-gradient-to-br from-primary to-[#5589f9]  '},
+    {label: 'Display & Cluster Systems', href: '#', image: '/images/Products/bldc.png',  shade : 'bg-gradient-to-br from-[#420959] to-[#C040E0]'},
+    {label: 'Sensor Technologies', href: '#', image: '/images/Products/bldc.png',  shade : 'bg-gradient-to-br from-[#09594C] to-[#40E0D0]'},
+    {label: 'Engine & Throttle Control', href: '#', image: '/images/Products/bldc.png',  shade : 'bg-gradient-to-br from-[#59090A] to-[#E04043]'},
     
   ]
   

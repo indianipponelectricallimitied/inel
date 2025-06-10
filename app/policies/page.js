@@ -16,7 +16,7 @@ export default async function Policies() {
         <>
             <BreadCrumb 
                 pageTitle= "Policies"
-                breadCrumbBg= "/images/home/policies-breadcrunb.png"
+                breadCrumbBg= "/images/terms&privacy/breadcrumb.jpg"
             />
 
             <div className="container mx-auto py-20">
