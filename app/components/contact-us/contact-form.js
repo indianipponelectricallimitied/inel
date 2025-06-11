@@ -187,7 +187,7 @@ export default function ContactForm() {
 
     return (
         <>
-        <div className="py-20 px-5 bg-gradient-to-tl from-primary to-[#1D00B0] rounded-[20px]">
+        <div className="py-20 px-5 diamond-gradient  rounded-[20px]">
             <h1 className="text-center pb-5 text-white">Get in Touch</h1>
             <p className="text-center pb-10 px-1 text-white">We’re here to help! Whether you have questions, feedback, or need assistance, drop us a message and we’ll get back to you promptly.</p>
 

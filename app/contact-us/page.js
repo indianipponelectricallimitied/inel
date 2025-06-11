@@ -7,7 +7,7 @@ export default function ContactUs() {
         <>
             <BreadCrumb 
                 pageTitle= "Contact Us"
-                breadCrumbBg= "/images/contact-us/breadcrunb.jpeg"
+                breadCrumbBg= "/images/contact-us/breadcrunb.png"
             />
             <div className="container mx-auto  py-20">
                 <ContactForm />

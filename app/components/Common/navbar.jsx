@@ -64,7 +64,7 @@ const Navbar = () => {
     { label: 'Products', href: '/Products&Solutions', 
       submenu: products.map(product => ({
         label: product.name,
-        href: `/products/${product.id}`
+        href: `/Product/${product.id}`
       }))
     },
     {label: 'About', href: '/about-us'},
