@@ -63,7 +63,7 @@ export default function CareeerForm() {
                 throw new Error('Please agree to the Terms and Conditions');
             }
 
-            const response = await fetch("https://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/api/career", {
+            const response = await fetch("https://inelbackend.vercel.app/api/career", {
                 method: "POST",
                 body: formDataToSend,
             });

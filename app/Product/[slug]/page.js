@@ -13,7 +13,7 @@ import VehicleCategories from './vehicleCategories';
 import RelatedProducts from './related-products';
 import Newsletter from "../../components/Common/newsletter";
 
-const BASE_URL = "https://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net";
+const BASE_URL = "https://inelbackend.vercel.app/";
 
 export default function ProductPage() {
     const [product, setProduct] = useState(null);
@@ -72,12 +72,12 @@ export default function ProductPage() {
             </div>
 
             
-                <section className='diamond-gradient'>
-                    <div className='container mx-auto px-5 py-20'>
-                        <h1 className="text-white text-center">Features & Benefits</h1>
-                        <FeaturesSlider features={product.features} />
-                    </div>
-                </section>
+            <section className='diamond-gradient'>
+                <div className='container mx-auto px-5 py-20'>
+                    <h1 className="text-white text-center">Features & Benefits</h1>
+                    <FeaturesSlider features={product.features} />
+                </div>
+            </section>
             
 
             <div className="grid-with-gradients">

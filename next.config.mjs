@@ -3,7 +3,7 @@ const nextConfig = {
   images: {
     domains: [
       'flagcdn.com',
-      'inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net'
+      'inelbackend.vercel.app'
     ],
   },
 }

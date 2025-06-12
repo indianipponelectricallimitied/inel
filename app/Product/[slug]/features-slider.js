@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 
 export default function FeaturesSlider({features}){
@@ -23,6 +23,10 @@ export default function FeaturesSlider({features}){
                 nextEl: '.team-swiper-next',
                 prevEl: '.team-swiper-prev',
             }}
+            autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+            }}
             breakpoints={{
                 640: {
                     slidesPerView: 1,
@@ -40,7 +44,7 @@ export default function FeaturesSlider({features}){
                     centeredSlides: true,
                 },
             }}
-            modules={[Navigation]}
+            modules={[Navigation, Autoplay]}
             className="team md:!p-5"
         >
             {featuresArray.map((feature, index) => (

@@ -149,7 +149,7 @@ const Navbar = () => {
                         </div>
                         <div className='w-2/4 grid grid-cols-2'>
                         <div>
-                          {item.submenu.slice(0, 10).map((subItem, subIndex) => (
+                          {item.submenu.slice(0, 11).map((subItem, subIndex) => (
                             <Link
                               key={`submenu-${subIndex}`}
                               href={subItem.href}
@@ -160,7 +160,7 @@ const Navbar = () => {
                           ))}
                         </div>
                         <div>
-                        {item.submenu.slice(10, 20).map((subItem, subIndex) => (
+                        {item.submenu.slice(11, 21).map((subItem, subIndex) => (
                           <Link
                             key={`submenu-${subIndex}`}
                             href={subItem.href}

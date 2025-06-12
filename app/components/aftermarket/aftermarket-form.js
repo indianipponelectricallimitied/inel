@@ -26,7 +26,7 @@ export default function AftermarketForm() {
         setSubmitStatus(null);
 
         try {
-            const response = await fetch("https://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/api/aftermarket", {
+            const response = await fetch("https://inelbackend.vercel.app/api/aftermarket", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
