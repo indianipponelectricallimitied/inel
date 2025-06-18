@@ -1,6 +1,7 @@
 import BreadCrumb from "../components/Ui/bread-crumb"
 import Newsletter from "../components/Common/newsletter"
 import StockDataCard from "../components/Common/stockmarket/StockDataCard"
+import InvestorTabs from "./investor-tabs"
 import Button from "../components/Ui/button"
 import Image from "next/image"
 import { GoArrowUpRight } from "react-icons/go";
@@ -72,7 +73,12 @@ const reports=[
                 </div>
             </div>
 
+            {/* Investor Data Section */}
+            <div className="container mx-auto  p-5 py-10 md:py-5  mb-20 bg-[#F6F6F6] rounded-[20px]">
+                <InvestorTabs />
+            </div>
 
+                    
             
             <Newsletter />
         </>

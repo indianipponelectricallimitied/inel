@@ -92,6 +92,29 @@ class ApiService {
         }
     }
 
+    static async getInvestorData() {
+        const cacheKey = 'investor_data_cache';
+        const cachedData = this.getFromCache(cacheKey);
+
+        if (cachedData) {
+            return cachedData;
+        }
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/investor`);
+            if (!response.ok) throw new Error('Failed to fetch investor data');
+            const data = await response.json();
+            
+            if (isClient) {
+                this.setCache(cacheKey, data.results);
+            }
+            return data.results;
+        } catch (error) {
+            console.error('Error fetching investor data:', error);
+            throw error;
+        }
+    }
+
     static async getPosts() {
         const cacheKey = 'posts_cache';
         const cachedData = this.getFromCache(cacheKey);
