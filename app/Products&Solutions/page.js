@@ -1,12 +1,12 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import BreadCrumb from "../components/Ui/bread-crumb";
 import CategoryNav from "../components/Products/CategoryNav";
 import SearchBar from "../components/Products/SearchBar";
 import ProductGrid from "../components/Products/ProductGrid";
 
-export default function Products() {
+function ProductsContent() {
     const [filter, setFilter] = useState({ type: 'all' });
     const [searchResults, setSearchResults] = useState(null);
     const searchParams = useSearchParams();
@@ -78,5 +78,17 @@ export default function Products() {
                 <ProductGrid filter={filter} searchResults={searchResults} />
             </div>
         </>
+    )
+}
+
+export default function Products() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div>
+            </div>
+        }>
+            <ProductsContent />
+        </Suspense>
     )
 }
