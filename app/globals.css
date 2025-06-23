@@ -417,3 +417,10 @@ table{
     transform: translateY(0);
   }
 }
+
+
+/* all product page  */
+
+.category-swiper .swiper-wrapper{
+  margin-bottom: 40px !important;
+}
