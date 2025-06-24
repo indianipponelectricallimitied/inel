@@ -31,11 +31,12 @@ const aeonik = localFont({
 export const metadata = {
   title: "Indian Nippon Electricals Ltd",
   description: "Your trusted partner in electrical solutions",
+  robots: "noindex",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" content="noindex, nofollow">
     
       <body
         className={`${aeonik.variable} antialiased`}
