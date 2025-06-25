@@ -18,6 +18,11 @@ const team = [
         position: "Managing Director",
     },
     {
+        image: "/images/about/ravinder-sharma-1.webp",
+        name: "Mr. ravinder-sharma",
+        position: "President",
+    },
+    {
         image: "/images/about/Subtract.png",
         name: "Mr. Anant Jaivant Talaulicar",
         position: "Independent Director",

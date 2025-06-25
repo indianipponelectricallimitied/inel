@@ -8,9 +8,9 @@ const awards = [
         title: "Best Cluster Company Award by ACMA",
     },
     {
-        image: "/images/home/honda.webp",
+        image: "/images/home/tvs.png",
         alt: "honda",
-        title: "Quality & Delivery Achievement Awards from HONDA",
+        title: "Best Supplier for 2021-22",
     },
     {
         image: "/images/home/ficci.png",

@@ -29,12 +29,12 @@ const videoCTA = () => {
       <section className="bg-[url('/images/home/Videocta.png')] bg-cover bg-top  -mt-20 xl:-mt-40 -mb-20 z-10 relative">
         {/* <div className="absolute top-0 left-0 right-0 bottom-0  inset-0 bg-black/40 h-full w-full"></div> */}
         <div className="container mx-auto flex flex-col md:flex-row text-white items-center justify-center h-[600px] z-10 relative">
-          <div className="w-full md:w-2/3">
-            <h1 className="pb-5">Inside INEL<br/>
-            Precision, People, Performance.</h1>
-            <p className="pb-5">Step into our world of advanced R&D labs, smart manufacturing lines, and the people who bring innovation to life. Every product reflects our culture of excellence, quality, and collaboration.</p>
+          <div className="w-full md:w-1/2">
+            <h1 className="pb-5">Behind the Scenes
+            Driving Innovation Forward</h1>
+            <p className="pb-5">Step inside INEL and discover how our technology, expertise, and passion drive the future of automotive excellence.</p>
           </div>
-          <div className="w-full md:w-1/3 pt-10 md:pt-0 flex justify-center items-center">
+          <div className="w-full md:w-1/2 pt-10 md:pt-0 flex justify-center items-center">
             <button onClick={openModal} >
               <IoPlayCircle className="text-6xl" />
             </button>   

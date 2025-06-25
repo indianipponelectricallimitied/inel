@@ -7,7 +7,29 @@ const AccordionItem = ({ accordion, active, handleToggle }) => {
   const contentEl = useRef();
   const { id, header, content } = accordion;
 
-
+  // Function to render content based on its type
+  const renderContent = (content) => {
+    // If content is a string, render as paragraph
+    if (typeof content === 'string') {
+      return <p className="text-gray-700">{content}</p>;
+    }
+    
+    // If content is an array, render each item
+    if (Array.isArray(content)) {
+      return content.map((item, index) => (
+        <div key={index} className="mb-3 last:mb-0">
+          {typeof item === 'string' ? (
+            <p className="text-gray-700">{item}</p>
+          ) : (
+            item
+          )}
+        </div>
+      ));
+    }
+    
+    // If content is JSX/React element, render directly
+    return content;
+  };
 
   return (
     <div className="rc-accordion-card bg-[#ebedf0] rounded-[20px]"> 
@@ -28,7 +50,7 @@ const AccordionItem = ({ accordion, active, handleToggle }) => {
         style={active === id ? { height: contentEl.current.scrollHeight } : { height: '0px' }}
       >
         <div className="rc-accordion-body p-5 px-6">
-          {content}
+          {renderContent(content)}
         </div>
       </div>
     </div>

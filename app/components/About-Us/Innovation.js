@@ -4,22 +4,22 @@ const innovation = [
     {
         image: "/images/about/Innovation.png",
         title: "Innovation",
-        description: "Pioneering new solutions for growth and progress.",
+        description: "Forward thinking, planning and execution to expand our horizons.",
     },
     {
         image: "/images/about/Passion.png",
         title: "Passion",
-        description: "Fueling success with enthusiasm and commitment.",
+        description: "Enthusiasm, desire, and commitment to succeed.",
     },
     {
         image: "/images/about/Quality.png",
         title: "Quality",
-        description: "Delivering products and services we stand behind.",
+        description: "Service and products we are proud to stand behind.",
     },
     {
         image: "/images/about/Thrive.png",
         title: "Thrive",
-        description: "Empowering growth to drive customer success.",
+        description: "Commitment to growth to affect our customer’s success.",
     }
 ]
 
@@ -33,7 +33,7 @@ export default function Innovation() {
                     <h1 className='text-center md:pb-20 pb-10'>Driving Innovation with Integrity</h1>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10'>
                     {innovation.map((item, index)=>(
-                        <div className='bg-[#E0E7FF] p-5 rounded-[10px] space-y-5' key={index}>
+                        <div className='bg-gradient-to-b from-[#B6C6FF] to-[#E4E4E4] p-5 rounded-[10px] space-y-4 card-square-right' key={index}>
                             <Image src={item.image} alt={item.title} width={200} height={200} 
                             className="w-20 object-contain " 
                             />

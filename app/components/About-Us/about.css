@@ -136,7 +136,7 @@
     padding: 100px 10px;
 
     .swiper-slide.swiper-slide-active .active-bg{
-        background: linear-gradient(0deg, rgba(22,9,89,1) 0%, rgba(0,0,0,0) 43%);
+        background: linear-gradient(0deg, var(--primary) 0%, rgba(0,0,0,0) 43%);
     }
     .swiper-slide.swiper-slide-active {
         transform: translate(0, -10%);

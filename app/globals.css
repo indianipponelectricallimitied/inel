@@ -424,3 +424,22 @@ table{
 .category-swiper .swiper-wrapper{
   margin-bottom: 40px !important;
 }
+
+
+
+/* new cards clip  */
+.card-btm-right{
+  clip-path: polygon(100% 0, 100% 90%, 90% 100%, 0 100%, 0 0);
+}
+
+.card-top-left{
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%, 7% 0);
+}
+
+.card-top-right{
+  clip-path: polygon(100% 15%, 100% 100%, 0 100%, 0 0, 93% 0);
+}
+
+.card-square-right{
+  clip-path: polygon(100% 10%, 100% 100%, 0 100%, 0 0, 90% 0);
+}

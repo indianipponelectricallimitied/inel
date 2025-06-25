@@ -50,8 +50,8 @@ export default function Tab() {
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
         <div className='w-full lg:w-[35%] space-y-5'>
           <h5>Our Solutions</h5>
-          <h1>Complete Mobility Electronics.</h1>
-          <p>From ignition systems to advanced ECUs, from two-wheelers to EVs—INEL delivers future-ready electronics that power the world's leading mobility brands. Explore our divisions built to meet tomorrow's challenges.</p>
+          <h1>Powering Performance with Electronics.</h1>
+          <p>From spark control to smart ECUs, INEL’s electronic solutions support high-efficiency engine and EV platforms. Our technology fuels trusted performance across sectors</p>
         </div>
 
         <VehicleTabs currentIndex={currentIndex} goToSlide={goToSlide} />

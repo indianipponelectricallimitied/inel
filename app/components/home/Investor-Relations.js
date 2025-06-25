@@ -28,13 +28,14 @@ export default function InvestorRelations() {
           <div className="w-full md:w-1/3 space-y-6">
             <div>
                 <h5>Investor Relations</h5>
-                <h1>Position INEL as an Industry Leader</h1>
+                <h1>Creating Value, 
+                Driving Growth</h1>
             </div>
-            <p>Our solutions accelerate progress, delivering exceptional performance while paving the way for a cleaner, more efficient transportation future.</p>
-            <Button variant="white" href="/contact-us">Explore Our Innovations</Button>
+            <p>A legacy of strong financial performance, sustainable growth, and innovation-driven expansion.</p>
+            <Button variant="white" href="/investors">Investor Insights</Button>
           </div> 
           <div className="w-full md:w-1/3 space-y-6">
-            <StockDataCard background="bg-[#483d81]" />
+            <StockDataCard background="bg-[#CBCBCB30]" />
           </div>
           <div className="w-full md:w-1/3 space-y-6">
             <p  className="text-white bg-[url('/images/home/Subtract.png')] bg-contain bg-center bg-no-repeat p-4 w-fit">Quick Links</p>

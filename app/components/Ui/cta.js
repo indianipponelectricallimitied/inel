@@ -12,8 +12,8 @@ export default function CTA(){
                 </div>
                 <div className=" text-white py-6 px-5  lg:w-1/2  space-y-5">
                     <h5>About Us</h5>
-                    <h1>Engineered With <br/>Precision </h1>
-                    <p>INEL stands as a global leader in custom ignition solutions for OEMs in the 2 & 3-wheeler and portable engine sectors, serving both ICE and EV markets. Expanding globally with cost-effective, world-class production.</p>
+                    <h1>Engineered for<br/> Automotive Power</h1>
+                    <p>INEL is a global leader in advanced mechatronic systems, delivering custom ignition and control solutions for OEMs in the 2 & 3-wheeler and portable engine sectors. We cater to both ICE and EV markets, integrating cutting-edge technology with scalable, world-class manufacturing.</p>
                     <Button variant="white"   href="/about-us">Learn More</Button>
                 </div>
             </div>

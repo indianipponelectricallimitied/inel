@@ -8,6 +8,7 @@ import ServiceSupport from "../components/aftermarket/Service-Support"
 import KnowledgeHub from "../components/Ui/Knowledge-Hub"
 import AftermarketForm from "../components/aftermarket/aftermarket-form"
 import Newsletter from "../components/Common/newsletter"
+import IndiaMap from "../components/aftermarket/indiamap"
 
 const quickLinks = [
     {
@@ -62,7 +63,7 @@ export default function aftermarket(){
 
         <BreadCrumb 
                 pageTitle= "Aftermarket"
-                breadCrumbBg= "/images/Aftermarket/breadcrumb.jpeg"
+                breadCrumbBg= "/images/Aftermarket/breadcrumb.webp"
         />
 
 
@@ -103,6 +104,11 @@ export default function aftermarket(){
                 <p className="md:w-3/4 mx-auto">At INEL, we offer dedicated support designed to guide you through every phase, from installation to after-sales care. With our expertise, we ensure your experience is smooth, precise, and fully supported by our comprehensive services.</p>
             </div>
             <ServiceSupport />
+        </section>
+
+
+        <section className="container mx-auto py-20">
+            <IndiaMap />
         </section>
 
         <section className="container mx-auto flex flex-col lg:flex-row gap-20  py-20">

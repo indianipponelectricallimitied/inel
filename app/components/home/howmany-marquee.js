@@ -3,18 +3,12 @@ import { useEffect, useRef } from 'react';
 import Image from "next/image";
 
 const miles = [
-  {
-    text: "3 Manufacturing Facilities ",
-  },
-  {
-    text: "40+ Years of Legacy ",
-  },
-  {
-    text: "2,000+ Employees ",
-  },
-  {
-    text: "Shipping to 12+ Countries ",
-  },
+  // { text: "3 Manufacturing Facilities " },
+  { text: "2,000+ Employees "},
+  { text: "Shipping to 12+ Countries "},
+  { text: "Controllers "},
+  { text: "5M+ Units "},
+  { text: "Actuators "},
 
 
 ];
@@ -22,7 +16,7 @@ const miles = [
 export default function HowManyMarquee() {
 
   return (
-    <section className="py-10 overflow-hidden bg-primary">
+    <section className="py-5 overflow-hidden bg-primary">
         <div className="text-slider text-white">
           <div className="texts-slide flex">
             {miles.map((mile, index) => (

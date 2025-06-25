@@ -92,7 +92,7 @@ export default function Sustainability(){
         <>
             <BreadCrumb 
                 pageTitle= "Sustainability"
-                breadCrumbBg= "/images/Sustainability/breadcrumb.png"
+                breadCrumbBg= "/images/Sustainability/breadcrumb.webp"
             />
 
             <section className="bg-white">
@@ -108,35 +108,35 @@ export default function Sustainability(){
                 </div>
             </section>
 
-            <section className="bg-[url('/images/Sustainability/tree.webp')] bg-cover bg-center py-40 clip-path btmright relative">
+            <section className="bg-[url('/images/home/forest.jpg')] bg-cover bg-center py-40 clip-path btmright relative">
                 <div className="container mx-auto ">
-                    <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2  gap-5 mt-5">
-                        <div className="md:col-span-1 md:row-span-2 bg-gradient-to-t from-[#246bf9da] to-[#b8cfffa1] backdrop-blur-md rounded-[20px] p-5 text-white">
-                            <Image src="/images/home/Renewable.png" alt="sustainable" width={200} height={200} className="ms-auto" />
-                            <h1>85.2%</h1>
-                            <p className="border-b border-white pb-2 mb-2">Renewable Energy</p>
-                            <p> The Hosur facility is powered by renewable sources, minimizing environmental impact.</p>
-                        </div>
-                        
-                        <div className="md:col-span-1 md:row-span-1 bg-[#D6FFBF8C] rounded-[20px] p-5 backdrop-blur-md">
-                            <h1>~30%</h1>
-                            <p className="border-b border-[#7B7B7B] pb-2 mb-2">Reduction in Hazardous Waste</p>
-                            <p>Achieved at our Hosur and Puducherry plants, enhancing eco-friendly operations.</p>
-                        </div>
-
-                        <div className="md:row-start-2 md:col-start-2  bg-gradient-to-b from-[#b6e3ffcb] to-[#dbf1ffd3] rounded-[20px] backdrop-blur-md p-5">
-                            <h1>Zero</h1>
-                            <p className="border-b border-[#7B7B7B] pb-2 mb-2"> Liquid Discharge</p>
-                            <p> Ensuring 100% water recycling through advanced treatment systems.</p>
-                        </div>
-
-                        <div className="md:col-span-1 md:col-start-3 md:row-start-1 md:row-span-2 bg-gradient-to-b from-[#ffffff70] to-[#bfbfbfcb] backdrop-blur-md rounded-[20px] p-5">
-                            <Image src="/images/home/Emissions.png" alt="sustainable" width={200} height={200} className="ms-auto" />
-                            <h1>85.2%</h1>
-                            <p className="border-b border-[#7B7B7B] pb-2 mb-2"> Reduction in GHG Emissions</p>
-                            <p>Significant emissions reduction, supporting our commitment to carbon neutrality.</p>
-                        </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2  gap-5 ">
+                    <div className="md:col-span-1 md:row-span-2 card-btm-right bg-[#D3CBFF] rounded-[12px] p-5 ">
+                        <Image src="/images/home/Renewable.png" alt="sustainable" width={200} height={200} className="ms-auto" />
+                        <h1>85.2%</h1>
+                        <p className="border-b border-black pb-2 mb-2">Renewable Energy</p>
+                        <p> The Hosur facility is powered by renewable sources, minimizing environmental impact.</p>
                     </div>
+                    
+                    <div className="card-top-left md:col-span-1 md:row-span-1 bg-[#8ead7f] rounded-[12px] p-5">
+                        <h1>~30%</h1>
+                        <p className="border-b border-[#7B7B7B] pb-2 mb-2">Reduction in Hazardous Waste</p>
+                        <p>Achieved at our Hosur and Puducherry plants, enhancing eco-friendly operations.</p>
+                    </div>
+
+                    <div className="md:row-start-2 card-top-right md:col-start-2  bg-[#B6E3FF] rounded-[12px] p-5">
+                        <h1>Zero</h1>
+                        <p className="border-b border-[#7B7B7B] pb-2 mb-2"> Liquid Discharge</p>
+                        <p> Ensuring 100% water recycling through advanced treatment systems.</p>
+                    </div>
+
+                    <div className="md:col-span-1 card-btm-right md:col-start-3 md:row-start-1 md:row-span-2 bg-[#FFEAC3] rounded-[12px] p-5">
+                        <Image src="/images/home/Frame.png" alt="sustainable" width={200} height={200} className="ms-auto" />
+                        <h1>85.2%</h1>
+                        <p className="border-b border-[#7B7B7B] pb-2 mb-2"> Reduction in GHG Emissions</p>
+                        <p>Significant emissions reduction, supporting our commitment to carbon neutrality.</p>
+                    </div>
+               </div>
                 </div>
             </section>
 

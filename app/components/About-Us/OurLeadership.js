@@ -16,7 +16,7 @@ const LeadershipData = [
         name: "Mr. Ravinder Sharma ",
         position: "President",
         text: "At India Nippon , each individual truly value partnership with Customers , Business Partners [Suppliers] and employees. Flexibility and challenging attitude to achieve excellence with passion is the strength of each member of India Nippon",
-        image: "/images/about/Ravinder-Sharma.png",
+        image: "/images/about/ravinder-sharma.webp",
     },
 ]
 

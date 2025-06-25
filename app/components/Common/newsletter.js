@@ -51,8 +51,8 @@ export default function Newsletter({newsletterBg}) {
             <section className="clip-path btmleft btmright bg-[url('/images/home/soldring.png')] bg-cover bg-center relative clippath-2">
                 <div className="absolute top-0 left-0 w-full h-full bg-primary opacity-50 inset-0"></div>
                 <div className="container mx-auto text-center text-white py-20 relative">
-                    <h1 className="pb-5">Let’s Build Tomorrow’s Mobility Today</h1>
-                    <p>Sign up and stay up to date with the latest news and updates</p>
+                    <h1 className="pb-5">Let’s Shape the Future of Engineering Together</h1>
+                    <p>Partner with us to innovate and accelerate your journey towards smarter, sustainable mobility</p>
                     {/* <form onSubmit={handleSubmit} className="flex justify-between items-center bg-white py-1 p-[3px] md:w-2/3 mx-auto mt-10 rounded-[20px]">
                         <input 
                             type="email" 

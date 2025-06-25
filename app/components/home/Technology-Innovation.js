@@ -23,7 +23,8 @@ export default function TechnologyInnovation() {
         <div className="flex flex-col md:flex-row lg:gap-[7rem] gap-10">
           <div className="w-full md:w-1/2">
           <h5>Technology & Innovation</h5>
-            <h1 className="pb-10">Technology That Leads. Innovation That Scales.</h1>
+            <h1 className="pb-10">Powering Innovation, 
+            Shaping the Future</h1>
             <Image src="/images/home/Technology-2.png" alt="technology-innovation"
             className="w-full h-[400px] lg:h-[510px] object-cover rounded-[20px]"
             width={2500} height={2400} />
@@ -49,8 +50,8 @@ export default function TechnologyInnovation() {
                 />
               </div>
             </div>
-           <div><p className="pb-5">At INEL, we are at the forefront of automotive technology, developing transformative solutions that redefine the future of mobility. Our state-of-the-art R&D center pioneers advancements in power electronics, intelligent sensors, and electric vehicle solutions, creating smarter, more efficient systems for the next generation of transportation.</p>
-            <p>From analog ignition systems to next-gen EV components, INEL stays ahead by investing in R&D, digitalization, and smart automation. Our solutions scale across platforms, geographies, and evolving market needs.</p>
+           <div><p className="pb-5">At INEL, innovation drives everything we do. Our state-of-the-art R&D center develops next-gen power electronics, intelligent sensors, and EV solutions for a smarter, more efficient future. From high-efficiency motor controllers to ADAS-integrated safety systems, we create cutting-edge technologies that enhance performance, safety, and sustainability.</p>
+            <p>With a relentless focus on energy efficiency and smart mobility, we engineer solutions that power the vehicles of tomorrow.</p>
             </div> 
             <div className="flex gap-10">
               {innovations.map((innovation) => (
@@ -60,7 +61,7 @@ export default function TechnologyInnovation() {
                 </div>
               ))}
             </div>
-            <Button variant="blue" href="/contact-us">Explore Our Innovations</Button>
+            <Button variant="blue" href="/technology">Explore Our Innovations</Button>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ import Button from "../Ui/button";
 import { HiOutlineChevronRight, HiOutlineChevronLeft } from "react-icons/hi";
 import ApiService from "@/app/services/api";
 
-export default function BlogSlide() {
+export default function BlogSlide({sildeperview}) {
     const [blogData, setBlogData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -97,7 +97,7 @@ export default function BlogSlide() {
                 slidesPerView={1}
                 breakpoints={{
                     768: {
-                        slidesPerView: 2,
+                        slidesPerView: sildeperview,
                     },
                 }}
                 speed={1100}

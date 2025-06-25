@@ -2,87 +2,55 @@
 
 import { useState } from 'react';
 import Image from "next/image";
-import map from "@/public/images/about/map.png";
+import map from "@/public/images/Aftermarket/india.png";
 import GlowingBox from "../Ui/GlowingBox"
 import { MdLocationOn } from "react-icons/md";
 
 const locations = [ 
   {
     id: 1,
-    name: "THAILAND",
-    flag: "https://flagcdn.com/w40/th.png",
-    coordinates: { top: "42%", left: "75%" }
+    name: "Chennai",
+     coordinates: { top: "75%", left: "44%" }
   },
 
   {
     id: 2,
-    name: "NEPAL",
-    flag: "https://flagcdn.com/w40/np.png",
-    coordinates: { top: "38%", left: "71%" }
+    name: "Bengaluru",
+    coordinates: { top: "75%", left: "40%" }
   },
   {
     id: 3,
-    name: "SRI LANKA",
-    flag: "https://flagcdn.com/w40/lk.png",
-    coordinates: { top: "48%", left: "72%" }
+    name: "Hyderabad",
+     coordinates: { top: "60%", left: "42%" }
   },
   {
     id: 4,
-    name: "USA",
-    flag: "https://flagcdn.com/w40/us.png",
-    coordinates: { top: "35%", left: "23%" }
+    name: "Coimbatore",
+    coordinates: { top: "80%", left: "40%" }
   },
   {
     id: 5,
-    name: "ITALY",
-    flag: "https://flagcdn.com/w40/it.png",
-    coordinates: { top: "33%", left: "52%" }
+    name: "Madurai",
+    coordinates: { top: "84%", left: "41%" }
   },
   {
     id: 6,
-    name: "CHINA",
-    flag: "https://flagcdn.com/w40/cn.png",
-    coordinates: { top: "35%", left: "77%" }
+    name: "Mumbai",
+    coordinates: { top: "57%", left: "34%" }
   },
   {
     id: 7,
-    name: "SLOVENIA",
-    flag: "https://flagcdn.com/w40/si.png",
-    coordinates: { top: "32%", left: "53%" }
+    name: "Pune",
+    coordinates: { top: "61%", left: "36%" }
   },
   {
     id: 8,
-    name: "BANGLADESH",
-    flag: "https://flagcdn.com/w40/bd.png",
-    coordinates: { top: "40%", left: "74%" }
+    name: "Lucknow",
+    coordinates: { top: "35%", left: "46%" }
   },
-  {
-    id: 9,
-    name: "AFRICA",
-    flag: "https://flagcdn.com/w40/za.png",
-    coordinates: { top: "55%", left: "52%" }
-  },
-  {
-    id: 10,
-    name: "TURKEY",
-    flag: "https://flagcdn.com/w40/tr.png",
-    coordinates: { top: "34%", left: "66%" }
-  },
-  {
-    id: 11,
-    name: "VIETNAM",
-    flag: "https://flagcdn.com/w40/vn.png",
-    coordinates: { top: "43%", left: "80%" }
-  },
-  {
-    id: 12,
-    name: "JAPAN",
-    flag: "https://flagcdn.com/w40/jp.png",
-    coordinates: { top: "35%", left: "82%" }
-  }
 ];
 
-export default function Map() {
+export default function IndiaMap() {
   const [activeLocation, setActiveLocation] = useState(null);
 
   return (
@@ -90,13 +58,13 @@ export default function Map() {
       <div className="container mx-auto px-4 relative">
         <h5>Global Scale</h5>
         <h1>Driving Success on a<br/> Global Scale</h1>
-        <div className="relative">
+        <div className="relative -mt-20">
           <Image 
             src={map} 
             alt="Global Presence Map" 
             width={1000} 
-            height={500} 
-            className="w-full opacity-80 py-10"
+            height={1000} 
+            className="w-full h-[700px] object-contain opacity-80 py-10"
           />
           
           {/* Location Points */}
@@ -123,8 +91,8 @@ export default function Map() {
         </div>
       {/* Legend */}
       
-        <div className="md:absolute top-1/2  md:transform md:-translate-y-1/2 h-fit right-0 rounded-[20px] bg-[#D9D9D975] backdrop-blur-md ">
-        <GlowingBox borderColor="#9EB2FF" className='p-8 rounded-[20px] '>
+        <div className="md:absolute top-1/2  md:transform md:-translate-y-1/2 h-fit right-0 rounded-[20px] bg-[#ECF0FF] backdrop-blur-md ">
+        <GlowingBox borderColor="#9EB2FF" className='p-10 rounded-[20px] '>
               <ul className="space-y-5 z-20 relative  text-sm">
                 {locations.map((location) => (
                   <li 
@@ -136,8 +104,7 @@ export default function Map() {
                       activeLocation === location.id ? null : location.id
                     )}
                   >
-                    <Image src={location.flag} alt={location.name} width={30} height={30} />
-                    {location.name}
+                     {location.name}
                   </li>
                 ))}
               </ul>

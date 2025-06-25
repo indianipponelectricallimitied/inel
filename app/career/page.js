@@ -5,30 +5,14 @@ import JobListings from "../components/career/JobListings";
 import CareerOpportunities from "../components/career/CareerOpportunities";
 import CareeerForm from "../components/career/CareeerForm";
 import BackflipSlider from "../components/Ui/BackflipSlider";
-import Accordion from "../components/Ui/accordion"
+import Accordion from "../components/Ui/accordion";
+import OurPriority from "../components/career/OurPriority";
+import BlogSlide from "../components/Newsroom/blog-slide";
 
-const perks = [
-    {
-        image: "/images/about/Innovation.png",
-        title: "Growth Opportunities",
-        description: "Forward thinking, planning and execution to expand our horizons.",
-    },
-    {
-        image: "/images/about/Passion.png",
-        title: "Collaborative Culture",
-        description: "Enthusiasm, desire, and commitment to succeed.",
-    },
-    {
-        image: "/images/about/Quality.png",
-        title: "Impactful Work",
-        description: "Service and products we are proud to stand behind.",
-    },
-    {
-        image: "/images/about/Thrive.png",
-        title: "Employee Well-being",
-        description: "Commitment to growth to affect our customer’s success.",
-    }
-]
+// from technology page 
+import HoverExpand from "../components/Technology/HoverExpand";
+import Newsletter from "../components/Common/newsletter";
+ 
 
 export const jobListings = [
     {
@@ -137,12 +121,14 @@ const accordions = [
   ]
   
 
+
+
 export default function Career() {
     return (
         <>
-             <BreadCrumb 
+            <BreadCrumb 
                 pageTitle= "Career"
-                breadCrumbBg= "/images/career/breadcrumb.jpeg"
+                breadCrumbBg= "/images/career/breadcrumb.jpg"
             />
 
             <section className="bg-gradient-to-b from-[#fff] to-[#E9E9E9]" id="career">
@@ -154,7 +140,7 @@ export default function Career() {
                     {/* <PlayVideo videolink ="/videos/hero-placeholder-vid.mp4" /> */}
                     <Image src="/images/career/career-img.png" alt="career-banner" width={1000} height={1000} className="mx-auto"/>
 
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pt-20'>
+                    {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pt-20'>
                         {perks.map((item, index)=>(
                             <div className='bg-[#fff] p-5 rounded-[10px] space-y-5' key={index}>
                                 <Image src={item.image} alt={item.title} width={200} height={200} 
@@ -164,17 +150,21 @@ export default function Career() {
                                 <p>{item.description}</p>
                             </div>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
             </section>
 
-            <JobListings jobListings={jobListings} />
+            <HoverExpand />
+
+            <OurPriority />
+
+            {/* <JobListings jobListings={jobListings} /> */}
 
             <section className="bg-gradient-to-b from-[#fff] to-[#ECF9FF] py-20">
 
-                <CareerOpportunities quickLinks={quickLinks} />
+                <CareerOpportunities quickLinks={quickLinks}   />
 
-                <div className="container mx-auto space-y-5 py-20 md:pt-40 text-center ">
+                {/* <div className="container mx-auto space-y-5 py-20 md:pt-40 text-center ">
                     <h5>Join Our Team</h5>
                     <h1>Drive Your Career Forward with INEL</h1>
                     <p className="md:w-4/5 mx-auto">At India Nippon Electricals, we believe in empowering talent and fostering growth. Whether you’re an experienced professional, a recent graduate, or seeking internship opportunities, we offer a dynamic environment where innovation thrives, and careers take flight. Fill out the form below, and take the first step toward joining a team that’s driving progress and shaping the future of automotive technology.</p>
@@ -182,7 +172,7 @@ export default function Career() {
                     <div className="lg:w-4/6 mx-auto pt-10" id="apply-now" itemID="apply-now">
                         <CareeerForm />
                     </div>
-                </div>
+                </div> */}
             </section>
 
             <div className="grid-with-gradients">
@@ -197,6 +187,9 @@ export default function Career() {
                             <BackflipSlider testimonials={testimonials} />
                     </div>
                 </div> */}
+                <div className="container mx-auto py-20">
+                    <BlogSlide sildeperview={3} />
+                </div>
 
                 <div className="container mx-auto py-20 space-y-5" id="FAQ">
                     <h5 className="text-center">FAQ</h5>
@@ -207,6 +200,9 @@ export default function Career() {
                     </div>
                 </div>
             </div>
+            
+            <Newsletter/> 
+
         </>
     )
 }
