@@ -20,6 +20,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         textGray: "var(--text-gray)",
+        purple: "var(--purple)",
       },
     },
   },

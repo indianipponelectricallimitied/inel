@@ -12,10 +12,8 @@ export default function Technology() {
                 breadCrumbBg= "/images/Technology/tech-breadcrumb.jpg"
             />
 
+
             <TechnologyPage />
-
-            <HoverExpand />
-
 
             <section>
                 <div className="container mx-auto  flex flex-col lg:flex-row gap-10 py-20" id="research-development">
