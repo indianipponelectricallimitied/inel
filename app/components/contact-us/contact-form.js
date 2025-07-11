@@ -1,5 +1,11 @@
 "use client"
 import { useState, useEffect, useRef } from "react";
+import { MdLocationOn } from "react-icons/md";
+import { TbMailFilled } from "react-icons/tb";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
@@ -187,16 +193,50 @@ export default function ContactForm() {
 
     return (
         <>
-        <div className="py-20 px-5 diamond-gradient  rounded-[20px]">
-            <h1 className="text-center pb-5 text-white">Get in Touch</h1>
-            <p className="text-center pb-10 px-1 text-white">We’re here to help! Whether you have questions, feedback, or need assistance, drop us a message and we’ll get back to you promptly.</p>
+        <div className="grid md:grid-cols-2 grid-cols-1 bg-[#F2F2F2] rounded-[20px]">   
+        <div className="py-20 px-8 diamond-gradient  rounded-[20px]">
+            <h1 className="text-start pb-5 text-white">Get in Touch</h1>
+            <p className="text-start pb-10 px-1 text-white">We’re here to help! Whether you have questions, feedback, or need assistance, drop us a message and we’ll get back to you promptly.</p>
 
+            <div class="space-y-4 text-white">
+          <p class="flex items-start gap-4 text-sm">
+            <span class="text-2xl"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"></path></svg></span>
+            India Nippon Electricals Ltd, Hosur-Thally Road,
+Uliveernapalli, Hosur-635114, India
+          </p>
+          <a href="tel:+914428460063" className="flex items-center gap-4 text-sm">
+          <p class="flex items-center gap-4 text-sm">
+          <span class="text-xl"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path></svg></span>
+           
+            +91-44-28460063
+          </p>
+          </a>
+          <a href="mailto:inelcorp@inel.co.in" className="flex items-center gap-4 text-sm">
+          <p class="flex items-center gap-4 text-sm">
+            <span class="text-2xl"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z"></path><path d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z"></path></svg></span>
+            inelcorp@inel.co.in
+          </p>
+          </a>
+        </div>
+        <div className="flex flex-col gap-2 w-full md:w-1/5 text-white pt-6">
+                            <p className="pb-3 font-bold">Follow us :</p>
+                            <div className="flex gap-5">
+                                <a href="#"><FaLinkedinIn className="text-2xl text-dark" /></a>
+                                <a href="#"><FaInstagramSquare className="text-2xl" /></a>
+                                <a href="#"><FaFacebookF className="text-2xl" /></a>
+                                <a href="#"><FaXTwitter className="text-2xl" /></a>
+                            </div>
+                        </div>
+
+        </div>
+        <div className="py-20 px-5 ">
+            <div className="container mx-auto">
             <form onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-1 gap-4 md:w-4/6 mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-4 md:w-4/6 mx-auto text-start">
                     <input 
                         type="text" 
                         id="name" 
-                        className="form-input" 
+                        className="form-input contact-form" 
                         placeholder="Name" 
                         value={formData.name} 
                         onChange={handleInputChange} 
@@ -206,7 +246,7 @@ export default function ContactForm() {
                     <input 
                         type="email" 
                         id="email" 
-                        className="form-input" 
+                        className="form-input contact-form" 
                         placeholder="Email" 
                         value={formData.email} 
                         onChange={handleInputChange} 
@@ -216,7 +256,7 @@ export default function ContactForm() {
                     <input 
                         type="tel" 
                         id="phone" 
-                        className="form-input" 
+                        className="form-input contact-form" 
                         placeholder="Phone Number" 
                         value={formData.phone} 
                         onChange={handleInputChange} 
@@ -225,7 +265,7 @@ export default function ContactForm() {
                     />
                     <textarea 
                         id="message" 
-                        className="form-input" 
+                        className="form-input contact-form" 
                         rows={5} 
                         placeholder="Message" 
                         value={formData.message} 
@@ -234,7 +274,7 @@ export default function ContactForm() {
                         disabled={isSubmitting}
                     ></textarea>
                     
-                    <button type="submit" className="bg-white w-fit mx-auto text-black px-4 py-2 rounded-md">
+                    <button type="submit"  className="bg-blue w-fit mx-auto text-white px-4 py-2 rounded-md">
                         {isSubmitting ? "Submitting..." : "Enquire Now"}
                     </button>
                     
@@ -246,7 +286,8 @@ export default function ContactForm() {
                     {responseMessage}
                 </div>
             )}
-
+            </div>
+        </div>
         </div>
         </>
     );

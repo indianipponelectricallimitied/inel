@@ -106,9 +106,9 @@ class ApiService {
             const data = await response.json();
             
             if (isClient) {
-                this.setCache(cacheKey, data.results);
+                this.setCache(cacheKey, data);
             }
-            return data.results;
+            return data;
         } catch (error) {
             console.error('Error fetching investor data:', error);
             throw error;

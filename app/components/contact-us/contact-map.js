@@ -27,13 +27,23 @@ const Map = () => {
 
   // Define places with their details
   const places = [
+    
+    {
+      id: 0,
+      name: "Tech Center",
+      address: "No 11 & 13, Patullos Road, Chennai 600 002, Tamil Nadu, India",
+      position: { lat: 13.0827, lng: 80.2707 },
+      phone: "+91-4347-230273",
+      email: " inelcorp@inel.co.in",
+      image: "/images/contact-us/Registered-Office.png"
+    },
     {
       id: 1,
       name: "Plant-I Hosur",
       address: "Hosur-Thali Road Unnamalai Hosur 635 114 Krishnagiri District Tamil Nadu, India",
       position: { lat: 12.7409, lng: 77.8253 },
-      phone: "+91 98400 00000",
-      email: "planti@gmail.com",
+      phone: "+91-4347-230273",
+      email: " inelcorp@inel.co.in",
       image: "/images/contact-us/Plant-I-Hosur.png"
     },
     {
@@ -41,8 +51,8 @@ const Map = () => {
       name: "Plant-II Pondicherry",
       address: "Madukkarai Road Nettapakkam Commune Kariamanickam Village Puducherry 605 106 India",
       position: { lat: 11.9416, lng: 79.8083 },
-      phone: "+91 98400 00000",
-      email: "plantii@gmail.com",
+      phone: "+91-413-2697811",
+      email: " inelcorp@inel.co.in",
       image: "/images/contact-us/Plant-II-Pondicherry.png"
     },
     {
@@ -50,19 +60,10 @@ const Map = () => {
       name: "Plant-III Rewari",
       address: "Masani Village Rewari 122106 Haryana State India",
       position: { lat: 28.1990, lng: 76.6194 },
-      phone: "+91 98400 00000",
-      email: "plantiii@gmail.com",
+      phone: "+91-1274-240860",
+      email: " inelcorp@inel.co.in",
       image: "/images/contact-us/Plant-III-Rewari.png"
 
-    },
-    {
-      id: 4,
-      name: "Registered Office",
-      address: "No 11 & 13, Patullos Road, Chennai 600 002, Tamil Nadu, India",
-      position: { lat: 13.0827, lng: 80.2707 },
-      phone: "+91 98400 00000",
-      email: "registeredoffice@gmail.com",
-      image: "/images/contact-us/Registered-Office.png"
     }
   ];
 

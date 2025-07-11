@@ -65,6 +65,12 @@ input , textarea , select{
   &:focus-visible{
     outline: none;
   } 
+  &.contact-form{
+    border-bottom: 1px solid #CCCCCC;
+    background-color: transparent;
+    border-radius: 0px;
+    padding:18px 0;
+  }
 }
 
 .grecaptcha-badge{
