@@ -8,9 +8,8 @@ import Image from "next/image";
 import { MdLocationOn } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { TbMailFilled } from "react-icons/tb";
-// Create a singleton loader instance
 
-// AIzaSyBJTWOSXlgPp5gxXTS_DBroG8Cn-aDVnAs 
+// Create a singleton loader instance
 
 const loader = new Loader({
   apiKey: "",
@@ -23,11 +22,20 @@ const Map = () => {
   const markers = useRef([]);
   const mapInstance = useRef(null);
   const infoWindow = useRef(null);
-  const [selectedPlace, setSelectedPlace] = useState(null);
 
-  // Define places with their details
+  // Set Tech Center as active by default
+  const [selectedPlace, setSelectedPlace] = useState({
+    id: 0,
+    name: "Tech Center",
+    address: "No 11 & 13, Patullos Road, Chennai 600 002, Tamil Nadu, India",
+    position: { lat: 13.0827, lng: 80.2707 },
+    phone: "+91-4347-230273",
+    email: " inelcorp@inel.co.in",
+    image: "/images/contact-us/Registered-Office.png"
+  });
+
+  // Define places with their details, with Tech Center having active: true
   const places = [
-    
     {
       id: 0,
       name: "Tech Center",
@@ -35,7 +43,8 @@ const Map = () => {
       position: { lat: 13.0827, lng: 80.2707 },
       phone: "+91-4347-230273",
       email: " inelcorp@inel.co.in",
-      image: "/images/contact-us/Registered-Office.png"
+      image: "/images/contact-us/Registered-Office.png",
+      active: true
     },
     {
       id: 1,
@@ -44,7 +53,8 @@ const Map = () => {
       position: { lat: 12.7409, lng: 77.8253 },
       phone: "+91-4347-230273",
       email: " inelcorp@inel.co.in",
-      image: "/images/contact-us/Plant-I-Hosur.png"
+      image: "/images/contact-us/Plant-I-Hosur.png",
+      active: false
     },
     {
       id: 2,
@@ -53,7 +63,8 @@ const Map = () => {
       position: { lat: 11.9416, lng: 79.8083 },
       phone: "+91-413-2697811",
       email: " inelcorp@inel.co.in",
-      image: "/images/contact-us/Plant-II-Pondicherry.png"
+      image: "/images/contact-us/Plant-II-Pondicherry.png",
+      active: false
     },
     {
       id: 3,
@@ -62,8 +73,8 @@ const Map = () => {
       position: { lat: 28.1990, lng: 76.6194 },
       phone: "+91-1274-240860",
       email: " inelcorp@inel.co.in",
-      image: "/images/contact-us/Plant-III-Rewari.png"
-
+      image: "/images/contact-us/Plant-III-Rewari.png",
+      active: false
     }
   ];
 
@@ -141,8 +152,8 @@ const Map = () => {
           title: place.name,
           icon: {
             path: google.maps.SymbolPath.CIRCLE,
-            scale: 10, // Adjust the size of the circle
-            fillColor: '#160959', // Change to desired color
+            scale: 10,
+            fillColor: '#160959',
             fillOpacity: 1,
             strokeColor: '#16095994',
             strokeWeight: 15,
@@ -159,7 +170,30 @@ const Map = () => {
 
       // Add MarkerClusterer
       new MarkerClusterer({ markers: markers.current, map });
+
+      // On initial load, open info window for Tech Center (active: true)
+      const techCenter = places.find((p) => p.active);
+      if (techCenter) {
+        setSelectedPlace(techCenter);
+        // Center and zoom to Tech Center
+        map.panTo(techCenter.position);
+        map.setZoom(15);
+
+        // Close existing info window if open
+        if (infoWindow.current) {
+          infoWindow.current.close();
+        }
+
+        infoWindow.current = new google.maps.InfoWindow({
+          content: createCustomInfoWindow(techCenter),
+          position: techCenter.position,
+          maxWidth: 320
+        });
+
+        infoWindow.current.open(map);
+      }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

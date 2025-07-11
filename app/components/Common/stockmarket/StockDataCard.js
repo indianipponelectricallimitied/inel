@@ -73,7 +73,7 @@ export default function StockDataCard({background}) {
 
     
     <div className="card-wrapper" ref={cardRef}>
-      
+        <h2 className='text-2xl pb-4'>Stock Information</h2>
         <div className="tabs z-[3]">
           <input 
             type="radio" 

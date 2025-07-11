@@ -77,7 +77,7 @@ export default function Footer(){
                     <a href="/privacy-policy" className="text-sm md:text-base">Privacy Policy</a>
                     <a href="/terms-and-conditions" className="text-sm md:text-base">Terms & Condition</a>
                     <a href="/policies" className="text-sm md:text-base">Policies</a>
-                    <a href="#" className="text-sm md:text-base">Data Protection</a>
+                    {/* <a href="#" className="text-sm md:text-base">Data Protection</a> */}
                 </div>
                 <p className="text-center md:text-left text-sm md:text-base pt-5 md:pt-0">© INEL. All Rights Reserved.</p>
             </div>

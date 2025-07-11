@@ -11,8 +11,9 @@ import BlogSlide from "../components/Newsroom/blog-slide";
 
 // from technology page 
 import HoverExpand from "../components/Technology/HoverExpand";
-import Newsletter from "../components/Common/newsletter";
- 
+import Newsletter from "../components/career/newsletter";
+import Link from "next/link";
+
 
 export const jobListings = [
     {

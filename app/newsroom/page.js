@@ -12,7 +12,7 @@ export default async function Newsroom() {
 
             <BreadCrumb 
                 pageTitle= "Newsroom"
-                breadCrumbBg= "/images/newsroom/breadcrumb.jpg"
+                breadCrumbBg= "/images/newsroom/Newsroombanner.webp"
             />
 
             <div className="container mx-auto py-20">
