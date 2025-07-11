@@ -39,19 +39,19 @@ const steps = [
     {
         "id": 1,
         "header": "Step 1",
-        "image": "/images/career/step-1.png",
+        "image": "/images/career/search.png",
         "content": "Explore"
     },
     {
         "id": 2,
         "header": "Step 2",
-        "image": "/images/career/step-2.png",
+        "image": "/images/career/Vector.png",
         "content": "Apply"
     },
     {
         "id": 3,
         "header": "Step 3",
-        "image": "/images/career/step-3.png",
+        "image": "/images/career/Icon.png",
         "content": "Connect"
     },
 ]
@@ -74,10 +74,13 @@ export default function OurPriority({quickLinks}) {
                 <h1 className="text-center pb-10">How to apply</h1>
                 <div className="w-2/3 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {steps.map((step, index) => (
+                        <div key={index} className="card-top-right rounded-[20px] p-[1px] bg-[#A6A6A6]">
                         <div key={index} className="card-top-right p-5 rounded-[20px] bg-gradient-to-b from-[#ECF9FF] to-[#E4E4E4] text-center space-y-3">
                             <Image src={step.image} alt={step.header} width={50} height={100} className="mx-auto" />
-                            <h3 className="text-xl font-medium">{step.header}</h3>
-                            <p >{step.content}</p>
+                            <p >{step.header}</p>
+                            <h3 className="text-xl font-medium">{step.content}</h3>
+                            
+                        </div>
                         </div>
                     ))}
                 </div>

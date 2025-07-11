@@ -4,56 +4,40 @@ import Image from "next/image";
 
 const logos = [
   {
-    src: "/images/home/companies/bajaj-auto-logo.png",
-    alt: "Bajaj Auto",
+    src: "/images/home/companies/company-(3).png",
+    alt: "company-(3)",
   },
   {
-    src: "/images/home/companies/blueriverlogo.png",
-    alt: "Blue River ",
+    src: "/images/home/companies/company-(4).png",
+    alt: "company-(4)",
   },
   {
-    src: "/images/home/companies/Generac_Power_Systems_logo.png",
-    alt: "Generac Power Systems ",
+    src: "/images/home/companies/company-(5).png",
+    alt: "company-(5)",
   },
   {
-    src: "/images/home/companies/GreavesCotton.png",
-    alt: "Greaves Cotton ",
+    src: "/images/home/companies/company-(6).png",
+    alt: "company-(6)",
   },
   {
-    src: "/images/home/companies/Hero_MotoCorp_Logo.png",
-    alt: "Hero MotoCorp ",
+    src: "/images/home/companies/company-(7).png",
+    alt: "company-(7)",
   },
   {
-    src: "/images/home/companies/Lombardini.png",
-    alt: "Lombardini ",
+    src: "/images/home/companies/company-(8).png",
+    alt: "company-(8)",
   },
   {
-    src: "/images/home/companies/piaggio.png",
-    alt: "Piaggio ",
+    src: "/images/home/companies/company-(9).png",
+    alt: "company-(9)",
   },
   {
-    src: "/images/home/companies/Polaris.png",
-    alt: "Polaris ",
+    src: "/images/home/companies/company-(10).png",
+    alt: "company-(10)",
   },
   {
-    src: "/images/home/companies/RE.png",
-    alt: "RE",
-  },
-  {
-    src: "/images/home/companies/relhko.png",
-    alt: "Relhko ",
-  },
-  {
-    src: "/images/home/companies/tvs-motors-seeklogo.png",
-    alt: "TVS Motors ",
-  },
-  {
-    src: "/images/home/companies/uv-full-white-logo.png",
-    alt: "UV ",
-  },
-  {
-    src: "/images/home/companies/ZF_logo.png",
-    alt: "ZF ",
+    src: "/images/home/companies/company-(11).png",
+    alt: "company-(11)",
   },
 ];
 
@@ -149,7 +133,7 @@ export default function MarqueeSection() {
             transform: translateX(0px);
           }
           100% {
-            transform: translateX(calc(-200px * 14));
+            transform: translateX(calc(-200px * 9));
           }
         }
         }
