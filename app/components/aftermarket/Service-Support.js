@@ -1,18 +1,18 @@
 const support = [
     {
-        title: "Dedicated Technical Expertise",
+        title: "Technical Support",
         image: "/images/Aftermarket/Guides.jpg",
-        description: "Our team of specialists is always available to provide the technical assistance you need, ensuring your systems perform at their best.",
+        description: "Our team is ready to assist with any queries.",
     },
     {
-        title: "Detailed Installation Assistance",
+        title: "Installation Guides",
         image: "/images/Aftermarket/service.png",
-        description: "Access expert-designed installation guides and video tutorials to ensure every part is set up with accuracy and ease.",
+        description: "Step-by-step manuals and video tutorials.",
     },
     {
-        title: "Thorough Warranty Protection",
+        title: "Warranty Information",
         image: "/images/Aftermarket/Warranty.jpg",
-        description: " Rest easy with full access to warranty information that ensures coverage for all genuine parts, safeguarding your investment.",
+        description: " Coverage details for our genuine spare parts.",
     },
     
 ]
@@ -25,7 +25,7 @@ export default function ServiceSupport() {
                     {support.map((item, index) => (
                         <div key={index} className="relative h-[350px] rounded-[10px]  shadow-[0px_0px_15.5px_0px_#16095970] ">
                             <img src={item.image} alt={item.title} className="rounded-[10px] object-cover h-full w-full" />
-                           <div className="flex flex-col p-5 md:p-3 justify-end absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-50% to-[#160959] rounded-[10px] text-white gap-3">
+                           <div className="flex flex-col p-5 md:p-4 justify-end absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-50% to-[var(--primary)] rounded-[10px] text-white gap-3">
                             <h2 className="text-2xl font-medium">{item.title}</h2>
                             <p >{item.description}</p>
                            </div>

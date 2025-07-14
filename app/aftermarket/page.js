@@ -69,16 +69,18 @@ export default function aftermarket(){
 
         <div className="container mx-auto flex flex-col lg:flex-row gap-12  py-20">
             <div className="lg:w-2/5 space-y-8">
-                <h1 >Precision Parts, Perfectly Tailored for Your Vehicle</h1>
-                <p >The aftermarket team enhances brand image and expands reach through channel partnerships and mechanic skill development programs. With a 33% CAGR over the last five years and a 23% growth in 2023-24, the focus is on further growth through international markets and expanded ICE offerings.</p>
-                <p>Use our smart filters to locate the perfect match for your vehicle</p>
+                <h1 >Perfect parts tailored for your needs.</h1>
+                <p >Whether you need ignition systems, relays, or regulators, 
+                    we offer a wide selection of high-quality aftermarket products. 
+                    Browse our categories to find the right fit for your vehicle.</p>
+                <p>Use our smart filters to locate the perfect match for your vehicle.</p>
             </div>
             <div className="lg:w-3/5">
                 <SearchAftermarket />
             </div>
         </div>
 
-        <section className="container mx-auto space-y-10 md:space-y-20 pb-20  ">
+        {/* <section className="container mx-auto space-y-10 md:space-y-20 pb-20  ">
             <h1 className="text-center">Featured Products</h1>
                 <FeaturedProducts />
                 <Button href="/Products&Solutions" 
@@ -86,7 +88,7 @@ export default function aftermarket(){
                         className="w-fit mx-auto">
                         Explore all Products
                     </Button>
-        </section>
+        </section> */}
 
         <WhyAftermarket  />
 
@@ -100,8 +102,8 @@ export default function aftermarket(){
         <section className="container mx-auto  py-20">
             <div className="text-center space-y-5">
                 <h5>Service & Support</h5>
-                <h1>Tailored Support at Every Turn</h1>
-                <p className="md:w-3/4 mx-auto">At INEL, we offer dedicated support designed to guide you through every phase, from installation to after-sales care. With our expertise, we ensure your experience is smooth, precise, and fully supported by our comprehensive services.</p>
+                <h1>Expert Support at Every Step</h1>
+                <p className="md:w-3/4 mx-auto">Get guidance, installation help, and warranty support.</p>
             </div>
             <ServiceSupport />
         </section>
@@ -132,7 +134,7 @@ export default function aftermarket(){
                 imageSrc="/images/Aftermarket/aerial-inel.jpeg"
                 imageAlt="sustainable"
                 tagline="Resources & Downloads"
-                title="Explore Our Knowledge Hub"
+                title="Our Knowledge Hub"
                 description="Empower yourself with the essential resources you need for seamless product installation, efficient troubleshooting, and more. Our comprehensive library ensures you have all the tools to optimize your experience with INEL."
                     quickLinks={quickLinks}
                 />

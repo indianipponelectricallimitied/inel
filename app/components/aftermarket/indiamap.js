@@ -10,43 +10,43 @@ const locations = [
   {
     id: 1,
     name: "Chennai",
-     coordinates: { top: "75%", left: "44%" }
+     coordinates: { top: "74%", left: "38%" }
   },
 
   {
     id: 2,
     name: "Bengaluru",
-    coordinates: { top: "75%", left: "40%" }
+    coordinates: { top: "74%", left: "31%" }
   },
   {
     id: 3,
     name: "Hyderabad",
-     coordinates: { top: "60%", left: "42%" }
+     coordinates: { top: "59%", left: "36%" }
   },
   {
     id: 4,
     name: "Coimbatore",
-    coordinates: { top: "80%", left: "40%" }
+    coordinates: { top: "79%", left: "28%" }
   },
   {
     id: 5,
     name: "Madurai",
-    coordinates: { top: "84%", left: "41%" }
+    coordinates: { top: "83%", left: "31%" }
   },
   {
     id: 6,
     name: "Mumbai",
-    coordinates: { top: "57%", left: "34%" }
+    coordinates: { top: "56%", left: "28%" }
   },
   {
     id: 7,
     name: "Pune",
-    coordinates: { top: "61%", left: "36%" }
+    coordinates: { top: "60%", left: "30%" }
   },
   {
     id: 8,
     name: "Lucknow",
-    coordinates: { top: "35%", left: "46%" }
+    coordinates: { top: "34%", left: "40%" }
   },
 ];
 
@@ -54,17 +54,17 @@ export default function IndiaMap() {
   const [activeLocation, setActiveLocation] = useState(null);
 
   return (
-    <section className="  py-20">
-      <div className="container mx-auto px-4 relative">
-        <h5>Global Scale</h5>
-        <h1>Driving Success on a<br/> Global Scale</h1>
-        <div className="relative -mt-20">
+    <section className=" pb-20">
+      <div className=" relative">
+        <h5>Across India</h5>
+        <h1 className='w-full md:w-2/5'>Driving Success Across India and Beyond</h1>
+        <div className="relative -md:mt-20 w-[330px] md:w-[600px]  mx-auto">
           <Image 
             src={map} 
             alt="Global Presence Map" 
             width={1000} 
             height={1000} 
-            className="w-full h-[700px] object-contain opacity-80 py-10"
+            className="w-full h-full   object-contain opacity-80 py-1 ms-3 md:ms-0"
           />
           
           {/* Location Points */}

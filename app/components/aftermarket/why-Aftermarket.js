@@ -5,15 +5,15 @@ const reason= [
         image: "/images/Aftermarket/Quality.png"
     },
     {
-        title: "Broad Compatibility",
+        title: "Wide Compatibility",
         image: "/images/Aftermarket/Compatibility.png"
     },
     {
-        title: "Comprehensive Support",
+        title: "Reliable Support",
         image: "/images/Aftermarket/Support.png"
     },
     {
-        title: "Commitment to Sustainability",
+        title: "Sustainability Focus",
         image: "/images/Aftermarket/Sustainability.png"
     },
 
@@ -24,17 +24,20 @@ export default function WhyAftermarket() {
         <section className="diamond-gradient py-20 relative clip-path btmleft">
            <div className="container mx-auto flex flex-col lg:flex-row gap-20 ">
            <div className="w-full lg:w-1/2 text-white space-y-5">
-                <h5>Why Choose Our Aftermarket Products?</h5>
+                <h5>Built for Performance,  Trusted for Quality</h5>
                 <h1>Engineered for Excellence, Trusted Worldwide</h1>
-                <p className="pt-5">Our aftermarket solutions are crafted to deliver outstanding performance, reliability, and durability. Each product is rigorously tested to meet the highest industry standards, ensuring seamless compatibility and long-lasting efficiency for your vehicle.
+                <p className="pt-5">Our aftermarket products are engineered to deliver exceptional
+reliability, durability, and performance. Designed to meet the highest 
+industry standards, each part undergoes rigorous testing to ensure 
+seamless compatibility and long-lasting efficiency for your vehicle.
                 </p>
            </div>
            <div className="w-full lg:w-1/2">
             <div className="grid grid-cols-2  gap-4 justify-center">
                 {reason.map((reason, index) => (
-                    <div key={index} className="bg-[#E3E9FF] rounded-[10px] p-2">
+                    <div key={index} className="bg-[#E3E9FF] rounded-[10px] p-4 md:p-6 ">
                          <Image src={reason.image} alt={reason.title} width={130} height={130} 
-                         className="ms-auto -mb-10"
+                         className="ms-auto -md:mb-10"
                          />
                         <h2 className="md:w-3/5 font-medium p-3 text-sm md:text-2xl">{reason.title}</h2>
                     </div>

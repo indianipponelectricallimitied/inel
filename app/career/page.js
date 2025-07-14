@@ -127,10 +127,24 @@ const accordions = [
 export default function Career() {
     return (
         <>
-            <BreadCrumb 
-                pageTitle= "Career"
-                breadCrumbBg= "/images/career/breadcrumb.jpg"
-            />
+            <div className="rounded-[30px] h-[300px] md:h-[calc(100vh-300px)] p-5 md:p-20 flex items-center justify-center md:justify-normal mx-5 relative breadcrumb-cut"
+                style={{
+                    background: `url(/images/career/breadcrumb.webp) no-repeat center center`,
+                    backgroundSize: 'cover',
+                }}
+            >
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-black/50 rounded-[30px]"></div>
+                <div className='space-y-3 relative z-20'>
+                    <h1 className='text-white'>Career</h1>
+                    <div className="flex items-center gap-2 text-white">
+                        <Link href="/" className="hover:opacity-80">
+                            Home
+                        </Link>
+                        <span>/</span>
+                        <span>Career</span>
+                    </div>
+                </div>
+            </div>
 
             {/* <section className="bg-gradient-to-b from-[#fff] to-[#E9E9E9]" id="career">
                 <div className="container mx-auto space-y-5 py-20 ">
