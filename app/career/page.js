@@ -132,16 +132,16 @@ export default function Career() {
                 breadCrumbBg= "/images/career/breadcrumb.jpg"
             />
 
-            <section className="bg-gradient-to-b from-[#fff] to-[#E9E9E9]" id="career">
+            {/* <section className="bg-gradient-to-b from-[#fff] to-[#E9E9E9]" id="career">
                 <div className="container mx-auto space-y-5 py-20 ">
                     <h5 className="text-center">Career</h5>
                     <h1 className="text-center">Join Our Team – Power Your Future</h1>
                     <p className="md:w-4/5 mx-auto pb-10 text-center">At India Nippon Electricals, we believe our people are our greatest strength. We offer a dynamic work environment that fosters innovation, collaboration, and growth. Whether you’re an experienced professional or a passionate newcomer, you’ll find opportunities to build a rewarding career while contributing to cutting-edge solutions in the automotive industry. Join us and be part of a team that’s driving progress, every step of the way.</p>
 
-                    {/* <PlayVideo videolink ="/videos/hero-placeholder-vid.mp4" /> */}
+                    <PlayVideo videolink ="/videos/hero-placeholder-vid.mp4" />
                     <Image src="/images/career/career-img.png" alt="career-banner" width={1000} height={1000} className="mx-auto"/>
 
-                    {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pt-20'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pt-20'>
                         {perks.map((item, index)=>(
                             <div className='bg-[#fff] p-5 rounded-[10px] space-y-5' key={index}>
                                 <Image src={item.image} alt={item.title} width={200} height={200} 
@@ -151,9 +151,9 @@ export default function Career() {
                                 <p>{item.description}</p>
                             </div>
                         ))}
-                    </div> */}
+                    </div>
                 </div>
-            </section>
+            </section> */}
 
             <HoverExpand />
 

@@ -9,7 +9,7 @@ export default function Technology() {
         <>
             <BreadCrumb 
                 pageTitle= "Technology"
-                breadCrumbBg= "/images/Technology/tech-breadcrumb.jpg"
+                breadCrumbBg= "/images/Technology/banner.png"
             />
 
 
@@ -35,7 +35,7 @@ export default function Technology() {
                 </div>
             </section>
 
-            <Video videoUrl="/videos/home-main.mp4" />
+            <Video videoUrl="https://indian-nippon.s3.ap-south-1.amazonaws.com/web/inel-video.mp4"/>
 
         </>
     )

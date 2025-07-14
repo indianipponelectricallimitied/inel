@@ -55,7 +55,7 @@ export default function Video({ videoUrl }) {
 
     return (
         <div 
-            className="relative clip-path btmright h-[600px]" 
+            className="relative clip-path btmright md:h-[900px] h-[600px] " 
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setShowControls(true)}
         >
@@ -65,7 +65,7 @@ export default function Video({ videoUrl }) {
                 autoPlay 
                 muted 
                 loop 
-                className="w-full h-full object-cover"
+                className="w-full h-full  md:object-cover object-contain"
             ></video>
             <div className={`absolute top-0 left-0 w-full h-full flex items-center justify-center transition-opacity duration-300 ${showControls ? 'opacity-100' : 'opacity-0'}`}>
                 <button 

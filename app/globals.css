@@ -450,3 +450,8 @@ table{
 .card-square-right{
   clip-path: polygon(100% 10%, 100% 100%, 0 100%, 0 0, 90% 0);
 }
+
+
+.card-top-left-bottom-right{
+  clip-path: polygon(17% 0, 100% 0, 100% 83%, 83% 100%, 0 100%, 0 17%);
+}
