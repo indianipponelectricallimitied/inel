@@ -117,11 +117,11 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, -50%);
   text-align: center;
   z-index: -1;
   font-size: 340px;
-  color: #9EB2FF;
+  color: #9EC8BA;
   font-weight: bold;
 }
 
@@ -210,4 +210,38 @@
   border: 1px dashed black;
   border-style: dashed ;
   border-width: 1px;
+}
+
+/* Add these new styles for image transitions */
+.vehicle-image-container {
+  transition: opacity 0.3s ease-in-out;
+  min-height: 300px; /* Prevent layout shift */
+}
+
+.vehicle-image-container img {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Loading animation */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Improve wheel transitions */
+.wheel {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.wheel.loaded {
+  opacity: 1;
 }

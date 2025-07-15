@@ -9,7 +9,7 @@ export default function VehicleTabs({ currentIndex, goToSlide }) {
         <button 
           key={vehicle.id}
           onClick={() => goToSlide(vehicle.id)}
-          className={`relative ${currentIndex === vehicle.id ? 'active' : ''}`}
+          className={`relative w-[160px] ${currentIndex === vehicle.id ? 'active' : ''}`}
         >
           <Image 
             src={vehicle.image} 
