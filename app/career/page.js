@@ -1,3 +1,4 @@
+"use client"
 import BreadCrumb from "../components/Ui/bread-crumb";
 import PlayVideo from "../components/Ui/playVideo";
 import Image from "next/image";
@@ -9,6 +10,8 @@ import Accordion from "../components/Ui/accordion";
 import OurPriority from "../components/career/OurPriority";
 import BlogSlide from "../components/Newsroom/blog-slide";
 import BreadcrumbSlider from "../components/career/breadcrumb-slider";
+import { useState } from "react";
+
 // from technology page 
 import HoverExpand from "../components/Technology/HoverExpand";
 import Newsletter from "../components/career/newsletter";

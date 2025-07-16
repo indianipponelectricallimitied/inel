@@ -63,7 +63,7 @@ export const VEHICLE_HOTSPOTS = {
         <circle cx="2.5" cy="61.5" r="2" fill="black" stroke="black"/>
       </svg>`
     },
-    { label: "Control Panel", x: 430, y: 35, object: "/images/home/ControlPanel.png",
+    { label: "Control Panel", x: 430, y: 35, object: "/images/home/ControlPanel.webp",
       canvas_position: { x: -458, y: 60 },
       line_position: { x: -326, y: 40, width: 230 },
       linepath: `<svg width="166" height="5" viewBox="0 0 166 5" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,7 +103,7 @@ export const VEHICLE_HOTSPOTS = {
         <circle cx="2.5" cy="61.5" r="2" fill="black" stroke="black"/>
       </svg>`
     },
-    { label: "Control Panel", x: 470, y: 65, object: "/images/home/ControlPanel.png",
+    { label: "Control Panel", x: 470, y: 65, object: "/images/home/ControlPanel.webp",
       canvas_position: { x: -525, y: 160 },
       line_position: { x: -326, y: 140, width: 295 },
       linepath: `<svg width="304" height="5" viewBox="0 0 304 5" fill="none" xmlns="http://www.w3.org/2000/svg">
