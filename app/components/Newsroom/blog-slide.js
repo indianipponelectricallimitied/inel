@@ -142,7 +142,7 @@ export default function BlogSlide({sildeperview}) {
             <button className="swiper-next absolute right-0 bottom-0 z-10 bg-purple rounded-[10px] p-3">
                 <HiOutlineChevronRight className="text-xl text-white" />
             </button>
-            <Button variant="blue" href="/newsroom" className="mx-auto">View All Posts</Button>
+            <Button variant="blue" href="/newsroom" className="md:mx-auto mx-0">View All Posts</Button>
             <style jsx global>{`
                 .swiper-slide-active .wrap {
                     background-color: var(--primary);
