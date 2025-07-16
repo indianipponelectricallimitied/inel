@@ -52,9 +52,10 @@ const videoCTA = () => {
             <div className="relative aspect-video">
               <iframe
                 className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/YOUR_VIDEO_ID" // Replace with your video URL
+                src="https://indian-nippon.s3.ap-south-1.amazonaws.com/web/inel-video.mp4" // Replace with your video URL
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                loading="lazy"
               ></iframe>
               <button
                 onClick={closeModal}

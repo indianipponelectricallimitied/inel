@@ -19,63 +19,30 @@ const team = [
     },
     {
         image: "/images/about/ravinder-sharma-1.webp",
-        name: "Mr. ravinder-sharma",
+        name: "Mr. Ravinder Sharma",
         position: "President",
     },
     {
         image: "/images/about/Subtract.png",
-        name: "Mr. Anant Jaivant Talaulicar",
-        position: "Independent Director",
+        name: "Mr. Priyamvada Balaji",
+        position: "Non - Executive Director",
+    },
+   
+  
+    {
+        image: "/images/about/Subtract.png",
+        name: "Mr. R. Umashankar",
+        position: "Chief Technical Officer",
     },
     {
         image: "/images/about/Subtract.png",
-        name: "Mr. V Balaraman",
-        position: "Independent Director",
-    },
-    {
-        image: "/images/about/Subtract.png",
-        name: "Dr Jayshree Suresh",
-        position: "Independent Director",
-    },
-    {
-        image: "/images/about/Subtract.png",
-        name: "Mr T Momose",
-        position: "Non-Executive Director",
-    },
-    {
-        image: "/images/about/Subtract.png",
-        name: "Mr Mukesh Kumar Somani",
-        position: "Non-Executive Director",
-    },
-    {
-        image: "/images/about/Subtract.png",
-        name: "Ms Priyamvada Balaji",
-        position: "Non-Executive Director",
-    },
-    {
-        image: "/images/about/Subtract.png",
-        name: "Mr K G Raghavan",
-        position: "Independent Director",
-    },
-    {
-        image: "/images/about/Subtract.png",
-        name: "Mr R Vijayaraghavan",
-        position: "Independent Director",
-    },
-    {
-        image: "/images/about/Subtract.png",
-        name: "Mr Elango Srinivasan",
+        name: "Dr Elango Srinivasan",
         position: "Chief Financial Officer",
-    },
-    {
-        image: "/images/about/Subtract.png",
-        name: "Mr G Venkatram",
-        position: "Company Secretary",
-    },
+    }
 ]
 export default function Team(){
     return(
-        <section className="py-20 ">
+        <section className="py-20 bg-gradient-to-b from-[#FFFFFF] to-[#ECF9FF]">
             <div className="space-y-5 text-center" id="team">
                 <h5> Team</h5>
                 <h1>Meet Our Leadership Team</h1>

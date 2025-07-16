@@ -14,14 +14,15 @@ const achievements = [
         image: "/images/about/ficci.jpeg",
         title: "Hr Summit & Score Awards from FICCI 2024",
     },
-    {
-        image: "/images/about/certificate.png",
-        title: "Quality & Delivery Achievement Award from HONDA 2012 - 2013",
-    },
-    
+ 
     {
         image: "/images/about/cii.jpeg",
         title: "INEL Wins Lean Practice Competition for Southern Region Award From CII",
+    },
+    {
+        image: "/images/about/tvslogo.webp",
+        alt: "tvs",
+        title: "Best Supplier for 2021-22",
     },
 ]
 

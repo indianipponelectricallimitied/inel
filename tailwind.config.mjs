@@ -17,6 +17,7 @@ export default {
       colors: {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
+        textdarkPurple: "var(--dark-purple)",
         background: "var(--background)",
         foreground: "var(--foreground)",
         textGray: "var(--text-gray)",

@@ -210,7 +210,7 @@ export default function Career() {
                 </div>
 
                 <div className="container mx-auto py-20 space-y-5" id="FAQ">
-                    <h5 className="text-center">FAQ</h5>
+                    {/* <h5 className="text-center">FAQ</h5> */}
                     <h1 className="text-center">Frequently Asked Questions</h1>
                     
                     <div className="w-full md:w-5/6 mx-auto pt-10">

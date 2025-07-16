@@ -14,7 +14,7 @@ const visionMission = [
 
 export default function VissionMission(){
     return(
-        <section className="bg-[url('/images/about/vision-mission.webp')] bg-cover bg-bottom bg-no-repeat clip-path btmright relative">
+        <section className="bg-[url('/images/about/vision-mission.webp')] bg-cover bg-top bg-no-repeat clip-path btmright relative">
             {/* <div className="absolute inset-0 bg-gradient-to-b from-[#6452BE] to-[#160959] backdrop-blur-sm w-full h-full border-white opacity-75 "></div> */}
             <div className="container mx-auto py-20 text-white relative">
                 <div className="flex flex-col   gap-10">

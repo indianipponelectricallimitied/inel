@@ -188,7 +188,7 @@ const Navbar = () => {
           </div>
         </div>
         
-        <Button variant={`${isHomePage ? 'white' : 'blue'}`} hasArrow={false} href="/contact-us">Enquire Now</Button>
+        <Button variant={`${isHomePage ? 'white' : 'blue'}`} hasArrow={false} href="/contact-us" className='text-black'>Enquire Now</Button>
       </div>
 
      

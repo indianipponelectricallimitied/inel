@@ -23,7 +23,7 @@ export default function TechnologyInnovation() {
         <div className="flex flex-col md:flex-row lg:gap-[7rem] gap-10">
           <div className="w-full md:w-1/2">
           <h5>Technology & Innovation</h5>
-            <h1 className="pb-10">Powering Innovation, 
+            <h1 className="pb-10">Powering Innovation,<br/> 
             Shaping the Future</h1>
             <Image src="/images/home/Technology-2.png" alt="technology-innovation"
             className="w-full h-[400px] lg:h-[510px] object-cover rounded-[20px]"
@@ -57,7 +57,7 @@ export default function TechnologyInnovation() {
               {innovations.map((innovation) => (
                 <div key={innovation.title} className="flex flex-col justify-center">
                   <h1>{innovation.title}</h1>
-                  <p >{innovation.description}</p>
+                  <p className="text-xl">{innovation.description}</p>
                 </div>
               ))}
             </div>

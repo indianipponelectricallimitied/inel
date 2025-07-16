@@ -30,7 +30,7 @@ export default function Footer(){
                     <div className="flex flex-col gap-2 w-full md:w-1/5">
                         <p className="pb-3 font-bold">Investors</p>
                         <a href="#">Corporate Presentation</a>
-                        <a href="#">Annual ReportFY24</a>
+                        <a href="#">Annual Report FY24</a>
                         <a href="#">Sensor Technologies</a>
                         <a href="#">Investor Presentation</a>
                     </div>
@@ -49,7 +49,7 @@ export default function Footer(){
                             <a href="/career#FAQ">FAQ</a>
                         </div>
                         <div className="flex flex-col gap-2 w-full md:w-1/5">
-                            <p className="pb-3 font-bold">Innovation & R&D</p>
+                            <p className="pb-3 font-bold">Innovation and R&D</p>
                             <a href="/technology#research-development">Research & Development</a>
                             <a href="/technology#patents">Patents & Innovations</a>
                             <a href="/technology#innovation">Innovation </a>

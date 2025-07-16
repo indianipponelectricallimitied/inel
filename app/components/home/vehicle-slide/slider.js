@@ -103,6 +103,9 @@ export default function Tab() {
                   </SwiperSlide>
                 ))}
               </Swiper>
+              <Button href="/Products&Solutions" variant="blue" className="w-fit mx-auto">
+        View All Solutions
+      </Button>
           </div>
           <div className='md:w-[20%] w-full'>
             {/* key components */}
@@ -139,9 +142,8 @@ export default function Tab() {
             
           </div>
       </div>
-      <Button href="/Products&Solutions" variant="blue" className="w-fit mx-auto">
-        View All Solutions
-      </Button>
+     
+      
     </section>
   );
 }

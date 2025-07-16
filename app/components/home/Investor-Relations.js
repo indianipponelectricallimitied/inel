@@ -11,11 +11,11 @@ const quickLinks = [
   },
   {
     title: "Corporate Presentation",
-    href: "/#",
+    href: "/investors",
   },
   {
     title: "Investor Presentation",
-    href: "/#",
+    href: "/investors",
   },
   
 ];
@@ -27,7 +27,7 @@ export default function InvestorRelations() {
         <div className="flex flex-col md:flex-row  gap-12">
           <div className="w-full md:w-1/3 space-y-6">
             <div>
-                <h5>Investor Relations</h5>
+                <h5 className="text-white">Investor Relations</h5>
                 <h1>Creating Value, 
                 Driving Growth</h1>
             </div>
@@ -39,10 +39,10 @@ export default function InvestorRelations() {
           </div>
           <div className="w-full md:w-1/3 space-y-6">
             <p  className="text-white bg-[url('/images/home/Subtract.png')] bg-contain bg-center bg-no-repeat p-4 w-fit">Quick Links</p>
-            <ul className="space-y-5">
+            <ul className="space-y-5 opacity-75">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} target="_blank" className="font-thin flex justify-between border-b border-white pb-2">
+                  <a href={link.href} target="_blank" className="font-thin flex justify-between border-b border-white pb-2  ">
                     {link.title}
                     <GoArrowUpRight className="text-[20px]" />
                   </a>

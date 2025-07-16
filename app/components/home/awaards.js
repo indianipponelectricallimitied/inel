@@ -9,7 +9,7 @@ const awards = [
     },
     {
         image: "/images/home/tvs.png",
-        alt: "honda",
+        alt: "tvs",
         title: "Best Supplier for 2021-22",
     },
     {

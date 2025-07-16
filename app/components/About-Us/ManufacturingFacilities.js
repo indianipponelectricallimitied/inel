@@ -28,6 +28,27 @@ const facilities = [
     image: "/images/about/Facilities-(5).png",
     description: "Prototyping",
   },
+  {
+    image: "/images/about/Facilities-(1).png",
+    description: "Chasis Dynomometer",
+  },
+  {
+    image: "/images/about/Facilities-(2).png",
+    description: "Surface Mount Technology",
+  },
+  {
+    image: "/images/about/Facilities-(3).png",
+    description: "Machining centres",
+  },
+  {
+    image: "/images/about/Facilities-(4).png",
+    description: "Winding Machine",
+  },
+  {
+    image: "/images/about/Facilities-(5).png",
+    description: "Prototyping",
+  },
+  
    
 ]
 

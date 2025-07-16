@@ -22,7 +22,7 @@ const LeadershipData = [
 
 export default function OurLeadership() {
     return (
-        <section className='py-20 '>
+        <section className='py-20'>
             <div className='container mx-auto relative '>
                 <h1 className='text-center mb-10'>Our Leadership Message</h1>
                 <Swiper 
@@ -36,12 +36,12 @@ export default function OurLeadership() {
                     {LeadershipData.map((item) => (
                         <SwiperSlide key={item.id}>
                             <div className='flex flex-col md:flex-row  md:gap-12 gap-2 pb-5'>
-                                <div className='w-full md:w-1/3 h-80'>
+                                <div className='w-full md:w-3/12 h-80'>
                                     <Image src={item.image} alt={item.name} width={500} height={500} 
                                     className='rounded-[20px] h-full  object-cover'
                                     />
                                 </div>
-                                <div className='w-full md:w-2/3 relative card-cut bg-[#E0E7FF] rounded-[30px] p-10'>
+                                <div className='w-full md:w-9/12 relative card-cut bg-[#E0E7FF] rounded-[30px] p-10'>
                                         <BiSolidQuoteLeft className='text-primary text-4xl' />
                                         <p className='pb-5 pt-2 text-sm md:text-xl'>{item.text}</p>
                                         <h2 className='font-medium'>{item.name}</h2>

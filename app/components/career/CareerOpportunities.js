@@ -8,9 +8,6 @@ export default function CareerOpportunities({quickLinks}) {
        
             <div className="container mx-auto flex flex-col lg:flex-row gap-10">
                 <div className="w-full lg:w-1/2 space-y-5">
-                    <h5>Career Opportunities</h5>
-                    <h1>Shape the Future with India Nippon Electricals</h1>
-                    <p>At INEL, you’re not just advancing a career; you’re embracing a legacy dedicated to enriching lives and shaping a brighter future. Venture Into a World of Endless Opportunities:</p>
                     <QuickLinks quickLinks={quickLinks} />
                 </div>
                 <div className="w-full lg:w-1/2 space-y-8">

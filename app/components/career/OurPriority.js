@@ -71,7 +71,11 @@ export default function OurPriority({quickLinks}) {
                 </div>    
             </div>
             <div className="container mx-auto py-20">
-                <h1 className="text-center pb-10">How to apply</h1>
+            <h1 className="text-center pb-10">Career Opportunities</h1 >
+            <p className="w-2/3 mx-auto text-center">At INEL, you’re not just advancing a career; you’re embracing a legacy dedicated to enriching lives and shaping a brighter future. Venture Into a World of Endless Opportunities:</p>
+
+                <h3 className="text-center pb-10 text-2xl pt-10">How to apply</h3>
+                
                 <div className="w-2/3 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {steps.map((step, index) => (
                         <div key={index} className="card-top-right rounded-[20px] p-[1px] bg-[#A6A6A6]">
