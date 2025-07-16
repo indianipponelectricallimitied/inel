@@ -54,7 +54,7 @@ export default function ProductPage() {
 
     const graphUrl = product.graph
         ? (product.graph.startsWith('http') ? product.graph : `${BASE_URL}${product.graph}`)
-        : "/images/Products/graph.png";
+        : null;
     const pdfUrl = product.pdf
         ? (product.pdf.startsWith('http') ? product.pdf : `${BASE_URL}${product.pdf}`)
         : "#";
@@ -89,13 +89,15 @@ export default function ProductPage() {
                 </div>
             </div>
 
-            <section className='diamond-gradient'>  
-                <div className='container mx-auto px-5 py-20'>
-                    <h1 className='text-white text-center pb-16'>Performance Graph</h1>
-                    <Image src={graphUrl} alt={product.name} width={15000} height={15000}
-                        className='mx-auto max-h-[500px] object-contain'/>
-                </div>
-            </section>
+            {graphUrl && (
+                <section className='diamond-gradient'>  
+                    <div className='container mx-auto px-5 py-20'>
+                        <h1 className='text-white text-center pb-16'>Performance Graph</h1>
+                        <Image src={graphUrl} alt={product.name} width={15000} height={15000}
+                            className='mx-auto max-h-[500px] object-contain'/>
+                    </div>
+                </section>
+            )}
 
             <VehicleCategories vehicleCategories={product.vehicleCategories} />
 

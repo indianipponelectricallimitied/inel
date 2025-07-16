@@ -62,7 +62,7 @@ export default function FeaturesSlider({features}){
                     /> */}
                     <div className="w-full h-full bg-gradient-to-b from-white to-[#E4E4E4] rounded-[10px] pt-6 pb-8 px-10 flex flex-col justify-end gap-4 card-top-left-bottom-left bborder-none">
                         <Image 
-                            src={feature.image || "/featureico.png"} 
+                            src={feature.icons || "/images/Products/featureico.png"} 
                             alt={feature.text} 
                             width={100}
                             height={100} 
