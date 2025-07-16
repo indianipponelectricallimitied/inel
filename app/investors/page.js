@@ -31,7 +31,7 @@ const reports=[
         <>
             <BreadCrumb 
                 pageTitle= "Investors"
-                breadCrumbBg= "/images/invester/breadcrumb.png"
+                breadCrumbBg= "/images/invester/breadcrumb-investor.png"
             />
 
             <div className="container mx-auto pt-20 pb-5 flex flex-col md:flex-row justify-between gap-20">

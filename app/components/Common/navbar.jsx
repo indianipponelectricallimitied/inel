@@ -78,10 +78,10 @@ const Navbar = () => {
   ];
 
   const submenuproducts = [
-    {label: 'Sensor', href: '/Products&Solutions?type=productType&value=Sensor', image: '/images/Products/bldc.png',  shade : 'bg-gradient-to-br from-primary to-[#5589f9]  '},
-    {label: 'ICE', href: '/Products&Solutions?type=productType&value=ICE', image: '/images/Products/bldc.png',  shade : 'bg-gradient-to-br from-[#420959] to-[#C040E0]'},
-    {label: 'ICE +', href: '/Products&Solutions?type=productType&value=ICE+%2B',    image: '/images/Products/bldc.png', shade : 'bg-gradient-to-br from-[#09594C] to-[#40E0D0]'},
-    {label: 'EV', href: '/Products&Solutions?type=productType&value=EV', image: '/images/Products/bldc.png',  shade : 'bg-gradient-to-br from-[#59090A] to-[#E04043]'},
+    {label: 'Sensor', href: '/Products&Solutions?type=productType&value=Sensor', image: '/images/Products/sensor.webp',  shade : 'bg-gradient-to-br from-primary to-[#5589f9]  '},
+    {label: 'ICE', href: '/Products&Solutions?type=productType&value=ICE', image: '/images/Products/ice.webp',  shade : 'bg-gradient-to-br from-[#420959] to-[#C040E0]'},
+    {label: 'ICE +', href: '/Products&Solutions?type=productType&value=ICE+%2B',    image: '/images/Products/icep.webp', shade : 'bg-gradient-to-br from-[#09594C] to-[#40E0D0]'},
+    {label: 'EV', href: '/Products&Solutions?type=productType&value=EV', image: '/images/Products/ev.webp',  shade : 'bg-gradient-to-br from-[#59090A] to-[#E04043]'},
     
   ]
   
