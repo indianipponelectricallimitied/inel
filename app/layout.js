@@ -29,7 +29,7 @@ const aeonik = localFont({
 
 
 export const metadata = {
-  title: "Indian Nippon Electricals Ltd",
+  title: "India  Nippon Electricals Ltd",
   description: "Your trusted partner in electrical solutions",
   robots: "noindex",
 };

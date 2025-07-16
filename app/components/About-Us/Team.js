@@ -18,7 +18,7 @@ const team = [
         position: "Managing Director",
     },
     {
-        image: "/images/about/ravinder-sharma-1.webp",
+        image: "/images/about/ravinder-sharma-1.png",
         name: "Mr. Ravinder Sharma",
         position: "President",
     },

@@ -4,42 +4,63 @@ import Image from "next/image";
 
 const logos = [
   {
-    src: "/images/home/companies/company-(3).png",
-    alt: "company-(3)",
+    src: "/images/home/companies/tvs.svg",
+    alt: "tvs",
   },
   {
-    src: "/images/home/companies/company-(4).png",
-    alt: "company-(4)",
+    src: "/images/home/companies/hero.svg",
+    alt: "hero",
   },
   {
-    src: "/images/home/companies/company-(5).png",
-    alt: "company-(5)",
+    src: "/images/home/companies/bajaj.svg",
+    alt: "bajaj",
   },
   {
-    src: "/images/home/companies/company-(6).png",
-    alt: "company-(6)",
+    src: "/images/home/companies/polaris.svg",
+    alt: "polaris",
   },
   {
-    src: "/images/home/companies/company-(7).png",
-    alt: "company-(7)",
+    src: "/images/home/companies/generac.svg",
+    alt: "generac",
   },
   {
-    src: "/images/home/companies/company-(8).png",
-    alt: "company-(8)",
+    src: "/images/home/companies/zf.svg",
+    alt: "zf",
   },
   {
-    src: "/images/home/companies/company-(9).png",
-    alt: "company-(9)",
+    src: "/images/home/companies/rehlko.svg",
+    alt: "rehlko",
   },
   {
-    src: "/images/home/companies/company-(10).png",
-    alt: "company-(10)",
+    src: "/images/home/companies/re.svg",
+    alt: "re",
   },
   {
-    src: "/images/home/companies/company-(11).png",
-    alt: "company-(11)",
+    src: "/images/home/companies/kawasaki.svg",
+    alt: "kawasaki",
+  },
+  {
+    src: "/images/home/companies/birla.svg",
+    alt: "birla",
+  },
+  {
+    src: "/images/home/companies/greaves.svg",
+    alt: "greaves",
+  },
+  {
+    src: "/images/home/companies/honda.svg",
+    alt: "honda",
+  },
+  {
+    src: "/images/home/companies/lombardini.svg",
+    alt: "lombardini",
+  },
+  {
+    src: "/images/home/companies/mahindra.svg",
+    alt: "mahindra",
   },
 ];
+
 
 export default function MarqueeSection() {
 
