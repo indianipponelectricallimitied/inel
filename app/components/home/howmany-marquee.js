@@ -16,7 +16,7 @@ const miles = [
 export default function HowManyMarquee() {
 
   return (
-    <section className="py-5 overflow-hidden bg-primary">
+    <section className="py-1 overflow-hidden bg-primary">
         <div className="text-slider text-white">
           <div className="texts-slide flex">
             {miles.map((mile, index) => (
