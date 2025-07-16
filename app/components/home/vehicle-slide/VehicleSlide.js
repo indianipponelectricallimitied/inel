@@ -17,13 +17,13 @@ export default function VehicleSlide({ vehicleType, direction, engineType = 'IC'
         };
       case "4W":
         return {
-          image: "/rrvr.webp", // Using same image for both variants as per latest changes
+          image: "/images/home/truck.png", // Using same image for both variants as per latest changes
           className: `car !w-[380px] md:!w-[480px] ${!imageLoaded ? 'opacity-0' : 'opacity-100'}`,
           wheels: engineType === 'IC'
         };
       case "3W":
         return {
-          image: "/3-whellar.png", // Fixed typo in image path
+          image: "/images/home/3-whellar.webp", // Fixed typo in image path
           className: `auto ${!imageLoaded ? 'opacity-0' : 'opacity-100'}`,
           wheels: false
         };

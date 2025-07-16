@@ -128,8 +128,7 @@ export default function Tab() {
                 onClick={() => handleEngineToggle('EV')}
                 className={`py-8 md:w-[150px]   rounded-lg w-full flex gap-2 justify-center items-center ${engineType === 'EV' ? 'bg-purple text-white' : ' '}`}
               >
-                <Image
-                  src="/images/home/ev.png" alt="EV" width={25} height={25} />
+                <Image src="/images/home/ev.png" alt="EV" width={25} height={25} />
                 EV
               </button>
               <button 

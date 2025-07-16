@@ -1,9 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { useGLTF, OrbitControls } from '@react-three/drei';
-import { Clone } from '@react-three/drei';
-import { VEHICLE_HOTSPOTS } from './constants';
+import Image from 'next/image';
 
 // Cache for loaded models
 const modelCache = new Map();
@@ -72,28 +69,10 @@ export default function Hotspot({
           transform: 'translate(-50%, -50%)',
         }}
       >
-        <div className="w-[100px] h-[100px] cursor-grab"> 
-          <div className="absolute roundedborder rotate top-0 -translate-x-1/2 w-[100px] h-[100px] rounded-full"></div>   
+        <div className="w-[100px] h-[100px] cursor-grab flex items-center justify-center"> 
+          <div className="absolute roundedborder rotate top-0 -translate-x-1/2 w-[100px] h-[100px] rounded-full "></div>   
           {isVisible && (
-            <Canvas 
-              camera={{ 
-                position: [0, 0, 2.5],
-                fov: 40
-              }}
-            >
-              <ambientLight intensity={0.5} />
-              <pointLight position={[10, 10, 10]} />
-              <group rotation={[0, 0, 0]} scale={.6}>
-                <Model url={object} />
-              </group>
-              <OrbitControls 
-                enableZoom={false} 
-                enablePan={false} 
-                enableRotate={true}
-                autoRotate={true}
-                autoRotateSpeed={2}
-              />
-            </Canvas>
+            <Image src={object} alt={label} width={90} height={90} className='object-contain object-center w-[80px] h-[80px]'/>
           )}
         </div>
         <div className="hotspot-label text-center pt-3 w-[150px] text-sm">{label}</div>
