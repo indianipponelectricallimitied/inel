@@ -43,7 +43,7 @@ const Map = () => {
       position: { lat: 13.0827, lng: 80.2707 },
       phone: "+91-4347-230273",
       email: " inelcorp@inel.co.in",
-      image: "/images/contact-us/Registered-Office.png",
+      image: "/images/about/vision-mission.webp",
       active: true
     },
     {

@@ -20,7 +20,7 @@ export default function TechnologyInnovation() {
   return (
     <section className="bg-[#F1F1F1EE]">
       <div className="container mx-auto  py-20">
-        <div className="flex flex-col md:flex-row lg:gap-[7rem] gap-10">
+        <div className="flex flex-col md:flex-row lg:gap-[7rem] gap-10 items-top">
           <div className="w-full md:w-1/2">
           <h5>Technology & Innovation</h5>
             <h1 className="pb-10">Powering Innovation,<br/> 
@@ -55,7 +55,7 @@ export default function TechnologyInnovation() {
             </div> 
             <div className="flex gap-10">
               {innovations.map((innovation) => (
-                <div key={innovation.title} className="flex flex-col justify-center">
+                <div key={innovation.title} className="flex flex-col justify-top">
                   <h1>{innovation.title}</h1>
                   <p className="text-xl">{innovation.description}</p>
                 </div>

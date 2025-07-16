@@ -7,7 +7,7 @@ const quickLinks = [
  
   {
     title: "Annual Report FY24",
-    href: "/files/INEL Annual Report - 2023-24.pdf",
+    href: "/investors",
   },
   {
     title: "Corporate Presentation",
@@ -42,7 +42,7 @@ export default function InvestorRelations() {
             <ul className="space-y-5 opacity-75">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} target="_blank" className="font-thin flex justify-between border-b border-white pb-2  ">
+                  <a href={link.href} className="font-thin flex justify-between border-b border-white pb-2  ">
                     {link.title}
                     <GoArrowUpRight className="text-[20px]" />
                   </a>

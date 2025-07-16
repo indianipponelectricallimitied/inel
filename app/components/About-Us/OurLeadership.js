@@ -22,7 +22,7 @@ const LeadershipData = [
 
 export default function OurLeadership() {
     return (
-        <section className='py-20'>
+        <section className='md:py-20 pt-0 pb-20'>
             <div className='container mx-auto relative '>
                 <h1 className='text-center mb-10'>Our Leadership Message</h1>
                 <Swiper 

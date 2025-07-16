@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { MdLocationOn } from "react-icons/md";
 import { TbMailFilled } from "react-icons/tb";
 import { FaLinkedinIn } from "react-icons/fa6";
-import { FaInstagramSquare } from "react-icons/fa";
+import { FaGooglePlusG } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdPhone } from "react-icons/md";
@@ -225,10 +225,13 @@ Uliveernapalli, Hosur-635114, India
         <div className="flex flex-col gap-2 w-full md:w-1/5 text-white pt-6">
                             <p className="pb-3 font-bold">Follow us :</p>
                             <div className="flex gap-5">
-                                <a href="#"><FaLinkedinIn className="text-2xl text-dark" /></a>
-                                <a href="#"><FaInstagramSquare className="text-2xl" /></a>
-                                <a href="#"><FaFacebookF className="text-2xl" /></a>
-                                <a href="#"><FaXTwitter className="text-2xl" /></a>
+                                
+
+                                <a href="https://www.facebook.com/indianippon" target="_blank"><FaFacebookF className="text-2xl" /></a>
+                                <a href="https://twitter.com/IndiaNippon" target="_blank"><FaXTwitter className="text-2xl" /></a>
+                                <a href="https://www.linkedin.com/company/india-nippon" target="_blank"><FaLinkedinIn className="text-2xl text-dark" /></a>
+                                <a href="https://plus.google.com/118294691232195711937" target="_blank"><FaGooglePlusG className="text-2xl" /></a>
+                           
                             </div>
                         </div>
 

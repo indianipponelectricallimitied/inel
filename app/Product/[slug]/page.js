@@ -72,7 +72,7 @@ export default function ProductPage() {
             </div>
 
             
-            <section className='diamond-gradient'>
+            <section className='bg-[url(/images/Products/featuresbg.png)] bg-cover bg-center' > 
                 <div className='container mx-auto px-5 py-20'>
                     <h1 className="text-white text-center">Features & Benefits</h1>
                     <FeaturesSlider features={product.features} />

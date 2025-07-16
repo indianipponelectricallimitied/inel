@@ -13,15 +13,15 @@ import IndiaMap from "../components/aftermarket/indiamap"
 const quickLinks = [
     {
       title: "Installation Guides",
-      href: "/Installation Manuals",
+      href: "#",
     },
     {
       title: "Product Documentation",
-      href: "/iProduct Catalogs",
+      href: "#",
     },
     {
       title: "Troubleshooting Assistance",
-      href: "/Troubleshooting FAQs",
+      href: "#",
     }
   ];
 

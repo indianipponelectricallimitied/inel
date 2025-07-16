@@ -106,33 +106,34 @@ export default function BlogSlide({sildeperview}) {
                     prevEl: '.swiper-prev',
                 }}
             >
-                {blogData.map((blog, index) => (
-                    <SwiperSlide key={blog.id || index} className="mb-16 blog-cut p-1">
-                        <div className="flex flex-col gap-5 p-3 rounded-[30px] border border-primary wrap transition-all duration-300">
-                            <Image 
-                                src={blog.featured_image || "/images/placeholder.jpg"} 
-                                alt={blog.title || "Blog post"} 
-                                className="rounded-[20px] h-[200px] w-full object-cover" 
-                                width={500} 
-                                height={200}
-                                onError={(e) => {
-                                    e.target.src = "/images/placeholder.jpg";
-                                }}
-                            />
-                            
-
-                            <h1 className="text-xl font-medium line-clamp-2 h-[60px]">{blog.title}</h1>
-                            <p className="text-sm line-clamp-3">{blog.intro}</p>
-                            <Button 
-                                variant="transparent" 
-                                href={`/newsroom/${blog.slug || blog.id}`} 
-                                className="ms-auto -mb-3 border-0 !text-[#160959] z-10"
-                            >
-                                Read More
-                            </Button>
-                        </div>
-                    </SwiperSlide>
-                ))}
+                {blogData
+                    .filter(blog => blog.category && blog.category.name && blog.category.name.toLowerCase() === "careers")
+                    .map((blog, index) => (
+                        <SwiperSlide key={blog.id || index} className="mb-16 blog-cut p-1">
+                            <div className="flex flex-col gap-5 p-3 rounded-[30px] border border-primary wrap transition-all duration-300">
+                                <Image 
+                                    src={blog.featured_image || "/images/placeholder.jpg"} 
+                                    alt={blog.title || "Blog post"} 
+                                    className="rounded-[20px] h-[200px] w-full object-cover" 
+                                    width={500} 
+                                    height={200}
+                                    onError={(e) => {
+                                        e.target.src = "/images/placeholder.jpg";
+                                    }}
+                                />
+                                <h1 className="text-xl font-medium line-clamp-2 h-[60px]">{blog.title}</h1>
+                                <p className="text-sm line-clamp-3">{blog.intro}</p>
+                                <Button 
+                                    variant="transparent" 
+                                    href={`/newsroom/${blog.slug || blog.id}`} 
+                                    className="ms-auto -mb-3 border-0 !text-[#160959] z-10"
+                                >
+                                    Read More
+                                </Button>
+                            </div>
+                        </SwiperSlide>
+                    ))
+                }
             </Swiper>
 
             {/* Custom Navigation Buttons */}
@@ -142,7 +143,7 @@ export default function BlogSlide({sildeperview}) {
             <button className="swiper-next absolute right-0 bottom-0 z-10 bg-purple rounded-[10px] p-3">
                 <HiOutlineChevronRight className="text-xl text-white" />
             </button>
-            <Button variant="blue" href="/newsroom" className="mx-0">View All Posts</Button>
+            <Button variant="blue" href="/newsroom" className=" mx-0">View All Posts</Button>
             <style jsx global>{`
                 .swiper-slide-active .wrap {
                     background-color: var(--primary);

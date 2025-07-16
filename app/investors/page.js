@@ -12,7 +12,7 @@ export default function Investors() {
 const reports=[
     {
         title: "Annual Reports",
-        link: "#"
+        link: "files/INEL Annual Report - 2023-24.pdf"
     },
     {
         title: "Financial Reports",

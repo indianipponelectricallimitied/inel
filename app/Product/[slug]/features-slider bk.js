@@ -38,7 +38,7 @@ export default function FeaturesSlider({features}){
                     centeredSlides: true,
                 },
                 1024: {
-                    slidesPerView: 4,
+                    slidesPerView: 5,
                     spaceBetween: 20,
                     allowTouchMove: false,
                     centeredSlides: true,
@@ -48,27 +48,17 @@ export default function FeaturesSlider({features}){
             className="team md:!p-5"
         >
             {featuresArray.map((feature, index) => (
-                <SwiperSlide key={index} className="product-feature-slide active:translate-y-[-10px] my-10 mt-20 !h-[220px]">
-                    
-                    
-                    
-                    {/* <Image 
+                <SwiperSlide key={index} className="product-feature-slide active:translate-y-[-10px] my-10 mt-20 !h-[300px]">
+                    <Image 
                         src={feature.image || "/placeholder45.jpeg"} 
                         alt={feature.text} 
                         width={500} 
                         height={300} 
                         className="rounded-[10px] object-cover h-full w-full"
                         unoptimized
-                    /> */}
-                    <div className="w-full h-full bg-gradient-to-b from-white to-[#E4E4E4] rounded-[10px] pt-6 pb-8 px-10 flex flex-col justify-end gap-4 card-top-left-bottom-left bborder-none">
-                        <Image 
-                            src={feature.image || "/featureico.png"} 
-                            alt={feature.text} 
-                            width={100}
-                            height={100} 
-                            className="rounded-[10px] object-cover h-20 w-20"
-                        />
-                        <p className="text-black font-medium text-sm md:text-base">{feature.text}</p>
+                    />
+                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-70% to-black rounded-[10px] p-5 flex flex-col justify-end gap-1">
+                        <p className="text-white text-sm md:text-base">{feature.text}</p>
                     </div>
                 </SwiperSlide>
             ))}

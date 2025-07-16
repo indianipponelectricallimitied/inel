@@ -7,7 +7,7 @@ import CareeerForm from "../components/career/CareeerForm";
 import BackflipSlider from "../components/Ui/BackflipSlider";
 import Accordion from "../components/Ui/accordion";
 import OurPriority from "../components/career/OurPriority";
-import BlogSlide from "../components/Newsroom/blog-slide";
+import BlogSlide from "../components/career/blog-slide";
 
 // from technology page 
 import HoverExpand from "../components/Technology/HoverExpand";
