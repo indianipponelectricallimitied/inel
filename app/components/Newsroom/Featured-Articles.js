@@ -56,23 +56,25 @@ const Articles =[
 
 export default function FeaturedArticles(){
     return(
-        <div className="border border-black rounded-[10px] p-5 relative ">
+        <div className="border border-black rounded-[30px] p-5 relative ">
             {/* <div className="absolute z-20 bottom-0 left-0 w-full h-52 bg-gradient-to-t rounded-[10px] from-white to-transparent "></div> */}
-            <h2 className="font-medium mb-5">Featured Articles</h2>
+            <h2 className="font-medium mb-5 text-center">Featured Articles</h2>
             <div className="flex  flex-col h-[460px] overflow-y-scroll scrollbar-hide">
                 {Articles.map((article) => (
-                    <div key={article.id} className="border-b border-b-gradient-to-r from-[#13409C] to-[#578EFF] px-1  py-4 flex gap-2 mb-1 article-border">
-                        <Image src={article.image} alt={article.title} className="rounded-md h-full md:h-20 w-20 object-contain " width={100} height={100} />
+                    <div key={article.id} className="border-b border-b-gradient-to-r from-[#13409C] to-[#578EFF] px-1  py-4mb-1 article-border">
+                        <div className="py-2 flex gap-2 px-1">
+                        <Image src={article.image} alt={article.title} className="rounded-md h-full md:h-20 w-20 object-contain bg-black/10" width={100} height={100} />
                         <div className="flex flex-col gap-2 pr-1 justify-between w-full">
                             <h3 className="md:text-md text-sm font-medium">
                               {article.title.split(' ').slice(0, 10).join(' ')}
                               {article.title.split(' ').length > 10 ? '...' : ''}
                             </h3>
                             <div className="flex gap-2 flex-wrap-reverse md:flex-nowrap items-end justify-between">
-                                <p className="md:text-sm text-[10px] flex gap-1 items-center"><MdOutlineCalendarMonth className="text-gray-400 text-md" /> {article.date}</p>
+                                <p className="md:text-sm text-[10px] flex gap-1 items-center opacity-50"><MdOutlineCalendarMonth className="text-gray-400  text-md" /> {article.date}</p>
                                 {/* <p className="md:text-sm text-[10px] text-primary">{article.status}</p> */}
                                 <Button variant="lightBlue" href={article.link} className="text-sm rounded-md  py-[4px] px-[10px]">{article.channel}</Button>
                             </div>
+                        </div>
                         </div>
                     </div>
                 ))}

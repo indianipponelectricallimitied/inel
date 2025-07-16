@@ -65,7 +65,7 @@ const logos = [
 export default function MarqueeSection() {
 
   return (
-    <section className="bg-[#F8F8F8] py-10 pb-20 overflow-hidden">
+    <section className="bg-[#F8F8F8] pb-16 overflow-hidden">
         <div className="container mx-auto">
           <div className='relative'>
             <h1 className='text-center bg-[#F8F8F8] relative z-10 w-fit mx-auto px-5'>Trusted by Leaders</h1>
@@ -159,7 +159,7 @@ export default function MarqueeSection() {
         }
         }
       `}</style>
-      <p className='text-right py-10 container text-sm'>*Logos shown are trademarks of their</p>
+      <p className='text-right pr-4 container-fluid text-sm'>*Logos shown are trademarks of their</p>
     </section>
   );
 }
