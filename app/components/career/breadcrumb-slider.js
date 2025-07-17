@@ -7,8 +7,8 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 const images = [
+    '/images/career/careerbanner2.png',
     '/images/career/breadcrumb.webp',
-    '/images/career/career-img.webp',
 ];
 
 export default function BreadcrumbSlider() {
