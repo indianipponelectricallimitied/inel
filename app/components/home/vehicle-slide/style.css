@@ -222,6 +222,16 @@
   transition: opacity 0.3s ease-in-out;
 }
 
+/* Remove these lines to ensure all markers are always visible */
+/*
+.vehicle-image-container .hotspot-wrapper {
+  display: none;
+}
+.vehicle-image-container:hover .hotspot-wrapper {
+  display: block;
+}
+*/
+
 /* Loading animation */
 .animate-pulse {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -244,4 +254,29 @@
 
 .wheel.loaded {
   opacity: 1;
+}
+
+/* Hotspot marker glow and popup animation */
+.hotspot-marker.hotspot-glow {
+  filter: drop-shadow(0 0 8px #7c3aed88) drop-shadow(0 0 16px #7c3aed44);
+  animation: hotspot-popup 1.2s cubic-bezier(0.4,0,0.6,1) infinite alternate;
+  transition: filter 0.2s, transform 0.2s;
+}
+
+@keyframes hotspot-popup {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px #7c3aed88) drop-shadow(0 0 16px #7c3aed44);
+  }
+  100% {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 16px #7c3aedcc) drop-shadow(0 0 32px #7c3aed88);
+  }
+}
+
+.hotspot-marker.hotspot-active {
+  filter: drop-shadow(0 0 0 #7c3aed00);
+  animation: none;
+  /* outline: 2px solid #7c3aed; */
+  outline-offset: 2px;
 }

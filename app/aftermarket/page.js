@@ -28,21 +28,21 @@ const quickLinks = [
   const testimonials = [
     {
         name: "Sandeep Kulkarni",
-        image: "/testi.png",
+        image: "/images/Aftermarket/testimonial1.png",
         identity: "Automotive Parts Dealer, Pune",
         feedbaktitle:"Easy to stock, easy to sell",
         feedback:"INEL’s aftermarket range moves fast. The brand has earned a solid name among local mechanics, and the demand just keeps growing. With great packaging, low return rates, and strong word-of-mouth, it’s been a reliable addition to my inventory."
     },
     {
-        name: "Farhana Mirza",
-        image: "/testi.png",
+        name: "Krishna Kumar",
+        image: "/images/Aftermarket/testimonial2.png",
         identity: "Service Manager, Multibrand Auto Center, Lucknow",
         feedbaktitle:"Built trust with technicians and customers alike.",
         feedback:"We switched to INEL for key aftermarket components last year, and the feedback has been great. Mechanics trust the fit and performance, and we’ve had fewer complaints and returns. It’s become a go-to brand in our workshop."
     },
     {
         name: "Ahmed Khan",
-        image: "/testi.png",
+        image: "/images/Aftermarket/testimonial3.png",
         identity: "Regional Parts Distributor, Hyderabad",
         feedbaktitle:"A trusted brand with solid demand.",
         feedback:"As a distributor, I’ve seen INEL’s aftermarket parts fly off the shelves. Mechanics prefer them for reliability, and customers return asking for the same brand. The growth in demand over the last year has been impressive."

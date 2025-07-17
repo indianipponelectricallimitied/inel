@@ -2,10 +2,12 @@
 import Image from 'next/image';
 import { VEHICLE_HOTSPOTS } from './constants';
 import Hotspot from './Hotspot';
+import HotspotMarker from './HotspotMarker';
 import { useState } from 'react';
 
 export default function VehicleSlide({ vehicleType, direction, engineType = 'IC' }) {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [activeHotspotIndex, setActiveHotspotIndex] = useState(0);
 
   const getVehicleConfig = () => {
     switch(vehicleType) {
@@ -40,6 +42,11 @@ export default function VehicleSlide({ vehicleType, direction, engineType = 'IC'
     setImageLoaded(true);
   };
 
+  // Handlers for hotspot hover
+  const handleHotspotHover = (idx) => setActiveHotspotIndex(idx);
+  // No-op on leave: keep last hovered as active
+  const handleHotspotLeave = () => {};
+
   return (
     <div className={`slide-content rover w-full flex justify-center items-center ${vehicleType === "CC" ? 'pt-20' : ''}`}>
       <div className="vehicle-image-container relative">
@@ -58,18 +65,32 @@ export default function VehicleSlide({ vehicleType, direction, engineType = 'IC'
           onLoad={handleImageLoad}
         />
         
-        {imageLoaded && hotspots.map((hotspot, idx) => (
-          <Hotspot
-            key={idx}
-            x={hotspot.x}
-            y={hotspot.y}
-            label={hotspot.label}
-            object={hotspot.object}
-            linepath={hotspot.linepath}
-            line_position={hotspot.line_position}
-            canvas_position={hotspot.canvas_position}
-          />
-        ))}
+        {/* Only show markers and hotspots on md+ screens */}
+        <div className="hidden md:block">
+          {imageLoaded && hotspots.map((hotspot, idx) => (
+            <HotspotMarker
+              key={`marker-${idx}`}
+              x={hotspot.marker_x}
+              y={hotspot.marker_y}
+              isActive={activeHotspotIndex === idx}
+              onHover={() => handleHotspotHover(idx)}
+              onLeave={handleHotspotLeave}
+            />
+          ))}
+          {imageLoaded && hotspots.map((hotspot, idx) => (
+            <Hotspot
+              key={`hotspot-${idx}`}
+              x={hotspot.x}
+              y={hotspot.y}
+              label={hotspot.label}
+              object={hotspot.object}
+              linepath={hotspot.linepath}
+              line_position={hotspot.line_position}
+              canvas_position={hotspot.canvas_position}
+              isActive={activeHotspotIndex === idx}
+            />
+          ))}
+        </div>
       </div>
 
       {config.wheels && imageLoaded && (
