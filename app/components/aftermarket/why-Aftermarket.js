@@ -37,9 +37,9 @@ seamless compatibility and long-lasting efficiency for your vehicle.
                 {reason.map((reason, index) => (
                     <div key={index} className="bg-gradient-to-b from-[#E3E9FF] to-[#FFFFFF] card-top-left-bottom-right rounded-[10px] p-4 md:p-6 ">
                          <Image src={reason.image} alt={reason.title} width={130} height={130} 
-                         className="ms-auto -md:mb-10"
+                         className="ms-auto -md:mb-10 h-20 w-20"
                          />
-                        <h2 className="md:w-3/5 font-medium p-3 text-sm md:text-2xl">{reason.title}</h2>
+                        <h2 className="md:w-3/5 font-medium p-3 text-sm md:text-xl">{reason.title}</h2>
                     </div>
                 ))}
               </div>

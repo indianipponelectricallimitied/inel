@@ -63,9 +63,9 @@ export default function Footer(){
                         <div className="flex flex-col gap-2 w-full md:w-1/5">
                             <p className="pb-3 font-bold">Follow us :</p>
                             <div className="flex gap-5">
-                                <a href="https://www.facebook.com/indianippon" target="_blank"><FaFacebookF className="text-4xl" /></a>
-                                <a href="https://twitter.com/IndiaNippon" target="_blank"><FaXTwitter className="text-4xl" /></a>
-                                <a href="https://www.linkedin.com/company/india-nippon" target="_blank"><FaLinkedinIn className="text-4xl text-dark" /></a>
+                                <a href="https://www.facebook.com/indianippon" target="_blank"><FaFacebookF className="text-4xl p-[4.5px]" /></a>
+                                <a href="https://twitter.com/IndiaNippon" target="_blank"><FaXTwitter className="text-4xl p-[3px]" /></a>
+                                <a href="https://www.linkedin.com/company/india-nippon" target="_blank"><FaLinkedinIn className="text-4xl p-[2px] text-dark" /></a>
                                 <a href="https://plus.google.com/118294691232195711937" target="_blank"><FaGooglePlusG className="text-4xl" /></a>
                             </div>
                         </div>

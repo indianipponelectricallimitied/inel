@@ -201,7 +201,6 @@ export default function ContactForm() {
         <div className="py-20 px-8 diamond-gradient  rounded-[20px]">
             <h1 className="text-start pb-5 text-white">Get in Touch</h1>
             <p className="text-start pb-10 px-1 text-white">We’re here to help! Whether you have questions, feedback, or need assistance, drop us a message and we’ll get back to you promptly.</p>
-
             <div className="space-y-4 text-white">
           <p className="flex items-start gap-4 text-sm">
             <span className="text-2xl"><MdLocationOn /></span>
@@ -227,9 +226,9 @@ Uliveernapalli, Hosur-635114, India
                             <div className="flex gap-5">
                                 
 
-                                <a href="https://www.facebook.com/indianippon" target="_blank"><FaFacebookF className="text-2xl" /></a>
-                                <a href="https://twitter.com/IndiaNippon" target="_blank"><FaXTwitter className="text-2xl" /></a>
-                                <a href="https://www.linkedin.com/company/india-nippon" target="_blank"><FaLinkedinIn className="text-2xl text-dark" /></a>
+                                <a href="https://www.facebook.com/indianippon" target="_blank"><FaFacebookF className="text-2xl p-[2.5px]" /></a>
+                                <a href="https://twitter.com/IndiaNippon" target="_blank"><FaXTwitter className="text-2xl p-[2px]" /></a>
+                                <a href="https://www.linkedin.com/company/india-nippon" target="_blank"><FaLinkedinIn className="text-2xl p-[1px] text-dark" /></a>
                                 <a href="https://plus.google.com/118294691232195711937" target="_blank"><FaGooglePlusG className="text-2xl" /></a>
                            
                             </div>

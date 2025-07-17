@@ -1,15 +1,14 @@
 "use client"
 import Image from "next/image";
-import QuickLinks from "../Ui/QuickLinks";
 import Button from "../Ui/button";
 import { useState } from "react";
 
 export default function CareerOpportunities({quickLinks}) {
     const [activeTab, setActiveTab] = useState(0);
+    const [showInternDetails, setShowInternDetails] = useState(false);
 
     // Content for each tab
     const tabContent = [
-     
         {
             title: "Recent Graduates",
             image: "/images/career/Career-Graduate.png",
@@ -27,8 +26,80 @@ export default function CareerOpportunities({quickLinks}) {
         {
             title: "Interns",
             image: "/images/career/career-Intern-2.png",
-            description: "A window into the corporate world, where you can gain invaluable experience and guidance to build a strong foundation for your professional journey!",
-            buttonText: "Dicover What Awaits",
+            description: (
+                <div className="space-y-4">
+                    <p>
+                        A window into the corporate world, where you can gain invaluable experience and guidance to build a strong foundation for your professional journey!
+                    </p>
+                    {!showInternDetails && (
+                        <button
+                            className="text-blue-600 underline text-sm mt-2"
+                            onClick={() => setShowInternDetails(true)}
+                            type="button"
+                        >
+                            Read more
+                        </button>
+                    )}
+                    {showInternDetails && (
+                        <div className="bg-[#F6F6F6] p-4 rounded-lg border border-gray-200 animate-fade-in">
+                            <p className="font-semibold mb-2">Prerequisites:</p>
+                            <ul className="list-disc list-inside mb-4">
+                                <li>
+                                    Candidates must be pursuing an undergraduate or postgraduate degree from Tier II or III institutions.
+                                </li>
+                            </ul>
+                            <p className="font-semibold mb-2">Internship Selection Criteria:</p>
+                            <div className="overflow-x-auto">
+                                <table className="min-w-full text-sm border border-gray-300 mb-4">
+                                    <thead>
+                                        <tr className="bg-gray-100">
+                                            <th className="border border-gray-300 px-3 py-2 text-left font-semibold">Criteria</th>
+                                            <th className="border border-gray-300 px-3 py-2 text-left font-semibold">Minimum Requirement</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td className="border border-gray-300 px-3 py-2 text-left">10<sup>th</sup> Score</td>
+                                            <td className="border border-gray-300 px-3 py-2 text-left">80% or 8.5 CGPA</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="border border-gray-300 px-3 py-2 text-left">12<sup>th</sup> Score</td>
+                                            <td className="border border-gray-300 px-3 py-2 text-left">70% or 7.5 CGPA</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="border border-gray-300 px-3 py-2 text-left">Undergraduate / Postgraduate</td>
+                                            <td className="border border-gray-300 px-3 py-2 text-left">6.5 CGPA with no history of arrears</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="border border-gray-300 px-3 py-2 text-left">Aptitude Test</td>
+                                            <td className="border border-gray-300 px-3 py-2 text-left">60%</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="border border-gray-300 px-3 py-2 text-left">Interview</td>
+                                            <td className="border border-gray-300 px-3 py-2 text-left">Subject to clearance</td>
+                                        </tr>
+                                        <tr>
+                                            <td className="border border-gray-300 px-3 py-2 text-left">Duration</td>
+                                            <td className="border border-gray-300 px-3 py-2 text-left">6 months / 12 months</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p className="text-xs text-gray-700">
+                                <b className="font-bold">NOTE:</b> Internship opportunities are limited to Technical and Management roles. We regret that we will not be able to contact all applicants. Only shortlisted eligible candidates will be reached out to. We appreciate your understanding.
+                            </p>
+                            <button
+                                className="text-blue-600 underline text-sm mt-2"
+                                onClick={() => setShowInternDetails(false)}
+                                type="button"
+                            >
+                                Show less
+                            </button>
+                        </div>
+                    )}
+                </div>
+            ),
+            buttonText: "Discover What Awaits",
             buttonLink: "#apply-now"
         },
         {
@@ -42,6 +113,8 @@ export default function CareerOpportunities({quickLinks}) {
 
     const handleTabClick = (index) => {
         setActiveTab(index);
+        // Reset intern details readmore if switching away
+        if (index !== 2 && showInternDetails) setShowInternDetails(false);
     };
 
     return (
@@ -75,7 +148,12 @@ export default function CareerOpportunities({quickLinks}) {
                     width={800} 
                     height={800} 
                 />
-                <p>{tabContent[activeTab].description}</p>
+                <div>
+                    {typeof tabContent[activeTab].description === "string"
+                        ? <p>{tabContent[activeTab].description}</p>
+                        : tabContent[activeTab].description
+                    }
+                </div>
                 <div className="flex flex-col md:flex-row lg:items-center gap-5">
                     <Button variant="blue" href={tabContent[activeTab].buttonLink}>
                         {tabContent[activeTab].buttonText}

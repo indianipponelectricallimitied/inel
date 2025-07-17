@@ -27,7 +27,7 @@ const Map = () => {
   const [selectedPlace, setSelectedPlace] = useState({
     id: 0,
     name: "Tech Center",
-    address: "No 11 & 13, Patullos Road, Chennai 600 002, Tamil Nadu, India",
+    address: "SIPCOT Industrial Complex, Plot No-137, Phase-1, Hosur, Tamil Nadu 635126",
     position: { lat: 13.0827, lng: 80.2707 },
     phone: "+91-4347-230273",
     email: " inelcorp@inel.co.in",
@@ -39,11 +39,11 @@ const Map = () => {
     {
       id: 0,
       name: "Tech Center",
-      address: "No 11 & 13, Patullos Road, Chennai 600 002, Tamil Nadu, India",
+      address: "SIPCOT Industrial Complex, Plot No-137, Phase-1, Hosur, Tamil Nadu 635126",
       position: { lat: 13.0827, lng: 80.2707 },
       phone: "+91-4347-230273",
       email: " inelcorp@inel.co.in",
-      image: "/images/about/vision-mission.webp",
+      image: "/images/contact-us/techcentre.svg",
       active: true
     },
     {

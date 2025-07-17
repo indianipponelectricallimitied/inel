@@ -85,6 +85,13 @@ input , textarea , select{
   background-position: top;
   background-repeat: no-repeat !important;
 }
+.diamond-gradient1{
+  background: url('/images/maingradient1.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-repeat: no-repeat !important;
+}
 
 .clip-path:after{
   position: absolute;
@@ -463,9 +470,9 @@ table{
 
 .article-border{
   background: 
-    linear-gradient(#ffffff, #ffffff) 50% 50%/100% calc(100% - 4px) no-repeat,
-    linear-gradient(90deg, #13409c 0%, #578eff 50%, #13409c 100%) 0 100%/100% 4px no-repeat;
+    linear-gradient(#ffffff, #ffffff) 50% 50%/100% calc(100% - 3px) no-repeat,
+    linear-gradient(90deg, #13409c 0%, #578eff 50%, #13409c 100%) 0 100%/100% 3px no-repeat;
   border-radius: 0px;
-  padding: 0 0 4px 0;
+  padding: 0 0 3px 0;
   box-sizing: content-box;
 }

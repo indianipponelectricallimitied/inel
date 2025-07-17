@@ -91,8 +91,8 @@ const Navbar = () => {
       isHomePage && !isHovered ? 'navbar-home' : 'navbar-default'
     }`}>
      
-      <div className="hidden lg:flex justify-between items-center gap-5">
-        <Link href='/' className="transition-all duration-300 ease-in-out">
+      <div className="hidden lg:flex justify-between items-center gap-5 ">
+        <Link href='/' className="transition-all duration-300 ease-in-out z-[1000]">
         { isHomePage && !isHovered ?
           <img src={logo} alt="logo" className="transition-opacity duration-300 ease-in-out" />
           :
@@ -188,11 +188,11 @@ const Navbar = () => {
           </div>
         </div>
         
-        <Button variant={`${isHomePage ? 'white' : 'blue'}`} hasArrow={false} href="/contact-us" className='text-black'>Enquire Now</Button>
+        <Button variant={`${isHomePage ? 'white' : 'blue'}`} hasArrow={false} href="/contact-us" className='text-black !w-fit'>Enquire Now</Button>
       </div>
 
      
-      <div className="lg:hidden flex justify-between items-center">
+      <div className="lg:hidden flex justify-between items-center z-50">
         <Link href='/' className='w-1/2'>
         { isHomePage ?
           <img src={logo} alt="logo" />

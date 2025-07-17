@@ -15,7 +15,7 @@ export default function VehicleSlide({ vehicleType, direction, engineType = 'IC'
           className: `scooter !w-[380px] md:!w-[500px] ${!imageLoaded ? 'opacity-0' : 'opacity-100'}`,
           wheels: engineType === 'IC'
         };
-      case "4W":
+      case "CC":
         return {
           image: "/images/home/truck.png", // Using same image for both variants as per latest changes
           className: `car !w-[380px] md:!w-[480px] ${!imageLoaded ? 'opacity-0' : 'opacity-100'}`,
@@ -41,7 +41,7 @@ export default function VehicleSlide({ vehicleType, direction, engineType = 'IC'
   };
 
   return (
-    <div className={`slide-content rover w-full flex justify-center items-center ${vehicleType === "4W" ? 'pt-20' : ''}`}>
+    <div className={`slide-content rover w-full flex justify-center items-center ${vehicleType === "CC" ? 'pt-20' : ''}`}>
       <div className="vehicle-image-container relative">
         {!imageLoaded && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">

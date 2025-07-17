@@ -31,6 +31,7 @@ export default function BreadCrumb({breadCrumbBg ,pageTitle}) {
         <div className="rounded-[30px] h-[300px] md:h-[350px] p-5 md:p-20 flex items-center justify-center md:justify-normal mx-5 relative breadcrumb-cut"
         style={{
             background: `url(${breadCrumbBg}) center center`,
+            backgroundSize: 'cover',
         }}
         >
         <div className="absolute top-0 left-0 w-full h-full  bg-gradient-to-l from-transparent to-black/50 rounded-[30px]"></div>

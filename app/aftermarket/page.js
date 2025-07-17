@@ -27,33 +27,26 @@ const quickLinks = [
 
   const testimonials = [
     {
-        name: "John Doe",
+        name: "Sandeep Kulkarni",
         image: "/testi.png",
-        identity: "Automobile Workshop Owner",
-        feedbaktitle:"Reliable Parts, Exceptional Performance!",
-        feedback:"I've been using this product for a few months now and it's been performing great. The quality is excellent and it's easy to install. I highly recommend it!"
+        identity: "Automotive Parts Dealer, Pune",
+        feedbaktitle:"Easy to stock, easy to sell",
+        feedback:"INEL’s aftermarket range moves fast. The brand has earned a solid name among local mechanics, and the demand just keeps growing. With great packaging, low return rates, and strong word-of-mouth, it’s been a reliable addition to my inventory."
     },
     {
-        name: "John Doe",
+        name: "Farhana Mirza",
         image: "/testi.png",
-        identity: "Automobile Workshop Owner",
-        feedbaktitle:"Reliable Parts, Exceptional Performance!",
-        feedback:"I've been using this product for a few months now and it's been performing great. The quality is excellent and it's easy to install. I highly recommend it!"
+        identity: "Service Manager, Multibrand Auto Center, Lucknow",
+        feedbaktitle:"Built trust with technicians and customers alike.",
+        feedback:"We switched to INEL for key aftermarket components last year, and the feedback has been great. Mechanics trust the fit and performance, and we’ve had fewer complaints and returns. It’s become a go-to brand in our workshop."
     },
     {
-        name: "John Doe",
+        name: "Ahmed Khan",
         image: "/testi.png",
-        identity: "Automobile Workshop Owner",
-        feedbaktitle:"Reliable Parts, Exceptional Performance!",
-        feedback:"I've been using this product for a few months now and it's been performing great. The quality is excellent and it's easy to install. I highly recommend it!"
-    },
-    {
-        name: "John Doe",
-        image: "/testi.png",
-        identity: "Automobile Workshop Owner",
-        feedbaktitle:"Reliable Parts, Exceptional Performance!",
-        feedback:"I've been using this product for a few months now and it's been performing great. The quality is excellent and it's easy to install. I highly recommend it!"
-    },
+        identity: "Regional Parts Distributor, Hyderabad",
+        feedbaktitle:"A trusted brand with solid demand.",
+        feedback:"As a distributor, I’ve seen INEL’s aftermarket parts fly off the shelves. Mechanics prefer them for reliability, and customers return asking for the same brand. The growth in demand over the last year has been impressive."
+    }
 ]
 
 
@@ -129,9 +122,9 @@ export default function aftermarket(){
     </div>
         
         <section className="bg-[#F6F6F6]">
-            <div className="container mx-auto  py-20">
+            <div className="container mx-auto py-20">
                 <KnowledgeHub 
-                imageSrc="/images/Aftermarket/aerial-inel.jpeg"
+                imageSrc="/images/Aftermarket/resource.png"
                 imageAlt="sustainable"
                 tagline="Resources & Downloads"
                 title="Our Knowledge Hub"

@@ -21,27 +21,27 @@ const locations = [
   {
     id: 3,
     name: "Hyderabad",
-     coordinates: { top: "59%", left: "36%" }
+     coordinates: { top: "61", left: "34%" }
   },
   {
     id: 4,
     name: "Coimbatore",
-    coordinates: { top: "79%", left: "28%" }
+    coordinates: { top: "82%", left: "28%" }
   },
   {
     id: 5,
     name: "Madurai",
-    coordinates: { top: "83%", left: "31%" }
+    coordinates: { top: "85%", left: "31%" }
   },
   {
     id: 6,
     name: "Mumbai",
-    coordinates: { top: "56%", left: "28%" }
+    coordinates: { top: "58%", left: "15%" }
   },
   {
     id: 7,
     name: "Pune",
-    coordinates: { top: "60%", left: "30%" }
+    coordinates: { top: "63%", left: "16%" }
   },
   {
     id: 8,

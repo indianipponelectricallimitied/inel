@@ -101,7 +101,7 @@ export default function ProductPage() {
 
             <VehicleCategories vehicleCategories={product.vehicleCategories} />
 
-            <section className='diamond-gradient'>
+            <section className='diamond-gradient1'>
                 <div className='container mx-auto px-5 py-20'>
                     <h1 className='text-white w-full md:w-4/5'>Discover high-performance solutions designed 
                     for efficiency and reliability.</h1>
@@ -124,10 +124,10 @@ export default function ProductPage() {
                 </div>
             </section>
 
-            <RelatedProducts currentProductId={product.id} type={product.type} />
+            {/* <RelatedProducts currentProductId={product.id} type={product.type} /> */}
 
 
-            <Newsletter />
+            {/* <Newsletter /> */}
         </>
     );
 }

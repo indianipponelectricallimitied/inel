@@ -28,7 +28,7 @@ const innovations = [
         title: "Sustainable Engineering",
         description:"India Nippon Electricals Limited (INEL) is committed to sustainability with a dual focus on both internal combustion engine (ICE) and electric vehicle (EV) technologies. For ICE vehicles, INEL develops advanced solutions like Integrated Starter Generator (ISG) systems, improving power output, efficiency, and fuel economy. In the EV sector, the company offers cutting-edge products like DC-DC Converters, Traction Motors, and Motor Controllers.",
         description2:"INEL also prioritizes environmental sustainability, reducing energy consumption, emissions, and promoting waste recycling, water conservation, and solar energy initiatives to lower Greenhouse Gas emissions.",
-        image: "/images/Technology/sustainable.webp"
+        image: "/images/Technology/sus1.png"
     },
     {
         title: "Safety-First Engineering",

@@ -38,15 +38,15 @@ export const VEHICLE_TYPES = [
     title: "Commercial",
     image: "/images/home/vehicle-(2).png",
     alt: "Commercial",
-    background: "4W",
+    background: "CC",
     variants: {
       EV: {
         image: "/images/home/truck.png",
-        hotspots: "4W_EV"
+        hotspots: "CC_EV"
       },
       IC: {
         image: "/images/home/truck.png",
-        hotspots: "4W_IC"
+        hotspots: "CC_IC"
       }
     }
   }
@@ -131,7 +131,7 @@ export const VEHICLE_HOTSPOTS = {
       </svg>`
     },
   ],
-  "4W_IC": [
+  "CC_IC": [
     { label: "Gear Position Sensor", x: 430, y: 28, object: "/images/home/Gear.png",
       canvas_position: { x: -525, y: 160 },
       line_position: { x: -326, y: 140, width: 295 },
@@ -150,7 +150,7 @@ export const VEHICLE_HOTSPOTS = {
       </svg>`
     }
   ],
-  "4W_EV": [
+  "CC_EV": [
     { label: "Steering Angle Sensor", x: 430, y: 28, object: "/images/home/Steering-Sensor.png",
       canvas_position: { x: -525, y: 160 },
       line_position: { x: -326, y: 140, width: 295 },
