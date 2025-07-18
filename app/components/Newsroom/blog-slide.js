@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
@@ -9,10 +9,17 @@ import Button from "../Ui/button";
 import { HiOutlineChevronRight, HiOutlineChevronLeft } from "react-icons/hi";
 import ApiService from "@/app/services/api";
 
-export default function BlogSlide({sildeperview}) {
+/**
+ * BlogSlide component
+ * @param {Object} props
+ * @param {number} sildeperview - Number of slides per view on desktop
+ * @param {string[]} [includeCategories] - Array of category slugs/names to include (if provided, only posts in these categories are shown)
+ */
+export default function BlogSlide({ sildeperview, includeCategories }) {
     const [blogData, setBlogData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    const swiperRef = useRef(null);
 
     useEffect(() => {
         const fetchBlogs = async () => {
@@ -29,6 +36,52 @@ export default function BlogSlide({sildeperview}) {
 
         fetchBlogs();
     }, []);
+
+    // Filter blogData by includeCategories if provided
+    let filteredBlogData = blogData;
+    if (Array.isArray(includeCategories) && includeCategories.length > 0) {
+        filteredBlogData = blogData.filter((blog) => {
+            // Support both category as string or object with name/slug
+            if (!blog.category) return false;
+            if (typeof blog.category === "string") {
+                return includeCategories.includes(blog.category);
+            }
+            if (typeof blog.category === "object" && blog.category !== null) {
+                // Try both name and slug
+                return (
+                    (blog.category.name && includeCategories.includes(blog.category.name)) ||
+                    (blog.category.slug && includeCategories.includes(blog.category.slug))
+                );
+            }
+            return false;
+        });
+    }
+
+    // Adjust Swiper slide heights after Swiper is initialized and blogData is loaded
+    useEffect(() => {
+        // Only run if filteredBlogData is loaded and not loading or error
+        if (!isLoading && !error && filteredBlogData && filteredBlogData.length > 0) {
+            // Timeout to ensure DOM is updated after Swiper renders
+            const timer = setTimeout(() => {
+                const slides = document.querySelectorAll('.swiper-slide');
+                let maxHeight = 0;
+
+                // Find the max height
+                slides.forEach(slide => {
+                    slide.style.height = 'auto'; // Reset first
+                    const height = slide.offsetHeight;
+                    if (height > maxHeight) maxHeight = height;
+                });
+
+                // Apply max height to all
+                slides.forEach(slide => {
+                    slide.style.height = `${maxHeight}px`;
+                });
+            }, 100); // 100ms delay to allow Swiper to render
+
+            return () => clearTimeout(timer);
+        }
+    }, [isLoading, error, filteredBlogData]);
 
     // Fallback content for loading state
     if (isLoading) {
@@ -48,7 +101,7 @@ export default function BlogSlide({sildeperview}) {
             <div className="relative">
                 <div className="text-center py-10">
                     <p className="text-red-500">Failed to load blog posts: {error}</p>
-                    <button 
+                    <button
                         onClick={() => window.location.reload()}
                         className="mt-4 bg-primary text-white px-4 py-2 rounded-md"
                     >
@@ -60,7 +113,7 @@ export default function BlogSlide({sildeperview}) {
     }
 
     // Empty state
-    if (!blogData || blogData.length === 0) {
+    if (!filteredBlogData || filteredBlogData.length === 0) {
         return (
             <div className="relative">
                 <div className="text-center py-10">
@@ -69,7 +122,7 @@ export default function BlogSlide({sildeperview}) {
             </div>
         );
     }
-    
+
     // Format date function
     const formatDate = (dateString) => {
         if (!dateString) return '';
@@ -105,27 +158,43 @@ export default function BlogSlide({sildeperview}) {
                     nextEl: '.swiper-next',
                     prevEl: '.swiper-prev',
                 }}
+                onInit={() => {
+                    // Also run the height adjustment on Swiper init
+                    setTimeout(() => {
+                        const slides = document.querySelectorAll('.swiper-slide');
+                        let maxHeight = 0;
+
+                        slides.forEach(slide => {
+                            slide.style.height = 'auto';
+                            const height = slide.offsetHeight;
+                            if (height > maxHeight) maxHeight = height;
+                        });
+
+                        slides.forEach(slide => {
+                            slide.style.height = `${maxHeight}px`;
+                        });
+                    }, 100);
+                }}
             >
-                {blogData.map((blog, index) => (
+                {filteredBlogData.map((blog, index) => (
                     <SwiperSlide key={blog.id || index} className="mb-16 blog-cut p-1">
                         <div className="flex flex-col gap-5 p-3 rounded-[30px] border border-primary wrap transition-all duration-300">
-                            <Image 
-                                src={blog.featured_image || "/images/placeholder.jpg"} 
-                                alt={blog.title || "Blog post"} 
-                                className="rounded-[20px] h-[200px] w-full object-cover" 
-                                width={500} 
+                            <Image
+                                src={blog.featured_image || "/images/placeholder.jpg"}
+                                alt={blog.title || "Blog post"}
+                                className="rounded-[20px] h-[200px] w-full object-cover"
+                                width={500}
                                 height={200}
                                 onError={(e) => {
                                     e.target.src = "/images/placeholder.jpg";
                                 }}
                             />
-                            
 
                             <h1 className="text-xl font-medium line-clamp-2 h-[60px]">{blog.title}</h1>
                             <p className="text-sm line-clamp-3">{blog.intro}</p>
-                            <Button 
-                                variant="transparent" 
-                                href={`/newsroom/${blog.slug || blog.id}`} 
+                            <Button
+                                variant="transparent"
+                                href={`/newsroom/${blog.slug || blog.id}`}
                                 className="ms-auto -mb-3 border-0 !text-[#160959] z-10"
                             >
                                 Read More
