@@ -102,6 +102,15 @@ export const VEHICLE_HOTSPOTS = {
   ],
   // Similar pattern for 3W and 4W variants...
   "3W_IC": [
+    { label: "7.4-inch-tft-instrument cluster", x: 260, y: 25, marker_x: 86 , marker_y: 100, object: "/images/home/cluster.png",
+      canvas_position: { x: 143, y: 35 },
+      line_position: { x: -46, y: 30, width: 280 },
+      linepath: `<svg width="340" height="64" viewBox="0 0 340 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.5 61.5L46.5 2H340" stroke="black"/>
+        <circle cx="47" cy="2.5" r="2" fill="black" stroke="black"/>
+        <circle cx="2.5" cy="61.5" r="2" fill="black" stroke="black"/>
+      </svg>`
+    },
     
     { label: "BLDC Motor Controller", x: 460, y: 158, marker_x: 460, marker_y: 158, object: "/images/home/BLDC.webp",
       canvas_position: { x: 121, y: 35 },
