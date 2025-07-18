@@ -77,19 +77,22 @@ export default function VehicleSlide({ vehicleType, direction, engineType = 'IC'
               onLeave={handleHotspotLeave}
             />
           ))}
-          {imageLoaded && hotspots.map((hotspot, idx) => (
-            <Hotspot
-              key={`hotspot-${idx}`}
-              x={hotspot.x}
-              y={hotspot.y}
-              label={hotspot.label}
-              object={hotspot.object}
-              linepath={hotspot.linepath}
-              line_position={hotspot.line_position}
-              canvas_position={hotspot.canvas_position}
-              isActive={activeHotspotIndex === idx}
-            />
-          ))}
+        {/* Render all hotspots (detailed info) */}
+        {imageLoaded && hotspots.map((hotspot, idx) => (
+          <Hotspot
+            key={`hotspot-${idx}`}
+            marker_x={hotspot.marker_x}
+            marker_y={hotspot.marker_y}
+            start_point={hotspot.start_point}
+            mid_point={hotspot.mid_point}
+            end_point={hotspot.end_point}
+            canvas_position={hotspot.canvas_position}
+            label={hotspot.label}
+            object={hotspot.object}
+            url={hotspot.url}
+            isActive={activeHotspotIndex === idx}
+          />
+        ))}
         </div>
       </div>
 

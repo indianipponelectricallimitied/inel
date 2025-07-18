@@ -1,3 +1,25 @@
+// Function to generate SVG path from start, mid, and end points
+const generateLinePath = (startPoint, midPoint, endPoint) => {
+  return `<svg width="400" height="100" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M${startPoint.x} ${startPoint.y} L${midPoint.x} ${midPoint.y} L${endPoint.x} ${endPoint.y}" stroke="black" stroke-width="1"/>
+    <circle cx="${startPoint.x}" cy="${startPoint.y}" r="2" fill="black" stroke="black"/>
+    <circle cx="${midPoint.x}" cy="${midPoint.y}" r="2" fill="black" stroke="black"/>
+    <circle cx="${endPoint.x}" cy="${endPoint.y}" r="2" fill="black" stroke="black"/>
+  </svg>`;
+};
+
+// URL constants for navigation
+export const HOTSPOT_URLS = {
+  "7.4-inch-tft-instrument cluster": "/products/instrument-cluster",
+  "BLDC Motor Controller": "/products/bldc-controller",
+  "Control Panel": "/products/control-panel",
+  "DC DC Converter": "/products/dc-converter",
+  "Gear Position Sensor": "/products/gear-sensor",
+  "Fuel Vapor Purge (FVP)": "/products/fuel-vapor-purge",
+  "Steering Angle Sensor": "/products/steering-sensor",
+  "Speed Sensor": "/products/speed-sensor"
+};
+
 export const VEHICLE_TYPES = [
   {
     id: 0,
@@ -54,137 +76,145 @@ export const VEHICLE_TYPES = [
 
 export const VEHICLE_HOTSPOTS = {
   "2W_IC": [
-    { label: "7.4-inch-tft-instrument cluster", x: 390, y: -35, marker_x: 220, marker_y: 40, object: "/images/home/cluster.png",
-      canvas_position: { x: 143, y: 35 },
-      line_position: { x: -46, y: 30, width: 280 },
-      linepath: `<svg width="340" height="64" viewBox="0 0 340 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2.5 61.5L46.5 2H340" stroke="black"/>
-        <circle cx="47" cy="2.5" r="2" fill="black" stroke="black"/>
-        <circle cx="2.5" cy="61.5" r="2" fill="black" stroke="black"/>
-      </svg>`
-    },
-    // { label: "Control Panel", x: 540, y: 100, marker_x: 330, marker_y: 155, object: "/images/home/ControlPanel.webp",
-    //   canvas_position: { x: -458, y: 60 },
-    //   line_position: { x: -326, y: 40, width: 230 },
-    //   linepath: `<svg width="166" height="5" viewBox="0 0 166 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-    //     <circle cx="163.5" cy="2.5" r="2" fill="black" stroke="black"/>
-    //     <path d="M163 2.5H0" stroke="black"/>
-    //   </svg>`
-    // }
+    {
+      label: "7.4-inch-tft-instrument cluster",
+      marker_x: 220, marker_y: 40,
+      start_point: { x: 0, y: 0 }, // start at marker location
+      mid_point: { x: 50, y: -40 },
+      end_point: { x: 150, y: -40 },
+      canvas_position: { x: 150, y: -40 },
+      object: "/images/home/cluster.png",
+      url: "/products/instrument-cluster"
+    }
   ],
   "2W_EV": [
-    { label: "BLDC Motor Controller", x: 505, y: 119, marker_x: 310, marker_y: 198, object: "/images/home/BLDC.webp",
-      canvas_position: { x: 70, y: 25 },
-      line_position: { x: -66, y: 30, width: 280 },
-      linepath: `<svg width="340" height="64" viewBox="0 0 340 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2.5 61.5L46.5 2H340" stroke="black"/>
-        <circle cx="47" cy="2.5" r="2" fill="black" stroke="black"/>
-        <circle cx="2.5" cy="61.5" r="2" fill="black" stroke="black"/>
-      </svg>`
+    {
+      label: "BLDC Motor Controller",
+      marker_x: 310, marker_y: 198,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 60, y: -60 },
+      end_point: { x: 180, y: -60 },
+      canvas_position: { x: 180, y: -60 },
+      object: "/images/home/BLDC.webp",
+      url: "/products/bldc-controller"
     },
-    // { label: "DC DC Converter", x: 430, y: 35, marker_x: 430, marker_y: 35, object: "/images/home/dc-dc-iso.png",
-    //   canvas_position: { x: -458, y: 60 },
-    //   line_position: { x: -326, y: 40, width: 200 },
-    //   linepath: `<svg width="166" height="5" viewBox="0 0 166 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-    //     <circle cx="163.5" cy="2.5" r="2" fill="black" stroke="black"/>
-    //     <path d="M163 2.5H0" stroke="black"/>
-    //   </svg>`
-    // },
-    { label: "7.4-inch-tft-instrument cluster", x: 390, y: -35, marker_x: 220, marker_y: 40, object: "/images/home/cluster.png",
-      canvas_position: { x: 143, y: 35 },
-      line_position: { x: -46, y: 30, width: 280 },
-      linepath: `<svg width="340" height="64" viewBox="0 0 340 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2.5 61.5L46.5 2H340" stroke="black"/>
-        <circle cx="47" cy="2.5" r="2" fill="black" stroke="black"/>
-        <circle cx="2.5" cy="61.5" r="2" fill="black" stroke="black"/>
-      </svg>`
-    },
+    {
+      label: "7.4-inch-tft-instrument cluster",
+      marker_x: 220, marker_y: 40,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 50, y: -40 },
+      end_point: { x: 150, y: -40 },
+      canvas_position: { x: 150, y: -40 },
+      object: "/images/home/cluster.png",
+      url: "/products/instrument-cluster"
+    }
   ],
-  // Similar pattern for 3W and 4W variants...
   "3W_IC": [
-    { label: "7.4-inch-tft-instrument cluster", x: 260, y: 25, marker_x: 86 , marker_y: 100, object: "/images/home/cluster.png",
-      canvas_position: { x: 143, y: 35 },
-      line_position: { x: -46, y: 30, width: 280 },
-      linepath: `<svg width="340" height="64" viewBox="0 0 340 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2.5 61.5L46.5 2H340" stroke="black"/>
-        <circle cx="47" cy="2.5" r="2" fill="black" stroke="black"/>
-        <circle cx="2.5" cy="61.5" r="2" fill="black" stroke="black"/>
-      </svg>`
+    {
+      label: "7.4-inch-tft-instrument cluster",
+      marker_x: 86, marker_y: 100,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: -50, y: -40 },
+      end_point: { x: -150, y: -40 },
+      canvas_position: { x: -170, y: -40 },
+      object: "/images/home/cluster.png",
+      url: "/products/instrument-cluster"
     },
-    
-    { label: "BLDC Motor Controller", x: 460, y: 158, marker_x: 460, marker_y: 158, object: "/images/home/BLDC.webp",
-      canvas_position: { x: 121, y: 35 },
-      line_position: { x: -66, y: 30, width: 280 },
-      linepath: `<svg width="340" height="64" viewBox="0 0 340 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2.5 61.5L46.5 2H340" stroke="black"/>
-        <circle cx="47" cy="2.5" r="2" fill="black" stroke="black"/>
-        <circle cx="2.5" cy="61.5" r="2" fill="black" stroke="black"/>
-      </svg>`
+    {
+      label: "BLDC Motor Controller",
+      marker_x: 460, marker_y: 158,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 60, y: -60 },
+      end_point: { x: 180, y: -60 },
+      canvas_position: { x: 180, y: -60 },
+      object: "/images/home/BLDC.webp",
+      url: "/products/bldc-controller"
     },
-    { label: "Control Panel", x: 470, y: 65, marker_x: 470, marker_y: 65, object: "/images/home/ControlPanel.webp",
-      canvas_position: { x: -525, y: 160 },
-      line_position: { x: -326, y: 140, width: 295 },
-      linepath: `<svg width="304" height="5" viewBox="0 0 304 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="301.5" cy="2.5" r="2" fill="black" stroke="black"/>
-        <path d="M301 2.5L0 3" stroke="black"/>
-      </svg>`
+    {
+      label: "Control Panel",
+      marker_x: 470, marker_y: 65,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 50, y: -60 },
+      end_point: { x: 150, y: -60 },
+      canvas_position: { x: 150, y: -60 },
+      object: "/images/home/ControlPanel.webp",
+      url: "/products/control-panel"
     },
+    {
+      label: "Control Panel",
+      marker_x: 470, marker_y: 65,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 50, y: -60 },
+      end_point: { x: 150, y: -60 },
+      canvas_position: { x: 150, y: -60 },
+      object: "/images/home/ControlPanel.webp",
+      url: "/products/control-panel"
+    }
   ],
   "3W_EV": [
-    { label: "DC DC Converter", x: 430, y: 65, marker_x: 430, marker_y: 65, object: "/images/home/dc-dc-iso.png",
-      canvas_position: { x: -525, y: 160 },
-      line_position: { x: -326, y: 140, width: 295 },
-      linepath: `<svg width="304" height="5" viewBox="0 0 304 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="301.5" cy="2.5" r="2" fill="black" stroke="black"/>
-        <path d="M301 2.5L0 3" stroke="black"/>
-      </svg>`
+    {
+      label: "DC DC Converter",
+      marker_x: 430, marker_y: 65,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 50, y: -60 },
+      end_point: { x: 150, y: -60 },
+      canvas_position: { x: 150, y: -60 },
+      object: "/images/home/dc-dc-iso.png",
+      url: "/products/dc-converter"
     },
-    { label: "BLDC Motor Controller", x: 460, y: 158, marker_x: 460, marker_y: 158, object: "/images/home/BLDC.webp",
-      canvas_position: { x: 121, y: 35 },
-      line_position: { x: -66, y: 30, width: 280 },
-      linepath: `<svg width="340" height="64" viewBox="0 0 340 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2.5 61.5L46.5 2H340" stroke="black"/>
-        <circle cx="47" cy="2.5" r="2" fill="black" stroke="black"/>
-        <circle cx="2.5" cy="61.5" r="2" fill="black" stroke="black"/>
-      </svg>`
-    },
+    {
+      label: "BLDC Motor Controller",
+      marker_x: 460, marker_y: 158,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 60, y: -60 },
+      end_point: { x: 180, y: -60 },
+      canvas_position: { x: 180, y: -60 },
+      object: "/images/home/BLDC.webp",
+      url: "/products/bldc-controller"
+    }
   ],
   "CC_IC": [
-    { label: "Gear Position Sensor", x: 430, y: 28, marker_x: 430, marker_y: 28, object: "/images/home/Gear.png",
-      canvas_position: { x: -525, y: 160 },
-      line_position: { x: -326, y: 140, width: 295 },
-      linepath: `<svg width="304" height="5" viewBox="0 0 304 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="301.5" cy="2.5" r="2" fill="black" stroke="black"/>
-        <path d="M301 2.5L0 3" stroke="black"/>
-      </svg>`
+    {
+      label: "Gear Position Sensor",
+      marker_x: 430, marker_y: 28,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 50, y: -60 },
+      end_point: { x: 150, y: -60 },
+      canvas_position: { x: 150, y: -60 },
+      object: "/images/home/Gear.png",
+      url: "/products/gear-sensor"
     },
-    { label: "Fuel Vapor Purge (FVP)", x: 412, y: 150, marker_x: 412, marker_y: 150, object: "/images/home/Fuel_Vapor_Purge.webp",
-      canvas_position: { x: 120, y: -30 },
-      line_position: { x: -80, y: -20, width: 300 },
-      linepath: `<svg width="340" height="64" viewBox="0 0 340 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2.5 61.5L46.5 2H340" stroke="black"/>
-        <circle cx="47" cy="2.5" r="2" fill="black" stroke="black"/>
-        <circle cx="2.5" cy="61.5" r="2" fill="black" stroke="black"/>
-      </svg>`
+    {
+      label: "Fuel Vapor Purge (FVP)",
+      marker_x: 412, marker_y: 150,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 60, y: -60 },
+      end_point: { x: 180, y: -60 },
+      canvas_position: { x: 180, y: -60 },
+      object: "/images/home/Fuel_Vapor_Purge.webp",
+      url: "/products/fuel-vapor-purge"
     }
   ],
-  "CC_EV": [
-    { label: "Steering Angle Sensor", x: 430, y: 28, marker_x: 430, marker_y: 28, object: "/images/home/Steering-Sensor.png",
-      canvas_position: { x: -525, y: 160 },
-      line_position: { x: -326, y: 140, width: 295 },
-      linepath: `<svg width="304" height="5" viewBox="0 0 304 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="301.5" cy="2.5" r="2" fill="black" stroke="black"/>
-        <path d="M301 2.5L0 3" stroke="black"/>
-      </svg>`
-    },
-    { label: "Speed Sensor", x: 412, y: 150, marker_x: 412, marker_y: 150, object: "/images/home/Speed_Sensor.webp",
-      canvas_position: { x: 120, y: -30 },
-      line_position: { x: -80, y: -20, width: 300 },
-      linepath: `<svg width="340" height="64" viewBox="0 0 340 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2.5 61.5L46.5 2H340" stroke="black"/>
-        <circle cx="47" cy="2.5" r="2" fill="black" stroke="black"/>
-        <circle cx="2.5" cy="61.5" r="2" fill="black" stroke="black"/>
-      </svg>`
-    }
-  ]
+  // "CC_EV": [
+  //   {
+  //     label: "Steering Angle Sensor",
+  //     marker_x: 430, marker_y: 28,
+  //     start_point: { x: 0, y: 0 },
+  //     mid_point: { x: 50, y: -60 },
+  //     end_point: { x: 150, y: -60 },
+  //     canvas_position: { x: 150, y: -60 },
+  //     object: "/images/home/Steering-Sensor.png",
+  //     url: "/products/steering-sensor"
+  //   },
+  //   {
+  //     label: "Speed Sensor",
+  //     marker_x: 412, marker_y: 150,
+  //     start_point: { x: 0, y: 0 },
+  //     mid_point: { x: 60, y: -60 },
+  //     end_point: { x: 180, y: -60 },
+  //     canvas_position: { x: 180, y: -60 },
+  //     object: "/images/home/Speed_Sensor.webp",
+  //     url: "/products/speed-sensor"
+  //   }
+  // ]
 }; 

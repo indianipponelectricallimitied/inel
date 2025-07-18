@@ -1,47 +1,56 @@
 "use client";
 import Image from 'next/image';
 
+function generateLinePath(start, mid, end) {
+  return `<svg width="200" height="100" style="overflow:visible" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M${start.x} ${start.y} L${mid.x} ${mid.y} L${end.x} ${end.y}" stroke="black" stroke-width="1"/>
+    <circle cx="${start.x}" cy="${start.y}" r="2" fill="black" stroke="black"/>
+    <circle cx="${mid.x}" cy="${mid.y}" r="2" fill="black" stroke="black"/>
+    <circle cx="${end.x}" cy="${end.y}" r="2" fill="black" stroke="black"/>
+  </svg>`;
+}
+
 export default function Hotspot({ 
-  x, 
-  y, 
+  marker_x, 
+  marker_y, 
   label, 
   object, 
-  linepath, 
-  line_position = { x: 0, y: 0, width: 0 }, 
+  start_point, 
+  mid_point, 
+  end_point, 
   canvas_position = { x: 0, y: 0 },
+  url = "#",
   isActive = false,
 }) {
-  // Offset for line/canvas start
-  const offsetX = x + 20;
-  const offsetY = y + 20;
-
   return (
     <div
       className="hotspot-wrapper"
       style={{
         position: 'absolute',
-        left: `${x}px`,
-        top: `${y}px`,
+        left: `${marker_x}px`,
+        top: `${marker_y}px`,
         transform: 'translate(-50%, -50%)',
         zIndex: 5,
+        pointerEvents: 'none', // so marker gets pointer events, not this
       }}
     >
       {/* Show details only if active */}
       {isActive && (
-        <div style={{ position: 'absolute', left: '20px', top: '20px', zIndex: 20 }}>
-          {linepath && line_position && (
-            <div 
-              className="line-path"
-              style={{
-                position: 'absolute',
-                left: `${line_position.x}px`,
-                top: `${line_position.y}px`,
-                width: `${line_position.width}px`,
-                transform: 'translate(-50%, -50%)',
-              }}
-              dangerouslySetInnerHTML={{ __html: linepath }}
-            />
-          )}
+        <div style={{ position: 'absolute', left: 0, top: 0, zIndex: 20 }}>
+          {/* SVG line from marker to popup */}
+          <div
+            className="line-path"
+            style={{
+              position: 'absolute',
+              left: 0,
+              top: 0,
+              width: '200px',
+              height: '100px',
+              pointerEvents: 'none',
+            }}
+            dangerouslySetInnerHTML={{ __html: generateLinePath(start_point, mid_point, end_point) }}
+          />
+          {/* Popup content at end of line */}
           <div
             className={`hotspot-canvas flex flex-col justify-center items-center transition-opacity duration-500 opacity-100`}
             style={{
@@ -50,13 +59,22 @@ export default function Hotspot({
               left: `${canvas_position.x}px`,
               top: `${canvas_position.y}px`,
               transform: 'translate(-50%, -50%)',
+              pointerEvents: 'auto',
             }}
           >
-            <div className="w-[100px] h-[100px] cursor-grab flex items-center justify-center"> 
-              <div className="absolute roundedborder rotate top-0 -translate-x-1/2 w-[100px] h-[100px] rounded-full "></div>   
-              <Image src={object} alt={label} width={90} height={90} className='object-contain object-center w-[80px] h-[80px]'/>
-            </div>
-            <div className="hotspot-label text-center pt-3 w-[150px] text-sm">{label}</div>
+            <a 
+              href={url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block w-full h-full"
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <div className="w-[100px] h-[100px] cursor-pointer flex items-center justify-center hover:scale-105 transition-transform duration-200"> 
+                <div className="absolute roundedborder rotate top-0 -translate-x-1/2 w-[100px] h-[100px] rounded-full "></div>   
+                <Image src={object} alt={label} width={90} height={90} className='object-contain object-center w-[80px] h-[80px]'/>
+              </div>
+              <div className="hotspot-label text-center pt-3 w-[150px] text-sm hover:text-blue-600 transition-colors duration-200">{label}</div>
+            </a>
           </div>
         </div>
       )}

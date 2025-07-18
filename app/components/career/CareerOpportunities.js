@@ -14,14 +14,14 @@ export default function CareerOpportunities({quickLinks}) {
             image: "/images/career/Career-Graduate.png",
             description: "An ideal opportunity for those with up to two years of experience to learn, gain practical experience, and develop skills alongside our dynamic teams.",
             buttonText: "Fuel Your Ambitions",
-            buttonLink: "#apply-now"
+            buttonLink: "https://career.indianippon.com/indianippon/joblistdept/Recent%20Graduates"
         },
         {
             title: "Experienced Professionals",
             image: "/images/career/india-nippon-career-experienced-1.png",
             description: "Professionals with over three years of experience, eager to play a pivotal role in driving success, fostering collaboration, and influencing change.",
             buttonText: "Unlock New Horizons",
-            buttonLink: "#apply-now"
+            buttonLink: "https://career.indianippon.com/indianippon/joblistdept/Experienced Professionals"
         }, 
         {
             title: "Interns",
@@ -100,14 +100,14 @@ export default function CareerOpportunities({quickLinks}) {
                 </div>
             ),
             buttonText: "Discover What Awaits",
-            buttonLink: "#apply-now"
+            buttonLink: "https://career.indianippon.com/indianippon/joblistdept/Interns"
         },
         {
             title: "Explore more",
             image: "/images/career/career-more-oppertunities.png",
             description: "Interested in exploring opportunities with INEL at a later time? Or didn’t find what you were looking for? Join our Talent Community by sharing your contact details, and our hiring team will reach out to you when relevant openings become available.",
             buttonText: "Be a part of tomorrow",
-            buttonLink: "#apply-now"
+            buttonLink: "https://career.indianippon.com/indianippon/submit-your-resume"
         }
     ];
 
@@ -155,7 +155,7 @@ export default function CareerOpportunities({quickLinks}) {
                     }
                 </div>
                 <div className="flex flex-col md:flex-row lg:items-center gap-5">
-                    <Button variant="blue" href={tabContent[activeTab].buttonLink}>
+                    <Button variant="blue" href={tabContent[activeTab].buttonLink} target="_blank">
                         {tabContent[activeTab].buttonText}
                     </Button>
                 </div>
