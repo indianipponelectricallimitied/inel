@@ -77,14 +77,43 @@ export const VEHICLE_TYPES = [
 export const VEHICLE_HOTSPOTS = {
   "2W_IC": [
     {
-      label: "7.4-inch-tft-instrument cluster",
+      label: "Cluster Front Facia",
       marker_x: 220, marker_y: 40,
       start_point: { x: 0, y: 0 }, // start at marker location
       mid_point: { x: 50, y: -40 },
       end_point: { x: 150, y: -40 },
       canvas_position: { x: 150, y: -40 },
-      object: "/images/home/cluster.png",
-      url: "/products/instrument-cluster"
+      object: "/images/products/front-cluster.webp",
+      url: "/Product/cluster-front-facia"
+    },
+    {
+      label: "BLDC Motor Controller",
+      marker_x: 310, marker_y: 198,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 60, y: 90 },
+      end_point: { x: 180, y: 100 },
+      canvas_position: { x: 250, y: 100 },
+      object: "/images/home/BLDC.webp",
+      url: "/products/bldc-controller"
+    },
+    {
+      label: "Speed Sensor - Wire Type",
+      marker_x: 110, marker_y: 220,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 0, y: 0 },
+      end_point: { x: -100, y: 0 },
+      canvas_position: { x: -125, y: 10 },
+      object: "/images/products/Speed_Sensor-2-Wire.webp",
+      url: "/Product/speed-sensor"
+    },{
+      label: "AC Generator",
+      marker_x: 280, marker_y: 210,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 20, y: -120 },
+      end_point: { x: 170, y: -150 },
+      canvas_position: { x: 220, y: -180 },
+      object: "/images/products/ac-generator.webp",
+      url: "/Product/ac-generator"
     }
   ],
   "2W_EV": [
@@ -118,61 +147,102 @@ export const VEHICLE_HOTSPOTS = {
       end_point: { x: -150, y: -40 },
       canvas_position: { x: -170, y: -40 },
       object: "/images/home/cluster.png",
-      url: "/products/instrument-cluster"
+      url: "/Product/7.4-tft-instrument-cluster"
     },
     {
-      label: "BLDC Motor Controller",
-      marker_x: 460, marker_y: 158,
+      label: "Dual Track TPS",
+      marker_x: 120, marker_y: 90,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 50, y: -40 },
+      end_point: { x: 150, y: -40 },
+      canvas_position: { x: 220, y: -40 },
+      object: "/images/products/track-tps.webp",
+      url: "/Product/dual-track-tps"
+    },
+    {
+      label: "Reverse Parking Assist System",
+      marker_x: 480, marker_y: 175,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 60, y: -60 },
-      end_point: { x: 180, y: -60 },
+      end_point: { x: 110, y: -60 },
       canvas_position: { x: 180, y: -60 },
-      object: "/images/home/BLDC.webp",
+      object: "/images/products/reverse-parking.webp",
+      url: "/Product/reverse-parking-assist-system"
+    },
+    {
+      label: "Speed Sensor - Wire Type",
+      marker_x: 40, marker_y: 250,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 0, y: 0 },
+      end_point: { x: -100, y: 0 },
+      canvas_position: { x: -125, y: 10 },
+      object: "/images/products/Speed_Sensor-2-Wire.webp",
       url: "/products/bldc-controller"
     },
     {
-      label: "Control Panel",
-      marker_x: 470, marker_y: 65,
+      label: "Temperature Sensor",
+      marker_x: 300, marker_y: 200,
       start_point: { x: 0, y: 0 },
-      mid_point: { x: 50, y: -60 },
-      end_point: { x: 150, y: -60 },
-      canvas_position: { x: 150, y: -60 },
-      object: "/images/home/ControlPanel.webp",
+      mid_point: { x: 50, y: -110 },
+      end_point: { x: 150, y: -150 },
+      canvas_position: { x: 225, y: -150 },
+      object: "/images/products/temparture_sensor.webp",
       url: "/products/control-panel"
     },
     {
-      label: "Control Panel",
-      marker_x: 470, marker_y: 65,
+      label: "Ignition coil",
+      marker_x: 230, marker_y: 220,
       start_point: { x: 0, y: 0 },
-      mid_point: { x: 50, y: -60 },
-      end_point: { x: 150, y: -60 },
-      canvas_position: { x: 150, y: -60 },
+      mid_point: { x: 20, y: -90 },
+      end_point: { x: 100, y: -200 },
+      canvas_position: { x: 170, y: -200 },
       object: "/images/home/ControlPanel.webp",
-      url: "/products/control-panel"
-    }
-  ],
-  "3W_EV": [
-    {
-      label: "DC DC Converter",
-      marker_x: 430, marker_y: 65,
-      start_point: { x: 0, y: 0 },
-      mid_point: { x: 50, y: -60 },
-      end_point: { x: 150, y: -60 },
-      canvas_position: { x: 150, y: -60 },
-      object: "/images/home/dc-dc-iso.png",
-      url: "/products/dc-converter"
+      url: "#"
     },
     {
-      label: "BLDC Motor Controller",
-      marker_x: 460, marker_y: 158,
+      label: "AC Generator",
+      marker_x: 270, marker_y: 220,
       start_point: { x: 0, y: 0 },
-      mid_point: { x: 60, y: -60 },
-      end_point: { x: 180, y: -60 },
-      canvas_position: { x: 180, y: -60 },
-      object: "/images/home/BLDC.webp",
-      url: "/products/bldc-controller"
+      mid_point: { x: 20, y: -90 },
+      end_point: { x: 170, y: -150 },
+      canvas_position: { x: 220, y: -180 },
+      object: "/images/products/ac-generator.webp",
+      url: "/Product/ac-generator"
+    },
+    {
+      label: "TMPS",
+      marker_x: 350, marker_y: 250,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 0, y: 0 },
+      end_point: { x: 200, y: -10 },
+      canvas_position: { x: 275, y: 0 },
+      object: "/images/products/ac-generator.webp",
+      url: "/Product/ac-generator"
     }
+    
   ],
+  // "3W_EV": [
+  //   {
+  //     label: "DC DC Converter",
+  //     marker_x: 430, marker_y: 65,
+  //     start_point: { x: 0, y: 0 },
+  //     mid_point: { x: 50, y: -60 },
+  //     end_point: { x: 150, y: -60 },
+  //     canvas_position: { x: 150, y: -60 },
+  //     object: "/images/home/dc-dc-iso.png",
+  //     url: "/products/dc-converter"
+  //   },
+  //   {
+  //     label: "BLDC Motor Controller",
+  //     marker_x: 460, marker_y: 158,
+  //     start_point: { x: 0, y: 0 },
+  //     mid_point: { x: 60, y: -60 },
+  //     end_point: { x: 180, y: -60 },
+  //     canvas_position: { x: 180, y: -60 },
+  //     object: "/images/home/BLDC.webp",
+  //     url: "/products/bldc-controller"
+  //   }
+  // ],
   "CC_IC": [
     {
       label: "Gear Position Sensor",
