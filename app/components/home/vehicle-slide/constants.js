@@ -97,14 +97,14 @@ export const VEHICLE_HOTSPOTS = {
       url: "/Product/throttle-body-with-sensors"
     },
     {
-      label: "BLDC Motor Controller",
+      label: "Temperature Sensor",
       marker_x: 310, marker_y: 198,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 60, y: 90 },
-      end_point: { x: 180, y: 100 },
-      canvas_position: { x: 250, y: 100 },
-      object: "/images/home/BLDC.webp",
-      url: "/products/bldc-controller"
+      end_point: { x: 180, y: 70 },
+      canvas_position: { x: 250, y: 70 },
+      object: "/images/Products/temparture_sensor.webp",
+      url: "/Product/temperature-sensor"
     },
     {
       label: "TMPS Sensor",
