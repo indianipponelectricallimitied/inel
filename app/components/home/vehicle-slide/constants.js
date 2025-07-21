@@ -83,7 +83,7 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 50, y: -40 },
       end_point: { x: 150, y: -40 },
       canvas_position: { x: 150, y: -40 },
-      object: "/images/products/front-cluster.webp",
+      object: "/images/Products/front-cluster.webp",
       url: "/Product/cluster-front-facia"
     },
     {
@@ -93,7 +93,7 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 0, y: 0 },
       end_point: { x: -150, y: 10 },
       canvas_position: { x: -160, y: -10 },
-      object: "/images/products/throttle-body-sensors.webp",
+      object: "/images/Products/throttle-body-sensors.webp",
       url: "/Product/throttle-body-with-sensors"
     },
     {
@@ -113,7 +113,7 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 0, y: 0 },
       end_point: { x: 180, y: 0 },
       canvas_position: { x: 250, y: 0 },
-      object: "/images/products/tpms-sensor.webp",
+      object: "/images/Products/tpms-sensor.webp",
       url: "/Product/tpms-sensor"
     },
     {
@@ -123,7 +123,7 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 0, y: 0 },
       end_point: { x: -100, y: 0 },
       canvas_position: { x: -125, y: 10 },
-      object: "/images/products/Speed_Sensor-2-Wire.webp",
+      object: "/images/Products/Speed_Sensor-2-Wire.webp",
       url: "/Product/speed-sensor"
     },{
       label: "AC Generator",
@@ -132,19 +132,19 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 20, y: -120 },
       end_point: { x: 170, y: -150 },
       canvas_position: { x: 220, y: -180 },
-      object: "/images/products/ac-generator.webp",
+      object: "/images/Products/ac-generator.webp",
       url: "/Product/ac-generator"
     },
-    {
-      label: "Ignition Coil",
-      marker_x: 250, marker_y: 210,
-      start_point: { x: 0, y: 0 },
-      mid_point: { x: 20, y: 100 },
-      end_point: { x: 170, y: 100 },
-      canvas_position: { x: 240, y: 100 },
-      object: "/images/products/ac-generator.webp",
-      url: "/Product/ac-generator"
-    }
+    // {
+    //   label: "Ignition Coil",
+    //   marker_x: 250, marker_y: 210,
+    //   start_point: { x: 0, y: 0 },
+    //   mid_point: { x: 20, y: 100 },
+    //   end_point: { x: 170, y: 100 },
+    //   canvas_position: { x: 240, y: 100 },
+    //   object: "/images/Products/ac-generator.webp",
+    //   url: "/Product/ac-generator"
+    // }
     
   ],
   "2W_EV": [
@@ -156,7 +156,7 @@ export const VEHICLE_HOTSPOTS = {
       end_point: { x: 180, y: -60 },
       canvas_position: { x: 250, y: -60 },
       object: "/images/home/BLDC.webp",
-      url: "/products/bldc-controller"
+      url: "/product/bldc-controller"
     },
     {
       label: "7.4-inch-tft-instrument cluster",
@@ -166,7 +166,7 @@ export const VEHICLE_HOTSPOTS = {
       end_point: { x: 150, y: -40 },
       canvas_position: { x: 225, y: -20 },
       object: "/images/home/cluster.png",
-      url: "/products/instrument-cluster"
+      url: "/Product/instrument-cluster"
     },
     {
       label: "Speed Sensor - Wire Type",
@@ -175,19 +175,20 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 0, y: 0 },
       end_point: { x: -100, y: 0 },
       canvas_position: { x: -125, y: 10 },
-      object: "/images/products/Speed_Sensor-2-Wire.webp",
+      object: "/images/Products/Speed_Sensor-2-Wire.webp",
       url: "/Product/speed-sensor"
     },
     {
-      label: "TMPS Sensor",
+      label: "TPMS Sensor",
       marker_x: 375, marker_y: 220,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
       end_point: { x: 180, y: 0 },
       canvas_position: { x: 250, y: 0 },
-      object: "/images/products/tpms-sensor.webp",
+      object: "/images/Products/tpms-sensor.webp",
       url: "/Product/tpms-sensor"
-    }
+    },
+
   ],
   "3W_IC": [
     {
@@ -207,7 +208,7 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 50, y: -40 },
       end_point: { x: 150, y: -40 },
       canvas_position: { x: 220, y: -40 },
-      object: "/images/products/track-tps.webp",
+      object: "/images/Products/track-tps.webp",
       url: "/Product/dual-track-tps"
     },
     {
@@ -217,7 +218,7 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 60, y: -60 },
       end_point: { x: 110, y: -60 },
       canvas_position: { x: 180, y: -60 },
-      object: "/images/products/reverse-parking.webp",
+      object: "/images/Products/reverse-parking.webp",
       url: "/Product/reverse-parking-assist-system"
     },
     {
@@ -227,8 +228,8 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 0, y: 0 },
       end_point: { x: -100, y: 0 },
       canvas_position: { x: -125, y: 10 },
-      object: "/images/products/Speed_Sensor-2-Wire.webp",
-      url: "/products/bldc-controller"
+      object: "/images/Products/Speed_Sensor-2-Wire.webp",
+      url: "/product/bldc-controller"
     },
     {
       label: "Temperature Sensor",
@@ -237,19 +238,19 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 50, y: -110 },
       end_point: { x: 150, y: -150 },
       canvas_position: { x: 225, y: -150 },
-      object: "/images/products/temparture_sensor.webp",
-      url: "/products/control-panel"
+      object: "/images/Products/temparture_sensor.webp",
+      url: "/product/control-panel"
     },
-    {
-      label: "Ignition coil",
-      marker_x: 230, marker_y: 220,
-      start_point: { x: 0, y: 0 },
-      mid_point: { x: 20, y: -90 },
-      end_point: { x: 100, y: -200 },
-      canvas_position: { x: 170, y: -200 },
-      object: "/images/home/ControlPanel.webp",
-      url: "#"
-    },
+    // {
+    //   label: "Ignition coil",
+    //   marker_x: 230, marker_y: 220,
+    //   start_point: { x: 0, y: 0 },
+    //   mid_point: { x: 20, y: -90 },
+    //   end_point: { x: 100, y: -200 },
+    //   canvas_position: { x: 170, y: -200 },
+    //   object: "/images/home/ControlPanel.webp",
+    //   url: "#"
+    // },
     {
       label: "AC Generator",
       marker_x: 270, marker_y: 220,
@@ -257,18 +258,18 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 20, y: -90 },
       end_point: { x: 170, y: -150 },
       canvas_position: { x: 220, y: -180 },
-      object: "/images/products/ac-generator.webp",
+      object: "/images/Products/ac-generator.webp",
       url: "/Product/ac-generator"
     },
     {
-      label: "TMPS",
+      label: "TPMS Sensor",
       marker_x: 350, marker_y: 250,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
       end_point: { x: 200, y: -10 },
       canvas_position: { x: 275, y: 0 },
-      object: "/images/products/ac-generator.webp",
-      url: "/Product/ac-generator"
+      object: "/images/Products/tpms-sensor.webp",
+      url: "/Product/tpms-sensor"
     }
     
   ],
@@ -296,24 +297,94 @@ export const VEHICLE_HOTSPOTS = {
   // ],
   "CC_IC": [
     {
-      label: "Gear Position Sensor",
-      marker_x: 430, marker_y: 28,
+      label: "Reverse Parking Assist System - Sensors",
+      marker_x: 445, marker_y: 155,
       start_point: { x: 0, y: 0 },
-      mid_point: { x: 50, y: -60 },
-      end_point: { x: 150, y: -60 },
-      canvas_position: { x: 150, y: -60 },
-      object: "/images/home/Gear.png",
-      url: "/products/gear-sensor"
+      mid_point: { x: 0, y: 0 },
+      end_point: { x: 150, y: 0 },
+      canvas_position: { x: 220, y: 0 },
+      object: "/images/Products/reverse-parking.webp",
+      url: "/Product/reverse-parking-assist-system"
+    },
+    // {
+    //   label: "Fuel Vapor Purge (FVP)",
+    //   marker_x: 412, marker_y: 150,
+    //   start_point: { x: 0, y: 0 },
+    //   mid_point: { x: 60, y: -60 },
+    //   end_point: { x: 180, y: -60 },
+    //   canvas_position: { x: 180, y: -60 },
+    //   object: "/images/home/Fuel_Vapor_Purge.webp",
+    //   url: "/product/fuel-vapor-purge"
+    // },
+    {
+      label: "Speed Sensor - Wire Type",
+      marker_x: 97, marker_y: 183,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 0, y: 0 },
+      end_point: { x: -100, y: 0 },
+      canvas_position: { x: -125, y: 10 },
+      object: "/images/Products/Speed_Sensor-2-Wire.webp",
+      url: "/product/bldc-controller"
     },
     {
-      label: "Fuel Vapor Purge (FVP)",
-      marker_x: 412, marker_y: 150,
+      label: "Oil Level Sensor",
+      marker_x: 110, marker_y: 140,
       start_point: { x: 0, y: 0 },
-      mid_point: { x: 60, y: -60 },
-      end_point: { x: 180, y: -60 },
-      canvas_position: { x: 180, y: -60 },
-      object: "/images/home/Fuel_Vapor_Purge.webp",
-      url: "/products/fuel-vapor-purge"
+      mid_point: { x: -60, y: 100 },
+      end_point: { x: -100, y: 100 },
+      canvas_position: { x: -127, y: 120 },
+      object: "/images/Products/oil_lvl_sensor.webp",
+      url: "/Product/oil-level-sensor"
+    },
+    // {
+    //   label: "Multi-Function",
+    //   marker_x: 135, marker_y: 133,
+    //   start_point: { x: 0, y: 0 },
+    //   mid_point: { x: 100, y: -190 },
+    //   end_point: { x: 330, y: -200 },
+    //   canvas_position: { x: 400, y: -155 },
+    //   object: "/images/Products/Speed_Sensor-2-Wire.webp",
+    //   url: "#"
+    // },
+    {
+      label: "Oil Level Sensor",
+      marker_x: 70, marker_y: 135,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 0, y: 0 },
+      end_point: { x: -100, y: 0 },
+      canvas_position: { x: -125, y: 10 },
+      object: "/images/Products/oil_lvl_sensor.webp",
+      url: "/Product/oil-level-sensor"
+    },
+    {
+      label: "Crank / CAM Sensor",
+      marker_x: 40, marker_y: 125,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 0, y: 0 },
+      end_point: { x: -100, y: 0 },
+      canvas_position: { x: -125, y: 10 },
+      object: "/images/Products/crank_cam_sensor.webp",
+      url: "/Product/speed-sensors-crank-sensors"
+    },
+    {
+      label: "Steering Angle Sensor",
+      marker_x: 60, marker_y: 100,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 60, y: -100 },
+      end_point: { x: 140, y: -130 },
+      canvas_position: { x: 210, y: -145 },
+      object: "/images/Products/steering-angle.webp",
+      url: "/Product/steering-angle-sensor"
+    },
+    {
+      label: "TPMS Sensor",
+      marker_x: 365, marker_y: 180,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 0, y: 0 },
+      end_point: { x: 200, y: -10 },
+      canvas_position: { x: 275, y: 0 },
+      object: "/images/Products/tpms-sensor.webp",
+      url: "/Product/tpms-sensor"
     }
   ],
   // "CC_EV": [
