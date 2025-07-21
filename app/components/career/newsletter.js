@@ -71,8 +71,8 @@ export default function Newsletter({newsletterBg}) {
                         </button>
                     </form> */}
                     
-                    <Link href="/contact-us" className="w-fit block mt-5 mx-auto text-primary font-medium bg-white py-4 px-6 rounded-[14px]">
-                        Get in Touch
+                    <Link href="https://career.indianippon.com/indianippon/submit-your-resume" target="_blank" className="w-fit block mt-5 mx-auto text-primary font-medium bg-white py-4 px-6 rounded-[14px]">
+                        Apply Now
                     </Link>
                     
                     {/* <div className="my-6  relative ">

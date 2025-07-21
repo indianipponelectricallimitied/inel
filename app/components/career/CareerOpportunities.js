@@ -3,12 +3,20 @@ import Image from "next/image";
 import Button from "../Ui/button";
 import { useState } from "react";
 
-export default function CareerOpportunities({quickLinks}) {
+export default function CareerOpportunities({ quickLinks }) {
+    // Always start with Experienced Professionals as the first tab
     const [activeTab, setActiveTab] = useState(0);
     const [showInternDetails, setShowInternDetails] = useState(false);
 
-    // Content for each tab
+    // Define the tab content in the desired order
     const tabContent = [
+        {
+            title: "Experienced Professionals",
+            image: "/images/career/india-nippon-career-experienced-1.png",
+            description: "Professionals with over three years of experience, eager to play a pivotal role in driving success, fostering collaboration, and influencing change.",
+            buttonText: "Unlock New Horizons",
+            buttonLink: "https://career.indianippon.com/indianippon/joblistdept/Experienced Professionals"
+        },
         {
             title: "Recent Graduates",
             image: "/images/career/Career-Graduate.png",
@@ -16,13 +24,6 @@ export default function CareerOpportunities({quickLinks}) {
             buttonText: "Fuel Your Ambitions",
             buttonLink: "https://career.indianippon.com/indianippon/joblistdept/Recent%20Graduates"
         },
-        {
-            title: "Experienced Professionals",
-            image: "/images/career/india-nippon-career-experienced-1.png",
-            description: "Professionals with over three years of experience, eager to play a pivotal role in driving success, fostering collaboration, and influencing change.",
-            buttonText: "Unlock New Horizons",
-            buttonLink: "https://career.indianippon.com/indianippon/joblistdept/Experienced Professionals"
-        }, 
         {
             title: "Interns",
             image: "/images/career/career-Intern-2.png",
@@ -111,6 +112,20 @@ export default function CareerOpportunities({quickLinks}) {
         }
     ];
 
+    // Reorder quickLinks so "Experienced Professionals" is always first
+    const orderedQuickLinks = (() => {
+        if (!quickLinks || !Array.isArray(quickLinks)) return [];
+        const experiencedIndex = quickLinks.findIndex(
+            (link) =>
+                link.title &&
+                link.title.toLowerCase().includes("experienced professional")
+        );
+        if (experiencedIndex === -1) return quickLinks;
+        // Move Experienced Professionals to the front
+        const reordered = [quickLinks[experiencedIndex], ...quickLinks.slice(0, experiencedIndex), ...quickLinks.slice(experiencedIndex + 1)];
+        return reordered;
+    })();
+
     const handleTabClick = (index) => {
         setActiveTab(index);
         // Reset intern details readmore if switching away
@@ -121,13 +136,13 @@ export default function CareerOpportunities({quickLinks}) {
         <div className="container mx-auto flex flex-col lg:flex-row gap-8 justify-between">
             <div className="w-full lg:w-5/12 space-y-5">
                 <ul className="space-y-5  pt-10">
-                    {quickLinks.map((link, index) => (
+                    {orderedQuickLinks.map((link, index) => (
                         <li key={index}>
-                            <button 
+                            <button
                                 onClick={() => handleTabClick(index)}
                                 className={`border-black font-thin flex justify-between border-b pb-2 w-full text-left transition-all duration-300 ${
-                                    activeTab === index 
-                                        ? 'text-blue-600' 
+                                    activeTab === index
+                                        ? 'text-blue-600'
                                         : ''
                                 }`}
                             >
@@ -141,12 +156,12 @@ export default function CareerOpportunities({quickLinks}) {
                 </ul>
             </div>
             <div className="w-full lg:w-5/12 space-y-8">
-                <Image 
-                    src={tabContent[activeTab].image} 
-                    alt={tabContent[activeTab].title} 
-                    className="rounded-[20px] h-[280px] object-cover" 
-                    width={800} 
-                    height={800} 
+                <Image
+                    src={tabContent[activeTab].image}
+                    alt={tabContent[activeTab].title}
+                    className="rounded-[20px] h-[280px] object-cover"
+                    width={800}
+                    height={800}
                 />
                 <div>
                     {typeof tabContent[activeTab].description === "string"
@@ -159,7 +174,7 @@ export default function CareerOpportunities({quickLinks}) {
                         {tabContent[activeTab].buttonText}
                     </Button>
                 </div>
-            </div>    
+            </div>
         </div>
-    )
-}   
+    );
+}

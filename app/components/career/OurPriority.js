@@ -10,7 +10,7 @@ const accordions = [
       "header": "The Journey",
       content: [
         "With a legacy dating back to 1984, to becoming forerunners in advanced electronic systems, our journey in the automotive industry has been propelled by collective drive of individuals united by a shared vision. ",
-        "Our journey is a testament to the power of collaboration, innovation, and a shared vision. We are committed to shaping the future of the automotive industry, one step at a time.",
+        "We turn customer challenges into opportunities by leveraging the engineering expertise and skills of our people.",
         "From the foundational Flywheel Magnetos to our newest breakthroughs, our product portfolio is built on cutting-edge technology, notably our in-house built High Efficiency Regulator Rectifier systems, EV Motor Controllers, Sensors, Microcontrollers and ISG Controllers."
       ]
     },

@@ -57,32 +57,6 @@ export default function BlogSlide({ sildeperview, includeCategories }) {
         });
     }
 
-    // Adjust Swiper slide heights after Swiper is initialized and blogData is loaded
-    useEffect(() => {
-        // Only run if filteredBlogData is loaded and not loading or error
-        if (!isLoading && !error && filteredBlogData && filteredBlogData.length > 0) {
-            // Timeout to ensure DOM is updated after Swiper renders
-            const timer = setTimeout(() => {
-                const slides = document.querySelectorAll('.swiper-slide');
-                let maxHeight = 0;
-
-                // Find the max height
-                slides.forEach(slide => {
-                    slide.style.height = 'auto'; // Reset first
-                    const height = slide.offsetHeight;
-                    if (height > maxHeight) maxHeight = height;
-                });
-
-                // Apply max height to all
-                slides.forEach(slide => {
-                    slide.style.height = `${maxHeight}px`;
-                });
-            }, 100); // 100ms delay to allow Swiper to render
-
-            return () => clearTimeout(timer);
-        }
-    }, [isLoading, error, filteredBlogData]);
-
     // Fallback content for loading state
     if (isLoading) {
         return (
@@ -142,6 +116,12 @@ export default function BlogSlide({ sildeperview, includeCategories }) {
         }, obj);
     };
 
+    // --- FLEX STRETCH HEIGHT ALIGNMENT ---
+    // We'll use flexbox to stretch all slides to the same height.
+    // 1. Make Swiper container and .swiper-wrapper full height, flex.
+    // 2. Make .swiper-slide flex, items-stretch, and child .wrap flex-1 flex-col.
+    // 3. Remove JS height adjustment code.
+
     return (
         <div className="relative">
             <Swiper
@@ -158,27 +138,11 @@ export default function BlogSlide({ sildeperview, includeCategories }) {
                     nextEl: '.swiper-next',
                     prevEl: '.swiper-prev',
                 }}
-                onInit={() => {
-                    // Also run the height adjustment on Swiper init
-                    setTimeout(() => {
-                        const slides = document.querySelectorAll('.swiper-slide');
-                        let maxHeight = 0;
-
-                        slides.forEach(slide => {
-                            slide.style.height = 'auto';
-                            const height = slide.offsetHeight;
-                            if (height > maxHeight) maxHeight = height;
-                        });
-
-                        slides.forEach(slide => {
-                            slide.style.height = `${maxHeight}px`;
-                        });
-                    }, 100);
-                }}
+                // Remove onInit height adjustment
             >
                 {filteredBlogData.map((blog, index) => (
-                    <SwiperSlide key={blog.id || index} className="mb-16 blog-cut p-1">
-                        <div className="flex flex-col gap-5 p-3 rounded-[30px] border border-primary wrap transition-all duration-300">
+                    <SwiperSlide key={blog.id || index} className="mb-16 blog-cut p-1 flex">
+                        <div className="flex flex-col gap-5 p-3 rounded-[30px] border border-primary wrap transition-all duration-300 flex-1 h-full">
                             <Image
                                 src={blog.featured_image || "/images/placeholder.jpg"}
                                 alt={blog.title || "Blog post"}
@@ -192,6 +156,7 @@ export default function BlogSlide({ sildeperview, includeCategories }) {
 
                             <h1 className="text-xl font-medium line-clamp-2 h-[60px]">{blog.title}</h1>
                             <p className="text-sm line-clamp-3">{blog.intro}</p>
+                            <div className="flex-1"></div>
                             <Button
                                 variant="transparent"
                                 href={`/newsroom/${blog.slug || blog.id}`}
@@ -213,6 +178,25 @@ export default function BlogSlide({ sildeperview, includeCategories }) {
             </button>
             <Button variant="blue" href="/newsroom" className="mx-0">View All Posts</Button>
             <style jsx global>{`
+                /* Make Swiper and slides stretch to same height */
+                .swiper, .swiper-wrapper {
+                    height: 100%;
+                    display: flex;
+                }
+                .swiper-wrapper {
+                    align-items: stretch;
+                }
+                .swiper-slide {
+                    display: flex !important;
+                    align-items: stretch;
+                    height: auto !important;
+                }
+                .wrap {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1 1 0%;
+                    height: 100%;
+                }
                 .swiper-slide-active .wrap {
                     background-color: var(--primary);
                     color: white;

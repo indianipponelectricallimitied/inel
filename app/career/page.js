@@ -96,31 +96,52 @@ const testimonials = [
     },
 ]
 
+// Add mail and WhatsApp links to the relevant FAQ answers
 const accordions = [
     {
       "id": 1,
       "header": "Should I be concerned if a job offer from INEL asks for money transfers during the process?",
-      "content": "If a job offer from INEL asks for money transfers, you should be cautious. Legitimate companies typically do not ask for payments as part of the hiring process. It is likely a scam, and you should not send any money. Contact INEL directly through official channels to verify the legitimacy of the offer."
+      "content": (
+        <>
+          Yes, you should be very cautious. INEL does not require any money transfers or payments as part of our hiring process. If you receive a job offer requesting such payments, it is likely a scam. Please report it to our HR department at{" "}
+          <a href="mailto:admin@inel.co.in" className="text-blue-600 underline">admin@inel.co.in</a>{" "}
+          immediately, and do not disclose any personal or financial information.
+        </>
+      )
     },
     {
       "id": 2,
       "header": "How can I track the status of my application?",
-      "content": "You can track the status of your application by logging into the INEL career portal where you submitted your application. Alternatively, you can reach out to the HR department or the recruiter handling your application for updates."
+      "content": (
+        <>
+          To track the status of your application, please log in to your candidate profile on our career’s portal, where you can view real-time updates regarding your application. For additional inquiries, you may contact our HR department at{" "}
+          <a href="mailto:admin@inel.co.in" className="text-blue-600 underline">admin@inel.co.in</a>.{" "}
+          Alternatively, you can connect with us through WhatsApp –{" "}
+          <a
+            href="https://wa.me/917094445386"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-green-600 underline"
+          >
+            7094445386
+          </a>
+        </>
+      )
     },
     {
       "id": 3,
       "header": "What is the typical timeline for the hiring process at INEL?",
-      "content": "The typical hiring process at INEL may take anywhere from a few weeks to a couple of months. It includes application review, interviews, background checks, and final selection. The timeline can vary depending on the position and number of applicants."
+      "content": "The hiring process at INEL generally takes a few weeks, depending on the specific position and other factors. We aim to keep candidates updated during each stage."
     },
     {
       "id": 4,
       "header": "Can I apply for multiple positions at the same time?",
-      "content": "Yes, you can apply for multiple positions at INEL. However, it is advisable to ensure that your qualifications match the job requirements for each role. Applying for different positions can increase your chances of being considered for one of them."
+      "content": "No, you cannot apply for multiple positions at INEL simultaneously. Nevertheless, we encourage candidates to explore various opportunities that align with their skills and interests."
     },
     {
       "id": 5,
       "header": "What are the locations of job openings available at INEL?",
-      "content": "INEL job openings are available in various locations. You can check the current job listings on their official website to find positions in different regions. The availability of positions varies depending on business needs and specific job functions."
+      "content": "The locations for specific job openings at INEL will be mentioned alongside the respective job descriptions. Please refer to the job listing for detailed information about the location for each role. For the latest openings and more details, please explore our Job Opportunities."
     }
   ]
   
