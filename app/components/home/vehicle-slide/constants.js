@@ -87,6 +87,16 @@ export const VEHICLE_HOTSPOTS = {
       url: "/Product/cluster-front-facia"
     },
     {
+      label: "Throttle Position Sensor",
+      marker_x: 200, marker_y: 80,
+      start_point: { x: 0, y: 0 }, // start at marker location
+      mid_point: { x: 0, y: 0 },
+      end_point: { x: -150, y: 10 },
+      canvas_position: { x: -160, y: -10 },
+      object: "/images/products/throttle-body-sensors.webp",
+      url: "/Product/throttle-body-with-sensors"
+    },
+    {
       label: "BLDC Motor Controller",
       marker_x: 310, marker_y: 198,
       start_point: { x: 0, y: 0 },
@@ -95,6 +105,16 @@ export const VEHICLE_HOTSPOTS = {
       canvas_position: { x: 250, y: 100 },
       object: "/images/home/BLDC.webp",
       url: "/products/bldc-controller"
+    },
+    {
+      label: "TMPS Sensor",
+      marker_x: 375, marker_y: 220,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 0, y: 0 },
+      end_point: { x: 180, y: 0 },
+      canvas_position: { x: 250, y: 0 },
+      object: "/images/products/tpms-sensor.webp",
+      url: "/Product/tpms-sensor"
     },
     {
       label: "Speed Sensor - Wire Type",
@@ -114,7 +134,18 @@ export const VEHICLE_HOTSPOTS = {
       canvas_position: { x: 220, y: -180 },
       object: "/images/products/ac-generator.webp",
       url: "/Product/ac-generator"
+    },
+    {
+      label: "Ignition Coil",
+      marker_x: 250, marker_y: 210,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 20, y: 100 },
+      end_point: { x: 170, y: 100 },
+      canvas_position: { x: 240, y: 100 },
+      object: "/images/products/ac-generator.webp",
+      url: "/Product/ac-generator"
     }
+    
   ],
   "2W_EV": [
     {
@@ -123,7 +154,7 @@ export const VEHICLE_HOTSPOTS = {
       start_point: { x: 0, y: 0 },
       mid_point: { x: 60, y: -60 },
       end_point: { x: 180, y: -60 },
-      canvas_position: { x: 180, y: -60 },
+      canvas_position: { x: 250, y: -60 },
       object: "/images/home/BLDC.webp",
       url: "/products/bldc-controller"
     },
@@ -133,9 +164,29 @@ export const VEHICLE_HOTSPOTS = {
       start_point: { x: 0, y: 0 },
       mid_point: { x: 50, y: -40 },
       end_point: { x: 150, y: -40 },
-      canvas_position: { x: 150, y: -40 },
+      canvas_position: { x: 225, y: -20 },
       object: "/images/home/cluster.png",
       url: "/products/instrument-cluster"
+    },
+    {
+      label: "Speed Sensor - Wire Type",
+      marker_x: 110, marker_y: 220,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 0, y: 0 },
+      end_point: { x: -100, y: 0 },
+      canvas_position: { x: -125, y: 10 },
+      object: "/images/products/Speed_Sensor-2-Wire.webp",
+      url: "/Product/speed-sensor"
+    },
+    {
+      label: "TMPS Sensor",
+      marker_x: 375, marker_y: 220,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 0, y: 0 },
+      end_point: { x: 180, y: 0 },
+      canvas_position: { x: 250, y: 0 },
+      object: "/images/products/tpms-sensor.webp",
+      url: "/Product/tpms-sensor"
     }
   ],
   "3W_IC": [
