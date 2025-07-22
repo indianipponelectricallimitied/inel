@@ -13,10 +13,15 @@ const awards = [
         title: "Best Supplier for 2021-22",
     },
     {
-        image: "/images/home/ficci.png",
-        alt: "award",
-        title: "HR Summit & Score Awards 2024",
-    }
+        image: "/images/home/greatplacetowork.png",
+        alt: "greatplacetowork",
+        title: "Great Place to Work",
+    },
+    // {
+    //     image: "/images/home/ficci.png",
+    //     alt: "award",
+    //     title: "HR Summit & Score Awards 2024",
+    // }
 ]
 export default function Awards(){
     return(

@@ -7,7 +7,7 @@ export default function About(){
         <div className="container mx-auto py-20" id="about">
             <div className="flex flex-col-reverse lg:flex-row gap-10">
                 <div className="w-full lg:w-1/2">
-                    <Image src="/images/about/about-us.png" alt="about" width={800} height={500} 
+                    <Image src="/images/about/about.jpg" alt="about" width={800} height={500} 
                     className="rounded-3xl h-full w-full object-cover"
                     />
                 </div>

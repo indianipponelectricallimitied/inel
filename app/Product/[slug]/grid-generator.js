@@ -1,4 +1,7 @@
 import Image from 'next/image';
+import GlowingBox from '@/app/components/Ui/GlowingBox';
+// import { motion } from 'framer-motion';
+// import diamondgradient from '@/app/components/Ui/diamondgradient';
 
 export default function GridGenerator({grid, image}){
     // Convert specifications object to array of key-value pairs
@@ -34,18 +37,29 @@ export default function GridGenerator({grid, image}){
     return(
         <div className="w-[95%] md:w-[90%] mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-6 lg:grid-cols-10 gap-3 md:gap-4">
-                <div className='col-span-2 md:col-span-3 lg:col-span-3 row-span-3 shadow-[-1px_-1px_3px_-1px_#9eb2ff85] bg-[#fbfaff] rounded-[10px]'>
-                    <Image src={image} alt="Product Image" width={500} height={500}
-                        className='w-full h-full object-contain'
+                <GlowingBox
+                    borderColor="#9EB2FF"
+                    className="col-span-2 md:col-span-3 lg:col-span-3 row-span-3 shadow-[-1px_-1px_3px_-1px_#9eb2ff85] bg-[#F5F5F5] rounded-[10px] flex items-center justify-center hover:scale-105 transition-all duration-300"
+                >
+                    <Image
+                        src={image}
+                        alt="Product Image"
+                        width={500}
+                        height={500}
+                        className="w-full h-full object-contain"
                     />
-                </div>
+                </GlowingBox>
                 {specificationArray.map((spec, index) => (
-                    <div key={index} className={`bg-[#fbfaff] rounded-[10px] p-3 md:p-4 lg:p-6
-                    flex flex-col justify-center
-                    shadow-[-1px_-1px_3px_-1px_#9eb2ff85] ${getResponsiveClass(index)}`}>
+                    <GlowingBox
+                        key={index}
+                        borderColor="#9EB2FF"
+                        className={`bg-[#F5F5F5] rounded-[10px] p-3 md:p-4 lg:p-6
+                        flex flex-col justify-center
+                        shadow-[-1px_-1px_3px_-1px_#9eb2ff85] ${getResponsiveClass(index)} hover:scale-105 transition-all duration-300`}
+                    >
                         <p className="text-sm md:text-base lg:text-lg text-[#5F5F5F] mb-1">{spec.title}</p>
                         <h2 className="text-sm md:text-base lg:text-lg font-medium">{spec.value}</h2>
-                    </div>
+                    </GlowingBox>
                 ))}
             </div>
         </div>

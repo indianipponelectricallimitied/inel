@@ -65,7 +65,7 @@ export default function GlowingBox({ children, borderColor = "#9EB2FF", style = 
                     top: 50%;
                     transform: translate(-50%, -50%);
                     border-radius: inherit;
-                    border: 2px solid transparent;
+                    border: 4px solid transparent;
                     background: var(--border-color);
                     mask: linear-gradient(#0000, #0000), conic-gradient(from calc((
                                 var(--start) - (20 * 1.1)
