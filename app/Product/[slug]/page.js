@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Button from '@/app/components/Ui/button';
 import { GoArrowDown } from "react-icons/go";
 
-
 import ApiService from '@/app/services/api';
 import FeaturesSlider from './features-slider';
 import GridGenerator from './grid-generator';
@@ -59,6 +58,12 @@ export default function ProductPage() {
         ? (product.pdf.startsWith('http') ? product.pdf : `${BASE_URL}${product.pdf}`)
         : "#";
 
+    // Check if features data exists and is non-empty
+    const hasFeatures =
+        product.features &&
+        typeof product.features === 'object' &&
+        Object.keys(product.features).length > 0;
+
     return (
         <>
             <div className="grid-with-gradients">
@@ -71,14 +76,14 @@ export default function ProductPage() {
                 </div>
             </div>
 
-            
-            <section className='bg-[url(/images/Products/featuresbg.png)] bg-cover bg-center' > 
-                <div className='container mx-auto px-5 py-20'>
-                    <h1 className="text-white text-center">Features & Benefits</h1>
-                    <FeaturesSlider features={product.features} />
-                </div>
-            </section>
-            
+            {hasFeatures && (
+                <section className='bg-[url(/images/Products/featuresbg.png)] bg-cover bg-center' > 
+                    <div className='container mx-auto px-5 py-20'>
+                        <h1 className="text-white text-center">Features & Benefits</h1>
+                        <FeaturesSlider features={product.features} />
+                    </div>
+                </section>
+            )}
 
             <div className="grid-with-gradients">
                 <div className="gradient-sphere w-[800px] h-[800px] -top-[400px] -right-[400px]" ></div>
