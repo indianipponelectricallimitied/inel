@@ -29,11 +29,11 @@ const team = [
     // },
    
   
-    {
-        image: "/images/about/Subtract.png",
-        name: "Mr. R. Umashankar",
-        position: "Chief Technical Officer",
-    },
+    // {
+    //     image: "/images/about/Subtract.png",
+    //     name: "Mr. R. Umashankar",
+    //     position: "Chief Technical Officer",
+    // },
     {
         image: "/images/about/Kanakaraju.png",
         name: "Mr. Kanakaraju",
