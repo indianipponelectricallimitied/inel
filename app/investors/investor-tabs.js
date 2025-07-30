@@ -6,10 +6,20 @@ import MobileAccordion from '../components/Ui/mobile-accordion';
 import { GoArrowUpRight } from "react-icons/go";
 import Image from 'next/image';
 
-export default function InvestorTabs() {
+export default function InvestorTabs({ 
+    openPoliciesAccordion, 
+    setOpenPoliciesAccordion,
+    openCorporateGovernanceAccordion,
+    setOpenCorporateGovernanceAccordion,
+    openInvestorMeetAccordion,
+    setOpenInvestorMeetAccordion
+}) {
     const [investorData, setInvestorData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [activeTab, setActiveTab] = useState(0);
+    const [activeAccordion, setActiveAccordion] = useState(null);
+    const [highlightedAccordion, setHighlightedAccordion] = useState(null);
+    const [activeMainAccordion, setActiveMainAccordion] = useState(null);
 
     useEffect(() => {
         const fetchInvestorData = async () => {
@@ -25,6 +35,78 @@ export default function InvestorTabs() {
 
         fetchInvestorData();
     }, []);
+
+    // Handle opening policies accordion
+    useEffect(() => {
+        if (openPoliciesAccordion && investorData.length > 0) {
+            // Find the main item with id 11 (Disclos.underReg .46 of SEBI (LODR))
+            const mainItemIndex = investorData.findIndex(item => item.id === 11);
+            if (mainItemIndex !== -1) {
+                setActiveTab(mainItemIndex);
+                // Set the subheading with id 69 as active accordion
+                setActiveAccordion(69);
+                // Set main accordion as active for mobile
+                setActiveMainAccordion(11);
+                // Highlight the policies accordion
+                setHighlightedAccordion(69);
+                // Reset the flag
+                setOpenPoliciesAccordion(false);
+                
+                // Remove highlight after 3 seconds
+                setTimeout(() => {
+                    setHighlightedAccordion(null);
+                }, 3000);
+            }
+        }
+    }, [openPoliciesAccordion, investorData, setOpenPoliciesAccordion]);
+
+    // Handle opening corporate governance accordion
+    useEffect(() => {
+        if (openCorporateGovernanceAccordion && investorData.length > 0) {
+            // Find the main item with id 11 (Disclos.underReg .46 of SEBI (LODR))
+            const mainItemIndex = investorData.findIndex(item => item.id === 11);
+            if (mainItemIndex !== -1) {
+                setActiveTab(mainItemIndex);
+                // Set the subheading with id 48 as active accordion
+                setActiveAccordion(48);
+                // Set main accordion as active for mobile
+                setActiveMainAccordion(11);
+                // Highlight the corporate governance accordion
+                setHighlightedAccordion(48);
+                // Reset the flag
+                setOpenCorporateGovernanceAccordion(false);
+                
+                // Remove highlight after 3 seconds
+                setTimeout(() => {
+                    setHighlightedAccordion(null);
+                }, 3000);
+            }
+        }
+    }, [openCorporateGovernanceAccordion, investorData, setOpenCorporateGovernanceAccordion]);
+
+    // Handle opening investor meet accordion
+    useEffect(() => {
+        if (openInvestorMeetAccordion && investorData.length > 0) {
+            // Find the main item with id 14 (Investor's Meet/Presentation)
+            const mainItemIndex = investorData.findIndex(item => item.id === 14);
+            if (mainItemIndex !== -1) {
+                setActiveTab(mainItemIndex);
+                // Set the subheading with id 21 as active accordion
+                setActiveAccordion(21);
+                // Set main accordion as active for mobile
+                setActiveMainAccordion(14);
+                // Highlight the investor meet accordion
+                setHighlightedAccordion(21);
+                // Reset the flag
+                setOpenInvestorMeetAccordion(false);
+                
+                // Remove highlight after 3 seconds
+                setTimeout(() => {
+                    setHighlightedAccordion(null);
+                }, 3000);
+            }
+        }
+    }, [openInvestorMeetAccordion, investorData, setOpenInvestorMeetAccordion]);
 
     if (loading) {
         return (
@@ -107,7 +189,10 @@ export default function InvestorTabs() {
                         <div className="space-y-4">
                             <MobileAccordion 
                                 key={`mobile-accordion-${item.id}`}
-                                accordionData={transformToAccordionData(item.subheadings)} 
+                                accordionData={transformToAccordionData(item.subheadings)}
+                                initialActive={activeAccordion}
+                                onActiveChange={setActiveAccordion}
+                                highlightedId={highlightedAccordion}
                             />
                         </div>
                     )}
@@ -163,7 +248,10 @@ export default function InvestorTabs() {
                                 <div className="space-y-4">
                                     <Accordion 
                                         key={`accordion-${item.id}-${activeTab}`}
-                                        accordionData={transformToAccordionData(item.subheadings)} 
+                                        accordionData={transformToAccordionData(item.subheadings)}
+                                        initialActive={activeAccordion}
+                                        onActiveChange={setActiveAccordion}
+                                        highlightedId={highlightedAccordion}
                                     />
                                 </div>
                             )}
@@ -176,7 +264,9 @@ export default function InvestorTabs() {
             <div className="block md:hidden">
                 <MobileAccordion 
                     key="mobile-main-accordion"
-                    accordionData={transformMainToAccordionData()} 
+                    accordionData={transformMainToAccordionData()}
+                    initialActive={activeMainAccordion}
+                    onActiveChange={setActiveMainAccordion}
                 />
             </div>
         </>

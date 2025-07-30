@@ -11,18 +11,18 @@ import Newsletter from "../components/Common/newsletter"
 import IndiaMap from "../components/aftermarket/indiamap"
 
 const quickLinks = [
-    {
-      title: "Installation Guides",
-      href: "#",
-    },
-    {
-      title: "Product Documentation",
-      href: "#",
-    },
-    {
-      title: "Troubleshooting Assistance",
-      href: "#",
-    }
+    // {
+    //   title: "Installation Guides",
+    //   href: "#",
+    // },
+    // {
+    //   title: "Product Documentation",
+    //   href: "#",
+    // },
+    // {
+    //   title: "Troubleshooting Assistance",
+    //   href: "#",
+    // }
   ];
 
   const testimonials = [
@@ -61,16 +61,17 @@ export default function aftermarket(){
 
 
         <div className="container mx-auto flex flex-col lg:flex-row gap-12  py-20">
-            <div className="lg:w-2/5 space-y-8">
+            <div className="w-full text-center space-y-8">
                 <h1 >Perfect parts tailored for your needs.</h1>
                 <p >Whether you need ignition systems, relays, or regulators, 
                     we offer a wide selection of high-quality aftermarket products. 
-                    Browse our categories to find the right fit for your vehicle.</p>
-                <p>Use our smart filters to locate the perfect match for your vehicle.</p>
+                    {/* Browse our categories to find the right fit for your vehicle. */}
+                    </p>
+                {/* <p>Use our smart filters to locate the perfect match for your vehicle.</p> */}
             </div>
-            <div className="lg:w-3/5">
+            {/* <div className="lg:w-3/5">
                 <SearchAftermarket />
-            </div>
+            </div> */}
         </div>
 
         {/* <section className="container mx-auto space-y-10 md:space-y-20 pb-20  ">

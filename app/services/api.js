@@ -280,6 +280,8 @@ class ApiService {
                 field && calculateSimilarity(searchTerm, field)
             );
         });
+
+        
     }
 }
 

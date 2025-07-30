@@ -1,0 +1,32 @@
+
+:root {
+  --hotspot-pink: #13419c9c;
+  --hotspot-pink-dark: #13409c; /* 10% darker than #ff93df */
+  --sonar-size: 12px; /* Increased from 10px to 14px for a wider beat */
+}
+
+@keyframes sonar {
+  from {
+    box-shadow: 0 0 0 0  #4a6291, 0 0 4px 2px rgba(82, 89, 153, 0.459);
+  }
+  to {
+    box-shadow: 0 0 0 15px rgba(37, 26, 34, 0), 0 0 4px 2px rgba(50, 75, 216, 0.637);
+    /* Increased width of the animated shadow from 10px to 24px */
+  }
+}
+
+.sonar {
+  width: var(--sonar-size);
+  height: var(--sonar-size);
+  border-radius: 50%;
+  display: inline-block;
+  background-color: var(--hotspot-pink);
+  border: 2px solid var(--hotspot-pink-dark);
+  animation: sonar 800ms ease-out infinite;
+  /* z-index: 100 !important; */
+}
+svg circle{
+  fill: #13409c;
+  stroke: #13419c9c;
+  /* z-index: 1; */
+}

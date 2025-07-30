@@ -1,5 +1,6 @@
 "use client";
 import Image from 'next/image';
+import './hotspot.css';
 
 function generateLinePath(start, mid, end) {
   return `<svg width="200" height="100" style="overflow:visible" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +25,7 @@ export default function Hotspot({
 }) {
   return (
     <div
-      className="hotspot-wrapper"
+      className="hotspot-wrapper sonar"
       style={{
         position: 'absolute',
         left: `${marker_x}px`,

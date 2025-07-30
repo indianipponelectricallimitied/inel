@@ -3,11 +3,6 @@ import Image from "next/image";
 
 const awards = [
     {
-        image: "/images/home/acma.png",
-        alt: "acma",
-        title: "Best Cluster Company Award by ACMA",
-    },
-    {
         image: "/images/home/tvs.png",
         alt: "tvs",
         title: "Best Supplier for 2021-22",
@@ -17,6 +12,12 @@ const awards = [
         alt: "greatplacetowork",
         title: "Great Place to Work",
     },
+    {
+        image: "/images/home/acma.png",
+        alt: "acma",
+        title: "Best Cluster Company Award by ACMA",
+    },
+   
     // {
     //     image: "/images/home/ficci.png",
     //     alt: "award",

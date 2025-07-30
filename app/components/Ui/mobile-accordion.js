@@ -1,16 +1,30 @@
 "use client"
 import { HiArrowRight } from "react-icons/hi";
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 // MobileAccordionItem Component
-const MobileAccordionItem = ({ accordion, active, handleToggle }) => {
+const MobileAccordionItem = ({ accordion, active, handleToggle, isHighlighted = false }) => {
+  const itemRef = useRef();
   const { id, header, content } = accordion;
 
+  // Scroll to highlighted item
+  useEffect(() => {
+    if (isHighlighted && itemRef.current) {
+      const timer = setTimeout(() => {
+        itemRef.current.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center' 
+        });
+      }, 500); // Delay to ensure accordion is opened
+      return () => clearTimeout(timer);
+    }
+  }, [isHighlighted]);
+
   return (
-    <div className="rc-accordion-card  rounded-[20px] mb-2"> 
+    <div ref={itemRef} className={`rc-accordion-card rounded-[20px] mb-2 ${isHighlighted ? 'bg-blue-100 border-2 border-blue-300' : ''}`}> 
       <div className="rc-accordion-header">
         <div
-          className={`rc-accordion-toggle p-5 px-6 cursor-pointer  ${active === id ? 'active' : ''}`}
+          className={`rc-accordion-toggle p-5 px-6 cursor-pointer ${active === id ? 'active' : ''} ${isHighlighted ? 'bg-blue-50' : ''}`}
           onClick={() => handleToggle(id)}
         >
           <h4 className="rc-accordion-title text-xl">{header}</h4>
@@ -30,11 +44,22 @@ const MobileAccordionItem = ({ accordion, active, handleToggle }) => {
 };
 
 // MobileAccordion Component
-export default function MobileAccordion({accordionData}) {
-  const [active, setActive] = useState(null);
+export default function MobileAccordion({accordionData, initialActive = null, onActiveChange, highlightedId = null}) {
+  const [active, setActive] = useState(initialActive);
+
+  // Update active state when initialActive prop changes
+  useEffect(() => {
+    if (initialActive !== null) {
+      setActive(initialActive);
+    }
+  }, [initialActive]);
 
   const handleToggle = (index) => {
-    setActive(active === index ? null : index);
+    const newActive = active === index ? null : index;
+    setActive(newActive);
+    if (onActiveChange) {
+      onActiveChange(newActive);
+    }
   };
 
   return (
@@ -45,6 +70,7 @@ export default function MobileAccordion({accordionData}) {
             active={active}
             handleToggle={handleToggle}
             accordion={accordion}
+            isHighlighted={highlightedId === accordion.id}
         />
         ))}
     </div>

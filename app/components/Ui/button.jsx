@@ -14,8 +14,23 @@ export default function Button({
     href = '#', 
     hasArrow = true || false, 
     variant = 'blue',
+    onClick,
     ...props 
 }) {
+    // If onClick is provided, render as button instead of Link
+    if (onClick) {
+        return (
+            <button 
+                onClick={onClick}
+                className={`${buttonStyles[variant]} py-2 px-5 ${className}`} 
+                {...props}
+            >
+                {children}
+                {hasArrow && <GoArrowUpRight className="text-[20px]" />}
+            </button>
+        );
+    }
+
     return (
         <Link 
             href={href} 

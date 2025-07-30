@@ -16,7 +16,7 @@ const logos = [
     alt: "bajaj",
   },
   {
-    src: "/images/home/companies/polaris.svg",
+    src: "/images/home/companies/polaris.png",
     alt: "polaris",
   },
   {

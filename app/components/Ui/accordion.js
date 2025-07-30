@@ -1,10 +1,12 @@
 "use client"
 import { HiArrowRight } from "react-icons/hi";
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 // AccordionItem Component
-const AccordionItem = ({ accordion, active, handleToggle }) => {
+const AccordionItem = ({ accordion, active, handleToggle, isHighlighted = false }) => {
   const contentEl = useRef();
+  const itemRef = useRef();
+  const [contentHeight, setContentHeight] = useState('0px');
   const { id, header, content } = accordion;
 
   // Function to render content based on its type
@@ -31,11 +33,55 @@ const AccordionItem = ({ accordion, active, handleToggle }) => {
     return content;
   };
 
+  // Update content height when active state changes
+  useEffect(() => {
+    if (active === id && contentEl.current) {
+      // Small delay to ensure content is rendered
+      const timer = setTimeout(() => {
+        if (contentEl.current) {
+          setContentHeight(`${contentEl.current.scrollHeight}px`);
+        }
+      }, 10);
+      return () => clearTimeout(timer);
+    } else {
+      setContentHeight('0px');
+    }
+  }, [active, id]);
+
+  // Scroll to highlighted item
+  useEffect(() => {
+    if (isHighlighted && itemRef.current) {
+      const timer = setTimeout(() => {
+        // Get the tab content container
+        const tabContent = itemRef.current.closest('.tab-content');
+        if (tabContent) {
+          const itemRect = itemRef.current.getBoundingClientRect();
+          const containerRect = tabContent.getBoundingClientRect();
+          
+          // Calculate the scroll position to show the item with some padding
+          const scrollTop = tabContent.scrollTop + (itemRect.top - containerRect.top) - 40;
+          
+          tabContent.scrollTo({
+            top: scrollTop,
+            behavior: 'smooth'
+          });
+        } else {
+          // Fallback to scrollIntoView
+          itemRef.current.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start'
+          });
+        }
+      }, 600); // Slightly longer delay to ensure accordion is fully opened
+      return () => clearTimeout(timer);
+    }
+  }, [isHighlighted]);
+
   return (
-    <div className="rc-accordion-card bg-[#ebedf0] rounded-[20px]"> 
+    <div ref={itemRef} className={`rc-accordion-card rounded-[20px] ${isHighlighted ? 'bg-blue-100 border-2 border-blue-300 mt-4' : 'bg-[#ebedf0]'}`}> 
       <div className="rc-accordion-header">
         <div
-          className={`rc-accordion-toggle p-5 px-6 ${active === id ? 'active' : ''}`}
+          className={`rc-accordion-toggle p-5 px-6 ${active === id ? 'active' : ''} ${isHighlighted ? 'bg-blue-50' : ''}`}
           onClick={() => handleToggle(id)}
         >
           <h4 className="rc-accordion-title text-xl">{header}</h4>
@@ -47,7 +93,7 @@ const AccordionItem = ({ accordion, active, handleToggle }) => {
       <div
         ref={contentEl}
         className={`rc-collapse ${active === id ? 'show' : ''}`}
-        style={active === id ? { height: contentEl.current.scrollHeight } : { height: '0px' }}
+        style={{ height: contentHeight, transition: 'height 0.3s ease' }}
       >
         <div className="rc-accordion-body p-5 px-6">
           {renderContent(content)}
@@ -58,11 +104,22 @@ const AccordionItem = ({ accordion, active, handleToggle }) => {
 };
 
 // Accordion Component
-export default function Accordion({accordionData}) {
-  const [active, setActive] = useState(null);
+export default function Accordion({accordionData, initialActive = null, onActiveChange, highlightedId = null}) {
+  const [active, setActive] = useState(initialActive);
+
+  // Update active state when initialActive prop changes
+  useEffect(() => {
+    if (initialActive !== null) {
+      setActive(initialActive);
+    }
+  }, [initialActive]);
 
   const handleToggle = (index) => {
-    setActive(active === index ? null : index);
+    const newActive = active === index ? null : index;
+    setActive(newActive);
+    if (onActiveChange) {
+      onActiveChange(newActive);
+    }
   };
 
   return (
@@ -73,6 +130,7 @@ export default function Accordion({accordionData}) {
             active={active}
             handleToggle={handleToggle}
             accordion={accordion}
+            isHighlighted={highlightedId === accordion.id}
         />
         ))}
     </div>

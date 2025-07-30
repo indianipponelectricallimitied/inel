@@ -51,18 +51,18 @@ export default function ProductPage() {
         );
     }
 
-    const graphUrl = product.graph
-        ? (product.graph.startsWith('http') ? product.graph : `${BASE_URL}${product.graph}`)
-        : null;
+    // const graphUrl = product.graph
+    //     ? (product.graph.startsWith('http') ? product.graph : `${BASE_URL}${product.graph}`)
+    //     : null;
     const pdfUrl = product.pdf
         ? (product.pdf.startsWith('http') ? product.pdf : `${BASE_URL}${product.pdf}`)
         : "#";
 
     // Check if features data exists and is non-empty
-    const hasFeatures =
-        product.features &&
-        typeof product.features === 'object' &&
-        Object.keys(product.features).length > 0;
+    // const hasFeatures =
+    //     product.features &&
+    //     typeof product.features === 'object' &&
+    //     Object.keys(product.features).length > 0;
 
     return (
         <>
@@ -76,7 +76,7 @@ export default function ProductPage() {
                 </div>
             </div>
 
-            {hasFeatures && (
+            {/* {hasFeatures && (
                 <section className='bg-[url(/images/Products/featuresbg.png)] bg-cover bg-center' > 
                     <div className='container mx-auto px-5 py-20'>
                         <h1 className="text-white text-center">Features & Benefits</h1>
@@ -92,9 +92,9 @@ export default function ProductPage() {
                     <h1 className="text-center pb-16">Specifications</h1>
                     <GridGenerator grid={product.specifications} image={product.image} />
                 </div>
-            </div>
+            </div> */}
 
-            {graphUrl && (
+            {/* {graphUrl && (
                 <section className='diamond-gradient'>  
                     <div className='container mx-auto px-5 py-20'>
                         <h1 className='text-white text-center pb-16'>Performance Graph</h1>
@@ -102,7 +102,7 @@ export default function ProductPage() {
                             className='mx-auto max-h-[500px] object-contain'/>
                     </div>
                 </section>
-            )}
+            )} */}
 
             <VehicleCategories vehicleCategories={product.vehicleCategories} />
 
@@ -117,14 +117,14 @@ export default function ProductPage() {
                             className="w-fit !bg-[#FCFCFC47] border-0">
                             Get Quote
                         </Button>
-                        <a 
+                        {/* <a 
                             href={pdfUrl} 
                             target='_blank' 
                             className='flex items-center gap-1 rounded-[10px] border-0 text-white border-primary py-2 px-5 w-fit bg-[#FCFCFC47]'
                         >
                             Download DataSheet
                             <GoArrowDown className='text-[20px]' />
-                        </a>
+                        </a> */}
                     </div>
                 </div>
             </section>

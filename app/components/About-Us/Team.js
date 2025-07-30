@@ -7,11 +7,11 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 
 
 const team = [
-    {
-        image: "/images/about/person-1.png",
-        name: "Mr. T.K. Balaji",
-        position: "Chairman",
-    },
+    // {
+    //     image: "/images/about/person-1.png",
+    //     name: "Mr. T.K. Balaji",
+    //     position: "Chairman",
+    // },
     {
         image: "/images/about/person-2.png",
         name: "Mr. Arvind Balaji",
@@ -22,16 +22,21 @@ const team = [
         name: "Mr. Ravinder Sharma",
         position: "President",
     },
-    {
-        image: "/images/about/Subtract.png",
-        name: "Mr. Priyamvada Balaji",
-        position: "Non - Executive Director",
-    },
+    // {
+    //     image: "/images/about/Subtract.png",
+    //     name: "Mr. Priyamvada Balaji",
+    //     position: "Non - Executive Director",
+    // },
    
   
     {
         image: "/images/about/Subtract.png",
         name: "Mr. R. Umashankar",
+        position: "Chief Technical Officer",
+    },
+    {
+        image: "/images/about/Kanakaraju.png",
+        name: "Mr. Kanakaraju",
         position: "Chief Technical Officer",
     },
     {

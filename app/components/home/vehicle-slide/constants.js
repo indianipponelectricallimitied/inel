@@ -79,10 +79,10 @@ export const VEHICLE_HOTSPOTS = {
     {
       label: "Cluster Front Facia",
       marker_x: 220, marker_y: 40,
-      start_point: { x: 0, y: 0 }, // start at marker location
-      mid_point: { x: 50, y: -40 },
-      end_point: { x: 150, y: -40 },
-      canvas_position: { x: 150, y: -40 },
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: -50, y: -20 },
+      end_point: { x: -150, y: -20 },
+      canvas_position: { x: -178, y: 10 },
       object: "/images/Products/front-cluster.webp",
       url: "/Product/cluster-front-facia"
     },
@@ -123,7 +123,7 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 0, y: 0 },
       end_point: { x: -100, y: 0 },
       canvas_position: { x: -125, y: 10 },
-      object: "/images/Products/Speed_Sensor-2-Wire.webp",
+      object: "/images/Products/Speed_Sensor-2-wire.webp",
       url: "/Product/speed-sensor"
     },{
       label: "AC Generator",
@@ -162,9 +162,9 @@ export const VEHICLE_HOTSPOTS = {
       label: "7.4-inch-tft-instrument cluster",
       marker_x: 220, marker_y: 40,
       start_point: { x: 0, y: 0 },
-      mid_point: { x: 50, y: -40 },
-      end_point: { x: 150, y: -40 },
-      canvas_position: { x: 225, y: -20 },
+      mid_point: { x: -50, y: -20 },
+      end_point: { x: -150, y: -20 },
+      canvas_position: { x: -178, y: 10 },
       object: "/images/home/cluster.png",
       url: "/Product/instrument-cluster"
     },
@@ -175,7 +175,7 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 0, y: 0 },
       end_point: { x: -100, y: 0 },
       canvas_position: { x: -125, y: 10 },
-      object: "/images/Products/Speed_Sensor-2-Wire.webp",
+      object: "/images/Products/Speed_Sensor-2-wire.webp",
       url: "/Product/speed-sensor"
     },
     {
@@ -228,7 +228,7 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 0, y: 0 },
       end_point: { x: -100, y: 0 },
       canvas_position: { x: -125, y: 10 },
-      object: "/images/Products/Speed_Sensor-2-Wire.webp",
+      object: "/images/Products/Speed_Sensor-2-wire.webp",
       url: "/product/bldc-controller"
     },
     {
@@ -323,7 +323,7 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 0, y: 0 },
       end_point: { x: -100, y: 0 },
       canvas_position: { x: -125, y: 10 },
-      object: "/images/Products/Speed_Sensor-2-Wire.webp",
+      object: "/images/Products/Speed_Sensor-2-wire.webp",
       url: "/product/bldc-controller"
     },
     {
@@ -370,9 +370,9 @@ export const VEHICLE_HOTSPOTS = {
       label: "Steering Angle Sensor",
       marker_x: 60, marker_y: 100,
       start_point: { x: 0, y: 0 },
-      mid_point: { x: 60, y: -100 },
-      end_point: { x: 140, y: -130 },
-      canvas_position: { x: 210, y: -145 },
+      mid_point: { x: -60, y: -100 },
+      end_point: { x: -140, y: -130 },
+      canvas_position: { x: -210, y: -100 },
       object: "/images/Products/steering-angle.webp",
       url: "/Product/steering-angle-sensor"
     },
