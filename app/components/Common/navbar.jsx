@@ -317,17 +317,35 @@ const Navbar = () => {
                           {/* Right Side - Product Cards */}
                           <div className='w-3/4 pl-6'>
                             {/* Product Cards - Dynamic with filtered API data */}
-                            {filteredProducts.length > 5 ? (
+                            {filteredProducts.length > 4 ? (
                               <Swiper
                                 modules={[Pagination, Navigation]}
                                 spaceBetween={12}
-                                slidesPerView={5}
+                                slidesPerView={3}
                                 pagination={{ 
                                   clickable: true,
                                   dynamicBullets: true,
                                 }}
                                 navigation={true}
-                                className="product-swiper"
+                                className="mega-menu-product-swiper"
+                                breakpoints={{
+                                  640: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 12,
+                                  },
+                                  768: {
+                                    slidesPerView: 4,
+                                    spaceBetween: 12,
+                                  },
+                                  1024: {
+                                    slidesPerView: 4,
+                                    spaceBetween: 12,
+                                  },
+                                  1280: {
+                                    slidesPerView: 4,
+                                    spaceBetween: 12,
+                                  },
+                                }}
                               >
                                 {filteredProducts.map((product, subIndex) => (
                                   <SwiperSlide key={`product-card-${subIndex}`}>
@@ -343,7 +361,7 @@ const Navbar = () => {
                                         className="w-full h-20 object-contain mb-2"
                                       />
                                       <div className='flex items-end justify-between gap-1 w-full'>
-                                        <h3 className="text-sm font-medium  truncate w-2/3">{product.name}</h3>
+                                        <h3 className="text-sm font-medium  truncate w-11/12">{product.name}</h3>
                                         <div className='bg-white rounded-full p-1 border border-gray-300 group-hover:border-primary'>
                                           <FiArrowRight className='text-xs text-primary' />
                                         </div>
@@ -353,8 +371,8 @@ const Navbar = () => {
                                 ))}
                               </Swiper>
                             ) : (
-                              <div className='grid grid-cols-5 gap-3'>
-                                {filteredProducts.slice(0, 5).map((product, subIndex) => (
+                              <div className='grid grid-cols-4 gap-3'>
+                                {filteredProducts.slice(0, 4).map((product, subIndex) => (
                                   <Link 
                                     key={`product-card-${subIndex}`} 
                                     href={`/Product/${product.id}`}
@@ -368,7 +386,7 @@ const Navbar = () => {
                                       className="w-full h-20 object-contain mb-2"
                                     />
                                     <div className='flex items-end justify-between gap-1 w-full'>
-                                      <h3 className="text-sm font-medium  truncate w-2/3">{product.name}</h3>
+                                      <h3 className="text-sm font-medium  truncate w-11/12">{product.name}</h3>
                                       <div className='bg-white rounded-full p-1 border border-gray-300 group-hover:border-primary'>
                                         <FiArrowRight className='text-xs text-primary' />
                                       </div>
