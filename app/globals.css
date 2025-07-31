@@ -441,6 +441,41 @@ table{
   justify-content: center !important;
 }
 
+/* Product slider in mega menu */
+.product-swiper {
+  padding-bottom: 20px;
+}
+
+.product-swiper .swiper-pagination {
+  bottom: 0;
+}
+
+.product-swiper .swiper-pagination-bullet {
+  background-color: #D1D5DB;
+  opacity: 1;
+  width: 8px;
+  height: 8px;
+}
+
+.product-swiper .swiper-pagination-bullet-active {
+  background-color: #13409C;
+}
+
+.product-swiper .swiper-button-next,
+.product-swiper .swiper-button-prev {
+  color: #13409C;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-swiper .swiper-button-next:after,
+.product-swiper .swiper-button-prev:after {
+  font-size: 12px;
+  font-weight: bold;
+}
 
 
 /* new cards clip  */

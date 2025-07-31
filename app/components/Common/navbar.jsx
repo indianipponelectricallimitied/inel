@@ -13,7 +13,13 @@ import Image from 'next/image';
 import { FiArrowRight } from "react-icons/fi";
 import { GoDotFill } from "react-icons/go";
 import ApiService from '../../services/api';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
 
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const logo = "/logo-white.svg";
 const logoBlack = "/logo.svg";
@@ -23,20 +29,63 @@ const Navbar = () => {
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
   const [products, setProducts] = useState([]);
+  const [vehicleCategories, setVehicleCategories] = useState([]);
+  const [productTypes, setProductTypes] = useState([]);
+  const [selectedProductType, setSelectedProductType] = useState('');
+  const [selectedVehicleCategory, setSelectedVehicleCategory] = useState('');
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [availableVehicleCategories, setAvailableVehicleCategories] = useState([]);
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [clickedItems, setClickedItems] = useState({
+    productTypes: [],
+    vehicleCategories: [],
+    products: []
+  });
   const pathname = usePathname();
   
   const isHomePage = pathname === '/';
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchData = async () => {
       try {
-        const productsData = await ApiService.getProducts();
+        const [productsData, vehicleData, productData] = await Promise.all([
+          ApiService.getProducts(),
+          ApiService.getVehicleCategories(),
+          ApiService.getProductTypes()
+        ]);
         setProducts(productsData);
+        setVehicleCategories(vehicleData);
+        setProductTypes(productData);
+        
+        // Set default selections
+        if (productData.length > 0) {
+          setSelectedProductType(productData[0].name);
+          
+          // Calculate available vehicle categories for the first product type
+          const productsForFirstType = ApiService.filterProductsByType(productsData, productData[0].name);
+          const availableCategories = vehicleData.filter(category => 
+            productsForFirstType.some(product => 
+              ApiService.filterProductsByVehicleCategory([product], category.name).length > 0
+            )
+          );
+          setAvailableVehicleCategories(availableCategories);
+          
+          if (availableCategories.length > 0) {
+            setSelectedVehicleCategory('All Categories');
+            // Show all products for the selected product type
+            const allProducts = ApiService.filterProductsByType(productsData, productData[0].name);
+            setFilteredProducts(allProducts);
+          } else {
+            // If no vehicle categories for this product type, just filter by product type
+            const filtered = ApiService.filterProductsByType(productsData, productData[0].name);
+            setFilteredProducts(filtered);
+          }
+        }
       } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error('Error fetching data:', error);
       }
     };
-    fetchProducts();
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -60,6 +109,82 @@ const Navbar = () => {
     setOpenSubmenu(openSubmenu === index ? null : index);
   };
 
+  const handleProductTypeClick = (productType) => {
+    setSelectedProductType(productType);
+    
+    // Track clicked product type
+    setClickedItems(prev => ({
+      ...prev,
+      productTypes: [...prev.productTypes, productType]
+    }));
+    
+    // Calculate available vehicle categories for the selected product type
+    const productsForType = ApiService.filterProductsByType(products, productType);
+    const availableCategories = vehicleCategories.filter(category => 
+      productsForType.some(product => 
+        ApiService.filterProductsByVehicleCategory([product], category.name).length > 0
+      )
+    );
+    setAvailableVehicleCategories(availableCategories);
+    
+    // Set the first available vehicle category as selected, or clear if none available
+    if (availableCategories.length > 0) {
+      setSelectedVehicleCategory('All');
+      // Show all products for the selected product type
+      const allProducts = ApiService.filterProductsByType(products, productType);
+      setFilteredProducts(allProducts);
+    } else {
+      setSelectedVehicleCategory('');
+      updateFilteredProducts(productType, '');
+    }
+  };
+
+  const handleVehicleCategoryClick = (vehicleCategory) => {
+    setSelectedVehicleCategory(vehicleCategory);
+    
+    // Track clicked vehicle category
+    setClickedItems(prev => ({
+      ...prev,
+      vehicleCategories: [...prev.vehicleCategories, vehicleCategory]
+    }));
+    
+    if (vehicleCategory === 'All') {
+      // Show all products for the selected product type
+      const allProducts = ApiService.filterProductsByType(products, selectedProductType);
+      setFilteredProducts(allProducts);
+    } else {
+      updateFilteredProducts(selectedProductType, vehicleCategory);
+    }
+  };
+
+  const updateFilteredProducts = (productType, vehicleCategory) => {
+    if (!productType) return;
+    
+    // Filter products by product type first
+    let filtered = ApiService.filterProductsByType(products, productType);
+    
+    // Then filter by vehicle category if available
+    if (vehicleCategory && vehicleCategories.length > 0) {
+      filtered = filtered.filter(product => 
+        ApiService.filterProductsByVehicleCategory([product], vehicleCategory).length > 0
+      );
+    }
+    
+    setFilteredProducts(filtered);
+  };
+
+  const handleProductClick = (productId, productName) => {
+    // Track clicked product
+    setClickedItems(prev => ({
+      ...prev,
+      products: [...prev.products, { id: productId, name: productName }]
+    }));
+    
+    // Close menu
+    setIsHovered(false);
+    setIsMegaMenuOpen(false);
+  };
+
   const menuItems = [
     { label: 'Products', href: '/Products&Solutions', 
       submenu: products.map(product => ({
@@ -77,14 +202,16 @@ const Navbar = () => {
     { label: 'Careers', href: '/career' },
   ];
 
-  const submenuproducts = [
-    {label: 'Sensor', href: '/Products&Solutions?type=productType&value=Sensor', image: '/images/Products/sensor.webp',  shade : 'bg-gradient-to-br from-primary to-[#5589f9]  '},
-    {label: 'ICE', href: '/Products&Solutions?type=productType&value=ICE', image: '/images/Products/ice.webp',  shade : 'bg-gradient-to-br from-[#420959] to-[#C040E0]'},
-    {label: 'ICE +', href: '/Products&Solutions?type=productType&value=ICE+%2B',    image: '/images/Products/icep.webp', shade : 'bg-gradient-to-br from-[#09594C] to-[#40E0D0]'},
-    {label: 'EV', href: '/Products&Solutions?type=productType&value=EV', image: '/images/Products/ev.webp',  shade : 'bg-gradient-to-br from-[#59090A] to-[#E04043]'},
-    
-  ]
-  
+  // Create dynamic category cards from product types only
+  const getCategoryCards = () => {
+    return productTypes.map((type, index) => ({
+      label: type.name,
+      href: `/Products&Solutions?type=productType&value=${encodeURIComponent(type.name)}`,
+      image: type.img,
+      shade: 'bg-[radial-gradient(ellipse_at_96.36%_83.67%,#578EFF_0%,#160959_100%)]',
+      productType: type.name
+    }));
+  };
   
   return (
     <nav className={`container mx-auto py-2 z-50 ${
@@ -112,8 +239,14 @@ const Navbar = () => {
                 {item.submenu ? (
                   <div 
                     className="group"
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
+                    onMouseEnter={() => {
+                      setIsHovered(true);
+                      setIsMegaMenuOpen(true);
+                    }}
+                    onMouseLeave={() => {
+                      setIsHovered(false);
+                      setIsMegaMenuOpen(false);
+                    }}
                   >
                     <Link 
                       href={item.href} 
@@ -125,51 +258,126 @@ const Navbar = () => {
                         <GoDotFill className='text-white text-xs group-hover:text-primary' />
                       </div>
                     </Link>
-                    <div className="absolute left-0 z-40 pt-4 toptodown hidden w-full bg-white group-hover:block rounded-b-[30px]">
-                      <div className="container mx-auto flex border-t border-gray-200 py-5">
-                        <div className='grid grid-cols-2 w-2/4 gap-[10px] pe-5 border-r border-gray-200'>
-                          {submenuproducts.map((subItem, subIndex) => (
-                            <Link 
+                    <div className="absolute left-0 z-40 pt-4 toptodown hidden w-full bg-white group-hover:block rounded-b-[30px]"
+                         style={{ display: isMegaMenuOpen ? 'block' : 'none' }}>
+                      <div className="container mx-auto flex flex-col border-t border-gray-200 py-5">
+                        {/* Top Section - Category/Application Cards (2 rows of 5) */}
+                        <div className='grid grid-cols-5 w-full gap-[10px] mb-6'>
+                          {getCategoryCards().map((subItem, subIndex) => (
+                            <button 
                               key={`product-${subIndex}`}
-                              href={subItem.href} 
-                              className={`rounded-lg p-4 relative h-52 flex flex-col justify-between ${subItem.shade}`}
+                              onClick={() => handleProductTypeClick(subItem.productType)}
+                              className={`rounded-lg p-4 relative h-20 flex items-center justify-between ${subItem.shade} cursor-pointer ${
+                                selectedProductType === subItem.productType ? 'ring-2 ring-blue-500 ring-dashed' : ''
+                              }`}
                             >
                               <div className={`absolute inset-0 bg-cover bg-center bg-no-repeat rounded-lg opacity-20`} style={{backgroundImage: `url(${subItem.image})`}}></div>
                               <p className='text-white z-10 relative text-lg w-1/2'>{subItem.label}</p>
                               <FiArrowRight  className='text-white'/>
-                              <Image 
-                                src={subItem.image} 
-                                alt={subItem.label} 
-                                width={200} 
-                                height={100}
-                                className='absolute top-1/2 right-0 -translate-y-1/2'
-                              />
-                            </Link>
+                            </button>
                           ))}
                         </div>
-                        <div className='w-2/4 grid grid-cols-2'>
-                        <div>
-                          {item.submenu.slice(0, 11).map((subItem, subIndex) => (
-                            <Link
-                              key={`submenu-${subIndex}`}
-                              href={subItem.href}
-                              className="block px-4 py-2 w-full hover:underline underline-offset-4 text-black"
-                            >
-                              {subItem.label}
-                            </Link>
-                          ))}
-                        </div>
-                        <div>
-                        {item.submenu.slice(11, 21).map((subItem, subIndex) => (
-                          <Link
-                            key={`submenu-${subIndex}`}
-                            href={subItem.href}
-                            className="block px-4 py-2 w-full hover:underline underline-offset-4 text-black "
-                          >
-                            {subItem.label}
-                          </Link>
-                        ))}
-                        </div>
+                        
+                        {/* Middle Section - Vehicle Categories and Product Cards */}
+                        <div className="flex">
+                          {/* Left Side - Vehicle Categories */}
+                          <div className='w-1/4 border-r border-gray-200 pr-6'>
+                            {/* Vehicle Category Tabs - Only display if available */}
+                            {availableVehicleCategories.length > 0 && (
+                              <div className='flex flex-col gap-2'>
+                                <button
+                                  onClick={() => handleVehicleCategoryClick('All')}
+                                  className={`flex items-center justify-between py-2 px-3 text-left transition-all ${
+                                    selectedVehicleCategory === 'All'
+                                      ? 'text-primary border-b-2 border-primary font-medium'
+                                      : 'text-gray-700 hover:text-primary'
+                                  }`}
+                                >
+                                  <span className="text-sm">All</span>
+                                  <FiArrowRight className="text-xs" />
+                                </button>
+                                {availableVehicleCategories.map((category, index) => (
+                                  <button
+                                    key={category.name}
+                                    onClick={() => handleVehicleCategoryClick(category.name)}
+                                    className={`flex items-center justify-between py-2 px-3 text-left transition-all ${
+                                      selectedVehicleCategory === category.name
+                                        ? 'text-primary border-b-2 border-primary font-medium'
+                                        : 'text-gray-700 hover:text-primary'
+                                    }`}
+                                  >
+                                    <span className="text-sm">{category.name}</span>
+                                    <FiArrowRight className="text-xs" />
+                                  </button>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                          
+                          {/* Right Side - Product Cards */}
+                          <div className='w-3/4 pl-6'>
+                            {/* Product Cards - Dynamic with filtered API data */}
+                            {filteredProducts.length > 5 ? (
+                              <Swiper
+                                modules={[Pagination, Navigation]}
+                                spaceBetween={12}
+                                slidesPerView={5}
+                                pagination={{ 
+                                  clickable: true,
+                                  dynamicBullets: true,
+                                }}
+                                navigation={true}
+                                className="product-swiper"
+                              >
+                                {filteredProducts.map((product, subIndex) => (
+                                  <SwiperSlide key={`product-card-${subIndex}`}>
+                                    <Link 
+                                      href={`/Product/${product.id}`}
+                                      onClick={() => handleProductClick(product.id, product.name)}
+                                      className="flex flex-col items-start justify-between border border-gray-300 rounded-lg p-3 product-grid-item group
+                                      transition-all duration-200 hover:border-primary hover:shadow-md bg-white cursor-pointer h-full  hover:text-white"
+                                    >
+                                      <img
+                                        src={product.image}
+                                        alt={product.name}
+                                        className="w-full h-20 object-contain mb-2"
+                                      />
+                                      <div className='flex items-end justify-between gap-1 w-full'>
+                                        <h3 className="text-sm font-medium  truncate w-2/3">{product.name}</h3>
+                                        <div className='bg-white rounded-full p-1 border border-gray-300 group-hover:border-primary'>
+                                          <FiArrowRight className='text-xs text-primary' />
+                                        </div>
+                                      </div>
+                                    </Link>
+                                  </SwiperSlide>
+                                ))}
+                              </Swiper>
+                            ) : (
+                              <div className='grid grid-cols-5 gap-3'>
+                                {filteredProducts.slice(0, 5).map((product, subIndex) => (
+                                  <Link 
+                                    key={`product-card-${subIndex}`} 
+                                    href={`/Product/${product.id}`}
+                                    onClick={() => handleProductClick(product.id, product.name)}
+                                    className="flex flex-col items-start justify-between border border-gray-300 rounded-lg p-3 product-grid-item group
+                                    transition-all duration-200 hover:border-primary hover:shadow-md bg-white cursor-pointer hover:text-white"
+                                  >
+                                    <img
+                                      src={product.image}
+                                      alt={product.name}
+                                      className="w-full h-20 object-contain mb-2"
+                                    />
+                                    <div className='flex items-end justify-between gap-1 w-full'>
+                                      <h3 className="text-sm font-medium  truncate w-2/3">{product.name}</h3>
+                                      <div className='bg-white rounded-full p-1 border border-gray-300 group-hover:border-primary'>
+                                        <FiArrowRight className='text-xs text-primary' />
+                                      </div>
+                                    </div>
+                                  </Link>
+                                ))}
+                              </div>
+                            )}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -207,23 +415,25 @@ const Navbar = () => {
 
   
       <div
-        className={`fixed h-screen overflow-y-auto top-0 right-0 w-64 bg-black shadow-lg transform ${
+        className={`fixed h-screen overflow-y-auto top-0 right-0 w-[90%] max-w-sm bg-white shadow-lg transform ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } transition-transform duration-300 ease-in-out z-50 overscroll-contain`}
       >
-        <div className="flex justify-end p-4  z-50">
+        <div className="flex justify-end p-4 z-50">
           <button onClick={toggleMenu} className="text-2xl">
-            <MdClose className='text-white' />
+            <MdClose className='text-black' />
           </button>
         </div>
-        <div className="flex   flex-col space-y-2 my-20 px-4 ">
+        
+        <div className="flex flex-col space-y-4 px-4 pb-20">
+          {/* Mobile Menu Items */}
           {menuItems.map((item, index) => (
             <div key={index} className="w-full">
               {item.submenu ? (
                 <div className="w-full">
                   <button 
                     onClick={() => toggleSubmenu(index)}
-                    className="flex items-center justify-between w-full py-2 text-white"
+                    className="flex items-center justify-between w-full py-3 text-black border-b border-gray-200"
                   >
                     {item.label}
                     <IoChevronDownOutline 
@@ -234,34 +444,102 @@ const Navbar = () => {
                   </button>
                   <div 
                     className={`overflow-hidden transition-all duration-300 ${
-                      openSubmenu === index ? 'max-h-[500px]' : 'max-h-0'
+                      openSubmenu === index ? 'max-h-[2000px]' : 'max-h-0'
                     }`}
                   >
-                    {item.submenu.map((subItem, subIndex) => (
-                      <Link
-                        key={`submenu-${subIndex}`}
-                        href={subItem.href}
-                        className="block py-2 pl-4 text-white hover:text-white/80 text-sm"
-                        onClick={toggleMenu}
-                      >
-                        {subItem.label}
-                      </Link> // Changed a to Link
-                    ))}
+                    {/* Top Section - Category/Application Cards */}
+                    <div className='grid grid-cols-2 gap-3 mb-4 mt-4'>
+                      {getCategoryCards().map((subItem, subIndex) => (
+                        <button 
+                          key={`mobile-product-${subIndex}`}
+                          onClick={() => handleProductTypeClick(subItem.productType)}
+                          className={`rounded-lg p-3 relative h-16 flex items-center justify-between ${subItem.shade} cursor-pointer ${
+                            selectedProductType === subItem.productType ? 'ring-2 ring-blue-500 ring-dashed' : ''
+                          }`}
+                        >
+                          <div className={`absolute inset-0 bg-cover bg-center bg-no-repeat rounded-lg opacity-20`} style={{backgroundImage: `url(${subItem.image})`}}></div>
+                          <p className='text-white z-10 relative text-sm w-1/2'>{subItem.label}</p>
+                          <FiArrowRight  className='text-white text-sm'/>
+                        </button>
+                      ))}
+                    </div>
+                    
+                    {/* Vehicle Categories */}
+                    {availableVehicleCategories.length > 0 && (
+                      <div className='mb-4'>
+                        <h4 className="text-sm font-medium text-gray-700 mb-2">Vehicle Categories</h4>
+                        <div className='flex flex-wrap gap-2'>
+                          <button
+                            onClick={() => handleVehicleCategoryClick('All')}
+                            className={`py-1 px-3 text-xs rounded-md transition-all ${
+                              selectedVehicleCategory === 'All'
+                                ? 'bg-primary text-white'
+                                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                            }`}
+                          >
+                            All
+                          </button>
+                          {availableVehicleCategories.map((category, index) => (
+                            <button
+                              key={category.name}
+                              onClick={() => handleVehicleCategoryClick(category.name)}
+                              className={`py-1 px-3 text-xs rounded-md transition-all ${
+                                selectedVehicleCategory === category.name
+                                  ? 'bg-primary text-white'
+                                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                              }`}
+                            >
+                              {category.name}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    
+                    {/* Product Cards */}
+                    <div className='mb-4'>
+                      <h4 className="text-sm font-medium text-gray-700 mb-2">Products</h4>
+                      <div className='grid grid-cols-1 gap-2'>
+                        {filteredProducts.slice(0, 8).map((product, subIndex) => (
+                          <Link
+                            key={`mobile-product-link-${subIndex}`}
+                            href={`/Product/${product.id}`}
+                            className="flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-gray-50 transition-all cursor-pointer"
+                            onClick={() => {
+                              handleProductClick(product.id, product.name);
+                              toggleMenu();
+                              setOpenSubmenu(null);
+                            }}
+                          >
+                            <div className="flex items-center gap-3">
+                              <img
+                                src={product.image}
+                                alt={product.name}
+                                className="w-12 h-12 object-contain"
+                              />
+                              <span className="text-sm font-medium text-gray-900">{product.name}</span>
+                            </div>
+                            <FiArrowRight className="text-xs text-primary" />
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               ) : (
                 <Link
                   href={item.href}
-                  className="block py-2 text-white hover:text-white/80"
+                  className="block py-3 text-black border-b border-gray-200 hover:text-primary"
                   onClick={toggleMenu}
                 >
                   {item.label}
-                </Link> // Changed a to Link
+                </Link>
               )}
             </div>
           ))}
+          
           <div className="pt-4">
-            <Button variant="blue" href="/contact-us"  className="w-full">
+            <Button variant="blue" href="/contact-us" className="w-full">
               Enquire Now
             </Button>
           </div>

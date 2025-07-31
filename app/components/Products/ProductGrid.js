@@ -4,7 +4,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import Link from 'next/link';
 import ApiService from '@/app/services/api';
 
-const ProductGrid = ({ filter, searchResults }) => {
+const ProductGrid = ({ filter, searchResults, compact = false }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -26,14 +26,41 @@ const ProductGrid = ({ filter, searchResults }) => {
     }
 
     // Otherwise, apply category/type filters
-    if (filter.type === 'all') {
-      setFilteredProducts(products);
-    } else if (filter.type === 'vehicle') {
+    if (filter.type === 'vehicle') {
       setFilteredProducts(ApiService.filterProductsByVehicleCategory(products, filter.value));
     } else if (filter.type === 'productType') {
       setFilteredProducts(ApiService.filterProductsByType(products, filter.value));
+    } else {
+      // Default to showing all products if no specific filter
+      setFilteredProducts(products);
     }
   }, [filter, products, searchResults]);
+
+  if (compact) {
+    return (
+      <div className="grid grid-cols-2 gap-2 mb-4">
+        {filteredProducts.slice(0, 6).map((product) => (
+          <Link href={`/Product/${product.id}`} key={product.id}> 
+          <div key={product.id} className="flex flex-col items-start justify-between border border-gray-300 rounded-md p-2 product-grid-item group
+          transition-all duration-200 hover:bg-primary hover:border-primary hover:text-white"
+          >
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-full h-16 object-contain"
+            />
+            <div className='flex items-end justify-between gap-1 w-full'>
+              <h2 className="text-xs font-medium mt-1 w-2/3 truncate">{product.name}</h2>
+              <div className='bg-white rounded-full px-1 py-1 border border-gray-300 group-hover:border-transparent'>
+                <GoArrowUpRight className='text-xs text-primary' />
+              </div>
+            </div>
+          </div>
+          </Link>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 gap-y-4 md:gap-6 my-20">
@@ -43,6 +70,7 @@ const ProductGrid = ({ filter, searchResults }) => {
           transition-all duration-200 hover:product-gradient hover:border-primary hover:shadow-[0px 0px 40px -16px #578EFFC7]
           hover:text-white"
           >
+            <Link href={`/Product/${product.id}`} key={product.id}> 
             <img
               src={product.image}
               alt={product.name}
@@ -50,11 +78,12 @@ const ProductGrid = ({ filter, searchResults }) => {
             />
             <div className='flex items-end justify-between gap-1 w-full'>
               <h2 className="text-sm md:text-xl font-medium mt-2 md:w-1/2">{product.name}</h2>
-              <Link href={`/Product/${product.id}`} className='bg-white rounded-[40px] px-2 py-1 md:px-6 md:py-2 border border-black group-hover:border-transparent'>
+              <div className='bg-white rounded-[40px] px-2 py-1 md:px-6 md:py-2 border border-black group-hover:border-transparent'>
                 <GoArrowUpRight className='text-xs md:text-lg text-primary' />
-              </Link>
+              </div>
             </div>
-            {/* <p className="text-gray-600">{product.type}</p>
+            </Link>
+              {/* <p className="text-gray-600">{product.type}</p>
             <p className="text-sm mt-2">{product.description}</p> */}
           </div>
         ))
