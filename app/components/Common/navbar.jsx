@@ -309,8 +309,8 @@ const Navbar = () => {
                                     <span className="text-sm">{category.name}</span>
                                     <FiArrowRight className="text-xs" />
                                   </button>
-                                ))}
-                              </div>
+                          ))}
+                        </div>
                             )}
                           </div>
                           
@@ -373,7 +373,7 @@ const Navbar = () => {
                             ) : (
                               <div className='grid grid-cols-4 gap-3'>
                                 {filteredProducts.slice(0, 4).map((product, subIndex) => (
-                                  <Link 
+                          <Link
                                     key={`product-card-${subIndex}`} 
                                     href={`/Product/${product.id}`}
                                     onClick={() => handleProductClick(product.id, product.name)}
@@ -391,11 +391,11 @@ const Navbar = () => {
                                         <FiArrowRight className='text-xs text-primary' />
                                       </div>
                                     </div>
-                                  </Link>
-                                ))}
+                          </Link>
+                        ))}
                               </div>
                             )}
-                          </div>
+                        </div>
                         </div>
                       </div>
                     </div>
@@ -519,7 +519,7 @@ const Navbar = () => {
                       <h4 className="text-sm font-medium text-gray-700 mb-2">Products</h4>
                       <div className='grid grid-cols-1 gap-2'>
                         {filteredProducts.slice(0, 8).map((product, subIndex) => (
-                          <Link
+                      <Link
                             key={`mobile-product-link-${subIndex}`}
                             href={`/Product/${product.id}`}
                             className="flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-gray-50 transition-all cursor-pointer"
@@ -528,7 +528,7 @@ const Navbar = () => {
                               toggleMenu();
                               setOpenSubmenu(null);
                             }}
-                          >
+                      >
                             <div className="flex items-center gap-3">
                               <img
                                 src={product.image}

@@ -234,7 +234,17 @@ class ApiService {
 
     // Helper methods for filtering and searching
     static filterProductsByType(products, type) {
-        return products.filter(product => product.type === type);
+        return products.filter(product => {
+            // Handle both old 'type' field and new 'types' array field
+            if (product.types && Array.isArray(product.types)) {
+                // New backend: check if any of the product's types match
+                return product.types.some(productType => productType === type);
+            } else if (product.type) {
+                // Old backend: direct type comparison
+                return product.type === type;
+            }
+            return false;
+        });
     }
 
     static filterProductsByVehicleCategory(products, category) {
@@ -268,20 +278,28 @@ class ApiService {
             const features = Array.isArray(product.features) ? product.features : [];
             const vehicleCategories = Array.isArray(product.vehicleCategories) ? product.vehicleCategories : [];
             
+            // Handle both old 'type' field and new 'types' array field
+            const productTypes = [];
+            if (product.types && Array.isArray(product.types)) {
+                // New backend: add all types from the array
+                productTypes.push(...product.types);
+            } else if (product.type) {
+                // Old backend: add single type
+                productTypes.push(product.type);
+            }
+            
             const searchFields = [
                 product.name,
-                product.type,
                 product.description,
                 ...features,
-                ...vehicleCategories
+                ...vehicleCategories,
+                ...productTypes
             ];
 
             return searchFields.some(field => 
                 field && calculateSimilarity(searchTerm, field)
             );
         });
-
-        
     }
 }
 
