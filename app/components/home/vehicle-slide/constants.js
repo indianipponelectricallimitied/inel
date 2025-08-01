@@ -33,7 +33,7 @@ export const VEHICLE_TYPES = [
         hotspots: "2W_EV"
       },
       IC: {
-        image: "/images/home/Scooter.png",
+        image: "/images/home/icbike.webp",
         hotspots: "2W_IC"
       }
     }
@@ -78,7 +78,7 @@ export const VEHICLE_HOTSPOTS = {
   "2W_IC": [
     {
       label: "Cluster Front Facia",
-      marker_x: 220, marker_y: 40,
+      marker_x: 120, marker_y: 40,
       start_point: { x: 0, y: 0 },
       mid_point: { x: -50, y: -20 },
       end_point: { x: -150, y: -20 },
@@ -298,7 +298,7 @@ export const VEHICLE_HOTSPOTS = {
   "CC_IC": [
     {
       label: "Reverse Parking Assist System - Sensors",
-      marker_x: 445, marker_y: 155,
+      marker_x: 445, marker_y: 145,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
       end_point: { x: 150, y: 0 },
@@ -318,7 +318,7 @@ export const VEHICLE_HOTSPOTS = {
     // },
     {
       label: "Speed Sensor - Wire Type",
-      marker_x: 97, marker_y: 183,
+      marker_x: 97, marker_y: 173,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
       end_point: { x: -100, y: 0 },
@@ -328,7 +328,7 @@ export const VEHICLE_HOTSPOTS = {
     },
     {
       label: "Oil Level Sensor",
-      marker_x: 110, marker_y: 140,
+      marker_x: 110, marker_y: 130,
       start_point: { x: 0, y: 0 },
       mid_point: { x: -60, y: 100 },
       end_point: { x: -100, y: 100 },
@@ -348,7 +348,7 @@ export const VEHICLE_HOTSPOTS = {
     // },
     {
       label: "Oil Level Sensor",
-      marker_x: 70, marker_y: 135,
+      marker_x: 70, marker_y: 125,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
       end_point: { x: -100, y: 0 },
@@ -358,7 +358,7 @@ export const VEHICLE_HOTSPOTS = {
     },
     {
       label: "Crank / CAM Sensor",
-      marker_x: 40, marker_y: 125,
+      marker_x: 40, marker_y: 115,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
       end_point: { x: -100, y: 0 },
@@ -368,7 +368,7 @@ export const VEHICLE_HOTSPOTS = {
     },
     {
       label: "Steering Angle Sensor",
-      marker_x: 60, marker_y: 100,
+      marker_x: 60, marker_y: 90,
       start_point: { x: 0, y: 0 },
       mid_point: { x: -60, y: -100 },
       end_point: { x: -140, y: -130 },
@@ -378,7 +378,7 @@ export const VEHICLE_HOTSPOTS = {
     },
     {
       label: "TPMS Sensor",
-      marker_x: 365, marker_y: 180,
+      marker_x: 365, marker_y: 170,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
       end_point: { x: 200, y: -10 },

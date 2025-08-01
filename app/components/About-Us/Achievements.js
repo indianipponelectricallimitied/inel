@@ -24,6 +24,26 @@ const achievements = [
         alt: "tvs",
         title: "Best Supplier for 2021-22",
     },
+    {
+        image: "/images/about/iso-ieo.jpg",
+        alt: "ISO-EC270012022",
+        title: "ISO/IEC 27001:2022",
+    },
+    {
+        image: "/images/about/acma-award.jpg",
+        alt: "acma",
+        title: "Best Cluster Company Award by ACMA",
+    },
+    {
+        image:"/images/about/GreenCo - Plaque & Certificate India Nippon Electricals Limited, Hosur.webp",
+        alt:"GreenCo",
+        title:"GreenCo",
+    } ,
+    {
+        image: "/images/about/Greatplacetoworkaward.webp",
+        alt: "greatplacetowork",
+        title: "Certified (2022–2025)",
+    },
 ]
 
 export default function Achievements() {

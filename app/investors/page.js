@@ -20,10 +20,10 @@ export default function Investors() {
             title: "Annual Reports",
             link: "files/INEL Annual Report - 2023-24.pdf"
         },
-        {
-            title: "Financial Reports",
-            link: "#"
-        },
+        // {
+        //     title: "Financial Reports",
+        //     link: "#"
+        // },
         {
             title: "Policies",
             link: "#",

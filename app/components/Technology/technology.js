@@ -34,7 +34,7 @@ const innovations = [
         title: "Safety-First Engineering",
         description:"At INEL, safety isn't an add-on — it's engineered from the start. Through innovative mechatronic solutions like Tire Pressure Monitoring Systems (TPMS), Steering Angle Sensors (SAS), and Reverse Parking Assist Systems (RPAS), the company enhances driver awareness and vehicle control. INEL also delivers key components such as Speed Sensors and Throttle Position Sensors (TPS), improving engine response and operational safety.",
         description2:"Backed by ISO 45001:2018 certification, INEL maintains top-tier Environment, Health, and Safety (EHS) standards, with rigorous protocols, employee training, and emergency preparedness that significantly reduce workplace injuries.",
-        image: "/images/Technology/saftey.webp"
+        image: "/images/Technology/safetyfirstengineering.webp"
     },
     {
         title: "Smart Automotive Solutions",

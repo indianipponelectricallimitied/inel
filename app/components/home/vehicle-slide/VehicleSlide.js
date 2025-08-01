@@ -13,13 +13,13 @@ export default function VehicleSlide({ vehicleType, direction, engineType = 'IC'
     switch(vehicleType) {
       case "2W":
         return {
-          image: engineType === 'EV' ? "/images/home/ev-scooter.png" : "/images/home/ev-scooter.png",
+          image: engineType === 'EV' ? "/images/home/ev-scooter.png" : "/images/home/icbike.webp",
           className: `scooter !w-[380px] md:!w-[500px] ${!imageLoaded ? 'opacity-0' : 'opacity-100'}`,
           wheels: engineType === 'IC'
         };
       case "CC":
         return {
-          image: "/images/home/truck.png", // Using same image for both variants as per latest changes
+          image: "/images/home/commercial.webp", // Using same image for both variants as per latest changes
           className: `car !w-[380px] md:!w-[480px] ${!imageLoaded ? 'opacity-0' : 'opacity-100'}`,
           wheels: engineType === 'IC'
         };
@@ -27,7 +27,7 @@ export default function VehicleSlide({ vehicleType, direction, engineType = 'IC'
         return {
           image: "/images/home/3-whellar.webp", // Fixed typo in image path
           className: `auto ${!imageLoaded ? 'opacity-0' : 'opacity-100'}`,
-          wheels: false
+          wheels: true
         };
       default:
         return null;
@@ -109,6 +109,14 @@ export default function VehicleSlide({ vehicleType, direction, engineType = 'IC'
           <Image 
             src={vehicleType === "2W" ? "/images/home/Scooter-tyre.png" : "/rv-tyre.webp"} 
             alt="Back Wheel"
+            width={100}
+            height={100}
+            className="back wheel"
+            priority={true}
+          />
+          <Image 
+            src={vehicleType === "3W" ? "/images/home/Scooter-tyre.png" : "/rv-tyre.webp"} 
+            alt="Front Wheel"
             width={100}
             height={100}
             className="back wheel"

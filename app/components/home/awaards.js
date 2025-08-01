@@ -8,15 +8,16 @@ const awards = [
         title: "Best Supplier for 2021-22",
     },
     {
-        image: "/images/home/greatplacetowork.png",
-        alt: "greatplacetowork",
-        title: "Great Place to Work",
+        image: "/images/home/ISO-EC270012022.png",
+        alt: "ISO-EC270012022",
+        title: "ISO/IEC 27001:2022",
     },
     {
         image: "/images/home/acma.png",
         alt: "acma",
         title: "Best Cluster Company Award by ACMA",
     },
+    
    
     // {
     //     image: "/images/home/ficci.png",

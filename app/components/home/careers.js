@@ -13,8 +13,8 @@ export default function Careers() {
         <div className="w-full lg:w-[50%] relative">
           <Image src="/images/home/career.png" alt="careers" className="w-full" width={550} height={500} />
          
-          <Image src="/images/home/certified.png" alt="careers"
-            className="absolute w-20 lg:w-32 top-0 right-0 lg:-top-20 lg:-right-10"
+          <Image src="/images/home/greatplacetoworkbk.png" alt="careers"
+            className="absolute w-20 lg:w-36 top-0 right-0 lg:-top-20 lg:-right-10"
             width={140} height={500} />
 
         </div>

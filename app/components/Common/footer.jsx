@@ -29,10 +29,10 @@ export default function Footer(){
                     </div>
                     <div className="flex flex-col gap-2 w-full md:w-1/5">
                         <p className="pb-3 font-bold">Investors</p>
-                        <a href="#">Corporate Presentation</a>
-                        <a href="#">Annual Report FY24</a>
-                        <a href="#">Sensor Technologies</a>
-                        <a href="#">Investor Presentation</a>
+                        <a href="/investors">Corporate Presentation</a>
+                        <a href="/investors">Annual Report FY24</a>
+                        {/* <a href="#">Sensor Technologies</a> */}
+                        <a href="/investors">Investor Presentation</a>
                     </div>
                     <div className="flex flex-col gap-2 w-full md:w-2/6">
                         <p className="pb-3 font-bold">Contact</p>
@@ -75,7 +75,7 @@ export default function Footer(){
             <div className="container mx-auto flex flex-col md:flex-row justify-between py-5">
                 <div className="flex justify-between md:gap-20">
                     <a href="/privacy-policy" className="text-sm md:text-base">Privacy Policy</a>
-                    <a href="/terms-and-conditions" className="text-sm md:text-base">Terms & Condition</a>
+                    <a href="/terms-and-conditions" className="text-sm md:text-base">Terms & Conditions</a>
                     <a href="/policies" className="text-sm md:text-base">Policies</a>
                     {/* <a href="#" className="text-sm md:text-base">Data Protection</a> */}
                 </div>

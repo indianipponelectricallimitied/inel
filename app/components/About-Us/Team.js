@@ -40,7 +40,7 @@ const team = [
         position: "Chief Technical Officer",
     },
     {
-        image: "/images/about/Subtract.png",
+        image: "/images/about/Mr.Elango Srinivasanv CFO.png",
         name: "Dr Elango Srinivasan",
         position: "Chief Financial Officer",
     }
