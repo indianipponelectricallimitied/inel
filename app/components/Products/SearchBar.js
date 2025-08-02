@@ -49,6 +49,11 @@ export default function SearchBar({ onSearchResults }) {
         const searchResults = ApiService.searchProducts(products, searchTerm);
         onSearchResults(searchResults);
     };
+    <style jsx>{`
+        .search-bar svg circle {
+           stroke: #ffffff;
+        }
+    `}</style>  
 
     return(
         <form 
@@ -69,6 +74,7 @@ export default function SearchBar({ onSearchResults }) {
                 <FiSearch className="text-3xl" />
             </button>
         </form>
+        
     );
 }
 

@@ -115,7 +115,7 @@ export default function ProductPage() {
                         <Button href="/contact-us" 
                             variant="blue" 
                             className="w-fit !bg-[#FCFCFC47] border-0">
-                            Get Quote
+                            Enquire Now
                         </Button>
                         {/* <a 
                             href={pdfUrl} 

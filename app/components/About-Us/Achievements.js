@@ -10,24 +10,35 @@ import 'swiper/css';
 import { Pagination, Autoplay } from 'swiper/modules';
 
 const achievements = [
+   
     {
         image: "/images/about/ficci.jpeg",
-        title: "Hr Summit & Score Awards from FICCI 2024",
+        title: "HR Summit & SCORE Award by FICCI – 2024",
     },
- 
     {
-        image: "/images/about/cii.jpeg",
-        title: "INEL Wins Lean Practice Competition for Southern Region Award From CII",
+        image: "/images/about/generac.webp",
+        alt: "generac",
+        title: "Innovation Partner Award by Generac – 2025",
     },
     {
         image: "/images/about/tvslogo.webp",
         alt: "tvs",
-        title: "Best Supplier for 2021-22",
+        title: "Best Supplier Award by TVS – 2021-2022",
     },
+    {
+        image: "/images/about/gptw.webp",
+        alt: "greatplacetowork",
+        title: "Great Place to Work® Certified (Oct 2024 – Oct 2025)",
+    },
+    {
+        image: "/images/about/cii.jpeg",
+        title: "Lean Practice Competition Winner Southern Region by CII",
+    },
+    
     {
         image: "/images/about/iso-ieo.jpg",
         alt: "ISO-EC270012022",
-        title: "ISO/IEC 27001:2022",
+        title: "ISO/IEC 27001:2022 – Information Security Management Certification",
     },
     {
         image: "/images/about/acma-award.jpg",
@@ -37,13 +48,9 @@ const achievements = [
     {
         image:"/images/about/GreenCo - Plaque & Certificate India Nippon Electricals Limited, Hosur.webp",
         alt:"GreenCo",
-        title:"GreenCo",
+        title:"GreenCo Certification - India Nippon Electricals Limited",
     } ,
-    {
-        image: "/images/about/gptw.webp",
-        alt: "greatplacetowork",
-        title: "Certified (Oct 2024 - Oct 2025)",
-    },
+    
 ]
 
 export default function Achievements() {
@@ -77,13 +84,15 @@ export default function Achievements() {
                     >
                         {achievements.map((achievement, index) => (
                             <SwiperSlide key={index}>
-                                <Image 
-                                    src={achievement.image} 
-                                    alt={achievement.title} 
-                                    width={500} 
-                                    height={300} 
-                                    className="bg-[#F2F2F2] rounded-[20px] mx-auto min-h-[280px] object-cover border-[10px] border-[#E0E0E0]"
-                                />
+                                <div className="h-[280px] bg-[#F2F2F2] rounded-[20px] mx-auto border-[10px] border-[#E0E0E0] flex items-center justify-center overflow-hidden">
+                                    <Image 
+                                        src={achievement.image} 
+                                        alt={achievement.title} 
+                                        width={500} 
+                                        height={300} 
+                                        className="w-full h-full object-contain p-4"
+                                    />
+                                </div>
                                 <h3 className="text-xl w-3/4  mx-auto text-center  pt-5 pb-10">{achievement.title}</h3>
                             </SwiperSlide>
                         ))}

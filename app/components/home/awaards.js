@@ -13,9 +13,9 @@ const awards = [
         title: "ISO/IEC 27001:2022",
     },
     {
-        image: "/images/home/acma.png",
-        alt: "acma",
-        title: "Best Cluster Company Award by ACMA",
+        image: "/images/home/companies/generac.svg",
+        alt: "generac",
+        title: "Innovation Partner - 2025",
     },
     
    
