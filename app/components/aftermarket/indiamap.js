@@ -21,7 +21,7 @@ const locations = [
   {
     id: 3,
     name: "Hyderabad",
-     coordinates: { top: "61", left: "34%" }
+     coordinates: { top: "61%", left: "34%" }
   },
   {
     id: 4,

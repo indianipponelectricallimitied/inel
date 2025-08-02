@@ -16,12 +16,48 @@ const logos = [
     alt: "bajaj",
   },
   {
-    src: "/images/home/companies/polaris.png",
-    alt: "polaris",
+    src: "/images/home/companies/Suzuki_Motorcycle_India_Limited.svg",
+    alt: "suzuku 2w",
   },
   {
-    src: "/images/home/companies/generac.svg",
-    alt: "generac",
+    src: "/images/home/companies/re.svg",
+    alt: "re",
+  },
+  {
+    src: "/images/home/companies/piaggio-1-logo-svg-vector.svg",
+    alt: "Piaggio",
+  },
+  {
+    src: "/images/home/companies/mahindra.svg",
+    alt: "Mahindra 2w",
+  },
+  {
+    src: "/images/home/companies/Yamaha_Motor_Company-Logo.wine.svg",
+    alt: "Yamaha",
+  },
+  {
+    src: "/images/home/companies/KTM.svg",
+    alt: "KTM",
+  },
+  {
+    src: "/images/home/companies/Triumph_Motorcycles_Ltd.svg",
+    alt: "Triumph",
+  },
+  {
+    src: "/images/home/companies/honda.svg",
+    alt: "honda",
+  },
+  {
+    src: "/images/home/companies/blueriverlogo.svg",
+    alt: "River ",
+  },
+  {
+    src: "/images/home/companies/Ultraviolet.png",
+    alt: "Ultraviolet",
+  },
+  {
+    src: "/images/home/companies/greaves.svg",
+    alt: "greaves",
   },
   {
     src: "/images/home/companies/zf.svg",
@@ -32,33 +68,27 @@ const logos = [
     alt: "rehlko",
   },
   {
-    src: "/images/home/companies/re.svg",
-    alt: "re",
+    src: "/images/home/companies/generac.svg",
+    alt: "generac",
   },
   {
-    src: "/images/home/companies/kawasaki.svg",
-    alt: "kawasaki",
+    src: "/images/home/companies/polaris.png",
+    alt: "polaris",
   },
   {
-    src: "/images/home/companies/birla.svg",
-    alt: "birla",
+    src: "/images/home/companies/John_Deere.svg",
+    alt: "John Deere",
   },
   {
-    src: "/images/home/companies/greaves.svg",
-    alt: "greaves",
+    src: "/images/home/companies/yanmar.svg",
+    alt: "Yanmar",
   },
   {
-    src: "/images/home/companies/honda.svg",
-    alt: "honda",
+    src: "/images/home/companies/dellorto-seeklogo.svg",
+    alt: "Dellorto",
   },
-  {
-    src: "/images/home/companies/lombardini.svg",
-    alt: "lombardini",
-  },
-  {
-    src: "/images/home/companies/mahindra.svg",
-    alt: "mahindra",
-  },
+
+  
 ];
 
 

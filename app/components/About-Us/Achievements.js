@@ -40,9 +40,9 @@ const achievements = [
         title:"GreenCo",
     } ,
     {
-        image: "/images/about/Greatplacetoworkaward.webp",
+        image: "/images/about/gptw.webp",
         alt: "greatplacetowork",
-        title: "Certified (2022–2025)",
+        title: "Certified (Oct 2024 - Oct 2025)",
     },
 ]
 
