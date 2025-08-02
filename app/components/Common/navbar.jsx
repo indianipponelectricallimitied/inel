@@ -264,9 +264,13 @@ const Navbar = () => {
                         {/* Top Section - Category/Application Cards (2 rows of 5) */}
                         <div className='grid grid-cols-5 w-full gap-[10px] mb-6'>
                           {getCategoryCards().map((subItem, subIndex) => (
-                            <button 
+                            <Link 
                               key={`product-${subIndex}`}
-                              onClick={() => handleProductTypeClick(subItem.productType)}
+                              href={`/Products&Solutions?type=productType&value=${encodeURIComponent(subItem.productType).replace(/%20/g, '+')}`}
+                              onClick={() => {
+                                setIsHovered(false);
+                                setIsMegaMenuOpen(false);
+                              }}
                               className={`rounded-lg p-4 relative h-20 flex items-center justify-between ${subItem.shade} cursor-pointer ${
                                 selectedProductType === subItem.productType ? 'ring-2 ring-blue-500 ring-dashed' : ''
                               }`}
@@ -274,19 +278,21 @@ const Navbar = () => {
                               <div className={`absolute inset-0 bg-cover bg-center bg-no-repeat rounded-lg opacity-20`} style={{backgroundImage: `url(${subItem.image})`}}></div>
                               <p className='text-white z-10 relative text-lg w-1/2'>{subItem.label}</p>
                               <FiArrowRight  className='text-white'/>
-                            </button>
+                            </Link>
                           ))}
                         </div>
                         
-                        {/* Middle Section - Vehicle Categories and Product Cards */}
-                        <div className="flex">
-                          {/* Left Side - Vehicle Categories */}
+                        {/* Middle Section - Hidden for future use */}
+                        {/* <div className="flex">
                           <div className='w-1/4 border-r border-gray-200 pr-6'>
-                            {/* Vehicle Category Tabs - Only display if available */}
                             {availableVehicleCategories.length > 0 && (
                               <div className='flex flex-col gap-2'>
-                                <button
-                                  onClick={() => handleVehicleCategoryClick('All')}
+                                <Link
+                                  href="/Products&Solutions"
+                                  onClick={() => {
+                                    setIsHovered(false);
+                                    setIsMegaMenuOpen(false);
+                                  }}
                                   className={`flex items-center justify-between py-2 px-3 text-left transition-all ${
                                     selectedVehicleCategory === 'All'
                                       ? 'text-primary border-b-2 border-primary font-medium'
@@ -295,11 +301,15 @@ const Navbar = () => {
                                 >
                                   <span className="text-sm">All</span>
                                   <FiArrowRight className="text-xs" />
-                                </button>
+                                </Link>
                                 {availableVehicleCategories.map((category, index) => (
-                                  <button
+                                  <Link
                                     key={category.name}
-                                    onClick={() => handleVehicleCategoryClick(category.name)}
+                                    href={`/Products&Solutions?type=vehicle&value=${encodeURIComponent(category.name)}`}
+                                    onClick={() => {
+                                      setIsHovered(false);
+                                      setIsMegaMenuOpen(false);
+                                    }}
                                     className={`flex items-center justify-between py-2 px-3 text-left transition-all ${
                                       selectedVehicleCategory === category.name
                                         ? 'text-primary border-b-2 border-primary font-medium'
@@ -308,95 +318,15 @@ const Navbar = () => {
                                   >
                                     <span className="text-sm">{category.name}</span>
                                     <FiArrowRight className="text-xs" />
-                                  </button>
-                          ))}
-                        </div>
+                                  </Link>
+                                ))}
+                              </div>
                             )}
                           </div>
                           
-                          {/* Right Side - Product Cards */}
                           <div className='w-3/4 pl-6'>
-                            {/* Product Cards - Dynamic with filtered API data */}
-                            {filteredProducts.length > 4 ? (
-                              <Swiper
-                                modules={[Pagination, Navigation]}
-                                spaceBetween={12}
-                                slidesPerView={3}
-                                pagination={{ 
-                                  clickable: true,
-                                  dynamicBullets: true,
-                                }}
-                                navigation={true}
-                                className="mega-menu-product-swiper"
-                                breakpoints={{
-                                  640: {
-                                    slidesPerView: 3,
-                                    spaceBetween: 12,
-                                  },
-                                  768: {
-                                    slidesPerView: 4,
-                                    spaceBetween: 12,
-                                  },
-                                  1024: {
-                                    slidesPerView: 4,
-                                    spaceBetween: 12,
-                                  },
-                                  1280: {
-                                    slidesPerView: 4,
-                                    spaceBetween: 12,
-                                  },
-                                }}
-                              >
-                                {filteredProducts.map((product, subIndex) => (
-                                  <SwiperSlide key={`product-card-${subIndex}`}>
-                                    <Link 
-                                      href={`/Product/${product.id}`}
-                                      onClick={() => handleProductClick(product.id, product.name)}
-                                      className="flex flex-col items-start justify-between border border-gray-300 rounded-lg p-3 product-grid-item group
-                                      transition-all duration-200 hover:border-primary hover:shadow-md bg-white cursor-pointer h-full  hover:text-white"
-                                    >
-                                      <img
-                                        src={product.image}
-                                        alt={product.name}
-                                        className="w-full h-20 object-contain mb-2"
-                                      />
-                                      <div className='flex items-end justify-between gap-1 w-full'>
-                                        <h3 className="text-sm font-medium  truncate w-11/12">{product.name}</h3>
-                                        <div className='bg-white rounded-full p-1 border border-gray-300 group-hover:border-primary'>
-                                          <FiArrowRight className='text-xs text-primary' />
-                                        </div>
-                                      </div>
-                                    </Link>
-                                  </SwiperSlide>
-                                ))}
-                              </Swiper>
-                            ) : (
-                              <div className='grid grid-cols-4 gap-3'>
-                                {filteredProducts.slice(0, 4).map((product, subIndex) => (
-                          <Link
-                                    key={`product-card-${subIndex}`} 
-                                    href={`/Product/${product.id}`}
-                                    onClick={() => handleProductClick(product.id, product.name)}
-                                    className="flex flex-col items-start justify-between border border-gray-300 rounded-lg p-3 product-grid-item group
-                                    transition-all duration-200 hover:border-primary hover:shadow-md bg-white cursor-pointer hover:text-white"
-                                  >
-                                    <img
-                                      src={product.image}
-                                      alt={product.name}
-                                      className="w-full h-20 object-contain mb-2"
-                                    />
-                                    <div className='flex items-end justify-between gap-1 w-full'>
-                                      <h3 className="text-sm font-medium  truncate w-11/12">{product.name}</h3>
-                                      <div className='bg-white rounded-full p-1 border border-gray-300 group-hover:border-primary'>
-                                        <FiArrowRight className='text-xs text-primary' />
-                                      </div>
-                                    </div>
-                          </Link>
-                        ))}
-                              </div>
-                            )}
-                        </div>
-                        </div>
+                          </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>
@@ -468,9 +398,13 @@ const Navbar = () => {
                     {/* Top Section - Category/Application Cards */}
                     <div className='grid grid-cols-2 gap-3 mb-4 mt-4'>
                       {getCategoryCards().map((subItem, subIndex) => (
-                        <button 
+                        <Link 
                           key={`mobile-product-${subIndex}`}
-                          onClick={() => handleProductTypeClick(subItem.productType)}
+                                                        href={`/Products&Solutions?type=productType&value=${encodeURIComponent(subItem.productType).replace(/%20/g, '+')}`}
+                          onClick={() => {
+                            toggleMenu();
+                            setOpenSubmenu(null);
+                          }}
                           className={`rounded-lg p-3 relative h-16 flex items-center justify-between ${subItem.shade} cursor-pointer ${
                             selectedProductType === subItem.productType ? 'ring-2 ring-blue-500 ring-dashed' : ''
                           }`}
@@ -478,17 +412,21 @@ const Navbar = () => {
                           <div className={`absolute inset-0 bg-cover bg-center bg-no-repeat rounded-lg opacity-20`} style={{backgroundImage: `url(${subItem.image})`}}></div>
                           <p className='text-white z-10 relative text-sm w-1/2'>{subItem.label}</p>
                           <FiArrowRight  className='text-white text-sm'/>
-                        </button>
+                        </Link>
                       ))}
                     </div>
                     
-                    {/* Vehicle Categories */}
-                    {availableVehicleCategories.length > 0 && (
+                    {/* Vehicle Categories - Hidden for future use */}
+                    {/* {availableVehicleCategories.length > 0 && (
                       <div className='mb-4'>
                         <h4 className="text-sm font-medium text-gray-700 mb-2">Vehicle Categories</h4>
                         <div className='flex flex-wrap gap-2'>
-                          <button
-                            onClick={() => handleVehicleCategoryClick('All')}
+                          <Link
+                            href="/Products&Solutions"
+                            onClick={() => {
+                              toggleMenu();
+                              setOpenSubmenu(null);
+                            }}
                             className={`py-1 px-3 text-xs rounded-md transition-all ${
                               selectedVehicleCategory === 'All'
                                 ? 'bg-primary text-white'
@@ -496,11 +434,15 @@ const Navbar = () => {
                             }`}
                           >
                             All
-                          </button>
+                          </Link>
                           {availableVehicleCategories.map((category, index) => (
-                            <button
+                            <Link
                               key={category.name}
-                              onClick={() => handleVehicleCategoryClick(category.name)}
+                              href={`/Products&Solutions?type=vehicle&value=${encodeURIComponent(category.name)}`}
+                              onClick={() => {
+                                toggleMenu();
+                                setOpenSubmenu(null);
+                              }}
                               className={`py-1 px-3 text-xs rounded-md transition-all ${
                                 selectedVehicleCategory === category.name
                                   ? 'bg-primary text-white'
@@ -508,18 +450,18 @@ const Navbar = () => {
                               }`}
                             >
                               {category.name}
-                            </button>
+                            </Link>
                           ))}
                         </div>
                       </div>
-                    )}
+                    )} */}
                     
-                    {/* Product Cards */}
-                    <div className='mb-4'>
+                    {/* Product Cards - Hidden for future use */}
+                    {/* <div className='mb-4'>
                       <h4 className="text-sm font-medium text-gray-700 mb-2">Products</h4>
                       <div className='grid grid-cols-1 gap-2'>
                         {filteredProducts.slice(0, 8).map((product, subIndex) => (
-                      <Link
+                          <Link
                             key={`mobile-product-link-${subIndex}`}
                             href={`/Product/${product.id}`}
                             className="flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-gray-50 transition-all cursor-pointer"
@@ -528,7 +470,7 @@ const Navbar = () => {
                               toggleMenu();
                               setOpenSubmenu(null);
                             }}
-                      >
+                          >
                             <div className="flex items-center gap-3">
                               <img
                                 src={product.image}
@@ -541,7 +483,7 @@ const Navbar = () => {
                           </Link>
                         ))}
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               ) : (

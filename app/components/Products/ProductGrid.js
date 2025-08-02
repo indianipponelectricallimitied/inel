@@ -70,7 +70,7 @@ const ProductGrid = ({ filter, searchResults, compact = false }) => {
           transition-all duration-200 hover:product-gradient hover:border-primary hover:shadow-[0px 0px 40px -16px #578EFFC7]
           hover:text-white"
           >
-            <Link href={`/Product/${product.id}`} key={product.id}> 
+            <Link href={`/Product/${product.id}`} key={product.id} className='w-full'> 
             <img
               src={product.image}
               alt={product.name}

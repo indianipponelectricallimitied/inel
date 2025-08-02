@@ -1,26 +1,33 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import ApiService from '@/app/services/api';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 const CategoryNav = ({ onFilterChange, initialTab = 'all', initialValue = null, compact = false }) => {
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+    const [activeTab, setActiveTab] = useState(initialTab);
+    const [activeSubCategory, setActiveSubCategory] = useState(null);
     const [vehicleCategories, setVehicleCategories] = useState([]);
     const [productTypes, setProductTypes] = useState([]);
-    const [activeTab, setActiveTab] = useState(initialTab);
-    const [activeSubCategory, setActiveSubCategory] = useState(initialValue);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const hasProcessedInitialValues = useRef(false);
+    const swiperRef = useRef(null);
 
+    // Fetch data on mount
     useEffect(() => {
         const fetchData = async () => {
             try {
+                setLoading(true);
                 const [vehicleData, productData] = await Promise.all([
                     ApiService.getVehicleCategories(),
                     ApiService.getProductTypes()
@@ -30,17 +37,20 @@ const CategoryNav = ({ onFilterChange, initialTab = 'all', initialValue = null, 
                 setProductTypes(productData);
                 setLoading(false);
                 
-                // If no initial value is provided, show all products
-                if (!initialValue && initialTab === 'all') {
-                    onFilterChange({ type: 'all' });
-                } else {
-                    // Auto-select first category/type when data loads
-                    if (vehicleData.length > 0 && activeTab === 'category') {
-                        setActiveSubCategory(vehicleData[0].name);
-                        onFilterChange({ type: 'vehicle', value: vehicleData[0].name });
-                    } else if (productData.length > 0 && activeTab === 'type') {
-                        setActiveSubCategory(productData[0].name);
-                        onFilterChange({ type: 'productType', value: productData[0].name });
+                // Only set default selections if no URL parameters are provided
+                if (!initialValue) {
+                    // If no initial value is provided, show all products
+                    if (initialTab === 'all') {
+                        onFilterChange({ type: 'all' });
+                    } else {
+                        // Auto-select first category/type when data loads (only if no URL params)
+                        if (vehicleData.length > 0 && activeTab === 'category') {
+                            setActiveSubCategory(vehicleData[0].name);
+                            onFilterChange({ type: 'vehicle', value: vehicleData[0].name });
+                        } else if (productData.length > 0 && activeTab === 'type') {
+                            setActiveSubCategory(productData[0].name);
+                            onFilterChange({ type: 'productType', value: productData[0].name });
+                        }
                     }
                 }
             } catch (error) {
@@ -53,21 +63,110 @@ const CategoryNav = ({ onFilterChange, initialTab = 'all', initialValue = null, 
         fetchData();
     }, []); // Only fetch data on mount
 
-    // Handle URL-based filtering only once on mount
+    // Handle URL-based filtering when component mounts or initial values change
     useEffect(() => {
-        if (initialTab !== 'all' && initialValue && !loading) {
-            const filterType = initialTab === 'category' ? 'vehicle' : 'productType';
-            if (
-                (filterType === 'vehicle' && vehicleCategories.some(cat => cat.name === initialValue)) ||
-                (filterType === 'productType' && productTypes.some(type => type.name === initialValue))
-            ) {
+        if (!loading && !hasProcessedInitialValues.current && initialTab && initialValue) {
+            hasProcessedInitialValues.current = true;
+            
+            // Set the active tab based on URL parameters
+            if (initialTab === 'category' || initialTab === 'type') {
+                setActiveTab(initialTab);
+                setActiveSubCategory(initialValue);
+                
+                // Apply the filter
+                const filterType = initialTab === 'category' ? 'vehicle' : 'productType';
                 onFilterChange({
                     type: filterType,
                     value: initialValue
                 });
             }
+        } else if (!loading && !hasProcessedInitialValues.current && initialTab === 'all') {
+            hasProcessedInitialValues.current = true;
+            // Handle 'all' tab
+            setActiveTab('all');
+            setActiveSubCategory(null);
+            onFilterChange({ type: 'all' });
         }
-    }, [loading]); // Only run when loading state changes
+    }, [loading, initialTab, initialValue]);
+
+    // Listen for route changes and update component state
+    useEffect(() => {
+        if (!loading) {
+            const type = searchParams.get('type');
+            const value = searchParams.get('value');
+            
+            if (type && value) {
+                // Decode the value to handle URL encoding
+                const decodedValue = decodeURIComponent(value);
+                
+                if (type === 'productType') {
+                    setActiveTab('type');
+                    setActiveSubCategory(decodedValue);
+                    onFilterChange({
+                        type: 'productType',
+                        value: decodedValue
+                    });
+                } else if (type === 'vehicle') {
+                    setActiveTab('category');
+                    setActiveSubCategory(decodedValue);
+                    onFilterChange({
+                        type: 'vehicle',
+                        value: decodedValue
+                    });
+                }
+            } else {
+                // No URL parameters, show all products
+                setActiveTab('all');
+                setActiveSubCategory(null);
+                onFilterChange({ type: 'all' });
+            }
+        }
+    }, [pathname, searchParams, loading]);
+
+    // Scroll to active slide when activeSubCategory changes
+    useEffect(() => {
+        if (swiperRef.current && activeSubCategory && !loading) {
+            const swiper = swiperRef.current.swiper;
+            if (swiper) {
+                // Find the index of the active subcategory
+                let targetIndex = -1;
+                
+                if (activeTab === 'category') {
+                    targetIndex = vehicleCategories.findIndex(cat => cat.name === activeSubCategory);
+                } else if (activeTab === 'type') {
+                    targetIndex = productTypes.findIndex(type => type.name === activeSubCategory);
+                }
+                
+                if (targetIndex !== -1) {
+                    // Get current slides per view
+                    const slidesPerView = swiper.params.slidesPerView;
+                    const totalSlides = activeTab === 'category' ? vehicleCategories.length : productTypes.length;
+                    
+                    // Calculate the center position
+                    let centerIndex = targetIndex;
+                    
+                    // If the target is near the beginning, center it
+                    if (targetIndex < slidesPerView / 2) {
+                        centerIndex = 0;
+                    }
+                    // If the target is near the end, position it at the end
+                    else if (targetIndex >= totalSlides - slidesPerView / 2) {
+                        centerIndex = totalSlides - slidesPerView;
+                    }
+                    // Otherwise, center the target slide
+                    else {
+                        centerIndex = targetIndex - Math.floor(slidesPerView / 2);
+                    }
+                    
+                    // Ensure centerIndex is within bounds
+                    centerIndex = Math.max(0, Math.min(centerIndex, totalSlides - slidesPerView));
+                    
+                    // Scroll to the calculated position
+                    swiper.slideTo(centerIndex, 300);
+                }
+            }
+        }
+    }, [activeSubCategory, activeTab, vehicleCategories, productTypes, loading]);
 
     const handleTabClick = (tab) => {
         setActiveTab(tab);
@@ -176,6 +275,7 @@ const CategoryNav = ({ onFilterChange, initialTab = 'all', initialValue = null, 
             {/* Sub Categories Swiper */}
                 <div className="mb-10">
                     <Swiper
+                        ref={swiperRef}
                         modules={[ Pagination]}
                         spaceBetween={16}
                         slidesPerView={2}
