@@ -48,7 +48,7 @@ const achievements = [
     {
         image:"/images/about/GreenCo - Plaque & Certificate India Nippon Electricals Limited, Hosur.webp",
         alt:"GreenCo",
-        title:"GreenCo Certification - India Nippon Electricals Limited",
+        title:"GreenCo Certification - India Nippon Electricals Limited, Hosur",
     } ,
     
 ]
