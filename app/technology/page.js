@@ -35,7 +35,7 @@ export default function Technology() {
                 </div>
             </section>
 
-            <Video videoUrl="https://indian-nippon.s3.ap-south-1.amazonaws.com/web/inel-video.mp4"/>
+            <Video videoUrl="https://www.youtube-nocookie.com/embed/1v7vqyGpGFg?si=tf6ahW7t3Jx6_RPH"/>
 
         </>
     )
