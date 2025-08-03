@@ -3,6 +3,9 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
+import slider1 from "@/public/images/Sustainability/sustainability2.webp"
+import slider2 from "@/public/images/Sustainability/sustainability.webp"
+import slider3 from "@/public/images/Sustainability/3.webp"
 
 // Import Swiper styles
 import 'swiper/css';
@@ -10,33 +13,38 @@ import 'swiper/css/pagination';
 
 const sustainableImages = [
     {
-        src: "/images/Sustainability/sustainability.webp",
+        src: slider1,
         alt: "Sustainable Group - Main Building"
     },
     {
-        src: "/images/Sustainability/SustainableGroup.png", 
+        src: slider2, 
         alt: "Sustainable Group - Employees"
     },
     {
-        src: "/images/Sustainability/SustainableGroup.png",
+        src: slider3,
         alt: "Sustainable Group - Facilities"
     },
     {
-        src: "/images/Sustainability/SustainableGroup.png",
-        alt: "Sustainable Group - Campus"
+        src: slider1,
+        alt: "Sustainable Group - Main Building"
     },
     {
-        src: "/images/Sustainability/SustainableGroup.png",
-        alt: "Sustainable Group - Infrastructure"
-    }
+        src: slider2, 
+        alt: "Sustainable Group - Employees"
+    },
+    {
+        src: slider3,
+        alt: "Sustainable Group - Facilities"
+    },
+
 ];
 
 export default function SustainableSlider() {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <div className="w-full max-w-6xl mx-auto">
-            <div className="swiper-container h-[400px] md:h-[500px] relative">
+        <div className="w-full container mx-auto my-0">
+            <div className="swiper-container h-[300px] md:h-[600px] relative !m-0 p-0">
                 <Swiper
                     spaceBetween={40}
                     slidesPerView={1.5}
@@ -49,9 +57,9 @@ export default function SustainableSlider() {
                     }}
                     pagination={{
                         clickable: true,
-                        // dynamicBullets: true,
+                        dynamicBullets: false,
                     }}
-                    modules={[Pagination, Autoplay]}
+                    modules={[Pagination]}
                     className="sustainable-swiper h-full"
                     onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                     breakpoints={{
@@ -86,38 +94,26 @@ export default function SustainableSlider() {
                                     />
                                     
                                     {/* Cut design overlay */}
-                                    <div className="absolute bottom-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-white transform rotate-45 translate-x-12 translate-y-12 md:translate-x-16 md:translate-y-16 opacity-90"></div>
                                 </div>
                             </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
+                
             </div>
             
-            {/* Custom pagination dots */}
-            <div className="flex justify-center mt-6 space-x-2">
-                {sustainableImages.map((_, index) => (
-                    <button
-                        key={index}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                            index === activeIndex 
-                                ? 'bg-blue-600 scale-125' 
-                                : 'bg-gray-300 hover:bg-gray-400'
-                        }`}
-                    />
-                ))}
-            </div>
+            
 
             <style jsx global>{`
                 .swiper-container {
                     width: 100%;
-                    margin: 40px 0;
-                    padding: 45px 0;
+                    padding: 10px;
                 }
                 .sustainable-swiper .swiper-pagination-bullet {
                     background: #3B82F6;
                     opacity: 0.5;
-                    display: none;
+                    
+                    
                 }
                 .sustainable-swiper .swiper-pagination-bullet-active {
                     opacity: 1;
@@ -134,11 +130,15 @@ export default function SustainableSlider() {
                     opacity: 1;
                     z-index: 1;
                     transform: scale(2);
+                    @media (max-width: 768px) {
+                        transform: scale(1.6);
+                    }
                 }
                 .sustainable-swiper .swiper-slide img {
                     width: 100%;
                     object-fit: contain;
                     border-radius: 30px;
+                    
                 }
                 .sustainable-swiper .swiper-wrapper {
                     align-items: center;
