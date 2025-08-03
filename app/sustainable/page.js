@@ -3,6 +3,7 @@ import PlayVideo from "../components/Ui/playVideo"
 import Image from "next/image"
 import KnowledgeHub from "../components/Ui/Knowledge-Hub"
 import Popup from "../components/Ui/popup";
+import SustainableSlider from "../components/Ui/SustainableSlider";
 import { GoArrowUpRight } from "react-icons/go";
 
 const quickLinks = [
@@ -101,10 +102,9 @@ export default function Sustainability(){
                     <h5>Sustainability</h5>
                     <h1 >Powering a Sustainable Future</h1>
                     <p className="md:w-2/3 mx-auto pb-5">At India Nippon Electricals, sustainability is at the heart of everything we do. We are committed to creating a greener future through eco-friendly practices, energy-efficient solutions, and responsible manufacturing. Our approach focuses on reducing our environmental footprint while driving innovation and ensuring long-term value for our communities, customers, and the planet. Together, we power progress with purpose.</p>
-
-                    {/* <PlayVideo  videolink ="/videos/home-main.mp4"/> */}
                     <Image src="/images/Sustainability/SustainableGroup.png" alt="sustainable" width={1000} height={1000} className="w-full h-full object-cover" />
-
+                    {/* Replace static image with slider */}
+                    {/* <SustainableSlider /> */}
 
                 </div>
             </section>
