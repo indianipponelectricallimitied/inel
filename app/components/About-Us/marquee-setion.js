@@ -119,8 +119,8 @@ export default function MarqueeSection() {
 
         .logos-slide img {
           display: inline-block;
-          width: 150px !important;
-          height: 110px !important;
+          width: 180px !important;
+          height: 150px !important;
           margin: 0 40px;
           object-fit: contain;
         }

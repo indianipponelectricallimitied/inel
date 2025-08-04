@@ -125,7 +125,8 @@ const Navbar = () => {
         ApiService.filterProductsByVehicleCategory([product], category.name).length > 0
       )
     );
-    setAvailableVehicleCategories(availableCategories);
+    // Limit to only the first 4 vehicle categories for future use
+    setAvailableVehicleCategories(availableCategories.slice(0, 4));
     
     // Set the first available vehicle category as selected, or clear if none available
     if (availableCategories.length > 0) {
@@ -186,7 +187,7 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { label: 'Products', href: '/Products&Solutions', 
+    { label: 'Products & Solutions', href: '/Products&Solutions', 
       submenu: products.map(product => ({
         label: product.name,
         href: `/Product/${product.id}`
@@ -262,7 +263,9 @@ const Navbar = () => {
                          style={{ display: isMegaMenuOpen ? 'block' : 'none' }}>
                       <div className="container mx-auto flex flex-col border-t border-gray-200 py-5">
                         {/* Top Section - Category/Application Cards (2 rows of 5) */}
+            {/* <div className='flex items-center gap-2 pb-2'>Solutions</div> */}
                         <div className='grid grid-cols-5 w-full gap-[10px] mb-6'>
+                          
                           {getCategoryCards().map((subItem, subIndex) => (
                             <Link 
                               key={`product-${subIndex}`}
@@ -276,57 +279,51 @@ const Navbar = () => {
                               }`}
                             >
                               <div className={`absolute inset-0 bg-cover bg-center bg-no-repeat rounded-lg opacity-20`} style={{backgroundImage: `url(${subItem.image})`}}></div>
-                              <p className='text-white z-10 relative text-lg w-1/2'>{subItem.label}</p>
+                              <p className='text-white z-10 relative text-lg w-9/12'>{subItem.label}</p>
                               <FiArrowRight  className='text-white'/>
                             </Link>
                           ))}
                         </div>
                         
-                        {/* Middle Section - Hidden for future use */}
-                        {/* <div className="flex">
-                          <div className='w-1/4 border-r border-gray-200 pr-6'>
-                            {availableVehicleCategories.length > 0 && (
-                              <div className='flex flex-col gap-2'>
+                        {/* Vehicle Categories Section - First 4 only */}
+                        {availableVehicleCategories.length > 0 && (
+                          <div className='flex flex-row justify-center gap-2 items-center'>
+                            <h4 className="text-sm font-medium text-gray-700">Vehicle Categories</h4>
+                            <div className='flex flex-wrap gap-2'>
+                              <Link
+                                href="/Products&Solutions"
+                                onClick={() => {
+                                  setIsHovered(false);
+                                  setIsMegaMenuOpen(false);
+                                }}
+                                className={`py-2 px-4 text-sm rounded-md transition-all ${
+                                  selectedVehicleCategory === 'All'
+                                    ? 'bg-primary text-white'
+                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                }`}
+                              >
+                                All Categories
+                              </Link>
+                              {availableVehicleCategories.slice(0, 4).map((category, index) => (
                                 <Link
-                                  href="/Products&Solutions"
+                                  key={category.name}
+                                  href={`/Products&Solutions?type=vehicle&value=${encodeURIComponent(category.name).replace(/%20/g, '+')}`}
                                   onClick={() => {
                                     setIsHovered(false);
                                     setIsMegaMenuOpen(false);
                                   }}
-                                  className={`flex items-center justify-between py-2 px-3 text-left transition-all ${
-                                    selectedVehicleCategory === 'All'
-                                      ? 'text-primary border-b-2 border-primary font-medium'
-                                      : 'text-gray-700 hover:text-primary'
+                                  className={`py-2 px-4 text-sm rounded-md transition-all ${
+                                    selectedVehicleCategory === category.name
+                                      ? 'bg-primary text-white'
+                                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                                   }`}
                                 >
-                                  <span className="text-sm">All</span>
-                                  <FiArrowRight className="text-xs" />
+                                  {category.name}
                                 </Link>
-                                {availableVehicleCategories.map((category, index) => (
-                                  <Link
-                                    key={category.name}
-                                    href={`/Products&Solutions?type=vehicle&value=${encodeURIComponent(category.name)}`}
-                                    onClick={() => {
-                                      setIsHovered(false);
-                                      setIsMegaMenuOpen(false);
-                                    }}
-                                    className={`flex items-center justify-between py-2 px-3 text-left transition-all ${
-                                      selectedVehicleCategory === category.name
-                                        ? 'text-primary border-b-2 border-primary font-medium'
-                                        : 'text-gray-700 hover:text-primary'
-                                    }`}
-                                  >
-                                    <span className="text-sm">{category.name}</span>
-                                    <FiArrowRight className="text-xs" />
-                                  </Link>
-                                ))}
-                              </div>
-                            )}
+                              ))}
+                            </div>
                           </div>
-                          
-                          <div className='w-3/4 pl-6'>
-                          </div>
-                        </div> */}
+                        )}
                       </div>
                     </div>
                   </div>
@@ -416,8 +413,8 @@ const Navbar = () => {
                       ))}
                     </div>
                     
-                    {/* Vehicle Categories - Hidden for future use */}
-                    {/* {availableVehicleCategories.length > 0 && (
+                    {/* Vehicle Categories Section - First 4 only */}
+                    {availableVehicleCategories.length > 0 && (
                       <div className='mb-4'>
                         <h4 className="text-sm font-medium text-gray-700 mb-2">Vehicle Categories</h4>
                         <div className='flex flex-wrap gap-2'>
@@ -433,12 +430,12 @@ const Navbar = () => {
                                 : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                             }`}
                           >
-                            All
+                            All Categories
                           </Link>
-                          {availableVehicleCategories.map((category, index) => (
+                          {availableVehicleCategories.slice(0, 4).map((category, index) => (
                             <Link
                               key={category.name}
-                              href={`/Products&Solutions?type=vehicle&value=${encodeURIComponent(category.name)}`}
+                              href={`/Products&Solutions?type=vehicle&value=${encodeURIComponent(category.name).replace(/%20/g, '+')}`}
                               onClick={() => {
                                 toggleMenu();
                                 setOpenSubmenu(null);
@@ -454,7 +451,7 @@ const Navbar = () => {
                           ))}
                         </div>
                       </div>
-                    )} */}
+                    )}
                     
                     {/* Product Cards - Hidden for future use */}
                     {/* <div className='mb-4'>

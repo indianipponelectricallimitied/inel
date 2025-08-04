@@ -4,6 +4,14 @@ import Image from "next/image";
 
 const logos = [
   {
+    src: "/images/home/companies/yanmar.svg",
+    alt: "Yanmar",
+  },
+  {
+    src: "/images/home/companies/dellorto-seeklogo.svg",
+    alt: "Dellorto",
+  },
+  {
     src: "/images/home/companies/tvs.svg",
     alt: "tvs",
   },
@@ -18,6 +26,10 @@ const logos = [
   {
     src: "/images/home/companies/Suzuki_Motorcycle_India_Limited.svg",
     alt: "suzuku 2w",
+  },
+  {
+    src: "/images/home/companies/kawasaki.svg",
+    alt: "Kawasaki",
   },
   {
     src: "/images/home/companies/re.svg",
@@ -79,14 +91,7 @@ const logos = [
     src: "/images/home/companies/John_Deere.svg",
     alt: "John Deere",
   },
-  {
-    src: "/images/home/companies/yanmar.svg",
-    alt: "Yanmar",
-  },
-  {
-    src: "/images/home/companies/dellorto-seeklogo.svg",
-    alt: "Dellorto",
-  },
+ 
 
   
 ];
@@ -154,8 +159,8 @@ export default function MarqueeSection() {
 
         .logos-slide img {
           display: inline-block;
-          width: 150px !important;
-          height: 110px !important;
+          width: 200px !important;
+          height: 150px !important;
           margin: 0 40px;
           object-fit: contain;
         }
@@ -189,7 +194,7 @@ export default function MarqueeSection() {
         }
         }
       `}</style>
-      <p className='text-right pr-4 container-fluid text-sm'>*Logos shown are trademarks of their</p>
+      <p className='text-right pr-4 container-fluid text-sm'>*Logos shown are trademarks of their respective owners</p>
     </section>
   );
 }
