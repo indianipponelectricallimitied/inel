@@ -21,9 +21,15 @@ const achievements = [
         title: "Innovation Partner Award by Generac – 2025",
     },
     {
-        image: "/images/about/tvslogo.webp",
+        image: "/images/about/best supplier tvs.webp",
+
         alt: "tvs",
         title: "Best Supplier Award by TVS – 2021-2022",
+    },
+    {
+        image: "/images/about/reliabilitycluster.webp",
+        alt: "reliabilitycluster",
+        title: "Reliability Cluster Program 1 Appreciation Award by TVS",
     },
     {
         image: "/images/about/gptw.webp",
