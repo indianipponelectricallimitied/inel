@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 
@@ -65,11 +65,15 @@ export default function ManufacturingFacilities() {
           //   clickable: true,
           // }}
           loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
         
           navigation={{
             nextEl: '.swiper-next',
             prevEl: '.swiper-prev',
-            }}
+          }}
           breakpoints={{
             640: {
               slidesPerView: 1.4,
@@ -85,8 +89,8 @@ export default function ManufacturingFacilities() {
               spaceBetween: 10,
               centeredSlides: true,
             },
-            }}
-            modules={[ Navigation]}
+          }}
+          modules={[Navigation, Autoplay]}
           className="Facilities"
         >
           {facilities.map((facility, index) => (

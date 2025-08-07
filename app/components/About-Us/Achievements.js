@@ -78,11 +78,11 @@ export default function Achievements() {
                         pagination={{
                             clickable: true,
                         }}
-                        // autoplay={{
-                        //     delay: 3500,
-                        //     disableOnInteraction: false,
-                        //   }}
-                        speed={1500}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                          }}
+                        
                         loop={true}
                         spaceBetween={20}
                         modules={[Autoplay,Pagination]}

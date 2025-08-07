@@ -12,8 +12,15 @@ const ProductGrid = ({ filter, searchResults, compact = false }) => {
     // Fetch products when component mounts
     ApiService.getProducts()
       .then(products => {
-        setProducts(products);
-        setFilteredProducts(products);
+        // Sort products by order field (0 to increasing)
+        const sortedProducts = products.sort((a, b) => {
+          const orderA = a.order !== undefined ? a.order : 999;
+          const orderB = b.order !== undefined ? b.order : 999;
+          return orderA - orderB;
+        });
+        
+        setProducts(sortedProducts);
+        setFilteredProducts(sortedProducts);
       })
       .catch(error => console.error('Error:', error));
   }, []);

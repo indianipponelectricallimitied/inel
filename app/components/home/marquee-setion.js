@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from "next/image";
 
 const logos = [
@@ -91,55 +91,82 @@ const logos = [
     src: "/images/home/companies/John_Deere.svg",
     alt: "John Deere",
   },
- 
-
-  
 ];
 
-
 export default function MarqueeSection() {
+  const sliderRef = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    if (!sliderRef.current) return;
+
+    let observer;
+    if ('IntersectionObserver' in window) {
+      observer = new window.IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setInView(true);
+              observer.disconnect();
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+      observer.observe(sliderRef.current);
+    } else {
+      // fallback for old browsers
+      setInView(true);
+    }
+
+    return () => {
+      if (observer) observer.disconnect();
+    };
+  }, []);
 
   return (
     <section className="bg-[#F8F8F8] pb-16 overflow-hidden">
-        <div className="container mx-auto">
-          <div className='relative'>
-            <h1 className='text-center bg-[#F8F8F8] relative z-10 w-fit mx-auto px-5'>Trusted by Leaders</h1>
-            <span className='border-b border-[#D9D9D9] w-full absolute bottom-[40%] -translate-y-1/2 left-0'></span>
-          </div>
-          <p className='text-center py-10 md:w-4/5 mx-auto'>Collaborating with top automotive brands to drive innovation, performance, and excellence in mobility solutions.</p>
+      <div className="container mx-auto">
+        <div className='relative'>
+          <h1 className='text-center bg-[#F8F8F8] relative z-10 w-fit mx-auto px-5'>Trusted by Leaders</h1>
+          <span className='border-b border-[#D9D9D9] w-full absolute bottom-[40%] -translate-y-1/2 left-0'></span>
         </div>
-        <div className="logo-slider">
-          <div className="logos-slide">
-            {logos.map((logo, index) => (
-              <Image 
-                key={index} 
-                src={logo.src} 
-                alt={logo.alt} 
-                width={100} 
-                height={100}
-                className="inline-block" 
-              />
-            ))}
-            {logos.map((logo, index) => (
-              <Image 
-                key={index} 
-                src={logo.src} 
-                alt={logo.alt} 
-                width={100} 
-                height={100}
-                className="inline-block" 
-              />
-            ))}
-            {logos.map((logo, index) => (
-              <Image 
-                key={index} 
-                src={logo.src} 
-                alt={logo.alt} 
-                width={100} 
-                height={100}
-                className="inline-block" 
-              />
-            ))}
+        <p className='text-center py-10 md:w-4/5 mx-auto'>Collaborating with top automotive brands to drive innovation, performance, and excellence in mobility solutions.</p>
+      </div>
+      <div className="logo-slider" ref={sliderRef}>
+        <div className={`logos-slide${inView ? " animate" : ""}`}>
+          {logos.map((logo, index) => (
+            <Image 
+              key={index} 
+              src={logo.src} 
+              alt={logo.alt} 
+              width={100} 
+              height={100}
+              className="inline-block" 
+            />
+          ))}
+          {logos.map((logo, index) => (
+            <Image 
+              key={logos.length + index} 
+              src={logo.src} 
+              alt={logo.alt} 
+              width={100} 
+              height={100}
+              className="inline-block" 
+            />
+          ))}
+          {logos.map((logo, index) => (
+            <Image 
+              key={2 * logos.length + index} 
+              src={logo.src} 
+              alt={logo.alt} 
+              width={100} 
+              height={100}
+              className="inline-block" 
+            />
+          ))}
         </div>
       </div>
 
@@ -153,8 +180,11 @@ export default function MarqueeSection() {
         }
 
         .logos-slide {
-          animation: scroll 30s linear infinite;
           white-space: nowrap;
+        }
+
+        .logos-slide.animate {
+          animation: scroll 30s linear infinite;
         }
 
         .logos-slide img {
@@ -168,7 +198,6 @@ export default function MarqueeSection() {
         // .logo-slider:hover .logos-slide {
         //   animation-play-state: paused;
         // }
-        
 
         @keyframes scroll {
           0% {
@@ -185,13 +214,13 @@ export default function MarqueeSection() {
           }
 
           @keyframes scroll {
-          0% {
-            transform: translateX(0px);
+            0% {
+              transform: translateX(0px);
+            }
+            100% {
+              transform: translateX(calc(-200px * 9));
+            }
           }
-          100% {
-            transform: translateX(calc(-200px * 9));
-          }
-        }
         }
       `}</style>
       <p className='text-right pr-4 container-fluid text-sm'>*Logos shown are trademarks of their respective owners</p>

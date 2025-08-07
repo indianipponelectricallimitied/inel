@@ -33,8 +33,22 @@ const CategoryNav = ({ onFilterChange, initialTab = 'all', initialValue = null, 
                     ApiService.getProductTypes()
                 ]);
 
-                setVehicleCategories(vehicleData);
-                setProductTypes(productData);
+                // Sort vehicle categories by order field (0 to increasing)
+                const sortedVehicleData = vehicleData.sort((a, b) => {
+                    const orderA = a.order !== undefined ? a.order : 999;
+                    const orderB = b.order !== undefined ? b.order : 999;
+                    return orderA - orderB;
+                });
+
+                // Sort product types by order field (0 to increasing)
+                const sortedProductData = productData.sort((a, b) => {
+                    const orderA = a.order !== undefined ? a.order : 999;
+                    const orderB = b.order !== undefined ? b.order : 999;
+                    return orderA - orderB;
+                });
+
+                setVehicleCategories(sortedVehicleData);
+                setProductTypes(sortedProductData);
                 setLoading(false);
                 
                 // Only set default selections if no URL parameters are provided
@@ -44,12 +58,12 @@ const CategoryNav = ({ onFilterChange, initialTab = 'all', initialValue = null, 
                         onFilterChange({ type: 'all' });
                     } else {
                         // Auto-select first category/type when data loads (only if no URL params)
-                        if (vehicleData.length > 0 && activeTab === 'category') {
-                            setActiveSubCategory(vehicleData[0].name);
-                            onFilterChange({ type: 'vehicle', value: vehicleData[0].name });
-                        } else if (productData.length > 0 && activeTab === 'type') {
-                            setActiveSubCategory(productData[0].name);
-                            onFilterChange({ type: 'productType', value: productData[0].name });
+                        if (sortedVehicleData.length > 0 && activeTab === 'category') {
+                            setActiveSubCategory(sortedVehicleData[0].name);
+                            onFilterChange({ type: 'vehicle', value: sortedVehicleData[0].name });
+                        } else if (sortedProductData.length > 0 && activeTab === 'type') {
+                            setActiveSubCategory(sortedProductData[0].name);
+                            onFilterChange({ type: 'productType', value: sortedProductData[0].name });
                         }
                     }
                 }
