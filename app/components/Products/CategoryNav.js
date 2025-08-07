@@ -233,7 +233,7 @@ const CategoryNav = ({ onFilterChange, initialTab = 'all', initialValue = null, 
                 <div className="mb-4">
                     <div className="flex flex-wrap gap-2 justify-center">
                         {activeTab === 'category' &&
-                            vehicleCategories.slice(0, 4).map((category) => (
+                            vehicleCategories.slice(0, 6).map((category) => (
                                 <button
                                     key={category.name}
                                     onClick={() => handleSubCategoryClick(category.name)}
@@ -314,7 +314,7 @@ const CategoryNav = ({ onFilterChange, initialTab = 'all', initialValue = null, 
                         className="category-swiper pb-10"
                     >
                         {activeTab === 'category' &&
-                            vehicleCategories.slice(0, 4).map((category) => (
+                            vehicleCategories.map((category) => (
                                 <SwiperSlide key={category.name}>
                                     <button
                                         onClick={() => handleSubCategoryClick(category.name)}
