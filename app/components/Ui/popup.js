@@ -40,7 +40,7 @@ const Popup = ({
           <div className="relative z-50 w-full max-w-4xl h-[70vh] overflow-y-auto  px-4 bg-white rounded-lg shadow-xl">
             <button
               onClick={closeModal}
-              className="fixed top-2 right-2 text-white hover:text-gray-200"
+              className="absolute right-2 top-2 text-black hover:text-gray-200"
               aria-label="Close Popup"
             >
               <svg

@@ -256,7 +256,7 @@ const Navbar = () => {
                     >
                       {item.label}
                       <div className='flex items-center justify-center absolute right-1/2 translate-x-1/2 -bottom-3 z-50 '>
-                        <GoDotFill className='text-white text-xs group-hover:text-primary' />
+                        {/* <GoDotFill className='text-white text-xs group-hover:text-primary' /> */}
                       </div>
                     </Link>
                     <div className="absolute left-0 z-40 pt-4 toptodown hidden w-full bg-white group-hover:block rounded-b-[30px]"
