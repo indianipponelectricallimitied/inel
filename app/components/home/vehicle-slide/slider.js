@@ -169,14 +169,14 @@ export default function Tab() {
                     ))}
                   </ul>
                 </div>
-                <Button href="/Products&Solutions" variant="blue" className="w-fit mx-auto">
+                <Button href="/Products-Solutions" variant="blue" className="w-fit mx-auto">
                   View All Solutions
                 </Button>
               </div>
 
               {/* Desktop View All Solutions button */}
               <div className="hidden md:block">
-                <Button href="/Products&Solutions" variant="blue" className="w-fit mx-auto">
+                <Button href="/Products-Solutions" variant="blue" className="w-fit mx-auto">
                   View All Solutions
                 </Button>
               </div>

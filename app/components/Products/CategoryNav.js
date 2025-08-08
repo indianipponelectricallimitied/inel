@@ -334,7 +334,7 @@ const CategoryNav = ({ onFilterChange, initialTab = 'all', initialValue = null, 
                                         
                                         <div className={`w-full h-28 lg:h-32 relative transition-all duration-300`}>
                                             <Image
-                                                src={category.img}
+                                                src={category.img || '/images/Products/bike.jpg'}
                                                 alt={category.name}
                                                 fill
                                                 className={`w-full object-contain transition-all group-hover:-translate-y-4 duration-300 ${activeSubCategory === category.name ? '-translate-y-4' : ''}`}
@@ -365,7 +365,7 @@ const CategoryNav = ({ onFilterChange, initialTab = 'all', initialValue = null, 
                                         
                                         <div className={`w-full  h-28 lg:h-32   relative transition-all duration-300`}>
                                             <Image
-                                                src={type.img}
+                                                src={type.img || '/images/Products/sensor.webp'}
                                                 alt={type.name}
                                                 fill
                                                 className={`w-full object-contain transition-all group-hover:-translate-y-4 duration-300 ${activeSubCategory === type.name ? '-translate-y-4' : ''}`}

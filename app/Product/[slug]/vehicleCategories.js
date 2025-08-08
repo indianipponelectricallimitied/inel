@@ -1,54 +1,93 @@
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 export default function VehicleCategories({vehicleCategories}){
-    // Mapping of categories to their respective images
-    const categoryImages = {
-        "2 Wheeler": "/images/Products/bike.jpg",
-        "3 Wheeler": "/images/Products/auto.jpg",
-        "4 Wheeler": "/images/Products/4wheeler.png",
-        "Snow Mobile": "/images/Products/snow-mobile.png",
-        "ATV": "/images/Products/atv.jpg",
-        "Commercial": "/images/Products/truck.png",
-        "Golf Cart": "/images/Products/golfcart.png"
-    };
+    // Handle both old array format and new object format
+    let categoriesToDisplay = [];
+    
+    if (Array.isArray(vehicleCategories)) {
+        // Old format: array of category names
+        categoriesToDisplay = vehicleCategories.map(categoryName => ({
+            name: categoryName,
+            app_img: `/images/Products/${categoryName.toLowerCase().replace(/\s+/g, '-')}.png`
+        }));
+    } else if (vehicleCategories && typeof vehicleCategories === 'object') {
+        // New format: object with category names as keys and image URLs as values
+        categoriesToDisplay = Object.entries(vehicleCategories).map(([categoryName, imageUrl]) => ({
+            name: categoryName,
+            app_img: imageUrl
+        }));
+    }
 
-    // Take only the first 3 categories
-    const limitedCategories = vehicleCategories.slice(0, 3);
-
-    return(
-                <>
-                <section className='py-28 grid-for-categories'>
-                    <div className='container flex flex-col md:flex-row md:gap-5 gap-16 items-center justify-between mx-auto'>
-                        <h1 className='w-full md:w-1/3'>Engineered for  Diverse Applications</h1>
-                        <div className="w-full md:w-2/3 flex justify-end gap-5 ">
-                            {limitedCategories.map((category, index) => (
-                            <div key={index} className="w-full md:w-44 h-44 lg:w-52 lg:h-52 relative rounded-[10px]">
-                                <Image 
-                                    src={categoryImages[category] || '/images/categories/default.png'} 
-                                    alt={category}
-                                    fill
-                                    className="object-cover rounded-[10px] "
-                                />
-                            </div>
-                            ))}
-                        </div>
+    return (
+        <div className="w-full">
+            <div className="container mx-auto px-4 pb-20 pt-10">
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div className="w-full gap-5">
+                    <h1 className='w-full md:w-3/6'>Engineered for  Diverse Applications</h1>
                     </div>
-                    <style jsx>{`
-                        .grid-for-categories {
-                            width: 100%;
-                            height: 100%;
-                            position: relative;
-                            background-image: 
-                                linear-gradient(to right, #f7f7f794 1px, transparent 1px),
-                                linear-gradient(to bottom, #f7f7f794 1px, transparent 1px);
-                            background-size: 50px 50px;
-                            overflow: hidden;
-                            }
-                    `}</style>
-                </section>
                     
-                    
-              </>
+                    <div className="w-full lg:w-3/6">
+                        <Swiper
+                            modules={[Pagination]}
+                            spaceBetween={20}
+                            slidesPerView={1}
+                            pagination={{ 
+                                clickable: true,
+                                dynamicBullets: true
+                            }}
+                            breakpoints={{
+                                640: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 20,
+                                },
+                                768: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 20,
+                                },
+                                1024: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 20,
+                                },
+                            }}
+                            className="vehicle-categories-swiper"
+                        >
+                            {categoriesToDisplay.map((category, index) => (
+                                <SwiperSlide key={index}>
+                                    <div className="w-full md:w-44 h-44 lg:w-52 lg:h-52 relative rounded-[10px]">
+                                        <Image 
+                                            src={category.app_img || '/images/Products/bike.jpg'} 
+                                            alt={category.name}
+                                            fill
+                                            className="object-cover rounded-[10px]"
+                                        />
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
+                </div>
+            </div>
 
-    )
+            <style jsx>{`
+                .vehicle-categories-swiper .swiper-pagination {
+                    position: relative;
+                    margin-top: 20px;
+                }
+                .vehicle-categories-swiper .swiper-pagination-bullet {
+                    background: #ccc;
+                    opacity: 0.5;
+                }
+                .vehicle-categories-swiper .swiper-pagination-bullet-active {
+                    background: #007bff;
+                    opacity: 1;
+                }
+            `}</style>
+        </div>
+    );
 }

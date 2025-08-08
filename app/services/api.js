@@ -248,9 +248,17 @@ class ApiService {
     }
 
     static filterProductsByVehicleCategory(products, category) {
-        return products.filter(product => 
-            product.vehicleCategories.includes(category)
-        );
+        return products.filter(product => {
+            // Handle both old array format and new object format
+            if (Array.isArray(product.vehicleCategories)) {
+                // Old format: array of category names
+                return product.vehicleCategories.includes(category);
+            } else if (product.vehicleCategories && typeof product.vehicleCategories === 'object') {
+                // New format: object with category names as keys
+                return Object.keys(product.vehicleCategories).includes(category);
+            }
+            return false;
+        });
     }
 
     static searchProducts(products, searchTerm) {
@@ -276,7 +284,16 @@ class ApiService {
         return products.filter(product => {
             // Ensure features and vehicleCategories are arrays before spreading
             const features = Array.isArray(product.features) ? product.features : [];
-            const vehicleCategories = Array.isArray(product.vehicleCategories) ? product.vehicleCategories : [];
+            
+            // Handle both old array format and new object format for vehicleCategories
+            let vehicleCategories = [];
+            if (Array.isArray(product.vehicleCategories)) {
+                // Old format: array of category names
+                vehicleCategories = product.vehicleCategories;
+            } else if (product.vehicleCategories && typeof product.vehicleCategories === 'object') {
+                // New format: object with category names as keys
+                vehicleCategories = Object.keys(product.vehicleCategories);
+            }
             
             // Handle both old 'type' field and new 'types' array field
             const productTypes = [];

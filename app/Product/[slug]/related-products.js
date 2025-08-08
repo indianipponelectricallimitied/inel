@@ -102,7 +102,7 @@ export default function RelatedProducts({ currentProductId, type }) {
                     </div>
                 ))} 
             </div>
-            <Button href="/Products&Solutions" 
+            <Button href="/Products-Solutions" 
                 variant="blue" 
                 className="w-fit mx-auto border-0">
                 All Products

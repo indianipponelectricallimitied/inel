@@ -22,10 +22,10 @@ export default function Footer(){
                     </div>
                     <div className="flex flex-col gap-2 w-full md:w-1/5">
                         <p className="pb-3 font-bold">Products & Solutions</p>
-                        <a href="/Products&Solutions?type=category&value=2+Wheeler">2 Wheeler</a>
-                        <a href="/Products&Solutions?type=category&value=3+Wheeler">3 Wheeler</a>
-                        <a href="/Products&Solutions?type=type&value=Regulator">Regulator</a>
-                        <a href="/Products&Solutions?type=type&value=Controller">Controller</a>
+                                        <a href="/Products-Solutions?type=category&value=2+Wheeler">2 Wheeler</a>
+                <a href="/Products-Solutions?type=category&value=3+Wheeler">3 Wheeler</a>
+                <a href="/Products-Solutions?type=type&value=Regulator">Regulator</a>
+                <a href="/Products-Solutions?type=type&value=Controller">Controller</a>
                     </div>
                     <div className="flex flex-col gap-2 w-full md:w-1/5">
                         <p className="pb-3 font-bold">Investors</p>

@@ -187,14 +187,14 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { label: 'Products & Solutions', href: '/Products&Solutions', 
+    { label: 'Products & Solutions', href: '/Products-Solutions', 
       submenu: products.map(product => ({
         label: product.name,
         href: `/Product/${product.id}`
       }))
     },
     {label: 'About', href: '/about-us'},
-    // { label: 'Products', href: '/Products&Solutions',},
+    // { label: 'Products', href: '/Products-Solutions',},
     { label: 'Technology', href: '/technology' },
     { label: 'Investors', href: '/investors' },
     { label: 'Sustainable  ', href: '/sustainable' },
@@ -207,7 +207,7 @@ const Navbar = () => {
   const getCategoryCards = () => {
     return productTypes.map((type, index) => ({
       label: type.name,
-      href: `/Products&Solutions?type=productType&value=${encodeURIComponent(type.name)}`,
+      href: `/Products-Solutions?type=productType&value=${encodeURIComponent(type.name)}`,
       image: type.img,
       shade: 'bg-[radial-gradient(ellipse_at_96.36%_83.67%,#578EFF_0%,#160959_100%)]',
       productType: type.name
@@ -269,7 +269,7 @@ const Navbar = () => {
                           {getCategoryCards().map((subItem, subIndex) => (
                             <Link 
                               key={`product-${subIndex}`}
-                              href={`/Products&Solutions?type=productType&value=${encodeURIComponent(subItem.productType).replace(/%20/g, '+')}`}
+                              href={`/Products-Solutions?type=productType&value=${encodeURIComponent(subItem.productType).replace(/%20/g, '+')}`}
                               onClick={() => {
                                 setIsHovered(false);
                                 setIsMegaMenuOpen(false);
@@ -291,7 +291,7 @@ const Navbar = () => {
                             <h4 className="text-sm font-medium text-gray-700">Vehicle Categories</h4>
                             <div className='flex flex-wrap gap-2'>
                               <Link
-                                href="/Products&Solutions"
+                                href="/Products-Solutions"
                                 onClick={() => {
                                   setIsHovered(false);
                                   setIsMegaMenuOpen(false);
@@ -307,7 +307,7 @@ const Navbar = () => {
                               {availableVehicleCategories.slice(0, 4).map((category, index) => (
                                 <Link
                                   key={category.name}
-                                  href={`/Products&Solutions?type=vehicle&value=${encodeURIComponent(category.name).replace(/%20/g, '+')}`}
+                                  href={`/Products-Solutions?type=vehicle&value=${encodeURIComponent(category.name).replace(/%20/g, '+')}`}
                                   onClick={() => {
                                     setIsHovered(false);
                                     setIsMegaMenuOpen(false);
@@ -397,7 +397,7 @@ const Navbar = () => {
                       {getCategoryCards().map((subItem, subIndex) => (
                         <Link 
                           key={`mobile-product-${subIndex}`}
-                                                        href={`/Products&Solutions?type=productType&value=${encodeURIComponent(subItem.productType).replace(/%20/g, '+')}`}
+                                                        href={`/Products-Solutions?type=productType&value=${encodeURIComponent(subItem.productType).replace(/%20/g, '+')}`}
                           onClick={() => {
                             toggleMenu();
                             setOpenSubmenu(null);
@@ -419,7 +419,7 @@ const Navbar = () => {
                         <h4 className="text-sm font-medium text-gray-700 mb-2">Vehicle Categories</h4>
                         <div className='flex flex-wrap gap-2'>
                           <Link
-                            href="/Products&Solutions"
+                            href="/Products-Solutions"
                             onClick={() => {
                               toggleMenu();
                               setOpenSubmenu(null);
@@ -435,7 +435,7 @@ const Navbar = () => {
                           {availableVehicleCategories.slice(0, 4).map((category, index) => (
                             <Link
                               key={category.name}
-                              href={`/Products&Solutions?type=vehicle&value=${encodeURIComponent(category.name).replace(/%20/g, '+')}`}
+                              href={`/Products-Solutions?type=vehicle&value=${encodeURIComponent(category.name).replace(/%20/g, '+')}`}
                               onClick={() => {
                                 toggleMenu();
                                 setOpenSubmenu(null);

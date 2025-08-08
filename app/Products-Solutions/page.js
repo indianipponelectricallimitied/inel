@@ -58,7 +58,7 @@ function ProductsContent() {
         }
         
         // Update URL without page reload
-        const newUrl = params.toString() ? `?${params.toString()}` : '/Products&Solutions';
+        const newUrl = params.toString() ? `?${params.toString()}` : '/Products-Solutions';
         router.push(newUrl, { scroll: false });
     };
 

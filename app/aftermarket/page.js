@@ -77,7 +77,7 @@ export default function aftermarket(){
         {/* <section className="container mx-auto space-y-10 md:space-y-20 pb-20  ">
             <h1 className="text-center">Featured Products</h1>
                 <FeaturedProducts />
-                <Button href="/Products&Solutions" 
+                <Button href="/Products-Solutions" 
                         variant="blue" 
                         className="w-fit mx-auto">
                         Explore all Products
