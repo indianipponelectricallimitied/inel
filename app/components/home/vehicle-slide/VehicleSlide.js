@@ -96,7 +96,7 @@ export default function VehicleSlide({ vehicleType, direction, engineType = 'IC'
         </div>
       </div>
 
-      {config.wheels && imageLoaded && (
+      {/* {config.wheels && imageLoaded && (
         <div className={`wheel-${vehicleType.toLowerCase()} flex justify-between`}>
           <Image 
             src={vehicleType === "2W" ? "/images/home/Scooter-tyre.png" : "/rv-tyre.webp"} 
@@ -123,7 +123,7 @@ export default function VehicleSlide({ vehicleType, direction, engineType = 'IC'
             priority={true}
           />
         </div>
-      )}
+      )} */}
     </div>
   );
 } 
