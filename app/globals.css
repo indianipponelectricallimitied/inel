@@ -530,7 +530,7 @@ table{
 }
 
 
-/* .megamenucards{
+.megamenucard{
   background-size: 50%;
-  background-position: center;
-} */
+  background-position: top;
+}

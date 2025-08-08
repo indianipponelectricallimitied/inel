@@ -278,7 +278,7 @@ const Navbar = () => {
                                 selectedProductType === subItem.productType ? 'ring-2 ring-blue-500 ring-dashed' : ''
                               }`}
                             >
-                              <div className={`absolute inset-0 bg-cover bg-center bg-no-repeat rounded-lg opacity-20`} style={{backgroundImage: `url(${subItem.image})`}}></div>
+                              <div className={`absolute inset-0 bg-cover megamenucard  bg-center bg-no-repeat rounded-lg opacity-20`} style={{backgroundImage: `url(${subItem.image})`}}></div>
                               <p className='text-white z-10 relative text-lg w-9/12'>{subItem.label}</p>
                               <FiArrowRight  className='text-white'/>
                             </Link>
@@ -406,7 +406,7 @@ const Navbar = () => {
                             selectedProductType === subItem.productType ? 'ring-2 ring-blue-500 ring-dashed' : ''
                           }`}
                         >
-                          <div className={`absolute inset-0 bg-cover bg-center bg-no-repeat rounded-lg opacity-20`} style={{backgroundImage: `url(${subItem.image})`}}></div>
+                          <div className={`absolute inset-0 bg-cover megamenucard bg-center bg-no-repeat rounded-lg opacity-20`} style={{backgroundImage: `url(${subItem.image})`}}></div>
                           <p className='text-white z-10 relative text-sm w-1/2'>{subItem.label}</p>
                           <FiArrowRight  className='text-white text-sm'/>
                         </Link>
