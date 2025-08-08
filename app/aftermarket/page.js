@@ -77,7 +77,7 @@ export default function aftermarket(){
         {/* <section className="container mx-auto space-y-10 md:space-y-20 pb-20  ">
             <h1 className="text-center">Featured Products</h1>
                 <FeaturedProducts />
-                <Button href="/Products-Solutions" 
+                <Button href="/Products&Solutions" 
                         variant="blue" 
                         className="w-fit mx-auto">
                         Explore all Products
@@ -143,7 +143,8 @@ export default function aftermarket(){
                 <p>Complete the form, and we'll ensure the right support is provided to meet your requirements.</p>
             </div>
             <div className="w-full lg:w-7/12">
-                <AftermarketForm />
+                <iframe aria-label='Inel Aftermarket Contact Form' frameBorder="0" style={{height: '680px', width: '99%', border: '1px solid #E0E0E0', borderRadius: '20px', boxShadow: '0px 4px 93.7px 0px #9EB2FF3D'}} src='https://forms.zohopublic.com/xtracut/form/InelAftermarketContactForm/formperma/Bagrvu31gXOJiAQgvX_pjRML_Ys_sAHJrjiumPSFMyg'></iframe>
+                {/* <AftermarketForm /> */}
             </div>
         </section>  
 

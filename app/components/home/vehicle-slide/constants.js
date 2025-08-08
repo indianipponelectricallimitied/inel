@@ -91,8 +91,8 @@ export const VEHICLE_HOTSPOTS = {
       marker_x: 230, marker_y: 180,
       start_point: { x: 0, y: 0 }, // start at marker location
       mid_point: { x: -40, y: -50 },
-      end_point: { x: -275, y: -50 },
-      canvas_position: { x: -300, y: -50 },
+      end_point: { x: -225, y: -50 },
+      canvas_position: { x: -250, y: -50 },
       object: "/images/Products/throttle-body-sensors.webp",
       url: "/Product/throttle-body-with-sensors"
     },
@@ -113,8 +113,8 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: -40, y: -50 },
       end_point: { x: -225, y: -50 },
       canvas_position: { x: -250, y: -50 },
-      object: "/images/Products/",
-      url: "/Product/throttle-body-with-sensors"
+      object: "/images/Products/ac-generator.webp",
+      url: "/Product/ac-generator"
     },
     {
       label: "Temperature Sensor",
@@ -151,20 +151,21 @@ export const VEHICLE_HOTSPOTS = {
       marker_x: 110, marker_y: 220,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
-      end_point: { x: -100, y: 0 },
-      canvas_position: { x: -125, y: 10 },
+      end_point: { x: -175, y: 0 },
+      canvas_position: { x: -200, y: 10 },
       object: "/images/Products/Speed_Sensor-2-wire.webp",
       url: "/Product/speed-sensor"
-    },{
-      label: "AC Generator",
-      marker_x: 280, marker_y: 210,
-      start_point: { x: 0, y: 0 },
-      mid_point: { x: 100, y: -120 },
-      end_point: { x: 200, y: -120 },
-      canvas_position: { x: 270, y: -120 },
-      object: "/images/Products/ac-generator.webp",
-      url: "/Product/ac-generator"
     },
+    // {
+    //   label: "AC Generator",
+    //   marker_x: 280, marker_y: 210,
+    //   start_point: { x: 0, y: 0 },
+    //   mid_point: { x: 100, y: -120 },
+    //   end_point: { x: 200, y: -120 },
+    //   canvas_position: { x: 270, y: -120 },
+    //   object: "/images/Products/ac-generator.webp",
+    //   url: "/Product/ac-generator"
+    // },
     // {
     //   label: "Ignition Coil",
     //   marker_x: 250, marker_y: 210,
@@ -418,16 +419,16 @@ export const VEHICLE_HOTSPOTS = {
       object: "/images/Products/crank_cam_sensor.webp",
       url: "/Product/speed-sensors-crank-sensors"
     },
-    {
-      label: "Multi Functional ECU'S",
-      marker_x: 300, marker_y: 120,
-      start_point: { x: 0, y: 0 },
-      mid_point: { x: 100, y: -70 },
-      end_point: { x: 200, y: -70 },
-      canvas_position: { x: 275, y: -30 },
-      object: "/images/Products/",
-      url: ""
-    },
+    // {
+    //   label: "Multi Functional ECU'S",
+    //   marker_x: 300, marker_y: 120,
+    //   start_point: { x: 0, y: 0 },
+    //   mid_point: { x: 100, y: -70 },
+    //   end_point: { x: 200, y: -70 },
+    //   canvas_position: { x: 275, y: -30 },
+    //   object: "/images/Products/",
+    //   url: ""
+    // },
     {
       label: "Steering Angle Sensor",
       marker_x: 60, marker_y: 90,

@@ -23,9 +23,15 @@ export default function ContactForm() {
     const [messageType, setMessageType] = useState(""); // success, error
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
+    const [isClient, setIsClient] = useState(false);
     const recaptchaRef = useRef(null);
     
     const RECAPTCHA_SITE_KEY = "6LfZbRArAAAAADTez66q309r32vnDil7axvD2I4P"; 
+
+    // Ensure component only renders on client side
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
 
     const handleRecaptchaLoad = () => {
         console.log("reCAPTCHA loaded via Next.js Script");
@@ -237,7 +243,7 @@ Uliveernapalli, Hosur-635114, India
         </div>
         <div className="py-20 px-5 ">
             <div className="container mx-auto">
-            <form onSubmit={handleSubmit}>
+            {/* <form onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-4 md:w-4/6 mx-auto text-start">
                     <input 
                         type="text" 
@@ -291,6 +297,22 @@ Uliveernapalli, Hosur-635114, India
                 <div className={`mt-5 text-center text-white p-3 rounded ${messageType === "success" ? "bg-green-500/30" : "bg-red-500/30"}`}>
                     {responseMessage}
                 </div>
+            )} */}
+            
+            {!isClient ? (
+                <div className="flex items-center justify-center h-[500px] bg-gray-100 rounded">
+                    <div className="text-center">
+                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
+                        <p className="text-gray-600">Loading contact form...</p>
+                    </div>
+                </div>
+            ) : (
+                <iframe 
+                    aria-label='Inel Contact form' 
+                    frameBorder="0" 
+                    style={{height: '600px', width: '99%', border: 'none'}} 
+                    src='https://forms.zohopublic.com/xtracut/form/InelContactform/formperma/M27SpvX10GlYJGp_qjo_tALjVXFaURR67JxRpsRAESk'
+                />
             )}
             </div>
         </div>
