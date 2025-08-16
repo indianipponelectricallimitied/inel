@@ -77,14 +77,14 @@ export const VEHICLE_TYPES = [
 export const VEHICLE_HOTSPOTS = {
   "2W_IC": [
     {
-      label: "Cluster Front Facia",
+      label: "5-inch Color LCD Instrument Cluster",
       marker_x: 120, marker_y: 40,
       start_point: { x: 0, y: 0 },
       mid_point: { x: -50, y: -20 },
       end_point: { x: -150, y: -20 },
       canvas_position: { x: -178, y: 10 },
       object: "/images/Products/front-cluster.webp",
-      url: "/Product/cluster-front-facia"
+      url: "/Product/5-color-lcd-Instrument-cluster"
     },
     {
       label: "Throttle Position Sensor",
@@ -93,11 +93,11 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: -40, y: -50 },
       end_point: { x: -225, y: -50 },
       canvas_position: { x: -250, y: -50 },
-      object: "/images/Products/throttle-body-sensors.webp",
-      url: "/Product/throttle-body-with-sensors"
+      object: "/images/Products/track-tps.webp",
+      url: "/Product/throttle-position-sensor"
     },
     {
-      label: "ISG Controller",
+      label: "ISG- Machine & Controller",
       marker_x: 200, marker_y: 180,
       start_point: { x: 0, y: 0 }, // start at marker location
       mid_point: { x: -40, y: -50 },
@@ -107,7 +107,7 @@ export const VEHICLE_HOTSPOTS = {
       url: "/Product/isg-machine-controller"
     },
     {
-      label: "ACG",
+      label: "AC Generator",
       marker_x: 200, marker_y: 210,
       start_point: { x: 0, y: 0 }, // start at marker location
       mid_point: { x: -40, y: -50 },
@@ -133,11 +133,11 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 0, y: 0 },
       end_point: { x: 180, y: 0 },
       canvas_position: { x: 250, y: 0 },
-      object: "/images/Products/tpms-sensor.webp",
+      object: "/images/Products/tpms-sensor.png",
       url: "/Product/tpms-sensor"
     },
     {
-      label: "EFI ECU",
+      label: "Electronic Fuel Injection ECU",
       marker_x: 375, marker_y: 100,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
@@ -147,7 +147,7 @@ export const VEHICLE_HOTSPOTS = {
       url: "/Product/electronic-fuel-injection"
     },
     {
-      label: "Speed Sensor - Wire Type",
+      label: "ABS Wheel speed Sensor",
       marker_x: 110, marker_y: 220,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
@@ -200,7 +200,7 @@ export const VEHICLE_HOTSPOTS = {
       url: "/Product/instrument-cluster"
     },
     {
-      label: "Speed Sensor - Wire Type",
+      label: "ABS Wheel speed Sensor",
       marker_x: 110, marker_y: 220,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
@@ -216,7 +216,7 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 0, y: 0 },
       end_point: { x: 180, y: 0 },
       canvas_position: { x: 250, y: 0 },
-      object: "/images/Products/tpms-sensor.webp",
+      object: "/images/Products/tpms-sensor.png",
       url: "/Product/tpms-sensor"
     },
     {
@@ -236,8 +236,8 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 60, y: -30 },
       end_point: { x: 150, y: -30 },
       canvas_position: { x:224, y: -20 },
-      object: "/images/Products/DC-Convetor.webp",
-      url: "/Product/dc-dc-converter(non-isolated)"
+      object: "/images/Products/Motor.png",
+      url: "/Products-Solutions"
     },
 
 
@@ -265,7 +265,7 @@ export const VEHICLE_HOTSPOTS = {
     //   url: "/Product/dual-track-tps"
     // },
     {
-      label: "Reverse Parking Assist System",
+      label: "Reverse Parking Assist System-Sensors",
       marker_x: 480, marker_y: 175,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 60, y: -60 },
@@ -275,7 +275,7 @@ export const VEHICLE_HOTSPOTS = {
       url: "/Product/reverse-parking-assist-system"
     },
     {
-      label: "Speed Sensor - Wire Type",
+      label: "ABS Wheel speed Sensor",
       marker_x: 40, marker_y: 250,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
@@ -321,7 +321,7 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 0, y: 0 },
       end_point: { x: 200, y: 0 },
       canvas_position: { x: 275, y: 0 },
-      object: "/images/Products/tpms-sensor.webp",
+      object: "/images/Products/tpms-sensor.png",
       url: "/Product/tpms-sensor"
     }
     
@@ -370,7 +370,7 @@ export const VEHICLE_HOTSPOTS = {
     //   url: "/product/fuel-vapor-purge"
     // },
     {
-      label: "Speed Sensor - Wire Type",
+      label: "ABS Wheel speed Sensor",
       marker_x: 78, marker_y: 160,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
@@ -446,7 +446,7 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 0, y: 0 },
       end_point: { x: 200, y: 0 },
       canvas_position: { x: 275, y: 0 },
-      object: "/images/Products/tpms-sensor.webp",
+      object: "/images/Products/tpms-sensor.png",
       url: "/Product/tpms-sensor"
     }
   ],
