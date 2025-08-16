@@ -255,9 +255,7 @@ const Navbar = () => {
                       className={`flex relative items-center gap-1 nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isHovered ? 'text-white' : 'text-black'}`}
                     >
                       {item.label}
-                      <div className='flex items-center justify-center absolute right-1/2 translate-x-1/2 -bottom-3 z-50 '>
-                        {/* <GoDotFill className='text-white text-xs group-hover:text-primary' /> */}
-                      </div>
+                      
                     </Link>
                     <div className="absolute left-0 z-40 pt-4 toptodown hidden w-full bg-white group-hover:block rounded-b-[30px]"
                          style={{ display: isMegaMenuOpen ? 'block' : 'none' }}>
@@ -296,7 +294,7 @@ const Navbar = () => {
                                   setIsHovered(false);
                                   setIsMegaMenuOpen(false);
                                 }}
-                                className={`py-2 px-4 text-sm rounded-md transition-all ${
+                                className={`flex items-end gap-1 rounded-[10px] border-5 bg-white text-black border border-primary text-[#160959] w-fit py-2 px-5 text-black !w-fit hover:bg-primary hover:text-white ${
                                   selectedVehicleCategory === 'All'
                                     ? 'bg-primary text-white'
                                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -312,10 +310,10 @@ const Navbar = () => {
                                     setIsHovered(false);
                                     setIsMegaMenuOpen(false);
                                   }}
-                                  className={`py-2 px-4 text-sm rounded-md transition-all ${
+                                  className={`flex items-end gap-1 rounded-[10px] border-5 bg-white text-black border border-primary text-[#160959] w-fit py-2 px-5 text-black !w-fit hover:bg-primary hover:text-white ${
                                     selectedVehicleCategory === category.name
-                                      ? 'bg-primary text-white'
-                                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                      ? 'text-white bg-primary'
+                                      : 'text-black  text-gray-700'
                                   }`}
                                 >
                                   {category.name}
