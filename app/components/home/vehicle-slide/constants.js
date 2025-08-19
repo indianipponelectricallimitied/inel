@@ -226,7 +226,7 @@ export const VEHICLE_HOTSPOTS = {
       mid_point: { x: 0, y: 0 },
       end_point: { x: -100, y: 0 },
       canvas_position: { x: -125, y: 10 },
-      object: "/images/Products/DC-Convetor.webp",
+      object: "/images/Products/dc-convetor.webp",
       url: "/Product/dc-dc-converter(non-isolated)"
     },
     {
