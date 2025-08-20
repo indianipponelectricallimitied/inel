@@ -118,7 +118,7 @@ export const VEHICLE_HOTSPOTS = {
     },
     {
       label: "Temperature Sensor",
-      marker_x: 235, marker_y: 208,
+      marker_x: 235, marker_y: 220,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 60, y: 90 },
       end_point: { x: 270, y: 90 },
