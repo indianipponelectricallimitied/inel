@@ -97,8 +97,8 @@ export const VEHICLE_HOTSPOTS = {
       url: "/Product/throttle-position-sensor"
     },
     {
-      label: "ISG- Machine & Controller",
-      marker_x: 200, marker_y: 180,
+      label: "ISG Controller",
+      marker_x: 190, marker_y: 180,
       start_point: { x: 0, y: 0 }, // start at marker location
       mid_point: { x: -40, y: -50 },
       end_point: { x: -225, y: -50 },
@@ -107,8 +107,8 @@ export const VEHICLE_HOTSPOTS = {
       url: "/Product/isg-machine-controller"
     },
     {
-      label: "AC Generator",
-      marker_x: 200, marker_y: 210,
+      label: "ACG",
+      marker_x: 200, marker_y: 215,
       start_point: { x: 0, y: 0 }, // start at marker location
       mid_point: { x: -40, y: -50 },
       end_point: { x: -225, y: -50 },
@@ -118,7 +118,7 @@ export const VEHICLE_HOTSPOTS = {
     },
     {
       label: "Temperature Sensor",
-      marker_x: 230, marker_y: 208,
+      marker_x: 235, marker_y: 208,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 60, y: 90 },
       end_point: { x: 270, y: 90 },
@@ -127,8 +127,18 @@ export const VEHICLE_HOTSPOTS = {
       url: "/Product/temperature-sensor"
     },
     {
+      label: "Gear Position Sensor",
+      marker_x: 275, marker_y: 225,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 60, y: 60 },
+      end_point: { x: 270, y: 60 },
+      canvas_position: { x: 330, y: 30 },
+      object: "/images/Products/gear-position-sensor.png",
+      url: "/Product/temperature-sensor"
+    },
+    {
       label: "TMPS Sensor",
-      marker_x: 375, marker_y: 220,
+      marker_x: 430, marker_y: 205,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
       end_point: { x: 180, y: 0 },
@@ -147,7 +157,7 @@ export const VEHICLE_HOTSPOTS = {
       url: "/Product/electronic-fuel-injection"
     },
     {
-      label: "ABS Wheel speed Sensor",
+      label: "ABS - Wheel Speed Sensor",
       marker_x: 110, marker_y: 220,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
@@ -200,7 +210,7 @@ export const VEHICLE_HOTSPOTS = {
       url: "/Product/instrument-cluster"
     },
     {
-      label: "ABS Wheel speed Sensor",
+      label: "ABS - Wheel Speed Sensor",
       marker_x: 110, marker_y: 220,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
@@ -265,7 +275,7 @@ export const VEHICLE_HOTSPOTS = {
     //   url: "/Product/dual-track-tps"
     // },
     {
-      label: "Reverse Parking Assist System-Sensors",
+      label: "Reverse Parking Sensor",
       marker_x: 480, marker_y: 175,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 60, y: -60 },
@@ -275,7 +285,7 @@ export const VEHICLE_HOTSPOTS = {
       url: "/Product/reverse-parking-assist-system"
     },
     {
-      label: "ABS Wheel speed Sensor",
+      label: "ABS - Wheel Speed Sensor",
       marker_x: 40, marker_y: 250,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
@@ -316,7 +326,7 @@ export const VEHICLE_HOTSPOTS = {
     },
     {
       label: "TPMS Sensor",
-      marker_x: 350, marker_y: 250,
+      marker_x: 360, marker_y: 250,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
       end_point: { x: 200, y: 0 },
@@ -350,7 +360,7 @@ export const VEHICLE_HOTSPOTS = {
   // ],
   "CC_IC": [
     {
-      label: "Reverse Parking Assist System - Sensors",
+      label: "Reverse Parking Sensor",
       marker_x: 445, marker_y: 145,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
@@ -370,7 +380,7 @@ export const VEHICLE_HOTSPOTS = {
     //   url: "/product/fuel-vapor-purge"
     // },
     {
-      label: "ABS Wheel speed Sensor",
+      label: "ABS - Wheel Speed Sensor",
       marker_x: 78, marker_y: 160,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
@@ -441,7 +451,7 @@ export const VEHICLE_HOTSPOTS = {
     },
     {
       label: "TPMS Sensor",
-      marker_x: 365, marker_y: 150,
+      marker_x: 375, marker_y: 150,
       start_point: { x: 0, y: 0 },
       mid_point: { x: 0, y: 0 },
       end_point: { x: 200, y: 0 },

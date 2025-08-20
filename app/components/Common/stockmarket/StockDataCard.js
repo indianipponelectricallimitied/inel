@@ -12,9 +12,16 @@ export default function StockDataCard({background}) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [market, setMarket] = useState('NSE'); // Use NSE by default
+  const [mounted, setMounted] = useState(false);
   const cardRef = useRef(null);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const fetchStockData = async () => {
       try {
         // The symbol will change based on selected market
@@ -39,9 +46,11 @@ export default function StockDataCard({background}) {
 
     // Cleanup interval on component unmount
     return () => clearInterval(interval);
-  }, [market]); // Re-fetch when market changes
+  }, [market, mounted]); // Re-fetch when market changes
 
   useEffect(() => {
+    if (!mounted) return;
+
     const card = cardRef.current;
     
     // Only add event listener if card exists
@@ -61,9 +70,54 @@ export default function StockDataCard({background}) {
         card.removeEventListener("mousemove", handleMouseMove);
       };
     }
-  }, [cardRef.current]); // Add cardRef.current as dependency
+  }, [cardRef.current, mounted]); // Add cardRef.current as dependency
 
-  if (loading) return <div className='text-white'>Loading...</div>;
+  // Don't render anything until mounted to prevent hydration mismatch
+  if (!mounted) {
+    return (
+      <GlowingBox borderColor="#9EB2FF" className={`w-full h-full ${background} rounded-[20px] z-10 bg-gradient-to-br`}>
+        <div className="card-wrapper" ref={cardRef}>
+          <h2 className='text-2xl pb-4'>Stock Information</h2>
+          <div className="tabs z-[3]">
+            <input type="radio" id="radio-1" name="tabs" defaultChecked />
+            <label className="tab" htmlFor="radio-1">NSE</label>
+            <input type="radio" id="radio-2" name="tabs" />
+            <label className="tab" htmlFor="radio-2">BSE</label>
+            <div className="glider"></div>
+          </div>
+          <Image src="/graph.png" alt="logo" width={250} height={250} className='w-full h-full absolute top-4 right-0 object-contain z-[2]' />
+          <div className="card-content flex flex-col space-y-2">
+            <span className="font-medium text-xl mt-20">INDNIPPON (NSE)</span>
+            <span className="text-4xl font-medium">-- <span className='text-2xl'>INR</span></span>
+            <span className="flex items-center">-- (--%)</span>
+            <div className="text-xs text-gray-400">--</div>
+          </div>
+        </div>
+      </GlowingBox>
+    );
+  }
+
+  if (loading) return (
+    <GlowingBox borderColor="#9EB2FF" className={`w-full h-full ${background} rounded-[20px] z-10 bg-gradient-to-br`}>
+      <div className="card-wrapper" ref={cardRef}>
+        <h2 className='text-2xl pb-4'>Stock Information</h2>
+        <div className="tabs z-[3]">
+          <input type="radio" id="radio-1" name="tabs" defaultChecked />
+          <label className="tab" htmlFor="radio-1">NSE</label>
+          <input type="radio" id="radio-2" name="tabs" />
+          <label className="tab" htmlFor="radio-2">BSE</label>
+          <div className="glider"></div>
+        </div>
+        <Image src="/graph.png" alt="logo" width={250} height={250} className='w-full h-full absolute top-4 right-0 object-contain z-[2]' />
+        <div className="card-content flex flex-col space-y-2">
+          <span className="font-medium text-xl mt-20">INDNIPPON (NSE)</span>
+          <span className="text-4xl font-medium">Loading... <span className='text-2xl'>INR</span></span>
+          <span className="flex items-center">Loading... (Loading...%)</span>
+          <div className="text-xs text-gray-400">Loading...</div>
+        </div>
+      </div>
+    </GlowingBox>
+  );
   
   const quote = stockData?.['Global Quote'];
   const isUsingDummyData = stockData && stockData['Global Quote'] && !quote['01. symbol'].includes(market);

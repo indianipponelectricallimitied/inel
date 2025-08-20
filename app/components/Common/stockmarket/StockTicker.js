@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useState } from 'react';
 import { MdArrowUpward, MdArrowDownward } from "react-icons/md";
 import StockDataService from '../../../services/stockDataService';
@@ -6,8 +8,15 @@ export default function StockTicker() {
   const [stockData, setStockData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const fetchStockData = async () => {
       try {
         const data = await StockDataService.getStockData('INDNIPPON.BSE', 'BSE');
@@ -30,9 +39,20 @@ export default function StockTicker() {
 
     // Cleanup interval on component unmount
     return () => clearInterval(interval);
-  }, []);
+  }, [mounted]);
 
-  if (loading) return <div>Loading...</div>;
+  // Don't render anything until mounted to prevent hydration mismatch
+  if (!mounted) {
+    return <div className="flex items-center gap-2 text-sm">
+      <span>INDNIPPON</span>
+      <span>--</span>
+    </div>;
+  }
+
+  if (loading) return <div className="flex items-center gap-2 text-sm">
+    <span>INDNIPPON</span>
+    <span>Loading...</span>
+  </div>;
   
   const quote = stockData?.['Global Quote'];
 

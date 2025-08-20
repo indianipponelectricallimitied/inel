@@ -1,13 +1,19 @@
 "use client";
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import './hotspot.css';
 
 function generateLinePath(start, mid, end) {
+  // Defensive programming: ensure all points have x and y properties
+  const safeStart = start && typeof start.x === 'number' && typeof start.y === 'number' ? start : { x: 0, y: 0 };
+  const safeMid = mid && typeof mid.x === 'number' && typeof mid.y === 'number' ? mid : { x: 0, y: 0 };
+  const safeEnd = end && typeof end.x === 'number' && typeof end.y === 'number' ? end : { x: 0, y: 0 };
+
   return `<svg width="200" height="100" style="overflow:visible" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M${start.x} ${start.y} L${mid.x} ${mid.y} L${end.x} ${end.y}" stroke="black" stroke-width="1"/>
-    <circle cx="${start.x}" cy="${start.y}" r="2" fill="black" stroke="black"/>
-    <circle cx="${mid.x}" cy="${mid.y}" r="2" fill="black" stroke="black"/>
-    <circle cx="${end.x}" cy="${end.y}" r="2" fill="black" stroke="black"/>
+    <path d="M${safeStart.x} ${safeStart.y} L${safeMid.x} ${safeMid.y} L${safeEnd.x} ${safeEnd.y}" stroke="black" stroke-width="1"/>
+    <circle cx="${safeStart.x}" cy="${safeStart.y}" r="2" fill="black" stroke="black"/>
+    <circle cx="${safeMid.x}" cy="${safeMid.y}" r="2" fill="black" stroke="black"/>
+    <circle cx="${safeEnd.x}" cy="${safeEnd.y}" r="2" fill="black" stroke="black"/>
   </svg>`;
 }
 
@@ -23,6 +29,17 @@ export default function Hotspot({
   url = "#",
   isActive = false,
 }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Don't render anything until mounted to prevent hydration mismatch
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <div
       className="hotspot-wrapper sonar"
