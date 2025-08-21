@@ -104,7 +104,10 @@ export default function ProductPage() {
                 </section>
             )} */}
 
-            <VehicleCategories vehicleCategories={product.vehicleCategories} />
+            {/* Hide VehicleCategories section if product.id === "EMS" */}
+            {product.id !== "EMS" && (
+                <VehicleCategories vehicleCategories={product.vehicleCategories} />
+            )}
 
             <section className='diamond-gradient1'>
                 <div className='container mx-auto px-5 py-20'>
