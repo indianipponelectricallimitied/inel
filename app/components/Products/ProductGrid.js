@@ -72,7 +72,8 @@ const ProductGrid = ({ filter, searchResults, compact = false }) => {
       }
     } else {
       // Default to showing all products if no specific filter
-      filtered = products;
+      // Filter out EMS product from all products view
+      filtered = products.filter(product => product.id !== "EMS");
     }
     
     setFilteredProducts(filtered);
