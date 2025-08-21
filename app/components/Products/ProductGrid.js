@@ -33,14 +33,49 @@ const ProductGrid = ({ filter, searchResults, compact = false }) => {
     }
 
     // Otherwise, apply category/type filters
+    let filtered = [];
     if (filter.type === 'vehicle') {
-      setFilteredProducts(ApiService.filterProductsByVehicleCategory(products, filter.value));
+      filtered = ApiService.filterProductsByVehicleCategory(products, filter.value);
+      
+      // Apply special sorting for Scooter vehicle category
+      if (filter.value === 'Scooter') {
+        filtered = filtered.sort((a, b) => {
+          const orderA = a.scooter_order !== undefined ? a.scooter_order : 999;
+          const orderB = b.scooter_order !== undefined ? b.scooter_order : 999;
+          return orderA - orderB;
+        });
+      } else {
+        // Use regular order field for other vehicle categories
+        filtered = filtered.sort((a, b) => {
+          const orderA = a.order !== undefined ? a.order : 999;
+          const orderB = b.order !== undefined ? b.order : 999;
+          return orderA - orderB;
+        });
+      }
     } else if (filter.type === 'productType') {
-      setFilteredProducts(ApiService.filterProductsByType(products, filter.value));
+      filtered = ApiService.filterProductsByType(products, filter.value);
+      
+      // Apply special sorting for e-Mobility products
+      if (filter.value === 'e-Mobility') {
+        filtered = filtered.sort((a, b) => {
+          const orderA = a.scooter_order !== undefined ? a.scooter_order : 999;
+          const orderB = b.scooter_order !== undefined ? b.scooter_order : 999;
+          return orderA - orderB;
+        });
+      } else {
+        // Use regular order field for other product types
+        filtered = filtered.sort((a, b) => {
+          const orderA = a.order !== undefined ? a.order : 999;
+          const orderB = b.order !== undefined ? b.order : 999;
+          return orderA - orderB;
+        });
+      }
     } else {
       // Default to showing all products if no specific filter
-      setFilteredProducts(products);
+      filtered = products;
     }
+    
+    setFilteredProducts(filtered);
   }, [filter, products, searchResults]);
 
   if (compact) {
