@@ -6,30 +6,81 @@ import InvestorTabs from "./investor-tabs"
 import Button from "../components/Ui/button"
 import Image from "next/image"
 import { GoArrowUpRight } from "react-icons/go";
-import { useState, useRef } from "react";
-
+import { useState, useRef, useEffect } from "react";
+import ApiService from '../services/api';
 
 export default function Investors() {
     const [openPoliciesAccordion, setOpenPoliciesAccordion] = useState(false);
     const [openCorporateGovernanceAccordion, setOpenCorporateGovernanceAccordion] = useState(false);
     const [openInvestorMeetAccordion, setOpenInvestorMeetAccordion] = useState(false);
+    const [openBoardMeetingAccordion, setOpenBoardMeetingAccordion] = useState(false);
+    const [openAnnualReportAccordion, setOpenAnnualReportAccordion] = useState(false);
+    const [investorData, setInvestorData] = useState([]);
+    const [loading, setLoading] = useState(true);
     const investorDataRef = useRef(null);
 
-    const reports=[
+    useEffect(() => {
+        const fetchInvestorData = async () => {
+            try {
+                const data = await ApiService.getInvestorData();
+                setInvestorData(data);
+                setLoading(false);
+            } catch (error) {
+                console.error('Error fetching investor data:', error);
+                setLoading(false);
+            }
+        };
+
+        fetchInvestorData();
+    }, []);
+
+    // Function to find subheading by name
+    const findSubheadingByName = (mainItemId, subheadingName) => {
+        const mainItem = investorData.find(item => item.id === mainItemId);
+        if (mainItem && mainItem.subheadings) {
+            return mainItem.subheadings.find(sub => sub.name === subheadingName);
+        }
+        return null;
+    };
+
+    // Function to get the first content link from a subheading
+    const getSubheadingLink = (mainItemId, subheadingName) => {
+        const subheading = findSubheadingByName(mainItemId, subheadingName);
+        if (subheading && subheading.contents && subheading.contents.length > 0) {
+            return subheading.contents[0].link;
+        }
+        return null;
+    };
+
+    const reports = [
         {
             title: "Annual Reports",
-            link: "files/INEL Annual Report - 2023-24.pdf"
+            link: loading ? "files/INEL Annual Report - 2023-24.pdf" : (getSubheadingLink(11, "Annual Report") || "files/INEL Annual Report - 2023-24.pdf"),
+            onClick: () => {
+                if (!loading && investorData.length > 0) {
+                    // Find the Annual Report subheading (id: 13) under main item (id: 11)
+                    const mainItemIndex = investorData.findIndex(item => item.id === 11);
+                    if (mainItemIndex !== -1) {
+                        const annualReportSubheading = investorData[mainItemIndex].subheadings?.find(sub => sub.id === 13);
+                        if (annualReportSubheading) {
+                            // Set the annual report accordion to open
+                            setOpenAnnualReportAccordion(true);
+                            setTimeout(() => {
+                                investorDataRef.current?.scrollIntoView({ 
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }, 100);
+                        }
+                    }
+                }
+            }
         },
-        // {
-        //     title: "Financial Reports",
-        //     link: "#"
-        // },
         {
             title: "Policies",
             link: "#",
             onClick: () => {
                 setOpenPoliciesAccordion(true);
-                // Scroll to the investor data section after a small delay
                 setTimeout(() => {
                     investorDataRef.current?.scrollIntoView({ 
                         behavior: 'smooth',
@@ -43,7 +94,6 @@ export default function Investors() {
             link: "#",
             onClick: () => {
                 setOpenCorporateGovernanceAccordion(true);
-                // Scroll to the investor data section after a small delay
                 setTimeout(() => {
                     investorDataRef.current?.scrollIntoView({ 
                         behavior: 'smooth',
@@ -51,8 +101,21 @@ export default function Investors() {
                     });
                 }, 100);
             }
-        }
-    ]
+        },
+        {
+            title: "Outcome of Board Meeting/Results",
+            link: "#",
+            onClick: () => {
+                setOpenBoardMeetingAccordion(true);
+                setTimeout(() => {
+                    investorDataRef.current?.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 100);
+            }
+        },
+    ];
     return (
         <>
             <BreadCrumb 
@@ -133,6 +196,10 @@ export default function Investors() {
                     setOpenCorporateGovernanceAccordion={setOpenCorporateGovernanceAccordion}
                     openInvestorMeetAccordion={openInvestorMeetAccordion}
                     setOpenInvestorMeetAccordion={setOpenInvestorMeetAccordion}
+                    openBoardMeetingAccordion={openBoardMeetingAccordion}
+                    setOpenBoardMeetingAccordion={setOpenBoardMeetingAccordion}
+                    openAnnualReportAccordion={openAnnualReportAccordion}
+                    setOpenAnnualReportAccordion={setOpenAnnualReportAccordion}
                 />
             </div>
 

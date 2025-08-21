@@ -12,7 +12,11 @@ export default function InvestorTabs({
     openCorporateGovernanceAccordion,
     setOpenCorporateGovernanceAccordion,
     openInvestorMeetAccordion,
-    setOpenInvestorMeetAccordion
+    setOpenInvestorMeetAccordion,
+    openBoardMeetingAccordion,
+    setOpenBoardMeetingAccordion,
+    openAnnualReportAccordion,
+    setOpenAnnualReportAccordion
 }) {
     const [investorData, setInvestorData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -43,7 +47,7 @@ export default function InvestorTabs({
             const mainItemIndex = investorData.findIndex(item => item.id === 11);
             if (mainItemIndex !== -1) {
                 setActiveTab(mainItemIndex);
-                // Set the subheading with id 69 as active accordion
+                // Set the subheading with id 69 as active accordion (Policies)
                 setActiveAccordion(69);
                 // Set main accordion as active for mobile
                 setActiveMainAccordion(11);
@@ -107,6 +111,54 @@ export default function InvestorTabs({
             }
         }
     }, [openInvestorMeetAccordion, investorData, setOpenInvestorMeetAccordion]);
+
+    // Handle opening board meeting accordion
+    useEffect(() => {
+        if (openBoardMeetingAccordion && investorData.length > 0) {
+            // Find the main item with id 11 (Disclos.underReg .46 of SEBI (LODR))
+            const mainItemIndex = investorData.findIndex(item => item.id === 11);
+            if (mainItemIndex !== -1) {
+                setActiveTab(mainItemIndex);
+                // Set the subheading with id 70 as active accordion (Outcome of Board Meeting/Results)
+                setActiveAccordion(70);
+                // Set main accordion as active for mobile
+                setActiveMainAccordion(11);
+                // Highlight the board meeting accordion
+                setHighlightedAccordion(70);
+                // Reset the flag
+                setOpenBoardMeetingAccordion(false);
+                
+                // Remove highlight after 3 seconds
+                setTimeout(() => {
+                    setHighlightedAccordion(null);
+                }, 3000);
+            }
+        }
+    }, [openBoardMeetingAccordion, investorData, setOpenBoardMeetingAccordion]);
+
+    // Handle opening annual report accordion
+    useEffect(() => {
+        if (openAnnualReportAccordion && investorData.length > 0) {
+            // Find the main item with id 11 (Disclos.underReg .46 of SEBI (LODR))
+            const mainItemIndex = investorData.findIndex(item => item.id === 11);
+            if (mainItemIndex !== -1) {
+                setActiveTab(mainItemIndex);
+                // Set the subheading with id 13 as active accordion (Annual Report)
+                setActiveAccordion(13);
+                // Set main accordion as active for mobile
+                setActiveMainAccordion(11);
+                // Highlight the annual report accordion
+                setHighlightedAccordion(13);
+                // Reset the flag
+                setOpenAnnualReportAccordion(false);
+                
+                // Remove highlight after 3 seconds
+                setTimeout(() => {
+                    setHighlightedAccordion(null);
+                }, 3000);
+            }
+        }
+    }, [openAnnualReportAccordion, investorData, setOpenAnnualReportAccordion]);
 
     if (loading) {
         return (
