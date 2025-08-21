@@ -25,10 +25,19 @@ export default function InvestorTabs({
     const [highlightedAccordion, setHighlightedAccordion] = useState(null);
     const [activeMainAccordion, setActiveMainAccordion] = useState(null);
 
+    // Debug useEffect to monitor activeTab changes
+    useEffect(() => {
+        console.log('Active tab changed to:', activeTab, 'Investor data length:', investorData.length);
+        if (investorData.length > 0 && activeTab >= 0) {
+            console.log('Current active tab data:', investorData[activeTab]);
+        }
+    }, [activeTab, investorData.length, investorData]);
+
     useEffect(() => {
         const fetchInvestorData = async () => {
             try {
                 const data = await ApiService.getInvestorData();
+                console.log('Fetched investor data:', data);
                 setInvestorData(data);
                 setLoading(false);
             } catch (error) {
@@ -117,21 +126,28 @@ export default function InvestorTabs({
         if (openBoardMeetingAccordion && investorData.length > 0) {
             // Find the main item with id 11 (Disclos.underReg .46 of SEBI (LODR))
             const mainItemIndex = investorData.findIndex(item => item.id === 11);
+            console.log('Board Meeting - Main item index:', mainItemIndex, 'Investor data:', investorData);
             if (mainItemIndex !== -1) {
+                // First set the active tab
                 setActiveTab(mainItemIndex);
-                // Set the subheading with id 70 as active accordion (Outcome of Board Meeting/Results)
-                setActiveAccordion(70);
-                // Set main accordion as active for mobile
-                setActiveMainAccordion(11);
-                // Highlight the board meeting accordion
-                setHighlightedAccordion(70);
+                
+                // Then set the accordion after a longer delay to ensure tab is fully rendered
+                setTimeout(() => {
+                    console.log('Setting activeAccordion to 70 for Board Meeting');
+                    setActiveAccordion(70);
+                    setActiveMainAccordion(11);
+                    setHighlightedAccordion(70);
+                }, 300);
+                
                 // Reset the flag
                 setOpenBoardMeetingAccordion(false);
                 
-                // Remove highlight after 3 seconds
+                // Remove highlight after 4 seconds to give more time for scrolling
                 setTimeout(() => {
                     setHighlightedAccordion(null);
-                }, 3000);
+                }, 4000);
+            } else {
+                console.log('Could not find main item with id 11');
             }
         }
     }, [openBoardMeetingAccordion, investorData, setOpenBoardMeetingAccordion]);
@@ -141,21 +157,28 @@ export default function InvestorTabs({
         if (openAnnualReportAccordion && investorData.length > 0) {
             // Find the main item with id 11 (Disclos.underReg .46 of SEBI (LODR))
             const mainItemIndex = investorData.findIndex(item => item.id === 11);
+            console.log('Annual Report - Main item index:', mainItemIndex, 'Investor data:', investorData);
             if (mainItemIndex !== -1) {
+                // First set the active tab
                 setActiveTab(mainItemIndex);
-                // Set the subheading with id 13 as active accordion (Annual Report)
-                setActiveAccordion(13);
-                // Set main accordion as active for mobile
-                setActiveMainAccordion(11);
-                // Highlight the annual report accordion
-                setHighlightedAccordion(13);
+                
+                // Then set the accordion after a longer delay to ensure tab is fully rendered
+                setTimeout(() => {
+                    console.log('Setting activeAccordion to 13 for Annual Report');
+                    setActiveAccordion(13);
+                    setActiveMainAccordion(11);
+                    setHighlightedAccordion(13);
+                }, 300);
+                
                 // Reset the flag
                 setOpenAnnualReportAccordion(false);
                 
-                // Remove highlight after 3 seconds
+                // Remove highlight after 4 seconds to give more time for scrolling
                 setTimeout(() => {
                     setHighlightedAccordion(null);
-                }, 3000);
+                }, 4000);
+            } else {
+                console.log('Could not find main item with id 11');
             }
         }
     }, [openAnnualReportAccordion, investorData, setOpenAnnualReportAccordion]);
@@ -178,6 +201,7 @@ export default function InvestorTabs({
 
     // Transform subheadings into accordion format
     const transformToAccordionData = (subheadings) => {
+        console.log('Transforming subheadings:', subheadings);
         return subheadings.map(subheading => ({
             id: subheading.id,
             header: subheading.name,
@@ -278,7 +302,7 @@ export default function InvestorTabs({
                 <div className="tab-content w-4/6 overflowbar">
                     {investorData.map((item, index) => (
                         <div
-                            key={item.id}
+                            key={`${item.id}-${activeTab}`}
                             className={`${activeTab === index ? 'block' : 'hidden'}`}
                         >
                             <div className="mb-6">
@@ -298,8 +322,9 @@ export default function InvestorTabs({
                             {/* Accordions for subheadings */}
                             {item.subheadings && item.subheadings.length > 0 && (
                                 <div className="space-y-4">
+                                    {console.log('Rendering accordion for item:', item.name, 'activeAccordion:', activeAccordion, 'highlightedAccordion:', highlightedAccordion)}
                                     <Accordion 
-                                        key={`accordion-${item.id}-${activeTab}`}
+                                        key={`accordion-${item.id}-${activeTab}-${activeAccordion}`}
                                         accordionData={transformToAccordionData(item.subheadings)}
                                         initialActive={activeAccordion}
                                         onActiveChange={setActiveAccordion}

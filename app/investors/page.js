@@ -65,12 +65,13 @@ export default function Investors() {
                         if (annualReportSubheading) {
                             // Set the annual report accordion to open
                             setOpenAnnualReportAccordion(true);
+                            // Scroll to the section after a longer delay to ensure accordion is set
                             setTimeout(() => {
                                 investorDataRef.current?.scrollIntoView({ 
                                     behavior: 'smooth',
                                     block: 'start'
                                 });
-                            }, 100);
+                            }, 400);
                         }
                     }
                 }
@@ -107,12 +108,13 @@ export default function Investors() {
             link: "#",
             onClick: () => {
                 setOpenBoardMeetingAccordion(true);
+                // Scroll to the section after a longer delay to ensure accordion is set
                 setTimeout(() => {
                     investorDataRef.current?.scrollIntoView({ 
                         behavior: 'smooth',
                         block: 'start'
                     });
-                }, 100);
+                }, 400);
             }
         },
     ];

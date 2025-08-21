@@ -7,7 +7,11 @@ const AccordionItem = ({ accordion, active, handleToggle, isHighlighted = false 
   const contentEl = useRef();
   const itemRef = useRef();
   const [contentHeight, setContentHeight] = useState('0px');
+  const [isFullyOpened, setIsFullyOpened] = useState(false);
   const { id, header, content } = accordion;
+  
+  // Debug logging
+  console.log(`AccordionItem ${id} - active: ${active}, isHighlighted: ${isHighlighted}, isFullyOpened: ${isFullyOpened}`);
 
   // Function to render content based on its type
   const renderContent = (content) => {
@@ -36,21 +40,26 @@ const AccordionItem = ({ accordion, active, handleToggle, isHighlighted = false 
   // Update content height when active state changes
   useEffect(() => {
     if (active === id && contentEl.current) {
-      // Small delay to ensure content is rendered
+      // Longer delay to ensure content is fully rendered
       const timer = setTimeout(() => {
         if (contentEl.current) {
           setContentHeight(`${contentEl.current.scrollHeight}px`);
+          // Mark as fully opened after content height is set
+          setTimeout(() => {
+            setIsFullyOpened(true);
+          }, 200);
         }
-      }, 10);
+      }, 100);
       return () => clearTimeout(timer);
     } else {
       setContentHeight('0px');
+      setIsFullyOpened(false);
     }
   }, [active, id]);
 
   // Scroll to highlighted item
   useEffect(() => {
-    if (isHighlighted && itemRef.current) {
+    if (isHighlighted && itemRef.current && isFullyOpened) {
       const timer = setTimeout(() => {
         // Get the tab content container
         const tabContent = itemRef.current.closest('.tab-content');
@@ -72,10 +81,10 @@ const AccordionItem = ({ accordion, active, handleToggle, isHighlighted = false 
             block: 'start'
           });
         }
-      }, 600); // Slightly longer delay to ensure accordion is fully opened
+      }, 200); // Reduced delay since we now wait for isFullyOpened
       return () => clearTimeout(timer);
     }
-  }, [isHighlighted]);
+  }, [isHighlighted, isFullyOpened]);
 
   return (
     <div ref={itemRef} className={`rc-accordion-card rounded-[20px] ${isHighlighted ? 'bg-blue-100 border-2 border-blue-300 mt-4' : 'bg-[#ebedf0]'}`}> 
@@ -109,6 +118,7 @@ export default function Accordion({accordionData, initialActive = null, onActive
 
   // Update active state when initialActive prop changes
   useEffect(() => {
+    console.log('Accordion - initialActive changed to:', initialActive);
     if (initialActive !== null) {
       setActive(initialActive);
     }
