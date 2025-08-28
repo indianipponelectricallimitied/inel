@@ -41,7 +41,7 @@ const team = [
     },
     {
         image: "/images/about/Mr.Elango Srinivasanv CFO.png",
-        name: "Dr Elango Srinivasan",
+        name: "Mr. Elango Srinivasan",
         position: "Chief Financial Officer",
     }
 ]

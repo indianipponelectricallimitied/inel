@@ -56,9 +56,9 @@ export default function Footer(){
                         </div>
                         <div className="flex flex-col gap-2 w-full md:w-1/4">
                             <p className="pb-3 font-bold">Sustainability</p>
-                            <a href="/sustainable">Environmental Initiatives</a>
-                            <a href="/sustainable">Energy Efficiency Programs</a>
-                            <a href="/sustainable">Corporate Social Responsibility (CSR)</a>
+                            <a href="/sustainability">Environmental Initiatives</a>
+                            <a href="/sustainability">Energy Efficiency Programs</a>
+                            <a href="/sustainability">Corporate Social Responsibility (CSR)</a>
                         </div>
                         <div className="flex flex-col gap-2 w-full md:w-1/5">
                             <p className="pb-3 font-bold">Follow us :</p>

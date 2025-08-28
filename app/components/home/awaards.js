@@ -11,6 +11,7 @@ const awards = [
         image: "/images/home/ISO-EC270012022.png",
         alt: "ISO-EC270012022",
         title: "ISO/IEC 27001:2022",
+        description: "*Certified Information Security Management Systems",
     },
     {
         image: "/images/home/companies/generac.svg",
@@ -32,7 +33,10 @@ export default function Awards(){
                 {awards.map((award, index) => (
                     <div key={index} className="w-full h-full flex gap-3 items-center justify-center">
                         <Image src={award.image} alt={award.alt} width={500} height={500} className="max-w-40 h-28 bg-black/10 rounded-lg p-5 object-contain" />
-                        <h3 className="text-xl ">{award.title}</h3>
+                        <div className="flex flex-col gap-2">
+                            <h3 className="text-xl ">{award.title}</h3>
+                            <p className="text-sm text-gray-500">{award.description}</p>
+                        </div>
                     </div>
                 ))}
             </div>

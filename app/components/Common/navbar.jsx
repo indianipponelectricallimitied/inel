@@ -187,17 +187,17 @@ const Navbar = () => {
   };
 
   const menuItems = [
+    {label: 'About', href: '/about-us'},
     { label: 'Products & Solutions', href: '/Products-Solutions', 
       submenu: products.map(product => ({
         label: product.name,
         href: `/Product/${product.id}`
       }))
     },
-    {label: 'About', href: '/about-us'},
     // { label: 'Products', href: '/Products-Solutions',},
     { label: 'Technology', href: '/technology' },
     { label: 'Investors', href: '/investors' },
-    { label: 'Sustainable  ', href: '/sustainable' },
+    { label: 'Sustainability  ', href: '/sustainability' },
     { label: 'Aftermarket  ', href: '/aftermarket' },
     { label: 'Media  ', href: '/newsroom' },
     { label: 'Careers', href: '/career' },
@@ -339,7 +339,7 @@ const Navbar = () => {
           </div>
         </div>
         
-        <Button variant={`${isHomePage ? 'white' : 'blue'}`} hasArrow={false} href="/contact-us" className='text-black !w-fit'>Enquire Now</Button>
+        <Button variant={`${isHomePage ? 'white' : 'blue'}`} hasArrow={false} href="/contact-us" className='text-black !w-fit'>Contact Us</Button>
       </div>
 
      

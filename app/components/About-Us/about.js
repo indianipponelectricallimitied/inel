@@ -14,8 +14,14 @@ export default function About(){
                 <div className="w-full lg:w-1/2 space-y-5">
                     <h5>About</h5>
                     <h1>Crafting Precision Solutions</h1>
-                    <p>India Nippon Electricals Limited was incorporated in 1984 and converted into a joint venture in 1986 between Lucas Indian Service Limited, a wholly-owned subsidiary of Lucas-TVS Limited and MAHLE Electric Drives Japan Corporation, Japan – a company of MAHLE Group, Germany, to manufacture Electronic Ignition Systems for two-wheelers, three wheelers and portable engines. Over the years the company has enlarged its customer base and now supplies to most of the manufacturers of two-wheelers, three wheelers and gensets. Company’s net sales for the year ended March, 2024-2025 was Rs.839 crores (USD 96 Million). <br/><br/>India Nippon Electricals Limited makes the entire range of 2/3 wheelers, digital and analog ignition products.
-                    Commencing its operation in Hosur (Tamil Nadu), over the years India Nippon Electricals Limited has set up two more units with excellent facilities, one at Pondicherry and the other at Rewari (Haryana) to be nearer to customers and offer service such as just-in-time supplies and to improve response time for introduction of new products.</p>
+                    <p>
+India Nippon Electricals Limited (INEL), incorporated in 1984, is owned by Lucas Indian Service Limited, a wholly-owned subsidiary of Lucas-TVS Limited. The company specializes in manufacturing advanced electronic ignition systems for two-wheelers, three-wheelers, and portable engines.<br/><br/>    
+INEL is a market leader in electronic ignition system products, trusted by leading OEMs across diverse vehicle segments. The company has also entered the growing electric vehicle (EV) space with solutions such as controllers, converters, sensors, and engine control units, while continuing to strengthen its offerings for internal combustion engines.<br/><br/>
+With three state-of-the-art manufacturing facilities and a modern tech centre located in Tamil Nadu, Puducherry, and Haryana, INEL continues to deliver innovation, reliability, and performance.<br/><br/>
+Over the years, INEL has developed a diverse and high-quality product portfolio that has enabled it to build a solid customer base in India and expand steadily into international markets, particularly across North America and Europe. The company remains committed to enhancing its global footprint, strengthening aftermarket solutions, and driving future-ready technologies for mobility.
+
+
+</p>
 
                 </div>
             </div>

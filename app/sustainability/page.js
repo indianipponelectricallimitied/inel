@@ -114,7 +114,7 @@ export default function Sustainability(){
                 <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2  gap-5 ">
                     <div className="md:col-span-1 md:row-span-2 card-btm-right bg-[#D3CBFF] rounded-[12px] p-5 ">
                         <Image src="/images/home/Renewable.png" alt="sustainable" width={200} height={200} className="ms-auto" />
-                        <h1>85.2%</h1>
+                        <h1>85%</h1>
                         <p className="border-b border-black pb-2 mb-2 font-medium">Renewable Energy Usage</p>
                         <p> The Hosur plant operates on 85.2% renewable energy, minimizing reliance on conventional power.</p>
                     </div>
@@ -133,7 +133,7 @@ export default function Sustainability(){
 
                     <div className="md:col-span-1 card-btm-right md:col-start-3 md:row-start-1 md:row-span-2 bg-[#FFEAC3] rounded-[12px] p-5">
                         <Image src="/images/home/Frame.png" alt="sustainable" width={200} height={200} className="ms-auto" />
-                        <h1>86.53%</h1>
+                        <h1>86%</h1>
                         <p className="border-b border-[#7B7B7B] pb-2 mb-2 font-medium"> Reduction in GHG Emissions</p>
                         <p>Achieved a significant decrease in emissions,reinforcing our commitment to carbon neutrality.</p>
                     </div>

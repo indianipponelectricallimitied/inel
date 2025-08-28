@@ -7,7 +7,7 @@ export default function HeroVideoSection(){
             <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-70 h-full w-full"></div>
             <div className="container mx-auto  flex flex-col items-center justify-center absolute top-0 left-0 right-0 bottom-0">
                 <h1 className="text-white text-center  text-[40px] md:text-[72px] font-normal">Redefining Automotive Performance</h1>
-                <p className="text-white text-light text-center py-10">Delivering custom ignition solutions for OEMs across diverse applications.</p>
+                <p className="text-white text-light text-center py-10">Global leader in ignition systems, delivering custom solutions for OEMs across diverse applications.</p>
                 <div className="flex gap-4  pt-3 justify-center items-center">
                     <Button variant="blue" href="/Products-Solutions" className="text-[12px] md:text-[16px]">Explore Products</Button>
                     <Button variant="transparent" href="/contact-us" className="text-[12px] text-white md:text-[16px]">Get in Touch</Button>
