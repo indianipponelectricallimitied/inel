@@ -71,6 +71,23 @@ export const VEHICLE_TYPES = [
         hotspots: "CC_IC"
       }
     }
+  },
+  {
+    id: 3,
+    title: "Engine",
+    image: "/images/home/gen-image.webp",
+    alt: "Engine",
+    background: "IC",
+    variants: {
+      EV: {
+        image: "/images/home/generators.webp",
+        hotspots: "IC_EV"
+      },
+      IC: {
+        image: "/images/home/icbike.webp",
+        hotspots: "IC_IC"
+      }
+    }
   }
 ];
 
@@ -482,4 +499,56 @@ export const VEHICLE_HOTSPOTS = {
   //     url: "/products/speed-sensor"
   //   }
   // ]
+  "IC_IC": [
+    {
+      label: "AC Generator",
+      marker_x: 130, marker_y: 170,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 0, y: 0 },
+      end_point: { x: -170, y: 0 },
+      canvas_position: { x: -200, y: 10 },
+      object: "/images/Products/ac-generator.webp",
+      url: "/Product/ac-generator"
+    },
+    {
+      label: "Temperature Sensor",
+      marker_x: 235, marker_y: 170,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: -20, y: 70 },
+      end_point: { x: -280, y: 70 },
+      canvas_position: { x: -300, y: 70 },
+      object: "/images/Products/temparture_sensor.webp",
+      url: "/Product/temperature-sensor"
+    },
+    {
+      label: "Oil Level Sensor",
+      marker_x: 280, marker_y: 170,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 20, y: 60 },
+      end_point: { x: 250, y: 60 },
+      canvas_position: { x: 320, y: 60 },
+      object: "/images/Products/oil_lvl_sensor.webp",
+      url: "/Product/oil-level-sensor"
+    },
+    {
+      label: "Control Panel",
+      marker_x: 310, marker_y: 135,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 0, y: 0 },
+      end_point: { x: 200, y: 0 },
+      canvas_position: { x: 275, y: 10 },
+      object: "/images/home/ControlPanel.webp",
+      url: "/Product/control-panel"
+    },
+    {
+      label: "Ignition Coil",
+      marker_x: 325, marker_y: 180,
+      start_point: { x: 0, y: 0 },
+      mid_point: { x: 0, y: 0 },
+      end_point: { x: 200, y: 0 },
+      canvas_position: { x: 275, y: 0 },
+      object: "/images/Products/ig-coil.jpg",
+      url: "/Product/ignition-coil"
+    }
+  ]
 }; 

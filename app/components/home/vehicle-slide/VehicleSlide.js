@@ -29,6 +29,12 @@ export default function VehicleSlide({ vehicleType, direction, engineType = 'IC'
           className: `auto ${!imageLoaded ? 'opacity-0' : 'opacity-100'}`,
           wheels: true
         };
+      case "IC":
+        return {
+          image: "/images/home/generators.webp",
+          className: `engine !w-[380px] md:!w-[480px] ${!imageLoaded ? 'opacity-0' : 'opacity-100'}`,
+          wheels: true
+        };
       default:
         return null;
     }

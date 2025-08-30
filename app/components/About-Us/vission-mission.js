@@ -3,12 +3,20 @@ import Image from "next/image";
 const visionMission = [
     {
         title: "Vision",
-        description: "To become a supplier of choice for our customers for supply of Electricals and Electronic Products for Automotive and non-automotive domain. ",
-        
+        description: "At INEL, our vision is to be a customer-oriented, technology-driven, and mechatronics-focused organization, offering diversified products and services. We are guided by the philosophy of P.E.A.C.E – Perpetual Performance, Enterprising spirit, Agility, a culture of excellence, and Empowerment.", 
     },
     {
         title: "Mission",
-        description: "To be a preferred supplier of Ignition Systems for Automotive and General Purpose engines. To Design, develop & Supply cost competitive, high Quality products to meet Customer requirements through involvement of Employees and Suppliers thru use of contemporary technology.",
+        description: (
+            <>
+                By FY 2029–30, we are committed to achieving:
+                <ul>
+                    <li>• ₹2200 Crore in sales</li>
+                    <li>• 15% EBITDA</li>
+                    <li>• A balanced market mix of 70% Domestic, 15% Export, and 15% Aftermarket</li>
+                </ul>
+            </>
+        )
     }
 ]
 

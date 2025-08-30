@@ -120,7 +120,7 @@ const ProductGrid = ({ filter, searchResults, compact = false }) => {
               className="w-full h-28 md:h-48 object-contain"
             />
             <div className='flex items-end justify-between gap-1 w-full'>
-              <h2 className="text-sm md:text-xl font-medium mt-2 md:w-1/2">{product.name}</h2>
+              <h2 className="text-sm md:text-xl font-medium mt-2 md:w-11/12">{product.name}</h2>
               <div className='bg-white rounded-[40px] px-2 py-1 md:px-6 md:py-2 border border-black group-hover:border-transparent'>
                 <GoArrowUpRight className='text-xs md:text-lg text-primary' />
               </div>
