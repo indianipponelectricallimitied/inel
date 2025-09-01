@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, Suspense, useRef } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import BreadCrumb from "../components/Ui/bread-crumb";
 import CategoryNav from "../components/Products/CategoryNav";
@@ -11,6 +11,7 @@ function ProductsContent() {
     const [searchResults, setSearchResults] = useState(null);
     const searchParams = useSearchParams();
     const router = useRouter();
+    const categoryNavRef = useRef(null);
 
     // Handle URL parameters on component mount
     useEffect(() => {
@@ -23,6 +24,20 @@ function ProductsContent() {
             setSearchResults(null);
         }
     }, [searchParams]);
+
+    // Auto-scroll to CategoryNav on page load
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (categoryNavRef.current) {
+                categoryNavRef.current.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }, 500); // Small delay to ensure page is fully loaded
+
+        return () => clearTimeout(timer);
+    }, []);
 
     // Determine initial tab and value for CategoryNav based on URL parameters
     const getInitialTabAndValue = () => {
@@ -69,11 +84,13 @@ function ProductsContent() {
                 breadCrumbBg="/images/Products/breadcrumb.jpg"
             />
             <div className="container mx-auto ">
-                <CategoryNav 
-                    onFilterChange={handleFilterChange} 
-                    initialTab={initialTab}
-                    initialValue={initialValue}
-                />
+                <div ref={categoryNavRef}>
+                    <CategoryNav 
+                        onFilterChange={handleFilterChange} 
+                        initialTab={initialTab}
+                        initialValue={initialValue}
+                    />
+                </div>
                 <SearchBar onSearchResults={setSearchResults} />
                 <ProductGrid filter={filter} searchResults={searchResults} />
             </div>

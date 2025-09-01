@@ -28,6 +28,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [products, setProducts] = useState([]);
   const [vehicleCategories, setVehicleCategories] = useState([]);
   const [productTypes, setProductTypes] = useState([]);
@@ -44,6 +45,17 @@ const Navbar = () => {
   const pathname = usePathname();
   
   const isHomePage = pathname === '/';
+
+  // Scroll detection effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -199,7 +211,7 @@ const Navbar = () => {
     { label: 'Investors', href: '/investors' },
     { label: 'Sustainability  ', href: '/sustainability' },
     { label: 'Aftermarket  ', href: '/aftermarket' },
-    { label: 'Media  ', href: '/newsroom' },
+    { label: 'Newsroom  ', href: '/newsroom' },
     { label: 'Careers', href: '/career' },
   ];
 
@@ -215,13 +227,17 @@ const Navbar = () => {
   };
   
   return (
-    <nav className={`container mx-auto py-2 z-50 ${
-      isHomePage && !isHovered ? 'navbar-home' : 'navbar-default'
-    }`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+      isScrolled || !isHomePage || isHovered || isMegaMenuOpen
+        ? 'bg-white  sticky '
+        : 'bg-transparent'
+        
+    } ${!isHomePage && 'relative'}`}>
+      <div className="container mx-auto py-2">
      
       <div className="hidden lg:flex justify-between items-center gap-5 ">
         <Link href='/' className="transition-all duration-300 ease-in-out z-[1000]">
-        { isHomePage && !isHovered ?
+        { isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ?
           <img src={logo} alt="logo" className="transition-opacity duration-300 ease-in-out" />
           :
           <img src={logoBlack} alt="logo" className="transition-opacity duration-300 ease-in-out" />
@@ -229,14 +245,14 @@ const Navbar = () => {
         </Link>
         <div>
           <div className="pb-1 flex items-center justify-between">
-            <StockTicker className={`nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isHovered ? 'text-white' : 'text-black'}`}/>
-            <Link href='mailto:inelcorp@inel.co.in' className='nav-link flex items-center gap-1 transition-colors duration-300 ease-in-out'> 
+            <StockTicker className={`nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? '!text-white' : '!text-black'}`}/>
+            <Link href='mailto:inelcorp@inel.co.in' className={`nav-link flex items-center gap-1 transition-colors duration-300 ease-in-out ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}> 
               <TbMailFilled /> inelcorp@inel.co.in
             </Link>
           </div>
-          <div className={`${isHomePage && !isHovered ? 'border-white' : 'border-primary'} space-x-8 border-t pt-2 transition-colors duration-300 ease-in-out`}>
+          <div className={`${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'border-white' : 'border-primary'} space-x-8 border-t pt-2 transition-colors duration-300 ease-in-out`}>
             {menuItems.map((item, index) => (
-              <div key={index} className="inline-block">
+              <div key={index} className={`inline-block ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}>
                 {item.submenu ? (
                   <div 
                     className="group"
@@ -252,7 +268,7 @@ const Navbar = () => {
                     <Link 
                       href={item.href} 
                       onClick={() => setIsHovered(false)}
-                      className={`flex relative items-center gap-1 nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isHovered ? 'text-white' : 'text-black'}`}
+                      className={`flex relative items-center gap-1 nav-link transition-colors duration-300 ease-in-out`}
                     >
                       {item.label}
                       
@@ -339,20 +355,20 @@ const Navbar = () => {
           </div>
         </div>
         
-        <Button variant={`${isHomePage ? 'white' : 'blue'}`} hasArrow={false} href="/contact-us" className='text-black !w-fit'>Contact Us</Button>
+        <Button variant={`${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'white' : 'blue'}`} hasArrow={false} href="/contact-us" className='text-black !w-fit'>Contact Us</Button>
       </div>
 
      
       <div className="lg:hidden flex justify-between items-center z-50">
         <Link href='/' className='w-1/2'>
-        { isHomePage ?
+        { isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ?
           <img src={logo} alt="logo" />
           :
           <img src={logoBlack} alt="logo" />
         }
         </Link>
         <button onClick={toggleMenu} className="text-2xl">
-          <TbMenu3 className={ isHomePage ? 'text-white' : 'text-primary'} />
+          <TbMenu3 className={ isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-primary'} />
         </button>
       </div>
 
@@ -376,7 +392,7 @@ const Navbar = () => {
                 <div className="w-full">
                   <button 
                     onClick={() => toggleSubmenu(index)}
-                    className="flex items-center justify-between w-full py-3 text-black border-b border-gray-200"
+                    className={`flex items-center justify-between w-full py-3 text-black border-b border-gray-200 ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}
                   >
                     {item.label}
                     <IoChevronDownOutline 
@@ -508,6 +524,7 @@ const Navbar = () => {
           onClick={toggleMenu}
         />
       )}
+      </div>
     </nav>
 )};
 export default Navbar;

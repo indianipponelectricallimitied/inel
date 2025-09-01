@@ -3,8 +3,6 @@ import { useState, useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
 import ApiService from '@/app/services/api';
 
-
-
 export default function SearchBar({ onSearchResults }) {
     const [searchTerm, setSearchTerm] = useState("");
     const [products, setProducts] = useState([]);
@@ -42,23 +40,18 @@ export default function SearchBar({ onSearchResults }) {
         e.preventDefault();
         
         if (!searchTerm.trim()) {
-            onSearchResults(products); // Show all products if search is empty
+            onSearchResults(null); // Clear search results if search is empty
             return;
         }
 
         const searchResults = ApiService.searchProducts(products, searchTerm);
         onSearchResults(searchResults);
     };
-    <style jsx>{`
-        .search-bar svg circle {
-           stroke: #ffffff;
-        }
-    `}</style>  
 
-    return(
+    return (
         <form 
             onSubmit={handleSearch}
-            className="flex justify-between items-center  bg-white py-1 p-[3px] md:w-2/4 mx-auto mb-8 rounded-[10px] border border-black"
+            className="flex justify-between items-center bg-white py-1 p-[3px] md:w-2/4 mx-auto mb-8 rounded-[10px] border border-black"
         >
             <input 
                 type="text"
@@ -74,7 +67,6 @@ export default function SearchBar({ onSearchResults }) {
                 <FiSearch className="text-3xl" />
             </button>
         </form>
-        
     );
 }
 

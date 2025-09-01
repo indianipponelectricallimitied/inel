@@ -4,6 +4,8 @@ import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import Button from '@/app/components/Ui/button';
 import { GoArrowDown } from "react-icons/go";
+import Link from 'next/link';
+import { LuChevronRight } from "react-icons/lu";
 
 import ApiService from '@/app/services/api';
 import FeaturesSlider from './features-slider';
@@ -66,6 +68,23 @@ export default function ProductPage() {
 
     return (
         <>
+            {/* Simple Breadcrumb */}
+            <div className="container mx-auto px-5 pt-10 pb-5">
+                <div className="flex items-center gap-2 text-gray-600">
+                    <Link href="/" className="hover:text-blue-600">
+                        Home
+                    </Link>
+                    <LuChevronRight />
+                    <Link href="/Products-Solutions" className="hover:text-blue-600">
+                        Product
+                    </Link>
+                    <LuChevronRight />
+                    <span className="text-gray-800">
+                        {product.name}
+                    </span>
+                </div>
+            </div>
+
             <div className="grid-with-gradients">
                 <div className="gradient-sphere w-[800px] h-[800px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" ></div>
                 <div className="container mx-auto px-5 py-20 ">

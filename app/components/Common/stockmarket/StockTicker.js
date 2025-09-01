@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { MdArrowUpward, MdArrowDownward } from "react-icons/md";
 import StockDataService from '../../../services/stockDataService';
 
-export default function StockTicker() {
+export default function StockTicker({className = ''}) {
   const [stockData, setStockData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -57,7 +57,7 @@ export default function StockTicker() {
   const quote = stockData?.['Global Quote'];
 
   return (
-    <div className="flex items-center gap-2 text-sm">
+      <div className={`flex items-center gap-2 text-sm ${className}`}>
       <span>INDNIPPON</span>
       {quote && (
         <>
