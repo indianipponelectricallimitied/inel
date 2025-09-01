@@ -74,9 +74,9 @@ export const VEHICLE_TYPES = [
   },
   {
     id: 3,
-    title: "Generators",
+    title: "Industrial",
     image: "/images/home/gen-image.webp",
-    alt: "Generators",
+    alt: "Industrial",
     background: "IC",
     variants: {
       EV: {

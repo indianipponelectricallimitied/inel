@@ -12,6 +12,7 @@ function ProductsContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const categoryNavRef = useRef(null);
+    const searchBarRef = useRef(null);
 
     // Handle URL parameters on component mount
     useEffect(() => {
@@ -25,11 +26,11 @@ function ProductsContent() {
         }
     }, [searchParams]);
 
-    // Auto-scroll to CategoryNav on page load
+    // Auto-scroll to SearchBar on page load
     useEffect(() => {
         const timer = setTimeout(() => {
-            if (categoryNavRef.current) {
-                categoryNavRef.current.scrollIntoView({ 
+            if (searchBarRef.current) {
+                searchBarRef.current.scrollIntoView({ 
                     behavior: 'smooth',
                     block: 'start'
                 });
@@ -75,6 +76,16 @@ function ProductsContent() {
         // Update URL without page reload
         const newUrl = params.toString() ? `?${params.toString()}` : '/Products-Solutions';
         router.push(newUrl, { scroll: false });
+        
+        // Scroll to SearchBar after filter change
+        setTimeout(() => {
+            if (searchBarRef.current) {
+                searchBarRef.current.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }, 100);
     };
 
     return(
@@ -91,7 +102,9 @@ function ProductsContent() {
                         initialValue={initialValue}
                     />
                 </div>
-                <SearchBar onSearchResults={setSearchResults} />
+                <div ref={searchBarRef}>
+                    <SearchBar onSearchResults={setSearchResults} />
+                </div>
                 <ProductGrid filter={filter} searchResults={searchResults} />
             </div>
         </>
