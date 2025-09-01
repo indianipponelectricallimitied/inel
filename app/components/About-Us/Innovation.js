@@ -22,7 +22,7 @@ const innovation = [
         description: "Encouraging creativity and future-ready solutions.",
     },
     {
-        image: "/images/about/Passion.png",
+        image: "/images/about/global.png",
         title: "Being a Net Contributor ",
         description: "Adding value consistently to customers, stakeholders, and society.",
     },
