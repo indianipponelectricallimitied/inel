@@ -122,7 +122,7 @@ export default function Investors() {
         <>
             <BreadCrumb 
                 pageTitle= "Investors"
-                breadCrumbBg= "/images/invester/breadcrumb-investor.png"
+                breadCrumbBg= "/images/invester/investor.jpeg"
             />
 
             <div className="container mx-auto pt-20 pb-5 flex flex-col md:flex-row justify-between gap-20">
