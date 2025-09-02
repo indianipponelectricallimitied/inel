@@ -126,11 +126,21 @@ export default function Accordion({accordionData, initialActive = null, onActive
 
   const handleToggle = (index) => {
     const newActive = active === index ? null : index;
+    console.log('Accordion handleToggle - changing from', active, 'to', newActive);
     setActive(newActive);
     if (onActiveChange) {
+      console.log('Accordion calling onActiveChange with:', newActive);
       onActiveChange(newActive);
     }
   };
+
+  // Ensure parent state and local state are in sync
+  useEffect(() => {
+    if (onActiveChange && active !== initialActive) {
+      console.log('Accordion syncing state - calling onActiveChange with:', active);
+      onActiveChange(active);
+    }
+  }, [active, initialActive, onActiveChange]);
 
   return (
     <div className="card-body">

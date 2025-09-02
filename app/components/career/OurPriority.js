@@ -2,7 +2,7 @@ import Image from "next/image";
 import QuickLinks from "../Ui/QuickLinks";
 import Button from "../Ui/button";
 import Accordion from "../Ui/accordion"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const accordions = [
     {
@@ -60,10 +60,43 @@ const steps = [
 ]
 export default function OurPriority({quickLinks}) {
     const [activeAccordion, setActiveAccordion] = useState(1);
+    const [imageKey, setImageKey] = useState(0); // Force re-render key
     
     // Get the current active accordion image
     const activeAccordionData = accordions.find(acc => acc.id === activeAccordion);
     const currentImage = activeAccordionData ? activeAccordionData.image : accordions[0].image;
+
+    // Debug logging
+    useEffect(() => {
+        console.log('=== OurPriority Debug Info ===');
+        console.log('Active accordion ID:', activeAccordion);
+        console.log('Current image path:', currentImage);
+        console.log('Active accordion data:', activeAccordionData);
+        console.log('All accordions:', accordions);
+        console.log('Image key:', imageKey);
+        console.log('============================');
+    }, [activeAccordion, currentImage, activeAccordionData, imageKey]);
+
+    const handleAccordionChange = (newActiveId) => {
+        console.log('=== Accordion Change Requested ===');
+        console.log('Previous active ID:', activeAccordion);
+        console.log('New active ID:', newActiveId);
+        console.log('New accordion data:', accordions.find(acc => acc.id === newActiveId));
+        console.log('===============================');
+        
+        if (newActiveId && newActiveId !== activeAccordion) {
+            setActiveAccordion(newActiveId);
+            // Force image re-render by changing the key
+            setImageKey(prev => prev + 1);
+        }
+    };
+
+    // Verify image paths exist
+    useEffect(() => {
+        accordions.forEach(acc => {
+            console.log(`Checking image path for "${acc.header}":`, acc.image);
+        });
+    }, []);
 
     return (
         <>
@@ -75,17 +108,66 @@ export default function OurPriority({quickLinks}) {
                     <Accordion 
                         accordionData={accordions} 
                         initialActive={1}
-                        onActiveChange={setActiveAccordion}
+                        onActiveChange={handleAccordionChange}
                     />
                 </div>
                 <div className="w-full lg:w-1/2 space-y-8">
-                    <Image 
-                        src={currentImage} 
-                        alt="Career Opportunities" 
-                        className="rounded-[20px] h-[450px] object-cover object-top transition-all duration-500 ease-in-out" 
-                        width={800} 
-                        height={800} 
-                    />
+                    <div className="relative">
+                        <Image 
+                            key={`${currentImage}-${imageKey}`} // Force re-render
+                            src={currentImage} 
+                            alt="Career Opportunities" 
+                            className="rounded-[20px] h-[450px] object-cover object-top transition-all duration-500 ease-in-out" 
+                            width={800} 
+                            height={800} 
+                            priority
+                            onError={(e) => {
+                                console.error('=== Image Load Error ===');
+                                console.error('Failed to load image:', currentImage);
+                                console.error('Error event:', e);
+                                console.error('Active accordion ID:', activeAccordion);
+                                console.error('=====================');
+                            }}
+                            onLoad={() => {
+                                console.log('=== Image Load Success ===');
+                                console.log('Successfully loaded image:', currentImage);
+                                console.log('Active accordion ID:', activeAccordion);
+                                console.log('========================');
+                            }}
+                        />
+                        {/* Debug overlay in development */}
+                        {process.env.NODE_ENV === 'development' && (
+                            <div className="absolute top-2 left-2 bg-black bg-opacity-75 text-white text-xs p-2 rounded">
+                                Active: {activeAccordion}<br/>
+                                Image: {currentImage}<br/>
+                                Key: {imageKey}
+                            </div>
+                        )}
+                        
+                        {/* Test buttons for debugging */}
+                        {process.env.NODE_ENV === 'development' && (
+                            <div className="absolute bottom-2 left-2 space-y-1">
+                                <button 
+                                    onClick={() => handleAccordionChange(1)}
+                                    className="bg-blue-500 text-white text-xs px-2 py-1 rounded"
+                                >
+                                    Test 1
+                                </button>
+                                <button 
+                                    onClick={() => handleAccordionChange(2)}
+                                    className="bg-green-500 text-white text-xs px-2 py-1 rounded"
+                                >
+                                    Test 2
+                                </button>
+                                <button 
+                                    onClick={() => handleAccordionChange(3)}
+                                    className="bg-red-500 text-white text-xs px-2 py-1 rounded"
+                                >
+                                    Test 3
+                                </button>
+                            </div>
+                        )}
+                    </div>
                 </div>    
             </div>
             <div className="container mx-auto py-20">
