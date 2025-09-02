@@ -1,4 +1,3 @@
-import Image from "next/image";
 import QuickLinks from "../Ui/QuickLinks";
 import Button from "../Ui/button";
 import Accordion from "../Ui/accordion"
@@ -86,13 +85,10 @@ export default function OurPriority({quickLinks}) {
                 </div>
                 <div className="w-full lg:w-1/2 space-y-8">
                     <div className="w-full h-[450px] rounded-[20px] overflow-hidden">
-                        <Image 
+                        <img 
                             src={currentImage} 
                             alt="Career Opportunities" 
-                            width={800} 
-                            height={800} 
                             className="w-full h-full object-cover object-top rounded-[20px] transition-all duration-500"
-                            priority
                         />
                     </div>
                 </div>    
@@ -107,7 +103,7 @@ export default function OurPriority({quickLinks}) {
                     {steps.map((step, index) => (
                         <div key={index} className="card-top-right rounded-[20px] p-[1px] bg-[#A6A6A6]">
                         <div key={index} className="card-top-right p-5 rounded-[20px] bg-gradient-to-b from-[#ECF9FF] to-[#E4E4E4] text-center space-y-3">
-                            <Image src={step.image} alt={step.header} width={50} height={100} className="mx-auto " />
+                            <img src={step.image} alt={step.header} width={50} height={100} className="mx-auto " />
                             <p >{step.header}</p>
                             <h3 className="text-xl font-medium">{step.content}</h3>
                             
