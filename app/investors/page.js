@@ -120,9 +120,10 @@ export default function Investors() {
     ];
     return (
         <>
-            <BreadCrumb 
-                pageTitle= "Investors"
-                breadCrumbBg= "/images/invester/investor.jpeg"
+            <BreadCrumb
+                style={{ backgroundSize: 'cover', backgroundPosition: 'top' }}
+                pageTitle="Investors"
+                breadCrumbBg="/images/invester/1.png"
             />
 
             <div className="container mx-auto pt-20 pb-5 flex flex-col md:flex-row justify-between gap-20">
