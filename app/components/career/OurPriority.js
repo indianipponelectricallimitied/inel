@@ -18,7 +18,7 @@ const accordions = [
     {
       "id": 2,
       "header": "Growth Horizon",
-      "image": "/images/career/India-Nippon-Growth-Horizon.png",
+      "image": "/images/career/3.png",
       "content":[ 
         "A testament to our strength, our Research and Development Center holds 39    patents and positions it as the heart of innovation.",
         "We lead the 2W and 3W segments in India as the No.1 supplier of ACG, RR, and IG Coils. Ranked among the top three in ISG systems, we are also a key global source for ECV and a major supplier of HEC, driving India's mobility sector.",
@@ -28,7 +28,7 @@ const accordions = [
     {
         "id": 3,
         "header": "Unlocking Potential",
-        "image": "/images/career/India-Nippon-Unlocking-Potential.png",
+        "image": "/images/career/2.png",
         "content":[ 
             "Certified as a \"Great Place to Work,\" INEL has earned its place as the preferred employer in the automotive sector for the fifth year in a row.",
             "Our commitment to a merit-based culture ensures the brightest minds drive unparalleled performance.",
