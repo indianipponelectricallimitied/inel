@@ -71,7 +71,7 @@ export default function OurPriority({quickLinks}) {
     };
 
     return (
-        <>
+        <section id="inel-leading-ways">
             <div className="container mx-auto flex flex-col lg:flex-row gap-10">
                 <div className="w-full lg:w-1/2 space-y-5">
                     <h5>Your Triumph, Our Priority!</h5>
@@ -84,7 +84,7 @@ export default function OurPriority({quickLinks}) {
                     />
                 </div>
                 <div className="w-full lg:w-1/2 space-y-8">
-                    <div className="w-full h-[450px] rounded-[20px] overflow-hidden">
+                    <div className="w-full h-[450px] md:h-[700px] rounded-[20px] overflow-hidden">
                         <img 
                             src={currentImage} 
                             alt="Career Opportunities" 
@@ -93,11 +93,11 @@ export default function OurPriority({quickLinks}) {
                     </div>
                 </div>    
             </div>
-            <div className="container mx-auto py-20">
+            <div className="container mx-auto py-20" id="career-opportunities">
             <h1 className="text-center pb-10">Career Opportunities</h1 >
             <p className="w-2/3 mx-auto text-center">At INEL, you're not just advancing a career; you're embracing a legacy dedicated to enriching lives and shaping a brighter future. Venture Into a World of Endless Opportunities:</p>
 
-                <h3 className="text-center pb-10 text-2xl pt-10">How to apply</h3>
+                <h3 className="text-center pb-10 text-2xl pt-10" id="apply-now">How to apply</h3>
                 
                 <div className="w-2/3 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {steps.map((step, index) => (
@@ -113,6 +113,6 @@ export default function OurPriority({quickLinks}) {
                 </div>
             </div>
 
-        </> 
+        </section> 
     )
 }   

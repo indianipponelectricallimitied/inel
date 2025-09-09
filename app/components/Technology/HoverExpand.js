@@ -31,7 +31,7 @@ const programs = [
 export default function HoverExpand() {
     return (
         
-    <section className="py-20 clip-path relative btmleft" id="innovation">
+    <section className="py-20 clip-path relative btmleft" id="the-inel-way">
         <div className="container mx-auto ">
             <h1 className="text-center pb-5 ">The INEL Way</h1>
             <h5 className="text-center pb-5 ">Powering Innovation, Enabling Excellence!</h5>
@@ -39,18 +39,19 @@ export default function HoverExpand() {
                 {programs.map((program, programIndex) => (
                     <div key={programIndex} className="group lg:hover:w-[200%] w-full h-[400px] relative transition-all flex items-end justify-center duration-500 bg-cover bg-center rounded-[20px]  lg:m-3 overflow-hidden    " 
                         style={{ backgroundImage: `url(${program.image})`}}>
-                        <div className="absolute top-0 left-0 w-full h-full  bg-gradient-to-b from-transparent to-black/90 rounded-[20px]">  </div>
+                        <div className="absolute top-0 left-0 w-full h-full  bg-gradient-to-b from-transparent to-black rounded-[20px]">  </div>
+                        <div className="absolute top-0 left-0 w-full h-full bg-black/60 lg:bg-black/0 lg:group-hover:bg-black/60 transition-all duration-500 rounded-[20px]">  </div>
                         <ul className=" w-full h-full  p-10 text-white
                             lg:hidden flex lg:group-hover:flex transition-all duration-300  relative
                             flex-col items-start justify-end gap-5">
                             
                             <p className="fade-up delay-1000">{program.bullets.map((bullet, index) => (
-                                <li key={index}>{bullet}</li>
+                                <li key={index} className="text-base lg:text-xl">{bullet}</li>
                             ))}</p>
                             <h2 className="fade-up ">{program.title}</h2>
                         </ul>
                         
-                        <p className="text-2xl font-medium hidden lg:block group-hover:hidden w-full absolute bottom-10 left-10
+                        <p className="text-3xl font-medium hidden lg:block group-hover:hidden w-full absolute bottom-10 left-10
                         transition-all duration-100" 
                         >
                             {program.title}

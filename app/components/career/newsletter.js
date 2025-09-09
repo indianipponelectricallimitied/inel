@@ -71,7 +71,7 @@ export default function Newsletter({newsletterBg}) {
                         </button>
                     </form> */}
                     
-                    <Link href="https://career.indianippon.com/indianippon/submit-your-resume" target="_blank" className="w-fit block mt-5 mx-auto text-primary font-medium bg-white py-4 px-6 rounded-[14px]">
+                    <Link href="#apply-now"  className="w-fit block mt-5 mx-auto text-primary font-medium bg-white py-4 px-6 rounded-[14px]">
                         Apply Now
                     </Link>
                     

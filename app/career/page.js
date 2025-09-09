@@ -15,6 +15,7 @@ import { useState } from "react";
 // from technology page 
 import HoverExpand from "../components/Technology/HoverExpand";
 import Newsletter from "../components/career/newsletter";
+import BackToTop from "../components/Ui/BackToTop";
 import Link from "next/link";
 
 
@@ -209,7 +210,7 @@ export default function Career() {
                             <BackflipSlider testimonials={testimonials} />
                     </div>
                 </div> */}
-                <div className="container mx-auto py-20 space-y-8">
+                <div className="container mx-auto py-20 space-y-8" id="inel-uncovered">
                    
                     <h1 className="text-center">INEL Uncovered</h1>
                     <p className="text-center lg:w-3/5 mx-auto">Get an exclusive look into the collaborative spirit that fuels INEL’s success every day. Stay updated on our latest achievements and upcoming events at INEL.</p>
@@ -227,6 +228,7 @@ export default function Career() {
             </div>
             
             <Newsletter/> 
+            <BackToTop />
 
         </>
     )
