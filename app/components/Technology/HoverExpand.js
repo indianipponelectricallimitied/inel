@@ -45,10 +45,10 @@ export default function HoverExpand() {
                             lg:hidden flex lg:group-hover:flex transition-all duration-300  relative
                             flex-col items-start justify-end gap-5 !list-outside">
                             
-                                <h2 className="fade-up text-3xl font-medium ">{program.title}</h2>
+                                <h2 className="fade-up text-3xl font-medium  pb-2">{program.title}</h2>
                             <ul className="fade-up delay-1000 list-disc list-outside space-y-2 ml-6">
                                 {program.bullets.map((bullet, index) => (
-                                    <li key={index} className="text-base lg:text-xl">{bullet}</li>
+                                    <li key={index} className="text-base pb-3 lg:text-xl">{bullet}</li>
                                 ))}
                             </ul>
                         </ul>
