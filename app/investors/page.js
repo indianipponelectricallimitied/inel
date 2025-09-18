@@ -15,6 +15,7 @@ export default function Investors() {
     const [openInvestorMeetAccordion, setOpenInvestorMeetAccordion] = useState(false);
     const [openBoardMeetingAccordion, setOpenBoardMeetingAccordion] = useState(false);
     const [openAnnualReportAccordion, setOpenAnnualReportAccordion] = useState(false);
+    const [openAGMInspectionAccordion, setOpenAGMInspectionAccordion] = useState(false);
     const [investorData, setInvestorData] = useState([]);
     const [loading, setLoading] = useState(true);
     const investorDataRef = useRef(null);
@@ -45,6 +46,11 @@ export default function Investors() {
                 "@type": "WebPage",
                 "name": "Board Meeting Results",
                 "description": "Outcome of board meetings and financial results"
+            },
+            {
+                "@type": "WebPage",
+                "name": "AGM-2025 Inspection documents",
+                "description": "Inspection documents for AGM-2025"
             }
         ]
     };
@@ -268,6 +274,19 @@ export default function Investors() {
                 }, 400);
             }
         },
+        {
+            title: "AGM-2025 Inspection documents",
+            link: null,
+            onClick: () => {
+                setOpenAGMInspectionAccordion(true);
+                setTimeout(() => {
+                    investorDataRef.current?.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 400);
+            }
+        }
     ];
     return (
         <>
@@ -360,6 +379,8 @@ export default function Investors() {
                     setOpenBoardMeetingAccordion={setOpenBoardMeetingAccordion}
                     openAnnualReportAccordion={openAnnualReportAccordion}
                     setOpenAnnualReportAccordion={setOpenAnnualReportAccordion}
+                    openAGMInspectionAccordion={openAGMInspectionAccordion}
+                    setOpenAGMInspectionAccordion={setOpenAGMInspectionAccordion}
                 />
             </div>
 

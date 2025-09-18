@@ -16,7 +16,9 @@ export default function InvestorTabs({
     openBoardMeetingAccordion,
     setOpenBoardMeetingAccordion,
     openAnnualReportAccordion,
-    setOpenAnnualReportAccordion
+    setOpenAnnualReportAccordion,
+    openAGMInspectionAccordion,
+    setOpenAGMInspectionAccordion
 }) {
     const [investorData, setInvestorData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -182,6 +184,37 @@ export default function InvestorTabs({
             }
         }
     }, [openAnnualReportAccordion, investorData, setOpenAnnualReportAccordion]);
+
+    // Handle opening AGM inspection accordion
+    useEffect(() => {
+        if (openAGMInspectionAccordion && investorData.length > 0) {
+            // Find the main item with id 20 (AGM-2025 Inspection documents)
+            const mainItemIndex = investorData.findIndex(item => item.id === 20);
+            console.log('AGM Inspection - Main item index:', mainItemIndex, 'Investor data:', investorData);
+            if (mainItemIndex !== -1) {
+                // First set the active tab
+                setActiveTab(mainItemIndex);
+                
+                // Then set the accordion after a longer delay to ensure tab is fully rendered
+                setTimeout(() => {
+                    console.log('Setting activeAccordion to 76 for AGM Inspection');
+                    setActiveAccordion(76);
+                    setActiveMainAccordion(20);
+                    setHighlightedAccordion(76);
+                }, 300);
+                
+                // Reset the flag
+                setOpenAGMInspectionAccordion(false);
+                
+                // Remove highlight after 4 seconds to give more time for scrolling
+                setTimeout(() => {
+                    setHighlightedAccordion(null);
+                }, 4000);
+            } else {
+                console.log('Could not find main item with id 20');
+            }
+        }
+    }, [openAGMInspectionAccordion, investorData, setOpenAGMInspectionAccordion]);
 
     if (loading) {
         return (
