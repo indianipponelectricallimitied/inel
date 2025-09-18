@@ -15,6 +15,17 @@ export default function StockDataCard({background}) {
   const [mounted, setMounted] = useState(false);
   const cardRef = useRef(null);
 
+  // Manual NSE data as provided - calculated from 16 Sep (986.75) to 17 Sep (1003.00)
+  const manualNSEData = {
+    'Global Quote': {
+      '01. symbol': 'INDNIPPON.NSE',
+      '05. price': '1003.00',
+      '09. change': '16.25',
+      '10. change percent': '1.6467%',
+      '07. latest trading day': '2025-09-17T05:30:00'
+    }
+  };
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -24,11 +35,16 @@ export default function StockDataCard({background}) {
 
     const fetchStockData = async () => {
       try {
-        // The symbol will change based on selected market
-        const symbol = market === 'NSE' ? 'INDNIPPON.NSE' : 'INDNIPPON.BSE';
-        const data = await StockDataService.getStockData(symbol, market);
-        setStockData(data);
-        setLoading(false);
+        // Use manual data for NSE, fetch live data for BSE
+        if (market === 'NSE') {
+          setStockData(manualNSEData);
+          setLoading(false);
+        } else {
+          const symbol = 'INDNIPPON.BSE';
+          const data = await StockDataService.getStockData(symbol, market);
+          setStockData(data);
+          setLoading(false);
+        }
       } catch (err) {
         console.error('Error fetching stock data:', err);
         setError(err.message);
@@ -38,14 +54,14 @@ export default function StockDataCard({background}) {
 
     fetchStockData();
     
-    // Setup auto-refresh service
-    StockDataService.setupAutoRefresh();
-    
-    // Refresh the UI every 5 minutes to show updated data if available
-    const interval = setInterval(fetchStockData, 300000);
-
-    // Cleanup interval on component unmount
-    return () => clearInterval(interval);
+    // Setup auto-refresh service only for BSE
+    if (market === 'BSE') {
+      StockDataService.setupAutoRefresh();
+      
+      // Refresh the UI every 5 minutes to show updated data if available
+      const interval = setInterval(fetchStockData, 300000);
+      return () => clearInterval(interval);
+    }
   }, [market, mounted]); // Re-fetch when market changes
 
   useEffect(() => {
