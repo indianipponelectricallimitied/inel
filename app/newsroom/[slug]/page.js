@@ -32,6 +32,129 @@ export default function BlogPost({ params }) {
         }
     }, [slug]);
 
+    // Update document head for SEO when blogData is available
+    useEffect(() => {
+        if (blogData) {
+            // Update title
+            document.title = `${blogData.title} | India Nippon Electricals`;
+            
+            // Update meta description
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (metaDescription) {
+                metaDescription.setAttribute('content', blogData.intro || blogData.title);
+            } else {
+                const meta = document.createElement('meta');
+                meta.name = 'description';
+                meta.content = blogData.intro || blogData.title;
+                document.head.appendChild(meta);
+            }
+
+            // Update meta keywords
+            const metaKeywords = document.querySelector('meta[name="keywords"]');
+            if (metaKeywords) {
+                metaKeywords.setAttribute('content', `${blogData.title}, ${blogData.category?.name || 'news'}, INEL news, India Nippon Electricals`);
+            } else {
+                const meta = document.createElement('meta');
+                meta.name = 'keywords';
+                meta.content = `${blogData.title}, ${blogData.category?.name || 'news'}, INEL news, India Nippon Electricals`;
+                document.head.appendChild(meta);
+            }
+
+            // Update canonical link
+            const canonicalLink = document.querySelector('link[rel="canonical"]');
+            if (canonicalLink) {
+                canonicalLink.setAttribute('href', `https://www.indianippon.com/newsroom/${slug}`);
+            } else {
+                const link = document.createElement('link');
+                link.rel = 'canonical';
+                link.href = `https://www.indianippon.com/newsroom/${slug}`;
+                document.head.appendChild(link);
+            }
+
+            // Update Open Graph tags
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle) {
+                ogTitle.setAttribute('content', `${blogData.title} | India Nippon Electricals`);
+            } else {
+                const meta = document.createElement('meta');
+                meta.setAttribute('property', 'og:title');
+                meta.content = `${blogData.title} | India Nippon Electricals`;
+                document.head.appendChild(meta);
+            }
+
+            const ogDescription = document.querySelector('meta[property="og:description"]');
+            if (ogDescription) {
+                ogDescription.setAttribute('content', blogData.intro || blogData.title);
+            } else {
+                const meta = document.createElement('meta');
+                meta.setAttribute('property', 'og:description');
+                meta.content = blogData.intro || blogData.title;
+                document.head.appendChild(meta);
+            }
+
+            const ogUrl = document.querySelector('meta[property="og:url"]');
+            if (ogUrl) {
+                ogUrl.setAttribute('content', `https://www.indianippon.com/newsroom/${slug}`);
+            } else {
+                const meta = document.createElement('meta');
+                meta.setAttribute('property', 'og:url');
+                meta.content = `https://www.indianippon.com/newsroom/${slug}`;
+                document.head.appendChild(meta);
+            }
+
+            const ogType = document.querySelector('meta[property="og:type"]');
+            if (ogType) {
+                ogType.setAttribute('content', 'article');
+            } else {
+                const meta = document.createElement('meta');
+                meta.setAttribute('property', 'og:type');
+                meta.content = 'article';
+                document.head.appendChild(meta);
+            }
+
+            const ogSiteName = document.querySelector('meta[property="og:site_name"]');
+            if (ogSiteName) {
+                ogSiteName.setAttribute('content', 'India Nippon Electricals');
+            } else {
+                const meta = document.createElement('meta');
+                meta.setAttribute('property', 'og:site_name');
+                meta.content = 'India Nippon Electricals';
+                document.head.appendChild(meta);
+            }
+
+            // Update Twitter Card tags
+            const twitterCard = document.querySelector('meta[name="twitter:card"]');
+            if (twitterCard) {
+                twitterCard.setAttribute('content', 'summary_large_image');
+            } else {
+                const meta = document.createElement('meta');
+                meta.name = 'twitter:card';
+                meta.content = 'summary_large_image';
+                document.head.appendChild(meta);
+            }
+
+            const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+            if (twitterTitle) {
+                twitterTitle.setAttribute('content', `${blogData.title} | India Nippon Electricals`);
+            } else {
+                const meta = document.createElement('meta');
+                meta.name = 'twitter:title';
+                meta.content = `${blogData.title} | India Nippon Electricals`;
+                document.head.appendChild(meta);
+            }
+
+            const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+            if (twitterDescription) {
+                twitterDescription.setAttribute('content', blogData.intro || blogData.title);
+            } else {
+                const meta = document.createElement('meta');
+                meta.name = 'twitter:description';
+                meta.content = blogData.intro || blogData.title;
+                document.head.appendChild(meta);
+            }
+        }
+    }, [blogData, slug]);
+
     // Format date function
     const formatDate = (dateString) => {
         if (!dateString) return '';
@@ -43,6 +166,38 @@ export default function BlogPost({ params }) {
             return dateString;
         }
     };
+
+    // Generate NewsArticle JSON-LD when blogData is available
+    const newsArticleJsonLd = blogData ? {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": blogData.title,
+        "description": blogData.intro || blogData.title,
+        "url": `https://www.indianippon.com/newsroom/${slug}`,
+        "datePublished": blogData.date_added,
+        "dateModified": blogData.date_updated || blogData.date_added,
+        "author": {
+            "@type": "Organization",
+            "name": "India Nippon Electricals Limited"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "India Nippon Electricals Limited",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.indianippon.com/logo.svg"
+            }
+        },
+        "articleSection": blogData.category?.name || "News",
+        "image": blogData.featured_image ? {
+            "@type": "ImageObject",
+            "url": blogData.featured_image
+        } : undefined,
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://www.indianippon.com/newsroom/${slug}`
+        }
+    } : null;
 
     // Loading state
     if (isLoading) {
@@ -104,6 +259,15 @@ export default function BlogPost({ params }) {
 
     return (
         <article className="max-w-4xl mx-auto px-4 py-16">
+            {newsArticleJsonLd && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(newsArticleJsonLd),
+                    }}
+                />
+            )}
+            
             {/* Back button */}
             <button 
                 onClick={() => router.back()} 

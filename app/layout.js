@@ -29,15 +29,26 @@ const aeonik = localFont({
 
 
 export const metadata = {
-  title: "India  Nippon Electricals Ltd",
-  description: "Your trusted partner in electrical solutions",
-  robots: "noindex",
+  title: "India Nippon Electricals Ltd",
+  description: "Leading automotive component manufacturer specializing in electronic ignition systems, fuel injection systems, and EV solutions for two-wheelers and commercial vehicles.",
+  metadataBase: new URL('https://www.indianippon.com'),
+  robots: {
+    index: true,
+    follow: true,
+  },
+  other: {
+    'theme-color': '#0b2545',
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" content="noindex, nofollow">
-    
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      </head>
       <body
         className={`${aeonik.variable} antialiased`}
       >  

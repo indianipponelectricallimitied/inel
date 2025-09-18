@@ -1,8 +1,53 @@
 import BreadCrumb from "../components/Ui/bread-crumb";
 
+export const metadata = {
+    title: "Terms and Conditions - Legal Terms | India Nippon Electricals",
+    description: "Read the terms and conditions for using India Nippon Electricals website. Understand your rights and responsibilities when accessing our website and services.",
+    keywords: "terms and conditions, legal terms, website terms, user agreement, INEL terms, website usage", // Note: Google ignores keywords meta tag
+    openGraph: {
+        title: "Terms and Conditions - Legal Terms | India Nippon Electricals",
+        description: "Read the terms and conditions for using India Nippon Electricals website. Understand your rights and responsibilities when accessing our website and services.",
+        url: "https://www.indianippon.com/terms-and-conditions",
+        siteName: "India Nippon Electricals",
+        type: "website",
+    },
+    twitter: {
+        card: "summary",
+        title: "Terms and Conditions - Legal Terms | India Nippon Electricals",
+        description: "Read the terms and conditions for using India Nippon Electricals website. Understand your rights and responsibilities when accessing our website and services.",
+    },
+    alternates: {
+        canonical: "https://www.indianippon.com/terms-and-conditions",
+    },
+};
+
 export default function TermsAndConditions() {
+    const webPageJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Terms and Conditions",
+        "description": "Terms and Conditions for using the India Nippon Electricals Limited website, outlining user rights, responsibilities, and legal agreements.",
+        "url": "https://www.indianippon.com/terms-and-conditions",
+        "publisher": {
+            "@type": "Organization",
+            "name": "India Nippon Electricals Limited"
+        },
+        "about": {
+            "@type": "Thing",
+            "name": "Terms and Conditions"
+        },
+        "keywords": "terms and conditions, legal terms, website terms, user agreement"
+    };
+
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(webPageJsonLd),
+                }}
+            />
+
             <BreadCrumb 
                 pageTitle= "Terms and Conditions"
                 breadCrumbBg= "/images/terms&privacy/Terms.jpg"

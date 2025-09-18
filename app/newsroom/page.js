@@ -2,13 +2,63 @@ import ApiService from "@/app/services/api";
 import NewsCard from "@/app/components/Newsroom/news-card";
 import BreadCrumb from "../components/Ui/bread-crumb"
 
+export const metadata = {
+    title: "Newsroom - Latest News & Updates | India Nippon Electricals",
+    description: "Stay updated with the latest news, announcements, and developments from India Nippon Electricals. Explore our corporate updates, industry insights, and company achievements.",
+    keywords: "newsroom, corporate news, company updates, announcements, press releases, industry news, INEL news", // Note: Google ignores keywords meta tag
+    openGraph: {
+        title: "Newsroom - Latest News & Updates | India Nippon Electricals",
+        description: "Stay updated with the latest news, announcements, and developments from India Nippon Electricals. Explore our corporate updates, industry insights, and company achievements.",
+        url: "https://www.indianippon.com/newsroom",
+        siteName: "India Nippon Electricals",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Newsroom - Latest News & Updates | India Nippon Electricals",
+        description: "Stay updated with the latest news, announcements, and developments from India Nippon Electricals. Explore our corporate updates, industry insights, and company achievements.",
+    },
+    alternates: {
+        canonical: "https://www.indianippon.com/newsroom",
+    },
+};
+
 
 export default async function Newsroom() {
     // Fetch posts data
     const posts = await ApiService.getPosts();
     
+    const collectionPageJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Newsroom",
+        "description": "Latest news, announcements, and developments from India Nippon Electricals including corporate updates, industry insights, and company achievements.",
+        "url": "https://www.indianippon.com/newsroom",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "India Nippon Electricals Limited"
+        },
+        "hasPart": posts?.map(post => ({
+            "@type": "NewsArticle",
+            "headline": post.title,
+            "description": post.intro || post.title,
+            "url": `https://www.indianippon.com/newsroom/${post.slug}`,
+            "datePublished": post.date_added,
+            "author": {
+                "@type": "Organization",
+                "name": "India Nippon Electricals Limited"
+            }
+        })) || []
+    };
+    
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(collectionPageJsonLd),
+                }}
+            />
 
             <BreadCrumb 
                 pageTitle= "Newsroom"

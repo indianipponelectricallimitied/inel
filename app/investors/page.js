@@ -19,6 +19,157 @@ export default function Investors() {
     const [loading, setLoading] = useState(true);
     const investorDataRef = useRef(null);
 
+    const collectionPageJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Investor Relations",
+        "description": "Comprehensive investor information including financial reports, stock data, annual reports, and corporate governance details for India Nippon Electricals Limited.",
+        "url": "https://www.indianippon.com/investors",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "India Nippon Electricals Limited",
+            "alternateName": "INEL"
+        },
+        "hasPart": [
+            {
+                "@type": "WebPage",
+                "name": "Annual Reports",
+                "description": "Annual financial reports and performance data"
+            },
+            {
+                "@type": "WebPage", 
+                "name": "Corporate Governance",
+                "description": "Corporate governance policies and practices"
+            },
+            {
+                "@type": "WebPage",
+                "name": "Board Meeting Results",
+                "description": "Outcome of board meetings and financial results"
+            }
+        ]
+    };
+
+    // Update document head for SEO
+    useEffect(() => {
+        // Update title
+        document.title = "Investor Relations - Financial Information & Reports | India Nippon Electricals";
+        
+        // Update meta description
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription) {
+            metaDescription.setAttribute('content', "Access comprehensive investor information for INEL including financial reports, stock data, annual reports, policies, and corporate governance details. Explore investment opportunities.");
+        } else {
+            const meta = document.createElement('meta');
+            meta.name = 'description';
+            meta.content = "Access comprehensive investor information for INEL including financial reports, stock data, annual reports, policies, and corporate governance details. Explore investment opportunities.";
+            document.head.appendChild(meta);
+        }
+
+        // Update meta keywords
+        const metaKeywords = document.querySelector('meta[name="keywords"]');
+        if (metaKeywords) {
+            metaKeywords.setAttribute('content', 'investor relations, financial reports, stock data, annual reports, corporate governance, investment opportunities, INEL shares');
+        } else {
+            const meta = document.createElement('meta');
+            meta.name = 'keywords';
+            meta.content = 'investor relations, financial reports, stock data, annual reports, corporate governance, investment opportunities, INEL shares';
+            document.head.appendChild(meta);
+        }
+
+        // Update canonical link
+        const canonicalLink = document.querySelector('link[rel="canonical"]');
+        if (canonicalLink) {
+            canonicalLink.setAttribute('href', 'https://www.indianippon.com/investors');
+        } else {
+            const link = document.createElement('link');
+            link.rel = 'canonical';
+            link.href = 'https://www.indianippon.com/investors';
+            document.head.appendChild(link);
+        }
+
+        // Update Open Graph tags
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) {
+            ogTitle.setAttribute('content', 'Investor Relations - Financial Information & Reports | India Nippon Electricals');
+        } else {
+            const meta = document.createElement('meta');
+            meta.setAttribute('property', 'og:title');
+            meta.content = 'Investor Relations - Financial Information & Reports | India Nippon Electricals';
+            document.head.appendChild(meta);
+        }
+
+        const ogDescription = document.querySelector('meta[property="og:description"]');
+        if (ogDescription) {
+            ogDescription.setAttribute('content', "Access comprehensive investor information for INEL including financial reports, stock data, annual reports, policies, and corporate governance details. Explore investment opportunities.");
+        } else {
+            const meta = document.createElement('meta');
+            meta.setAttribute('property', 'og:description');
+            meta.content = "Access comprehensive investor information for INEL including financial reports, stock data, annual reports, policies, and corporate governance details. Explore investment opportunities.";
+            document.head.appendChild(meta);
+        }
+
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) {
+            ogUrl.setAttribute('content', 'https://www.indianippon.com/investors');
+        } else {
+            const meta = document.createElement('meta');
+            meta.setAttribute('property', 'og:url');
+            meta.content = 'https://www.indianippon.com/investors';
+            document.head.appendChild(meta);
+        }
+
+        const ogType = document.querySelector('meta[property="og:type"]');
+        if (ogType) {
+            ogType.setAttribute('content', 'website');
+        } else {
+            const meta = document.createElement('meta');
+            meta.setAttribute('property', 'og:type');
+            meta.content = 'website';
+            document.head.appendChild(meta);
+        }
+
+        const ogSiteName = document.querySelector('meta[property="og:site_name"]');
+        if (ogSiteName) {
+            ogSiteName.setAttribute('content', 'India Nippon Electricals');
+        } else {
+            const meta = document.createElement('meta');
+            meta.setAttribute('property', 'og:site_name');
+            meta.content = 'India Nippon Electricals';
+            document.head.appendChild(meta);
+        }
+
+        // Update Twitter Card tags
+        const twitterCard = document.querySelector('meta[name="twitter:card"]');
+        if (twitterCard) {
+            twitterCard.setAttribute('content', 'summary_large_image');
+        } else {
+            const meta = document.createElement('meta');
+            meta.name = 'twitter:card';
+            meta.content = 'summary_large_image';
+            document.head.appendChild(meta);
+        }
+
+        const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+        if (twitterTitle) {
+            twitterTitle.setAttribute('content', 'Investor Relations - Financial Information & Reports | India Nippon Electricals');
+        } else {
+            const meta = document.createElement('meta');
+            meta.name = 'twitter:title';
+            meta.content = 'Investor Relations - Financial Information & Reports | India Nippon Electricals';
+            document.head.appendChild(meta);
+        }
+
+        const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+        if (twitterDescription) {
+            twitterDescription.setAttribute('content', "Access comprehensive investor information for INEL including financial reports, stock data, annual reports, policies, and corporate governance details. Explore investment opportunities.");
+        } else {
+            const meta = document.createElement('meta');
+            meta.name = 'twitter:description';
+            meta.content = "Access comprehensive investor information for INEL including financial reports, stock data, annual reports, policies, and corporate governance details. Explore investment opportunities.";
+            document.head.appendChild(meta);
+        }
+    }, []);
+
     useEffect(() => {
         const fetchInvestorData = async () => {
             try {
@@ -120,6 +271,13 @@ export default function Investors() {
     ];
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(collectionPageJsonLd),
+                }}
+            />
+
             <BreadCrumb
                 pageTitle="Investors"
                 breadCrumbBg="/images/invester/investor.png"

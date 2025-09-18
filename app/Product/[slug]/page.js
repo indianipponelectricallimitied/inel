@@ -37,6 +37,159 @@ export default function ProductPage() {
         fetchProduct();
     }, [params.slug]);
 
+    // Update document head for SEO when product data is available
+    useEffect(() => {
+        if (product) {
+            // Update title
+            document.title = `${product.name} | ${product.category || 'Automotive Components'} – India Nippon Electricals`;
+            
+            // Update meta description
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (metaDescription) {
+                metaDescription.setAttribute('content', product.description || `High-quality ${product.name} from India Nippon Electricals`);
+            } else {
+                const meta = document.createElement('meta');
+                meta.name = 'description';
+                meta.content = product.description || `High-quality ${product.name} from India Nippon Electricals`;
+                document.head.appendChild(meta);
+            }
+
+            // Update meta keywords
+            const metaKeywords = document.querySelector('meta[name="keywords"]');
+            if (metaKeywords) {
+                metaKeywords.setAttribute('content', `${product.name}, ${product.category || 'automotive components'}, ${product.type || 'automotive parts'}, INEL products`);
+            } else {
+                const meta = document.createElement('meta');
+                meta.name = 'keywords';
+                meta.content = `${product.name}, ${product.category || 'automotive components'}, ${product.type || 'automotive parts'}, INEL products`;
+                document.head.appendChild(meta);
+            }
+
+            // Update canonical link
+            const canonicalLink = document.querySelector('link[rel="canonical"]');
+            if (canonicalLink) {
+                canonicalLink.setAttribute('href', `https://www.indianippon.com/Product/${params.slug}`);
+            } else {
+                const link = document.createElement('link');
+                link.rel = 'canonical';
+                link.href = `https://www.indianippon.com/Product/${params.slug}`;
+                document.head.appendChild(link);
+            }
+
+            // Update Open Graph tags
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle) {
+                ogTitle.setAttribute('content', `${product.name} | ${product.category || 'Automotive Components'} – India Nippon Electricals`);
+            } else {
+                const meta = document.createElement('meta');
+                meta.setAttribute('property', 'og:title');
+                meta.content = `${product.name} | ${product.category || 'Automotive Components'} – India Nippon Electricals`;
+                document.head.appendChild(meta);
+            }
+
+            const ogDescription = document.querySelector('meta[property="og:description"]');
+            if (ogDescription) {
+                ogDescription.setAttribute('content', product.description || `High-quality ${product.name} from India Nippon Electricals`);
+            } else {
+                const meta = document.createElement('meta');
+                meta.setAttribute('property', 'og:description');
+                meta.content = product.description || `High-quality ${product.name} from India Nippon Electricals`;
+                document.head.appendChild(meta);
+            }
+
+            const ogUrl = document.querySelector('meta[property="og:url"]');
+            if (ogUrl) {
+                ogUrl.setAttribute('content', `https://www.indianippon.com/Product/${params.slug}`);
+            } else {
+                const meta = document.createElement('meta');
+                meta.setAttribute('property', 'og:url');
+                meta.content = `https://www.indianippon.com/Product/${params.slug}`;
+                document.head.appendChild(meta);
+            }
+
+            const ogType = document.querySelector('meta[property="og:type"]');
+            if (ogType) {
+                ogType.setAttribute('content', 'product');
+            } else {
+                const meta = document.createElement('meta');
+                meta.setAttribute('property', 'og:type');
+                meta.content = 'product';
+                document.head.appendChild(meta);
+            }
+
+            const ogSiteName = document.querySelector('meta[property="og:site_name"]');
+            if (ogSiteName) {
+                ogSiteName.setAttribute('content', 'India Nippon Electricals');
+            } else {
+                const meta = document.createElement('meta');
+                meta.setAttribute('property', 'og:site_name');
+                meta.content = 'India Nippon Electricals';
+                document.head.appendChild(meta);
+            }
+
+            // Update Twitter Card tags
+            const twitterCard = document.querySelector('meta[name="twitter:card"]');
+            if (twitterCard) {
+                twitterCard.setAttribute('content', 'summary_large_image');
+            } else {
+                const meta = document.createElement('meta');
+                meta.name = 'twitter:card';
+                meta.content = 'summary_large_image';
+                document.head.appendChild(meta);
+            }
+
+            const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+            if (twitterTitle) {
+                twitterTitle.setAttribute('content', `${product.name} | ${product.category || 'Automotive Components'} – India Nippon Electricals`);
+            } else {
+                const meta = document.createElement('meta');
+                meta.name = 'twitter:title';
+                meta.content = `${product.name} | ${product.category || 'Automotive Components'} – India Nippon Electricals`;
+                document.head.appendChild(meta);
+            }
+
+            const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+            if (twitterDescription) {
+                twitterDescription.setAttribute('content', product.description || `High-quality ${product.name} from India Nippon Electricals`);
+            } else {
+                const meta = document.createElement('meta');
+                meta.name = 'twitter:description';
+                meta.content = product.description || `High-quality ${product.name} from India Nippon Electricals`;
+                document.head.appendChild(meta);
+            }
+        }
+    }, [product, params.slug]);
+
+    // Generate Product JSON-LD when product data is available
+    const productJsonLd = product ? {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": product.name,
+        "description": product.description,
+        "image": product.image,
+        "category": product.category || "Automotive Components",
+        "brand": {
+            "@type": "Brand",
+            "name": "India Nippon Electricals"
+        },
+        "manufacturer": {
+            "@type": "Organization",
+            "name": "India Nippon Electricals Limited"
+        },
+        "url": `https://www.indianippon.com/Product/${params.slug}`,
+        ...(product.sku && { "sku": product.sku }),
+        ...(product.mpn && { "mpn": product.mpn }),
+        ...(product.gtin && { "gtin": product.gtin }),
+        "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+                "@type": "Organization",
+                "name": "India Nippon Electricals Limited"
+            }
+        }
+    } : null;
+
     if (loading) {
         return (
             <div className="min-h-screen flex items-center justify-center">
@@ -68,6 +221,15 @@ export default function ProductPage() {
 
     return (
         <>
+            {productJsonLd && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(productJsonLd),
+                    }}
+                />
+            )}
+
             {/* Simple Breadcrumb */}
             <div className="container mx-auto px-5 pt-10 pb-5">
                 <div className="flex items-center gap-2 text-gray-600">

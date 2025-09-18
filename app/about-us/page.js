@@ -11,10 +11,54 @@ import Map from "../components/About-Us/map";
 import MarqueeSection from "../components/About-Us/marquee-setion";
 import Newsletter from "../components/Common/newsletter";
 
+export const metadata = {
+    title: "About Us - Leading Automotive Component Manufacturer | India Nippon Electricals",
+    description: "Learn about India Nippon Electricals, a leading automotive component manufacturer with 40+ years of excellence. Discover our vision, mission, leadership, and manufacturing facilities across India.",
+    keywords: "about INEL, automotive manufacturer, company history, leadership team, manufacturing facilities, vision mission, India Nippon Electricals", // Note: Google ignores keywords meta tag
+    openGraph: {
+        title: "About Us - Leading Automotive Component Manufacturer | India Nippon Electricals",
+        description: "Learn about India Nippon Electricals, a leading automotive component manufacturer with 40+ years of excellence. Discover our vision, mission, leadership, and manufacturing facilities across India.",
+        url: "https://www.indianippon.com/about-us",
+        siteName: "India Nippon Electricals",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "About Us - Leading Automotive Component Manufacturer | India Nippon Electricals",
+        description: "Learn about India Nippon Electricals, a leading automotive component manufacturer with 40+ years of excellence. Discover our vision, mission, leadership, and manufacturing facilities across India.",
+    },
+    alternates: {
+        canonical: "https://www.indianippon.com/about-us",
+    },
+};
+
 export default function AboutUs() {
+    const webPageJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "About Us",
+        "description": "Learn about India Nippon Electricals, a leading automotive component manufacturer with over 40 years of excellence in developing and manufacturing automotive electronic components.",
+        "url": "https://www.indianippon.com/about-us",
+        "publisher": {
+            "@type": "Organization",
+            "name": "India Nippon Electricals Limited"
+        },
+        "about": {
+            "@type": "Organization",
+            "name": "India Nippon Electricals Limited"
+        },
+        "keywords": "about INEL, automotive manufacturer, company history, leadership team"
+    };
 
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(webPageJsonLd),
+                }}
+            />
+
             <BreadCrumb 
                 pageTitle= "About Us"
                 breadCrumbBg= "/images/about/breadcrumb.jpeg"

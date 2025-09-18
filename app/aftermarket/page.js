@@ -10,6 +10,27 @@ import AftermarketForm from "../components/aftermarket/aftermarket-form"
 import Newsletter from "../components/Common/newsletter"
 import IndiaMap from "../components/aftermarket/indiamap"
 
+export const metadata = {
+    title: "Aftermarket Solutions - Quality Auto Parts & Components | India Nippon Electricals",
+    description: "Discover INEL's comprehensive aftermarket range of automotive parts including ignition systems, relays, and regulators. Quality aftermarket products with expert support and warranty coverage.",
+    keywords: "aftermarket parts, automotive components, ignition systems, relays, regulators, auto parts, aftermarket solutions, vehicle parts", // Note: Google ignores keywords meta tag
+    openGraph: {
+        title: "Aftermarket Solutions - Quality Auto Parts & Components | India Nippon Electricals",
+        description: "Discover INEL's comprehensive aftermarket range of automotive parts including ignition systems, relays, and regulators. Quality aftermarket products with expert support and warranty coverage.",
+        url: "https://www.indianippon.com/aftermarket",
+        siteName: "India Nippon Electricals",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Aftermarket Solutions - Quality Auto Parts & Components | India Nippon Electricals",
+        description: "Discover INEL's comprehensive aftermarket range of automotive parts including ignition systems, relays, and regulators. Quality aftermarket products with expert support and warranty coverage.",
+    },
+    alternates: {
+        canonical: "https://www.indianippon.com/aftermarket",
+    },
+};
+
 const quickLinks = [
     // {
     //   title: "Installation Guides",
@@ -31,28 +52,80 @@ const quickLinks = [
         image: "/images/Aftermarket/testimonial1.png",
         identity: "Automotive Parts Dealer, Pune",
         feedbaktitle:"Easy to stock, easy to sell",
-        feedback:"INEL’s aftermarket range moves fast. The brand has earned a solid name among local mechanics, and the demand just keeps growing. With great packaging, low return rates, and strong word-of-mouth, it’s been a reliable addition to my inventory."
+        feedback:"INEL's aftermarket range moves fast. The brand has earned a solid name among local mechanics, and the demand just keeps growing. With great packaging, low return rates, and strong word-of-mouth, it's been a reliable addition to my inventory."
     },
     {
         name: "Krishna Kumar",
         image: "/images/Aftermarket/testimonial2.png",
         identity: "Service Manager, Multibrand Auto Center, Lucknow",
         feedbaktitle:"Built trust with technicians and customers alike.",
-        feedback:"We switched to INEL for key aftermarket components last year, and the feedback has been great. Mechanics trust the fit and performance, and we’ve had fewer complaints and returns. It’s become a go-to brand in our workshop."
+        feedback:"We switched to INEL for key aftermarket components last year, and the feedback has been great. Mechanics trust the fit and performance, and we've had fewer complaints and returns. It's become a go-to brand in our workshop."
     },
     {
         name: "Ahmed Khan",
         image: "/images/Aftermarket/testimonial3.png",
         identity: "Regional Parts Distributor, Hyderabad",
         feedbaktitle:"A trusted brand with solid demand.",
-        feedback:"As a distributor, I’ve seen INEL’s aftermarket parts fly off the shelves. Mechanics prefer them for reliability, and customers return asking for the same brand. The growth in demand over the last year has been impressive."
+        feedback:"As a distributor, I've seen INEL's aftermarket parts fly off the shelves. Mechanics prefer them for reliability, and customers return asking for the same brand. The growth in demand over the last year has been impressive."
     }
 ]
 
 
 export default function aftermarket(){
+    const storeJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "INEL Aftermarket Solutions",
+        "description": "Quality aftermarket automotive parts and components including ignition systems, relays, and regulators with expert support and warranty coverage.",
+        "url": "https://www.indianippon.com/aftermarket",
+        "parentOrganization": {
+            "@type": "Organization",
+            "name": "India Nippon Electricals Limited"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Aftermarket Automotive Parts",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "Ignition Systems",
+                        "category": "Automotive Parts"
+                    }
+                },
+                {
+                    "@type": "Offer", 
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "Relays",
+                        "category": "Automotive Parts"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product", 
+                        "name": "Regulators",
+                        "category": "Automotive Parts"
+                    }
+                }
+            ]
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "India"
+        }
+    };
+
     return(
     <>  
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+                __html: JSON.stringify(storeJsonLd),
+            }}
+        />
 
         <BreadCrumb 
                 pageTitle= "Aftermarket"
@@ -138,8 +211,8 @@ export default function aftermarket(){
         <section className="container mx-auto  py-20 flex flex-col lg:flex-row gap-20">
             <div className="w-full lg:w-[38%] space-y-5">
                 <h5>Get in Touch</h5>
-                <h1>Got Questions? We’re Here to Help</h1>
-                <p>If you have any inquiries regarding our aftermarket products, don’t hesitate to get in touch. Our team is ready to assist and provide the solutions you need.</p>
+                <h1>Got Questions? We're Here to Help</h1>
+                <p>If you have any inquiries regarding our aftermarket products, don't hesitate to get in touch. Our team is ready to assist and provide the solutions you need.</p>
                 <p>Complete the form, and we'll ensure the right support is provided to meet your requirements.</p>
             </div>
             <div className="w-full lg:w-7/12">

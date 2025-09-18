@@ -6,6 +6,27 @@ import Popup from "../components/Ui/popup";
 import SustainableSlider from "../components/Ui/SustainableSlider";
 import { GoArrowUpRight } from "react-icons/go";
 
+export const metadata = {
+    title: "Sustainability - Environmental Stewardship & Social Impact | India Nippon Electricals",
+    description: "Discover INEL's commitment to sustainability through eco-friendly practices, renewable energy initiatives, zero liquid discharge, and comprehensive ESG programs driving a greener future.",
+    keywords: "sustainability, environmental stewardship, renewable energy, zero liquid discharge, ESG, green initiatives, carbon reduction, sustainable manufacturing", // Note: Google ignores keywords meta tag
+    openGraph: {
+        title: "Sustainability - Environmental Stewardship & Social Impact | India Nippon Electricals",
+        description: "Discover INEL's commitment to sustainability through eco-friendly practices, renewable energy initiatives, zero liquid discharge, and comprehensive ESG programs driving a greener future.",
+        url: "https://www.indianippon.com/sustainability",
+        siteName: "India Nippon Electricals",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Sustainability - Environmental Stewardship & Social Impact | India Nippon Electricals",
+        description: "Discover INEL's commitment to sustainability through eco-friendly practices, renewable energy initiatives, zero liquid discharge, and comprehensive ESG programs driving a greener future.",
+    },
+    alternates: {
+        canonical: "https://www.indianippon.com/sustainability",
+    },
+};
+
 const quickLinks = [
     {
       title: "Sustainability Programs",
@@ -26,7 +47,7 @@ const quickLinks = [
           </ul>
           <ul className="space-y-4 list-disc list-inside">
             <b>Social Impact & People-Centric Growth:</b>  Our employees are the cornerstone of our success, and we prioritize their well-being and development, alongside fostering strong community ties..
-            <li>Employee Well-being & Development: We provide comprehensive training programs to enhance both technical expertise and personal development, ensuring our workforce stays at the forefront of technological advancements [Previous turn, 40]. All permanent and other-than-permanent employees are covered by health and accident insurance, and all female employees receive maternity benefits and access to day-care facilities [Previous turn, 254]. We ensure all new joinees receive health and safety training and conduct regular emergency mock drills every six months [Previous turn, 258]. Annually, 100% of our permanent employees undergo performance and career development reviews [Previous turn, 259]. We are proud to be certified as a ‘Great Place to Work’ for the 4th time in a row.</li>
+            <li>Employee Well-being & Development: We provide comprehensive training programs to enhance both technical expertise and personal development, ensuring our workforce stays at the forefront of technological advancements [Previous turn, 40]. All permanent and other-than-permanent employees are covered by health and accident insurance, and all female employees receive maternity benefits and access to day-care facilities [Previous turn, 254]. We ensure all new joinees receive health and safety training and conduct regular emergency mock drills every six months [Previous turn, 258]. Annually, 100% of our permanent employees undergo performance and career development reviews [Previous turn, 259]. We are proud to be certified as a 'Great Place to Work' for the 4th time in a row.</li>
             <li>Community Engagement & CSR: Our Corporate Social Responsibility (CSR) initiatives focus on empowering local communities near our operations. In FY 2023-24, we made a significant CSR contribution of ₹95.96 Lakhs [Previous turn, 45, 225]. Our programs address hunger, poverty, rural development, education, vocational skills, gender equality, healthcare, and sanitation [Previous turn, 113]. Notable achievements include the construction of a Community Hall for vulnerable groups in Sarandapalli village, Hosur, supporting children's education and self-help groups, and the installation of sanitary napkin incinerators in schools [Previous turn, 42, 44, 270]. We also equipped a Government Primary Health Center with RO water purification systems and advanced laboratory equipment.</li>
             <li>Human Rights & Inclusivity: We are committed to respecting and promoting human rights [Previous turn]. Our Business Head and HR Head are responsible for addressing human rights impacts and issues [Previous turn, 272]. In FY 2023-24, human rights training was provided to 21.892% of employees and 87.044% of workers [Previous turn, 271]. Our POSH policy protects complainants in sexual harassment cases, with two complaints resolved in FY 2023-24. We are also actively working to make our facilities accessible to differently abled visitors, with one facility already compliant with the Rights of Persons with Disabilities Act, 2016, and plans to extend these facilities to other units [Previous turn, 257, 276]. Human rights requirements are part of our business agreements and contracts.</li>
             </ul>
@@ -89,8 +110,42 @@ const quickLinks = [
 ];
 
 export default function Sustainability(){
+    const webPageJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Sustainability - Powering a Sustainable Future",
+        "description": "At India Nippon Electricals, sustainability is at the heart of everything we do. We are committed to creating a greener future through eco-friendly practices, energy-efficient solutions, and responsible manufacturing.",
+        "url": "https://www.indianippon.com/sustainability",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "India Nippon Electricals Limited"
+        },
+        "about": [
+            {
+                "@type": "Thing",
+                "name": "Environmental Sustainability"
+            },
+            {
+                "@type": "Thing",
+                "name": "Renewable Energy"
+            },
+            {
+                "@type": "Thing",
+                "name": "Corporate Social Responsibility"
+            }
+        ],
+        "keywords": "sustainability, environmental stewardship, renewable energy, zero liquid discharge, ESG"
+    };
+
     return(
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(webPageJsonLd),
+                }}
+            />
+
             <BreadCrumb 
                 pageTitle= "Sustainability"
                 breadCrumbBg= "/images/Sustainability/breadcrumb.webp"
