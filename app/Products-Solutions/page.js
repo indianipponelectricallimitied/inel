@@ -20,7 +20,7 @@ function ProductsContent() {
         "@type": "CollectionPage",
         "name": "Products & Solutions",
         "description": "Comprehensive range of automotive products and solutions including electronic ignition systems, fuel injection systems, sensors, and EV components.",
-        "url": "https://www.indianippon.com/Products-Solutions",
+        "url": "https://indianippon.com/Products-Solutions",
         "mainEntity": {
             "@type": "Organization",
             "name": "India Nippon Electricals Limited"
@@ -79,11 +79,11 @@ function ProductsContent() {
         // Update canonical link
         const canonicalLink = document.querySelector('link[rel="canonical"]');
         if (canonicalLink) {
-            canonicalLink.setAttribute('href', 'https://www.indianippon.com/Products-Solutions');
+            canonicalLink.setAttribute('href', 'https://indianippon.com/Products-Solutions');
         } else {
             const link = document.createElement('link');
             link.rel = 'canonical';
-            link.href = 'https://www.indianippon.com/Products-Solutions';
+            link.href = 'https://indianippon.com/Products-Solutions';
             document.head.appendChild(link);
         }
 
@@ -110,11 +110,11 @@ function ProductsContent() {
 
         const ogUrl = document.querySelector('meta[property="og:url"]');
         if (ogUrl) {
-            ogUrl.setAttribute('content', 'https://www.indianippon.com/Products-Solutions');
+            ogUrl.setAttribute('content', 'https://indianippon.com/Products-Solutions');
         } else {
             const meta = document.createElement('meta');
             meta.setAttribute('property', 'og:url');
-            meta.content = 'https://www.indianippon.com/Products-Solutions';
+            meta.content = 'https://indianippon.com/Products-Solutions';
             document.head.appendChild(meta);
         }
 

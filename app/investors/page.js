@@ -24,7 +24,7 @@ export default function Investors() {
         "@type": "CollectionPage",
         "name": "Investor Relations",
         "description": "Comprehensive investor information including financial reports, stock data, annual reports, and corporate governance details for India Nippon Electricals Limited.",
-        "url": "https://www.indianippon.com/investors",
+        "url": "https://indianippon.com/investors",
         "mainEntity": {
             "@type": "Organization",
             "name": "India Nippon Electricals Limited",
@@ -79,11 +79,11 @@ export default function Investors() {
         // Update canonical link
         const canonicalLink = document.querySelector('link[rel="canonical"]');
         if (canonicalLink) {
-            canonicalLink.setAttribute('href', 'https://www.indianippon.com/investors');
+            canonicalLink.setAttribute('href', 'https://indianippon.com/investors');
         } else {
             const link = document.createElement('link');
             link.rel = 'canonical';
-            link.href = 'https://www.indianippon.com/investors';
+            link.href = 'https://indianippon.com/investors';
             document.head.appendChild(link);
         }
 
@@ -110,11 +110,11 @@ export default function Investors() {
 
         const ogUrl = document.querySelector('meta[property="og:url"]');
         if (ogUrl) {
-            ogUrl.setAttribute('content', 'https://www.indianippon.com/investors');
+            ogUrl.setAttribute('content', 'https://indianippon.com/investors');
         } else {
             const meta = document.createElement('meta');
             meta.setAttribute('property', 'og:url');
-            meta.content = 'https://www.indianippon.com/investors';
+            meta.content = 'https://indianippon.com/investors';
             document.head.appendChild(meta);
         }
 

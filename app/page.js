@@ -19,7 +19,7 @@ export const metadata = {
   openGraph: {
     title: "India Nippon Electricals Ltd - Leading Automotive Component Manufacturer",
     description: "India Nippon Electricals (INEL) is a premier automotive component manufacturer specializing in electronic ignition systems, fuel injection systems, and EV solutions. Trusted partner for two-wheelers and commercial vehicles.",
-    url: "https://www.indianippon.com",
+    url: "https://indianippon.com",
     siteName: "India Nippon Electricals",
     type: "website",
   },
@@ -29,7 +29,7 @@ export const metadata = {
     description: "India Nippon Electricals (INEL) is a premier automotive component manufacturer specializing in electronic ignition systems, fuel injection systems, and EV solutions. Trusted partner for two-wheelers and commercial vehicles.",
   },
   alternates: {
-    canonical: "https://www.indianippon.com",
+    canonical: "https://indianippon.com",
   },
 };
 
@@ -39,8 +39,8 @@ export default function Home() {
     "@type": "Organization",
     "name": "India Nippon Electricals Limited",
     "alternateName": "INEL",
-    "url": "https://www.indianippon.com",
-    "logo": "https://www.indianippon.com/logo.svg",
+    "url": "https://indianippon.com",
+    "logo": "https://indianippon.com/logo.svg",
     "description": "Leading automotive component manufacturer specializing in electronic ignition systems, fuel injection systems, and EV solutions for two-wheelers and commercial vehicles.",
     "address": {
       "@type": "PostalAddress",
@@ -65,7 +65,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "India Nippon Electricals",
-    "url": "https://www.indianippon.com",
+    "url": "https://indianippon.com",
     "description": "Leading automotive component manufacturer specializing in electronic ignition systems, fuel injection systems, and EV solutions.",
     "publisher": {
       "@type": "Organization",

@@ -25,7 +25,7 @@ export const metadata = {
     openGraph: {
         title: "Careers - Join Our Team | India Nippon Electricals",
         description: "Explore career opportunities at INEL. Join our dynamic team and build a rewarding career in automotive electronics. We offer opportunities for experienced professionals, graduates, and interns.",
-        url: "https://www.indianippon.com/career",
+        url: "https://indianippon.com/career",
         siteName: "India Nippon Electricals",
         type: "website",
     },
@@ -35,7 +35,7 @@ export const metadata = {
         description: "Explore career opportunities at INEL. Join our dynamic team and build a rewarding career in automotive electronics. We offer opportunities for experienced professionals, graduates, and interns.",
     },
     alternates: {
-        canonical: "https://www.indianippon.com/career",
+        canonical: "https://indianippon.com/career",
     },
 };
 
@@ -185,8 +185,8 @@ export default function Career() {
         "hiringOrganization": {
             "@type": "Organization",
             "name": "India Nippon Electricals Limited",
-            "sameAs": "https://www.indianippon.com",
-            "logo": "https://www.indianippon.com/logo.svg"
+            "sameAs": "https://indianippon.com",
+            "logo": "https://indianippon.com/logo.svg"
         },
         "jobLocation": {
             "@type": "Place",

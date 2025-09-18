@@ -9,7 +9,7 @@ export const metadata = {
     openGraph: {
         title: "Contact Us - Get in Touch | India Nippon Electricals",
         description: "Contact India Nippon Electricals for inquiries about automotive components and solutions. Reach out to our offices in Hosur, Pondicherry, and Rewari. Get expert support and consultation.",
-        url: "https://www.indianippon.com/contact-us",
+        url: "https://indianippon.com/contact-us",
         siteName: "India Nippon Electricals",
         type: "website",
     },
@@ -19,7 +19,7 @@ export const metadata = {
         description: "Contact India Nippon Electricals for inquiries about automotive components and solutions. Reach out to our offices in Hosur, Pondicherry, and Rewari. Get expert support and consultation.",
     },
     alternates: {
-        canonical: "https://www.indianippon.com/contact-us",
+        canonical: "https://indianippon.com/contact-us",
     },
 };
 
@@ -29,7 +29,7 @@ export default function ContactUs() {
         "@type": "ContactPage",
         "name": "Contact Us",
         "description": "Contact India Nippon Electricals for inquiries about automotive components and solutions. Multiple office locations across India.",
-        "url": "https://www.indianippon.com/contact-us",
+        "url": "https://indianippon.com/contact-us",
         "mainEntity": {
             "@type": "Organization",
             "name": "India Nippon Electricals Limited",

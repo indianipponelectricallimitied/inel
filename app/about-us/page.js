@@ -18,7 +18,7 @@ export const metadata = {
     openGraph: {
         title: "About Us - Leading Automotive Component Manufacturer | India Nippon Electricals",
         description: "Learn about India Nippon Electricals, a leading automotive component manufacturer with 40+ years of excellence. Discover our vision, mission, leadership, and manufacturing facilities across India.",
-        url: "https://www.indianippon.com/about-us",
+        url: "https://indianippon.com/about-us",
         siteName: "India Nippon Electricals",
         type: "website",
     },
@@ -28,7 +28,7 @@ export const metadata = {
         description: "Learn about India Nippon Electricals, a leading automotive component manufacturer with 40+ years of excellence. Discover our vision, mission, leadership, and manufacturing facilities across India.",
     },
     alternates: {
-        canonical: "https://www.indianippon.com/about-us",
+        canonical: "https://indianippon.com/about-us",
     },
 };
 
@@ -38,7 +38,7 @@ export default function AboutUs() {
         "@type": "WebPage",
         "name": "About Us",
         "description": "Learn about India Nippon Electricals, a leading automotive component manufacturer with over 40 years of excellence in developing and manufacturing automotive electronic components.",
-        "url": "https://www.indianippon.com/about-us",
+        "url": "https://indianippon.com/about-us",
         "publisher": {
             "@type": "Organization",
             "name": "India Nippon Electricals Limited"

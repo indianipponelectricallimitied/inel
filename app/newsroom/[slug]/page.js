@@ -63,11 +63,11 @@ export default function BlogPost({ params }) {
             // Update canonical link
             const canonicalLink = document.querySelector('link[rel="canonical"]');
             if (canonicalLink) {
-                canonicalLink.setAttribute('href', `https://www.indianippon.com/newsroom/${slug}`);
+                canonicalLink.setAttribute('href', `https://indianippon.com/newsroom/${slug}`);
             } else {
                 const link = document.createElement('link');
                 link.rel = 'canonical';
-                link.href = `https://www.indianippon.com/newsroom/${slug}`;
+                link.href = `https://indianippon.com/newsroom/${slug}`;
                 document.head.appendChild(link);
             }
 
@@ -94,11 +94,11 @@ export default function BlogPost({ params }) {
 
             const ogUrl = document.querySelector('meta[property="og:url"]');
             if (ogUrl) {
-                ogUrl.setAttribute('content', `https://www.indianippon.com/newsroom/${slug}`);
+                ogUrl.setAttribute('content', `https://indianippon.com/newsroom/${slug}`);
             } else {
                 const meta = document.createElement('meta');
                 meta.setAttribute('property', 'og:url');
-                meta.content = `https://www.indianippon.com/newsroom/${slug}`;
+                meta.content = `https://indianippon.com/newsroom/${slug}`;
                 document.head.appendChild(meta);
             }
 
@@ -173,7 +173,7 @@ export default function BlogPost({ params }) {
         "@type": "NewsArticle",
         "headline": blogData.title,
         "description": blogData.intro || blogData.title,
-        "url": `https://www.indianippon.com/newsroom/${slug}`,
+        "url": `https://indianippon.com/newsroom/${slug}`,
         "datePublished": blogData.date_added,
         "dateModified": blogData.date_updated || blogData.date_added,
         "author": {
@@ -185,7 +185,7 @@ export default function BlogPost({ params }) {
             "name": "India Nippon Electricals Limited",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.indianippon.com/logo.svg"
+                "url": "https://indianippon.com/logo.svg"
             }
         },
         "articleSection": blogData.category?.name || "News",
@@ -195,7 +195,7 @@ export default function BlogPost({ params }) {
         } : undefined,
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://www.indianippon.com/newsroom/${slug}`
+            "@id": `https://indianippon.com/newsroom/${slug}`
         }
     } : null;
 

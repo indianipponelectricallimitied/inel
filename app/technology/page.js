@@ -11,7 +11,7 @@ export const metadata = {
     openGraph: {
         title: "Technology & R&D - Innovation in Automotive Electronics | India Nippon Electricals",
         description: "Discover INEL's cutting-edge technology and R&D capabilities in automotive electronics. State-of-the-art research center developing advanced ignition systems, EFI, ISG, and EV solutions.",
-        url: "https://www.indianippon.com/technology",
+        url: "https://indianippon.com/technology",
         siteName: "India Nippon Electricals",
         type: "article",
     },
@@ -21,7 +21,7 @@ export const metadata = {
         description: "Discover INEL's cutting-edge technology and R&D capabilities in automotive electronics. State-of-the-art research center developing advanced ignition systems, EFI, ISG, and EV solutions.",
     },
     alternates: {
-        canonical: "https://www.indianippon.com/technology",
+        canonical: "https://indianippon.com/technology",
     },
 };
 
@@ -31,7 +31,7 @@ export default function Technology() {
         "@type": "TechArticle",
         "headline": "State-of-the-Art Research Center - Technology & R&D",
         "description": "At INEL, Research and Development (R&D) is the cornerstone of our strategy for innovation, ensuring that we remain at the forefront of the automotive industry.",
-        "url": "https://www.indianippon.com/technology",
+        "url": "https://indianippon.com/technology",
         "author": {
             "@type": "Organization",
             "name": "India Nippon Electricals Limited"
@@ -41,7 +41,7 @@ export default function Technology() {
             "name": "India Nippon Electricals Limited",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.indianippon.com/logo.svg"
+                "url": "https://indianippon.com/logo.svg"
             }
         },
         "about": [

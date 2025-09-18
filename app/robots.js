@@ -10,6 +10,6 @@ export default function robots() {
         '/private/',
       ],
     },
-    sitemap: 'https://www.indianippon.com/sitemap.xml',
+    sitemap: 'https://indianippon.com/sitemap.xml',
   }
 }

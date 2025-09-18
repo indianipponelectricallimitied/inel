@@ -9,7 +9,7 @@ export const metadata = {
     openGraph: {
         title: "Newsroom - Latest News & Updates | India Nippon Electricals",
         description: "Stay updated with the latest news, announcements, and developments from India Nippon Electricals. Explore our corporate updates, industry insights, and company achievements.",
-        url: "https://www.indianippon.com/newsroom",
+        url: "https://indianippon.com/newsroom",
         siteName: "India Nippon Electricals",
         type: "website",
     },
@@ -19,7 +19,7 @@ export const metadata = {
         description: "Stay updated with the latest news, announcements, and developments from India Nippon Electricals. Explore our corporate updates, industry insights, and company achievements.",
     },
     alternates: {
-        canonical: "https://www.indianippon.com/newsroom",
+        canonical: "https://indianippon.com/newsroom",
     },
 };
 
@@ -33,7 +33,7 @@ export default async function Newsroom() {
         "@type": "CollectionPage",
         "name": "Newsroom",
         "description": "Latest news, announcements, and developments from India Nippon Electricals including corporate updates, industry insights, and company achievements.",
-        "url": "https://www.indianippon.com/newsroom",
+        "url": "https://indianippon.com/newsroom",
         "mainEntity": {
             "@type": "Organization",
             "name": "India Nippon Electricals Limited"
@@ -42,7 +42,7 @@ export default async function Newsroom() {
             "@type": "NewsArticle",
             "headline": post.title,
             "description": post.intro || post.title,
-            "url": `https://www.indianippon.com/newsroom/${post.slug}`,
+            "url": `https://indianippon.com/newsroom/${post.slug}`,
             "datePublished": post.date_added,
             "author": {
                 "@type": "Organization",

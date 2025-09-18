@@ -13,7 +13,7 @@ export const metadata = {
     openGraph: {
         title: "Sustainability - Environmental Stewardship & Social Impact | India Nippon Electricals",
         description: "Discover INEL's commitment to sustainability through eco-friendly practices, renewable energy initiatives, zero liquid discharge, and comprehensive ESG programs driving a greener future.",
-        url: "https://www.indianippon.com/sustainability",
+        url: "https://indianippon.com/sustainability",
         siteName: "India Nippon Electricals",
         type: "website",
     },
@@ -23,7 +23,7 @@ export const metadata = {
         description: "Discover INEL's commitment to sustainability through eco-friendly practices, renewable energy initiatives, zero liquid discharge, and comprehensive ESG programs driving a greener future.",
     },
     alternates: {
-        canonical: "https://www.indianippon.com/sustainability",
+        canonical: "https://indianippon.com/sustainability",
     },
 };
 
@@ -115,7 +115,7 @@ export default function Sustainability(){
         "@type": "WebPage",
         "name": "Sustainability - Powering a Sustainable Future",
         "description": "At India Nippon Electricals, sustainability is at the heart of everything we do. We are committed to creating a greener future through eco-friendly practices, energy-efficient solutions, and responsible manufacturing.",
-        "url": "https://www.indianippon.com/sustainability",
+        "url": "https://indianippon.com/sustainability",
         "mainEntity": {
             "@type": "Organization",
             "name": "India Nippon Electricals Limited"

@@ -17,7 +17,7 @@ export const metadata = {
     openGraph: {
         title: "Aftermarket Solutions - Quality Auto Parts & Components | India Nippon Electricals",
         description: "Discover INEL's comprehensive aftermarket range of automotive parts including ignition systems, relays, and regulators. Quality aftermarket products with expert support and warranty coverage.",
-        url: "https://www.indianippon.com/aftermarket",
+        url: "https://indianippon.com/aftermarket",
         siteName: "India Nippon Electricals",
         type: "website",
     },
@@ -27,7 +27,7 @@ export const metadata = {
         description: "Discover INEL's comprehensive aftermarket range of automotive parts including ignition systems, relays, and regulators. Quality aftermarket products with expert support and warranty coverage.",
     },
     alternates: {
-        canonical: "https://www.indianippon.com/aftermarket",
+        canonical: "https://indianippon.com/aftermarket",
     },
 };
 
@@ -77,7 +77,7 @@ export default function aftermarket(){
         "@type": "Store",
         "name": "INEL Aftermarket Solutions",
         "description": "Quality aftermarket automotive parts and components including ignition systems, relays, and regulators with expert support and warranty coverage.",
-        "url": "https://www.indianippon.com/aftermarket",
+        "url": "https://indianippon.com/aftermarket",
         "parentOrganization": {
             "@type": "Organization",
             "name": "India Nippon Electricals Limited"

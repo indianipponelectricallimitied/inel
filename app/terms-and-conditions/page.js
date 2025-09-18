@@ -7,7 +7,7 @@ export const metadata = {
     openGraph: {
         title: "Terms and Conditions - Legal Terms | India Nippon Electricals",
         description: "Read the terms and conditions for using India Nippon Electricals website. Understand your rights and responsibilities when accessing our website and services.",
-        url: "https://www.indianippon.com/terms-and-conditions",
+        url: "https://indianippon.com/terms-and-conditions",
         siteName: "India Nippon Electricals",
         type: "website",
     },
@@ -17,7 +17,7 @@ export const metadata = {
         description: "Read the terms and conditions for using India Nippon Electricals website. Understand your rights and responsibilities when accessing our website and services.",
     },
     alternates: {
-        canonical: "https://www.indianippon.com/terms-and-conditions",
+        canonical: "https://indianippon.com/terms-and-conditions",
     },
 };
 
@@ -27,7 +27,7 @@ export default function TermsAndConditions() {
         "@type": "WebPage",
         "name": "Terms and Conditions",
         "description": "Terms and Conditions for using the India Nippon Electricals Limited website, outlining user rights, responsibilities, and legal agreements.",
-        "url": "https://www.indianippon.com/terms-and-conditions",
+        "url": "https://indianippon.com/terms-and-conditions",
         "publisher": {
             "@type": "Organization",
             "name": "India Nippon Electricals Limited"
@@ -58,7 +58,7 @@ export default function TermsAndConditions() {
                     <h1 className="text-3xl font-bold mb-8">Terms and Conditions</h1>
                     <ol className="list-decimal space-y-6 pl-6">
                         <li><span className="font-semibold">Acceptance of Terms</span><br />
-                            By accessing or using the website www.indianippon.com , you agree to be bound by these Terms and Conditions, along with the Privacy Policy. If you do not agree with these terms, you are prohibited from using or accessing the Site. India Nippon Electricals Ltd  reserves the right to modify these Terms and Conditions at any time without prior notice. Any changes will be posted on this page, and your continued use of the Site constitutes your acceptance of these changes.</li>
+                            By accessing or using the website indianippon.com , you agree to be bound by these Terms and Conditions, along with the Privacy Policy. If you do not agree with these terms, you are prohibited from using or accessing the Site. India Nippon Electricals Ltd  reserves the right to modify these Terms and Conditions at any time without prior notice. Any changes will be posted on this page, and your continued use of the Site constitutes your acceptance of these changes.</li>
                         
                         <li><span className="font-semibold">Use of the Site</span><br />
                             The content and information on the Site are provided for general informational purposes only. You agree to use the Site for lawful purposes and not for any illegal or unauthorized activities. You may not engage in any activity that may interfere with or disrupt the Site or its operations.</li>

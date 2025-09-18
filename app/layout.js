@@ -31,7 +31,7 @@ const aeonik = localFont({
 export const metadata = {
   title: "India Nippon Electricals Ltd",
   description: "Leading automotive component manufacturer specializing in electronic ignition systems, fuel injection systems, and EV solutions for two-wheelers and commercial vehicles.",
-  metadataBase: new URL('https://www.indianippon.com'),
+  metadataBase: new URL('https://indianippon.com'),
   robots: {
     index: true,
     follow: true,

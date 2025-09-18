@@ -163,8 +163,8 @@ export default function Career() {
         "hiringOrganization": {
             "@type": "Organization",
             "name": "India Nippon Electricals Limited",
-            "sameAs": "https://www.indianippon.com",
-            "logo": "https://www.indianippon.com/logo.svg"
+            "sameAs": "https://indianippon.com",
+            "logo": "https://indianippon.com/logo.svg"
         },
         "jobLocation": {
             "@type": "Place",
@@ -215,11 +215,11 @@ export default function Career() {
         // Update canonical link
         const canonicalLink = document.querySelector('link[rel="canonical"]');
         if (canonicalLink) {
-            canonicalLink.setAttribute('href', 'https://www.indianippon.com/career');
+            canonicalLink.setAttribute('href', 'https://indianippon.com/career');
         } else {
             const link = document.createElement('link');
             link.rel = 'canonical';
-            link.href = 'https://www.indianippon.com/career';
+            link.href = 'https://indianippon.com/career';
             document.head.appendChild(link);
         }
 
@@ -246,11 +246,11 @@ export default function Career() {
 
         const ogUrl = document.querySelector('meta[property="og:url"]');
         if (ogUrl) {
-            ogUrl.setAttribute('content', 'https://www.indianippon.com/career');
+            ogUrl.setAttribute('content', 'https://indianippon.com/career');
         } else {
             const meta = document.createElement('meta');
             meta.setAttribute('property', 'og:url');
-            meta.content = 'https://www.indianippon.com/career';
+            meta.content = 'https://indianippon.com/career';
             document.head.appendChild(meta);
         }
 

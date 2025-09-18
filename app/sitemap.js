@@ -1,7 +1,7 @@
 import ApiService from './services/api';
 
 export default async function sitemap() {
-  const baseUrl = 'https://www.indianippon.com';
+  const baseUrl = 'https://indianippon.com';
   
   // Static pages
   const staticPages = [

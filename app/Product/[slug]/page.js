@@ -68,11 +68,11 @@ export default function ProductPage() {
             // Update canonical link
             const canonicalLink = document.querySelector('link[rel="canonical"]');
             if (canonicalLink) {
-                canonicalLink.setAttribute('href', `https://www.indianippon.com/Product/${params.slug}`);
+                canonicalLink.setAttribute('href', `https://indianippon.com/Product/${params.slug}`);
             } else {
                 const link = document.createElement('link');
                 link.rel = 'canonical';
-                link.href = `https://www.indianippon.com/Product/${params.slug}`;
+                link.href = `https://indianippon.com/Product/${params.slug}`;
                 document.head.appendChild(link);
             }
 
@@ -99,11 +99,11 @@ export default function ProductPage() {
 
             const ogUrl = document.querySelector('meta[property="og:url"]');
             if (ogUrl) {
-                ogUrl.setAttribute('content', `https://www.indianippon.com/Product/${params.slug}`);
+                ogUrl.setAttribute('content', `https://indianippon.com/Product/${params.slug}`);
             } else {
                 const meta = document.createElement('meta');
                 meta.setAttribute('property', 'og:url');
-                meta.content = `https://www.indianippon.com/Product/${params.slug}`;
+                meta.content = `https://indianippon.com/Product/${params.slug}`;
                 document.head.appendChild(meta);
             }
 
@@ -176,7 +176,7 @@ export default function ProductPage() {
             "@type": "Organization",
             "name": "India Nippon Electricals Limited"
         },
-        "url": `https://www.indianippon.com/Product/${params.slug}`,
+        "url": `https://indianippon.com/Product/${params.slug}`,
         ...(product.sku && { "sku": product.sku }),
         ...(product.mpn && { "mpn": product.mpn }),
         ...(product.gtin && { "gtin": product.gtin }),
