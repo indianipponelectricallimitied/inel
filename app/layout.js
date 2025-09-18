@@ -2,6 +2,7 @@ import "./globals.css";
 import Navbar from "./components/Common/navbar";
 import Footer from "./components/Common/footer";
 import localFont from "next/font/local";
+import Script from "next/script";
 
 
 const aeonik = localFont({
@@ -52,6 +53,20 @@ export default function RootLayout({ children }) {
       <body
         className={`${aeonik.variable} antialiased`}
       >  
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-F3KE4T8FF9"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-F3KE4T8FF9');
+          `}
+        </Script>
+        
         <Navbar />
         {children}
         <Footer />
