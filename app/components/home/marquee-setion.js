@@ -88,10 +88,10 @@ const logos = [
     src: "/images/home/companies/yanmar.svg",
     alt: "Yanmar",
   },
-  {
-    src: "/images/home/companies/dellorto-seeklogo.svg",
-    alt: "Dellorto",
-  },
+  // {
+  //   src: "/images/home/companies/dellorto-seeklogo.svg",
+  //   alt: "Dellorto",
+  // },
 ];
 
 export default function MarqueeSection() {

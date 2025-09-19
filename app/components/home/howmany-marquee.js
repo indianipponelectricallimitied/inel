@@ -7,7 +7,7 @@ const miles = [
   { text: "2,000+ Employees "},
   { text: "Shipping to 12+ Countries "},
   { text: "Controllers "},
-  { text: "5M+ Units "},
+  { text: "11M+ Units "},
   { text: "Actuators "},
 
 

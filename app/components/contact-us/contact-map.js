@@ -39,7 +39,7 @@ const Map = () => {
     {
       id: 0,
       name: "Tech Center",
-      address: "SIPCOT Industrial Complex, Plot No-137, Phase-1, Hosur, Tamil Nadu 635126",
+      address: "SIPCOT Industrial Complex, Plot No-137, Phase-1, Hosur, Tamil Nadu, India - 635126",
       position: { lat: 13.0827, lng: 80.2707 },
       phone: "+91-4347-230273",
       email: " inelcorp@inel.co.in",
@@ -49,7 +49,7 @@ const Map = () => {
     {
       id: 1,
       name: "Plant-I Hosur",
-      address: "Hosur-Thali Road Unnamalai Hosur 635 114 Krishnagiri District Tamil Nadu, India",
+      address: "Hosur-Thally Road, Uliveernapalli, Hosur, Tamil Nadu, India - 635114",
       position: { lat: 12.7409, lng: 77.8253 },
       phone: "+91-4347-230273",
       email: " inelcorp@inel.co.in",
@@ -59,7 +59,7 @@ const Map = () => {
     {
       id: 2,
       name: "Plant-II Pondicherry",
-      address: "Madukkarai Road Nettapakkam Commune Kariamanickam Village Puducherry 605 106 India",
+      address: "Madukkarai Road Nettapakkam Commune Kariamanickam Village Puducherry, India - 605106",
       position: { lat: 11.9416, lng: 79.8083 },
       phone: "+91-413-2697811",
       email: " inelcorp@inel.co.in",
@@ -69,7 +69,7 @@ const Map = () => {
     {
       id: 3,
       name: "Plant-III Rewari",
-      address: "Masani Village Rewari 122106 Haryana State India",
+      address: "Masani Village Rewari, Haryana, India - 122106",
       position: { lat: 28.1990, lng: 76.6194 },
       phone: "+91-1274-240860",
       email: " inelcorp@inel.co.in",
