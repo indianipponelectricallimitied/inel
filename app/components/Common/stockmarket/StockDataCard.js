@@ -15,14 +15,25 @@ export default function StockDataCard({background}) {
   const [mounted, setMounted] = useState(false);
   const cardRef = useRef(null);
 
-  // Manual NSE data as provided - calculated from 16 Sep (986.75) to 17 Sep (1003.00)
+  // Manual stock data - will be used instead of API calls
+  // TODO: Remove manual data and restore API calls when requested
   const manualNSEData = {
     'Global Quote': {
       '01. symbol': 'INDNIPPON.NSE',
-      '05. price': '1003.00',
-      '09. change': '16.25',
-      '10. change percent': '1.6467%',
-      '07. latest trading day': '2025-09-17T05:30:00'
+      '05. price': '982.05', // 18 Sep close
+      '09. change': '-20.95', // vs 17 Sep close (1003.00)
+      '10. change percent': '-2.0887%',
+      '07. latest trading day': '2025-09-18T15:30:00'
+    }
+  };
+
+  const manualBSEData = {
+    'Global Quote': {
+      '01. symbol': 'INDNIPPON.BSE',
+      '05. price': '977.00', // 18 Sep close
+      '09. change': '-26.45', // vs 17 Sep close (1003.45)
+      '10. change percent': '-2.6361%',
+      '07. latest trading day': '2025-09-18T15:30:00'
     }
   };
 
@@ -35,6 +46,18 @@ export default function StockDataCard({background}) {
 
     const fetchStockData = async () => {
       try {
+        // Using manual data for both NSE and BSE
+        // TODO: Restore API calls when manual updates are no longer needed
+        if (market === 'NSE') {
+          setStockData(manualNSEData);
+          setLoading(false);
+        } else {
+          setStockData(manualBSEData);
+          setLoading(false);
+        }
+        
+        /* 
+        // PRESERVED API CODE - Uncomment when manual data is no longer needed:
         // Use manual data for NSE, fetch live data for BSE
         if (market === 'NSE') {
           setStockData(manualNSEData);
@@ -45,6 +68,7 @@ export default function StockDataCard({background}) {
           setStockData(data);
           setLoading(false);
         }
+        */
       } catch (err) {
         console.error('Error fetching stock data:', err);
         setError(err.message);
@@ -54,6 +78,9 @@ export default function StockDataCard({background}) {
 
     fetchStockData();
     
+    // Auto-refresh disabled while using manual data
+    // TODO: Restore auto-refresh when API calls are restored
+    /*
     // Setup auto-refresh service only for BSE
     if (market === 'BSE') {
       StockDataService.setupAutoRefresh();
@@ -62,6 +89,7 @@ export default function StockDataCard({background}) {
       const interval = setInterval(fetchStockData, 300000);
       return () => clearInterval(interval);
     }
+    */
   }, [market, mounted]); // Re-fetch when market changes
 
   useEffect(() => {
@@ -106,7 +134,7 @@ export default function StockDataCard({background}) {
             <span className="font-medium text-xl mt-20">INDNIPPON (NSE)</span>
             <span className="text-4xl font-medium">-- <span className='text-2xl'>INR</span></span>
             <span className="flex items-center">-- (--%)</span>
-            <div className="text-xs text-gray-400">--</div>
+            <div className="text-[8px] text-gray-400">--</div>
           </div>
         </div>
       </GlowingBox>
@@ -129,7 +157,7 @@ export default function StockDataCard({background}) {
           <span className="font-medium text-xl mt-20">INDNIPPON (NSE)</span>
           <span className="text-4xl font-medium">Loading... <span className='text-2xl'>INR</span></span>
           <span className="flex items-center">Loading... (Loading...%)</span>
-          <div className="text-xs text-gray-400">Loading...</div>
+                      <div className="text-[8px] text-gray-400">Loading...</div>
         </div>
       </div>
     </GlowingBox>
@@ -182,7 +210,7 @@ export default function StockDataCard({background}) {
                     <MdArrowDownward className="ml-1 text-red-500" />
                 )}
                 </span>
-                <div className="text-xs text-gray-400">
+                <div className="text-[8px] text-gray-400">
                 {new Date(quote['07. latest trading day']).toLocaleString('en-IN', {
                     day: 'numeric',
                     month: 'short',
