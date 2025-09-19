@@ -21,12 +21,17 @@ const nextConfig = {
       },
       {
         source: '/pages/contact',
-        destination: '/Products-Solutions',
+        destination: '/contact-us',
         permanent: true,
       },
       // Contact related redirects
       {
         source: '/testimonials',
+        destination: '/contact-us',
+        permanent: true,
+      },
+      {
+        source: '/tab_slider/about-03-01/hosur-unit',
         destination: '/contact-us',
         permanent: true,
       },
@@ -83,6 +88,63 @@ const nextConfig = {
       {
         source: '/new-product/throttle-position-sensor',
         destination: '/Product/throttle-position-sensor',
+        permanent: true,
+      },
+      // Additional redirects for missing pages from Google
+      {
+        source: '/milestones-page1',
+        destination: '/about-us',
+        permanent: true,
+      },
+      {
+        source: '/audio-video-player',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/policies',
+        destination: '/privacy-policy',
+        permanent: true,
+      },
+      // New redirects for Google-listed pages that don't exist
+      {
+        source: '/Pages',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/tab_slider/about-03-01',
+        destination: '/about-us',
+        permanent: true,
+      },
+      {
+        source: '/about-03-01',
+        destination: '/about-us',
+        permanent: true,
+      },
+      {
+        source: '/Regular Product',
+        destination: '/Products-Solutions',
+        permanent: true,
+      },
+      {
+        source: '/about-us_backup',
+        destination: '/about-us',
+        permanent: true,
+      },
+      {
+        source: '/products_old',
+        destination: '/Products-Solutions',
+        permanent: true,
+      },
+      {
+        source: '/pages/a',
+        destination: '/about-us',
+        permanent: true,
+      },
+      {
+        source: '/organizat',
+        destination: '/about-us',
         permanent: true,
       },
       // Homepage redirects for various old URLs
