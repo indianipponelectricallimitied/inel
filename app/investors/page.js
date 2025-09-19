@@ -274,19 +274,19 @@ export default function Investors() {
                 }, 400);
             }
         },
-        {
-            title: "AGM-2025 Inspection documents",
-            link: null,
-            onClick: () => {
-                setOpenAGMInspectionAccordion(true);
-                setTimeout(() => {
-                    investorDataRef.current?.scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }, 400);
-            }
-        }
+        // {
+        //     title: "AGM-2025 Inspection documents",
+        //     link: null,
+        //     onClick: () => {
+        //         setOpenAGMInspectionAccordion(true);
+        //         setTimeout(() => {
+        //             investorDataRef.current?.scrollIntoView({ 
+        //                 behavior: 'smooth',
+        //                 block: 'start'
+        //             });
+        //         }, 400);
+        //     }
+        // }
     ];
     return (
         <>
