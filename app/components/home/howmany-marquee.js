@@ -6,9 +6,11 @@ const miles = [
   // { text: "3 Manufacturing Facilities " },
   { text: "2,000+ Employees "},
   { text: "Shipping to 12+ Countries "},
-  { text: "Controllers "},
   { text: "11M+ Units "},
-  { text: "Actuators "},
+  { text: "Magnetos "},
+  { text: "Ignition coils "},
+  { text: "Controllers "},
+  { text: "Sensors "},
 
 
 ];
