@@ -8,7 +8,7 @@ const miles = [
   { text: "Shipping to 12+ Countries "},
   { text: "11M+ Units "},
   { text: "Magnetos "},
-  { text: "Ignition coils "},
+  { text: "Ignition Coils "},
   { text: "Controllers "},
   { text: "Sensors "},
 
