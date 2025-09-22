@@ -427,7 +427,7 @@ const Navbar = () => {
                 <div className="w-full">
                   <button 
                     onClick={() => toggleSubmenu(index)}
-                    className={`flex items-center justify-between w-full py-3 text-black border-b border-gray-200 ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}
+                    className="flex items-center justify-between w-full py-3 text-black border-b border-gray-200"
                   >
                     {item.label}
                     <IoChevronDownOutline 
@@ -441,95 +441,88 @@ const Navbar = () => {
                       openSubmenu === index ? 'max-h-[2000px]' : 'max-h-0'
                     }`}
                   >
-                    {/* Top Section - Category/Application Cards */}
-                    <div className='grid grid-cols-2 gap-3 mb-4 mt-4'>
-                      {getCategoryCards().map((subItem, subIndex) => (
-                        <Link 
-                          key={`mobile-product-${subIndex}`}
-                                                        href={`/Products-Solutions?type=productType&value=${encodeURIComponent(subItem.productType).replace(/%20/g, '+')}`}
-                          onClick={() => {
-                            toggleMenu();
-                            setOpenSubmenu(null);
-                          }}
-                          className={`rounded-lg p-3 relative h-16 flex items-center justify-between ${subItem.shade} cursor-pointer ${
-                            selectedProductType === subItem.productType ? 'ring-2 ring-blue-500 ring-dashed' : ''
-                          }`}
-                        >
-                          <div className={`absolute inset-0 bg-cover megamenucard bg-center bg-no-repeat rounded-lg opacity-20`} style={{backgroundImage: `url(${subItem.image})`}}></div>
-                          <p className='text-white z-10 relative text-sm w-1/2'>{subItem.label}</p>
-                          <FiArrowRight  className='text-white text-sm'/>
-                        </Link>
-                      ))}
-                    </div>
-                    
-                    {/* Vehicle Categories Section - First 4 only */}
-                    {availableVehicleCategories.length > 0 && (
-                      <div className='mb-4'>
-                        <h4 className="text-sm font-medium text-gray-700 mb-2">Vehicle Categories</h4>
-                        <div className='flex flex-wrap gap-2'>
-                          <Link
-                            href="/Products-Solutions"
-                            onClick={() => {
-                              toggleMenu();
-                              setOpenSubmenu(null);
-                            }}
-                            className={`py-1 px-3 text-xs rounded-md transition-all ${
-                              selectedVehicleCategory === 'All'
-                                ? 'bg-primary text-white'
-                                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                            }`}
-                          >
-                            All Categories
-                          </Link>
-                          {availableVehicleCategories.slice(0, 4).map((category, index) => (
-                            <Link
-                              key={category.name}
-                              href={`/Products-Solutions?type=vehicle&value=${encodeURIComponent(category.name).replace(/%20/g, '+')}`}
+                    {/* Check if it's the Products & Solutions mega menu */}
+                    {item.label === 'Products & Solutions' ? (
+                      <>
+                        {/* Product Type Category Cards */}
+                        <div className='grid grid-cols-1 gap-3 mb-6 mt-4'>
+                          {getCategoryCards().map((subItem, subIndex) => (
+                            <Link 
+                              key={`mobile-product-${subIndex}`}
+                              href={`/Products-Solutions?type=productType&value=${encodeURIComponent(subItem.productType).replace(/%20/g, '+')}`}
                               onClick={() => {
                                 toggleMenu();
                                 setOpenSubmenu(null);
                               }}
-                              className={`py-1 px-3 text-xs rounded-md transition-all ${
-                                selectedVehicleCategory === category.name
-                                  ? 'bg-primary text-white'
-                                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                              className={`rounded-lg p-4 relative h-20 flex items-center justify-between ${subItem.shade} cursor-pointer transition-all ${
+                                selectedProductType === subItem.productType ? 'ring-2 ring-blue-500 ring-dashed' : ''
                               }`}
                             >
-                              {category.name}
+                              <div className={`absolute inset-0 bg-cover megamenucard bg-center bg-no-repeat rounded-lg opacity-20`} style={{backgroundImage: `url(${subItem.image})`}}></div>
+                              <p className='text-white z-10 relative text-lg font-medium w-3/4'>{subItem.label}</p>
+                              <FiArrowRight className='text-white text-lg'/>
                             </Link>
                           ))}
                         </div>
-                      </div>
-                    )}
-                    
-                    {/* Product Cards - Hidden for future use */}
-                    {/* <div className='mb-4'>
-                      <h4 className="text-sm font-medium text-gray-700 mb-2">Products</h4>
-                      <div className='grid grid-cols-1 gap-2'>
-                        {filteredProducts.slice(0, 8).map((product, subIndex) => (
+                        
+                        {/* Vehicle Categories Section */}
+                        {availableVehicleCategories.length > 0 && (
+                          <div className='mb-4'>
+                            <h4 className="text-base font-medium text-gray-700 mb-3">Vehicle Categories</h4>
+                            <div className='flex flex-wrap gap-2'>
+                              <Link
+                                href="/Products-Solutions"
+                                onClick={() => {
+                                  toggleMenu();
+                                  setOpenSubmenu(null);
+                                }}
+                                className={`flex items-center gap-1 rounded-[10px] border border-primary py-2 px-4 text-sm font-medium transition-all ${
+                                  selectedVehicleCategory === 'All'
+                                    ? 'bg-primary text-white'
+                                    : 'bg-white text-[#160959] hover:bg-primary hover:text-white'
+                                }`}
+                              >
+                                All Categories
+                              </Link>
+                              {availableVehicleCategories.slice(0, 4).map((category, categoryIndex) => (
+                                <Link
+                                  key={category.name}
+                                  href={`/Products-Solutions?type=vehicle&value=${encodeURIComponent(category.name).replace(/%20/g, '+')}`}
+                                  onClick={() => {
+                                    toggleMenu();
+                                    setOpenSubmenu(null);
+                                  }}
+                                  className={`flex items-center gap-1 rounded-[10px] border border-primary py-2 px-4 text-sm font-medium transition-all ${
+                                    selectedVehicleCategory === category.name
+                                      ? 'bg-primary text-white'
+                                      : 'bg-white text-[#160959] hover:bg-primary hover:text-white'
+                                  }`}
+                                >
+                                  {category.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      // Simple submenu for other items like Careers
+                      <div className="py-2">
+                        {item.submenu.map((subItem, subIndex) => (
                           <Link
-                            key={`mobile-product-link-${subIndex}`}
-                            href={`/Product/${product.id}`}
-                            className="flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-gray-50 transition-all cursor-pointer"
+                            key={subIndex}
+                            href={subItem.href}
                             onClick={() => {
-                              handleProductClick(product.id, product.name);
                               toggleMenu();
                               setOpenSubmenu(null);
                             }}
+                            className="block px-2 py-3 text-gray-700 hover:text-primary transition-colors border-b border-gray-100 last:border-b-0"
                           >
-                            <div className="flex items-center gap-3">
-                              <img
-                                src={product.image}
-                                alt={product.name}
-                                className="w-12 h-12 object-contain"
-                              />
-                              <span className="text-sm font-medium text-gray-900">{product.name}</span>
-                            </div>
-                            <FiArrowRight className="text-xs text-primary" />
+                            {subItem.label}
                           </Link>
                         ))}
                       </div>
-                    </div> */}
+                    )}
                   </div>
                 </div>
               ) : (
@@ -546,7 +539,7 @@ const Navbar = () => {
           
           <div className="pt-4">
             <Button variant="blue" href="/contact-us" className="w-full">
-              Enquire Now
+              Contact Us
             </Button>
           </div>
         </div>
