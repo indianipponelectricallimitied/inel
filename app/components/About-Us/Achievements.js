@@ -10,21 +10,25 @@ import 'swiper/css';
 import { Pagination, Autoplay } from 'swiper/modules';
 
 const achievements = [
-   
-    {
-        image: "/images/about/ficci.jpeg",
-        title: "HR Summit & SCORE Award by FICCI – 2024",
-    },
-    {
+       {
         image: "/images/about/generac.webp",
         alt: "generac",
         title: "Innovation Partner Award by Generac – 2025",
     },
     {
-        image: "/images/about/best supplier tvs.webp",
-
-        alt: "tvs",
-        title: "Best Supplier Award by TVS – 2021-2022",
+        image: "/images/about/gptw.webp",
+        alt: "greatplacetowork",
+        title: "Great Place to Work® Certified (Oct 2024 – Oct 2025)",
+    },
+ 
+    {
+        image: "/images/about/ficci.jpeg",
+        title: "HR Summit & SCORE Award by FICCI – 2024",
+    },
+    {
+        image: "/images/about/iso-ieo.jpg",
+        alt: "ISO-EC270012022",
+        title: "ISO/IEC 27001:2022 – Information Security Management Certification",
     },
     {
         image: "/images/about/reliabilitycluster.webp",
@@ -32,20 +36,19 @@ const achievements = [
         title: "Reliability Cluster Program 1 Appreciation Award by TVS",
     },
     {
-        image: "/images/about/gptw.webp",
-        alt: "greatplacetowork",
-        title: "Great Place to Work® Certified (Oct 2024 – Oct 2025)",
+        image: "/images/about/best supplier tvs.webp",
+
+        alt: "tvs",
+        title: "Best Supplier Award by TVS – 2021-2022",
     },
+ 
+   
     {
         image: "/images/about/cii.jpeg",
         title: "Lean Practice Competition Winner Southern Region by CII",
     },
     
-    {
-        image: "/images/about/iso-ieo.jpg",
-        alt: "ISO-EC270012022",
-        title: "ISO/IEC 27001:2022 – Information Security Management Certification",
-    },
+   
     {
         image: "/images/about/acma-award.jpg",
         alt: "acma",
@@ -79,7 +82,7 @@ export default function Achievements() {
                             clickable: true,
                         }}
                         autoplay={{
-                            delay: 2500,
+                            delay: 3500,
                             disableOnInteraction: false,
                           }}
                         

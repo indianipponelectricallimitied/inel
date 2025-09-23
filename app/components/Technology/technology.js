@@ -5,20 +5,20 @@ import { useState, useEffect } from "react";
 const milestones= [
     {
         title: "Patents Filed",
-        numbers: "10",
-        description: " Driving innovation with filed patents.",
+        numbers: "43",
+        description: "Driving innovation with filed patents.",
         image: "/images/Technology/Patents.png"
     },
     {
-        title: "Engineers",
-        numbers: "330",
-        description: "A skilled team of engineers.",
+        title: "Mass Production",
+        numbers: "29",
+        description: "Patented solutions implemented in automotive mass production.",
         image: "/images/Technology/Engineers.png"
     },
     {
-        title: "Design Allocations",
-        numbers: "45",
-        description: " Precision in every design allocation",
+        title: "Electrical",
+        numbers: "49%",
+        description: "Patents strengthen vehicle electrical systems.",
         image: "/images/Technology/Allocations.png"
     }
 ]
