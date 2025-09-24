@@ -11,7 +11,7 @@ const milestones= [
     },
     {
         title: "Mass Production",
-        numbers: "29",
+        numbers: "21",
         description: "Patented solutions implemented in automotive mass production.",
         image: "/images/Technology/Engineers.png"
     },

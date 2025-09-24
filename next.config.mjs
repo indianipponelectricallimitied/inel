@@ -23,7 +23,7 @@ const nextConfig = {
         source: '/pages/contact',
         destination: '/contact-us',
         permanent: true,
-      },
+      },  
       // Contact related redirects
       {
         source: '/testimonials',
