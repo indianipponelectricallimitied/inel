@@ -10,17 +10,23 @@ const milestones= [
         image: "/images/Technology/Patents.png"
     },
     {
-        title: "Mass Production",
+        title: "Patents Driving Innovation",
         numbers: "21",
-        description: "Patented solutions implemented in automotive mass production.",
+        description: " Successfully implemented in mass production, transforming ideas into industry-ready solutions.",
         image: "/images/Technology/Engineers.png"
     },
     {
         title: "Electrical",
         numbers: "49%",
-        description: "Patents strengthen vehicle electrical systems.",
+        description: " Advanced electrical systems that ensure reliability and efficiency.",
+        image: "/images/Technology/energy.png"
+    },
+    {
+        title: "Mechanical",
+        numbers: "26%",
+        description: "  Efficient solutions built on a solid mechanical foundation.",
         image: "/images/Technology/Allocations.png"
-    }
+    },
 ]
 
 const innovations = [
@@ -92,7 +98,7 @@ export default function TechnologyPage() {
                          className="ms-auto -mb-10"
                          />
                          <h1>{milestone.numbers}</h1>
-                        <h2>{milestone.title}</h2>
+                        <h2 className="font-medium">{milestone.title}</h2>
                         <p>{milestone.description}</p>
                        
                     </div>
