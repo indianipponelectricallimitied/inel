@@ -17,8 +17,8 @@ export default function StockTicker({className = ''}) {
       '01. symbol': 'INDNIPPON.NSE',
       '05. price': '978.00', // 29 Sep close
       '09. change': '-71.05', // vs 25 Sep close (946.70)
-      '10. change percent': '-3.554%',
-      '07. latest trading day': '2025-10-08T15:30:00'
+      '10. change percent': '-6.775%',
+      '07. latest trading day': '2025-10-09T15:30:00'
     }
   };
 
