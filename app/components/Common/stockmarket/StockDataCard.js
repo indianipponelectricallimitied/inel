@@ -21,8 +21,8 @@ export default function StockDataCard({background}) {
     'Global Quote': {
       '01. symbol': 'INDNIPPON.NSE',
       '05. price': '997.10', // 29 Sep close
-      '09. change': '19.10', // vs 25 Sep close (946.70)
-      '10. change percent': '1.953%',
+      '09. change': '18.60', // vs 25 Sep close (946.70)
+      '10. change percent': '1.900%',
       '07. latest trading day': '2025-10-10T15:30:00'
     }
   };
@@ -31,8 +31,8 @@ export default function StockDataCard({background}) {
     'Global Quote': {
       '01. symbol': 'INDNIPPON.BSE',
       '05. price': '996.05', // 29 Sep close
-      '09. change': '132.05', // vs 25 Sep close (940.00)
-      '10. change percent': '15.283%',
+      '09. change': '16.20', // vs 25 Sep close (940.00)
+      '10. change percent': '1.653%',
       '07. latest trading day': '2025-10-10T15:30:00'
     }
   };
