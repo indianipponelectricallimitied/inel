@@ -14,7 +14,7 @@ import VehicleCategories from './vehicleCategories';
 import RelatedProducts from './related-products';
 import Newsletter from "../../components/Common/newsletter";
 
-const BASE_URL = "https://inelbackend.vercel.app/";
+const BASE_URL = "https://inelbackend-sandy.vercel.app/";
 
 export default function ProductPage() {
     const [product, setProduct] = useState(null);

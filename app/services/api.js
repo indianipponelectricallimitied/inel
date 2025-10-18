@@ -1,5 +1,5 @@
 // const API_BASE_URL = 'https://inelbackend-fccmbmfjbhewhbhh.centralindia-01.azurewebsites.net/api';
-const API_BASE_URL = 'https://inelbackend.vercel.app/api';
+const API_BASE_URL = 'https://inelbackend-sandy.vercel.app/api';
 const CACHE_DURATION = 0; // 5 minutes 
 // const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes 
 

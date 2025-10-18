@@ -147,7 +147,7 @@ export default function ContactForm() {
             console.log("Sending data to API...");
             
             // Try the original contact endpoint first, then fallback to aftermarket endpoint
-            let apiUrl = "https://inelbackend.vercel.app/api/contact";
+            let apiUrl = "https://inelbackend-sandy.vercel.app/api/contact";
             
             try {
                 const response = await fetch(apiUrl, {

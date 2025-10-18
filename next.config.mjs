@@ -3,7 +3,7 @@ const nextConfig = {
   images: {
     domains: [
       'flagcdn.com',
-      'inelbackend.vercel.app'
+      'inelbackend-sandy.vercel.app'
     ],
   },
   async redirects() {

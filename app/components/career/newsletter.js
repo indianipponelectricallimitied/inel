@@ -18,7 +18,7 @@ export default function Newsletter({newsletterBg}) {
         setStatus(null);
         
         try {
-            const response = await fetch("https://inelbackend.vercel.app/api/newsletter", {
+            const response = await fetch("https://inelbackend-sandy.vercel.app/api/newsletter", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
