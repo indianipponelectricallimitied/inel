@@ -79,7 +79,10 @@ export default function Footer(){
                     <a href="/policies" className="text-sm md:text-base">Policies</a>
                     {/* <a href="#" className="text-sm md:text-base">Data Protection</a> */}
                 </div>
-                <p className="text-center md:text-left text-sm md:text-base pt-5 md:pt-0">© INEL. All Rights Reserved.</p>
+                <div className="flex flex-col md:flex-row items-center gap-3 md:gap-5 pt-5 md:pt-0">
+                    <p className="text-center md:text-left text-sm md:text-base">© INEL. All Rights Reserved.</p>
+                    <a href="https://xtracut.com/" target="_blank" rel="noopener noreferrer" className="text-center md:text-left text-sm md:text-base">Design & developed by Xtracut</a>
+                </div>
             </div>
         </footer>
     )

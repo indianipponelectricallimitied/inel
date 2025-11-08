@@ -37,6 +37,11 @@ export const metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: '/fav.png',
+    shortcut: '/fav.png',
+    apple: '/fav.png',
+  },
   other: {
     'theme-color': '#0b2545',
   },
