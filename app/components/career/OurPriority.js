@@ -95,7 +95,7 @@ export default function OurPriority({quickLinks}) {
             </div>
             <div className="container mx-auto py-20" id="career-opportunities">
             <h1 className="text-center pb-10">Career Opportunities</h1 >
-            <p className="w-2/3 mx-auto text-center">At INEL, you're not just advancing a career; you're embracing a legacy dedicated to enriching lives and shaping a brighter future. Venture Into a World of Endless Opportunities:</p>
+            <p className="w-2/3 mx-auto text-center">At INEL, you&apos;re not just advancing a career; you&apos;re embracing a legacy dedicated to enriching lives and shaping a brighter future. Venture Into a World of Endless Opportunities:</p>
 
                 <h3 className="text-center pb-10 text-2xl pt-10" id="apply-now">How to apply</h3>
                 

@@ -90,6 +90,7 @@ export default function StockDataCard({background}) {
       return () => clearInterval(interval);
     }
     */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [market, mounted]); // Re-fetch when market changes
 
   useEffect(() => {
@@ -114,7 +115,8 @@ export default function StockDataCard({background}) {
         card.removeEventListener("mousemove", handleMouseMove);
       };
     }
-  }, [cardRef.current, mounted]); // Add cardRef.current as dependency
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mounted]); // Only re-run when mounted changes
 
   // Don't render anything until mounted to prevent hydration mismatch
   if (!mounted) {

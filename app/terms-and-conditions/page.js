@@ -76,7 +76,7 @@ export default function TermsAndConditions() {
                             The Site may contain links to third-party websites. These links are provided for convenience, and INEL does not endorse or assume responsibility for the content, privacy policies, or practices of any third-party sites. Users should review the terms and privacy policies of third-party sites before engaging with them.</li>
                         
                         <li><span className="font-semibold">Privacy Policy</span><br />
-                            Your use of the Site is also governed by INEL's Privacy Policy, which explains how your personal information is collected, used, and protected. By using the Site, you consent to the collection and use of your information as described in the Privacy Policy.</li>
+                            Your use of the Site is also governed by INEL&apos;s Privacy Policy, which explains how your personal information is collected, used, and protected. By using the Site, you consent to the collection and use of your information as described in the Privacy Policy.</li>
                         
                         <li><span className="font-semibold">Termination of Access</span><br />
                             INEL reserves the right to suspend or terminate your access to the Site at any time, with or without cause, if it believes you have violated these Terms and Conditions.</li>
