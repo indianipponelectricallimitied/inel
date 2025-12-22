@@ -114,7 +114,7 @@ const accordions = [
       "header": "How can I track the status of my application?",
       "content": (
         <>
-          To track the status of your application, please log in to your candidate profile on our career's portal, where you can view real-time updates regarding your application. For additional inquiries, you may contact our HR department at{" "}
+          To track the status of your application, please log in to your candidate profile on our career&apos;s portal, where you can view real-time updates regarding your application. For additional inquiries, you may contact our HR department at{" "}
           <a href="mailto:admin@inel.co.in" className="text-blue-600 underline">admin@inel.co.in</a>.{" "}
           Alternatively, you can connect with us through WhatsApp –{" "}
           <a
@@ -379,7 +379,7 @@ export default function Career() {
                 <div className="container mx-auto py-20 space-y-8" id="inel-uncovered">
                    
                     <h1 className="text-center">INEL Uncovered</h1>
-                    <p className="text-center lg:w-3/5 mx-auto">Get an exclusive look into the collaborative spirit that fuels INEL's success every day. Stay updated on our latest achievements and upcoming events at INEL.</p>
+                    <p className="text-center lg:w-3/5 mx-auto">Get an exclusive look into the collaborative spirit that fuels INEL&apos;s success every day. Stay updated on our latest achievements and upcoming events at INEL.</p>
                     <BlogSlide sildeperview={3} includeCategories={["careers"]} />
                 </div>
 

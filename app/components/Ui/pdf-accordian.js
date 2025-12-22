@@ -85,7 +85,7 @@ const AccordionItem = ({ accordion, active, handleToggle }) => {
               {hasError && (
                 <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-md text-center">
                   <p className="text-red-500 mb-2">
-                    We're having trouble displaying this PDF. Please use the buttons above to view or download it directly.
+                    We&apos;re having trouble displaying this PDF. Please use the buttons above to view or download it directly.
                   </p>
                 </div>
               )}

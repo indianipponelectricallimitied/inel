@@ -62,6 +62,7 @@ export default function StockTicker({className = ''}) {
     // Cleanup interval on component unmount
     return () => clearInterval(interval);
     */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mounted]);
 
   // Don't render anything until mounted to prevent hydration mismatch

@@ -79,7 +79,7 @@ export default function Tab() {
         <div className='w-full lg:w-[35%] space-y-5'>
           <h5>Our Solutions</h5>
           <h1>Powering Performance with Electronics.</h1>
-          <p>From spark control to smart ECUs, INEL's electronic solutions support high-efficiency engine and EV platforms. Our technology fuels trusted performance across sectors</p>
+          <p>From spark control to smart ECUs, INEL&apos;s electronic solutions support high-efficiency engine and EV platforms. Our technology fuels trusted performance across sectors</p>
         </div>
 
         <VehicleTabs currentIndex={currentIndex} goToSlide={goToSlide} />

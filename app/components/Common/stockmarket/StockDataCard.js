@@ -33,8 +33,7 @@ export default function StockDataCard({background}) {
       '05. price': '804.10',
       '09. change': '0.60',
       '10. change percent': '0.075%',
-      '08. currency': 'INR',
-      '07. latest trading day': '2024-12-22T12:04:00',
+      '07. latest trading day': '2024-12-22T12:04:00'
     }
   };
 
@@ -91,6 +90,7 @@ export default function StockDataCard({background}) {
       return () => clearInterval(interval);
     }
     */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [market, mounted]); // Re-fetch when market changes
 
   useEffect(() => {
@@ -115,7 +115,8 @@ export default function StockDataCard({background}) {
         card.removeEventListener("mousemove", handleMouseMove);
       };
     }
-  }, [cardRef.current, mounted]); // Add cardRef.current as dependency
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mounted]); // Only re-run when mounted changes
 
   // Don't render anything until mounted to prevent hydration mismatch
   if (!mounted) {

@@ -246,7 +246,7 @@ export default function BlogPost({ params }) {
         return (
             <div className="max-w-4xl mx-auto px-4 py-16 text-center">
                 <h1 className="text-2xl font-bold mb-4">Blog Post Not Found</h1>
-                <p className="mb-6">The blog post you're looking for doesn't exist or has been removed.</p>
+                <p className="mb-6">The blog post you&apos;re looking for doesn&apos;t exist or has been removed.</p>
                 <Button 
                     variant="blue" 
                     href="/"

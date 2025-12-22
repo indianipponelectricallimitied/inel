@@ -211,9 +211,9 @@ export default function aftermarket(){
         <section className="container mx-auto  py-20 flex flex-col lg:flex-row gap-20">
             <div className="w-full lg:w-[38%] space-y-5">
                 <h5>Get in Touch</h5>
-                <h1>Got Questions? We're Here to Help</h1>
-                <p>If you have any inquiries regarding our aftermarket products, don't hesitate to get in touch. Our team is ready to assist and provide the solutions you need.</p>
-                <p>Complete the form, and we'll ensure the right support is provided to meet your requirements.</p>
+                <h1>Got Questions? We&apos;re Here to Help</h1>
+                <p>If you have any inquiries regarding our aftermarket products, don&apos;t hesitate to get in touch. Our team is ready to assist and provide the solutions you need.</p>
+                <p>Complete the form, and we&apos;ll ensure the right support is provided to meet your requirements.</p>
             </div>
             <div className="w-full lg:w-7/12">
                 <iframe aria-label='Inel Aftermarket Contact Form' frameBorder="0" style={{height: '680px', width: '99%', border: '1px solid #E0E0E0', borderRadius: '20px', boxShadow: '0px 4px 93.7px 0px #9EB2FF3D'}} src='https://forms.zohopublic.com/xtracut/form/InelAftermarketContactForm/formperma/Bagrvu31gXOJiAQgvX_pjRML_Ys_sAHJrjiumPSFMyg'></iframe>

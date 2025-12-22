@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { IoPlayCircle } from "react-icons/io5";
 
-const videoCTA = () => {
+const VideoCTA = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
@@ -84,4 +84,4 @@ const videoCTA = () => {
   )
 }
 
-export default videoCTA; 
+export default VideoCTA; 
