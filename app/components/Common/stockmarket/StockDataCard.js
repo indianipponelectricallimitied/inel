@@ -7,7 +7,7 @@ import StockDataService from '../../../services/stockDataService';
 import GlowingBox from '../../Ui/GlowingBox';
 
 
-export default function StockDataCard({background}) {
+export default function StockDataCard({ background }) {
   const [stockData, setStockData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -20,20 +20,20 @@ export default function StockDataCard({background}) {
   const manualNSEData = {
     'Global Quote': {
       '01. symbol': 'INDNIPPON.NSE',
-      '05. price': '805.00',
-      '09. change': '-13.30',
-      '10. change percent': '-1.63%',
-      '07. latest trading day': '2024-12-29T15:30:00'
+      '05. price': '840.10',
+      '09. change': '28.25',
+      '10. change percent': '3.48%',
+      '07. latest trading day': '2026-01-02T15:30:00'
     }
   };
 
   const manualBSEData = {
     'Global Quote': {
       '01. symbol': 'INDNIPPON.BSE',
-      '05. price': '805.00',
-      '09. change': '-13.30',
-      '10. change percent': '-1.63%',
-      '07. latest trading day': '2024-12-29T15:30:00'
+      '05. price': '840.10',
+      '09. change': '28.25',
+      '10. change percent': '3.48%',
+      '07. latest trading day': '2026-01-02T15:30:00'
     }
   };
 
@@ -55,7 +55,7 @@ export default function StockDataCard({background}) {
           setStockData(manualBSEData);
           setLoading(false);
         }
-        
+
         /* 
         // PRESERVED API CODE - Uncomment when manual data is no longer needed:
         // Use manual data for NSE, fetch live data for BSE
@@ -77,7 +77,7 @@ export default function StockDataCard({background}) {
     };
 
     fetchStockData();
-    
+
     // Auto-refresh disabled while using manual data
     // TODO: Restore auto-refresh when API calls are restored
     /*
@@ -97,7 +97,7 @@ export default function StockDataCard({background}) {
     if (!mounted) return;
 
     const card = cardRef.current;
-    
+
     // Only add event listener if card exists
     if (card) {
       const handleMouseMove = (event) => {
@@ -159,36 +159,36 @@ export default function StockDataCard({background}) {
           <span className="font-medium text-xl mt-20">INDNIPPON (NSE)</span>
           <span className="text-4xl font-medium">Loading... <span className='text-2xl'>INR</span></span>
           <span className="flex items-center">Loading... (Loading...%)</span>
-                      <div className="text-[8px] text-gray-400">Loading...</div>
+          <div className="text-[8px] text-gray-400">Loading...</div>
         </div>
       </div>
     </GlowingBox>
   );
-  
+
   const quote = stockData?.['Global Quote'];
   const isUsingDummyData = stockData && stockData['Global Quote'] && !quote['01. symbol'].includes(market);
 
   return (
     <GlowingBox borderColor="#9EB2FF" className={`w-full h-full ${background} rounded-[20px] z-10 bg-gradient-to-br  `} >
 
-    
-    <div className="card-wrapper" ref={cardRef}>
+
+      <div className="card-wrapper" ref={cardRef}>
         <h2 className='text-2xl pb-4'>Stock Information</h2>
         <div className="tabs z-[3]">
-          <input 
-            type="radio" 
-            id="radio-1" 
-            name="tabs" 
-            checked={market === "NSE"} 
+          <input
+            type="radio"
+            id="radio-1"
+            name="tabs"
+            checked={market === "NSE"}
             onChange={() => setMarket("NSE")}
           />
           <label className="tab" htmlFor="radio-1">NSE</label>
 
-          <input 
-            type="radio" 
-            id="radio-2" 
-            name="tabs" 
-            checked={market === "BSE"} 
+          <input
+            type="radio"
+            id="radio-2"
+            name="tabs"
+            checked={market === "BSE"}
             onChange={() => setMarket("BSE")}
           />
           <label className="tab" htmlFor="radio-2">BSE</label>
@@ -197,36 +197,36 @@ export default function StockDataCard({background}) {
         </div>
 
         <Image src="/graph.png" alt="logo" width={250} height={250} className='w-full h-full absolute top-4 right-0 object-contain z-[2]' />
-        
-        
+
+
         <div className="card-content flex flex-col space-y-2">
-            <span className="font-medium text-xl mt-20">INDNIPPON ({market})</span>
-            {quote && (
+          <span className="font-medium text-xl mt-20">INDNIPPON ({market})</span>
+          {quote && (
             <>
-                <span className="text-4xl font-medium">{parseFloat(quote['05. price']).toFixed(2)} <span className='text-2xl'>INR</span></span>
-                <span className={`flex items-center ${parseFloat(quote['09. change']) >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+              <span className="text-4xl font-medium">{parseFloat(quote['05. price']).toFixed(2)} <span className='text-2xl'>INR</span></span>
+              <span className={`flex items-center ${parseFloat(quote['09. change']) >= 0 ? 'text-green-500' : 'text-red-500'}`}>
                 {parseFloat(quote['09. change']).toFixed(2)} ({quote['10. change percent'].replace('%', '')}%)
                 {parseFloat(quote['09. change']) >= 0 ? (
-                    <MdArrowUpward className="ml-1 text-green-500" />
+                  <MdArrowUpward className="ml-1 text-green-500" />
                 ) : (
-                    <MdArrowDownward className="ml-1 text-red-500" />
+                  <MdArrowDownward className="ml-1 text-red-500" />
                 )}
-                </span>
-                <div className="text-[8px] text-gray-400">
+              </span>
+              <div className="text-[8px] text-gray-400">
                 {new Date(quote['07. latest trading day']).toLocaleString('en-IN', {
-                    day: 'numeric',
-                    month: 'short',
-                    year: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    hour12: true
+                  day: 'numeric',
+                  month: 'short',
+                  year: 'numeric',
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  hour12: true
                 })}
-                </div>
-                {/* {(error || isUsingDummyData) && <div className="text-xs text-gray-400">(Showing estimated values)</div>} */}
+              </div>
+              {/* {(error || isUsingDummyData) && <div className="text-xs text-gray-400">(Showing estimated values)</div>} */}
             </>
-            )}
+          )}
+        </div>
       </div>
-    </div>
     </GlowingBox>
   );
 }
