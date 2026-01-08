@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { MdArrowUpward, MdArrowDownward } from "react-icons/md";
 import StockDataService from '../../../services/stockDataService';
 
-export default function StockTicker({className = ''}) {
+export default function StockTicker({ className = '' }) {
   const [stockData, setStockData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -15,10 +15,10 @@ export default function StockTicker({className = ''}) {
   const manualNSEData = {
     'Global Quote': {
       '01. symbol': 'INDNIPPON.NSE',
-      '05. price': '805.00',
-      '09. change': '-13.30',
-      '10. change percent': '1.63%',
-      '07. latest trading day': '2024-12-29T15:30:00'
+      '05. price': '832.15',
+      '09. change': '-11.85',
+      '10. change percent': '-1.40%',
+      '07. latest trading day': '2026-01-08T15:17:00'
     }
   };
 
@@ -36,7 +36,7 @@ export default function StockTicker({className = ''}) {
     };
 
     loadStockData();
-    
+
     /* 
     // PRESERVED API CODE - Uncomment when manual data is no longer needed:
     const fetchStockData = async () => {
@@ -77,11 +77,11 @@ export default function StockTicker({className = ''}) {
     <span>INDNIPPON (NSE)</span>
     <span>Loading...</span>
   </div>;
-  
+
   const quote = stockData?.['Global Quote'];
 
   return (
-      <div className={`flex items-center gap-2 text-sm ${className}`}>
+    <div className={`flex items-center gap-2 text-sm ${className}`}>
       <span>INDNIPPON (NSE)</span>
       {quote && (
         <>
