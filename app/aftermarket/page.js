@@ -33,7 +33,7 @@ export const metadata = {
 
 const quickLinks = [
     {
-        title: "Product Catalogue (Jan - 2026)",
+        title: "Product Catalogue",
         href: `/aftermarket/viewer?url=${encodeURIComponent("https://indian-nippon.s3.ap-south-1.amazonaws.com/Aftermarket/INEL+New+Catalogue+(Jan+-+2026).pdf")}&title=${encodeURIComponent("Product Catalogue (Jan - 2026)")}`,
         download: false
     },

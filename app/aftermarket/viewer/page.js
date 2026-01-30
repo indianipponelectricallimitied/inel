@@ -58,28 +58,42 @@ function ViewerContent() {
 
     // Handle scroll sync for continuous mode
     useEffect(() => {
-        if (!isContinuous || !containerRef.current) return;
+        if (!isContinuous || !numPages || !containerRef.current) return;
+
+        // Use a ref to track visible pages to avoid closure issues
+        const visiblePages = new Set();
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
+                const p = parseInt(entry.target.getAttribute('data-page'));
+                if (isNaN(p)) return;
+
                 if (entry.isIntersecting) {
-                    const p = parseInt(entry.target.getAttribute('data-page'));
-                    if (!isNaN(p)) {
-                        setPageNumber(p);
-                    }
+                    visiblePages.add(p);
+                } else {
+                    visiblePages.delete(p);
                 }
             });
+
+            if (visiblePages.size > 0) {
+                // Find the topmost visible page (lowest page number)
+                const sorted = Array.from(visiblePages).sort((a, b) => a - b);
+                setPageNumber(sorted[0]);
+            }
         }, {
             root: containerRef.current,
-            threshold: 0.1, // Lower threshold for row grouping
-            rootMargin: '-20% 0px -20% 0px'
+            threshold: [0, 0.1],
+            rootMargin: '-5% 0px -85% 0px' // Small scanning bar near the top
         });
 
-        const currentAnchors = document.querySelectorAll('.page-anchor');
-        currentAnchors.forEach(a => observer.observe(a));
+        const timer = setTimeout(() => {
+            const currentAnchors = document.querySelectorAll('.page-anchor');
+            currentAnchors.forEach(a => observer.observe(a));
+        }, 300); // Give it more time for initial PDf rendering
 
         return () => {
-            currentAnchors.forEach(a => observer.unobserve(a));
+            clearTimeout(timer);
+            observer.disconnect();
         };
     }, [isContinuous, numPages, isDoublePage]); // Re-observe if layout changes
 
@@ -368,6 +382,7 @@ function ViewerContent() {
                                         <div
                                             key={`row_${i}`}
                                             className="flex flex-col lg:flex-row gap-6 md:gap-10 justify-center w-fit"
+                                            style={{ minHeight: pageDimensions.height ? `${pageDimensions.height * scale}px` : '600px' }}
                                         >
                                             <div
                                                 ref={el => pageRefs.current[p1] = el}
