@@ -1,0 +1,358 @@
+[
+  {
+    "id": 5,
+    "name": "AoA & MoA",
+    "subheadings": [
+      {
+        "id": 6,
+        "name": "AoA & MoA"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Archives",
+    "subheadings": [
+      {
+        "id": 7,
+        "name": "Archives"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Board of Directors",
+    "subheadings": [
+      {
+        "id": 8,
+        "name": "Board of Directors"
+      },
+      {
+        "id": 9,
+        "name": "Committee Board"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Committee - Determining Materiality",
+    "subheadings": [
+      {
+        "id": 10,
+        "name": "Committee - Determining Materiality"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Disclosure of Information - Re .30",
+    "subheadings": [
+      {
+        "id": 11,
+        "name": "Disclosure of Information - Re .30"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Group Restructuring",
+    "subheadings": [
+      {
+        "id": 12,
+        "name": "Group Restructuring"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Disclos.underReg .46 of SEBI (LODR)",
+    "subheadings": [
+      {
+        "id": 13,
+        "name": "Annual Report"
+      },
+      {
+        "id": 14,
+        "name": "Annual Return"
+      },
+      {
+        "id": 15,
+        "name": "Annual Secretarial Compliance Certificate"
+      },
+      {
+        "id": 16,
+        "name": "Board of Directors"
+      },
+      {
+        "id": 44,
+        "name": "Committees"
+      },
+      {
+        "id": 47,
+        "name": "Committee – Determining Materiality"
+      },
+      {
+        "id": 48,
+        "name": "Corporate Governance-Compliance"
+      },
+      {
+        "id": 49,
+        "name": "Details of Business"
+      },
+      {
+        "id": 50,
+        "name": "Disclosure of Information – Reg.30"
+      },
+      {
+        "id": 51,
+        "name": "Group Restructuring"
+      },
+      {
+        "id": 52,
+        "name": "Investor Communications - Circulars"
+      },
+      {
+        "id": 53,
+        "name": "Investor Communications - Forms"
+      },
+      {
+        "id": 54,
+        "name": "Investor Communications - Online Dispute Resolution Portal (ODR)"
+      },
+      {
+        "id": 55,
+        "name": "Investor’s Meet/Presentation"
+      },
+      {
+        "id": 56,
+        "name": "Notice u/s 160"
+      },
+      {
+        "id": 57,
+        "name": "Outcome of AGM"
+      },
+      {
+        "id": 58,
+        "name": "Transcripts"
+      },
+      {
+        "id": 59,
+        "name": "Notice from Shareholders"
+      },
+      {
+        "id": 60,
+        "name": "Notice of Board Meeting"
+      },
+      {
+        "id": 61,
+        "name": "Paper Advertisement"
+      },
+      {
+        "id": 62,
+        "name": "Voting Results"
+      },
+      {
+        "id": 63,
+        "name": "Publication Notice"
+      },
+      {
+        "id": 64,
+        "name": "Newspaper Publication"
+      },
+      {
+        "id": 65,
+        "name": "Attendance Slip"
+      },
+      {
+        "id": 66,
+        "name": "Book Closure Notice"
+      },
+      {
+        "id": 67,
+        "name": "Postal Ballot Notice"
+      },
+      {
+        "id": 68,
+        "name": "Postal Ballot Result"
+      },
+      {
+        "id": 69,
+        "name": "Policies"
+      },
+      {
+        "id": 70,
+        "name": "Outcome of Board Meeting/Results"
+      },
+      {
+        "id": 71,
+        "name": "RPT"
+      },
+      {
+        "id": 72,
+        "name": "Shareholding Pattern"
+      },
+      {
+        "id": 73,
+        "name": "Shares"
+      },
+      {
+        "id": 74,
+        "name": "Subsidiary Company Financials"
+      },
+      {
+        "id": 75,
+        "name": "Trading Window Closure"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Investor Communications",
+    "subheadings": [
+      {
+        "id": 17,
+        "name": "Circulars"
+      },
+      {
+        "id": 18,
+        "name": "Forms"
+      },
+      {
+        "id": 19,
+        "name": "Online Dispute Resolution Portal (ODR)"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Investors Complaint",
+    "subheadings": [
+      {
+        "id": 20,
+        "name": "Investor Related"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Investor’s Meet/Presentation",
+    "subheadings": [
+      {
+        "id": 21,
+        "name": "2025-26"
+      },
+      {
+        "id": 22,
+        "name": "2024-25"
+      },
+      {
+        "id": 23,
+        "name": "2023-24"
+      },
+      {
+        "id": 24,
+        "name": "2020-21"
+      },
+      {
+        "id": 25,
+        "name": "2019-20"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Notice Board",
+    "subheadings": [
+      {
+        "id": 26,
+        "name": "Notice u/s 160"
+      },
+      {
+        "id": 27,
+        "name": "Outcome of AGM"
+      },
+      {
+        "id": 28,
+        "name": "Transcripts"
+      },
+      {
+        "id": 29,
+        "name": "Notice from Shareholders"
+      },
+      {
+        "id": 30,
+        "name": "Notice of Board Meeting"
+      },
+      {
+        "id": 31,
+        "name": "Paper Advertisement"
+      },
+      {
+        "id": 32,
+        "name": "Voting Results"
+      },
+      {
+        "id": 33,
+        "name": "Publication Notice"
+      },
+      {
+        "id": 34,
+        "name": "Newspaper Publication"
+      },
+      {
+        "id": 35,
+        "name": "Attendance Slip"
+      },
+      {
+        "id": 36,
+        "name": "Book Closure Notice"
+      },
+      {
+        "id": 37,
+        "name": "Postal Ballot Notice"
+      },
+      {
+        "id": 38,
+        "name": "Postal Ballot Result"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Shares",
+    "subheadings": [
+      {
+        "id": 43,
+        "name": "Shares"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Subsidiary Company Financials",
+    "subheadings": [
+      {
+        "id": 39,
+        "name": "Pt Automotive Systems Indonesia"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Unclaimed Dividends",
+    "subheadings": [
+      {
+        "id": 40,
+        "name": "Steps taken by the Company to reduce unpaid/unclaimed dividends:"
+      },
+      {
+        "id": 41,
+        "name": "Physical Shareholders list"
+      },
+      {
+        "id": 42,
+        "name": "Statement of unclaimed/unpaid Dividend by the shareholders"
+      }
+    ]
+  }
+]

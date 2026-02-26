@@ -6,8 +6,8 @@ import MobileAccordion from '../components/Ui/mobile-accordion';
 import { GoArrowUpRight } from "react-icons/go";
 import Image from 'next/image';
 
-export default function InvestorTabs({ 
-    openPoliciesAccordion, 
+export default function InvestorTabs({
+    openPoliciesAccordion,
     setOpenPoliciesAccordion,
     openCorporateGovernanceAccordion,
     setOpenCorporateGovernanceAccordion,
@@ -66,7 +66,7 @@ export default function InvestorTabs({
                 setHighlightedAccordion(69);
                 // Reset the flag
                 setOpenPoliciesAccordion(false);
-                
+
                 // Remove highlight after 3 seconds
                 setTimeout(() => {
                     setHighlightedAccordion(null);
@@ -90,7 +90,7 @@ export default function InvestorTabs({
                 setHighlightedAccordion(48);
                 // Reset the flag
                 setOpenCorporateGovernanceAccordion(false);
-                
+
                 // Remove highlight after 3 seconds
                 setTimeout(() => {
                     setHighlightedAccordion(null);
@@ -114,7 +114,7 @@ export default function InvestorTabs({
                 setHighlightedAccordion(21);
                 // Reset the flag
                 setOpenInvestorMeetAccordion(false);
-                
+
                 // Remove highlight after 3 seconds
                 setTimeout(() => {
                     setHighlightedAccordion(null);
@@ -132,7 +132,7 @@ export default function InvestorTabs({
             if (mainItemIndex !== -1) {
                 // First set the active tab
                 setActiveTab(mainItemIndex);
-                
+
                 // Then set the accordion after a longer delay to ensure tab is fully rendered
                 setTimeout(() => {
                     console.log('Setting activeAccordion to 70 for Board Meeting');
@@ -140,10 +140,10 @@ export default function InvestorTabs({
                     setActiveMainAccordion(11);
                     setHighlightedAccordion(70);
                 }, 300);
-                
+
                 // Reset the flag
                 setOpenBoardMeetingAccordion(false);
-                
+
                 // Remove highlight after 4 seconds to give more time for scrolling
                 setTimeout(() => {
                     setHighlightedAccordion(null);
@@ -163,7 +163,7 @@ export default function InvestorTabs({
             if (mainItemIndex !== -1) {
                 // First set the active tab
                 setActiveTab(mainItemIndex);
-                
+
                 // Then set the accordion after a longer delay to ensure tab is fully rendered
                 setTimeout(() => {
                     console.log('Setting activeAccordion to 13 for Annual Report');
@@ -171,10 +171,10 @@ export default function InvestorTabs({
                     setActiveMainAccordion(11);
                     setHighlightedAccordion(13);
                 }, 300);
-                
+
                 // Reset the flag
                 setOpenAnnualReportAccordion(false);
-                
+
                 // Remove highlight after 4 seconds to give more time for scrolling
                 setTimeout(() => {
                     setHighlightedAccordion(null);
@@ -194,7 +194,7 @@ export default function InvestorTabs({
             if (mainItemIndex !== -1) {
                 // First set the active tab
                 setActiveTab(mainItemIndex);
-                
+
                 // Then set the accordion after a longer delay to ensure tab is fully rendered
                 setTimeout(() => {
                     console.log('Setting activeAccordion to 76 for AGM Inspection');
@@ -202,10 +202,10 @@ export default function InvestorTabs({
                     setActiveMainAccordion(20);
                     setHighlightedAccordion(76);
                 }, 300);
-                
+
                 // Reset the flag
                 setOpenAGMInspectionAccordion(false);
-                
+
                 // Remove highlight after 4 seconds to give more time for scrolling
                 setTimeout(() => {
                     setHighlightedAccordion(null);
@@ -243,7 +243,7 @@ export default function InvestorTabs({
                     {subheading.contents.map(content => (
                         <div key={content.id} className="space-y-5">
                             {
-                            content.title && <h4 className="my-6  bg-primary text-white p-1 px-3 rounded-lg">{content.title}</h4>
+                                content.title && <h4 className="my-6  bg-primary text-white p-1 px-3 rounded-lg">{content.title}</h4>
                             }
                             {/* {content.pdf_name && (
                                 <p className="text-gray-600 mb-2">Document: {content.pdf_name}</p>
@@ -254,13 +254,13 @@ export default function InvestorTabs({
                             {content.link && (
                                 <div className="flex gap-10 items-center   ">
                                     <Image src="/images/invester/pdf.png" alt="pdf" width={50} height={100} />
-                                    <a 
-                                        href={content.link} 
-                                        target="_blank" 
+                                    <a
+                                        href={content.link}
+                                        target="_blank"
                                         rel="noopener noreferrer"
                                         className="font-thin w-full flex justify-between border-b border-black pb-2 "
                                     >
-                                        
+
                                         {content.pdf_name}
                                         <GoArrowUpRight className="text-[20px]" />
                                     </a>
@@ -282,9 +282,9 @@ export default function InvestorTabs({
                 <div>
                     {item.link && (
                         <div className="mb-4">
-                            <a 
-                                href={item.link} 
-                                target="_blank" 
+                            <a
+                                href={item.link}
+                                target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-blue-600 hover:text-blue-800 underline"
                             >
@@ -296,7 +296,7 @@ export default function InvestorTabs({
                     {/* Nested Accordions for subheadings */}
                     {item.subheadings && item.subheadings.length > 0 && (
                         <div className="space-y-4">
-                            <MobileAccordion 
+                            <MobileAccordion
                                 key={`mobile-accordion-${item.id}`}
                                 accordionData={transformToAccordionData(item.subheadings)}
                                 initialActive={activeAccordion}
@@ -320,11 +320,10 @@ export default function InvestorTabs({
                         <button
                             key={item.id}
                             onClick={() => setActiveTab(index)}
-                            className={`p-4 font-medium text-start capitalize transition-colors w-full ${
-                                activeTab === index
+                            className={`p-4 font-medium text-start capitalize transition-colors w-full ${activeTab === index
                                     ? 'bg-white rounded-lg'
                                     : ' '
-                            }`}
+                                }`}
                         >
                             {item.name}
                         </button>
@@ -341,9 +340,9 @@ export default function InvestorTabs({
                             <div className="mb-6">
                                 <h2 className="text-2xl font-bold capitalize mb-4">{item.name}</h2>
                                 {item.link && (
-                                    <a 
-                                        href={item.link} 
-                                        target="_blank" 
+                                    <a
+                                        href={item.link}
+                                        target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-blue-600 hover:text-blue-800 underline"
                                     >
@@ -356,7 +355,7 @@ export default function InvestorTabs({
                             {item.subheadings && item.subheadings.length > 0 && (
                                 <div className="space-y-4">
                                     {console.log('Rendering accordion for item:', item.name, 'activeAccordion:', activeAccordion, 'highlightedAccordion:', highlightedAccordion)}
-                                    <Accordion 
+                                    <Accordion
                                         key={`accordion-${item.id}-${activeTab}-${activeAccordion}`}
                                         accordionData={transformToAccordionData(item.subheadings)}
                                         initialActive={activeAccordion}
@@ -372,7 +371,7 @@ export default function InvestorTabs({
 
             {/* Mobile Layout - Full Accordion */}
             <div className="block md:hidden">
-                <MobileAccordion 
+                <MobileAccordion
                     key="mobile-main-accordion"
                     accordionData={transformMainToAccordionData()}
                     initialActive={activeMainAccordion}
