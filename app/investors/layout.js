@@ -28,14 +28,10 @@ export default function InvestorLayout({ children }) {
     }, []);
 
     const reports = [
-        {
-            title: "Annual Reports",
-            link: loading ? "files/INEL Annual Report - 2023-24.pdf" : (investorData.find(i => i.id === 11)?.subheadings?.find(s => s.name === "Annual Report")?.contents?.[0]?.link || "files/INEL Annual Report - 2023-24.pdf"),
-            onClick: null
-        },
-        { title: "Policies", link: "/investors/disclos-underreg-46-of-sebi-lodr?item=69", onClick: null },
-        { title: "Corporate Governance", link: "/investors/disclos-underreg-46-of-sebi-lodr?item=48", onClick: null },
-        { title: "Outcome of Board Meeting/Results", link: "/investors/disclos-underreg-46-of-sebi-lodr?item=70", onClick: null },
+        { title: "Annual Reports", link: "/investors/disclos-underreg-46-of-sebi-lodr/Annual Report", onClick: null },
+        { title: "Policies", link: "/investors/disclos-underreg-46-of-sebi-lodr/Policies", onClick: null },
+        { title: "Corporate Governance", link: "/investors/disclos-underreg-46-of-sebi-lodr/Corporate Governance-Compliance", onClick: null },
+        { title: "Outcome of Board Meeting/Results", link: "/investors/disclos-underreg-46-of-sebi-lodr/Outcome of Board Meeting/Results", onClick: null },
     ];
 
     return (
@@ -92,7 +88,7 @@ export default function InvestorLayout({ children }) {
                                 <h2 className="text-white">Investor <br /> Presentation</h2>
                                 <Button
                                     variant="white"
-                                    onClick={(e) => { e.preventDefault(); window.location.href = '/investors/investor-s-meet-presentation?item=21'; }}
+                                    onClick={(e) => { e.preventDefault(); window.location.href = '/investors/investor-s-meet-presentation/2025-26'; }}
                                 >
                                     Investor Presentation
                                 </Button>

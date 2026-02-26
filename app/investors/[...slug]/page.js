@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { useParams, useSearchParams } from 'next/navigation';
+import { useParams, useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { GoArrowUpRight } from "react-icons/go";
 import ApiService from '@/app/services/api';
@@ -11,19 +11,58 @@ const slugify = (text) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace
 export default function InvestorTabPage() {
     const { slug } = useParams();
     const searchParams = useSearchParams();
-    const itemId = searchParams.get('item') ? parseInt(searchParams.get('item')) : null;
-
+    const router = useRouter();
     const [itemData, setItemData] = useState(null);
+    const [activeAccordionId, setActiveAccordionId] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    // Extract category and optional item from slug array
+    const categorySlug = Array.isArray(slug) ? slug[0] : slug;
+    const pathItemNameSlug = Array.isArray(slug) && slug.length > 1 ? slug[1] : null;
+    const itemQueryParam = searchParams.get('item');
+
+    const handleAccordionChange = (newActiveId) => {
+        setActiveAccordionId(newActiveId);
+
+        if (newActiveId && itemData?.subheadings) {
+            const subheading = itemData.subheadings.find(s => s.id === newActiveId);
+            if (subheading) {
+                // Update URL to path structure: /investors/category/subheading
+                router.push(`/investors/${categorySlug}/${subheading.name}`, { scroll: false });
+            }
+        } else {
+            // If accordion is closed, revert URL to main category path
+            router.push(`/investors/${categorySlug}`, { scroll: false });
+        }
+    };
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const data = await ApiService.getInvestorData();
-                const matchedItem = data.find(item => slugify(item.name) === slug);
+                const matchedItem = data.find(item => slugify(item.name) === categorySlug);
 
                 if (matchedItem) {
                     setItemData(matchedItem);
+
+                    // Handle item selection (Priority: path segment > query param)
+                    const itemToFind = pathItemNameSlug || itemQueryParam;
+
+                    if (itemToFind) {
+                        // 1. Try to treat as ID (if it's a number and from query param)
+                        const id = parseInt(itemToFind);
+                        if (!isNaN(id) && itemToFind === itemQueryParam) {
+                            setActiveAccordionId(id);
+                        } else {
+                            // 2. Try to treat as slugified name (from path or query)
+                            const matchedSubheading = matchedItem.subheadings?.find(
+                                sub => slugify(sub.name) === slugify(decodeURIComponent(itemToFind))
+                            );
+                            if (matchedSubheading) {
+                                setActiveAccordionId(matchedSubheading.id);
+                            }
+                        }
+                    }
                 }
                 setLoading(false);
             } catch (error) {
@@ -32,7 +71,7 @@ export default function InvestorTabPage() {
             }
         };
         fetchData();
-    }, [slug]);
+    }, [categorySlug, pathItemNameSlug, itemQueryParam]);
 
     if (loading) return <div className="py-20 text-center">Loading section...</div>;
     if (!itemData) return <div className="py-20 text-center">Section not found.</div>;
@@ -78,8 +117,9 @@ export default function InvestorTabPage() {
                 <div className="space-y-4">
                     <Accordion
                         accordionData={transformToAccordionData(itemData.subheadings)}
-                        initialActive={itemId}
-                        highlightedId={itemId}
+                        initialActive={activeAccordionId}
+                        highlightedId={activeAccordionId}
+                        onActiveChange={handleAccordionChange}
                     />
                 </div>
             )}

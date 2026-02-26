@@ -1,10 +1,13 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import ApiService from '@/app/services/api';
 import Accordion from '../components/Ui/accordion';
 import MobileAccordion from '../components/Ui/mobile-accordion';
 import { GoArrowUpRight } from "react-icons/go";
 import Image from 'next/image';
+
+const slugify = (text) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 export default function InvestorTabs({
     openPoliciesAccordion,
@@ -20,12 +23,29 @@ export default function InvestorTabs({
     openAGMInspectionAccordion,
     setOpenAGMInspectionAccordion
 }) {
+    const router = useRouter();
     const [investorData, setInvestorData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [activeTab, setActiveTab] = useState(0);
     const [activeAccordion, setActiveAccordion] = useState(null);
     const [highlightedAccordion, setHighlightedAccordion] = useState(null);
     const [activeMainAccordion, setActiveMainAccordion] = useState(null);
+
+    const handleAccordionChange = (newActiveId) => {
+        setActiveAccordion(newActiveId);
+
+        const currentTabItem = investorData[activeTab];
+        if (newActiveId && currentTabItem?.subheadings) {
+            const subheading = currentTabItem.subheadings.find(s => s.id === newActiveId);
+            if (subheading) {
+                const categorySlug = slugify(currentTabItem.name);
+                router.push(`/investors/${categorySlug}/${subheading.name}`, { scroll: false });
+            }
+        } else if (currentTabItem) {
+            const categorySlug = slugify(currentTabItem.name);
+            router.push(`/investors/${categorySlug}`, { scroll: false });
+        }
+    };
 
     // Debug useEffect to monitor activeTab changes
     useEffect(() => {
@@ -300,7 +320,7 @@ export default function InvestorTabs({
                                 key={`mobile-accordion-${item.id}`}
                                 accordionData={transformToAccordionData(item.subheadings)}
                                 initialActive={activeAccordion}
-                                onActiveChange={setActiveAccordion}
+                                onActiveChange={handleAccordionChange}
                                 highlightedId={highlightedAccordion}
                             />
                         </div>
@@ -321,8 +341,8 @@ export default function InvestorTabs({
                             key={item.id}
                             onClick={() => setActiveTab(index)}
                             className={`p-4 font-medium text-start capitalize transition-colors w-full ${activeTab === index
-                                    ? 'bg-white rounded-lg'
-                                    : ' '
+                                ? 'bg-white rounded-lg'
+                                : ' '
                                 }`}
                         >
                             {item.name}
@@ -359,7 +379,7 @@ export default function InvestorTabs({
                                         key={`accordion-${item.id}-${activeTab}-${activeAccordion}`}
                                         accordionData={transformToAccordionData(item.subheadings)}
                                         initialActive={activeAccordion}
-                                        onActiveChange={setActiveAccordion}
+                                        onActiveChange={handleAccordionChange}
                                         highlightedId={highlightedAccordion}
                                     />
                                 </div>
