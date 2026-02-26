@@ -18,7 +18,8 @@ export default function InvestorTabPage() {
 
     // Extract category and optional item from slug array
     const categorySlug = Array.isArray(slug) ? slug[0] : slug;
-    const pathItemNameSlug = Array.isArray(slug) && slug.length > 1 ? slug[1] : null;
+    // Join any remaining segments after the category slug to form the item path
+    const pathItemNameSlug = Array.isArray(slug) && slug.length > 1 ? slug.slice(1).join('-') : null;
     const itemQueryParam = searchParams.get('item');
 
     const handleAccordionChange = (newActiveId) => {
@@ -27,8 +28,9 @@ export default function InvestorTabPage() {
         if (newActiveId && itemData?.subheadings) {
             const subheading = itemData.subheadings.find(s => s.id === newActiveId);
             if (subheading) {
-                // Update URL to path structure: /investors/category/subheading
-                router.push(`/investors/${categorySlug}/${subheading.name}`, { scroll: false });
+                // Ensure we use a single segment for the name by replacing slashes with hyphens
+                const safeName = subheading.name.replace(/\//g, '-');
+                router.push(`/investors/${categorySlug}/${safeName}`, { scroll: false });
             }
         } else {
             // If accordion is closed, revert URL to main category path

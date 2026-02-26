@@ -39,7 +39,8 @@ export default function InvestorTabs({
             const subheading = currentTabItem.subheadings.find(s => s.id === newActiveId);
             if (subheading) {
                 const categorySlug = slugify(currentTabItem.name);
-                router.push(`/investors/${categorySlug}/${subheading.name}`, { scroll: false });
+                const safeName = subheading.name.replace(/\//g, '-');
+                router.push(`/investors/${categorySlug}/${safeName}`, { scroll: false });
             }
         } else if (currentTabItem) {
             const categorySlug = slugify(currentTabItem.name);

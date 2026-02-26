@@ -31,7 +31,7 @@ export default function InvestorLayout({ children }) {
         { title: "Annual Reports", link: "/investors/disclos-underreg-46-of-sebi-lodr/Annual Report", onClick: null },
         { title: "Policies", link: "/investors/disclos-underreg-46-of-sebi-lodr/Policies", onClick: null },
         { title: "Corporate Governance", link: "/investors/disclos-underreg-46-of-sebi-lodr/Corporate Governance-Compliance", onClick: null },
-        { title: "Outcome of Board Meeting/Results", link: "/investors/disclos-underreg-46-of-sebi-lodr/Outcome of Board Meeting/Results", onClick: null },
+        { title: "Outcome of Board Meeting/Results", link: "/investors/disclos-underreg-46-of-sebi-lodr/Outcome of Board Meeting-Results", onClick: null },
     ];
 
     return (
