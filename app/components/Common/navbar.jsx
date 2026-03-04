@@ -43,7 +43,7 @@ const Navbar = () => {
     products: []
   });
   const pathname = usePathname();
-  
+
   const isHomePage = pathname === '/';
 
   // Scroll detection effect
@@ -68,20 +68,20 @@ const Navbar = () => {
         setProducts(productsData);
         setVehicleCategories(vehicleData);
         setProductTypes(productData);
-        
+
         // Set default selections
         if (productData.length > 0) {
           setSelectedProductType(productData[0].name);
-          
+
           // Calculate available vehicle categories for the first product type
           const productsForFirstType = ApiService.filterProductsByType(productsData, productData[0].name);
-          const availableCategories = vehicleData.filter(category => 
-            productsForFirstType.some(product => 
+          const availableCategories = vehicleData.filter(category =>
+            productsForFirstType.some(product =>
               ApiService.filterProductsByVehicleCategory([product], category.name).length > 0
             )
           );
           setAvailableVehicleCategories(availableCategories);
-          
+
           if (availableCategories.length > 0) {
             setSelectedVehicleCategory('All Categories');
             // Show all products for the selected product type
@@ -106,7 +106,7 @@ const Navbar = () => {
     } else {
       document.body.style.overflow = 'unset';
     }
-    
+
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -123,23 +123,23 @@ const Navbar = () => {
 
   const handleProductTypeClick = (productType) => {
     setSelectedProductType(productType);
-    
+
     // Track clicked product type
     setClickedItems(prev => ({
       ...prev,
       productTypes: [...prev.productTypes, productType]
     }));
-    
+
     // Calculate available vehicle categories for the selected product type
     const productsForType = ApiService.filterProductsByType(products, productType);
-    const availableCategories = vehicleCategories.filter(category => 
-      productsForType.some(product => 
+    const availableCategories = vehicleCategories.filter(category =>
+      productsForType.some(product =>
         ApiService.filterProductsByVehicleCategory([product], category.name).length > 0
       )
     );
     // Limit to only the first 4 vehicle categories for future use
     setAvailableVehicleCategories(availableCategories.slice(0, 4));
-    
+
     // Set the first available vehicle category as selected, or clear if none available
     if (availableCategories.length > 0) {
       setSelectedVehicleCategory('All');
@@ -154,13 +154,13 @@ const Navbar = () => {
 
   const handleVehicleCategoryClick = (vehicleCategory) => {
     setSelectedVehicleCategory(vehicleCategory);
-    
+
     // Track clicked vehicle category
     setClickedItems(prev => ({
       ...prev,
       vehicleCategories: [...prev.vehicleCategories, vehicleCategory]
     }));
-    
+
     if (vehicleCategory === 'All') {
       // Show all products for the selected product type
       const allProducts = ApiService.filterProductsByType(products, selectedProductType);
@@ -172,17 +172,17 @@ const Navbar = () => {
 
   const updateFilteredProducts = (productType, vehicleCategory) => {
     if (!productType) return;
-    
+
     // Filter products by product type first
     let filtered = ApiService.filterProductsByType(products, productType);
-    
+
     // Then filter by vehicle category if available
     if (vehicleCategory && vehicleCategories.length > 0) {
-      filtered = filtered.filter(product => 
+      filtered = filtered.filter(product =>
         ApiService.filterProductsByVehicleCategory([product], vehicleCategory).length > 0
       );
     }
-    
+
     setFilteredProducts(filtered);
   };
 
@@ -192,15 +192,16 @@ const Navbar = () => {
       ...prev,
       products: [...prev.products, { id: productId, name: productName }]
     }));
-    
+
     // Close menu
     setIsHovered(false);
     setIsMegaMenuOpen(false);
   };
 
   const menuItems = [
-    {label: 'About', href: '/about-us'},
-    { label: 'Products & Solutions', href: '/Products-Solutions', 
+    { label: 'About', href: '/about-us' },
+    {
+      label: 'Products & Solutions', href: '/Products-Solutions',
       submenu: products.map(product => ({
         label: product.name,
         href: `/Product/${product.id}`
@@ -211,8 +212,17 @@ const Navbar = () => {
     { label: 'Investors', href: '/investors' },
     { label: 'Sustainability  ', href: '/sustainability' },
     { label: 'Aftermarket  ', href: '/aftermarket' },
-    { label: 'Newsroom  ', href: '/newsroom' },
-    { label: 'Careers', href: '/career',
+    {
+      label: 'ESS Portal', href: '',
+      submenu: [
+        { label: 'INEL-TMS', href: 'https://ineltms.officenet.in/login/login.aspx' },
+        { label: 'INEL-HRMS', href: 'https://inel.spinenx.in/login.aspx' },
+        { label: 'INEL-PMS', href: 'https://indianippon-pms.synergita.com/LogOn' }
+
+      ]
+    },
+    {
+      label: 'Careers', href: '/career',
       submenu: [
         { label: 'The INEL Way', href: '/career#the-inel-way' },
         { label: 'INEL: Leading the Ways', href: '/career#inel-leading-ways' },
@@ -233,114 +243,266 @@ const Navbar = () => {
       productType: type.name
     }));
   };
-  
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
-      isScrolled || !isHomePage || isHovered || isMegaMenuOpen
-        ? 'bg-white  sticky '
-        : 'bg-transparent'
-        
-    } ${!isHomePage && 'relative'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled || !isHomePage || isHovered || isMegaMenuOpen
+      ? 'bg-white  sticky '
+      : 'bg-transparent'
+
+      } ${!isHomePage && 'relative'}`}>
       <div className="container mx-auto py-2">
-     
-      <div className="hidden lg:flex justify-between items-center gap-5 ">
-        <Link href='/' className="transition-all duration-300 ease-in-out z-[1000]">
-        { isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ?
-          <img src={logo} alt="logo" className="transition-opacity duration-300 ease-in-out" />
-          :
-          <img src={logoBlack} alt="logo" className="transition-opacity duration-300 ease-in-out" />
-        }
-        </Link>
-        <div>
-          <div className="pb-1 flex items-center justify-between">
-            <StockTicker className={`nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? '!text-white' : '!text-black'}`}/>
-            <Link href='mailto:inelcorp@inel.co.in' className={`nav-link flex items-center gap-1 transition-colors duration-300 ease-in-out ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}> 
-              <TbMailFilled /> inelcorp@inel.co.in
-            </Link>
-          </div>
-          <div className={`${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'border-white' : 'border-primary'} space-x-8 border-t pt-2 transition-colors duration-300 ease-in-out`}>
-            {menuItems.map((item, index) => (
-              <div key={index} className={`inline-block ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}>
-                {item.submenu ? (
-                  // Check if it's the Products & Solutions mega menu or a simple submenu
-                  item.label === 'Products & Solutions' ? (
-                    <div 
-                      className="group"
-                      onMouseEnter={() => {
-                        setIsHovered(true);
-                        setIsMegaMenuOpen(true);
-                      }}
-                      onMouseLeave={() => {
-                        setIsHovered(false);
-                        setIsMegaMenuOpen(false);
-                      }}
-                    >
-                      <Link 
-                        href={item.href} 
-                        onClick={() => setIsHovered(false)}
-                        className={`flex relative items-center gap-1 nav-link transition-colors duration-300 ease-in-out`}
+
+        <div className="hidden lg:flex justify-between items-center gap-5 ">
+          <Link href='/' className="transition-all duration-300 ease-in-out z-[1000]">
+            {isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ?
+              <img src={logo} alt="logo" className="transition-opacity duration-300 ease-in-out" />
+              :
+              <img src={logoBlack} alt="logo" className="transition-opacity duration-300 ease-in-out" />
+            }
+          </Link>
+          <div>
+            <div className="pb-1 flex items-center justify-between">
+              <StockTicker className={`nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? '!text-white' : '!text-black'}`} />
+
+              <div className="flex items-center gap-6">
+                <Link href='/newsroom' className={`nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}>
+                  Newsroom
+                </Link>
+                <Link href='mailto:inelcorp@inel.co.in' className={`nav-link flex items-center gap-1 transition-colors duration-300 ease-in-out ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}>
+                  <TbMailFilled /> inelcorp@inel.co.in
+                </Link>
+              </div>
+            </div>
+            <div className={`${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'border-white' : 'border-primary'} space-x-8 border-t pt-2 transition-colors duration-300 ease-in-out`}>
+              {menuItems.map((item, index) => (
+                <div key={index} className={`inline-block ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}>
+                  {item.submenu ? (
+                    // Check if it's the Products & Solutions mega menu or a simple submenu
+                    item.label === 'Products & Solutions' ? (
+                      <div
+                        className="group"
+                        onMouseEnter={() => {
+                          setIsHovered(true);
+                          setIsMegaMenuOpen(true);
+                        }}
+                        onMouseLeave={() => {
+                          setIsHovered(false);
+                          setIsMegaMenuOpen(false);
+                        }}
                       >
-                        {item.label}
-                        
-                      </Link>
-                      <div className="absolute left-0 z-40 pt-4 toptodown hidden w-full bg-white group-hover:block rounded-b-[30px]"
-                           style={{ display: isMegaMenuOpen ? 'block' : 'none' }}>
-                        <div className="container mx-auto flex flex-col border-t border-gray-200 py-5">
-                          {/* Top Section - Category/Application Cards (2 rows of 5) */}
-              {/* <div className='flex items-center gap-2 pb-2'>Solutions</div> */}
-                          <div className='grid grid-cols-5 w-full gap-[10px] mb-6'>
-                            
-                            {getCategoryCards().map((subItem, subIndex) => (
-                              <Link 
-                                key={`product-${subIndex}`}
-                                href={`/Products-Solutions?type=productType&value=${encodeURIComponent(subItem.productType).replace(/%20/g, '+')}`}
-                                onClick={() => {
-                                  setIsHovered(false);
-                                  setIsMegaMenuOpen(false);
-                                }}
-                                className={`rounded-lg p-4 relative h-20 flex items-center justify-between ${subItem.shade} cursor-pointer ${
-                                  selectedProductType === subItem.productType ? 'ring-2 ring-blue-500 ring-dashed' : ''
-                                }`}
-                              >
-                                <div className={`absolute inset-0 bg-cover megamenucard  bg-center bg-no-repeat rounded-lg opacity-20`} style={{backgroundImage: `url(${subItem.image})`}}></div>
-                                <p className='text-white z-10 relative text-lg w-9/12'>{subItem.label}</p>
-                                <FiArrowRight  className='text-white'/>
-                              </Link>
-                            ))}
-                          </div>
-                          
-                          {/* Vehicle Categories Section - First 4 only */}
-                          {availableVehicleCategories.length > 0 && (
-                            <div className='flex flex-row justify-center gap-2 items-center'>
-                              <h4 className="text-sm font-medium text-gray-700">Vehicle Categories</h4>
-                              <div className='flex flex-wrap gap-2'>
+                        <Link
+                          href={item.href}
+                          onClick={() => setIsHovered(false)}
+                          className={`flex relative items-center gap-1 nav-link transition-colors duration-300 ease-in-out`}
+                        >
+                          {item.label}
+
+                        </Link>
+                        <div className="absolute left-0 z-40 pt-4 toptodown hidden w-full bg-white group-hover:block rounded-b-[30px]"
+                          style={{ display: isMegaMenuOpen ? 'block' : 'none' }}>
+                          <div className="container mx-auto flex flex-col border-t border-gray-200 py-5">
+                            {/* Top Section - Category/Application Cards (2 rows of 5) */}
+                            {/* <div className='flex items-center gap-2 pb-2'>Solutions</div> */}
+                            <div className='grid grid-cols-5 w-full gap-[10px] mb-6'>
+
+                              {getCategoryCards().map((subItem, subIndex) => (
                                 <Link
-                                  href="/Products-Solutions"
+                                  key={`product-${subIndex}`}
+                                  href={`/Products-Solutions?type=productType&value=${encodeURIComponent(subItem.productType).replace(/%20/g, '+')}`}
                                   onClick={() => {
                                     setIsHovered(false);
                                     setIsMegaMenuOpen(false);
                                   }}
-                                  className={`flex items-end gap-1 rounded-[10px] border-5 bg-white text-black border border-primary text-[#160959] w-fit py-2 px-5 text-black !w-fit hover:bg-primary hover:text-white ${
-                                    selectedVehicleCategory === 'All'
-                                      ? 'bg-primary text-white'
-                                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                                  }`}
+                                  className={`rounded-lg p-4 relative h-20 flex items-center justify-between ${subItem.shade} cursor-pointer ${selectedProductType === subItem.productType ? 'ring-2 ring-blue-500 ring-dashed' : ''
+                                    }`}
                                 >
-                                  All Categories
+                                  <div className={`absolute inset-0 bg-cover megamenucard  bg-center bg-no-repeat rounded-lg opacity-20`} style={{ backgroundImage: `url(${subItem.image})` }}></div>
+                                  <p className='text-white z-10 relative text-lg w-9/12'>{subItem.label}</p>
+                                  <FiArrowRight className='text-white' />
                                 </Link>
-                                {availableVehicleCategories.slice(0, 4).map((category, index) => (
+                              ))}
+                            </div>
+
+                            {/* Vehicle Categories Section - First 4 only */}
+                            {availableVehicleCategories.length > 0 && (
+                              <div className='flex flex-row justify-center gap-2 items-center'>
+                                <h4 className="text-sm font-medium text-gray-700">Vehicle Categories</h4>
+                                <div className='flex flex-wrap gap-2'>
                                   <Link
-                                    key={category.name}
-                                    href={`/Products-Solutions?type=vehicle&value=${encodeURIComponent(category.name).replace(/%20/g, '+')}`}
+                                    href="/Products-Solutions"
                                     onClick={() => {
                                       setIsHovered(false);
                                       setIsMegaMenuOpen(false);
                                     }}
-                                    className={`flex items-end gap-1 rounded-[10px] border-5 bg-white text-black border border-primary text-[#160959] w-fit py-2 px-5 text-black !w-fit hover:bg-primary hover:text-white ${
-                                      selectedVehicleCategory === category.name
+                                    className={`flex items-end gap-1 rounded-[10px] border-5 bg-white text-black border border-primary text-[#160959] w-fit py-2 px-5 text-black !w-fit hover:bg-primary hover:text-white ${selectedVehicleCategory === 'All'
+                                      ? 'bg-primary text-white'
+                                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                      }`}
+                                  >
+                                    All Categories
+                                  </Link>
+                                  {availableVehicleCategories.slice(0, 4).map((category, index) => (
+                                    <Link
+                                      key={category.name}
+                                      href={`/Products-Solutions?type=vehicle&value=${encodeURIComponent(category.name).replace(/%20/g, '+')}`}
+                                      onClick={() => {
+                                        setIsHovered(false);
+                                        setIsMegaMenuOpen(false);
+                                      }}
+                                      className={`flex items-end gap-1 rounded-[10px] border-5 bg-white text-black border border-primary text-[#160959] w-fit py-2 px-5 text-black !w-fit hover:bg-primary hover:text-white ${selectedVehicleCategory === category.name
                                         ? 'text-white bg-primary'
                                         : 'text-black  text-gray-700'
+                                        }`}
+                                    >
+                                      {category.name}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      // Simple dropdown for other menus like Careers
+                      <div className="group relative">
+                        <Link
+                          href={item.href}
+                          className={`flex relative items-center gap-1 nav-link transition-colors duration-300 ease-in-out`}
+                        >
+                          {item.label}
+                          {/* <IoChevronDownOutline className="text-sm" /> */}
+                        </Link>
+                        <div className="absolute left-0 top-full pt-2 hidden group-hover:block z-50">
+                          <div className="bg-white shadow-lg rounded-lg border py-2 min-w-48">
+                            {item.submenu.map((subItem, subIndex) => (
+                              <Link
+                                key={subIndex}
+                                href={subItem.href}
+                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors"
+                              >
+                                {subItem.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  ) : (
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsHovered(false)}
+                      className="nav-link"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <Button variant={`${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'white' : 'blue'}`} hasArrow={false} href="/contact-us" className='text-black !w-fit'>Contact Us</Button>
+        </div>
+
+
+        <div className="lg:hidden flex justify-between items-center z-50">
+          <Link href='/' className='w-1/2'>
+            {isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ?
+              <img src={logo} alt="logo" />
+              :
+              <img src={logoBlack} alt="logo" />
+            }
+          </Link>
+          <button onClick={toggleMenu} className="text-2xl">
+            <TbMenu3 className={isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-primary'} />
+          </button>
+        </div>
+
+
+        <div
+          className={`fixed h-screen overflow-y-auto top-0 right-0 w-[90%] max-w-sm bg-white shadow-lg transform ${isOpen ? 'translate-x-0' : 'translate-x-full'
+            } transition-transform duration-300 ease-in-out z-50 overscroll-contain`}
+        >
+          <div className="flex justify-end p-4 z-50">
+            <button onClick={toggleMenu} className="text-2xl">
+              <MdClose className='text-black' />
+            </button>
+          </div>
+
+          <div className="flex flex-col space-y-4 px-4 pb-20">
+            {/* Mobile Menu Items */}
+            {menuItems.map((item, index) => (
+              <div key={index} className="w-full">
+                {item.submenu ? (
+                  <div className="w-full">
+                    <button
+                      onClick={() => toggleSubmenu(index)}
+                      className="flex items-center justify-between w-full py-3 text-black border-b border-gray-200"
+                    >
+                      {item.label}
+                      <IoChevronDownOutline
+                        className={`text-sm transition-transform duration-300 ${openSubmenu === index ? 'rotate-180' : ''
+                          }`}
+                      />
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${openSubmenu === index ? 'max-h-[2000px]' : 'max-h-0'
+                        }`}
+                    >
+                      {/* Check if it's the Products & Solutions mega menu */}
+                      {item.label === 'Products & Solutions' ? (
+                        <>
+                          {/* Product Type Category Cards */}
+                          <div className='grid grid-cols-1 gap-3 mb-6 mt-4'>
+                            {getCategoryCards().map((subItem, subIndex) => (
+                              <Link
+                                key={`mobile-product-${subIndex}`}
+                                href={`/Products-Solutions?type=productType&value=${encodeURIComponent(subItem.productType).replace(/%20/g, '+')}`}
+                                onClick={() => {
+                                  toggleMenu();
+                                  setOpenSubmenu(null);
+                                }}
+                                className={`rounded-lg p-4 relative h-20 flex items-center justify-between ${subItem.shade} cursor-pointer transition-all ${selectedProductType === subItem.productType ? 'ring-2 ring-blue-500 ring-dashed' : ''
+                                  }`}
+                              >
+                                <div className={`absolute inset-0 bg-cover megamenucard bg-center bg-no-repeat rounded-lg opacity-20`} style={{ backgroundImage: `url(${subItem.image})` }}></div>
+                                <p className='text-white z-10 relative text-lg font-medium w-3/4'>{subItem.label}</p>
+                                <FiArrowRight className='text-white text-lg' />
+                              </Link>
+                            ))}
+                          </div>
+
+                          {/* Vehicle Categories Section */}
+                          {availableVehicleCategories.length > 0 && (
+                            <div className='mb-4'>
+                              <h4 className="text-base font-medium text-gray-700 mb-3">Vehicle Categories</h4>
+                              <div className='flex flex-wrap gap-2'>
+                                <Link
+                                  href="/Products-Solutions"
+                                  onClick={() => {
+                                    toggleMenu();
+                                    setOpenSubmenu(null);
+                                  }}
+                                  className={`flex items-center gap-1 rounded-[10px] border border-primary py-2 px-4 text-sm font-medium transition-all ${selectedVehicleCategory === 'All'
+                                    ? 'bg-primary text-white'
+                                    : 'bg-white text-[#160959] hover:bg-primary hover:text-white'
                                     }`}
+                                >
+                                  All Categories
+                                </Link>
+                                {availableVehicleCategories.slice(0, 4).map((category, categoryIndex) => (
+                                  <Link
+                                    key={category.name}
+                                    href={`/Products-Solutions?type=vehicle&value=${encodeURIComponent(category.name).replace(/%20/g, '+')}`}
+                                    onClick={() => {
+                                      toggleMenu();
+                                      setOpenSubmenu(null);
+                                    }}
+                                    className={`flex items-center gap-1 rounded-[10px] border border-primary py-2 px-4 text-sm font-medium transition-all ${selectedVehicleCategory === category.name
+                                      ? 'bg-primary text-white'
+                                      : 'bg-white text-[#160959] hover:bg-primary hover:text-white'
+                                      }`}
                                   >
                                     {category.name}
                                   </Link>
@@ -348,211 +510,56 @@ const Navbar = () => {
                               </div>
                             </div>
                           )}
-                        </div>
-                      </div>
-                    </div>
-                  ) : (
-                    // Simple dropdown for other menus like Careers
-                    <div className="group relative">
-                      <Link 
-                        href={item.href} 
-                        className={`flex relative items-center gap-1 nav-link transition-colors duration-300 ease-in-out`}
-                      >
-                        {item.label}
-                        {/* <IoChevronDownOutline className="text-sm" /> */}
-                      </Link>
-                      <div className="absolute left-0 top-full pt-2 hidden group-hover:block z-50">
-                        <div className="bg-white shadow-lg rounded-lg border py-2 min-w-48">
+                        </>
+                      ) : (
+                        // Simple submenu for other items like Careers
+                        <div className="py-2">
                           {item.submenu.map((subItem, subIndex) => (
                             <Link
                               key={subIndex}
                               href={subItem.href}
-                              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors"
+                              onClick={() => {
+                                toggleMenu();
+                                setOpenSubmenu(null);
+                              }}
+                              className="block px-2 py-3 text-gray-700 hover:text-primary transition-colors border-b border-gray-100 last:border-b-0"
                             >
                               {subItem.label}
                             </Link>
                           ))}
                         </div>
-                      </div>
+                      )}
                     </div>
-                  )
+                  </div>
                 ) : (
-                  <Link 
-                    href={item.href} 
-                    onClick={() => setIsHovered(false)}
-                    className="nav-link"
+                  <Link
+                    href={item.href}
+                    className="block py-3 text-black border-b border-gray-200 hover:text-primary"
+                    onClick={toggleMenu}
                   >
                     {item.label}
                   </Link>
                 )}
               </div>
-            ))}        
-          </div>
-        </div>
-        
-        <Button variant={`${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'white' : 'blue'}`} hasArrow={false} href="/contact-us" className='text-black !w-fit'>Contact Us</Button>
-      </div>
+            ))}
 
-     
-      <div className="lg:hidden flex justify-between items-center z-50">
-        <Link href='/' className='w-1/2'>
-        { isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ?
-          <img src={logo} alt="logo" />
-          :
-          <img src={logoBlack} alt="logo" />
-        }
-        </Link>
-        <button onClick={toggleMenu} className="text-2xl">
-          <TbMenu3 className={ isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-primary'} />
-        </button>
-      </div>
-
-  
-      <div
-        className={`fixed h-screen overflow-y-auto top-0 right-0 w-[90%] max-w-sm bg-white shadow-lg transform ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        } transition-transform duration-300 ease-in-out z-50 overscroll-contain`}
-      >
-        <div className="flex justify-end p-4 z-50">
-          <button onClick={toggleMenu} className="text-2xl">
-            <MdClose className='text-black' />
-          </button>
-        </div>
-        
-        <div className="flex flex-col space-y-4 px-4 pb-20">
-          {/* Mobile Menu Items */}
-          {menuItems.map((item, index) => (
-            <div key={index} className="w-full">
-              {item.submenu ? (
-                <div className="w-full">
-                  <button 
-                    onClick={() => toggleSubmenu(index)}
-                    className="flex items-center justify-between w-full py-3 text-black border-b border-gray-200"
-                  >
-                    {item.label}
-                    <IoChevronDownOutline 
-                      className={`text-sm transition-transform duration-300 ${
-                        openSubmenu === index ? 'rotate-180' : ''
-                      }`} 
-                    />
-                  </button>
-                  <div 
-                    className={`overflow-hidden transition-all duration-300 ${
-                      openSubmenu === index ? 'max-h-[2000px]' : 'max-h-0'
-                    }`}
-                  >
-                    {/* Check if it's the Products & Solutions mega menu */}
-                    {item.label === 'Products & Solutions' ? (
-                      <>
-                        {/* Product Type Category Cards */}
-                        <div className='grid grid-cols-1 gap-3 mb-6 mt-4'>
-                          {getCategoryCards().map((subItem, subIndex) => (
-                            <Link 
-                              key={`mobile-product-${subIndex}`}
-                              href={`/Products-Solutions?type=productType&value=${encodeURIComponent(subItem.productType).replace(/%20/g, '+')}`}
-                              onClick={() => {
-                                toggleMenu();
-                                setOpenSubmenu(null);
-                              }}
-                              className={`rounded-lg p-4 relative h-20 flex items-center justify-between ${subItem.shade} cursor-pointer transition-all ${
-                                selectedProductType === subItem.productType ? 'ring-2 ring-blue-500 ring-dashed' : ''
-                              }`}
-                            >
-                              <div className={`absolute inset-0 bg-cover megamenucard bg-center bg-no-repeat rounded-lg opacity-20`} style={{backgroundImage: `url(${subItem.image})`}}></div>
-                              <p className='text-white z-10 relative text-lg font-medium w-3/4'>{subItem.label}</p>
-                              <FiArrowRight className='text-white text-lg'/>
-                            </Link>
-                          ))}
-                        </div>
-                        
-                        {/* Vehicle Categories Section */}
-                        {availableVehicleCategories.length > 0 && (
-                          <div className='mb-4'>
-                            <h4 className="text-base font-medium text-gray-700 mb-3">Vehicle Categories</h4>
-                            <div className='flex flex-wrap gap-2'>
-                              <Link
-                                href="/Products-Solutions"
-                                onClick={() => {
-                                  toggleMenu();
-                                  setOpenSubmenu(null);
-                                }}
-                                className={`flex items-center gap-1 rounded-[10px] border border-primary py-2 px-4 text-sm font-medium transition-all ${
-                                  selectedVehicleCategory === 'All'
-                                    ? 'bg-primary text-white'
-                                    : 'bg-white text-[#160959] hover:bg-primary hover:text-white'
-                                }`}
-                              >
-                                All Categories
-                              </Link>
-                              {availableVehicleCategories.slice(0, 4).map((category, categoryIndex) => (
-                                <Link
-                                  key={category.name}
-                                  href={`/Products-Solutions?type=vehicle&value=${encodeURIComponent(category.name).replace(/%20/g, '+')}`}
-                                  onClick={() => {
-                                    toggleMenu();
-                                    setOpenSubmenu(null);
-                                  }}
-                                  className={`flex items-center gap-1 rounded-[10px] border border-primary py-2 px-4 text-sm font-medium transition-all ${
-                                    selectedVehicleCategory === category.name
-                                      ? 'bg-primary text-white'
-                                      : 'bg-white text-[#160959] hover:bg-primary hover:text-white'
-                                  }`}
-                                >
-                                  {category.name}
-                                </Link>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      // Simple submenu for other items like Careers
-                      <div className="py-2">
-                        {item.submenu.map((subItem, subIndex) => (
-                          <Link
-                            key={subIndex}
-                            href={subItem.href}
-                            onClick={() => {
-                              toggleMenu();
-                              setOpenSubmenu(null);
-                            }}
-                            className="block px-2 py-3 text-gray-700 hover:text-primary transition-colors border-b border-gray-100 last:border-b-0"
-                          >
-                            {subItem.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ) : (
-                <Link
-                  href={item.href}
-                  className="block py-3 text-black border-b border-gray-200 hover:text-primary"
-                  onClick={toggleMenu}
-                >
-                  {item.label}
-                </Link>
-              )}
+            <div className="pt-4">
+              <Button variant="blue" href="/contact-us" className="w-full">
+                Contact Us
+              </Button>
             </div>
-          ))}
-          
-          <div className="pt-4">
-            <Button variant="blue" href="/contact-us" className="w-full">
-              Contact Us
-            </Button>
           </div>
         </div>
-      </div>
-      
-      {/* Overlay */}
-      {isOpen && (
-        <div 
-          className="fixed inset-0 bg-black/50 z-40 md:hidden"
-          onClick={toggleMenu}
-        />
-      )}
+
+        {/* Overlay */}
+        {isOpen && (
+          <div
+            className="fixed inset-0 bg-black/50 z-40 md:hidden"
+            onClick={toggleMenu}
+          />
+        )}
       </div>
     </nav>
-)};
+  )
+};
 export default Navbar;
