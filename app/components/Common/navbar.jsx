@@ -213,12 +213,11 @@ const Navbar = () => {
     { label: 'Sustainability  ', href: '/sustainability' },
     { label: 'Aftermarket  ', href: '/aftermarket' },
     {
-      label: 'ESS Portal', href: '',
+      label: 'ESS Portal', href: '#',
       submenu: [
-        { label: 'INEL-TMS', href: 'https://ineltms.officenet.in/login/login.aspx' },
-        { label: 'INEL-HRMS', href: 'https://inel.spinenx.in/login.aspx' },
-        { label: 'INEL-PMS', href: 'https://indianippon-pms.synergita.com/LogOn' }
-
+        { label: 'INEL-TMS', href: 'https://ineltms.officenet.in/login/login.aspx', icon: 'https://indian-nippon.s3.ap-south-1.amazonaws.com/uploads/tms.svg' },
+        { label: 'INEL-HRMS', href: 'https://inel.spinenx.in/login.aspx', icon: 'https://indian-nippon.s3.ap-south-1.amazonaws.com/uploads/hrms.svg' },
+        { label: 'INEL-PMS', href: 'https://indianippon-pms.synergita.com/LogOn', icon: 'https://indian-nippon.s3.ap-south-1.amazonaws.com/uploads/pms.svg' }
       ]
     },
     {
@@ -360,6 +359,34 @@ const Navbar = () => {
                                 </div>
                               </div>
                             )}
+                          </div>
+                        </div>
+                      </div>
+                    ) : item.label === 'ESS Portal' ? (
+                      <div className="group relative">
+                        <Link
+                          href={item.href || '#'}
+                          className={`flex relative items-center gap-1 nav-link transition-colors duration-300 ease-in-out`}
+                        >
+                          {item.label}
+                        </Link>
+                        <div className="absolute right-0 top-full pt-4 hidden group-hover:block z-50">
+                          <div className="bg-white shadow-lg rounded-lg border p-4 w-max">
+                            <div className='flex gap-[10px]'>
+                              {item.submenu.map((subItem, subIndex) => (
+                                <Link
+                                  key={`ess-${subIndex}`}
+                                  href={subItem.href}
+                                  target={subItem.href.startsWith('http') ? "_blank" : "_self"}
+                                  className={`rounded-lg p-4 h-20 w-[240px] flex items-center justify-between bg-[radial-gradient(ellipse_at_96.36%_83.67%,#578EFF_0%,#160959_100%)] cursor-pointer drop-shadow-md hover:scale-[1.02] transition-transform`}
+                                >
+                                  <p className='text-white z-10 relative text-[17px] font-medium'>{subItem.label}</p>
+                                  {subItem.icon && (
+                                    <img src={subItem.icon} alt={subItem.label} className="h-[50px] w-[50px] relative z-10 object-contain opacity-60" style={{ filter: "brightness(0) invert(1)" }} />
+                                  )}
+                                </Link>
+                              ))}
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -510,6 +537,29 @@ const Navbar = () => {
                               </div>
                             </div>
                           )}
+                        </>
+                      ) : item.label === 'ESS Portal' ? (
+                        <>
+                          <div className='grid grid-cols-1 gap-3 mb-4 mt-2'>
+                            {item.submenu.map((subItem, subIndex) => (
+                              <Link
+                                key={`mobile-ess-${subIndex}`}
+                                href={subItem.href}
+                                target={subItem.href.startsWith('http') ? "_blank" : "_self"}
+                                rel={subItem.href.startsWith('http') ? "noopener noreferrer" : ""}
+                                onClick={() => {
+                                  toggleMenu();
+                                  setOpenSubmenu(null);
+                                }}
+                                className={`rounded-lg p-4 relative h-20 flex items-center justify-between bg-[radial-gradient(ellipse_at_96.36%_83.67%,#578EFF_0%,#160959_100%)] cursor-pointer transition-all`}
+                              >
+                                <p className='text-white z-10 relative text-lg font-medium w-3/4'>{subItem.label}</p>
+                                {subItem.icon && (
+                                  <img src={subItem.icon} alt={subItem.label} className="h-10 w-10 relative z-10 object-contain opacity-60" style={{ filter: "brightness(0) invert(1)" }} />
+                                )}
+                              </Link>
+                            ))}
+                          </div>
                         </>
                       ) : (
                         // Simple submenu for other items like Careers
