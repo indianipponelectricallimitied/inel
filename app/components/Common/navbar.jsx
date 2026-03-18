@@ -378,7 +378,7 @@ const Navbar = () => {
                                   key={`ess-${subIndex}`}
                                   href={subItem.href}
                                   target={subItem.href.startsWith('http') ? "_blank" : "_self"}
-                                  className="font text-lg hover:text-primary transition-colors"
+                                  className="text-black text-lg hover:text-primary transition-colors"
                                 >
                                   {subItem.label}
                                 </Link>
