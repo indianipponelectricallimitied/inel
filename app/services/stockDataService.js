@@ -10,12 +10,12 @@ const DEFAULT_DUMMY_DATA = {
     "02. open": "600.0000",
     "03. high": "601.7",
     "04. low": "598.5",
-    "05. price": "600.5",
+    "05. price": "775.00",
     "06. volume": "12450",
     "07. latest trading day": new Date().toISOString().split('T')[0],
-    "08. previous close": "599.5",
-    "09. change": "1.0000",
-    "10. change percent": "1.16%"
+    "08. previous close": "751.15",
+    "09. change": "23.85",
+    "10. change percent": "3.18%"
   }
 };
 

@@ -370,20 +370,17 @@ const Navbar = () => {
                         >
                           {item.label}
                         </Link>
-                        <div className="absolute right-0 top-full pt-4 hidden group-hover:block z-50">
-                          <div className="bg-white shadow-lg rounded-lg border p-4 w-max">
-                            <div className='flex gap-[10px]'>
+                        <div className="absolute right-100px top-full pt-4 hidden group-hover:block z-50">
+                          <div className="bg-white shadow-lg rounded-[20px] border py-6 px-6 min-w-[240px]">
+                            <div className="flex flex-col gap-4">
                               {item.submenu.map((subItem, subIndex) => (
                                 <Link
                                   key={`ess-${subIndex}`}
                                   href={subItem.href}
                                   target={subItem.href.startsWith('http') ? "_blank" : "_self"}
-                                  className={`rounded-lg p-4 h-20 w-[240px] flex items-center justify-between bg-[radial-gradient(ellipse_at_96.36%_83.67%,#578EFF_0%,#160959_100%)] cursor-pointer drop-shadow-md hover:scale-[1.02] transition-transform`}
+                                  className="font text-lg hover:text-primary transition-colors"
                                 >
-                                  <p className='text-white z-10 relative text-[17px] font-medium'>{subItem.label}</p>
-                                  {subItem.icon && (
-                                    <img src={subItem.icon} alt={subItem.label} className="h-[50px] w-[50px] relative z-10 object-contain opacity-60" style={{ filter: "brightness(0) invert(1)" }} />
-                                  )}
+                                  {subItem.label}
                                 </Link>
                               ))}
                             </div>
@@ -540,7 +537,7 @@ const Navbar = () => {
                         </>
                       ) : item.label === 'ESS Portal' ? (
                         <>
-                          <div className='grid grid-cols-1 gap-3 mb-4 mt-2'>
+                          <div className="flex flex-col gap-4 mb-4 mt-2 px-2">
                             {item.submenu.map((subItem, subIndex) => (
                               <Link
                                 key={`mobile-ess-${subIndex}`}
@@ -551,12 +548,9 @@ const Navbar = () => {
                                   toggleMenu();
                                   setOpenSubmenu(null);
                                 }}
-                                className={`rounded-lg p-4 relative h-20 flex items-center justify-between bg-[radial-gradient(ellipse_at_96.36%_83.67%,#578EFF_0%,#160959_100%)] cursor-pointer transition-all`}
+                                className="text-[#160959] font-medium text-lg py-2 border-b border-gray-100 last:border-0"
                               >
-                                <p className='text-white z-10 relative text-lg font-medium w-3/4'>{subItem.label}</p>
-                                {subItem.icon && (
-                                  <img src={subItem.icon} alt={subItem.label} className="h-10 w-10 relative z-10 object-contain opacity-60" style={{ filter: "brightness(0) invert(1)" }} />
-                                )}
+                                {subItem.label}
                               </Link>
                             ))}
                           </div>
