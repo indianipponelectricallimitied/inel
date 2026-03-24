@@ -1,13 +1,14 @@
 "use client"
 import { useState, useRef, useEffect } from "react";
-import ApiService from '../services/api';
 import Accordion from "../components/Ui/accordion"
+import { useInvestorData } from './InvestorContext';
 
 const slugify = (text) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 export default function Investors() {
-    const [investorData, setInvestorData] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const { investorData, loading } = useInvestorData();
+
+    const aoaMoaItem = investorData.find(item => item.name === 'AoA & MoA');
 
     const collectionPageJsonLd = {
         "@context": "https://schema.org",
@@ -43,22 +44,6 @@ export default function Investors() {
             }
         ]
     };
-
-    useEffect(() => {
-        const fetchInvestorData = async () => {
-            try {
-                const data = await ApiService.getInvestorData();
-                setInvestorData(data);
-                setLoading(false);
-            } catch (error) {
-                console.error('Error fetching investor data:', error);
-                setLoading(false);
-            }
-        };
-        fetchInvestorData();
-    }, []);
-
-    const aoaMoaItem = investorData.find(item => item.name === 'AoA & MoA');
 
     const transformToAccordionData = (subheadings) => {
         return subheadings.map(subheading => ({

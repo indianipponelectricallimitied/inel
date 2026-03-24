@@ -1,81 +1,27 @@
 'use client';
-import { useState, useEffect } from 'react';
-import { useParams, useSearchParams, useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import { GoArrowUpRight } from "react-icons/go";
-import ApiService from '@/app/services/api';
 import Accordion from '../../components/Ui/accordion';
+import { useInvestorData } from '../InvestorContext';
 
 const slugify = (text) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
 export default function InvestorTabPage() {
     const { slug } = useParams();
-    const searchParams = useSearchParams();
-    const router = useRouter();
-    const [itemData, setItemData] = useState(null);
+    const { investorData, loading: globalLoading } = useInvestorData();
+
+    // Local state for the active accordion — no URL sync to avoid remount
     const [activeAccordionId, setActiveAccordionId] = useState(null);
-    const [loading, setLoading] = useState(true);
 
-    // Extract category and optional item from slug array
+    // Derive category from URL
     const categorySlug = Array.isArray(slug) ? slug[0] : slug;
-    // Join any remaining segments after the category slug to form the item path
-    const pathItemNameSlug = Array.isArray(slug) && slug.length > 1 ? slug.slice(1).join('-') : null;
-    const itemQueryParam = searchParams.get('item');
 
-    const handleAccordionChange = (newActiveId) => {
-        setActiveAccordionId(newActiveId);
+    // Derive itemData synchronously from shared context
+    const itemData = investorData.find(item => slugify(item.name) === categorySlug);
 
-        if (newActiveId && itemData?.subheadings) {
-            const subheading = itemData.subheadings.find(s => s.id === newActiveId);
-            if (subheading) {
-                // Ensure we use a single segment for the name by replacing slashes with hyphens
-                const safeName = subheading.name.replace(/\//g, '-');
-                router.push(`/investors/${categorySlug}/${safeName}`, { scroll: false });
-            }
-        } else {
-            // If accordion is closed, revert URL to main category path
-            router.push(`/investors/${categorySlug}`, { scroll: false });
-        }
-    };
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const data = await ApiService.getInvestorData();
-                const matchedItem = data.find(item => slugify(item.name) === categorySlug);
-
-                if (matchedItem) {
-                    setItemData(matchedItem);
-
-                    // Handle item selection (Priority: path segment > query param)
-                    const itemToFind = pathItemNameSlug || itemQueryParam;
-
-                    if (itemToFind) {
-                        // 1. Try to treat as ID (if it's a number and from query param)
-                        const id = parseInt(itemToFind);
-                        if (!isNaN(id) && itemToFind === itemQueryParam) {
-                            setActiveAccordionId(id);
-                        } else {
-                            // 2. Try to treat as slugified name (from path or query)
-                            const matchedSubheading = matchedItem.subheadings?.find(
-                                sub => slugify(sub.name) === slugify(decodeURIComponent(itemToFind))
-                            );
-                            if (matchedSubheading) {
-                                setActiveAccordionId(matchedSubheading.id);
-                            }
-                        }
-                    }
-                }
-                setLoading(false);
-            } catch (error) {
-                console.error('Error fetching investor data:', error);
-                setLoading(false);
-            }
-        };
-        fetchData();
-    }, [categorySlug, pathItemNameSlug, itemQueryParam]);
-
-    if (loading) return <div className="py-20 text-center">Loading section...</div>;
+    if (globalLoading) return <div className="py-20 text-center">Loading...</div>;
     if (!itemData) return <div className="py-20 text-center">Section not found.</div>;
 
     const transformToAccordionData = (subheadings) => {
@@ -120,8 +66,7 @@ export default function InvestorTabPage() {
                     <Accordion
                         accordionData={transformToAccordionData(itemData.subheadings)}
                         initialActive={activeAccordionId}
-                        highlightedId={activeAccordionId}
-                        onActiveChange={handleAccordionChange}
+                        onActiveChange={setActiveAccordionId}
                     />
                 </div>
             )}
