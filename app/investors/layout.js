@@ -91,7 +91,6 @@ export default function InvestorLayout({ children }) {
                         </div>
                     </div>
                 </div>
-
                 {/* Gray Content Section with Sidebar */}
                 <div className="bg-[#f6f6f6] py-20">
                     <div className="container mx-auto">
