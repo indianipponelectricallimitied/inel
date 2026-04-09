@@ -49,7 +49,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -57,7 +57,6 @@ export default function RootLayout({ children }) {
       </head>
       <body
         className={`${aeonik.variable} antialiased`}
-        suppressHydrationWarning={true}
       >  
         {/* Google Analytics */}
         <Script
@@ -70,17 +69,6 @@ export default function RootLayout({ children }) {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-F3KE4T8FF9');
-          `}
-        </Script>
-
-        {/* Microsoft Clarity */}
-        <Script id="microsoft-clarity" strategy="afterInteractive">
-          {`
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "w4uwy10d9f");
           `}
         </Script>
         
