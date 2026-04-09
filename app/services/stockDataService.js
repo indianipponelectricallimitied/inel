@@ -7,15 +7,15 @@ const isClient = typeof window !== 'undefined';
 const DEFAULT_DUMMY_DATA = {
   "Global Quote": {
     "01. symbol": "INDNIPPON.BSE",
-    "02. open": "600.0000",
-    "03. high": "601.7",
-    "04. low": "598.5",
-    "05. price": "707.60",
-    "06. volume": "12450",
-    "07. latest trading day": "2026-03-23T15:30:00",
-    "08. previous close": "736.90",
-    "09. change": "-29.30",
-    "10. change percent": "-3.98%"
+    "02. open": "718.0000",
+    "03. high": "765.00",
+    "04. low": "715.00",
+    "05. price": "762.00",
+    "06. volume": "15450",
+    "07. latest trading day": "2026-04-08T15:30:00",
+    "08. previous close": "718.32",
+    "09. change": "43.68",
+    "10. change percent": "6.08%"
   }
 };
 
