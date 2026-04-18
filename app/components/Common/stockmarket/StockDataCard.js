@@ -20,20 +20,20 @@ export default function StockDataCard({ background }) {
   const manualNSEData = {
     'Global Quote': {
       '01. symbol': 'INDNIPPON.NSE',
-      '05. price': '789.50',
-      '09. change': '14.95',
-      '10. change percent': '1.93%',
-      '07. latest trading day': '2026-04-15T15:30:00'
+      '05. price': '788.00',
+      '09. change': '6.35',
+      '10. change percent': '0.81%',
+      '07. latest trading day': '2026-04-17T15:30:00'
     }
   };
 
   const manualBSEData = {
     'Global Quote': {
       '01. symbol': 'INDNIPPON.BSE',
-      '05. price': '780.80',
-      '09. change': '5.85',
-      '10. change percent': '0.75%',
-      '07. latest trading day': '2026-04-15T15:30:00'
+      '05. price': '789.75',
+      '09. change': '7.05',
+      '10. change percent': '0.90%',
+      '07. latest trading day': '2026-04-17T15:30:00'
     }
   };
 
