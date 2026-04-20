@@ -10,12 +10,12 @@ const DEFAULT_DUMMY_DATA = {
     "02. open": "785.00",
     "03. high": "795.00",
     "04. low": "780.00",
-    "05. price": "789.75",
+    "05. price": "766.00",
     "06. volume": "15450",
-    "07. latest trading day": "2026-04-17T15:30:00",
-    "08. previous close": "782.70",
-    "09. change": "7.05",
-    "10. change percent": "0.90%"
+    "07. latest trading day": "2026-04-20T15:30:00",
+    "08. previous close": "788.05",
+    "09. change": "-22.05",
+    "10. change percent": "-2.80%"
   }
 };
 
