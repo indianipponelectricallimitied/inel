@@ -4,42 +4,43 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { FaGooglePlusG } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
-export default function Footer(){
-    return(
+export default function Footer() {
+    return (
         <footer>
             <div className="container mx-auto  py-20 border-primary border-b ">
-               
-            <a href='/' className="pb-10  block">  <img src="/logo.svg" alt="logo" /> </a>
 
-            <div className="flex flex-col gap-5 text-dark">
-                <div className="flex flex-wrap gap-10 md:gap-0">
-                    <div className="flex flex-col gap-2 w-full md:w-1/5">
-                        <p className="pb-3 font-bold">Company</p>
-                        <a href="/about-us#about">Company Overview</a>
-                        <a href="/about-us#legacy">Our Legacy</a>
-                        <a href="/about-us#team">Leadership Team</a>
-                        <a href="/about-us#achievements">Achievements & Awards</a>
+                <a href='/' className="pb-10  block">  <img src="/logo.svg" alt="logo" /> </a>
+
+                <div className="flex flex-col gap-5 text-dark">
+                    <div className="flex flex-wrap gap-10 md:gap-0">
+                        <div className="flex flex-col gap-2 w-full md:w-1/5">
+                            <p className="pb-3 font-bold">Company</p>
+                            <a href="/about-us#about">Company Overview</a>
+                            <a href="/about-us#legacy">Our Legacy</a>
+                            <a href="/about-us#team">Leadership Team</a>
+                            <a href="/about-us#achievements">Achievements & Awards</a>
+                            <a href="/newsroom">Newsroom</a>
+                        </div>
+                        <div className="flex flex-col gap-2 w-full md:w-1/5">
+                            <p className="pb-3 font-bold">Products & Solutions</p>
+                            <a href="/Products-Solutions?type=category&value=2+Wheeler">2 Wheeler</a>
+                            <a href="/Products-Solutions?type=category&value=3+Wheeler">3 Wheeler</a>
+                            <a href="/Products-Solutions?type=type&value=Regulator">Regulator</a>
+                            <a href="/Products-Solutions?type=type&value=Controller">Controller</a>
+                        </div>
+                        <div className="flex flex-col gap-2 w-full md:w-1/5">
+                            <p className="pb-3 font-bold">Investors</p>
+                            <a href="/investors">Corporate Presentation</a>
+                            <a href="/investors">Annual Report FY24</a>
+                            {/* <a href="#">Sensor Technologies</a> */}
+                            <a href="/investors">Investor Presentation</a>
+                        </div>
+                        <div className="flex flex-col gap-2 w-full md:w-2/6">
+                            <p className="pb-3 font-bold">Contact</p>
+                            <a href="https://maps.app.goo.gl/Tm43tVGYtd9RcmEL7" target="_blank" className="flex gap-2"><MdLocationOn className="text-3xl mt-1" /> India Nippon Electricals Ltd, Hosur-Thally Road, Uliveernapalli, Hosur-635114, India</a>
+                            <a href="mailto:inelcorp@inel.co.in" className="flex gap-2"><TbMailFilled className="text-lg mt-1 " /> <span>inelcorp@inel.co.in</span></a>
+                        </div>
                     </div>
-                    <div className="flex flex-col gap-2 w-full md:w-1/5">
-                        <p className="pb-3 font-bold">Products & Solutions</p>
-                                        <a href="/Products-Solutions?type=category&value=2+Wheeler">2 Wheeler</a>
-                <a href="/Products-Solutions?type=category&value=3+Wheeler">3 Wheeler</a>
-                <a href="/Products-Solutions?type=type&value=Regulator">Regulator</a>
-                <a href="/Products-Solutions?type=type&value=Controller">Controller</a>
-                    </div>
-                    <div className="flex flex-col gap-2 w-full md:w-1/5">
-                        <p className="pb-3 font-bold">Investors</p>
-                        <a href="/investors">Corporate Presentation</a>
-                        <a href="/investors">Annual Report FY24</a>
-                        {/* <a href="#">Sensor Technologies</a> */}
-                        <a href="/investors">Investor Presentation</a>
-                    </div>
-                    <div className="flex flex-col gap-2 w-full md:w-2/6">
-                        <p className="pb-3 font-bold">Contact</p>
-                        <a href="https://maps.app.goo.gl/Tm43tVGYtd9RcmEL7" target="_blank" className="flex gap-2"><MdLocationOn className="text-3xl mt-1" /> India Nippon Electricals Ltd, Hosur-Thally Road, Uliveernapalli, Hosur-635114, India</a>
-                        <a href="mailto:inelcorp@inel.co.in" className="flex gap-2"><TbMailFilled className="text-lg mt-1 " /> <span>inelcorp@inel.co.in</span></a>
-                    </div>
-                </div>
 
                     <div className="flex flex-col gap-10 md:gap-0 md:flex-row   pt-10 flex-wrap">
                         <div className="flex flex-col gap-2 w-full md:w-1/5">
@@ -70,7 +71,7 @@ export default function Footer(){
                             </div>
                         </div>
                     </div>
-            </div>
+                </div>
             </div>
             <div className="container mx-auto flex flex-col md:flex-row justify-between py-5">
                 <div className="flex justify-between md:gap-20">
