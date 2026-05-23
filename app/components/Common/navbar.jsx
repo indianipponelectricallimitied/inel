@@ -217,7 +217,8 @@ const Navbar = () => {
       submenu: [
         { label: 'INEL-TMS', href: 'https://ineltms.officenet.in/login/login.aspx', icon: 'https://indian-nippon.s3.ap-south-1.amazonaws.com/uploads/tms.svg' },
         { label: 'INEL-HRMS', href: 'https://inel.spinenx.in/login.aspx', icon: 'https://indian-nippon.s3.ap-south-1.amazonaws.com/uploads/hrms.svg' },
-        { label: 'INEL-PMS', href: 'https://indianippon-pms.synergita.com/LogOn', icon: 'https://indian-nippon.s3.ap-south-1.amazonaws.com/uploads/pms.svg' }
+        { label: 'INEL-PMS', href: 'https://indianippon-pms.synergita.com/LogOn', icon: 'https://indian-nippon.s3.ap-south-1.amazonaws.com/uploads/pms.svg' },
+        { label: 'INEL-TALENT', href: 'https://career.indianippon.com/auth/', icon: 'https://indian-nippon.s3.ap-south-1.amazonaws.com/uploads/hrms.svg' }
       ]
     },
     {
