@@ -8,7 +8,7 @@ import 'swiper/css/effect-fade';
 
 const images = [
     // '/images/career/careerbanner2.png',
-    '/images/career/breadcrumb.webp',
+    '/images/career/inel-banner.webp',
     '/images/career/Banner-4.webp',
     '/images/career/Banner-3.webp',
     '/images/career/Banner-2.webp',
@@ -31,7 +31,7 @@ export default function BreadcrumbSlider() {
             >
                 {images.map((image, index) => (
                     <SwiperSlide key={index}>
-                        <div 
+                        <div
                             className="w-full h-full"
                             style={{
                                 background: `url(${image}) no-repeat center center`,
@@ -56,8 +56,8 @@ export default function BreadcrumbSlider() {
                     </SwiperSlide>
                 ))}
             </Swiper>
-            
-            
+
+
         </div>
     )
 }
