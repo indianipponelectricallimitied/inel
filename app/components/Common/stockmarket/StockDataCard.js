@@ -20,20 +20,20 @@ export default function StockDataCard({ background }) {
   const manualNSEData = {
     'Global Quote': {
       '01. symbol': 'INDNIPPON.NSE',
-      '05. price': '915.10',
-      '09. change': '-0.85',
-      '10. change percent': '0.093%',
-      '07. latest trading day': '2026-06-05T10:36:00'
+      '05. price': '891.95',
+      '09. change': '-13.95',
+      '10. change percent': '-1.54%',
+      '07. latest trading day': '2026-06-08T15:30:00'
     }
   };
 
   const manualBSEData = {
     'Global Quote': {
       '01. symbol': 'INDNIPPON.BSE',
-      '05. price': '915.80',
-      '09. change': '0.75',
-      '10. change percent': '0.082%',
-      '07. latest trading day': '2026-06-05T10:26:00'
+      '05. price': '894.55',
+      '09. change': '-11.75',
+      '10. change percent': '-1.30%',
+      '07. latest trading day': '2026-06-08T15:30:00'
     }
   };
 
@@ -115,7 +115,6 @@ export default function StockDataCard({ background }) {
         card.removeEventListener("mousemove", handleMouseMove);
       };
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mounted]); // Only re-run when mounted changes
 
   // Don't render anything until mounted to prevent hydration mismatch
