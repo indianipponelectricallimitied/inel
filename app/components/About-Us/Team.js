@@ -43,6 +43,11 @@ const team = [
         image: "/images/about/Mr.Elango Srinivasanv CFO.png",
         name: "Mr. Elango Srinivasan",
         position: "Chief Financial Officer",
+    },
+    {
+        image: "/images/about/Namita.png",
+        name: "Ms. Namita V",
+        position: "Chief Human Resources Officer",
     }
 ]
 export default function Team(){
