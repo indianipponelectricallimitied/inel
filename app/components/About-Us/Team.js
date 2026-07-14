@@ -91,7 +91,7 @@ export default function Team(){
                     {team.map((item) => (
                         <SwiperSlide key={item.id} className="card-cut-not relative ">
                             <Image src={item.image} alt={item.name} width={500} height={300} 
-                            className="rounded-[30px] object-cover w-full h-[270px]"
+                            className="rounded-[30px] object-cover w-full h-[400px] md:h-[270px]"
                             />
                             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-50% to-primary rounded-[30px] p-5 flex flex-col justify-end gap-1 ">
                                 <h2 className="text-white text-2xl">{item.name}</h2>
