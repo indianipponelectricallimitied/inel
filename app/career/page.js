@@ -8,7 +8,7 @@ import CareeerForm from "../components/career/CareeerForm";
 import BackflipSlider from "../components/Ui/BackflipSlider";
 import Accordion from "../components/Ui/accordion";
 import OurPriority from "../components/career/OurPriority";
-import BlogSlide from "../components/Newsroom/blog-slide";
+import UncoveredTabs from "../components/career/UncoveredTabs";
 import BreadcrumbSlider from "../components/career/breadcrumb-slider";
 import { useState, useEffect } from "react";
 
@@ -376,12 +376,9 @@ export default function Career() {
                             <BackflipSlider testimonials={testimonials} />
                     </div>
                 </div> */}
-                <div className="container mx-auto py-20 space-y-8" id="inel-uncovered">
-                   
-                    <h1 className="text-center">INEL Uncovered</h1>
-                    <p className="text-center lg:w-3/5 mx-auto">Get an exclusive look into the collaborative spirit that fuels INEL&apos;s success every day. Stay updated on our latest achievements and upcoming events at INEL.</p>
-                    <BlogSlide sildeperview={3} includeCategories={["careers"]} />
-                </div>
+                <UncoveredTabs />
+
+                
 
                 <div className="container mx-auto py-20 space-y-5" id="FAQ">
                     {/* <h5 className="text-center">FAQ</h5> */}
