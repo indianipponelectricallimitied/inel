@@ -94,8 +94,8 @@ export default function Team(){
                             className="rounded-[30px] object-cover w-full h-[400px] md:h-[270px]"
                             />
                             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-50% to-primary rounded-[30px] p-5 flex flex-col justify-end gap-1 ">
-                                <h2 className="text-white text-2xl">{item.name}</h2>
-                                <p className="text-white">{item.position}</p>
+                                <h2 className="text-white text-[1.35rem]">{item.name}</h2>
+                                <p className="text-white text-[14px]">{item.position}</p>
                             </div>
                         </SwiperSlide>
                     ))}
