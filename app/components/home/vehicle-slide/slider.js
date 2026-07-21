@@ -11,6 +11,7 @@ import { VEHICLE_TYPES, VEHICLE_HOTSPOTS } from './constants';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import './style.css';
+import { Autoplay } from 'swiper/modules';
 
 export default function Tab() {
   const swiperRef = useRef(null);
@@ -121,10 +122,17 @@ export default function Tab() {
                 className="hero-swiper flex justify-center items-center"
                 slidesPerView={1}
                 loop={true}
-                speed={2000}
+                speed={1200}
                 mousewheel={false}
-                grabCursor={false}
-                allowTouchMove={false}
+                grabCursor={true}
+                allowTouchMove={true}
+                autoplay={{
+                  delay: 4500,
+                  disableOnInteraction: false,
+                }}
+                observer={true}
+                observeParents={true}
+                modules={[Autoplay]}
                 onSlideChange={handleSlideChange}
               >
                 {VEHICLE_TYPES.map((vehicle) => (

@@ -25,10 +25,13 @@ export default function BackflipSlider({testimonials}) {
             clickable: true,
             // dynamicBullets: true,
         }}
-        // autoplay={{
-        //     delay: 3000,
-        //     disableOnInteraction: false,
-        // }}
+        loop={true}
+        autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+        }}
+        observer={true}
+        observeParents={true}
         modules={[EffectCards, Pagination, Autoplay]}  
         className="BackflipSlider"
       >

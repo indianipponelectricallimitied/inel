@@ -14,12 +14,12 @@ const team = [
     // },
     {
         image: "/images/about/person-2.png",
-        name: "Mr. Arvind Balaji",
+        name: "Arvind Balaji",
         position: "Managing Director",
     },
     {
         image: "/images/about/ravinder-sharma-1.png",
-        name: "Mr. Ravinder Sharma",
+        name: "Ravinder Sharma",
         position: "President",
     },
     // {
@@ -36,17 +36,17 @@ const team = [
     // },
     {
         image: "/images/about/Kanakaraju.png",
-        name: "Mr. Kanakaraju",
+        name: "Kanakaraju",
         position: "Chief Technical Officer",
     },
     {
         image: "/images/about/Mr.Elango Srinivasanv CFO.png",
-        name: "Mr. Elango Srinivasan",
+        name: "Elango Srinivasan",
         position: "Chief Financial Officer",
     },
     {
         image: "/images/about/Namita.png",
-        name: "Ms. Namita V",
+        name: "Namita V",
         position: "Chief Human Resources Officer",
     }
 ]

@@ -59,7 +59,13 @@ export default function SustainableSlider() {
                         clickable: true,
                         dynamicBullets: false,
                     }}
-                    modules={[Pagination]}
+                    autoplay={{
+                        delay: 3500,
+                        disableOnInteraction: false,
+                    }}
+                    observer={true}
+                    observeParents={true}
+                    modules={[Pagination, Autoplay]}
                     className="sustainable-swiper h-full"
                     onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                     breakpoints={{
