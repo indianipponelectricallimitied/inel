@@ -75,6 +75,7 @@ const CategoryNav = ({ onFilterChange, initialTab = 'all', initialValue = null, 
         };
 
         fetchData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []); // Only fetch data on mount
 
     // Handle URL-based filtering when component mounts or initial values change
@@ -101,6 +102,7 @@ const CategoryNav = ({ onFilterChange, initialTab = 'all', initialValue = null, 
             setActiveSubCategory(null);
             onFilterChange({ type: 'all' });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [loading, initialTab, initialValue]);
 
     // Listen for route changes and update component state
@@ -135,6 +137,7 @@ const CategoryNav = ({ onFilterChange, initialTab = 'all', initialValue = null, 
                 onFilterChange({ type: 'all' });
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pathname, searchParams, loading]);
 
     // Scroll to active slide when activeSubCategory changes

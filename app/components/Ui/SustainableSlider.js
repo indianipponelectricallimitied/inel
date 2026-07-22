@@ -51,10 +51,6 @@ export default function SustainableSlider() {
                     centeredSlides={true}
                     loop={true}
                     speed={500}
-                    autoplay={{
-                        delay: 3000,
-                        disableOnInteraction: false,
-                    }}
                     pagination={{
                         clickable: true,
                         dynamicBullets: false,
