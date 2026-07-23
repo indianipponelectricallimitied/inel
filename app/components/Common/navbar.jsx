@@ -273,7 +273,7 @@ const Navbar = () => {
                 </Link>
               </div>
             </div>
-            <div className={`${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'border-white' : 'border-primary'} space-x-8 border-t pt-2 transition-colors duration-300 ease-in-out`}>
+            <div className={`nav-menu-row ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'border-white' : 'border-primary'} space-x-8 border-t pt-2 transition-colors duration-300 ease-in-out`}>
               {menuItems.map((item, index) => (
                 <div key={index} className={`inline-block ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}>
                   {item.submenu ? (

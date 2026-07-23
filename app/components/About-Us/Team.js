@@ -90,8 +90,9 @@ export default function Team(){
         >
                     {team.map((item) => (
                         <SwiperSlide key={item.name} className="card-cut-not relative ">
-                            <Image src={item.image} alt={item.name} width={500} height={300}
-                            className="rounded-[30px] object-cover w-full h-[400px] md:h-[270px]"
+                            <Image src={item.image} alt={item.name} width={656} height={810}
+                            sizes="(min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
+                            className="rounded-[30px] object-cover object-top w-full h-[400px] md:h-[270px]"
                             />
                             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-50% to-primary rounded-[30px] p-5 flex flex-col justify-end gap-1 ">
                                 <h2 className="text-white text-[1.30rem]">{item.name}</h2>

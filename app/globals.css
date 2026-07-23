@@ -575,3 +575,99 @@ table{
 .animate-fadeIn {
   animation: fadeIn 0.4s ease-out forwards;
 }
+
+/* ---------------------------------------------------------------------------
+   Swiper: no pre-initialisation flash (project-wide)
+
+   swiper/css styles every slide as `width: 100%`. Swiper only replaces that
+   with the real per-slide width inline, in JS, after it mounts in the browser.
+   So on every server render / reload there is a frame where slide 1 is painted
+   across the whole container -- which is why `object-cover` images momentarily
+   blow up and crop to a fragment (a face zoomed to the mouth, a machine zoomed
+   to someone's back).
+
+   Swiper adds `swiper-initialized` to the container once it has sized the
+   track, so keep the track hidden until then. `visibility` (not `display`)
+   keeps the slides in the layout, so nothing shifts and there is no CLS.
+
+   This is deliberately global: there are 17 Swiper instances in this app and a
+   per-slider fix has to be re-derived, and re-broken, for each one.
+--------------------------------------------------------------------------- */
+.swiper:not(.swiper-initialized) .swiper-wrapper {
+  visibility: hidden;
+}
+
+/* Browsers with JS disabled never get `swiper-initialized` -- show the raw,
+   unslid markup there rather than an empty gap. */
+@media (scripting: none) {
+  .swiper:not(.swiper-initialized) .swiper-wrapper {
+    visibility: visible;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Scaled-display adjustments (Windows display scaling / browser zoom)
+
+   Width alone cannot identify a scaled display: this machine's viewport is
+   under 1600px at BOTH 100% and 125%, so a plain max-width query fires in
+   both. `resolution` is the discriminator -- scaling at 125% reports
+   1.25dppx, 150% reports 1.5dppx, while an unscaled display reports 1dppx.
+
+   The 1.9dppx ceiling deliberately excludes true HiDPI panels (2dppx retina,
+   which are not scaled down and have room to spare); the floor of 1.2dppx
+   leaves unscaled displays alone.
+
+   Nav: at 16px links + 32px gaps the menu needs ~975px and only has ~880px
+   once the logo and Contact Us button take their share, so "Careers" wraps.
+   14px links + 24px gaps bring it to ~825px. Bounded below at 1024px because
+   the desktop nav is `hidden lg:flex`.
+--------------------------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1600px)
+   and (min-resolution: 1.2dppx) and (max-resolution: 1.9dppx) {
+  .nav-menu-row .nav-link {
+    font-size: 14px;
+  }
+
+  /* same shape as Tailwind's space-x-8 so it overrides on source order */
+  .nav-menu-row > :not([hidden]) ~ :not([hidden]) {
+    margin-left: 24px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Leadership team cards: height follows width
+
+   The card WIDTH is fluid -- Swiper divides the container by five, so it moves
+   with the viewport and therefore with the display scale. The height was a
+   fixed `md:h-[270px]`, so every scale factor threw the proportion off and
+   each one needed its own override (270 here, 230 there, and a new number for
+   the next display someone opens the site on).
+
+   Pinning the ratio instead makes the height self-correcting: ~255px wide at
+   100% gives ~268px tall, ~224px at 125% gives ~236px. No detection needed.
+
+   Mobile keeps its fixed `h-[400px]` -- one full-width card is a different
+   composition, not a scaled-down version of this one.
+--------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .team .swiper-slide img {
+    height: auto;
+    aspect-ratio: 19 / 20;
+  }
+}
+
+/* Name/role type does not scale with the card, so trim it on scaled displays.
+   See the nav rule above for why the resolution gate is needed. Scoped to
+   `.team` on purpose -- overriding the escaped Tailwind selectors
+   (`.text-\[14px\]`, `.text-\[1\.30rem\]`) directly would silently resize
+   every other element on the site that happens to use those utilities. */
+@media (min-width: 1024px) and (max-width: 1600px)
+   and (min-resolution: 1.2dppx) and (max-resolution: 1.9dppx) {
+  .team .swiper-slide h2 {
+    font-size: 1.2rem;
+  }
+
+  .team .swiper-slide p {
+    font-size: 12px;
+  }
+}
