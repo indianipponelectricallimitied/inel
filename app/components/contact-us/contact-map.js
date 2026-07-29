@@ -12,7 +12,7 @@ import { TbMailFilled } from "react-icons/tb";
 // Create a singleton loader instance
 
 const loader = new Loader({
-  apiKey: "",
+  apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
   version: "weekly",
   libraries: ["places"],
 });
