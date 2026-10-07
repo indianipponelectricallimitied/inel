@@ -217,7 +217,8 @@ const Navbar = () => {
       submenu: [
         { label: 'INEL-TMS', href: 'https://ineltms.officenet.in/login/login.aspx', icon: 'https://indian-nippon.s3.ap-south-1.amazonaws.com/uploads/tms.svg' },
         { label: 'INEL-HRMS', href: 'https://inel.spinenx.in/login.aspx', icon: 'https://indian-nippon.s3.ap-south-1.amazonaws.com/uploads/hrms.svg' },
-        { label: 'INEL-PMS', href: 'https://indianippon-pms.synergita.com/LogOn', icon: 'https://indian-nippon.s3.ap-south-1.amazonaws.com/uploads/pms.svg' }
+        { label: 'INEL-PMS', href: 'https://indianippon-pms.synergita.com/LogOn', icon: 'https://indian-nippon.s3.ap-south-1.amazonaws.com/uploads/pms.svg' },
+        { label: 'INEL-TALENT', href: 'https://career.indianippon.com/auth/', icon: 'https://indian-nippon.s3.ap-south-1.amazonaws.com/uploads/hrms.svg' }
       ]
     },
     {
@@ -264,15 +265,15 @@ const Navbar = () => {
               <StockTicker className={`nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? '!text-white' : '!text-black'}`} />
 
               <div className="flex items-center gap-6">
-                <Link href='/newsroom' className={`nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}>
-                  Newsroom
+                <Link href='https://lucas-tvs.com/software-services/' target='_blank' className={`nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}>
+                  Software Solutions
                 </Link>
                 <Link href='mailto:inelcorp@inel.co.in' className={`nav-link flex items-center gap-1 transition-colors duration-300 ease-in-out ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}>
                   <TbMailFilled /> inelcorp@inel.co.in
                 </Link>
               </div>
             </div>
-            <div className={`${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'border-white' : 'border-primary'} space-x-8 border-t pt-2 transition-colors duration-300 ease-in-out`}>
+            <div className={`nav-menu-row ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'border-white' : 'border-primary'} space-x-8 border-t pt-2 transition-colors duration-300 ease-in-out`}>
               {menuItems.map((item, index) => (
                 <div key={index} className={`inline-block ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}>
                   {item.submenu ? (

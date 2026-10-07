@@ -14,12 +14,12 @@ const team = [
     // },
     {
         image: "/images/about/person-2.png",
-        name: "Mr. Arvind Balaji",
+        name: "Arvind Balaji",
         position: "Managing Director",
     },
     {
         image: "/images/about/ravinder-sharma-1.png",
-        name: "Mr. Ravinder Sharma",
+        name: "Ravinder Sharma",
         position: "President",
     },
     // {
@@ -36,13 +36,18 @@ const team = [
     // },
     {
         image: "/images/about/Kanakaraju.png",
-        name: "Mr. Kanakaraju",
+        name: "Kanakaraju",
         position: "Chief Technical Officer",
     },
     {
         image: "/images/about/Mr.Elango Srinivasanv CFO.png",
-        name: "Mr. Elango Srinivasan",
+        name: "Elango Srinivasan",
         position: "Chief Financial Officer",
+    },
+    {
+        image: "/images/about/Namita.png",
+        name: "Namita V",
+        position: "Chief Human Resources Officer",
     }
 ]
 export default function Team(){
@@ -60,8 +65,8 @@ export default function Team(){
           // pagination={{
           //   clickable: true,
           // }}
-          loop={true}
-        
+          loop={false}
+
           navigation={{
             nextEl: '.team-swiper-next',
             prevEl: '.team-swiper-prev',
@@ -76,21 +81,22 @@ export default function Team(){
               spaceBetween: 20,
             },
             1024: {
-              slidesPerView: 4,
-              spaceBetween: 70,
+              slidesPerView: 5,
+              spaceBetween: 40,
             },
             }}
             modules={[ Navigation]}
             className="team md:!p-5"
         >
                     {team.map((item) => (
-                        <SwiperSlide key={item.id} className="card-cut-not relative ">
-                            <Image src={item.image} alt={item.name} width={500} height={300} 
-                            className="rounded-[30px] object-cover w-full h-[330px]"
+                        <SwiperSlide key={item.name} className="card-cut-not relative ">
+                            <Image src={item.image} alt={item.name} width={656} height={810}
+                            sizes="(min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
+                            className="rounded-[30px] object-cover object-top w-full h-[400px] md:h-[270px]"
                             />
                             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-50% to-primary rounded-[30px] p-5 flex flex-col justify-end gap-1 ">
-                                <h2 className="text-white text-2xl">{item.name}</h2>
-                                <p className="text-white">{item.position}</p>
+                                <h2 className="text-white text-[1.30rem]">{item.name}</h2>
+                                <p className="text-white text-[14px]">{item.position}</p>
                             </div>
                         </SwiperSlide>
                     ))}
