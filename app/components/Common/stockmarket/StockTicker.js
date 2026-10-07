@@ -15,10 +15,10 @@ export default function StockTicker({ className = '' }) {
   const manualNSEData = {
     'Global Quote': {
       '01. symbol': 'INDNIPPON.NSE',
-      '05. price': '788.00',
-      '09. change': '6.35',
-      '10. change percent': '0.81%',
-      '07. latest trading day': '2026-04-17T15:30:00'
+      '05. price': '1235.10',
+      '09. change': '-6.60',
+      '10. change percent': '-0.53%',
+      '07. latest trading day': '2026-10-07T12:17:00'
     }
   };
 
