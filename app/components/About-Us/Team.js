@@ -36,12 +36,12 @@ const team = [
     // },
     {
         image: "/images/about/Kanakaraju.png",
-        name: "Kanakaraju",
+        name: "Kanakaraju K",
         position: "Chief Technical Officer",
     },
     {
         image: "/images/about/Saravana-Kumar.png",
-        name: "Saravana Kumar",
+        name: "Saravana Kumar M",
         position: "Chief Financial Officer",
     },
     {
