@@ -5,7 +5,7 @@ const programs = [
             "Guided by entrepreneurial vision, we drive R&D to craft transformative, customer-centric solutions.",
             "Encouraging employees to try new and better ways of doing things, thereby fostering a spirit of precision, efficiency, and technological growth."
         ],
-        image: "/images/career/culturecatalyst.webp"
+        image: "/images/career/culture-catalyst-dsc04401.webp"
     },
     {
         title: "People Power",
@@ -13,7 +13,7 @@ const programs = [
             "At INEL, we celebrate generational diversity, from Gen X to Gen Z, cultivating an inclusive culture that offers unmatched guidance and smooth transition.",
             "Learning and leading together by advancing skills through upskilling and reskilling in a progressive setting."
         ],
-        image: "/images/career/people.webp"
+        image: "/images/career/people-power-dsc04459.webp"
     },
     {
         title: "Vital Values",
@@ -24,7 +24,7 @@ const programs = [
             "Anticipation and Being Proactive",
             "Innovating / Innovative Mindset"
         ],
-        image: "/images/career/value.webp"
+        image: "/images/career/vital-values-dsc04419.webp"
     },
 ]
 
