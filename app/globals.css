@@ -656,18 +656,20 @@ table{
   }
 }
 
-/* Name/role type does not scale with the card, so trim it on scaled displays.
-   See the nav rule above for why the resolution gate is needed. Scoped to
-   `.team` on purpose -- overriding the escaped Tailwind selectors
+/* Name/role type scales with the viewport, just like the card width does, so
+   long names ("Saravana Kumar M", "Chief Human Resources Officer") stay on one
+   line at any width or display scale -- no resolution sniffing needed. Scoped
+   to `.team` on purpose -- overriding the escaped Tailwind selectors
    (`.text-\[14px\]`, `.text-\[1\.30rem\]`) directly would silently resize
    every other element on the site that happens to use those utilities. */
-@media (min-width: 1024px) and (max-width: 1600px)
-   and (min-resolution: 1.2dppx) and (max-resolution: 1.9dppx) {
+@media (min-width: 1024px) {
   .team .swiper-slide h2 {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.1vw, 1.3rem);
+    line-height: 1.25;
   }
 
   .team .swiper-slide p {
-    font-size: 12px;
+    font-size: clamp(11px, 0.85vw, 14px);
+    line-height: 1.35;
   }
 }

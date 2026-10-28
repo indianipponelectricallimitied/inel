@@ -81,8 +81,12 @@ export default function Team(){
               spaceBetween: 20,
             },
             1024: {
+              slidesPerView: 4,
+              spaceBetween: 24,
+            },
+            1280: {
               slidesPerView: 5,
-              spaceBetween: 40,
+              spaceBetween: 32,
             },
             }}
             modules={[ Navigation]}
@@ -94,7 +98,7 @@ export default function Team(){
                             sizes="(min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw"
                             className="rounded-[30px] object-cover object-top w-full h-[400px] md:h-[270px]"
                             />
-                            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-50% to-primary rounded-[30px] p-5 flex flex-col justify-end gap-1 ">
+                            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-50% to-primary rounded-[30px] p-5 xl:p-4 2xl:p-5 flex flex-col justify-end gap-1 ">
                                 <h2 className="text-white text-[1.30rem]">{item.name}</h2>
                                 <p className="text-white text-[14px]">{item.position}</p>
                             </div>
