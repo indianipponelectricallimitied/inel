@@ -265,7 +265,7 @@ const Navbar = () => {
               <StockTicker className={`nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? '!text-white' : '!text-black'}`} />
 
               <div className="flex items-center gap-6">
-                <Link href='https://lucas-tvs.com/software-services/' target='_blank' className={`nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}>
+                <Link href='https://software.lucas-tvs.com/' target='_blank' className={`nav-link transition-colors duration-300 ease-in-out ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}>
                   Software Solutions
                 </Link>
                 <Link href='mailto:inelcorp@inel.co.in' className={`nav-link flex items-center gap-1 transition-colors duration-300 ease-in-out ${isHomePage && !isScrolled && !isHovered && !isMegaMenuOpen ? 'text-white' : 'text-black'}`}>
